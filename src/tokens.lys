@@ -1,8 +1,23 @@
 enum TokenType {
   EndOfFile
-  Word
+  Identifier
+  Unknown
+  NewLine
   Whitespace
+  StringLiteral
+  SingleStringLiteral
 }
 
 struct Token(tokenType: TokenType, start: u32, end: u32)
-struct Nil
+
+impl TokenType {
+  fun toString(self: TokenType): string = match self {
+    case is EndOfFile -> "EndOfFile"
+    case is Identifier -> "Identifier"
+    case is Unknown -> "Unknown"
+    case is NewLine -> "NewLine"
+    case is Whitespace -> "Whitespace"
+    case is StringLiteral -> "StringLiteral"
+    case is SingleStringLiteral -> "SingleStringLiteral"
+  }
+}
