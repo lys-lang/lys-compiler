@@ -1,8 +1,12 @@
 build:
-	(rm -rf build || true)
+	@(rm -rf build || true)
 	./node_modules/.bin/lys src/test.lys --test
 	./node_modules/.bin/lys src/main.lys --wast
-	./node_modules/.bin/ncc build src/index.ts -o dist
-	./node_modules/.bin/mocha test.js
+	@./node_modules/.bin/ncc build src/index.ts -o dist
+	@./node_modules/.bin/mocha test.js
+
+full:
+	@npm install
+	@$(MAKE) build
 
 .PHONY: build
