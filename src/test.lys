@@ -1,0 +1,35 @@
+import support::env
+import support::test
+import src::main
+import src::tokens
+
+#[export]
+fun test(): void = {
+  START("Testing parser")
+
+  val p = parser("A  BCS C DEF ghi123  ")
+
+  validateToken(p, Word, 1)
+  validateToken(p, Whitespace, 2)
+  validateToken(p, Word, 3)
+  validateToken(p, Whitespace, 1)
+  validateToken(p, Word, 1)
+  validateToken(p, Whitespace, 1)
+  validateToken(p, Word, 3)
+  validateToken(p, Whitespace, 1)
+  validateToken(p, Word, 6)
+  validateToken(p, Whitespace, 2)
+
+  END()
+}
+
+fun validateToken(p: Parser, token: TokenType, expectedSize: i32): void = {
+  match p.eat() {
+    case is Token(tokenType, start, end) -> {
+      printf("(%d,", start)
+      printf(" %d)", end)
+      mustEqual(tokenType == token, true, "Validate token")
+      mustEqual(expectedSize as u32, end - start, "Validate token size")
+    }
+  }
+}

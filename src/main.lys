@@ -1,0 +1,59 @@
+import src::tokens
+
+struct Parser(source: string, pos: u32)
+
+/**
+ * Returns a new Parser
+ */
+#[export]
+fun parser(str: string): Parser = {
+  Parser(str, 0 as u32)
+}
+
+impl Parser {
+  #[method]
+  fun eat(self: Parser): Token | Nil = {
+    if (self.pos >= self.source.length)
+      Nil
+    else {
+      val eaten = match self.source[self.pos] {
+        case 0x20 -> eatWhitespace(self)
+        else      -> eatToken(self)
+      }
+      self.pos = eaten.end
+      eaten
+    }
+  }
+
+  private fun eatWhitespace(self: Parser): Token = {
+    var start = self.pos
+    var end = self.pos
+    val len = self.source.length
+    loop {
+      if (end >= len)
+        break
+      if (self.source[end] != 0x20)
+        break
+
+      end = end + 1 as u32
+      continue
+    }
+    Token(Whitespace, start, end)
+  }
+
+  private fun eatToken(self: Parser): Token = {
+    var start = self.pos
+    var end = self.pos
+    val len = self.source.length
+    loop {
+      if (end >= len)
+        break
+      if (self.source[end] == 0x20)
+        break
+
+      end = end + 1 as u32
+      continue
+    }
+    Token(Word, start, end)
+  }
+}

@@ -1,0 +1,8 @@
+enum TokenType {
+  EndOfFile
+  Word
+  Whitespace
+}
+
+struct Token(tokenType: TokenType, start: u32, end: u32)
+struct Nil
