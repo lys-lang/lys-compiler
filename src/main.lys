@@ -1,6 +1,9 @@
 import src::tokens
 
 struct Parser(source: string, pos: u32)
+struct None()
+
+var instance: Parser | None = None
 
 /**
  * Returns a new Parser
@@ -10,15 +13,81 @@ fun parser(str: string): Parser = {
   Parser(str, 0 as u32)
 }
 
+private fun bytesDiscriminant(): u64 = {
+  val discriminant: u32 = bytes.^discriminant
+  discriminant as u64 << 32
+}
+
+// bytes
+fun apply(size: u32): bytes = %wasm {
+  (local $allocation i32)
+  (local $allocationSize i32)
+
+  // allocate header + size
+  (local.set $allocationSize (i32.add (get_local $size) (i32.const 4)))
+
+  // allocate the memory and save the pointer
+  (local.set $allocation
+    (call $system::core::memory::malloc (local.get $allocationSize))
+  )
+
+  (call $system::core::memory::memset
+    (get_local $allocation)
+    (i32.const 0)
+    (local.get $allocationSize)
+  )
+
+  // store the size in the first int
+  (i32.store (get_local $allocation) (get_local $size))
+
+  (i64.or
+    (call $bytesDiscriminant)
+    (i64.extend_u/i32 (get_local $allocation))
+  )
+}
+
+/**
+ * Updates the parser with a string.
+ */
+#[export]
+fun update(address: u32, length: u32): void = {
+  instance = Parser()
+}
+
+/**
+ * Returns a new Parser
+ */
+ #[export]
+ fun parser(str: string): Parser = {
+   Parser(str, 0 as u32)
+ }
+
 impl Parser {
   #[method]
-  fun eat(self: Parser): Token | Nil = {
-    if (self.pos >= self.source.length)
-      Nil
-    else {
-      val eaten = match self.source[self.pos] {
-        case 0x20 -> eatWhitespace(self)
-        else      -> eatToken(self)
+  fun eat(self: Parser): Token = {
+    if (self.pos == self.source.length) {
+      Token(EndOfFile, self.source.length, self.source.length)
+    } else {
+      val char = self.source[self.pos] as u32
+      val eaten = match char {
+        case 0x20 -> eatWhitespace(self)   // space
+        case 0x9  -> eatWhitespace(self)   // \t
+        case 0xA  -> eatNewLine(self)      // \n
+        case 0xD  -> eatNewLine(self)      // \r
+        case 0x22 -> eatString(self)       // "
+        case 0x27 -> eatSingleString(self) // '
+        case 0x24 -> eatIdentifier(self)   // $       '$'? [A-Za-z_]([A-Za-z0-9_$])*
+        case 0x5F -> eatIdentifier(self)   // _       '$'? [A-Za-z_]([A-Za-z0-9_$])*
+        else -> {
+          if (char >= 0x41 /* A */ && char <= 0x5A /* Z */) {
+            eatIdentifier(self)
+          } else if (char >= 0x61 /* a */ && char <= 0x7a /* z */) {
+            eatIdentifier(self)
+          } else {
+            val x = self.pos
+            Token(Unknown, x, x + 1 as u32)
+          }
+        }
       }
       self.pos = eaten.end
       eaten
@@ -26,13 +95,17 @@ impl Parser {
   }
 
   private fun eatWhitespace(self: Parser): Token = {
-    var start = self.pos
+    val start = self.pos
     var end = self.pos
     val len = self.source.length
     loop {
       if (end >= len)
         break
-      if (self.source[end] != 0x20)
+
+      val char = self.source[end]
+
+      if (char != 0x20)
+      if (char != 0x9)
         break
 
       end = end + 1 as u32
@@ -41,19 +114,93 @@ impl Parser {
     Token(Whitespace, start, end)
   }
 
-  private fun eatToken(self: Parser): Token = {
-    var start = self.pos
+  private fun eatString(self: Parser): Token = {
+    val start = self.pos
     var end = self.pos
     val len = self.source.length
     loop {
       if (end >= len)
         break
-      if (self.source[end] == 0x20)
+
+      val char = self.source[end]
+
+      if (char == 0x22 && start != end) {
+        end = end + 1 as u32
+        break
+      }
+
+      end = end + 1 as u32
+      continue
+    }
+    Token(StringLiteral, start, end)
+  }
+
+
+  private fun eatSingleString(self: Parser): Token = {
+    val start = self.pos
+    var end = self.pos
+    val len = self.source.length
+    loop {
+      if (end >= len)
+        break
+
+      val char = self.source[end]
+
+      // x27 == '
+      if (char == 0x27 && start != end) {
+        end = end + 1 as u32
+        break
+      }
+
+      end = end + 1 as u32
+      continue
+    }
+    Token(SingleStringLiteral, start, end)
+  }
+
+  private fun eatNewLine(self: Parser): Token = {
+    val start = self.pos
+    var end = self.pos
+    val len = self.source.length
+    loop {
+      if (end >= len)
+        break
+
+      val char = self.source[end]
+
+      if (char != 0xA)
+      if (char != 0xD)
         break
 
       end = end + 1 as u32
       continue
     }
-    Token(Word, start, end)
+    Token(NewLine, start, end)
+  }
+
+  private fun eatIdentifier(self: Parser): Token = {
+    val start = self.pos
+    var end = self.pos
+    val len = self.source.length
+
+    // TODO: Validate first char
+
+    loop { // [A-Za-z0-9_$]
+      if (end >= len)
+        break
+
+      val char = self.source[end] as u32
+
+      if (char != 0x24) // $
+      if (char != 0x5F) // _
+      if (char < 0x41 || char > 0x5A) // A-Z
+      if (char < 0x61 || char > 0x7a) // a-z
+      if (char < 0x30 || char > 0x39) // 0-9
+        break
+
+      end = end + 1 as u32
+      continue
+    }
+    Token(Identifier, start, end)
   }
 }
