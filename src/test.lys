@@ -9,6 +9,7 @@ fun test(): void = {
 
   case1()
   case2()
+  case3()
   whitespaces()
   strings()
 
@@ -18,7 +19,7 @@ fun test(): void = {
 fun case1(): void = {
   START("case1")
 
-  val p = parser("A  BCS C DEF ghi123  ")
+  val p = Parser("A  BCS C DEF ghi123  ")
 
   validateToken(p, Identifier, 1)
   validateToken(p, Whitespace, 2)
@@ -39,9 +40,24 @@ fun case1(): void = {
 fun case2(): void = {
   START("Empty case")
 
-  val p = parser("")
+  val p = Parser("")
 
   validateToken(p, EndOfFile, 0)
+  validateToken(p, EndOfFile, 0)
+
+  END()
+}
+
+fun case3(): void = {
+  START("case3")
+
+  val p = Parser("a  AA asd")
+
+  validateToken(p, Identifier, 1)
+  validateToken(p, Whitespace, 2)
+  validateToken(p, Identifier, 2)
+  validateToken(p, Whitespace, 1)
+  validateToken(p, Identifier, 3)
   validateToken(p, EndOfFile, 0)
 
   END()
@@ -50,7 +66,7 @@ fun case2(): void = {
 fun whitespaces(): void = {
   START("Whitespaces")
 
-  val p = parser(" \n\r\t")
+  val p = Parser(" \n\r\t")
 
   validateToken(p, Whitespace, 1)
   validateToken(p, NewLine, 2)
@@ -64,7 +80,7 @@ fun whitespaces(): void = {
 fun strings(): void = {
   START("Single quoted strings")
 
-  val p = parser(" 'asd' ''  ")
+  val p = Parser(" 'asd' ''  ")
 
   validateToken(p, Whitespace, 1)
   validateToken(p, SingleStringLiteral, 5)

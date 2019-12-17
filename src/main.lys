@@ -6,63 +6,48 @@ struct None()
 var instance: Parser | None = None
 
 /**
- * Returns a new Parser
+ * Updates the parser with a string.
  */
-#[export]
-fun parser(str: string): Parser = {
-  Parser(str, 0 as u32)
+fun instantiate(str: string): void = {
+  instance = Parser(str, 0 as u32)
 }
 
-private fun bytesDiscriminant(): u64 = {
-  val discriminant: u32 = bytes.^discriminant
+private fun stringDiscriminant(): u64 = {
+  val discriminant: u32 = string.^discriminant
   discriminant as u64 << 32
 }
 
-// bytes
-fun apply(size: u32): bytes = %wasm {
-  (local $allocation i32)
-  (local $allocationSize i32)
-
-  // allocate header + size
-  (local.set $allocationSize (i32.add (get_local $size) (i32.const 4)))
-
-  // allocate the memory and save the pointer
-  (local.set $allocation
-    (call $system::core::memory::malloc (local.get $allocationSize))
-  )
-
-  (call $system::core::memory::memset
-    (get_local $allocation)
-    (i32.const 0)
-    (local.get $allocationSize)
-  )
-
-  // store the size in the first int
-  (i32.store (get_local $allocation) (get_local $size))
-
-  (i64.or
-    (call $bytesDiscriminant)
-    (i64.extend_u/i32 (get_local $allocation))
-  )
-}
-
-/**
- * Updates the parser with a string.
- */
 #[export]
-fun update(address: u32, length: u32): void = {
-  instance = Parser()
+fun parse(address: u32): void = %wasm {
+  (call $instantiate
+    (i64.or
+      (call $stringDiscriminant)
+      (i64.extend_u/i32 (get_local $address))))
 }
 
-/**
- * Returns a new Parser
- */
- #[export]
- fun parser(str: string): Parser = {
-   Parser(str, 0 as u32)
- }
+#[export "eat"]
+fun externalEat(): u32 = eat().ptr - 4 as u32
+
+#[export "malloc"]
+fun malloc(size: u32): u32 = system::core::memory::malloc(size)
+
+fun eat(): string = match instance {
+  case p is Parser -> {
+    val tok = p.eat()
+    match tok.tokenType {
+      case is EndOfFile -> "EndOfFile"
+      else -> TokenType.toString(tok.tokenType) ++ "=" ++ p.source.substr(tok.start, tok.end)
+    }
+  }
+  else -> "ParserNotInitialized"
+}
 
 impl Parser {
+  // Overload
+  fun apply(str: string): Parser = {
+    Parser(str, 0 as u32)
+  }
+
   #[method]
   fun eat(self: Parser): Token = {
     if (self.pos == self.source.length) {
