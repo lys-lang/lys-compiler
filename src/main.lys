@@ -26,7 +26,9 @@ fun parse(address: u32): void = %wasm {
 }
 
 #[export "eat"]
-fun externalEat(): u32 = eat().ptr - 4 as u32
+fun externalEat(): u32 = {
+  eat().ptr - 4 as u32
+}
 
 #[export "malloc"]
 fun malloc(size: u32): u32 = system::core::memory::malloc(size)
@@ -36,7 +38,7 @@ fun eat(): string = match instance {
     val tok = p.eat()
     match tok.tokenType {
       case is EndOfFile -> "EndOfFile"
-      else -> TokenType.toString(tok.tokenType) ++ "=" ++ p.source.substr(tok.start, tok.end)
+      else -> TokenType.toString(tok.tokenType) ++ "=" ++ p.source.substring(tok.start as i32, tok.end as i32)
     }
   }
   else -> "ParserNotInitialized"

@@ -10,6 +10,7 @@ fun test(): void = {
   case1()
   case2()
   case3()
+  case4()
   whitespaces()
   strings()
 
@@ -21,18 +22,18 @@ fun case1(): void = {
 
   val p = Parser("A  BCS C DEF ghi123  ")
 
-  validateToken(p, Identifier, 1)
-  validateToken(p, Whitespace, 2)
-  validateToken(p, Identifier, 3)
-  validateToken(p, Whitespace, 1)
-  validateToken(p, Identifier, 1)
-  validateToken(p, Whitespace, 1)
-  validateToken(p, Identifier, 3)
-  validateToken(p, Whitespace, 1)
-  validateToken(p, Identifier, 6)
-  validateToken(p, Whitespace, 2)
-  validateToken(p, EndOfFile, 0)
-  validateToken(p, EndOfFile, 0)
+  validateToken(p, Identifier, "A")
+  validateToken(p, Whitespace, "  ")
+  validateToken(p, Identifier, "BCS")
+  validateToken(p, Whitespace, " ")
+  validateToken(p, Identifier, "C")
+  validateToken(p, Whitespace, " ")
+  validateToken(p, Identifier, "DEF")
+  validateToken(p, Whitespace, " ")
+  validateToken(p, Identifier, "ghi123")
+  validateToken(p, Whitespace, "  ")
+  validateToken(p, EndOfFile, "")
+  validateToken(p, EndOfFile, "")
 
   END()
 }
@@ -42,8 +43,8 @@ fun case2(): void = {
 
   val p = Parser("")
 
-  validateToken(p, EndOfFile, 0)
-  validateToken(p, EndOfFile, 0)
+  validateToken(p, EndOfFile, "")
+  validateToken(p, EndOfFile, "")
 
   END()
 }
@@ -53,12 +54,27 @@ fun case3(): void = {
 
   val p = Parser("a  AA asd")
 
-  validateToken(p, Identifier, 1)
-  validateToken(p, Whitespace, 2)
-  validateToken(p, Identifier, 2)
-  validateToken(p, Whitespace, 1)
-  validateToken(p, Identifier, 3)
-  validateToken(p, EndOfFile, 0)
+  validateToken(p, Identifier, "a")
+  validateToken(p, Whitespace, "  ")
+  validateToken(p, Identifier, "AA")
+  validateToken(p, Whitespace, " ")
+  validateToken(p, Identifier, "asd")
+  validateToken(p, EndOfFile, "")
+
+  END()
+}
+
+fun case4(): void = {
+  START("case4")
+
+  val p = Parser("asd   AA a")
+
+  validateToken(p, Identifier, "asd")
+  validateToken(p, Whitespace, "   ")
+  validateToken(p, Identifier, "AA")
+  validateToken(p, Whitespace, " ")
+  validateToken(p, Identifier, "a")
+  validateToken(p, EndOfFile, "")
 
   END()
 }
@@ -68,10 +84,10 @@ fun whitespaces(): void = {
 
   val p = Parser(" \n\r\t")
 
-  validateToken(p, Whitespace, 1)
-  validateToken(p, NewLine, 2)
-  validateToken(p, Whitespace, 1)
-  validateToken(p, EndOfFile, 0)
+  validateToken(p, Whitespace, " ")
+  validateToken(p, NewLine, "\n\r")
+  validateToken(p, Whitespace, "\t")
+  validateToken(p, EndOfFile, "")
 
   END()
 }
@@ -82,23 +98,24 @@ fun strings(): void = {
 
   val p = Parser(" 'asd' ''  ")
 
-  validateToken(p, Whitespace, 1)
-  validateToken(p, SingleStringLiteral, 5)
-  validateToken(p, Whitespace, 1)
-  validateToken(p, SingleStringLiteral, 2)
-  validateToken(p, Whitespace, 2)
-  validateToken(p, EndOfFile, 0)
+  validateToken(p, Whitespace, " ")
+  validateToken(p, SingleStringLiteral, "'asd'")
+  validateToken(p, Whitespace, " ")
+  validateToken(p, SingleStringLiteral, "''")
+  validateToken(p, Whitespace, "  ")
+  validateToken(p, EndOfFile, "")
 
   END()
 }
 
-fun validateToken(p: Parser, token: TokenType, expectedSize: i32): void = {
+fun validateToken(p: Parser, expectedToken: TokenType, expectedValue: string): void = {
   match p.eat() {
     case is Token(tokenType, start, end) -> {
       val given = TokenType.toString(tokenType)
-      val expected = TokenType.toString(token)
+      val expected = TokenType.toString(expectedToken)
       mustEqual(given, expected, "yield " ++ expected)
-      mustEqual(expectedSize as u32, end - start, "Validate token size must match")
+      val givenValue = p.source.substring(start as i32, end as i32)
+      mustEqual(givenValue, expectedValue, "value=" ++ expectedValue)
     }
   }
 }

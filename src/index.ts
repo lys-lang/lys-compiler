@@ -1,5 +1,4 @@
 declare var require: any;
-const getBytes = require("utf8-bytes");
 const wasmModule = require("../build/main");
 import { readString, writeStringToHeap } from "lys/dist/utils/execution";
 
@@ -8,7 +7,9 @@ export async function tokenizer() {
 
   function eat(): string {
     const offset = instance.exports.eat();
-    return readString(instance.exports.memory.buffer, offset);
+    const str = readString(instance.exports.memory.buffer, offset);
+    console.log(JSON.stringify(str));
+    return str;
   }
 
   function parse(data: string) {

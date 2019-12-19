@@ -23,12 +23,12 @@ describe("sanity tests", () => {
   });
 
   it("whitespaces and identifiers", () => {
-    mustEqual(instance.parse("a  AA asd"));
-    mustEqual(instance.eat(), "Identifier=a")
-    mustEqual(instance.eat(), "Whitespace=  ")
+    mustEqual(instance.parse("asd   AA a"));
+    mustEqual(instance.eat(), "Identifier=asd")
+    mustEqual(instance.eat(), "Whitespace=   ")
     mustEqual(instance.eat(), "Identifier=AA")
     mustEqual(instance.eat(), "Whitespace= ")
-    mustEqual(instance.eat(), "Identifier=asd")
+    mustEqual(instance.eat(), "Identifier=a")
 
     mustEqual(instance.eat(), "EndOfFile")
     mustEqual(instance.eat(), "EndOfFile")
