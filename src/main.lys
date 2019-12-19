@@ -38,7 +38,7 @@ fun eat(): string = match instance {
     val tok = p.eat()
     match tok.tokenType {
       case is EndOfFile -> "EndOfFile"
-      else -> TokenType.toString(tok.tokenType) ++ "=" ++ p.source.substring(tok.start as i32, tok.end as i32)
+      else -> TokenType.toString(tok.tokenType) ++ "(" ++ p.source.substring(tok.start as i32, tok.end as i32) ++ ")"
     }
   }
   else -> "ParserNotInitialized"

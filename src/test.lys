@@ -113,9 +113,9 @@ fun validateToken(p: Parser, expectedToken: TokenType, expectedValue: string): v
     case is Token(tokenType, start, end) -> {
       val given = TokenType.toString(tokenType)
       val expected = TokenType.toString(expectedToken)
-      mustEqual(given, expected, "yield " ++ expected)
+      mustEqual(given, expected, "eat " ++ expected ++ "(" ++ expectedValue ++ ")")
       val givenValue = p.source.substring(start as i32, end as i32)
-      mustEqual(givenValue, expectedValue, "value=" ++ expectedValue)
+      mustEqual(givenValue, expectedValue, "value=(" ++ expectedValue ++ ")")
     }
   }
 }
