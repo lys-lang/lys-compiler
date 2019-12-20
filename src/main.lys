@@ -1,4 +1,5 @@
 import src::tokens
+import support::ffi
 
 struct Parser(source: string, pos: u32)
 struct None()
@@ -12,26 +13,11 @@ fun instantiate(str: string): void = {
   instance = Parser(str, 0 as u32)
 }
 
-private fun stringDiscriminant(): u64 = {
-  val discriminant: u32 = string.^discriminant
-  discriminant as u64 << 32
-}
-
-#[export]
-fun parse(address: u32): void = %wasm {
-  (call $instantiate
-    (i64.or
-      (call $stringDiscriminant)
-      (i64.extend_u/i32 (get_local $address))))
-}
+#[export "parse"]
+fun parse(strAddress: UnsafeCPointer): void = instantiate(UCS2.fromPtr(strAddress))
 
 #[export "eat"]
-fun externalEat(): u32 = {
-  eat().ptr - 4 as u32
-}
-
-#[export "malloc"]
-fun malloc(size: u32): u32 = system::core::memory::malloc(size)
+fun externalEat(): UnsafeCPointer = eat() as UnsafeCPointer
 
 fun eat(): string = match instance {
   case p is Parser -> {

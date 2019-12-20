@@ -1,15 +1,12 @@
 declare var require: any;
 const wasmModule = require("../build/main");
-import { readString, writeStringToHeap } from "lys/dist/utils/execution";
+import { readStringFromHeap, writeStringToHeap } from "lys/dist/utils/execution";
 
 export async function tokenizer() {
   const instance = await wasmModule.default();
 
   function eat(): string {
-    const offset = instance.exports.eat();
-    const str = readString(instance.exports.memory.buffer, offset);
-    console.log(JSON.stringify(str));
-    return str;
+    return readStringFromHeap(instance, instance.exports.eat());
   }
 
   function parse(data: string) {
