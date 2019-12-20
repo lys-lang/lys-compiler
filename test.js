@@ -1,39 +1,38 @@
-// const keccak = require(".").default;
+const tokenizer = require(".").default;
 
-// function mustEqual(a, b) {
-//   if (a != b) {
-//     throw new Error(`${a} did not equal ${b}`);
-//   }
-// }
+function mustEqual(a, b) {
+  if (a != b) {
+    throw new Error(`${a} did not equal ${b}`);
+  }
+}
 
 describe("sanity tests", () => {
-  // let instance = null;
+  let instance = null;
 
-  // it("creates the instance", async () => {
-  //   instance = await keccak();
-  // });
+  it("creates the instance", async () => {
+    instance = await tokenizer();
+  });
 
-  // it("test empty strings", () => {
-  //   mustEqual(instance.digest(), "c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470");
-  //   instance.update("");
-  //   mustEqual(instance.digest(), "c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470");
-  //   mustEqual(instance.digest(), "c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470");
-  // });
+  it("unitinialized yields error token", () => {
+    mustEqual(instance.eat(), "ParserNotInitialized")
+  })
 
-  // it("test full string", () => {
-  //   instance.update("juanca");
-  //   mustEqual(instance.digest(), "2a898529bc7ae0f14d153006cfd0a9107141696da0af85c8f1c3a7edcae831b6");
+  it("test empty strings", () => {
+    mustEqual(instance.parse(""));
+    mustEqual(instance.eat(), "EndOfFile")
+  });
 
-  //   // digest resets the state
-  //   mustEqual(instance.digest(), "c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470");
-  // });
+  it("whitespaces and identifiers", () => {
+    mustEqual(instance.parse("asd   AA a"));
+    mustEqual(instance.eat(), "Identifier(asd)")
+    mustEqual(instance.eat(), "Whitespace(   )")
+    mustEqual(instance.eat(), "Identifier(AA)")
+    mustEqual(instance.eat(), "Whitespace( )")
+    mustEqual(instance.eat(), "Identifier(a)")
 
-  // it("test partial updates for streams", () => {
-  //   instance.update("jua");
-  //   instance.update("nca");
-  //   mustEqual(instance.digest(), "2a898529bc7ae0f14d153006cfd0a9107141696da0af85c8f1c3a7edcae831b6");
-
-  //   // digest resets the state
-  //   mustEqual(instance.digest(), "c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470");
-  // });
+    mustEqual(instance.eat(), "EndOfFile")
+    mustEqual(instance.eat(), "EndOfFile")
+    mustEqual(instance.eat(), "EndOfFile")
+    mustEqual(instance.eat(), "EndOfFile")
+  });
 });
