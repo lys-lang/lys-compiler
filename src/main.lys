@@ -67,6 +67,8 @@ impl Parser {
     case 0x24 -> Identifier        // $
     case 0x28 -> ParenthesesOpen   // (
     case 0x29 -> ParenthesesClose  // )
+    case 0x7b -> CurlyBracesOpen       // {
+    case 0x7d -> CurlyBracesClose      // }
     case 0x2A -> Unknown // Operator          // *
     case 0x2F -> // '/'
       if (!self.hasNext())
@@ -105,6 +107,8 @@ impl Parser {
         case is MacroDecoration -> eatMacroDecoration(self)
         case is ParenthesesOpen -> eatSingleChar(self, ParenthesesOpen)
         case is ParenthesesClose -> eatSingleChar(self, ParenthesesClose)
+        case is CurlyBracesOpen -> eatSingleChar(self, CurlyBracesOpen)
+        case is CurlyBracesClose -> eatSingleChar(self, CurlyBracesClose)
         case is VectorOpen -> eatSingleChar(self, VectorOpen)
         case is VectorClose -> eatSingleChar(self, VectorClose)
         case is LineComment -> eatLineComment(self)

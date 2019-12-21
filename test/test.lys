@@ -43,19 +43,35 @@ fun case1(): void = {
 
 
 fun parentheses(): void = {
-  START("Parentheses")
+  {
+    START("Parentheses")
+    val p = Parser("asd( ))")
 
-  val p = Parser("asd( ))")
+    validateToken(p, Identifier, "asd")
+    validateToken(p, ParenthesesOpen, "(")
+    validateToken(p, Whitespace, " ")
+    validateToken(p, ParenthesesClose, ")")
+    validateToken(p, ParenthesesClose, ")")
 
-  validateToken(p, Identifier, "asd")
-  validateToken(p, ParenthesesOpen, "(")
-  validateToken(p, Whitespace, " ")
-  validateToken(p, ParenthesesClose, ")")
-  validateToken(p, ParenthesesClose, ")")
+    validateToken(p, EndOfFile, "")
+    END()
+  }
 
-  validateToken(p, EndOfFile, "")
+  {
+    START("Curly")
+    val p = Parser("asd({}}))")
 
-  END()
+    validateToken(p, Identifier, "asd")
+    validateToken(p, ParenthesesOpen, "(")
+    validateToken(p, CurlyBracesOpen, "{")
+    validateToken(p, CurlyBracesClose, "}")
+    validateToken(p, CurlyBracesClose, "}")
+    validateToken(p, ParenthesesClose, ")")
+    validateToken(p, ParenthesesClose, ")")
+
+    validateToken(p, EndOfFile, "")
+    END()
+  }
 }
 
 fun case2(): void = {
@@ -113,18 +129,31 @@ fun whitespaces(): void = {
 }
 
 fun strings(): void = {
-  START("Strings")
+  {
+    START("Strings")
+    val p = Parser(" \"asd\" \"\"  ")
 
-  val p = Parser(" \"asd\" \"\"  ")
+    validateToken(p, Whitespace, " ")
+    validateToken(p, StringLiteral, "\"asd\"")
+    validateToken(p, Whitespace, " ")
+    validateToken(p, StringLiteral, "\"\"")
+    validateToken(p, Whitespace, "  ")
+    validateToken(p, EndOfFile, "")
+    END()
+  }
 
-  validateToken(p, Whitespace, " ")
-  validateToken(p, StringLiteral, "\"asd\"")
-  validateToken(p, Whitespace, " ")
-  validateToken(p, StringLiteral, "\"\"")
-  validateToken(p, Whitespace, "  ")
-  validateToken(p, EndOfFile, "")
+  {
+    START("Strings with comment")
+    val p = Parser(" \"a/" ++ "/sd\" \"\"  ")
 
-  END()
+    validateToken(p, Whitespace, " ")
+    validateToken(p, StringLiteral, "\"a/" ++ "/sd\"")
+    validateToken(p, Whitespace, " ")
+    validateToken(p, StringLiteral, "\"\"")
+    validateToken(p, Whitespace, "  ")
+    validateToken(p, EndOfFile, "")
+    END()
+  }
 }
 
 
