@@ -1,4 +1,4 @@
-const tokenizer = require(".").default;
+import tokenizer from "../dist";
 
 function mustEqual(a, b) {
   if (a != b) {
@@ -18,12 +18,12 @@ describe("sanity tests", () => {
   })
 
   it("test empty strings", () => {
-    mustEqual(instance.parse(""));
+    instance.parse("");
     mustEqual(instance.eat(), "EndOfFile")
   });
 
   it("whitespaces and identifiers", () => {
-    mustEqual(instance.parse("asd   AA a"));
+    instance.parse("asd   AA a");
     mustEqual(instance.eat(), "Identifier(asd)")
     mustEqual(instance.eat(), "Whitespace(   )")
     mustEqual(instance.eat(), "Identifier(AA)")

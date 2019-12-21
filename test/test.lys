@@ -92,16 +92,15 @@ fun whitespaces(): void = {
   END()
 }
 
-
 fun strings(): void = {
-  START("Single quoted strings")
+  START("Strings")
 
-  val p = Parser(" 'asd' ''  ")
+  val p = Parser(" \"asd\" \"\"  ")
 
   validateToken(p, Whitespace, " ")
-  validateToken(p, SingleStringLiteral, "'asd'")
+  validateToken(p, StringLiteral, "\"asd\"")
   validateToken(p, Whitespace, " ")
-  validateToken(p, SingleStringLiteral, "''")
+  validateToken(p, StringLiteral, "\"\"")
   validateToken(p, Whitespace, "  ")
   validateToken(p, EndOfFile, "")
 

@@ -36,31 +36,37 @@ impl Parser {
     Parser(str, 0 as u32)
   }
 
+  fun tokenStart(char: u32): TokenType = match char {
+    case 0x20 -> Whitespace    // space
+    case 0x9  -> Whitespace    // \t
+    case 0xA  -> NewLine       // \n
+    case 0xD  -> NewLine       // \r
+    case 0x22 -> StringLiteral // "
+    case 0x24 -> Identifier    // $       '$'? [A-Za-z_]([A-Za-z0-9_$])*
+    case 0x5F -> Identifier    // _       '$'? [A-Za-z_]([A-Za-z0-9_$])*
+    else -> {
+      if (char >= 0x41 /* A */ && char <= 0x5A /* Z */) {
+        Identifier
+      } else if (char >= 0x61 /* a */ && char <= 0x7a /* z */) {
+        Identifier
+      } else {
+        Unknown
+      }
+    }
+  }
+
   #[method]
   fun eat(self: Parser): Token = {
     if (self.pos == self.source.length) {
       Token(EndOfFile, self.source.length, self.source.length)
     } else {
       val char = self.source[self.pos] as u32
-      val eaten = match char {
-        case 0x20 -> eatWhitespace(self)   // space
-        case 0x9  -> eatWhitespace(self)   // \t
-        case 0xA  -> eatNewLine(self)      // \n
-        case 0xD  -> eatNewLine(self)      // \r
-        case 0x22 -> eatString(self)       // "
-        case 0x27 -> eatSingleString(self) // '
-        case 0x24 -> eatIdentifier(self)   // $       '$'? [A-Za-z_]([A-Za-z0-9_$])*
-        case 0x5F -> eatIdentifier(self)   // _       '$'? [A-Za-z_]([A-Za-z0-9_$])*
-        else -> {
-          if (char >= 0x41 /* A */ && char <= 0x5A /* Z */) {
-            eatIdentifier(self)
-          } else if (char >= 0x61 /* a */ && char <= 0x7a /* z */) {
-            eatIdentifier(self)
-          } else {
-            val x = self.pos
-            Token(Unknown, x, x + 1 as u32)
-          }
-        }
+      val eaten = match tokenStart(char) {
+        case is Whitespace -> eatWhitespace(self)
+        case is NewLine -> eatNewLine(self)
+        case is StringLiteral -> eatString(self)
+        case is Identifier -> eatIdentifier(self)
+        else -> eatUnknown(self)
       }
       self.pos = eaten.end
       eaten
@@ -87,6 +93,27 @@ impl Parser {
     Token(Whitespace, start, end)
   }
 
+  private fun eatUnknown(self: Parser): Token = {
+    val start = self.pos
+    var end = self.pos
+    val len = self.source.length
+    loop {
+      if (end >= len)
+        break
+
+      val char = self.source[end] as u32
+
+      match tokenStart(char) {
+        case is Unknown -> {
+          end = end + 1 as u32
+          continue
+        }
+        else -> break
+      }
+    }
+    Token(Unknown, start, end)
+  }
+
   private fun eatString(self: Parser): Token = {
     val start = self.pos
     var end = self.pos
@@ -106,29 +133,6 @@ impl Parser {
       continue
     }
     Token(StringLiteral, start, end)
-  }
-
-
-  private fun eatSingleString(self: Parser): Token = {
-    val start = self.pos
-    var end = self.pos
-    val len = self.source.length
-    loop {
-      if (end >= len)
-        break
-
-      val char = self.source[end]
-
-      // x27 == '
-      if (char == 0x27 && start != end) {
-        end = end + 1 as u32
-        break
-      }
-
-      end = end + 1 as u32
-      continue
-    }
-    Token(SingleStringLiteral, start, end)
   }
 
   private fun eatNewLine(self: Parser): Token = {
