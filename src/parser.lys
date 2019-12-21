@@ -1,0 +1,12 @@
+import src::tokens
+import src::lexer
+
+enum ParserRule {
+  Terminal(name: string, tokenType: TokenType)
+  Construction(name: string, rule: ParserRule)
+  Or(lhs: ParserRule, rhs: ParserRule)
+  OneOrMore(rule: ParserRule)
+  ZeroOrMore(rule: ParserRule)
+  Cons(head: ParserRule, tail: ParserRule)
+}
+

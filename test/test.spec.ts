@@ -14,16 +14,16 @@ describe("sanity tests", () => {
   });
 
   it("unitinialized yields error token", () => {
-    mustEqual(instance.eat(), "ParserNotInitialized")
+    mustEqual(instance.eat(), "LexerNotInitialized")
   })
 
   it("test empty strings", () => {
-    instance.parse("");
+    instance.startLexer("");
     mustEqual(instance.eat(), "EndOfFile")
   });
 
   it("whitespaces and identifiers", () => {
-    instance.parse("asd   AA a");
+    instance.startLexer("asd   AA a");
     mustEqual(instance.eat(), "Identifier(asd)")
     mustEqual(instance.eat(), "Whitespace(   )")
     mustEqual(instance.eat(), "Identifier(AA)")

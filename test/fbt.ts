@@ -13,7 +13,7 @@ export function folderBasedTest(grep: string) {
     it(fileName, async () => {
       let instance = await tokenizer();
       const content = readFileSync(fileName).toString();
-      instance.parse(content);
+      instance.startLexer(content);
 
       const tokens: string[] = [];
       let token: string;

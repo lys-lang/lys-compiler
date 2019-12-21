@@ -1,0 +1,443 @@
+import src::tokens
+
+struct Lexer(source: string, pos: u32)
+struct None()
+
+var instance: Lexer | None = None
+
+/**
+ * Updates the Lexer with a string.
+ */
+fun instantiate(str: string): void = {
+  instance = Lexer(str, 0 as u32)
+}
+
+fun eat(): string = match instance {
+  case p is Lexer -> {
+    val tok = p.eat()
+    match tok.tokenType {
+      case is EndOfFile -> "EndOfFile"
+      else -> tok.tokenType.toString() ++ "(" ++ p.source.substring(tok.start as i32, tok.end as i32) ++ ")"
+    }
+  }
+  else -> "LexerNotInitialized"
+}
+
+impl Lexer {
+  // Overload constructor
+  fun apply(str: string): Lexer = {
+    Lexer(str, 0 as u32)
+  }
+
+  #[method]
+  fun hasNext(self: Lexer): boolean = self.pos < self.source.length
+
+  #[method]
+  fun peek(self: Lexer): u32 = self.source[self.pos + 1 as u32] as u32
+
+  #[method]
+  fun head(self: Lexer): u32 = self.source[self.pos] as u32
+
+  #[method]
+  fun seek(self: Lexer, position: u32): void = {
+    self.pos = position
+  }
+
+  #[method]
+  fun next(self: Lexer): u32 = {
+    self.pos = self.pos + 1 as u32
+    self.source[self.pos] as u32
+  }
+
+  #[method]
+  fun tokenStart(self: Lexer, char: u32): TokenType = match char {
+    case 0x09 -> Whitespace        // \t
+    case 0x0A -> NewLine           // \n
+    case 0x0D -> NewLine           // \r
+    case 0x20 -> Whitespace        // space
+    case 0x21 -> Operator          // !
+    case 0x22 -> StringLiteral     // "
+    case 0x23 -> MacroDecoration   // #[
+    case 0x24 -> Identifier        // $
+    case 0x25 -> Operator          // % TODO: %wasm
+    case 0x26 -> Operator          // &
+    case 0x28 -> ParenthesesOpen   // (
+    case 0x29 -> ParenthesesClose  // )
+    case 0x2A -> Operator          // *
+    case 0x2B -> Operator          // +
+    case 0x2C -> Comma             // ,
+    case 0x2D -> Operator          // -
+    case 0x2E -> Operator          // .
+    case 0x2F ->                   // '/'
+      if (!self.hasNext())
+        Operator
+      else match self.peek() {
+        case 0x2A -> MultiLineComment
+        case 0x2F -> LineComment
+        else -> Operator
+      }
+    case 0x3A -> Operator          // :
+    case 0x3B -> NewLine           // ;
+    case 0x3C -> Operator          // <
+    case 0x3D -> Operator          // =
+    case 0x3E -> Operator          // >
+    case 0x3F -> Identifier        // ?
+    case 0x5b -> VectorOpen        // [
+    case 0x5E -> Operator          // ^
+    case 0x5d -> VectorClose       // ]
+    case 0x5F -> Identifier        // _
+    case 0x7b -> CurlyBracesOpen   // {
+    case 0x7C -> Operator          // |
+    case 0x7E -> Operator          // ~
+    case 0x7d -> CurlyBracesClose  // }
+    else -> {
+      if (isNumber(char))
+        NumberLiteral
+      else if (src::unicode::isUnicodeLeter(char))
+        Identifier
+      else
+        Unknown
+    }
+  }
+
+  #[method]
+  fun eat(self: Lexer): Token = {
+    if (self.pos == self.source.length) {
+      Token(EndOfFile, self.source.length, self.source.length)
+    } else {
+      val eaten = match self.tokenStart(self.head()) {
+        case is Whitespace -> eatWhitespace(self)
+        case is NewLine -> eatNewLine(self)
+        case is StringLiteral -> eatString(self)
+        case is Identifier -> eatIdentifier(self)
+        case is MacroDecoration -> eatMacroDecoration(self)
+        case is ParenthesesOpen -> eatSingleChar(self, ParenthesesOpen)
+        case is ParenthesesClose -> eatSingleChar(self, ParenthesesClose)
+        case is CurlyBracesOpen -> eatSingleChar(self, CurlyBracesOpen)
+        case is CurlyBracesClose -> eatSingleChar(self, CurlyBracesClose)
+        case is Comma -> eatSingleChar(self, Comma)
+        case is VectorOpen -> eatSingleChar(self, VectorOpen)
+        case is VectorClose -> eatSingleChar(self, VectorClose)
+        case is LineComment -> eatLineComment(self)
+        case is MultiLineComment -> eatMultiLineComment(self)
+        case is Operator -> eatOperator(self)
+        case is NumberLiteral -> eatNumber(self)
+        else -> eatUnknown(self)
+      }
+      self.seek(eaten.end)
+      eaten
+    }
+  }
+
+  private fun eatMacroDecoration(self: Lexer): Token = {
+    // #[
+    val start = self.pos
+    var end = self.pos + 1 as u32
+
+    if (self.hasNext() && self.peek() == 0x5b) { // [
+      end = end + 1 as u32
+      Token(MacroDecoration, start, end)
+    } else {
+      Token(Unknown, start, end)
+    }
+  }
+
+  private fun eatSingleChar(self: Lexer, tokenType: TokenType): Token = {
+    val start = self.pos
+    var end = self.pos + 1 as u32
+    Token(tokenType, start, end)
+  }
+
+  private fun eatWhitespace(self: Lexer): Token = {
+    val start = self.pos
+    var end = self.pos
+    val len = self.source.length
+    loop {
+      if (end >= len) break
+
+      val char = self.source[end]
+
+      if (char != 0x20)
+      if (char != 0x9)
+        break
+
+      end = end + 1 as u32
+      continue
+    }
+    Token(Whitespace, start, end)
+  }
+
+  private fun eatOperator(self: Lexer): Token = {
+    val start = self.pos
+    var end = self.pos
+    val len = self.source.length
+    loop {
+      if (end >= len) break
+
+      val char = self.source[end]
+
+      if (char != 0x2e) // .
+      if (char != 0x21) // !
+      if (char != 0x7e) // ~
+      if (char != 0x5e) // ^
+      if (char != 0x25) // %
+      if (char != 0x26) // &
+      if (char != 0x7c) // |
+      if (char != 0x2f) // /
+      if (char != 0x2a) // *
+      if (char != 0x3c) // <
+      if (char != 0x3e) // >
+      if (char != 0x3d) // =
+      if (char != 0x2b) // +
+      if (char != 0x2d) // -
+      if (char != 0x3a) // :
+        break
+
+      end = end + 1 as u32
+      continue
+    }
+    Token(Operator, start, end)
+  }
+
+  private fun eatLineComment(self: Lexer): Token = {
+    val start = self.pos
+    var end = self.pos
+    val len = self.source.length
+
+    loop {
+      if (end >= len) break
+
+      val char = self.source[end]
+
+      end = end + 1 as u32
+
+      match char {
+        case 0xA -> break
+        case 0xD -> break
+        case 0x2028 -> break
+        case 0x2029 -> break
+        else -> continue
+      }
+    }
+    Token(LineComment, start, end)
+  }
+
+  private fun eatMultiLineComment(self: Lexer): Token = {
+    val start = self.pos
+    var end = self.pos
+    val len = self.source.length
+
+    loop {
+      if (end >= len) break
+
+      val char = self.source[end]
+
+      end = end + 1 as u32
+
+      if (char == 0x2A) { // '*'
+        if (end < len) {
+          val next = self.source[end]
+          if (next == 0x2F){ // '/'
+            end = end + 1 as u32
+            break
+          }
+        }
+      }
+
+      continue
+    }
+
+    Token(MultiLineComment, start, end)
+  }
+
+  private fun eatUnknown(self: Lexer): Token = {
+    val start = self.pos
+    var end = self.pos
+    val len = self.source.length
+    loop {
+      if (end >= len) break
+
+      val char = self.source[end] as u32
+
+      match self.tokenStart(char) {
+        case is Unknown -> {
+          end = end + 1 as u32
+          continue
+        }
+        else -> break
+      }
+    }
+    Token(Unknown, start, end)
+  }
+
+  private fun eatString(self: Lexer): Token = {
+    val start = self.pos
+    var end = self.pos
+    val len = self.source.length
+    loop {
+      if (end >= len) break
+
+      if (self.source[end] == 0x22 && start != end) {
+        end = end + 1 as u32
+        break
+      }
+
+      end = end + 1 as u32
+      continue
+    }
+    Token(StringLiteral, start, end)
+  }
+
+
+  private fun eatNumber(self: Lexer): Token = {
+    val start = self.pos
+    var end = self.pos
+    val len = self.source.length
+
+    val char = self.source[end]
+
+    if (char == 0x30) {
+      // starts with 0
+      end = end + 1 as u32
+
+      val next = self.source[end]
+
+      if (next == 0x78 || next == 0x58) {
+        // 'x' or 'X'
+        end = end + 1 as u32
+
+        loop {
+          if (end >= len) break
+          if (!isHex(self.source[end]))  break
+          end = end + 1 as u32
+          continue
+        }
+      } else if (next == 0x62 || next == 0x42) {
+        // 'b' or 'B'
+        end = end + 1 as u32
+
+        loop {
+          if (end >= len) break
+          val char = self.source[end]
+
+          if (char != 0x30) // 0
+          if (char != 0x31) // 1
+            break
+
+          end = end + 1 as u32
+          continue
+        }
+      } else if (next == 0x6f || next == 0x4f) {
+        // 'o' or 'O'
+        end = end + 1 as u32
+
+        loop {
+          if (end >= len) break
+          val char = self.source[end] as u32
+
+          if (char < 0x30 || char > 0x37) // 0-7
+            break
+
+          end = end + 1 as u32
+          continue
+        }
+      }
+    } else {
+      var hasExponent = false
+      var hasDecimalPoint = false
+
+      loop {
+        if (end >= len) break
+
+        val char = self.source[end]
+
+        if (!isNumber(char))  // \n
+        if (char != 0x2e || hasDecimalPoint)
+        if (char != 0x65 || hasExponent)
+        if (char != 0x45 || hasExponent)
+          break
+
+        if (char == 0x2e) {
+          hasDecimalPoint = true
+        }
+
+        if (char == 0x65 || char == 0x45) {
+          val char = self.source[end + 1 as u32]
+          if (char == 0x2b || char == 0x2d) {
+            // +-
+            end = end + 1 as u32
+          }
+          hasExponent = true
+          hasDecimalPoint = true
+        }
+
+        end = end + 1 as u32
+        continue
+      }
+    }
+
+    Token(NumberLiteral, start, end)
+  }
+
+
+  private fun eatNewLine(self: Lexer): Token = {
+    val start = self.pos
+    var end = self.pos
+    val len = self.source.length
+    loop {
+      if (end >= len) break
+
+      val char = self.source[end]
+
+      if (char != 0xA)  // \n
+      if (char != 0xD)  // \r
+      if (char != 0x2028)
+      if (char != 0x2029)
+      if (char != 0x3B) // ;
+        break
+
+      end = end + 1 as u32
+      continue
+    }
+    Token(NewLine, start, end)
+  }
+
+  private fun eatIdentifier(self: Lexer): Token = {
+    // '$'? [A-Za-z_]([A-Za-z0-9_$])*
+    val start = self.pos
+    var end = self.pos
+    val len = self.source.length
+
+    // TODO: Validate first char
+
+    loop { // [A-Za-z0-9_$]
+      if (end >= len) break
+
+      val char = self.source[end] as u32
+
+      if (char != 0x3f) // ?
+      if (char != 0x24) // $
+      if (char != 0x5F) // _
+      if (!isNumber(char))
+      if (!src::unicode::isUnicodeLeter(char))
+      if (!src::unicode::isUnicodeCombiningMark(char))
+      if (!src::unicode::isUnicodeDigit(char))
+      if (!src::unicode::isUnicodeConnectorPunctuation(char))
+        break
+
+      end = end + 1 as u32
+      continue
+    }
+    Token(Identifier, start, end)
+  }
+
+  fun isNumber(char: u32): boolean = {
+    char >= 0x0030 && char <= 0x0039
+  }
+
+  fun isHex(char: u32): boolean = {
+       char >= 0x0061 && char <= 0x0066
+    || char >= 0x0041 && char <= 0x0046
+    || char >= 0x0030 && char <= 0x0039
+  }
+}

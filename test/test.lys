@@ -1,11 +1,11 @@
 import support::env
 import support::test
-import src::main
+import src::lexer
 import src::tokens
 
 #[export]
 fun test(): void = {
-  START("Parser tests")
+  START("Lexer tests")
 
   case1()
   case2()
@@ -24,7 +24,7 @@ fun test(): void = {
 fun case1(): void = {
   START("case1")
 
-  val p = Parser("A  BCS C DEF ghi123  ???")
+  val p = Lexer("A  BCS C DEF ghi123  ???")
 
   validateToken(p, Identifier, "A")
   validateToken(p, Whitespace, "  ")
@@ -47,7 +47,7 @@ fun case1(): void = {
 fun parentheses(): void = {
   {
     START("Parentheses")
-    val p = Parser("asd( ))")
+    val p = Lexer("asd( ))")
 
     validateToken(p, Identifier, "asd")
     validateToken(p, ParenthesesOpen, "(")
@@ -61,7 +61,7 @@ fun parentheses(): void = {
 
   {
     START("Curly")
-    val p = Parser("asd({}}))")
+    val p = Lexer("asd({}}))")
 
     validateToken(p, Identifier, "asd")
     validateToken(p, ParenthesesOpen, "(")
@@ -79,7 +79,7 @@ fun parentheses(): void = {
 fun case2(): void = {
   START("Empty case")
 
-  val p = Parser("")
+  val p = Lexer("")
 
   validateToken(p, EndOfFile, "")
   validateToken(p, EndOfFile, "")
@@ -90,7 +90,7 @@ fun case2(): void = {
 fun case3(): void = {
   START("case3")
 
-  val p = Parser("a  AA,, αρετη")
+  val p = Lexer("a  AA,, αρετη")
 
   validateToken(p, Identifier, "a")
   validateToken(p, Whitespace, "  ")
@@ -107,7 +107,7 @@ fun case3(): void = {
 fun case4(): void = {
   START("case4")
 
-  val p = Parser("asd   AA a")
+  val p = Lexer("asd   AA a")
 
   validateToken(p, Identifier, "asd")
   validateToken(p, Whitespace, "   ")
@@ -122,7 +122,7 @@ fun case4(): void = {
 fun whitespaces(): void = {
   START("Whitespaces")
 
-  val p = Parser(" \n\r\t;")
+  val p = Lexer(" \n\r\t;")
 
   validateToken(p, Whitespace, " ")
   validateToken(p, NewLine, "\n\r")
@@ -138,51 +138,51 @@ fun numbers(): void = {
   START("Numbers")
 
   {
-    val p = Parser("1234 ")
+    val p = Lexer("1234 ")
     validateToken(p, NumberLiteral, "1234")
     validateToken(p, Whitespace, " ")
     validateToken(p, EndOfFile, "")
   }
 
   {
-    val p = Parser("1234.131231313123123 ")
+    val p = Lexer("1234.131231313123123 ")
     validateToken(p, NumberLiteral, "1234.131231313123123")
     validateToken(p, Whitespace, " ")
     validateToken(p, EndOfFile, "")
   }
   {
-    val p = Parser("1234.1E100 ")
+    val p = Lexer("1234.1E100 ")
     validateToken(p, NumberLiteral, "1234.1E100")
     validateToken(p, Whitespace, " ")
     validateToken(p, EndOfFile, "")
   }
   {
-    val p = Parser("1234.1e100 ")
+    val p = Lexer("1234.1e100 ")
     validateToken(p, NumberLiteral, "1234.1e100")
     validateToken(p, Whitespace, " ")
     validateToken(p, EndOfFile, "")
   }
   {
-    val p = Parser("1234.1e+100 ")
+    val p = Lexer("1234.1e+100 ")
     validateToken(p, NumberLiteral, "1234.1e+100")
     validateToken(p, Whitespace, " ")
     validateToken(p, EndOfFile, "")
   }
   {
-    val p = Parser("1234.1e-100 ")
+    val p = Lexer("1234.1e-100 ")
     validateToken(p, NumberLiteral, "1234.1e-100")
     validateToken(p, Whitespace, " ")
     validateToken(p, EndOfFile, "")
   }
   {
-    val p = Parser("1234.1e-100e1 ")
+    val p = Lexer("1234.1e-100e1 ")
     validateToken(p, NumberLiteral, "1234.1e-100")
     validateToken(p, Identifier, "e1")
     validateToken(p, Whitespace, " ")
     validateToken(p, EndOfFile, "")
   }
   {
-    val p = Parser("1234.1.123 ")
+    val p = Lexer("1234.1.123 ")
     validateToken(p, NumberLiteral, "1234.1")
     validateToken(p, Operator, ".")
     validateToken(p, NumberLiteral, "123")
@@ -190,14 +190,14 @@ fun numbers(): void = {
     validateToken(p, EndOfFile, "")
   }
   {
-    val p = Parser("0x0 ")
+    val p = Lexer("0x0 ")
     validateToken(p, NumberLiteral, "0x0")
     validateToken(p, Whitespace, " ")
     validateToken(p, EndOfFile, "")
   }
 
   {
-    val p = Parser("0xabcdef1234567890hijk ")
+    val p = Lexer("0xabcdef1234567890hijk ")
     validateToken(p, NumberLiteral, "0xabcdef1234567890")
     validateToken(p, Identifier, "hijk")
     validateToken(p, Whitespace, " ")
@@ -205,7 +205,7 @@ fun numbers(): void = {
   }
 
   {
-    val p = Parser("0Xabcdef1234567890hijk ")
+    val p = Lexer("0Xabcdef1234567890hijk ")
     validateToken(p, NumberLiteral, "0Xabcdef1234567890")
     validateToken(p, Identifier, "hijk")
     validateToken(p, Whitespace, " ")
@@ -213,14 +213,14 @@ fun numbers(): void = {
   }
 
   {
-    val p = Parser("0b10010100123 ")
+    val p = Lexer("0b10010100123 ")
     validateToken(p, NumberLiteral, "0b100101001")
     validateToken(p, NumberLiteral, "23")
     validateToken(p, Whitespace, " ")
     validateToken(p, EndOfFile, "")
   }
   {
-    val p = Parser("0B10010100123 ")
+    val p = Lexer("0B10010100123 ")
     validateToken(p, NumberLiteral, "0B100101001")
     validateToken(p, NumberLiteral, "23")
     validateToken(p, Whitespace, " ")
@@ -228,7 +228,7 @@ fun numbers(): void = {
   }
 
   {
-    val p = Parser("0o1234560789 ")
+    val p = Lexer("0o1234560789 ")
     validateToken(p, NumberLiteral, "0o12345607")
     validateToken(p, NumberLiteral, "89")
     validateToken(p, Whitespace, " ")
@@ -236,7 +236,7 @@ fun numbers(): void = {
   }
 
   {
-    val p = Parser("0O1234560789 ")
+    val p = Lexer("0O1234560789 ")
     validateToken(p, NumberLiteral, "0O12345607")
     validateToken(p, NumberLiteral, "89")
     validateToken(p, Whitespace, " ")
@@ -249,7 +249,7 @@ fun numbers(): void = {
 fun strings(): void = {
   {
     START("Strings")
-    val p = Parser(" \"asd\" \"\"  ")
+    val p = Lexer(" \"asd\" \"\"  ")
 
     validateToken(p, Whitespace, " ")
     validateToken(p, StringLiteral, "\"asd\"")
@@ -262,7 +262,7 @@ fun strings(): void = {
 
   {
     START("Strings with comment")
-    val p = Parser(" \"a/" ++ "/sd\" \"\"  ")
+    val p = Lexer(" \"a/" ++ "/sd\" \"\"  ")
 
     validateToken(p, Whitespace, " ")
     validateToken(p, StringLiteral, "\"a/" ++ "/sd\"")
@@ -278,7 +278,7 @@ fun strings(): void = {
 fun macroDecorations(): void = {
   START("Macro decoration")
 
-  val p = Parser("#[exp#ort][]")
+  val p = Lexer("#[exp#ort][]")
 
   validateToken(p, MacroDecoration, "#[")
   validateToken(p, Identifier, "exp")
@@ -295,7 +295,7 @@ fun macroDecorations(): void = {
 fun singleLineComment(): void = {
   START("Single line comment")
   {
-    val p = Parser("/"++"/ asd")
+    val p = Lexer("/"++"/ asd")
 
     validateToken(p, LineComment, "/"++"/ asd")
     validateToken(p, EndOfFile, "")
@@ -305,7 +305,7 @@ fun singleLineComment(): void = {
 
   START("Single line comment 2")
   {
-    val p = Parser("asd /" ++ "/ asd\n  asd")
+    val p = Lexer("asd /" ++ "/ asd\n  asd")
 
     validateToken(p, Identifier, "asd")
     validateToken(p, Whitespace, " ")
@@ -319,7 +319,7 @@ fun singleLineComment(): void = {
 
   START("Multi line comment")
   {
-    val p = Parser("asd /" ++ "* asd */\n  asd")
+    val p = Lexer("asd /" ++ "* asd */\n  asd")
 
     validateToken(p, Identifier, "asd")
     validateToken(p, Whitespace, " ")
@@ -333,7 +333,7 @@ fun singleLineComment(): void = {
   }
 }
 
-fun validateToken(p: Parser, expectedToken: TokenType, expectedValue: string): void = {
+fun validateToken(p: Lexer, expectedToken: TokenType, expectedValue: string): void = {
   match p.eat() {
     case is Token(tokenType, start, end) -> {
       val given = TokenType.toString(tokenType)
