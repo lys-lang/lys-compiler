@@ -169,6 +169,21 @@ fun singleLineComment(): void = {
 
     END()
   }
+
+  START("Multi line comment")
+  {
+    val p = Parser("asd /" ++ "* asd */\n  asd")
+
+    validateToken(p, Identifier, "asd")
+    validateToken(p, Whitespace, " ")
+    validateToken(p, MultiLineComment, "/" ++ "* asd */")
+    validateToken(p, NewLine, "\n")
+    validateToken(p, Whitespace, "  ")
+    validateToken(p, Identifier, "asd")
+    validateToken(p, EndOfFile, "")
+
+    END()
+  }
 }
 
 fun validateToken(p: Parser, expectedToken: TokenType, expectedValue: string): void = {
