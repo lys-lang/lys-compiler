@@ -24,14 +24,14 @@ fun eat(): string = match instance {
     val tok = p.eat()
     match tok.tokenType {
       case is EndOfFile -> "EndOfFile"
-      else -> TokenType.toString(tok.tokenType) ++ "(" ++ p.source.substring(tok.start as i32, tok.end as i32) ++ ")"
+      else -> tok.tokenType.toString() ++ "(" ++ p.source.substring(tok.start as i32, tok.end as i32) ++ ")"
     }
   }
   else -> "ParserNotInitialized"
 }
 
 impl Parser {
-  // Overload
+  // Overload constructor
   fun apply(str: string): Parser = {
     Parser(str, 0 as u32)
   }
@@ -56,16 +56,31 @@ impl Parser {
     self.source[self.pos] as u32
   }
 
-  fun tokenStart(char: u32): TokenType = match char {
+  #[method]
+  fun tokenStart(self: Parser, char: u32): TokenType = match char {
+    case 0x09 -> Whitespace        // \t
+    case 0x0A -> NewLine           // \n
+    case 0x0D -> NewLine           // \r
     case 0x20 -> Whitespace        // space
-    case 0x9  -> Whitespace        // \t
-    case 0xA  -> NewLine           // \n
-    case 0xD  -> NewLine           // \r
+    case 0x22 -> StringLiteral     // "
+    case 0x23 -> MacroDecoration   // #[
+    case 0x24 -> Identifier        // $
     case 0x28 -> ParenthesesOpen   // (
     case 0x29 -> ParenthesesClose  // )
-    case 0x22 -> StringLiteral     // "
-    case 0x24 -> Identifier        // $       '$'? [A-Za-z_]([A-Za-z0-9_$])*
-    case 0x5F -> Identifier        // _       '$'? [A-Za-z_]([A-Za-z0-9_$])*
+    case 0x2A -> Unknown // Operator          // *
+    case 0x2F -> // '/'
+      if (!self.hasNext())
+        Unknown //Operator
+      else match self.peek() {
+        case 0x2A -> Unknown // MultiLineComment
+        case 0x2F -> LineComment
+        else -> Unknown // Operator
+      }
+    case 0x5b -> VectorOpen        // [
+    case 0x5d -> VectorClose       // ]
+    case 0x5F -> Identifier        // _
+    case 0x5F -> Identifier        // _
+    case 0x5F -> Identifier        // _
     else -> {
       if (char >= 0x41 /* A */ && char <= 0x5A /* Z */) {
         Identifier
@@ -82,17 +97,34 @@ impl Parser {
     if (self.pos == self.source.length) {
       Token(EndOfFile, self.source.length, self.source.length)
     } else {
-      val eaten = match tokenStart(self.head()) {
+      val eaten = match self.tokenStart(self.head()) {
         case is Whitespace -> eatWhitespace(self)
         case is NewLine -> eatNewLine(self)
         case is StringLiteral -> eatString(self)
         case is Identifier -> eatIdentifier(self)
+        case is MacroDecoration -> eatMacroDecoration(self)
         case is ParenthesesOpen -> eatSingleChar(self, ParenthesesOpen)
         case is ParenthesesClose -> eatSingleChar(self, ParenthesesClose)
+        case is VectorOpen -> eatSingleChar(self, VectorOpen)
+        case is VectorClose -> eatSingleChar(self, VectorClose)
+        case is LineComment -> eatLineComment(self)
         else -> eatUnknown(self)
       }
       self.seek(eaten.end)
       eaten
+    }
+  }
+
+  private fun eatMacroDecoration(self: Parser): Token = {
+    // #[
+    val start = self.pos
+    var end = self.pos + 1 as u32
+
+    if (self.hasNext() && self.peek() == 0x5b) { // [
+      end = end + 1 as u32
+      Token(MacroDecoration, start, end)
+    } else {
+      Token(Unknown, start, end)
     }
   }
 
@@ -107,8 +139,7 @@ impl Parser {
     var end = self.pos
     val len = self.source.length
     loop {
-      if (end >= len)
-        break
+      if (end >= len) break
 
       val char = self.source[end]
 
@@ -122,17 +153,37 @@ impl Parser {
     Token(Whitespace, start, end)
   }
 
+  private fun eatLineComment(self: Parser): Token = {
+    val start = self.pos
+    var end = self.pos
+    val len = self.source.length
+
+    loop {
+      if (end >= len) break
+
+      val char = self.source[end]
+
+      end = end + 1 as u32
+
+      match char {
+        case 0xA -> break
+        case 0xD -> break
+        else -> continue
+      }
+    }
+    Token(LineComment, start, end)
+  }
+
   private fun eatUnknown(self: Parser): Token = {
     val start = self.pos
     var end = self.pos
     val len = self.source.length
     loop {
-      if (end >= len)
-        break
+      if (end >= len) break
 
       val char = self.source[end] as u32
 
-      match tokenStart(char) {
+      match self.tokenStart(char) {
         case is Unknown -> {
           end = end + 1 as u32
           continue
@@ -148,12 +199,9 @@ impl Parser {
     var end = self.pos
     val len = self.source.length
     loop {
-      if (end >= len)
-        break
+      if (end >= len) break
 
-      val char = self.source[end]
-
-      if (char == 0x22 && start != end) {
+      if (self.source[end] == 0x22 && start != end) {
         end = end + 1 as u32
         break
       }
@@ -169,8 +217,7 @@ impl Parser {
     var end = self.pos
     val len = self.source.length
     loop {
-      if (end >= len)
-        break
+      if (end >= len) break
 
       val char = self.source[end]
 
@@ -185,6 +232,7 @@ impl Parser {
   }
 
   private fun eatIdentifier(self: Parser): Token = {
+    // '$'? [A-Za-z_]([A-Za-z0-9_$])*
     val start = self.pos
     var end = self.pos
     val len = self.source.length
@@ -192,8 +240,7 @@ impl Parser {
     // TODO: Validate first char
 
     loop { // [A-Za-z0-9_$]
-      if (end >= len)
-        break
+      if (end >= len) break
 
       val char = self.source[end] as u32
 

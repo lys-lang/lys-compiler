@@ -5,13 +5,21 @@ enum TokenType {
   NewLine
   Whitespace
   StringLiteral
+  NumberLiteral
   ParenthesesOpen
   ParenthesesClose
+  MacroDecoration
+  VectorOpen
+  VectorClose
+  Operator
+  LineComment
+  MultiLineComment
 }
 
 struct Token(tokenType: TokenType, start: u32, end: u32)
 
 impl TokenType {
+  #[method]
   fun toString(self: TokenType): string = match self {
     case is EndOfFile -> "EndOfFile"
     case is Identifier -> "Identifier"
@@ -19,7 +27,14 @@ impl TokenType {
     case is NewLine -> "NewLine"
     case is Whitespace -> "Whitespace"
     case is StringLiteral -> "StringLiteral"
+    case is NumberLiteral -> "NumberLiteral"
+    case is LineComment -> "LineComment"
+    case is MultiLineComment -> "MultiLineComment"
     case is ParenthesesOpen -> "ParenthesesOpen"
     case is ParenthesesClose -> "ParenthesesClose"
+    case is MacroDecoration -> "MacroDecoration"
+    case is VectorOpen -> "VectorOpen"
+    case is VectorClose -> "VectorClose"
+    case is Operator -> "Operator"
   }
 }

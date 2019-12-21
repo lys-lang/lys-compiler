@@ -14,6 +14,8 @@ fun test(): void = {
   whitespaces()
   strings()
   parentheses()
+  macroDecorations()
+  singleLineComment()
 
   END()
 }
@@ -123,6 +125,50 @@ fun strings(): void = {
   validateToken(p, EndOfFile, "")
 
   END()
+}
+
+
+fun macroDecorations(): void = {
+  START("Macro decoration")
+
+  val p = Parser("#[exp#ort][]")
+
+  validateToken(p, MacroDecoration, "#[")
+  validateToken(p, Identifier, "exp")
+  validateToken(p, Unknown, "#")
+  validateToken(p, Identifier, "ort")
+  validateToken(p, VectorClose, "]")
+  validateToken(p, VectorOpen, "[")
+  validateToken(p, VectorClose, "]")
+  validateToken(p, EndOfFile, "")
+
+  END()
+}
+
+fun singleLineComment(): void = {
+  START("Single line comment")
+  {
+    val p = Parser("/"++"/ asd")
+
+    validateToken(p, LineComment, "/"++"/ asd")
+    validateToken(p, EndOfFile, "")
+
+    END()
+  }
+
+  START("Single line comment 2")
+  {
+    val p = Parser("asd /" ++ "/ asd\n  asd")
+
+    validateToken(p, Identifier, "asd")
+    validateToken(p, Whitespace, " ")
+    validateToken(p, LineComment, "/" ++ "/ asd\n")
+    validateToken(p, Whitespace, "  ")
+    validateToken(p, Identifier, "asd")
+    validateToken(p, EndOfFile, "")
+
+    END()
+  }
 }
 
 fun validateToken(p: Parser, expectedToken: TokenType, expectedValue: string): void = {
