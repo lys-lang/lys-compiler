@@ -1,0 +1,106 @@
+import system::core::native
+import system::core::u8
+import system::core::u32
+import system::core::u64
+import system::core::i32
+import system::core::i64
+import system::core::bytes
+import system::core::boolean
+import system::core::string
+import system::core::math
+
+/** Number of alignment bits. */
+val AL_BITS = 4
+
+/** Number of possible alignment values. */
+val AL_SIZE: u32 = 0x1 << AL_BITS
+
+/** Mask to obtain just the alignment bits. */
+val AL_MASK: u32 = AL_SIZE - 0x1
+
+/** Maximum 32-bit allocation size. */
+val MAX_SIZE_32: u32 = 0x1 << 0x1E // 1G
+
+val HEAP_BASE: u32 = (0x40 * 0x400) // TODO: this must be dynamic
+
+private var startOffset: u32 = (HEAP_BASE + AL_MASK) & ~AL_MASK
+private var offset: u32 = startOffset
+
+#[extern "env" "segfault"]
+fun segfault(): void = ???
+
+#[export "test_getMaxMemory"]
+fun getMaxMemory(): u32 = offset
+
+private fun growMemory(pages: u32): u32 = %wasm {
+  (memory.grow (get_local $pages))
+}
+
+private fun currentMemory(): u32 = %wasm {
+  (memory.size)
+}
+
+fun calloc(itemCount: u32, itemSize: u32): u32 = {
+  val size = itemCount * itemSize
+  val $ret = malloc(size)
+  memset($ret, 0 as u8, size)
+  $ret
+}
+
+fun malloc(size: u32): u32 = {
+  if (size == 0 as u32)
+    panic()
+
+  if (size > MAX_SIZE_32)
+    panic()
+
+  val ptr = offset
+  val newPtr = (ptr + 16 as u32 + max(size, 16 as u32) + AL_MASK) & ~AL_MASK
+  val pagesBefore = currentMemory()
+  if (newPtr > pagesBefore << 16) {
+    val pagesNeeded = ((newPtr - ptr + 0xffff) & ~0xffff) >> 16
+    val pagesWanted = max(pagesBefore, pagesNeeded) // double memory
+    if (growMemory(pagesWanted) < 0 as u32) {
+      if (growMemory(pagesNeeded) < 0 as u32) {
+        panic() // out of memory
+      }
+    }
+  }
+  offset = newPtr
+  ptr + 16 as u32
+}
+
+fun free(ptr: i32): void = {
+  // stub
+}
+
+fun memcpy(dst: u32, src: u32, length: u32): u32 = {
+  var i: u32 = 0 as u32
+
+  val SRC = src as ref
+  val DST = dst as ref
+
+  loop {
+    if (i >= length) {
+      break
+    }
+    u8.store(DST, u8.load(SRC, i), i)
+    i = i + 1 as u32
+    continue
+  }
+
+  dst + length
+}
+
+fun memset(ptr: u32, content: u8, len: u32): void = %wasm {
+  (local $end i32)
+  (set_local $end (i32.add (get_local $ptr) (get_local $len)))
+  (block $exit
+    (loop $cont
+      (br_if $exit (i32.eq (get_local $ptr) (get_local $end)))
+      (i32.store8 (get_local $ptr) (i32.load8_u (get_local $content)))
+      (set_local $ptr (i32.add (get_local $ptr) (i32.const 1)))
+      (br $cont)
+    )
+  )
+}

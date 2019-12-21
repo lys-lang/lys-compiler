@@ -43,7 +43,7 @@ export function folderBasedTest(grep: string) {
     });
   }
 
-  describe("File based tests", () => {
+  describe("File based tests: " + grep, () => {
     glob.sync(grep).map(testFile);
   });
 

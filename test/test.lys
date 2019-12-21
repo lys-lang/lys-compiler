@@ -13,6 +13,7 @@ fun test(): void = {
   case4()
   whitespaces()
   strings()
+  parentheses()
 
   END()
 }
@@ -33,6 +34,23 @@ fun case1(): void = {
   validateToken(p, Identifier, "ghi123")
   validateToken(p, Whitespace, "  ")
   validateToken(p, EndOfFile, "")
+  validateToken(p, EndOfFile, "")
+
+  END()
+}
+
+
+fun parentheses(): void = {
+  START("Parentheses")
+
+  val p = Parser("asd( ))")
+
+  validateToken(p, Identifier, "asd")
+  validateToken(p, ParenthesesOpen, "(")
+  validateToken(p, Whitespace, " ")
+  validateToken(p, ParenthesesClose, ")")
+  validateToken(p, ParenthesesClose, ")")
+
   validateToken(p, EndOfFile, "")
 
   END()

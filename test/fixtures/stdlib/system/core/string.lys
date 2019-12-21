@@ -1,0 +1,328 @@
+import system::core::boolean
+import system::core::bytes
+import system::core::f32
+import system::core::f64
+import system::core::i16
+import system::core::i32
+import system::core::i64
+import system::core::native
+import system::core::u16
+import system::core::u32
+import system::core::u64
+import system::core::u8
+import system::core::math
+
+
+type string = %stack { lowLevelType="i64" byteSize=8 }
+
+impl string {
+  /**
+   * Returns the string length in UCS chars.
+   */
+  #[inline]
+  #[getter]
+  fun length(self: string): u32 =
+    u32.load(self as ref) / 2 as u32
+
+  /**
+   * Returns the pointer of the string's content.
+   */
+  #[inline]
+  #[getter]
+  fun ptr(self: string): u32 = %wasm {
+    (i32.add
+      (i32.const 4)
+      (call $addressFromRef (get_local $self))
+    )
+  }
+
+  /**
+   * Strings behave like objects.
+   * Can be explicitly converted to references.
+   */
+  #[explicit]
+  fun as(self: string): ref = %wasm { (get_local $self) }
+
+  /**
+   * CPointer implicit coercion.
+   */
+  fun as(self: string): UnsafeCPointer = %wasm {
+    (i32.add
+      (i32.const 4)
+      (call $addressFromRef (get_local $self))
+    )
+  }
+
+  /**
+   * Unlike numbers, strings are concatenated, not added.
+   * We use a different operator to do it.
+   */
+  fun ++(lhs: string, rhs: string): string =
+    string.concat(lhs, rhs)
+
+  /**
+   * Index getter, it returns a char (u16)
+   */
+  fun [](self: string, at: u32): u16 = {
+    if (at > self.length) {
+      panic()
+    }
+    if (at < 0 as u32) {
+      panic()
+    }
+    u16.load(self.ptr as ref, at << 1)
+  }
+
+  #[inline]
+  private fun getDiscriminant(): u64 = {
+    val discriminant: u32 = string.^discriminant
+    discriminant as u64 << 32
+  }
+
+  fun fromBytes(bytes: bytes): string = %wasm {
+    // TODO: verify correctness of length and size header
+    (i64.or
+      (call $getDiscriminant)
+      (i64.and
+        (i64.const 0xFFFFFFFF)
+        (local.get $bytes)
+      )
+    )
+  }
+
+  #[method]
+  fun substring(self: string, start: i32, end: i32): string = {
+    val len = self.length as i32
+    val finalStart = min(max(start, 0), len)
+    val finalEnd = min(max(end, 0), len)
+    val fromPos = min(finalStart, finalEnd) << 1
+    val toPos = max(finalStart, finalEnd) << 1
+    val size = toPos - fromPos
+    if (size <= 0) {
+      ""
+    } else if (fromPos == 0 && toPos >= len << 1) {
+      self
+    } else {
+      val out = bytes(size as u32)
+      system::core::memory::memcpy(out.ptr, self.ptr + fromPos as u32, size as u32)
+      string.fromBytes(out)
+    }
+  }
+
+  #[method]
+  fun substring(self: string, start: i32): string = {
+    self.substring(start, 0x7FFFFFFF as i32)
+  }
+}
+
+// UTILS
+impl string {
+  fun concat(lhs: string, rhs: string): string = {
+    val lhsLen = lhs.length * 2 as u32
+    val rhsLen = rhs.length * 2 as u32
+
+    val $ret = bytes(lhsLen + rhsLen)
+
+    system::core::memory::memcpy(
+      system::core::memory::memcpy(
+        $ret.ptr,
+        lhs.ptr,
+        lhsLen
+      ),
+      rhs.ptr,
+      rhsLen
+    )
+
+    string.fromBytes($ret)
+  }
+
+  fun store(lhs: ref, rhs: string): void = %wasm {
+    (i64.store (call $addressFromRef (get_local $lhs)) (get_local $rhs))
+  }
+
+  fun store(lhs: ref, rhs: string, offset: u32): void = %wasm {
+    (i64.store
+      (i32.add
+        (get_local $offset)
+        (call $addressFromRef (get_local $lhs))
+      )
+      (get_local $rhs)
+    )
+  }
+
+  fun load(lhs: ref): string = %wasm {
+    (i64.load (call $addressFromRef (get_local $lhs)))
+  }
+
+  fun load(lhs: ref, offset: u32): string = %wasm {
+    (i64.load
+      (i32.add
+        (get_local $offset)
+        (call $addressFromRef (get_local $lhs))
+      )
+    )
+  }
+
+  fun !=(lhs: string, rhs: string): boolean = !(lhs == rhs)
+  fun ==(lhs: string, rhs: string): boolean = {
+    if (lhs.length == rhs.length) {
+      if (lhs.ptr == rhs.ptr) {
+        true
+      } else {
+        var len = lhs.length
+        var equals = true
+        loop {
+          if (len <= 0 as u32) break
+          len = len - 1 as u32
+          if (lhs[len] != rhs[len]) {
+            equals = false
+            break
+          }
+          if (len > 0 as u32) continue
+        }
+        equals
+      }
+    } else {
+      false
+    }
+  }
+}
+
+// Aux functions
+impl string {
+  fun charLength(value: i64): u32 = {
+    if (value == 0 as i64) {
+      1 as u32
+    } else {
+      var len = 0 // Math.log10(value)
+      val i64_10 = 10 as i64
+      var current = value
+
+      if (value < 0 as i64) {
+        len = len + 1
+        current = -current
+      }
+
+      loop {
+        current = current / i64_10
+        len = len + 1
+
+        if (current > 0 as i64) {
+          continue
+        } else {
+          break
+        }
+      }
+
+      len as u32
+    }
+  }
+
+  fun charLength(value: u64): u32 = {
+    if (value == 0 as u64) {
+      1 as u32
+    } else {
+      var len = 0 // Math.log10(value)
+      val u64_10 = 10 as u64
+      var current = value
+
+      loop {
+        current = current / u64_10
+        len = len + 1
+
+        if (current > 0 as u64) {
+          continue
+        } else {
+          break
+        }
+      }
+
+      len as u32
+    }
+  }
+
+  fun printToBytes(dst: bytes, value: u64, endChar: u32): void = {
+    val ZERO_CHAR = 48 as u16
+    var num = value
+    var offset = endChar as i32
+    val u64_10 = 10 as u64
+
+    loop {
+      val t = num / u64_10
+      val r = (num % u64_10) as u16
+      num = t
+      offset = offset - 1
+      bytes.set(dst, (offset << 1) as u32, ZERO_CHAR + r)
+
+      if (num == 0 as u64) {
+        break
+      } else {
+        continue
+      }
+    }
+  }
+
+  fun stringify(value: boolean): string = {
+    if (value) {
+      "true"
+    } else {
+      "false"
+    }
+  }
+
+  fun stringify(value: u8): string = {
+    stringify(value as u64)
+  }
+
+  fun stringify(value: u16): string = {
+    stringify(value as u64)
+  }
+
+  fun stringify(value: i16): string = {
+    stringify(value as i64)
+  }
+
+  fun stringify(value: i32): string = {
+    stringify(value as i64)
+  }
+
+  fun stringify(value: u32): string = {
+    stringify(value as u64)
+  }
+
+  fun stringify(value: i64): string = {
+    if (value == 0) {
+      "0"
+    } else {
+      var len = charLength(value)
+
+      val ret = bytes(len << 1)
+
+      if (value > 0)
+        printToBytes(ret, value as u64, len)
+      else
+        printToBytes(ret, (-value) as u64, len)
+
+      if (value < 0) {
+        // 45 == '-'
+        u16.store(ret.ptr as ref, 45 as u16, 0 as u32)
+      }
+
+      string.fromBytes(ret)
+    }
+  }
+
+  fun stringify(value: u64): string = {
+    if (value == 0 as u64) {
+      "0"
+    } else {
+      var len = charLength(value)
+
+      val ret = bytes(len << 1)
+
+      printToBytes(ret, value, len)
+
+      string.fromBytes(ret)
+    }
+  }
+}

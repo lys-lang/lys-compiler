@@ -5,6 +5,8 @@ enum TokenType {
   NewLine
   Whitespace
   StringLiteral
+  ParenthesesOpen
+  ParenthesesClose
 }
 
 struct Token(tokenType: TokenType, start: u32, end: u32)
@@ -17,5 +19,7 @@ impl TokenType {
     case is NewLine -> "NewLine"
     case is Whitespace -> "Whitespace"
     case is StringLiteral -> "StringLiteral"
+    case is ParenthesesOpen -> "ParenthesesOpen"
+    case is ParenthesesClose -> "ParenthesesClose"
   }
 }
