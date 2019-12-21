@@ -23,7 +23,7 @@ fun test(): void = {
 fun case1(): void = {
   START("case1")
 
-  val p = Parser("A  BCS C DEF ghi123  ")
+  val p = Parser("A  BCS C DEF ghi123  ???")
 
   validateToken(p, Identifier, "A")
   validateToken(p, Whitespace, "  ")
@@ -35,6 +35,7 @@ fun case1(): void = {
   validateToken(p, Whitespace, " ")
   validateToken(p, Identifier, "ghi123")
   validateToken(p, Whitespace, "  ")
+  validateToken(p, Identifier, "???")
   validateToken(p, EndOfFile, "")
   validateToken(p, EndOfFile, "")
 
@@ -88,13 +89,15 @@ fun case2(): void = {
 fun case3(): void = {
   START("case3")
 
-  val p = Parser("a  AA asd")
+  val p = Parser("a  AA,, αρετη")
 
   validateToken(p, Identifier, "a")
   validateToken(p, Whitespace, "  ")
   validateToken(p, Identifier, "AA")
+  validateToken(p, Comma, ",")
+  validateToken(p, Comma, ",")
   validateToken(p, Whitespace, " ")
-  validateToken(p, Identifier, "asd")
+  validateToken(p, Identifier, "αρετη")
   validateToken(p, EndOfFile, "")
 
   END()
@@ -118,11 +121,12 @@ fun case4(): void = {
 fun whitespaces(): void = {
   START("Whitespaces")
 
-  val p = Parser(" \n\r\t")
+  val p = Parser(" \n\r\t;")
 
   validateToken(p, Whitespace, " ")
   validateToken(p, NewLine, "\n\r")
   validateToken(p, Whitespace, "\t")
+  validateToken(p, NewLine, ";")
   validateToken(p, EndOfFile, "")
 
   END()

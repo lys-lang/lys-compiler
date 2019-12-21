@@ -16,6 +16,7 @@ enum TokenType {
   MultiLineComment
   CurlyBracesOpen
   CurlyBracesClose
+  Comma
 }
 
 struct Token(tokenType: TokenType, start: u32, end: u32)
@@ -40,5 +41,6 @@ impl TokenType {
     case is Operator -> "Operator"
     case is CurlyBracesOpen -> "CurlyBracesOpen"
     case is CurlyBracesClose -> "CurlyBracesClose"
+    case is Comma -> "Comma"
   }
 }

@@ -62,35 +62,46 @@ impl Parser {
     case 0x0A -> NewLine           // \n
     case 0x0D -> NewLine           // \r
     case 0x20 -> Whitespace        // space
+    case 0x21 -> Operator          // !
     case 0x22 -> StringLiteral     // "
     case 0x23 -> MacroDecoration   // #[
     case 0x24 -> Identifier        // $
+    case 0x25 -> Operator          // % TODO: %wasm
+    case 0x26 -> Operator          // &
     case 0x28 -> ParenthesesOpen   // (
     case 0x29 -> ParenthesesClose  // )
-    case 0x7b -> CurlyBracesOpen       // {
-    case 0x7d -> CurlyBracesClose      // }
-    case 0x2A -> Unknown // Operator          // *
-    case 0x2F -> // '/'
+    case 0x2A -> Operator          // *
+    case 0x2B -> Operator          // +
+    case 0x2C -> Comma             // ,
+    case 0x2D -> Operator          // -
+    case 0x2E -> Operator          // .
+    case 0x2F ->                   // '/'
       if (!self.hasNext())
-        Unknown //Operator
+        Operator
       else match self.peek() {
         case 0x2A -> MultiLineComment
         case 0x2F -> LineComment
-        else -> Unknown // Operator
+        else -> Operator
       }
+    case 0x3A -> Operator          // :
+    case 0x3B -> NewLine           // ;
+    case 0x3C -> Operator          // <
+    case 0x3D -> Operator          // =
+    case 0x3E -> Operator          // >
+    case 0x3F -> Identifier        // ?
     case 0x5b -> VectorOpen        // [
+    case 0x5E -> Operator          // ^
     case 0x5d -> VectorClose       // ]
     case 0x5F -> Identifier        // _
-    case 0x5F -> Identifier        // _
-    case 0x5F -> Identifier        // _
+    case 0x7b -> CurlyBracesOpen   // {
+    case 0x7C -> Operator          // |
+    case 0x7E -> Operator          // ~
+    case 0x7d -> CurlyBracesClose  // }
     else -> {
-      if (char >= 0x41 /* A */ && char <= 0x5A /* Z */) {
+      if (src::unicode::isUnicodeLeter(char))
         Identifier
-      } else if (char >= 0x61 /* a */ && char <= 0x7a /* z */) {
-        Identifier
-      } else {
+      else
         Unknown
-      }
     }
   }
 
@@ -109,10 +120,12 @@ impl Parser {
         case is ParenthesesClose -> eatSingleChar(self, ParenthesesClose)
         case is CurlyBracesOpen -> eatSingleChar(self, CurlyBracesOpen)
         case is CurlyBracesClose -> eatSingleChar(self, CurlyBracesClose)
+        case is Comma -> eatSingleChar(self, Comma)
         case is VectorOpen -> eatSingleChar(self, VectorOpen)
         case is VectorClose -> eatSingleChar(self, VectorClose)
         case is LineComment -> eatLineComment(self)
         case is MultiLineComment -> eatMultiLineComment(self)
+        case is Operator -> eatOperator(self)
         else -> eatUnknown(self)
       }
       self.seek(eaten.end)
@@ -158,6 +171,38 @@ impl Parser {
     Token(Whitespace, start, end)
   }
 
+  private fun eatOperator(self: Parser): Token = {
+    val start = self.pos
+    var end = self.pos
+    val len = self.source.length
+    loop {
+      if (end >= len) break
+
+      val char = self.source[end]
+
+      if (char != 0x2e) // .
+      if (char != 0x21) // !
+      if (char != 0x7e) // ~
+      if (char != 0x5e) // ^
+      if (char != 0x25) // %
+      if (char != 0x26) // &
+      if (char != 0x7c) // |
+      if (char != 0x2f) // /
+      if (char != 0x2a) // *
+      if (char != 0x3c) // <
+      if (char != 0x3e) // >
+      if (char != 0x3d) // =
+      if (char != 0x2b) // +
+      if (char != 0x2d) // -
+      if (char != 0x3a) // :
+        break
+
+      end = end + 1 as u32
+      continue
+    }
+    Token(Operator, start, end)
+  }
+
   private fun eatLineComment(self: Parser): Token = {
     val start = self.pos
     var end = self.pos
@@ -173,6 +218,8 @@ impl Parser {
       match char {
         case 0xA -> break
         case 0xD -> break
+        case 0x2028 -> break
+        case 0x2029 -> break
         else -> continue
       }
     }
@@ -254,8 +301,11 @@ impl Parser {
 
       val char = self.source[end]
 
-      if (char != 0xA)
-      if (char != 0xD)
+      if (char != 0xA)  // \n
+      if (char != 0xD)  // \r
+      if (char != 0x2028)
+      if (char != 0x2029)
+      if (char != 0x3B) // ;
         break
 
       end = end + 1 as u32
@@ -277,11 +327,13 @@ impl Parser {
 
       val char = self.source[end] as u32
 
+      if (char != 0x3f) // ?
       if (char != 0x24) // $
       if (char != 0x5F) // _
-      if (char < 0x41 || char > 0x5A) // A-Z
-      if (char < 0x61 || char > 0x7a) // a-z
-      if (char < 0x30 || char > 0x39) // 0-9
+      if (!src::unicode::isUnicodeLeter(char))
+      if (!src::unicode::isUnicodeCombiningMark(char))
+      if (!src::unicode::isUnicodeDigit(char))
+      if (!src::unicode::isUnicodeConnectorPunctuation(char))
         break
 
       end = end + 1 as u32
