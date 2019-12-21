@@ -65,7 +65,6 @@ export function folderBasedTest(grep: string) {
         if (writeToFile || !compareFileExists) {
           writeFileSync(compareToFileName, result);
         }
-        expect(compareTo.trim().length > 0 || !compareFileExists).toEqual(true);
         expect(result.trim()).toEqual(compareTo.trim());
       }
     });
