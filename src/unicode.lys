@@ -396,6 +396,7 @@ fun isUnicodeDigit(char: u32): boolean = {
     valid = false
   valid
 }
+
 fun isUnicodeConnectorPunctuation(char: u32): boolean = {
   var valid = true
   if (char != 0x005F)

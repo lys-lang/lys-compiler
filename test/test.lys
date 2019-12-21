@@ -16,6 +16,7 @@ fun test(): void = {
   parentheses()
   macroDecorations()
   singleLineComment()
+  numbers()
 
   END()
 }
@@ -128,6 +129,119 @@ fun whitespaces(): void = {
   validateToken(p, Whitespace, "\t")
   validateToken(p, NewLine, ";")
   validateToken(p, EndOfFile, "")
+
+  END()
+}
+
+
+fun numbers(): void = {
+  START("Numbers")
+
+  {
+    val p = Parser("1234 ")
+    validateToken(p, NumberLiteral, "1234")
+    validateToken(p, Whitespace, " ")
+    validateToken(p, EndOfFile, "")
+  }
+
+  {
+    val p = Parser("1234.131231313123123 ")
+    validateToken(p, NumberLiteral, "1234.131231313123123")
+    validateToken(p, Whitespace, " ")
+    validateToken(p, EndOfFile, "")
+  }
+  {
+    val p = Parser("1234.1E100 ")
+    validateToken(p, NumberLiteral, "1234.1E100")
+    validateToken(p, Whitespace, " ")
+    validateToken(p, EndOfFile, "")
+  }
+  {
+    val p = Parser("1234.1e100 ")
+    validateToken(p, NumberLiteral, "1234.1e100")
+    validateToken(p, Whitespace, " ")
+    validateToken(p, EndOfFile, "")
+  }
+  {
+    val p = Parser("1234.1e+100 ")
+    validateToken(p, NumberLiteral, "1234.1e+100")
+    validateToken(p, Whitespace, " ")
+    validateToken(p, EndOfFile, "")
+  }
+  {
+    val p = Parser("1234.1e-100 ")
+    validateToken(p, NumberLiteral, "1234.1e-100")
+    validateToken(p, Whitespace, " ")
+    validateToken(p, EndOfFile, "")
+  }
+  {
+    val p = Parser("1234.1e-100e1 ")
+    validateToken(p, NumberLiteral, "1234.1e-100")
+    validateToken(p, Identifier, "e1")
+    validateToken(p, Whitespace, " ")
+    validateToken(p, EndOfFile, "")
+  }
+  {
+    val p = Parser("1234.1.123 ")
+    validateToken(p, NumberLiteral, "1234.1")
+    validateToken(p, Operator, ".")
+    validateToken(p, NumberLiteral, "123")
+    validateToken(p, Whitespace, " ")
+    validateToken(p, EndOfFile, "")
+  }
+  {
+    val p = Parser("0x0 ")
+    validateToken(p, NumberLiteral, "0x0")
+    validateToken(p, Whitespace, " ")
+    validateToken(p, EndOfFile, "")
+  }
+
+  {
+    val p = Parser("0xabcdef1234567890hijk ")
+    validateToken(p, NumberLiteral, "0xabcdef1234567890")
+    validateToken(p, Identifier, "hijk")
+    validateToken(p, Whitespace, " ")
+    validateToken(p, EndOfFile, "")
+  }
+
+  {
+    val p = Parser("0Xabcdef1234567890hijk ")
+    validateToken(p, NumberLiteral, "0Xabcdef1234567890")
+    validateToken(p, Identifier, "hijk")
+    validateToken(p, Whitespace, " ")
+    validateToken(p, EndOfFile, "")
+  }
+
+  {
+    val p = Parser("0b10010100123 ")
+    validateToken(p, NumberLiteral, "0b100101001")
+    validateToken(p, NumberLiteral, "23")
+    validateToken(p, Whitespace, " ")
+    validateToken(p, EndOfFile, "")
+  }
+  {
+    val p = Parser("0B10010100123 ")
+    validateToken(p, NumberLiteral, "0B100101001")
+    validateToken(p, NumberLiteral, "23")
+    validateToken(p, Whitespace, " ")
+    validateToken(p, EndOfFile, "")
+  }
+
+  {
+    val p = Parser("0o1234560789 ")
+    validateToken(p, NumberLiteral, "0o12345607")
+    validateToken(p, NumberLiteral, "89")
+    validateToken(p, Whitespace, " ")
+    validateToken(p, EndOfFile, "")
+  }
+
+  {
+    val p = Parser("0O1234560789 ")
+    validateToken(p, NumberLiteral, "0O12345607")
+    validateToken(p, NumberLiteral, "89")
+    validateToken(p, Whitespace, " ")
+    validateToken(p, EndOfFile, "")
+  }
 
   END()
 }
