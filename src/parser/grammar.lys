@@ -11,7 +11,11 @@ enum ParserRule {
   OneOrMore(rule: ParserRule)
   ZeroOrMore(rule: ParserRule)
   Cons(head: ParserRule, tail: ParserRule)
+  Cut(head: ParserRule, tail: ParserRule)
   Optional(rule: ParserRule)
+  Fail(message: string)
+  LookAhead(rule: ParserRule)
+  Discard(rule: ParserRule)
 }
 
 impl ParserRule {
@@ -21,24 +25,17 @@ impl ParserRule {
     case is StrictTerminal(tokenType, value) -> "\"" ++ value ++ "\""
     case is NonTerminal(name) -> name
 
-    case is Or(lhs, rhs) -> lhs.toString() ++ " | " ++ rhs.toString()
-    case is Cons(head, tail) -> head.toString() ++ " " ++ tail.toString()
+    case is Or(lhs, rhs) -> "or(" ++ lhs.toString() ++ ", " ++ rhs.toString() ++ ")"
+    case is Cons(head, tail) -> "cons(" ++ head.toString() ++ ", " ++ tail.toString() ++ ")"
+    case is Cut(head, tail) -> "cut(" ++ head.toString() ++ ", " ++ tail.toString() ++ ")"
 
-    case is OneOrMore(rule) -> match rule {
-      case is Or -> "(" ++ rule.toString() ++ ")+"
-      case is Cons -> "(" ++ rule.toString() ++ ")+"
-      else -> rule.toString() ++ "+"
-    }
-    case is ZeroOrMore(rule) -> match rule {
-      case is Or -> "(" ++ rule.toString() ++ ")*"
-      case is Cons -> "(" ++ rule.toString() ++ ")*"
-      else -> rule.toString() ++ "*"
-    }
-    case is Optional(rule) -> match rule {
-      case is Or -> "(" ++ rule.toString() ++ ")?"
-      case is Cons -> "(" ++ rule.toString() ++ ")?"
-      else -> rule.toString() ++ "?"
-    }
+    case is OneOrMore(rule) -> "oneOrMore(" ++ rule.toString() ++ ")"
+    case is ZeroOrMore(rule) -> "zeroOrMore(" ++ rule.toString() ++ ")"
+    case is Optional(rule) -> "optional(" ++ rule.toString() ++ ")"
+
+    case is Fail(message) -> "fail(`" ++ message ++ "`)"
+    case is LookAhead(rule) -> "ahead(" ++ rule.toString() ++ ")"
+    case is Discard(rule) -> "discard(" ++ rule.toString() ++ ")"
   }
 }
 
