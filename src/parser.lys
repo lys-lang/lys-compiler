@@ -2,11 +2,222 @@ import src::tokens
 import src::lexer
 
 enum ParserRule {
-  Terminal(name: string, tokenType: TokenType)
-  Construction(name: string, rule: ParserRule)
+  Terminal(tokenType: TokenType)
+  StrictTerminal(tokenType: TokenType, value: string)
+  NonTerminal(name: string)
   Or(lhs: ParserRule, rhs: ParserRule)
   OneOrMore(rule: ParserRule)
   ZeroOrMore(rule: ParserRule)
   Cons(head: ParserRule, tail: ParserRule)
+  Optional(rule: ParserRule)
 }
 
+enum Grammar {
+  Nominal(name: string, rule: ParserRule)
+  GrammarConj(tail: Grammar, head: Nominal)
+}
+
+enum AST {
+  Leaf(name: string, token: Token, value: string)
+  Branch(name: string, child: AST | Nil)
+  OptionalNode(child: AST | Nil)
+  AstCons(head: AST, tail: AST)
+}
+
+struct Nil()
+struct Parser(lexer: Lexer, grammar: Grammar)
+
+impl Nominal {
+  fun ++(lhs: Grammar, rhs: Nominal): Grammar = GrammarConj(lhs, rhs)
+}
+
+fun repeat(str: string, times: i32): string = {
+  var ret = ""
+  var i = 0
+  loop {
+    if (i >= times) {
+      break
+    }
+    ret = ret ++ str
+    i = i + 1
+    continue
+  }
+  ret
+}
+
+fun printAst(ast: AST | Nil, level: i32): string = match ast {
+  case is Nil -> "<EMPTY>"
+  case is Branch(name, child) ->
+    repeat("  ", level) ++
+    "|-" ++ name ++ "\n" ++
+    printAst(child, level + 1)
+  case is OptionalNode(child) -> printAst(child, level)
+  case is Leaf(name, token, value) ->
+    repeat("  ", level) ++ "|-" ++ name ++ "=" ++ value
+  case is AstCons(head, tail) ->
+    printAst(head, level) ++ "\n" ++ printAst(tail, level)
+}
+
+impl Grammar {
+  fun ++(tail: Grammar, head: Nominal): Grammar = GrammarConj(tail, head)
+
+  #[method]
+  fun toString(self: Grammar): string = match self {
+    case is Nominal(name, rule) -> name ++ "\t ::= " ++ ParserRule.toString(rule)
+    case is GrammarConj(head, tail) -> Grammar.toString(tail) ++ "\n" ++ Grammar.toString(head)
+  }
+}
+
+impl ParserRule {
+  #[method]
+  fun toString(self: ParserRule): string = match self {
+    case is Terminal(tokenType) -> "<" ++ tokenType.toString() ++ ">"
+    case is StrictTerminal(tokenType, value) -> "\"" ++ value ++ "\""
+    case is NonTerminal(name) -> name
+
+    case is Or(lhs, rhs) -> lhs.toString() ++ " | " ++ rhs.toString()
+    case is Cons(head, tail) -> head.toString() ++ " " ++ tail.toString()
+
+    case is OneOrMore(rule) -> match rule {
+      case is Or -> "(" ++ rule.toString() ++ ")+"
+      case is Cons -> "(" ++ rule.toString() ++ ")+"
+      else -> rule.toString() ++ "+"
+    }
+    case is ZeroOrMore(rule) -> match rule {
+      case is Or -> "(" ++ rule.toString() ++ ")*"
+      case is Cons -> "(" ++ rule.toString() ++ ")*"
+      else -> rule.toString() ++ "*"
+    }
+    case is Optional(rule) -> match rule {
+      case is Or -> "(" ++ rule.toString() ++ ")?"
+      case is Cons -> "(" ++ rule.toString() ++ ")?"
+      else -> rule.toString() ++ "?"
+    }
+  }
+}
+
+fun parse(source: string, rule: string, grammar: Grammar): AST | Nil = {
+  parse(rule, Parser(Lexer(source), grammar), 0)
+}
+
+fun findRule(ruleName: string, grammar: Grammar): ParserRule | Nil = {
+  match grammar {
+    case is Nominal(name, rule) -> if (name == ruleName) rule else Nil
+    case is GrammarConj(tail, head) ->
+      if (head.name == ruleName)
+        head.rule
+      else
+        findRule(ruleName, tail)
+  }
+}
+
+fun parse(ruleName: string, parser: Parser, level: i32): AST | Nil = {
+  match findRule(ruleName, parser.grammar) {
+    case rule is ParserRule -> match parse(rule, ruleName, parser, level) {
+      case is Nil -> Nil
+      case ast is AST -> Branch(ruleName, ast)
+    }
+    else -> {
+      support::env::printf("MISSING RULE " ++ ruleName ++ "!")
+      Nil
+    }
+  }
+}
+
+fun parse(rule: ParserRule, ruleName: string, parser: Parser, level: i32): AST | Nil = {
+  var backtrack = parser.lexer.pos
+
+  val result = match rule {
+    case is Terminal(tokenType) -> {
+      support::env::printf(repeat("| ", level) ++ "| Terminal(" ++ TokenType.toString(tokenType) ++ ")")
+      support::env::printf(repeat("| ", level) ++ "|   from:" ++ parser.lexer.source.substring(parser.lexer.pos as i32))
+      val lexer = parser.lexer
+      val token = lexer.peek()
+      if (token.tokenType == tokenType)
+        Leaf(ruleName, lexer.eat(), token.textIn(lexer.source))
+      else
+        Nil
+    }
+    case is StrictTerminal(tokenType, value) -> {
+      support::env::printf(repeat("| ", level) ++ "| StrictTerminal(" ++ TokenType.toString(tokenType) ++ ")")
+      support::env::printf(repeat("| ", level) ++ "|   from:" ++ parser.lexer.source.substring(parser.lexer.pos as i32))
+      val lexer = parser.lexer
+      val token = lexer.peek()
+      val tokenValue = token.textIn(lexer.source)
+      if (token.tokenType == tokenType && value == tokenValue)
+        Leaf(ruleName, lexer.eat(), tokenValue)
+      else
+        Nil
+    }
+    case is Or(lhs, rhs) -> {
+      support::env::printf(repeat("| ", level) ++ "| Or")
+      match parse(lhs, ruleName, parser, level + 1) {
+        case is Nil -> parse(rhs, ruleName, parser, level + 1)
+        case ast is AST -> ast
+      }
+    }
+    case is Cons(head, tail) -> {
+      support::env::printf(repeat("| ", level) ++ "| Cons")
+      match parse(head, ruleName, parser, level + 1) {
+        case is Nil -> Nil
+        case astHead is AST -> match parse(tail, ruleName, parser, level + 1) {
+          case is Nil -> Nil
+          case astTail is AST -> AstCons(astHead, astTail)
+        }
+      }
+    }
+    case is Optional(rule) -> {
+      support::env::printf(repeat("| ", level) ++ "| Optional")
+      OptionalNode(parse(rule, ruleName, parser, level + 1))
+    }
+    case is NonTerminal(name) -> {
+      support::env::printf(repeat("| ", level) ++ "| NonTerminal("++name++")")
+      parse(name, parser, level + 1)
+    }
+    case is OneOrMore(rule) -> {
+      support::env::printf(repeat("| ", level) ++ "| OneOrMore")
+      var ret: AST | Nil = Nil
+
+      loop {
+        match parse(rule, ruleName, parser, level + 1) {
+          case is Nil -> break
+          case ast is AST -> {
+            match ret {
+              case is Nil -> ret = ast
+              case x is AST -> ret = AstCons(x, ast)
+            }
+            continue
+          }
+        }
+      }
+
+      ret
+    }
+    case is ZeroOrMore(rule) -> {
+      support::env::printf(repeat("| ", level) ++ "| ZeroOrMore")
+      var ret: AST | Nil = Nil
+
+      loop {
+        match parse(rule, ruleName, parser, level + 1) {
+          case is Nil -> break
+          case ast is AST -> {
+            match ret {
+              case is Nil -> ret = ast
+              case x is AST -> ret = AstCons(x, ast)
+            }
+            continue
+          }
+        }
+      }
+
+      OptionalNode(ret)
+    }
+  }
+
+  if (result is Nil) {
+    parser.lexer.pos = backtrack
+    support::env::printf(repeat("| ", level) ++ "|<- backtracking")
+  }
+
+  result
+}

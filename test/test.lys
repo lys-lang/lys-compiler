@@ -2,6 +2,7 @@ import support::env
 import support::test
 import src::lexer
 import src::tokens
+import src::parser
 
 #[export]
 fun test(): void = {
@@ -18,6 +19,11 @@ fun test(): void = {
   singleLineComment()
   numbers()
 
+  END()
+
+  START("Parser tests")
+  parser1()
+  jsonParser()
   END()
 }
 
@@ -343,4 +349,201 @@ fun validateToken(p: Lexer, expectedToken: TokenType, expectedValue: string): vo
       mustEqual(givenValue, expectedValue, "value=(" ++ expectedValue ++ ")")
     }
   }
+}
+
+fun verifyParsing(source: string, rule: string, grammar: Grammar): void = {
+  START("Test parsing " ++ rule ++ " on " ++ source)
+
+  val lexer = Lexer(source)
+  val parser = Parser(lexer, grammar)
+  val result = parse(rule, parser, 0)
+  verify(result is AST, "Must parse into a valid result")
+  printAst(result, 0)
+  verify(lexer.hasNext() == false, "Lexer should have finished scanning")
+
+  END()
+}
+
+fun testPrintAst(): void = {
+  START("printAst & repeat")
+  val testToken = Token(Identifier, 0x0, 0x0)
+
+  mustEqual(repeat("1", 0), "", "test repeat * 0")
+  mustEqual(repeat("1", 1), "1", "test repeat * 1")
+  mustEqual(repeat("1", 2), "11", "test repeat * 2")
+  mustEqual(repeat("1", 3), "111", "test repeat * 3")
+
+  mustEqual(
+    printAst(
+      AstCons(
+        Branch("Test1", AstCons(
+          Branch("Test1.1", Leaf("Leaf1", testToken, "Hi")),
+          Branch("Test1.2", Leaf("Leaf2", testToken, "Hi"))
+        )),
+        Branch("Test2", AstCons(
+          Branch("Test2.1", Leaf("Leaf1", testToken, "Hi")),
+          Branch("Test2.2", Leaf("Leaf2", testToken, "Hi"))
+        ))
+      )
+    , 0),
+    "|-Test1\n" ++
+    "  |-Test1.1\n" ++
+    "    |-Leaf1=Hi\n" ++
+    "  |-Test1.2\n" ++
+    "    |-Leaf2=Hi\n" ++
+    "|-Test2\n" ++
+    "  |-Test2.1\n" ++
+    "    |-Leaf1=Hi\n" ++
+    "  |-Test2.2\n" ++
+    "    |-Leaf2=Hi",
+    "test printAst"
+  )
+  END()
+}
+
+fun parser1(): void = {
+  START("Smoke parser tests")
+
+  testPrintAst()
+
+  val grammar =
+    Nominal("Number", Terminal(NumberLiteral)) ++
+    Nominal("Operator", Terminal(Operator)) ++
+    Nominal("ParenExpression",
+      Cons(
+        Terminal(ParenthesesOpen),
+        Cons(
+          NonTerminal("Equation"),
+          Terminal(ParenthesesClose)
+        )
+      )
+    ) ++
+    Nominal("Equation",
+      Or(NonTerminal("BinaryOperation"), NonTerminal("Term"))
+    ) ++
+    Nominal("BinaryOperation",
+      Cons(
+        NonTerminal("Term"),
+        Cons(
+          NonTerminal("Operator"),
+          NonTerminal("Term")
+        )
+      )
+    ) ++
+    Nominal("Term",
+      Or(
+        NonTerminal("ParenExpression"),
+        NonTerminal("Number")
+      )
+    )
+
+  support::env::printf(grammar.toString())
+
+  verify(findRule("UnexistentRule123", grammar) is Nil, "Unexistent rule must yield nil")
+  verify(findRule("Term", grammar) is ParserRule, "Test find rule Term")
+  verify(findRule("Equation", grammar) is ParserRule, "Test find rule Equation")
+  verify(findRule("ParenExpression", grammar) is ParserRule, "Test find rule ParenExpression")
+  verify(findRule("Operator", grammar) is ParserRule, "Test find rule Operator")
+  verify(findRule("Number", grammar) is ParserRule, "Test find rule Number")
+
+
+  START("Straight forward case for parsing")
+  verifyParsing("1", "Equation", grammar)
+  verifyParsing("1", "Number", grammar)
+  verifyParsing("1+2", "Equation", grammar)
+  END()
+
+  START("Backtracking and pick second path")
+  verifyParsing("(2+(2*123))*5332", "Equation", grammar)
+  END()
+
+  END()
+}
+
+// WS? rule WS?
+fun spacedRule(rule: ParserRule): ParserRule = Cons(Optional(NonTerminal("WS")), Cons(rule, Optional(NonTerminal("WS"))))
+
+fun jsonParser(): void = {
+  START("JSON parser")
+
+  val grammar =
+    Nominal("WS", OneOrMore(Or(Terminal(Whitespace), Terminal(NewLine)))) ++
+    Nominal("value",
+      Or(NonTerminal("true"),
+      Or(NonTerminal("false"),
+      Or(NonTerminal("null"),
+      Or(NonTerminal("string"),
+      Or(NonTerminal("number"),
+      Or(NonTerminal("object"), NonTerminal("array")))))))
+    ) ++
+    Nominal("false", StrictTerminal(Identifier, "false")) ++
+    Nominal("true", StrictTerminal(Identifier, "true")) ++
+    Nominal("null", StrictTerminal(Identifier, "null")) ++
+    Nominal("string", Terminal(StringLiteral)) ++
+    Nominal("number", Terminal(NumberLiteral)) ++
+    Nominal("member",
+      Cons(
+        NonTerminal("string"),
+        Cons(
+          NonTerminal("COLON"),
+          NonTerminal("value")
+        )
+      )
+    ) ++
+    Nominal("object",
+      Cons(
+        NonTerminal("OBJ_O"),
+        Cons(
+          Optional(
+            Cons(
+              NonTerminal("member"),
+              ZeroOrMore(Cons(NonTerminal("COMMA"), NonTerminal("member")))
+            )
+          ),
+          NonTerminal("OBJ_C")
+        )
+      )
+    ) ++
+    Nominal("array",
+      Cons(
+        NonTerminal("ARR_O"),
+        Cons(
+          Optional(
+            Cons(
+              NonTerminal("value"),
+              ZeroOrMore(Cons(NonTerminal("COMMA"), NonTerminal("value")))
+            )
+          ),
+          NonTerminal("ARR_C")
+        )
+      )
+    ) ++
+    Nominal("OBJ_O", spacedRule(Terminal(CurlyBracesOpen))) ++
+    Nominal("OBJ_C", spacedRule(Terminal(CurlyBracesClose))) ++
+    Nominal("ARR_O", spacedRule(Terminal(VectorOpen))) ++
+    Nominal("ARR_C", spacedRule(Terminal(VectorClose))) ++
+    Nominal("COLON", spacedRule(StrictTerminal(Operator, ":"))) ++
+    Nominal("COMMA", spacedRule(Terminal(Comma)))
+
+  support::env::printf(grammar.toString())
+
+  START("Straight forward case for parsing")
+  {
+    verifyParsing("null", "value", grammar)
+    verifyParsing("true", "value", grammar)
+    verifyParsing("false", "value", grammar)
+    verifyParsing("{}", "value", grammar)
+    verifyParsing("[]", "value", grammar)
+    verifyParsing("\"asd\"", "value", grammar)
+    verifyParsing("\"\"", "value", grammar)
+    verifyParsing("123.4", "value", grammar)
+    verifyParsing("[1]", "value", grammar)
+    verifyParsing("[1,2]", "value", grammar)
+    verifyParsing("{\"a\": 1}", "value", grammar)
+    verifyParsing("{\"a\": 1, \"b\": 1}", "value", grammar)
+    verifyParsing("{\"a\":false,\"b\":\"asd\\n      asd \",\"list\":[1,2,3,true]}", "value", grammar)
+  }
+  END()
+
+  END()
 }

@@ -44,3 +44,9 @@ impl TokenType {
     case is Comma -> "Comma"
   }
 }
+
+impl Token {
+  #[method]
+  fun textIn(self: Token, source: string): string =
+    source.substring(self.start as i32, self.end as i32)
+}

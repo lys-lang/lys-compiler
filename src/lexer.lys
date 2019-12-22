@@ -17,7 +17,7 @@ fun eat(): string = match instance {
     val tok = p.eat()
     match tok.tokenType {
       case is EndOfFile -> "EndOfFile"
-      else -> tok.tokenType.toString() ++ "(" ++ p.source.substring(tok.start as i32, tok.end as i32) ++ ")"
+      else -> tok.tokenType.toString() ++ "(" ++ tok.textIn(p.source) ++ ")"
     }
   }
   else -> "LexerNotInitialized"
@@ -33,7 +33,7 @@ impl Lexer {
   fun hasNext(self: Lexer): boolean = self.pos < self.source.length
 
   #[method]
-  fun peek(self: Lexer): u32 = self.source[self.pos + 1 as u32] as u32
+  fun peekChar(self: Lexer): u32 = self.source[self.pos + 1 as u32] as u32
 
   #[method]
   fun head(self: Lexer): u32 = self.source[self.pos] as u32
@@ -71,7 +71,7 @@ impl Lexer {
     case 0x2F ->                   // '/'
       if (!self.hasNext())
         Operator
-      else match self.peek() {
+      else match self.peekChar() {
         case 0x2A -> MultiLineComment
         case 0x2F -> LineComment
         else -> Operator
@@ -100,33 +100,38 @@ impl Lexer {
     }
   }
 
+
   #[method]
-  fun eat(self: Lexer): Token = {
+  fun peek(self: Lexer): Token = {
     if (self.pos == self.source.length) {
       Token(EndOfFile, self.source.length, self.source.length)
-    } else {
-      val eaten = match self.tokenStart(self.head()) {
-        case is Whitespace -> eatWhitespace(self)
-        case is NewLine -> eatNewLine(self)
-        case is StringLiteral -> eatString(self)
-        case is Identifier -> eatIdentifier(self)
-        case is MacroDecoration -> eatMacroDecoration(self)
-        case is ParenthesesOpen -> eatSingleChar(self, ParenthesesOpen)
-        case is ParenthesesClose -> eatSingleChar(self, ParenthesesClose)
-        case is CurlyBracesOpen -> eatSingleChar(self, CurlyBracesOpen)
-        case is CurlyBracesClose -> eatSingleChar(self, CurlyBracesClose)
-        case is Comma -> eatSingleChar(self, Comma)
-        case is VectorOpen -> eatSingleChar(self, VectorOpen)
-        case is VectorClose -> eatSingleChar(self, VectorClose)
-        case is LineComment -> eatLineComment(self)
-        case is MultiLineComment -> eatMultiLineComment(self)
-        case is Operator -> eatOperator(self)
-        case is NumberLiteral -> eatNumber(self)
-        else -> eatUnknown(self)
-      }
-      self.seek(eaten.end)
-      eaten
+    } else match self.tokenStart(self.head()) {
+      case is Whitespace -> eatWhitespace(self)
+      case is NewLine -> eatNewLine(self)
+      case is StringLiteral -> eatString(self)
+      case is Identifier -> eatIdentifier(self)
+      case is MacroDecoration -> eatMacroDecoration(self)
+      case is ParenthesesOpen -> eatSingleChar(self, ParenthesesOpen)
+      case is ParenthesesClose -> eatSingleChar(self, ParenthesesClose)
+      case is CurlyBracesOpen -> eatSingleChar(self, CurlyBracesOpen)
+      case is CurlyBracesClose -> eatSingleChar(self, CurlyBracesClose)
+      case is Comma -> eatSingleChar(self, Comma)
+      case is VectorOpen -> eatSingleChar(self, VectorOpen)
+      case is VectorClose -> eatSingleChar(self, VectorClose)
+      case is LineComment -> eatLineComment(self)
+      case is MultiLineComment -> eatMultiLineComment(self)
+      case is Operator -> eatOperator(self)
+      case is NumberLiteral -> eatNumber(self)
+      else -> eatUnknown(self)
     }
+  }
+
+
+  #[method]
+  fun eat(self: Lexer): Token = {
+    val eaten = self.peek()
+    self.seek(eaten.end)
+    eaten
   }
 
   private fun eatMacroDecoration(self: Lexer): Token = {
@@ -134,7 +139,7 @@ impl Lexer {
     val start = self.pos
     var end = self.pos + 1 as u32
 
-    if (self.hasNext() && self.peek() == 0x5b) { // [
+    if (self.hasNext() && self.peekChar() == 0x5b) { // [
       end = end + 1 as u32
       Token(MacroDecoration, start, end)
     } else {
