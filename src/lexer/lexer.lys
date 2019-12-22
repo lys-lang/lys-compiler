@@ -1,4 +1,4 @@
-import src::tokens
+import src::lexer::tokens
 
 struct Lexer(source: string, pos: u32)
 struct None()
@@ -93,7 +93,7 @@ impl Lexer {
     else -> {
       if (isNumber(char))
         NumberLiteral
-      else if (src::unicode::isUnicodeLeter(char))
+      else if (src::lexer::unicode::isUnicodeLeter(char))
         Identifier
       else
         Unknown
@@ -424,10 +424,10 @@ impl Lexer {
       if (char != 0x24) // $
       if (char != 0x5F) // _
       if (!isNumber(char))
-      if (!src::unicode::isUnicodeLeter(char))
-      if (!src::unicode::isUnicodeCombiningMark(char))
-      if (!src::unicode::isUnicodeDigit(char))
-      if (!src::unicode::isUnicodeConnectorPunctuation(char))
+      if (!src::lexer::unicode::isUnicodeLeter(char))
+      if (!src::lexer::unicode::isUnicodeCombiningMark(char))
+      if (!src::lexer::unicode::isUnicodeDigit(char))
+      if (!src::lexer::unicode::isUnicodeConnectorPunctuation(char))
         break
 
       end = end + 1 as u32

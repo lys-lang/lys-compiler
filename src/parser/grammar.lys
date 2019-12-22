@@ -1,0 +1,77 @@
+import src::lexer::tokens
+import src::helpers
+
+// Parsing rules definitions
+
+enum ParserRule {
+  Terminal(tokenType: TokenType)
+  StrictTerminal(tokenType: TokenType, value: string)
+  NonTerminal(name: string)
+  Or(lhs: ParserRule, rhs: ParserRule)
+  OneOrMore(rule: ParserRule)
+  ZeroOrMore(rule: ParserRule)
+  Cons(head: ParserRule, tail: ParserRule)
+  Optional(rule: ParserRule)
+}
+
+impl ParserRule {
+  #[method]
+  fun toString(self: ParserRule): string = match self {
+    case is Terminal(tokenType) -> "<" ++ tokenType.toString() ++ ">"
+    case is StrictTerminal(tokenType, value) -> "\"" ++ value ++ "\""
+    case is NonTerminal(name) -> name
+
+    case is Or(lhs, rhs) -> lhs.toString() ++ " | " ++ rhs.toString()
+    case is Cons(head, tail) -> head.toString() ++ " " ++ tail.toString()
+
+    case is OneOrMore(rule) -> match rule {
+      case is Or -> "(" ++ rule.toString() ++ ")+"
+      case is Cons -> "(" ++ rule.toString() ++ ")+"
+      else -> rule.toString() ++ "+"
+    }
+    case is ZeroOrMore(rule) -> match rule {
+      case is Or -> "(" ++ rule.toString() ++ ")*"
+      case is Cons -> "(" ++ rule.toString() ++ ")*"
+      else -> rule.toString() ++ "*"
+    }
+    case is Optional(rule) -> match rule {
+      case is Or -> "(" ++ rule.toString() ++ ")?"
+      case is Cons -> "(" ++ rule.toString() ++ ")?"
+      else -> rule.toString() ++ "?"
+    }
+  }
+}
+
+// Grammar definitions
+
+enum Grammar {
+  Nominal(name: string, rule: ParserRule)
+  GrammarConj(tail: Grammar, head: Nominal)
+}
+
+impl Grammar {
+  fun ++(tail: Grammar, head: Nominal): Grammar = GrammarConj(tail, head)
+
+  #[method]
+  fun toString(self: Grammar): string = match self {
+    case is Nominal(name, rule) -> name ++ "\t ::= " ++ ParserRule.toString(rule)
+    case is GrammarConj(head, tail) -> Grammar.toString(tail) ++ "\n" ++ Grammar.toString(head)
+  }
+
+  #[method]
+  fun findRule(self: Grammar, ruleName: string): ParserRule | Nil = {
+    match self {
+      case is Nominal(name, rule) -> if (name == ruleName) rule else Nil
+      case is GrammarConj(tail, head) ->
+        if (head.name == ruleName)
+          head.rule
+        else
+          tail.findRule(ruleName)
+    }
+  }
+}
+
+impl Nominal {
+  fun ++(lhs: Grammar, rhs: Nominal): Grammar = GrammarConj(lhs, rhs)
+}
+

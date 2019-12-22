@@ -1,5 +1,5 @@
 import support::ffi
-import src::lexer
+import src::lexer::lexer
 
 #[export "startLexer"]
 fun startLexer(strAddress: UnsafeCPointer): void = instantiate(UCS2.fromPtr(strAddress))

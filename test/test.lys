@@ -1,8 +1,10 @@
 import support::env
 import support::test
-import src::lexer
-import src::tokens
-import src::parser
+import src::helpers
+import src::lexer::lexer
+import src::lexer::tokens
+import src::parser::grammar
+import src::parser::parser
 
 #[export]
 fun test(): void = {
@@ -357,7 +359,7 @@ fun verifyParsing(source: string, rule: string, grammar: Grammar): void = {
   val lexer = Lexer(source)
   val parser = Parser(lexer, grammar)
   val result = parse(rule, parser, 0)
-  verify(result is AST, "Must parse into a valid result")
+  verify(result is AstNode, "Must parse into a valid result")
   printAst(result, 0)
   verify(lexer.hasNext() == false, "Lexer should have finished scanning")
 
@@ -439,12 +441,12 @@ fun parser1(): void = {
 
   support::env::printf(grammar.toString())
 
-  verify(findRule("UnexistentRule123", grammar) is Nil, "Unexistent rule must yield nil")
-  verify(findRule("Term", grammar) is ParserRule, "Test find rule Term")
-  verify(findRule("Equation", grammar) is ParserRule, "Test find rule Equation")
-  verify(findRule("ParenExpression", grammar) is ParserRule, "Test find rule ParenExpression")
-  verify(findRule("Operator", grammar) is ParserRule, "Test find rule Operator")
-  verify(findRule("Number", grammar) is ParserRule, "Test find rule Number")
+  verify(grammar.findRule("UnexistentRule123") is Nil, "Unexistent rule must yield nil")
+  verify(grammar.findRule("Term") is ParserRule, "Test find rule Term")
+  verify(grammar.findRule("Equation") is ParserRule, "Test find rule Equation")
+  verify(grammar.findRule("ParenExpression") is ParserRule, "Test find rule ParenExpression")
+  verify(grammar.findRule("Operator") is ParserRule, "Test find rule Operator")
+  verify(grammar.findRule("Number") is ParserRule, "Test find rule Number")
 
 
   START("Straight forward case for parsing")

@@ -1,0 +1,17 @@
+// How do we define the abscense of a value?
+struct Nil()
+
+// repeats a string
+fun repeat(str: string, times: i32): string = {
+  var ret = ""
+  var i = 0
+  loop {
+    if (i >= times) {
+      break
+    }
+    ret = ret ++ str
+    i = i + 1
+    continue
+  }
+  ret
+}
