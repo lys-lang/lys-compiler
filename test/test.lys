@@ -5,6 +5,7 @@ import src::lexer::lexer
 import src::lexer::tokens
 import src::parser::grammar
 import src::parser::parser
+import src::parser::lysgrammar
 
 #[export]
 fun test(): void = {
@@ -30,6 +31,7 @@ fun test(): void = {
   failSemantics()
   discardSemantics()
   errorRecovery()
+  lysGrammar()
   END()
 }
 
@@ -747,12 +749,7 @@ fun errorRecovery(): void = {
   val grammar =
     Nominal("WS", OneOrMore(Or(Terminal(Whitespace), Terminal(NewLine)))) ++
     Nominal("value",
-      Or(NonTerminal("true"),
-      Or(NonTerminal("false"),
-      Or(NonTerminal("null"),
-      Or(NonTerminal("string"),
-      Or(NonTerminal("number"),
-      Or(NonTerminal("object"), NonTerminal("array")))))))
+      Or(NonTerminal("true"), NonTerminal("false"), NonTerminal("null"), NonTerminal("string"), NonTerminal("number"), NonTerminal("object"), NonTerminal("array"))
     ) ++
     Nominal("false", StrictTerminal(Identifier, "false")) ++
     Nominal("true", StrictTerminal(Identifier, "true")) ++
@@ -762,24 +759,20 @@ fun errorRecovery(): void = {
     Nominal("member",
       Cut(
         NonTerminal("string"),
-        Cut(
-          Discard(NonTerminal("COLON")),
-          NonTerminal("value")
-        )
+        Discard(NonTerminal("COLON")),
+        NonTerminal("value")
       )
     ) ++
     Nominal("object",
       Cut(
         Discard(NonTerminal("OBJ_O")),
-        Cut(
-          Optional(
-            Cut(
-              NonTerminal("member"),
-              ZeroOrMore(Cut(Discard(NonTerminal("COMMA")), NonTerminal("member")))
-            )
-          ),
-          Discard(NonTerminal("OBJ_C"))
-        )
+        Optional(
+          Cut(
+            NonTerminal("member"),
+            ZeroOrMore(Cut(Discard(NonTerminal("COMMA")), NonTerminal("member")))
+          )
+        ),
+        Discard(NonTerminal("OBJ_C"))
       )
     ) ++
     Nominal("array",
@@ -823,6 +816,17 @@ fun errorRecovery(): void = {
 
   verifyParsing("[XXX]", "value", grammar)
   verifyParsing("[[false, XXX asd 1, 3], 4]", "value", grammar)
+
+  support::env::printf(grammar.toString())
+
+  END()
+}
+
+
+fun lysGrammar(): void = {
+  START("lysGrammar")
+
+  val grammar = getGrammar()
 
   support::env::printf(grammar.toString())
 

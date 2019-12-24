@@ -15,7 +15,59 @@ enum ParserRule {
   Optional(rule: ParserRule)
   Fail(message: string)
   LookAhead(rule: ParserRule)
+  NegativeLookAhead(rule: ParserRule)
   Discard(rule: ParserRule)
+}
+
+impl Cons {
+  fun apply(a1: ParserRule, a2: ParserRule, a3: ParserRule, a4: ParserRule, a5: ParserRule, a6: ParserRule, a7: ParserRule, a8: ParserRule, a9: ParserRule): ParserRule =
+    Cons(a1, Cons(a2, Cons(a3, Cons(a4, Cons(a5, Cons(a6, Cons(a7, Cons(a8, a9))))))))
+  fun apply(a1: ParserRule, a2: ParserRule, a3: ParserRule, a4: ParserRule, a5: ParserRule, a6: ParserRule, a7: ParserRule, a8: ParserRule): ParserRule =
+    Cons(a1, Cons(a2, Cons(a3, Cons(a4, Cons(a5, Cons(a6, Cons(a7, a8)))))))
+  fun apply(a1: ParserRule, a2: ParserRule, a3: ParserRule, a4: ParserRule, a5: ParserRule, a6: ParserRule, a7: ParserRule): ParserRule =
+    Cons(a1, Cons(a2, Cons(a3, Cons(a4, Cons(a5, Cons(a6, a7))))))
+  fun apply(a1: ParserRule, a2: ParserRule, a3: ParserRule, a4: ParserRule, a5: ParserRule, a6: ParserRule): ParserRule =
+    Cons(a1, Cons(a2, Cons(a3, Cons(a4, Cons(a5, a6)))))
+  fun apply(a1: ParserRule, a2: ParserRule, a3: ParserRule, a4: ParserRule, a5: ParserRule): ParserRule =
+    Cons(a1, Cons(a2, Cons(a3, Cons(a4, a5))))
+  fun apply(a1: ParserRule, a2: ParserRule, a3: ParserRule, a4: ParserRule): ParserRule =
+    Cons(a1, Cons(a2, Cons(a3, a4)))
+  fun apply(a1: ParserRule, a2: ParserRule, a3: ParserRule): ParserRule =
+    Cons(a1, Cons(a2, a3))
+}
+
+impl Cut {
+  fun apply(a1: ParserRule, a2: ParserRule, a3: ParserRule, a4: ParserRule, a5: ParserRule, a6: ParserRule, a7: ParserRule, a8: ParserRule, a9: ParserRule): ParserRule =
+    Cut(a1, Cut(a2, Cut(a3, Cut(a4, Cut(a5, Cut(a6, Cut(a7, Cut(a8, a9))))))))
+  fun apply(a1: ParserRule, a2: ParserRule, a3: ParserRule, a4: ParserRule, a5: ParserRule, a6: ParserRule, a7: ParserRule, a8: ParserRule): ParserRule =
+    Cut(a1, Cut(a2, Cut(a3, Cut(a4, Cut(a5, Cut(a6, Cut(a7, a8)))))))
+  fun apply(a1: ParserRule, a2: ParserRule, a3: ParserRule, a4: ParserRule, a5: ParserRule, a6: ParserRule, a7: ParserRule): ParserRule =
+    Cut(a1, Cut(a2, Cut(a3, Cut(a4, Cut(a5, Cut(a6, a7))))))
+  fun apply(a1: ParserRule, a2: ParserRule, a3: ParserRule, a4: ParserRule, a5: ParserRule, a6: ParserRule): ParserRule =
+    Cut(a1, Cut(a2, Cut(a3, Cut(a4, Cut(a5, a6)))))
+  fun apply(a1: ParserRule, a2: ParserRule, a3: ParserRule, a4: ParserRule, a5: ParserRule): ParserRule =
+    Cut(a1, Cut(a2, Cut(a3, Cut(a4, a5))))
+  fun apply(a1: ParserRule, a2: ParserRule, a3: ParserRule, a4: ParserRule): ParserRule =
+    Cut(a1, Cut(a2, Cut(a3, a4)))
+  fun apply(a1: ParserRule, a2: ParserRule, a3: ParserRule): ParserRule =
+    Cut(a1, Cut(a2, a3))
+}
+
+impl Or {
+  fun apply(a1: ParserRule, a2: ParserRule, a3: ParserRule, a4: ParserRule, a5: ParserRule, a6: ParserRule, a7: ParserRule, a8: ParserRule, a9: ParserRule): ParserRule =
+    Or(a1, Or(a2, Or(a3, Or(a4, Or(a5, Or(a6, Or(a7, Or(a8, a9))))))))
+  fun apply(a1: ParserRule, a2: ParserRule, a3: ParserRule, a4: ParserRule, a5: ParserRule, a6: ParserRule, a7: ParserRule, a8: ParserRule): ParserRule =
+    Or(a1, Or(a2, Or(a3, Or(a4, Or(a5, Or(a6, Or(a7, a8)))))))
+  fun apply(a1: ParserRule, a2: ParserRule, a3: ParserRule, a4: ParserRule, a5: ParserRule, a6: ParserRule, a7: ParserRule): ParserRule =
+    Or(a1, Or(a2, Or(a3, Or(a4, Or(a5, Or(a6, a7))))))
+  fun apply(a1: ParserRule, a2: ParserRule, a3: ParserRule, a4: ParserRule, a5: ParserRule, a6: ParserRule): ParserRule =
+    Or(a1, Or(a2, Or(a3, Or(a4, Or(a5, a6)))))
+  fun apply(a1: ParserRule, a2: ParserRule, a3: ParserRule, a4: ParserRule, a5: ParserRule): ParserRule =
+    Or(a1, Or(a2, Or(a3, Or(a4, a5))))
+  fun apply(a1: ParserRule, a2: ParserRule, a3: ParserRule, a4: ParserRule): ParserRule =
+    Or(a1, Or(a2, Or(a3, a4)))
+  fun apply(a1: ParserRule, a2: ParserRule, a3: ParserRule): ParserRule =
+    Or(a1, Or(a2, a3))
 }
 
 impl ParserRule {
@@ -34,7 +86,8 @@ impl ParserRule {
     case is Optional(rule) -> "optional(" ++ rule.toString() ++ ")"
 
     case is Fail(message) -> "fail(`" ++ message ++ "`)"
-    case is LookAhead(rule) -> "ahead(" ++ rule.toString() ++ ")"
+    case is LookAhead(rule) -> "&(" ++ rule.toString() ++ ")"
+    case is NegativeLookAhead(rule) -> "!(" ++ rule.toString() ++ ")"
     case is Discard(rule) -> "discard(" ++ rule.toString() ++ ")"
   }
 }

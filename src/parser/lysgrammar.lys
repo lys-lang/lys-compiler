@@ -1,0 +1,481 @@
+import src::helpers
+import src::lexer::lexer
+import src::lexer::tokens
+import src::parser::grammar
+import src::parser::parser
+
+/*
+  Terminal(tokenType: TokenType)
+  StrictTerminal(tokenType: TokenType, value: string)
+  NonTerminal(name: string)
+  Or(lhs: ParserRule, rhs: ParserRule)
+  OneOrMore(rule: ParserRule)
+  ZeroOrMore(rule: ParserRule)
+  Cons(head: ParserRule, tail: ParserRule)
+  Cut(head: ParserRule, tail: ParserRule)
+  Optional(rule: ParserRule)
+  Fail(message: string)
+  LookAhead(rule: ParserRule)
+  Discard(rule: ParserRule)
+*/
+
+private var grammar: Nil | Grammar = Nil
+
+// n == named
+fun n(name: string): ParserRule = NonTerminal(name)
+
+// t == Identifier
+fun t(name: string): ParserRule = StrictTerminal(Identifier, name)
+
+// op == Operator
+fun op(name: string): ParserRule = StrictTerminal(Operator, name)
+
+fun Wrap(start: TokenType, middle: ParserRule, end: TokenType): ParserRule =
+  WrapWith(Terminal(start), middle, Terminal(end))
+
+fun WrapWith(start: ParserRule, middle: ParserRule, end: ParserRule): ParserRule =
+  Cut(Cut(Discard(start), middle), Discard(end))
+
+fun OneOrMoreComma(rule: ParserRule): ParserRule =
+  Cons(
+    Optional(n("WS")),
+    Cut(rule, Optional(n("WS"))),
+    ZeroOrMore(
+      Cut(
+        Discard(Terminal(Comma)),
+        Optional(n("WS")),
+        rule
+      )
+    ),
+    Optional(n("WS"))
+  )
+
+fun getGrammar(): Grammar = {
+  match grammar {
+    case g is Grammar -> g
+    else -> {
+      val WS = Discard(Optional(n("WS")))
+      val NEW_LINE = Discard(
+        Cons(
+          ZeroOrMore(Or(Terminal(Whitespace), Terminal(MultiLineComment))),
+          Or(Terminal(NewLine), Terminal(LineComment))
+        )
+      )
+      val WSS = Discard(n("WS"))
+
+      val g =
+        Nominal("Document", Cut(Cons(WS, OneOrMore(Cut(n("Directive"), WS))), Terminal(EndOfFile))) ++
+        Nominal("WS",
+          Discard(
+            OneOrMore(
+              Or(
+                Terminal(Whitespace),
+                Terminal(LineComment),
+                Terminal(MultiLineComment),
+                Terminal(NewLine)
+              )
+            )
+          )
+        ) ++
+
+        // fragment
+        Nominal("Directive",
+          Or(n("FunctionDirective"),
+          Or(n("ValDirective"),
+          Or(n("VarDirective"),
+          Or(n("StructDirective"),
+          Or(n("TypeDirective"),
+          Or(n("EnumDirective"),
+          Or(n("TraitDirective"),
+          Or(n("ImportDirective"),
+          Or(n("EffectDirective"),
+            n("ImplDirective"))))))))))
+        ) ++
+
+        // fragment
+        Nominal("ImplInnerDirective",
+          Or(n("FunctionDirective"), n("ValDirective"), n("VarDirective"))
+        ) ++
+
+        Nominal("PrivateModifier", n("PRIVATE_KEYWORD")) ++
+
+        Nominal("ImportDirective",
+          Cut(
+            n("IMPORT_KEYWORD"),
+            Cut(
+              n("QName"),
+              Optional(
+                Cut(Cons(WSS, n("AsKeyword")), n("NameIdentifier"))
+              )
+            )
+          )
+        ) ++
+        Nominal("FunctionDirective",
+          Cons(
+            Cons(
+              n("Decorators"),
+              Optional(n("PrivateModifier"))
+            ),
+            n("FunDeclaration")
+          )
+        ) ++
+        Nominal("ValDirective",
+          Cons(
+            Optional(n("PrivateModifier")), n("ValDeclaration")
+          )
+        ) ++
+        Nominal("VarDirective",
+          Cons(
+            Optional(n("PrivateModifier")), n("VarDeclaration")
+          )
+        ) ++
+        Nominal("TypeDirective",
+          Cons(
+            Optional(n("PrivateModifier")),
+            Cut(
+              n("TYPE_KEYWORD"), n("NameIdentifier")
+            ),
+            WS,
+            Optional(n("ValueType"))
+          )
+        ) ++
+        Nominal("EnumDirective",
+          Cons(
+            Optional(n("PrivateModifier")),
+            Cut(n("ENUM_KEYWORD"), n("NameIdentifier")),
+            WS,
+            Terminal(CurlyBracesOpen),
+            Optional(n("TypeDeclElements")),
+            WS,
+            Terminal(CurlyBracesClose)
+          )
+        ) ++
+        Nominal("TraitDirective",
+          Cons(
+            Optional(n("PrivateModifier")),
+            Cut(
+              n("TRAIT_KEYWORD"),
+              n("NameIdentifier")
+            ),
+            WS,
+            Terminal(CurlyBracesOpen),
+            Optional(n("TraitDeclElements")),
+            WS,
+            Terminal(CurlyBracesClose)
+          )
+        ) ++
+        Nominal("EffectDirective",
+          Cons(
+            Optional(n("PrivateModifier")),
+            Cut(
+              n("EFFECT_KEYWORD"),
+              n("EffectDeclaration")
+            )
+          )
+        ) ++
+        Nominal("StructDirective",
+          Cons(
+            Optional(n("PrivateModifier")),
+            Cut(
+              n("STRUCT_KEYWORD"),
+              n("StructDeclaration")
+            )
+          )
+        ) ++
+        Nominal("ImplDirective",
+          Cons(
+            Optional(n("PrivateModifier")),
+            Cut(
+              n("IMPL_KEYWORD"),
+              WS,
+              n("Reference"),
+              WS,
+              Optional(
+                Cut(
+                  t("for"),
+                  WS,
+                  n("Reference"),
+                  WS
+                )
+              ),
+              n("NamespaceElementList")
+            )
+          )
+        ) ++
+        Nominal("Decorators", ZeroOrMore(n("Decorator"))) ++
+        Nominal("Decorator", Cons(Wrap(MacroDecoration, Cons(WS, n("NameIdentifier"), ZeroOrMore(Cons(WSS, n("Literal"))), WS), VectorClose), WS)) ++
+        Nominal("LoopExpression", Cut(Discard(t("loop")), WS, n("Expression"))) ++
+        Nominal("ContinueStatement", t("continue")) ++
+        Nominal("BreakStatement", t("break")) ++
+        Nominal("ValDeclaration", Cons(Cut(Discard(t("val")), WS, n("NameIdentifier")), Optional(n("OfType")), WS, n("Assign"))) ++
+        Nominal("VarDeclaration", Cons(Cut(Discard(t("var")), WS, n("NameIdentifier")), Optional(n("OfType")), WS, n("Assign"))) ++
+        Nominal("FunDeclaration", Cons(Cut(Discard(t("fun")), WS, n("FunctionName")), WS, Optional(n("TypeParameters")), n("FunctionParamsList"), WS, Optional(n("OfType")), Optional(n("FunAssignExpression")))) ++
+        Nominal("MatchExpression", Cons(Cut(Discard(t("match")), WS), n("AssignExpression"), WS, n("MatchBody"))) ++
+        Nominal("CaseCondition", Cons(Discard(t("case")), WS, n("NameIdentifier"), WSS, Cut(t("if"), WS, n("Expression"), WS, op("->")), WS, n("Expression"))) ++
+        Nominal("CaseLiteral", Cons(Discard(t("case")), WS, Cut(n("Literal"), WS, op("->"), WS, n("Expression")))) ++
+        Nominal("CaseIs", Cons(Discard(t("case")), WS, Optional(Cons(n("NameIdentifier"), WSS)), Cut(t("is"), WSS, n("Reference")), WS, Optional(n("DeconstructStruct")), op("->"), WS, n("Expression"))) ++
+        Nominal("CaseElse", Cons(Cut(Discard(t("else")), WS), Optional(Cut(n("NameIdentifier"), WSS)), op("->"), WS, n("Expression"))) ++
+        Nominal("IfExpression", Cons(Cut(Discard(t("if")), WS), n("IfBody"), WS, n("Expression"), Optional(Cons(WS, n("ElseExpression"))))) ++
+        Nominal("ElseExpression", Cons(Cut(Discard(t("else")), WS), n("Expression"))) ++ // fragment
+        Nominal("WasmExpression", Cut(Cons(op("%"), t("wasm")), WS, Terminal(CurlyBracesOpen), WS, ZeroOrMore(n("SAtom")), WS, Terminal(CurlyBracesClose), WS)) ++
+        Nominal("StructLiteral", Cut(Cons(op("%"), t("struct")), WS, n("StructParamsList"))) ++
+        Nominal("StackLiteral",
+          Cut(
+            Cons(op("%"), t("stack")),
+            Cons(
+              WS,
+              Wrap(CurlyBracesOpen, Cons(WS, ZeroOrMore(Cons(n("NameLiteralPair"), WS))), CurlyBracesClose),
+              WS
+            )
+          )
+        ) ++
+        Nominal("InjectedLiteral", Cons(op("%"), t("injected"))) ++
+
+        Nominal("IfBody", Cut(Terminal(ParenthesesOpen), Cons(WS, n("Expression"), WS), Terminal(ParenthesesClose))) ++
+        Nominal("MatchElements", Cut(Or(n("CaseCondition"), n("CaseIs"), n("CaseLiteral"), n("CaseElse")), WS)) ++ // {fragment=true}
+
+        Nominal("UnknownExpression", t("???")) ++
+        Nominal("ValueType",
+          Cut(
+            t("="),
+            WS,
+            Or(
+              n("Type"),
+              n("StructLiteral"),
+              n("StackLiteral"),
+              n("InjectedLiteral")
+            )
+          )
+        ) ++
+
+        Nominal("TypeVariableList", Cons(n("TypeVariable"), ZeroOrMore(Cut(Terminal(Comma), WS, n("TypeVariable") , WS)), WS)) ++
+        Nominal("TypeVariable", Discard(n("NameIdentifier"))) ++
+        Nominal("TypeParameters", Cut(op("<"), WS, Optional(n("TypeVariableList")), op(">"), WS)) ++
+
+        Nominal("Assign", Cut(op("="), WS, Or(n("Expression"), n("UnknownExpression")))) ++ // fragment
+        Nominal("FunAssignExpression", Cut(op("="), WS, Or(n("Expression"), n("WasmExpression"), n("UnknownExpression")))) ++
+        Nominal("OfType", Cut(op(":"), WS, Optional(Cut(n("FunctionEffect"), WS)), n("Type"), WS)) ++
+
+        Nominal("StructParamsList", Wrap(CurlyBracesOpen, Cons(WS, n("ParameterList"), WS), CurlyBracesClose)) ++
+        Nominal("FunctionParamsList", Wrap(ParenthesesOpen, Cons(WS, n("ParameterList"), WS), ParenthesesClose)) ++
+        Nominal("ParameterList", Optional(OneOrMoreComma(n("Parameter")))) ++
+        Nominal("Parameter", Cut(n("NameIdentifier"), WS, Optional(n("OfType")), WS)) ++
+
+        Nominal("StructDeclaration", Cons(Cut(n("NameIdentifier"), WS), Optional(n("FunctionParamsList")))) ++
+        Nominal("EffectMemberDeclaration", Cut(n("NameIdentifier"), WS, n("FunctionParamsList"), n("OfType"))) ++
+        Nominal("TraitDeclElements", OneOrMore(Cons(WS, n("FunctionDirective")))) ++
+        Nominal("TypeDeclElements", OneOrMore(Cons(WS, n("StructDeclaration")))) ++
+        Nominal("EffectElements", OneOrMore(Cons(WS, n("EffectMemberDeclaration")))) ++
+
+        Nominal("FunctionName",  Or(n("NameIdentifier"), n("FunOperator"))) ++
+
+        Nominal("FunOperator", Or(n("BitNotPreOperator"), n("MinusPreOperator"),
+                                  n("AsKeyword"),
+                                  n("IsKeyword"),
+                                  n("MulOperator"),
+                                  Or(n("AddOperator"),
+                                    n("ShiftOperator"),
+                                    n("RelOperator"),
+                                    n("EqOperator")),
+                                  Or(n("BitAndOperator"),
+                                    n("BitXorOperator"),
+                                    n("BitOrOperator"),
+                                    n("AndKeyword"),
+                                    n("OrKeyword"),
+                                    n("NotPreOperator"),
+                                    Cut(op("["), op("]"))
+                                  )
+                              )) ++
+
+        Nominal("NamespaceElementList", Cut(Cut(Terminal(CurlyBracesOpen), ZeroOrMore(Cons(WS, n("ImplInnerDirective"))), WS), Terminal(CurlyBracesClose))) ++
+        Nominal("EffectDeclaration", Cut(n("NameIdentifier"), WS, Optional(n("TypeParameters")), n("EffectElementList"))) ++
+        Nominal("EffectElementList", Cut(Cut(Terminal(CurlyBracesOpen), Optional(n("EffectElements")), WS), Terminal(CurlyBracesClose))) ++
+        Nominal("FunctionEffect", WrapWith(op("<"), Cons(WS, Optional(Cons(n("Type"), WS))), op(">"))) ++
+
+        Nominal("Type", n("UnionType")) ++
+        Nominal("UnionType", Cut(n("IntersectionType"), ZeroOrMore(Cons(WS, op("|"), WS, n("IntersectionType"))))) ++ // {simplifyWhenOneChildren=true}
+        Nominal("IntersectionType", Cut(n("AtomType"), ZeroOrMore(Cons(WS, op("&"), WS, n("AtomType"))))) ++ // {simplifyWhenOneChildren=true}
+        Nominal("AtomType", Or(n("TypeParen"), n("FunctionTypeLiteral"), n("Reference"))) ++ // {fragment=true}
+        Nominal("TypeParen", Cut(Cut(Terminal(ParenthesesOpen), WS, n("Type"), WS), Terminal(ParenthesesClose))) ++
+
+        Nominal("FunctionTypeLiteral", Cut(Cons(t("fun"), WS), Cons(Optional(n("TypeParameters")), n("FunctionTypeParameters"), WS, op("->"), WS, n("Type")))) ++
+        Nominal("FunctionTypeParameters", Wrap(ParenthesesOpen, Optional(OneOrMoreComma(n("FunctionTypeParameter"))), ParenthesesClose)) ++ // {pin=1,recoverUntil=PAREN_RECOVERY}
+        Nominal("FunctionTypeParameter", Cons(Optional(Cons(n("NameIdentifier"), WS, op(":"))), WS, n("Type"))) ++
+
+        Nominal("Expression", Or(n("IfExpression"),
+                                n("MatchExpression"),
+                                n("LoopExpression"),
+                                n("BreakStatement"),
+                                n("ContinueStatement"),
+                                n("AssignExpression"))) ++ // {fragment=true}
+        Nominal("Statement",  Or(n("ValDeclaration"),
+                                n("VarDeclaration"),
+                                n("FunDeclaration"),
+                                n("Expression"))) ++ // {fragment=true}
+
+        Nominal("AssignExpression", Cons(n("OrExpression"), ZeroOrMore(Cons(WS, n("AssignmentKeyword"), WS, n("OrExpression"))))) ++ // {simplifyWhenOneChildren=true}
+        Nominal("OrExpression", Cons(n("AndExpression"), ZeroOrMore(Cons(WS, n("OrKeyword"), WS, n("AndExpression"))))) ++ // {simplifyWhenOneChildren=true}
+        Nominal("AndExpression", Cons(n("BitOrExpression"), ZeroOrMore(Cons(WS, n("AndKeyword"), WS, n("BitOrExpression"))))) ++ // {simplifyWhenOneChildren=true}
+        Nominal("BitOrExpression", Cons(n("BitXorExpression"), ZeroOrMore(Cons(WS, n("BitOrOperator"), WS, n("BitXorExpression"))))) ++ // {simplifyWhenOneChildren=true}
+        Nominal("BitXorExpression", Cons(n("BitAndExpression"), ZeroOrMore(Cons(WS, n("BitXorOperator"), WS, n("BitAndExpression"))))) ++ // {simplifyWhenOneChildren=true}
+        Nominal("BitAndExpression", Cons(n("EqExpression"), ZeroOrMore(Cons(WS, n("BitAndOperator"), WS, n("EqExpression"))))) ++ // {simplifyWhenOneChildren=true}
+        Nominal("EqExpression", Cons(n("RelExpression"), ZeroOrMore(Cons(WS, n("EqOperator"), WS, n("RelExpression"))))) ++ // {simplifyWhenOneChildren=true}
+        Nominal("RelExpression", Cons(n("ShiftExpression"), ZeroOrMore(Cons(WS, n("RelOperator"), WS, n("ShiftExpression"))))) ++ // {simplifyWhenOneChildren=true}
+        Nominal("ShiftExpression", Cons(n("AddExpression"), ZeroOrMore(Cons(WS, n("ShiftOperator"), WS, n("AddExpression"))))) ++ // {simplifyWhenOneChildren=true}
+        Nominal("AddExpression", Cons(n("MulExpression"), ZeroOrMore(Cons(WS, n("AddOperator"), WS, n("MulExpression"))))) ++ // {simplifyWhenOneChildren=true}
+        Nominal("MulExpression", Cons(n("IsExpression"), ZeroOrMore(Cons(WS, n("MulOperator"), WS, n("IsExpression"))))) ++ // {simplifyWhenOneChildren=true}
+        Nominal("IsExpression", Cons(n("AsExpression"), ZeroOrMore(Cons(WS, n("IsKeyword"), WS, n("Type"))))) ++ // {simplifyWhenOneChildren=true}
+        Nominal("AsExpression", Cons(n("UnaryExpression"), ZeroOrMore(Cons(WS, n("AsKeyword"), WS, n("Type"))))) ++ // {simplifyWhenOneChildren=true}
+        Nominal("UnaryExpression", Or(n("NegExpression"),
+                                      n("BinNegExpression"),
+                                      n("UnaryMinus"),
+                                      n("AtomicExpression"))) ++ // {simplifyWhenOneChildren=true}
+        Nominal("AtomicExpression", Cut(n("Value"), ZeroOrMore(Cons(WS, Or(n("MemberExpression"), n("CallArguments"), n("IndexExpression")))))) ++ // {simplifyWhenOneChildren=true,pin=1}
+
+        Nominal("BinMemberOperator",  Or(op(".^"), op("."))) ++
+        Nominal("MemberExpression",  Cut(n("BinMemberOperator"), n("NameIdentifier"))) ++
+        Nominal("IndexExpression",  Cut(Cut(Terminal(VectorOpen), WS, n("Expression")), WS, Terminal(VectorClose))) ++
+
+        Nominal("NegExpression", Cut(op("!"), n("AtomicExpression"))) ++
+        Nominal("BinNegExpression", Cut(op("~"), n("AtomicExpression"))) ++
+        Nominal("UnaryMinus", Cons(op("-"), n("AtomicExpression"))) ++
+
+        Nominal("Value",  Or(n("Literal"),
+                            n("Reference"),
+                            n("ParenExpression"),
+                            n("CodeBlock"))) ++ // {fragment=true,pin=1}
+
+        Nominal("ParenExpression", Wrap(ParenthesesOpen, Cons(WS, n("Expression"), WS), ParenthesesClose)) ++
+
+        Nominal("CodeBlock",
+          Wrap(
+            CurlyBracesOpen,
+            Cons(WS,
+              Optional(
+                Cut(
+                  n("Statement"), ZeroOrMore(
+                    Cons(NEW_LINE, WS, n("Statement"))))), WS), CurlyBracesClose)) ++
+
+        // Pattern matching
+        Nominal("MatchBody", Wrap(CurlyBracesOpen, Cons(WS, ZeroOrMore(n("MatchElements"))), CurlyBracesClose)) ++
+
+        Nominal("DeconstructStruct", Cons(Wrap(ParenthesesOpen, Optional(OneOrMoreComma(n("NameIdentifier"))), ParenthesesClose), WS)) ++
+
+        // Function call
+        Nominal("CallArguments",  Wrap(ParenthesesOpen, Optional(OneOrMoreComma(n("Expression"))), ParenthesesClose)) ++
+
+        Nominal("Reference", n("QName")) ++
+
+        Nominal("BooleanLiteral", Or(t("true"), t("false"))) ++
+        Nominal("PostfixNumber", Cut(Terminal(NumberLiteral), Optional(n("Reference")))) ++ // {pin=1,simplifyWhenOneChildren=true}
+        Nominal("NegNumberLiteral", Cons(Optional(op("-")), Terminal(NumberLiteral))) ++
+
+        Nominal("Literal",  Or(Terminal(StringLiteral), n("PostfixNumber"), n("BooleanLiteral"))) ++ // {fragment=true}
+
+        Nominal("NameIdentifier", Cons(NegativeLookAhead(n("KEYWORD")), Terminal(Identifier))) ++
+        Nominal("QName", Cut(n("NameIdentifier"), ZeroOrMore(Cut(op("::"), n("NameIdentifier"))))) ++
+
+        Nominal("NameLiteralPair", Cut(n("NameIdentifier"), WS, op("="), WS, n("Literal"))) ++
+
+        Nominal("SExpression", Cons(Wrap(ParenthesesOpen, Cons(WS, n("SSymbol"), WS, ZeroOrMore(n("SAtom")), WS), ParenthesesClose), WS)) ++
+        Nominal("SAtom",  Cons(Or(n("QName"),
+                                  n("SExpression"),
+                                  n("NegNumberLiteral")), WS)) ++ // {fragment=true}
+
+        Nominal("SSymbol", Cut(Terminal(Identifier), ZeroOrMore(Or(Terminal(Identifier), op("/"), op("."))))) ++
+
+        // Keywords 
+
+        Nominal("KEYWORD", Or(Or(
+                                t("true"),
+                                t("false"),
+                                t("if"),
+                                t("else"),
+                                t("case")),
+                              Or(
+                                n("VAR_KEYWORD"),
+                                n("VAL_KEYWORD"),
+                                n("TYPE_KEYWORD")),
+                              Or(
+                                n("ENUM_KEYWORD"),
+                                n("TRAIT_KEYWORD"),
+                                n("EFFECT_KEYWORD"),
+                                n("IMPL_KEYWORD"),
+                                n("FOR_KEYWORD"),
+                              Or(
+                                n("IMPORT_KEYWORD"),
+                                n("FUN_KEYWORD")),
+                                n("STRUCT_KEYWORD"),
+                                n("PRIVATE_KEYWORD"),
+                                n("MATCH_KEYWORD")),
+                              Or(
+                                t("loop"),
+                                t("continue"),
+                                t("break"),
+                                n("RESERVED_WORDS")))) ++
+
+        Nominal("FUN_KEYWORD", Cut(t("fun"), WSS)) ++
+        Nominal("VAL_KEYWORD", Cut(t("val"), WSS)) ++
+        Nominal("VAR_KEYWORD", Cut(t("var"), WSS)) ++
+        Nominal("EFFECT_KEYWORD", Cut(t("effect"), WSS)) ++
+        Nominal("IMPL_KEYWORD", Cut(t("impl"), WSS)) ++
+        Nominal("FOR_KEYWORD", Cut(t("for"), WSS)) ++
+        Nominal("IMPORT_KEYWORD", Cut(t("import"), WSS)) ++
+        Nominal("STRUCT_KEYWORD", Cut(t("struct"), WSS)) ++
+        Nominal("PRIVATE_KEYWORD", Cut(t("private"), WSS)) ++
+        Nominal("TYPE_KEYWORD", Cut(t("type"), WSS)) ++
+        Nominal("ENUM_KEYWORD", Cut(t("enum"), WSS)) ++
+        Nominal("TRAIT_KEYWORD", Cut(t("trait"), WSS)) ++
+        Nominal("MATCH_KEYWORD", Cut(t("match"), WSS)) ++
+
+
+
+
+        Nominal("RESERVED_WORDS",  Or(Or(t("abstract"),
+                                        t("async"),
+                                        t("await"),
+                                        t("class"),
+                                        t("const"),
+                                        t("declare")),
+                                      Or(t("defer"),
+                                        t("delete"),
+                                        t("do"),
+                                        t("extends"),
+                                        t("finally"),
+                                        t("for"),
+                                        t("import")),
+                                      Or(t("is"),
+                                        t("in"),
+                                        t("let"),
+                                        t("new"),
+                                        t("package"),
+                                        t("protected")),
+                                      Or(t("public"),
+                                        t("try"),
+                                        t("using"),
+                                        t("while"),
+                                        t("yield")))) ++
+
+        // OPERATORSORDERED BY PRECEDENCE https://introcs.cs.princeton.edu/java/11precedence/ z
+
+        Nominal("AssignmentKeyword", op("=")) ++
+        Nominal("NotPreOperator", op("!")) ++
+        Nominal("BitNotPreOperator", op("~")) ++
+        Nominal("MinusPreOperator", op("-")) ++
+        Nominal("AsKeyword", Cons(t("as"), WS)) ++
+        Nominal("IsKeyword", Cons(op("is"), WS)) ++
+        Nominal("MulOperator", Or(op("**"), op("*"), op("/"), op("%"))) ++
+        Nominal("AddOperator", Or(op("++"), op("+"), op("-"))) ++
+        Nominal("ShiftOperator", Or(op(">>>"), op(">>"), op("<<"))) ++
+        Nominal("RelOperator", Or(op(">="), op("<="), op(">"), op("<"))) ++
+        Nominal("EqOperator", Or(op("==="), op("!=="), op("~="), op("=="), op("!="))) ++
+        Nominal("BitAndOperator", op("&")) ++
+        Nominal("BitXorOperator", op("^")) ++
+        Nominal("BitOrOperator", op("|")) ++
+        Nominal("AndKeyword", op("&&")) ++
+        Nominal("OrKeyword", op("||"))
+      grammar = g
+      g
+    }
+  }
+}

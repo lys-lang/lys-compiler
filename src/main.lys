@@ -1,8 +1,15 @@
 import support::ffi
 import src::lexer::lexer
+import src::parser::lysgrammar
+import src::parser::parser
 
 #[export "startLexer"]
 fun startLexer(strAddress: UnsafeCPointer): void = instantiate(UCS2.fromPtr(strAddress))
 
 #[export "eat"]
 fun externalEat(): UnsafeCPointer = eat() as UnsafeCPointer
+
+#[export "parseAst"]
+fun parseAst(strAddress: UnsafeCPointer): UnsafeCPointer = {
+  printAst(parse(UCS2.fromPtr(strAddress), "Document", getGrammar()), 0) as UnsafeCPointer
+}

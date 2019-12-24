@@ -1,0 +1,427 @@
+|-Document
+  |-Directive
+    |-FunctionDirective
+      |-Decorators
+        <Rule0>
+      |-PrivateModifier
+        |-PRIVATE_KEYWORD
+          |-Identifier=private
+      |-FunDeclaration
+        |-FunctionName
+          |-NameIdentifier
+            |-Identifier=stringDiscriminant
+        |-FunctionParamsList
+          |-ParameterList
+            <Rule0>
+        |-OfType
+          |-Operator=:
+          |-Type
+            |-UnionType
+              |-IntersectionType
+                |-AtomType
+                  |-Reference
+                    |-QName
+                      |-NameIdentifier
+                        |-Identifier=u64
+        |-FunAssignExpression
+          |-Operator==
+          |-Expression
+            |-AssignExpression
+              |-OrExpression
+                |-AndExpression
+                  |-BitOrExpression
+                    |-BitXorExpression
+                      |-BitAndExpression
+                        |-EqExpression
+                          |-RelExpression
+                            |-ShiftExpression
+                              |-AddExpression
+                                |-MulExpression
+                                  |-IsExpression
+                                    |-AsExpression
+                                      |-UnaryExpression
+                                        |-AtomicExpression
+                                          |-Value
+                                            |-CodeBlock
+                                              |-Statement
+                                                |-ValDeclaration
+                                                  |-NameIdentifier
+                                                    |-Identifier=discriminant
+                                                  |-OfType
+                                                    |-Operator=:
+                                                    |-Type
+                                                      |-UnionType
+                                                        |-IntersectionType
+                                                          |-AtomType
+                                                            |-Reference
+                                                              |-QName
+                                                                |-NameIdentifier
+                                                                  |-Identifier=u32
+                                                  |-Assign
+                                                    |-Operator==
+                                                    |-Expression
+                                                      |-AssignExpression
+                                                        |-OrExpression
+                                                          |-AndExpression
+                                                            |-BitOrExpression
+                                                              |-BitXorExpression
+                                                                |-BitAndExpression
+                                                                  |-EqExpression
+                                                                    |-RelExpression
+                                                                      |-ShiftExpression
+                                                                        |-AddExpression
+                                                                          |-MulExpression
+                                                                            |-IsExpression
+                                                                              |-AsExpression
+                                                                                |-UnaryExpression
+                                                                                  |-AtomicExpression
+                                                                                    |-Value
+                                                                                      |-Reference
+                                                                                        |-QName
+                                                                                          |-NameIdentifier
+                                                                                            |-Identifier=string
+                                                                                    |-MemberExpression
+                                                                                      |-BinMemberOperator
+                                                                                        |-Operator=.^
+                                                                                      |-NameIdentifier
+                                                                                        |-Identifier=discriminant
+                                              |-Statement
+                                                |-Expression
+                                                  |-AssignExpression
+                                                    |-OrExpression
+                                                      |-AndExpression
+                                                        |-BitOrExpression
+                                                          |-BitXorExpression
+                                                            |-BitAndExpression
+                                                              |-EqExpression
+                                                                |-RelExpression
+                                                                  |-ShiftExpression
+                                                                    |-AddExpression
+                                                                      |-MulExpression
+                                                                        |-IsExpression
+                                                                          |-AsExpression
+                                                                            |-UnaryExpression
+                                                                              |-AtomicExpression
+                                                                                |-Value
+                                                                                  |-Reference
+                                                                                    |-QName
+                                                                                      |-NameIdentifier
+                                                                                        |-Identifier=discriminant
+                                                                            |-AsKeyword
+                                                                              |-Identifier=as
+                                                                            |-Type
+                                                                              |-UnionType
+                                                                                |-IntersectionType
+                                                                                  |-AtomType
+                                                                                    |-Reference
+                                                                                      |-QName
+                                                                                        |-NameIdentifier
+                                                                                          |-Identifier=u64
+                                                                    |-ShiftOperator
+                                                                      |-Operator=<<
+                                                                    |-AddExpression
+                                                                      |-MulExpression
+                                                                        |-IsExpression
+                                                                          |-AsExpression
+                                                                            |-UnaryExpression
+                                                                              |-AtomicExpression
+                                                                                |-Value
+                                                                                  |-Literal
+                                                                                    |-PostfixNumber
+                                                                                      |-NumberLiteral=32
+  |-Directive
+    |-FunctionDirective
+      |-Decorators
+        |-Decorator
+          |-NameIdentifier
+            |-Identifier=export
+          |-Literal
+            |-StringLiteral="ffi_allocateString"
+      |-PrivateModifier
+        |-PRIVATE_KEYWORD
+          |-Identifier=private
+      |-FunDeclaration
+        |-FunctionName
+          |-NameIdentifier
+            |-Identifier=allocateString
+        |-FunctionParamsList
+          |-ParameterList
+            |-Parameter
+              |-NameIdentifier
+                |-Identifier=sizeInChars
+              |-OfType
+                |-Operator=:
+                |-Type
+                  |-UnionType
+                    |-IntersectionType
+                      |-AtomType
+                        |-Reference
+                          |-QName
+                            |-NameIdentifier
+                              |-Identifier=u32
+        |-OfType
+          |-Operator=:
+          |-Type
+            |-UnionType
+              |-IntersectionType
+                |-AtomType
+                  |-Reference
+                    |-QName
+                      |-NameIdentifier
+                        |-Identifier=UnsafeCPointer
+        |-FunAssignExpression
+          |-Operator==
+          |-Expression
+            |-AssignExpression
+              |-OrExpression
+                |-AndExpression
+                  |-BitOrExpression
+                    |-BitXorExpression
+                      |-BitAndExpression
+                        |-EqExpression
+                          |-RelExpression
+                            |-ShiftExpression
+                              |-AddExpression
+                                |-MulExpression
+                                  |-IsExpression
+                                    |-AsExpression
+                                      |-UnaryExpression
+                                        |-AtomicExpression
+                                          |-Value
+                                            |-CodeBlock
+                                              |-Statement
+                                                |-Expression
+                                                  |-AssignExpression
+                                                    |-OrExpression
+                                                      |-AndExpression
+                                                        |-BitOrExpression
+                                                          |-BitXorExpression
+                                                            |-BitAndExpression
+                                                              |-EqExpression
+                                                                |-RelExpression
+                                                                  |-ShiftExpression
+                                                                    |-AddExpression
+                                                                      |-MulExpression
+                                                                        |-IsExpression
+                                                                          |-AsExpression
+                                                                            |-UnaryExpression
+                                                                              |-AtomicExpression
+                                                                                |-Value
+                                                                                  |-Reference
+                                                                                    |-QName
+                                                                                      |-NameIdentifier
+                                                                                        |-Identifier=string
+                                                                                |-MemberExpression
+                                                                                  |-BinMemberOperator
+                                                                                    |-Operator=.
+                                                                                  |-NameIdentifier
+                                                                                    |-Identifier=fromBytes
+                                                                                |-CallArguments
+                                                                                  |-Expression
+                                                                                    |-AssignExpression
+                                                                                      |-OrExpression
+                                                                                        |-AndExpression
+                                                                                          |-BitOrExpression
+                                                                                            |-BitXorExpression
+                                                                                              |-BitAndExpression
+                                                                                                |-EqExpression
+                                                                                                  |-RelExpression
+                                                                                                    |-ShiftExpression
+                                                                                                      |-AddExpression
+                                                                                                        |-MulExpression
+                                                                                                          |-IsExpression
+                                                                                                            |-AsExpression
+                                                                                                              |-UnaryExpression
+                                                                                                                |-AtomicExpression
+                                                                                                                  |-Value
+                                                                                                                    |-Reference
+                                                                                                                      |-QName
+                                                                                                                        |-NameIdentifier
+                                                                                                                          |-Identifier=bytes
+                                                                                                                  |-CallArguments
+                                                                                                                    |-Expression
+                                                                                                                      |-AssignExpression
+                                                                                                                        |-OrExpression
+                                                                                                                          |-AndExpression
+                                                                                                                            |-BitOrExpression
+                                                                                                                              |-BitXorExpression
+                                                                                                                                |-BitAndExpression
+                                                                                                                                  |-EqExpression
+                                                                                                                                    |-RelExpression
+                                                                                                                                      |-ShiftExpression
+                                                                                                                                        |-AddExpression
+                                                                                                                                          |-MulExpression
+                                                                                                                                            |-IsExpression
+                                                                                                                                              |-AsExpression
+                                                                                                                                                |-UnaryExpression
+                                                                                                                                                  |-AtomicExpression
+                                                                                                                                                    |-Value
+                                                                                                                                                      |-Reference
+                                                                                                                                                        |-QName
+                                                                                                                                                          |-NameIdentifier
+                                                                                                                                                            |-Identifier=sizeInChars
+                                                                                                                                        |-ShiftOperator
+                                                                                                                                          |-Operator=<<
+                                                                                                                                        |-AddExpression
+                                                                                                                                          |-MulExpression
+                                                                                                                                            |-IsExpression
+                                                                                                                                              |-AsExpression
+                                                                                                                                                |-UnaryExpression
+                                                                                                                                                  |-AtomicExpression
+                                                                                                                                                    |-Value
+                                                                                                                                                      |-Literal
+                                                                                                                                                        |-PostfixNumber
+                                                                                                                                                          |-NumberLiteral=1
+                                                                            |-AsKeyword
+                                                                              |-Identifier=as
+                                                                            |-Type
+                                                                              |-UnionType
+                                                                                |-IntersectionType
+                                                                                  |-AtomType
+                                                                                    |-Reference
+                                                                                      |-QName
+                                                                                        |-NameIdentifier
+                                                                                          |-Identifier=UnsafeCPointer
+  |-Directive
+    |-TypeDirective
+      |-TYPE_KEYWORD
+        |-Identifier=type
+      |-NameIdentifier
+        |-Identifier=UCS2
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=void
+  |-<UNEXPECTED TOKEN>=
+
+
+  |-<UNEXPECTED TOKEN>=impl
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=UCS2
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>={
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=// Converts a pointer resulted from a allocBytes to a string
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=fun
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=fromPtr
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=bytesPointer
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=UnsafeCPointer
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=string
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=%
+  |-<UNEXPECTED TOKEN>=wasm
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>={
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=    
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=i64
+  |-<UNEXPECTED TOKEN>=.
+  |-<UNEXPECTED TOKEN>=or
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=      
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=call
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=$stringDiscriminant
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=      
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=i64
+  |-<UNEXPECTED TOKEN>=.
+  |-<UNEXPECTED TOKEN>=and
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=        
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=i64
+  |-<UNEXPECTED TOKEN>=.
+  |-<UNEXPECTED TOKEN>=const
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=0xFFFFFFFF
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=        
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=i64
+  |-<UNEXPECTED TOKEN>=.
+  |-<UNEXPECTED TOKEN>=extend_u
+  |-<UNEXPECTED TOKEN>=/
+  |-<UNEXPECTED TOKEN>=i32
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=          
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=i32
+  |-<UNEXPECTED TOKEN>=.
+  |-<UNEXPECTED TOKEN>=sub
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=            
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=get_local
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=$bytesPointer
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=            
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=i32
+  |-<UNEXPECTED TOKEN>=.
+  |-<UNEXPECTED TOKEN>=const
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=4
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=}
+  |-<UNEXPECTED TOKEN>=
+
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=fun
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=toPtr
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=str
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=string
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=UnsafeCPointer
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=str
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=as
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=UnsafeCPointer
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=}
