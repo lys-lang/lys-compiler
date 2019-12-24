@@ -714,7 +714,7 @@ fun discardSemantics(): void = {
 
   val grammar: Grammar =
     Nominal("value",
-      Cons(
+      Push("valuex", Cons(
         StrictTerminal(Identifier, "A"),
         Cut(
           Discard(Terminal(Whitespace)),
@@ -728,12 +728,12 @@ fun discardSemantics(): void = {
             )
           )
         )
-      )
+      ))
     )
 
   mustEqual(
     printAst(verifyParsing("A B C", "value", grammar), 0),
-    "|-value\n" ++
+    "|-valuex\n" ++
     "  |-Identifier=A\n" ++
     "  |-Identifier=B",
     "Validate tree"
