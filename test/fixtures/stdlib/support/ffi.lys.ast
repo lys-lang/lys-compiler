@@ -3,7 +3,7 @@
     |-Decorators
       <Rule0>
     |-PrivateModifier
-      |-Identifier=private
+      <Rule0>
     |-FunDeclaration
       |-FunctionName
         |-NameIdentifier
@@ -65,7 +65,7 @@
           |-Identifier=export
         |-StringLiteral="ffi_allocateString"
     |-PrivateModifier
-      |-Identifier=private
+      <Rule0>
     |-FunDeclaration
       |-FunctionName
         |-NameIdentifier
@@ -126,7 +126,6 @@
                   |-NameIdentifier
                     |-Identifier=UnsafeCPointer
   |-TypeDirective
-    |-Identifier=type
     |-NameIdentifier
       |-Identifier=UCS2
   |-<UNEXPECTED TOKEN>==
