@@ -1,525 +1,411 @@
 |-Document
-  |-Directive
-    |-FunctionDirective
-      |-Decorators
-        |-Decorator
-          |-NameIdentifier
-            |-Identifier=inline
-      |-PrivateModifier
-        |-PRIVATE_KEYWORD
-          |-Identifier=private
-      |-FunDeclaration
-        |-FunctionName
-          |-NameIdentifier
-            |-Identifier=test
-        |-FunctionParamsList
-          |-ParameterList
-            <Rule0>
-        |-OfType
-          |-Operator=:
-          |-Type
-            |-UnionType
-              |-IntersectionType
-                |-AtomType
-                  |-Reference
+  |-FunctionDirective
+    |-Decorators
+      |-Decorator
+        |-NameIdentifier
+          |-Identifier=inline
+    |-PrivateModifier
+      |-Identifier=private
+    |-FunDeclaration
+      |-FunctionName
+        |-NameIdentifier
+          |-Identifier=test
+      |-FunctionParamsList
+        |-ParameterList
+          <Rule0>
+      |-OfType
+        |-Operator=:
+        |-Type
+          |-Reference
+            |-QName
+              |-NameIdentifier
+                |-Identifier=void
+      |-FunAssignExpression
+        |-Operator==
+        |-WasmExpression
+          |-Operator=%
+          |-Identifier=wasm
+          |-CurlyBracesOpen={
+          |-CurlyBracesClose=}
+  |-FunctionDirective
+    |-Decorators
+      |-Decorator
+        |-NameIdentifier
+          |-Identifier=inline
+    |-PrivateModifier
+      |-Identifier=private
+    |-FunDeclaration
+      |-FunctionName
+        |-NameIdentifier
+          |-Identifier=test
+      |-FunctionParamsList
+        |-ParameterList
+          <Rule0>
+      |-OfType
+        |-Operator=:
+        |-Type
+          |-Reference
+            |-QName
+              |-NameIdentifier
+                |-Identifier=void
+      |-FunAssignExpression
+        |-Operator==
+        |-WasmExpression
+          |-Operator=%
+          |-Identifier=wasm
+          |-CurlyBracesOpen={
+          |-CurlyBracesClose=}
+  |-FunctionDirective
+    |-Decorators
+      |-Decorator
+        |-NameIdentifier
+          |-Identifier=inline
+    |-PrivateModifier
+      |-Identifier=private
+    |-FunDeclaration
+      |-FunctionName
+        |-NameIdentifier
+          |-Identifier=test
+      |-FunctionParamsList
+        |-ParameterList
+          <Rule0>
+      |-OfType
+        |-Operator=:
+        |-Type
+          |-Reference
+            |-QName
+              |-NameIdentifier
+                |-Identifier=void
+      |-FunAssignExpression
+        |-Operator==
+        |-WasmExpression
+          |-Operator=%
+          |-Identifier=wasm
+          |-CurlyBracesOpen={
+          |-CurlyBracesClose=}
+  |-VarDirective
+    |-VarDeclaration
+      |-NameIdentifier
+        |-Identifier=freeblock
+      |-Operator==
+      |-NumberLiteral=0
+  |-FunctionDirective
+    |-Decorators
+      <Rule0>
+    |-FunDeclaration
+      |-FunctionName
+        |-NameIdentifier
+          |-Identifier=malloc
+      |-FunctionParamsList
+        |-ParameterList
+          |-Parameter
+            |-NameIdentifier
+              |-Identifier=size
+            |-OfType
+              |-Operator=:
+              |-Type
+                |-Reference
+                  |-QName
+                    |-NameIdentifier
+                      |-Identifier=i32
+      |-OfType
+        |-Operator=:
+        |-Type
+          |-Reference
+            |-QName
+              |-NameIdentifier
+                |-Identifier=i32
+      |-FunAssignExpression
+        |-Operator==
+        |-WasmExpression
+          |-Operator=%
+          |-Identifier=wasm
+          |-CurlyBracesOpen={
+          |-SExpression
+            |-SSymbol
+              |-Identifier=local
+            |-QName
+              |-NameIdentifier
+                |-Identifier=$address
+            |-QName
+              |-NameIdentifier
+                |-Identifier=i32
+          |-SExpression
+            |-SSymbol
+              |-Identifier=set_local
+            |-QName
+              |-NameIdentifier
+                |-Identifier=$address
+            |-SExpression
+              |-SSymbol
+                |-Identifier=get_global
+              |-QName
+                |-NameIdentifier
+                  |-Identifier=freeblock
+          |-SExpression
+            |-SSymbol
+              |-Identifier=set_global
+            |-QName
+              |-NameIdentifier
+                |-Identifier=$freeblock
+            |-SExpression
+              |-SSymbol
+                |-Identifier=i32
+                |-Operator=.
+                |-Identifier=add
+              |-SExpression
+                |-SSymbol
+                  |-Identifier=get_local
+                |-QName
+                  |-NameIdentifier
+                    |-Identifier=$address
+              |-SExpression
+                |-SSymbol
+                  |-Identifier=get_local
+                |-QName
+                  |-NameIdentifier
+                    |-Identifier=$size
+          |-SExpression
+            |-SSymbol
+              |-Identifier=get_local
+            |-QName
+              |-NameIdentifier
+                |-Identifier=$address
+          |-CurlyBracesClose=}
+  |-FunctionDirective
+    |-Decorators
+      <Rule0>
+    |-FunDeclaration
+      |-FunctionName
+        |-NameIdentifier
+          |-Identifier=strAdd
+      |-FunctionParamsList
+        |-ParameterList
+          |-Parameter
+            |-NameIdentifier
+              |-Identifier=a
+            |-OfType
+              |-Operator=:
+              |-Type
+                |-Reference
+                  |-QName
+                    |-NameIdentifier
+                      |-Identifier=i32
+          |-Parameter
+            |-NameIdentifier
+              |-Identifier=b
+            |-OfType
+              |-Operator=:
+              |-Type
+                |-Reference
+                  |-QName
+                    |-NameIdentifier
+                      |-Identifier=i32
+      |-OfType
+        |-Operator=:
+        |-Type
+          |-Reference
+            |-QName
+              |-NameIdentifier
+                |-Identifier=i32
+      |-FunAssignExpression
+        |-Operator==
+        |-WasmExpression
+          |-Operator=%
+          |-Identifier=wasm
+          |-CurlyBracesOpen={
+          |-SExpression
+            |-SSymbol
+              |-Identifier=local
+            |-QName
+              |-NameIdentifier
+                |-Identifier=$sum
+            |-QName
+              |-NameIdentifier
+                |-Identifier=i32
+          |-SExpression
+            |-SSymbol
+              |-Identifier=local
+            |-QName
+              |-NameIdentifier
+                |-Identifier=$aSize
+            |-QName
+              |-NameIdentifier
+                |-Identifier=i32
+          |-SExpression
+            |-SSymbol
+              |-Identifier=local
+            |-QName
+              |-NameIdentifier
+                |-Identifier=$newStr
+            |-QName
+              |-NameIdentifier
+                |-Identifier=i32
+          |-SExpression
+            |-SSymbol
+              |-Identifier=return
+            |-SExpression
+              |-SSymbol
+                |-Identifier=set_local
+              |-QName
+                |-NameIdentifier
+                  |-Identifier=$aSize
+              |-SExpression
+                |-SSymbol
+                  |-Identifier=i32
+                  |-Operator=.
+                  |-Identifier=load8_u
+                |-QName
+                  |-NameIdentifier
+                    |-Identifier=a
+            |-SExpression
+              |-SSymbol
+                |-Identifier=set_local
+              |-QName
+                |-NameIdentifier
+                  |-Identifier=$sum
+              |-SExpression
+                |-SSymbol
+                  |-Identifier=i32
+                  |-Operator=.
+                  |-Identifier=sub
+                |-SExpression
+                  |-SSymbol
+                    |-Identifier=i32
+                    |-Operator=.
+                    |-Identifier=add
+                  |-SExpression
+                    |-SSymbol
+                      |-Identifier=get_local
                     |-QName
                       |-NameIdentifier
-                        |-Identifier=void
-        |-FunAssignExpression
-          |-Operator==
-          |-WasmExpression
-            |-Operator=%
-            |-Identifier=wasm
-            |-CurlyBracesOpen={
-            |-CurlyBracesClose=}
-  |-Directive
-    |-FunctionDirective
-      |-Decorators
-        |-Decorator
-          |-NameIdentifier
-            |-Identifier=inline
-      |-PrivateModifier
-        |-PRIVATE_KEYWORD
-          |-Identifier=private
-      |-FunDeclaration
-        |-FunctionName
-          |-NameIdentifier
-            |-Identifier=test
-        |-FunctionParamsList
-          |-ParameterList
-            <Rule0>
-        |-OfType
-          |-Operator=:
-          |-Type
-            |-UnionType
-              |-IntersectionType
-                |-AtomType
-                  |-Reference
+                        |-Identifier=$aSize
+                  |-SExpression
+                    |-SSymbol
+                      |-Identifier=i32
+                      |-Operator=.
+                      |-Identifier=load8_u
                     |-QName
                       |-NameIdentifier
-                        |-Identifier=void
-        |-FunAssignExpression
-          |-Operator==
-          |-WasmExpression
-            |-Operator=%
-            |-Identifier=wasm
-            |-CurlyBracesOpen={
-            |-CurlyBracesClose=}
-  |-Directive
-    |-FunctionDirective
-      |-Decorators
-        |-Decorator
-          |-NameIdentifier
-            |-Identifier=inline
-      |-PrivateModifier
-        |-PRIVATE_KEYWORD
-          |-Identifier=private
-      |-FunDeclaration
-        |-FunctionName
-          |-NameIdentifier
-            |-Identifier=test
-        |-FunctionParamsList
-          |-ParameterList
-            <Rule0>
-        |-OfType
-          |-Operator=:
-          |-Type
-            |-UnionType
-              |-IntersectionType
-                |-AtomType
-                  |-Reference
+                        |-Identifier=b
+                |-SExpression
+                  |-SSymbol
+                    |-Identifier=i32
+                    |-Operator=.
+                    |-Identifier=const
+                  |-NegNumberLiteral
+                    |-NumberLiteral=1
+            |-SExpression
+              |-SSymbol
+                |-Identifier=set_local
+              |-QName
+                |-NameIdentifier
+                  |-Identifier=$newStr
+              |-SExpression
+                |-SSymbol
+                  |-Identifier=call
+                |-QName
+                  |-NameIdentifier
+                    |-Identifier=malloc
+                |-SExpression
+                  |-SSymbol
+                    |-Identifier=i32
+                    |-Operator=.
+                    |-Identifier=add
+                  |-SExpression
+                    |-SSymbol
+                      |-Identifier=get_local
                     |-QName
                       |-NameIdentifier
-                        |-Identifier=void
-  |-<UNEXPECTED TOKEN>==%
-  |-<UNEXPECTED TOKEN>=wasm
-  |-<UNEXPECTED TOKEN>={
-  |-<UNEXPECTED TOKEN>=}
-  |-<UNEXPECTED TOKEN>=
-
-
-  |-<UNEXPECTED TOKEN>=var
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=freeblock
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=0
-  |-<UNEXPECTED TOKEN>=
-
-
-  |-<UNEXPECTED TOKEN>=fun
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=malloc
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=size
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=%
-  |-<UNEXPECTED TOKEN>=wasm
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>={
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=local
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$address
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=set_local
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$address
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=get_global
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=freeblock
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=set_global
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=$freeblock
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=add
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=      
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=get_local
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$address
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=      
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=get_local
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$size
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=get_local
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$address
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=}
-  |-<UNEXPECTED TOKEN>=
-
-
-  |-<UNEXPECTED TOKEN>=fun
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=strAdd
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=a
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=,
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=b
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=%
-  |-<UNEXPECTED TOKEN>=wasm
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>={
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=local
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$sum
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=local
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$aSize
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=local
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$newStr
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=return
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=set_local
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$aSize
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=load8_u
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=a
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=set_local
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$sum
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=      
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=sub
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=        
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=add
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=          
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=get_local
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$aSize
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=          
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=load8_u
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=b
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=        
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=        
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=const
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=1
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=      
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=set_local
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$newStr
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=      
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=call
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=malloc
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=        
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=add
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=          
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=get_local
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$sum
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=          
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=const
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=1
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=        
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=      
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=store8
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=      
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=get_local
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$newStr
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=      
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=get_local
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$sum
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=call
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=string_copy
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=get_local
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$a
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=get_local
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$newStr
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=call
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=string_copy
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=      
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=get_local
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$b
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=      
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=sub
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=        
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=add
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=          
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=get_local
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$newStr
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=          
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=get_local
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$aSize
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=        
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=        
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=const
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=1
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=      
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=get_local
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$newStr
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=}
-  |-<UNEXPECTED TOKEN>=
+                        |-Identifier=$sum
+                  |-SExpression
+                    |-SSymbol
+                      |-Identifier=i32
+                      |-Operator=.
+                      |-Identifier=const
+                    |-NegNumberLiteral
+                      |-NumberLiteral=1
+            |-SExpression
+              |-SSymbol
+                |-Identifier=i32
+                |-Operator=.
+                |-Identifier=store8
+              |-SExpression
+                |-SSymbol
+                  |-Identifier=get_local
+                |-QName
+                  |-NameIdentifier
+                    |-Identifier=$newStr
+              |-SExpression
+                |-SSymbol
+                  |-Identifier=get_local
+                |-QName
+                  |-NameIdentifier
+                    |-Identifier=$sum
+            |-SExpression
+              |-SSymbol
+                |-Identifier=call
+              |-QName
+                |-NameIdentifier
+                  |-Identifier=string_copy
+              |-SExpression
+                |-SSymbol
+                  |-Identifier=get_local
+                |-QName
+                  |-NameIdentifier
+                    |-Identifier=$a
+              |-SExpression
+                |-SSymbol
+                  |-Identifier=get_local
+                |-QName
+                  |-NameIdentifier
+                    |-Identifier=$newStr
+            |-SExpression
+              |-SSymbol
+                |-Identifier=call
+              |-QName
+                |-NameIdentifier
+                  |-Identifier=string_copy
+              |-SExpression
+                |-SSymbol
+                  |-Identifier=get_local
+                |-QName
+                  |-NameIdentifier
+                    |-Identifier=$b
+              |-SExpression
+                |-SSymbol
+                  |-Identifier=i32
+                  |-Operator=.
+                  |-Identifier=sub
+                |-SExpression
+                  |-SSymbol
+                    |-Identifier=i32
+                    |-Operator=.
+                    |-Identifier=add
+                  |-SExpression
+                    |-SSymbol
+                      |-Identifier=get_local
+                    |-QName
+                      |-NameIdentifier
+                        |-Identifier=$newStr
+                  |-SExpression
+                    |-SSymbol
+                      |-Identifier=get_local
+                    |-QName
+                      |-NameIdentifier
+                        |-Identifier=$aSize
+                |-SExpression
+                  |-SSymbol
+                    |-Identifier=i32
+                    |-Operator=.
+                    |-Identifier=const
+                  |-NegNumberLiteral
+                    |-NumberLiteral=1
+            |-SExpression
+              |-SSymbol
+                |-Identifier=get_local
+              |-QName
+                |-NameIdentifier
+                  |-Identifier=$newStr
+          |-CurlyBracesClose=}
+  |-EndOfFile=

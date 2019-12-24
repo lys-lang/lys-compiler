@@ -17,6 +17,8 @@ enum ParserRule {
   LookAhead(rule: ParserRule)
   NegativeLookAhead(rule: ParserRule)
   Discard(rule: ParserRule)
+  Push(name: string, rule: ParserRule)
+  PushIfManyChildren(name: string, rule: ParserRule)
 }
 
 impl Cons {
@@ -89,6 +91,8 @@ impl ParserRule {
     case is LookAhead(rule) -> "&(" ++ rule.toString() ++ ")"
     case is NegativeLookAhead(rule) -> "!(" ++ rule.toString() ++ ")"
     case is Discard(rule) -> "discard(" ++ rule.toString() ++ ")"
+    case is Push(name, rule) -> "push('" ++ name ++ "', " ++ rule.toString() ++ ")"
+    case is PushIfManyChildren(name, rule) -> "pushIfManyChildren('" ++ name ++ "', " ++ rule.toString() ++ ")"
   }
 }
 
@@ -117,6 +121,41 @@ impl Grammar {
           head.rule
         else
           tail.findRule(ruleName)
+    }
+  }
+
+  #[method]
+  fun compile(fullGrammar: Grammar, ruleName: string): ParserRule | Nil =
+    match fullGrammar.findRule(ruleName) {
+      case is Nil -> Nil
+      case rule is ParserRule -> optimize(fullGrammar, rule)
+    }
+
+  fun optimize(fullGrammar: Grammar, rule: ParserRule): ParserRule = match rule {
+    case is NonTerminal(name) -> match fullGrammar.findRule(name) {
+      case is Nil -> {
+        support::env::printf("optimize(rule,fullGrammar): missing rule: " ++ name)
+        panic()
+        rule
+      }
+      case a is ParserRule -> optimize(fullGrammar, rule)
+    }
+    case is Or(lhs, rhs) -> Or(optimize(fullGrammar, lhs), optimize(fullGrammar, lhs))
+    case is Cons(head, tail) -> Cons(optimize(fullGrammar, head), optimize(fullGrammar, tail))
+    case is Cut(head, tail) -> Cut(optimize(fullGrammar, head), optimize(fullGrammar, tail))
+
+    case is OneOrMore(rule) -> OneOrMore(optimize(fullGrammar, rule))
+    case is ZeroOrMore(rule) -> ZeroOrMore(optimize(fullGrammar, rule))
+    case is Optional(rule) -> Optional(optimize(fullGrammar, rule))
+
+    case is LookAhead(rule) -> LookAhead(optimize(fullGrammar, rule))
+    case is NegativeLookAhead(rule) -> NegativeLookAhead(optimize(fullGrammar, rule))
+    case is Discard(rule) -> Discard(optimize(fullGrammar, rule))
+    case is Push(name, rule) -> Push(name, optimize(fullGrammar, rule))
+    case is PushIfManyChildren(name, rule) -> PushIfManyChildren(name, optimize(fullGrammar, rule))
+    else -> {
+      support::env::printf("?? " ++ rule.toString())
+      rule
     }
   }
 }
