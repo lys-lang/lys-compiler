@@ -77,8 +77,7 @@
       |-NumberLiteral=0
   |-VarDirective
     |-PrivateModifier
-      |-PRIVATE_KEYWORD
-        |-Identifier=private
+      |-Identifier=private
     |-VarDeclaration
       |-NameIdentifier
         |-Identifier=startOffset
@@ -113,8 +112,7 @@
                 |-Identifier=AL_MASK
   |-VarDirective
     |-PrivateModifier
-      |-PRIVATE_KEYWORD
-        |-Identifier=private
+      |-Identifier=private
     |-VarDeclaration
       |-NameIdentifier
         |-Identifier=offset
@@ -132,8 +130,7 @@
             |-Identifier=startOffset
   |-VarDirective
     |-PrivateModifier
-      |-PRIVATE_KEYWORD
-        |-Identifier=private
+      |-Identifier=private
     |-VarDeclaration
       |-NameIdentifier
         |-Identifier=lastPtr
@@ -150,8 +147,7 @@
     |-Decorators
       <Rule0>
     |-PrivateModifier
-      |-PRIVATE_KEYWORD
-        |-Identifier=private
+      |-Identifier=private
     |-FunDeclaration
       |-FunctionName
         |-NameIdentifier
@@ -180,7 +176,6 @@
         |-WasmExpression
           |-Operator=%
           |-Identifier=wasm
-          |-CurlyBracesOpen={
           |-SExpression
             |-SSymbol
               |-Identifier=grow_memory
@@ -190,13 +185,11 @@
               |-QName
                 |-NameIdentifier
                   |-Identifier=$pages
-          |-CurlyBracesClose=}
   |-FunctionDirective
     |-Decorators
       <Rule0>
     |-PrivateModifier
-      |-PRIVATE_KEYWORD
-        |-Identifier=private
+      |-Identifier=private
     |-FunDeclaration
       |-FunctionName
         |-NameIdentifier
@@ -216,17 +209,14 @@
         |-WasmExpression
           |-Operator=%
           |-Identifier=wasm
-          |-CurlyBracesOpen={
           |-SExpression
             |-SSymbol
               |-Identifier=current_memory
-          |-CurlyBracesClose=}
   |-FunctionDirective
     |-Decorators
       <Rule0>
     |-PrivateModifier
-      |-PRIVATE_KEYWORD
-        |-Identifier=private
+      |-Identifier=private
     |-FunDeclaration
       |-FunctionName
         |-NameIdentifier
@@ -264,7 +254,6 @@
         |-Operator==
         |-IfExpression
           |-IfBody
-            |-ParenthesesOpen=(
             |-RelExpression
               |-Reference
                 |-QName
@@ -276,7 +265,6 @@
                 |-QName
                   |-NameIdentifier
                     |-Identifier=b
-            |-ParenthesesClose=)
           |-Reference
             |-QName
               |-NameIdentifier
@@ -316,7 +304,6 @@
         |-WasmExpression
           |-Operator=%
           |-Identifier=wasm
-          |-CurlyBracesOpen={
           |-SExpression
             |-SSymbol
               |-Identifier=local
@@ -405,7 +392,6 @@
                   |-Identifier=const
                 |-NegNumberLiteral
                   |-NumberLiteral=32
-          |-CurlyBracesClose=}
   |-FunctionDirective
     |-Decorators
       <Rule0>
@@ -524,7 +510,6 @@
         |-CodeBlock
           |-IfExpression
             |-IfBody
-              |-ParenthesesOpen=(
               |-RelExpression
                 |-Reference
                   |-QName
@@ -533,11 +518,9 @@
                 |-RelOperator
                   |-Operator=>
                 |-NumberLiteral=0
-              |-ParenthesesClose=)
             |-CodeBlock
               |-IfExpression
                 |-IfBody
-                  |-ParenthesesOpen=(
                   |-RelExpression
                     |-Reference
                       |-QName
@@ -549,7 +532,6 @@
                       |-QName
                         |-NameIdentifier
                           |-Identifier=MAX_SIZE_32
-                  |-ParenthesesClose=)
                 |-CodeBlock
                   |-AtomicExpression
                     |-Reference
@@ -610,7 +592,6 @@
                     <Rule0>
               |-IfExpression
                 |-IfBody
-                  |-ParenthesesOpen=(
                   |-RelExpression
                     |-Reference
                       |-QName
@@ -626,7 +607,6 @@
                       |-ShiftOperator
                         |-Operator=<<
                       |-NumberLiteral=16
-                  |-ParenthesesClose=)
                 |-CodeBlock
                   |-ValDeclaration
                     |-NameIdentifier
@@ -678,7 +658,6 @@
                               |-Identifier=pagesNeeded
                   |-IfExpression
                     |-IfBody
-                      |-ParenthesesOpen=(
                       |-RelExpression
                         |-AtomicExpression
                           |-Reference
@@ -693,11 +672,9 @@
                         |-RelOperator
                           |-Operator=<
                         |-NumberLiteral=0
-                      |-ParenthesesClose=)
                     |-CodeBlock
                       |-IfExpression
                         |-IfBody
-                          |-ParenthesesOpen=(
                           |-RelExpression
                             |-AtomicExpression
                               |-Reference
@@ -712,7 +689,6 @@
                             |-RelOperator
                               |-Operator=<
                             |-NumberLiteral=0
-                          |-ParenthesesClose=)
                         |-CodeBlock
                           |-AtomicExpression
                             |-Reference
@@ -799,7 +775,6 @@
         |-WasmExpression
           |-Operator=%
           |-Identifier=wasm
-          |-CurlyBracesOpen={
           |-SExpression
             |-SSymbol
               |-Identifier=i64
@@ -818,7 +793,6 @@
               |-QName
                 |-NameIdentifier
                   |-Identifier=$v
-          |-CurlyBracesClose=}
   |-FunctionDirective
     |-Decorators
       <Rule0>
@@ -870,7 +844,6 @@
         |-WasmExpression
           |-Operator=%
           |-Identifier=wasm
-          |-CurlyBracesOpen={
           |-SExpression
             |-SSymbol
               |-Identifier=local
@@ -1014,7 +987,6 @@
                 |-QName
                   |-NameIdentifier
                     |-Identifier=$cont
-          |-CurlyBracesClose=}
   |-FunctionDirective
     |-Decorators
       <Rule0>
@@ -1066,7 +1038,6 @@
         |-WasmExpression
           |-Operator=%
           |-Identifier=wasm
-          |-CurlyBracesOpen={
           |-SExpression
             |-SSymbol
               |-Identifier=local
@@ -1186,5 +1157,4 @@
                 |-QName
                   |-NameIdentifier
                     |-Identifier=$cont
-          |-CurlyBracesClose=}
   |-EndOfFile=

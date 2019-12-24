@@ -36,6 +36,9 @@ fun Wrap(start: TokenType, middle: ParserRule, end: TokenType): ParserRule =
 fun WrapWith(start: ParserRule, middle: ParserRule, end: ParserRule): ParserRule =
   Cut(Cut(Discard(start), middle), Discard(end))
 
+fun Rune(start: ParserRule, middle: ParserRule, message: string): ParserRule =
+  Cut(start, Or(middle, Fail(message)))
+
 fun OneOrMoreComma(rule: ParserRule): ParserRule =
   Cons(
     Optional(n("WS")),
@@ -139,10 +142,7 @@ fun getGrammar(): Grammar = {
             Optional(n("PrivateModifier")),
             Cut(n("ENUM_KEYWORD"), n("NameIdentifier")),
             WS,
-            Terminal(CurlyBracesOpen),
-            Optional(n("TypeDeclElements")),
-            WS,
-            Terminal(CurlyBracesClose)
+            Wrap(CurlyBracesOpen, Cons(WS, Optional(n("TypeDeclElements")), WS), CurlyBracesClose)
           )
         )) ++
         Nominal("TraitDirective", Push("TraitDirective",
@@ -153,10 +153,7 @@ fun getGrammar(): Grammar = {
               n("NameIdentifier")
             ),
             WS,
-            Terminal(CurlyBracesOpen),
-            Optional(n("TraitDeclElements")),
-            WS,
-            Terminal(CurlyBracesClose)
+            Wrap(CurlyBracesOpen, Cons(WS, Optional(n("TraitDeclElements")), WS), CurlyBracesClose)
           )
         )) ++
         Nominal("EffectDirective", Push("EffectDirective",
@@ -180,21 +177,12 @@ fun getGrammar(): Grammar = {
         Nominal("ImplDirective", Push("ImplDirective",
           Cons(
             Optional(n("PrivateModifier")),
-            Cut(
-              n("IMPL_KEYWORD"),
-              WS,
-              n("Reference"),
-              WS,
-              Optional(
-                Cut(
-                  t("for"),
-                  WS,
-                  n("Reference"),
-                  WS
-                )
-              ),
-              n("NamespaceElementList")
-            )
+            Cut(n("IMPL_KEYWORD"), n("Reference")),
+            WS,
+            Optional(
+              Cons(t("FOR_KEYWORD"), n("Reference"), WS)
+            ),
+            n("NamespaceElementList")
           )
         )) ++
         Nominal("Decorators", Push("Decorators", ZeroOrMore(n("Decorator")))) ++
@@ -212,7 +200,9 @@ fun getGrammar(): Grammar = {
         Nominal("CaseElse", Push("CaseElse", Cons(Cut(Discard(t("else")), WS), Optional(Cut(n("NameIdentifier"), WSS)), op("->"), WS, n("Expression")))) ++
         Nominal("IfExpression", Push("IfExpression", Cons(Cut(Discard(t("if")), WS), n("IfBody"), WS, n("Expression"), Optional(Cons(WS, n("ElseExpression")))))) ++
         Nominal("ElseExpression", Cons(Cut(Discard(t("else")), WS), n("Expression"))) ++
-        Nominal("WasmExpression", Push("WasmExpression", Cut(Cons(op("%"), t("wasm")), WS, Terminal(CurlyBracesOpen), WS, ZeroOrMore(n("SAtom")), WS, Terminal(CurlyBracesClose), WS))) ++
+        Nominal("WasmExpression", Push("WasmExpression", Cut(Cons(op("%"), t("wasm")), WS,
+          Wrap(CurlyBracesOpen, Cons(WS, ZeroOrMore(n("SAtom")), WS), CurlyBracesClose), WS
+        ))) ++
         Nominal("StructLiteral", Push("StructLiteral", Cut(Cons(op("%"), t("struct")), WS, n("StructParamsList")))) ++
         Nominal("InjectedLiteral", Push("InjectedLiteral", Cons(op("%"), t("injected")))) ++
         Nominal("StackLiteral", Push("StackLiteral",
@@ -226,7 +216,7 @@ fun getGrammar(): Grammar = {
           )
         )) ++
 
-        Nominal("IfBody", Push("IfBody", Cut(Terminal(ParenthesesOpen), Cons(WS, n("Expression"), WS), Terminal(ParenthesesClose)))) ++
+        Nominal("IfBody", Push("IfBody", Wrap(ParenthesesOpen, Cons(WS, n("Expression"), WS), ParenthesesClose))) ++
         Nominal("MatchElements", Cut(Or(n("CaseCondition"), n("CaseIs"), n("CaseLiteral"), n("CaseElse")), WS)) ++
 
         Nominal("UnknownExpression", Push("UnknownExpression", t("???"))) ++
@@ -244,9 +234,9 @@ fun getGrammar(): Grammar = {
         Nominal("TypeVariable", Push("TypeVariable", n("NameIdentifier"))) ++
         Nominal("TypeParameters", Push("TypeParameters", Cons(WrapWith(op("<"), Cons(WS, Optional(n("TypeVariableList"))), op(">")), WS))) ++
 
-        Nominal("Assign", Cut(op("="), WS, Or(n("Expression"), n("UnknownExpression")))) ++
+        Nominal("Assign", Rune(Cons(op("="), WS), Or(n("Expression"), n("UnknownExpression")), "A value was expected.")) ++
         Nominal("FunAssignExpression", Push("FunAssignExpression", Cut(op("="), WS, Or(n("Expression"), n("WasmExpression"), n("UnknownExpression"))))) ++
-        Nominal("OfType", Push("OfType", Cut(op(":"), WS, Optional(Cut(n("FunctionEffect"), WS)), n("Type"), WS))) ++
+        Nominal("OfType", Push("OfType", Rune(Cons(op(":"), WS), Cons(Optional(Cons(n("FunctionEffect"), WS)), n("Type"), WS), "A type was expected"))) ++
 
         Nominal("StructParamsList", Push("StructParamsList", Wrap(CurlyBracesOpen, Cons(WS, n("ParameterList"), WS), CurlyBracesClose))) ++
         Nominal("FunctionParamsList", Push("FunctionParamsList", Wrap(ParenthesesOpen, Cons(WS, n("ParameterList"), WS), ParenthesesClose))) ++
@@ -279,16 +269,18 @@ fun getGrammar(): Grammar = {
                                   )
                               ))) ++
 
-        Nominal("NamespaceElementList", Push("NamespaceElementList", Cut(Cut(Terminal(CurlyBracesOpen), ZeroOrMore(Cons(WS, n("ImplInnerDirective"))), WS), Terminal(CurlyBracesClose)))) ++
+        Nominal("NamespaceElementList", Push("NamespaceElementList",
+          Wrap(CurlyBracesOpen, Cons(WS, ZeroOrMore(Cons(n("ImplInnerDirective"), WS))), CurlyBracesClose))
+        ) ++
         Nominal("EffectDeclaration", Push("EffectDeclaration", Cut(n("NameIdentifier"), WS, Optional(n("TypeParameters")), n("EffectElementList")))) ++
-        Nominal("EffectElementList", Push("EffectElementList", Cut(Cut(Terminal(CurlyBracesOpen), Optional(n("EffectElements")), WS), Terminal(CurlyBracesClose)))) ++
+        Nominal("EffectElementList", Push("EffectElementList", Wrap(CurlyBracesOpen, Cons(WS, Optional(n("EffectElements")), WS), CurlyBracesClose))) ++
         Nominal("FunctionEffect", Push("FunctionEffect", WrapWith(op("<"), Cons(WS, Optional(Cons(n("Type"), WS))), op(">")))) ++
 
         Nominal("Type", Push("Type", n("UnionType"))) ++
         Nominal("UnionType", PushIfManyChildren("UnionType", Cut(n("IntersectionType"), ZeroOrMore(Cons(WS, op("|"), WS, n("IntersectionType")))))) ++
         Nominal("IntersectionType", PushIfManyChildren("IntersectionType", Cut(n("AtomType"), ZeroOrMore(Cons(WS, op("&"), WS, n("AtomType")))))) ++
         Nominal("AtomType", Or(n("TypeParen"), n("FunctionTypeLiteral"), n("Reference"))) ++
-        Nominal("TypeParen", Push("TypeParen", Cut(Cut(Terminal(ParenthesesOpen), WS, n("Type"), WS), Terminal(ParenthesesClose)))) ++
+        Nominal("TypeParen", Push("TypeParen", Wrap(ParenthesesOpen, Cut(WS, n("Type"), WS), ParenthesesClose))) ++
 
         Nominal("FunctionTypeLiteral", Push("FunctionTypeLiteral", Cut(Cons(t("fun"), WS), Cons(Optional(n("TypeParameters")), n("FunctionTypeParameters"), WS, op("->"), WS, n("Type"))))) ++
         Nominal("FunctionTypeParameters", Push("FunctionTypeParameters", Wrap(ParenthesesOpen, Optional(OneOrMoreComma(n("FunctionTypeParameter"))), ParenthesesClose))) ++ // {pin=1,recoverUntil=PAREN_RECOVERY}
@@ -326,7 +318,7 @@ fun getGrammar(): Grammar = {
 
         Nominal("BinMemberOperator", Push("BinMemberOperator",  Or(op(".^"), op(".")))) ++
         Nominal("MemberExpression", Push("MemberExpression",  Cut(n("BinMemberOperator"), n("NameIdentifier")))) ++
-        Nominal("IndexExpression", Push("IndexExpression",  Cut(Cut(Terminal(VectorOpen), WS, n("Expression")), WS, Terminal(VectorClose)))) ++
+        Nominal("IndexExpression", Push("IndexExpression",  Wrap(VectorOpen, Cons(WS, n("Expression"), WS), VectorClose))) ++
 
         Nominal("NegExpression", Push("NegExpression", Cut(op("!"), n("AtomicExpression")))) ++
         Nominal("BinNegExpression", Push("BinNegExpression", Cut(op("~"), n("AtomicExpression")))) ++

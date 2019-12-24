@@ -49,4 +49,11 @@ impl Token {
   #[method]
   fun textIn(self: Token, source: string): string =
     source.substring(self.start as i32, self.end as i32)
+
+  #[method]
+  fun toString(self: Token): string =
+    TokenType.toString(self.tokenType) ++
+    "(" ++ string.stringify(self.start) ++
+    "," ++ string.stringify(self.end) ++
+    ")"
 }

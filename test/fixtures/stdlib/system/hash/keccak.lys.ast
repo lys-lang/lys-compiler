@@ -33,7 +33,6 @@
         |-NameIdentifier
           |-Identifier=Keccak
     |-NamespaceElementList
-      |-CurlyBracesOpen={
       |-FunctionDirective
         |-Decorators
           <Rule0>
@@ -2698,7 +2697,6 @@
                 |-CodeBlock
                   |-IfExpression
                     |-IfBody
-                      |-ParenthesesOpen=(
                       |-RelExpression
                         |-Reference
                           |-QName
@@ -2715,7 +2713,6 @@
                               |-QName
                                 |-NameIdentifier
                                   |-Identifier=u32
-                      |-ParenthesesClose=)
                     |-CodeBlock
                       |-BreakStatement
                         |-Identifier=break
@@ -4077,7 +4074,6 @@
                 |-CodeBlock
                   |-IfExpression
                     |-IfBody
-                      |-ParenthesesOpen=(
                       |-RelExpression
                         |-Reference
                           |-QName
@@ -4094,7 +4090,6 @@
                               |-QName
                                 |-NameIdentifier
                                   |-Identifier=u32
-                      |-ParenthesesClose=)
                     |-BreakStatement
                       |-Identifier=break
                   |-ValDeclaration
@@ -4913,7 +4908,6 @@
                 |-CodeBlock
                   |-IfExpression
                     |-IfBody
-                      |-ParenthesesOpen=(
                       |-RelExpression
                         |-Reference
                           |-QName
@@ -4922,7 +4916,6 @@
                         |-RelOperator
                           |-Operator=>=
                         |-NumberLiteral=24
-                      |-ParenthesesClose=)
                     |-CodeBlock
                       |-BreakStatement
                         |-Identifier=break
@@ -8107,7 +8100,6 @@
                       |-Identifier=inputOffset
               |-IfExpression
                 |-IfBody
-                  |-ParenthesesOpen=(
                   |-EqExpression
                     |-Reference
                       |-QName
@@ -8124,7 +8116,6 @@
                           |-QName
                             |-NameIdentifier
                               |-Identifier=u32
-                  |-ParenthesesClose=)
                 |-CodeBlock
                   |-VarDeclaration
                     |-NameIdentifier
@@ -8148,7 +8139,6 @@
                             |-Identifier=residueIndex
                   |-IfExpression
                     |-IfBody
-                      |-ParenthesesOpen=(
                       |-RelExpression
                         |-Reference
                           |-QName
@@ -8160,7 +8150,6 @@
                           |-QName
                             |-NameIdentifier
                               |-Identifier=tmp
-                      |-ParenthesesClose=)
                     |-CodeBlock
                       |-AssignExpression
                         |-Reference
@@ -8227,7 +8216,6 @@
                             |-Identifier=tmp
                   |-IfExpression
                     |-IfBody
-                      |-ParenthesesOpen=(
                       |-EqExpression
                         |-Reference
                           |-QName
@@ -8244,7 +8232,6 @@
                               |-QName
                                 |-NameIdentifier
                                   |-Identifier=u32
-                      |-ParenthesesClose=)
                     |-CodeBlock
                       |-AtomicExpression
                         |-Reference
@@ -8317,7 +8304,6 @@
                 |-CodeBlock
                   |-IfExpression
                     |-IfBody
-                      |-ParenthesesOpen=(
                       |-RelExpression
                         |-Reference
                           |-QName
@@ -8334,7 +8320,6 @@
                               |-QName
                                 |-NameIdentifier
                                   |-Identifier=u32
-                      |-ParenthesesClose=)
                     |-CodeBlock
                       |-BreakStatement
                         |-Identifier=break
@@ -8402,7 +8387,6 @@
                     |-Identifier=continue
               |-IfExpression
                 |-IfBody
-                  |-ParenthesesOpen=(
                   |-RelExpression
                     |-Reference
                       |-QName
@@ -8419,7 +8403,6 @@
                           |-QName
                             |-NameIdentifier
                               |-Identifier=u32
-                  |-ParenthesesClose=)
                 |-CodeBlock
                   |-AtomicExpression
                     |-Reference
@@ -8985,5 +8968,4 @@
                         |-QName
                           |-NameIdentifier
                             |-Identifier=u32
-      |-CurlyBracesClose=}
   |-EndOfFile=

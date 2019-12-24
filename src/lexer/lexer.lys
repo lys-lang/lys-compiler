@@ -1,15 +1,15 @@
+import src::helpers
 import src::lexer::tokens
 
-struct Lexer(source: string, pos: u32)
-struct None()
+struct Lexer(source: string, pos: u32, currentToken: Nil | Token)
 
-var instance: Lexer | None = None
+var instance: Lexer | Nil = Nil
 
 /**
  * Updates the Lexer with a string.
  */
 fun instantiate(str: string): void = {
-  instance = Lexer(str, 0 as u32)
+  instance = Lexer(str)
 }
 
 fun eat(): string = match instance {
@@ -26,7 +26,7 @@ fun eat(): string = match instance {
 impl Lexer {
   // Overload constructor
   fun apply(str: string): Lexer = {
-    Lexer(str, 0 as u32)
+    Lexer(str, 0 as u32, Nil)
   }
 
   #[method]
@@ -40,12 +40,16 @@ impl Lexer {
 
   #[method]
   fun seek(self: Lexer, position: u32): void = {
-    self.pos = position
+    if (position != self.pos) {
+      self.currentToken = Nil
+      self.pos = position
+    }
   }
 
   #[method]
   fun next(self: Lexer): u32 = {
     self.pos = self.pos + 1 as u32
+    self.currentToken = Nil
     self.source[self.pos] as u32
   }
 
@@ -103,29 +107,35 @@ impl Lexer {
 
   #[method]
   fun peek(self: Lexer): Token = {
-    if (self.pos == self.source.length) {
-      Token(EndOfFile, self.source.length, self.source.length)
-    } else match self.tokenStart(self.head()) {
-      case is Whitespace -> eatWhitespace(self)
-      case is NewLine -> eatNewLine(self)
-      case is StringLiteral -> eatString(self)
-      case is Identifier -> eatIdentifier(self)
-      case is MacroDecoration -> eatMacroDecoration(self)
-      case is ParenthesesOpen -> eatSingleChar(self, ParenthesesOpen)
-      case is ParenthesesClose -> eatSingleChar(self, ParenthesesClose)
-      case is CurlyBracesOpen -> eatSingleChar(self, CurlyBracesOpen)
-      case is CurlyBracesClose -> eatSingleChar(self, CurlyBracesClose)
-      case is Comma -> eatSingleChar(self, Comma)
-      case is VectorOpen -> eatSingleChar(self, VectorOpen)
-      case is VectorClose -> eatSingleChar(self, VectorClose)
-      case is LineComment -> eatLineComment(self)
-      case is MultiLineComment -> eatMultiLineComment(self)
-      case is Operator -> eatOperator(self)
-      case is NumberLiteral -> eatNumber(self)
-      else -> eatUnknown(self)
+    match self.currentToken {
+      case is Nil -> {
+        val t = if (self.pos == self.source.length) {
+          Token(EndOfFile, self.source.length, self.source.length)
+        } else match self.tokenStart(self.head()) {
+          case is Whitespace -> eatWhitespace(self)
+          case is NewLine -> eatNewLine(self)
+          case is StringLiteral -> eatString(self)
+          case is Identifier -> eatIdentifier(self)
+          case is MacroDecoration -> eatMacroDecoration(self)
+          case is ParenthesesOpen -> eatSingleChar(self, ParenthesesOpen)
+          case is ParenthesesClose -> eatSingleChar(self, ParenthesesClose)
+          case is CurlyBracesOpen -> eatSingleChar(self, CurlyBracesOpen)
+          case is CurlyBracesClose -> eatSingleChar(self, CurlyBracesClose)
+          case is Comma -> eatSingleChar(self, Comma)
+          case is VectorOpen -> eatSingleChar(self, VectorOpen)
+          case is VectorClose -> eatSingleChar(self, VectorClose)
+          case is LineComment -> eatLineComment(self)
+          case is MultiLineComment -> eatMultiLineComment(self)
+          case is Operator -> eatOperator(self)
+          case is NumberLiteral -> eatNumber(self)
+          else -> eatUnknown(self)
+        }
+        self.currentToken = t
+        t
+      }
+      case x is Token -> x
     }
   }
-
 
   #[method]
   fun eat(self: Lexer): Token = {
@@ -137,7 +147,7 @@ impl Lexer {
   private fun eatMacroDecoration(self: Lexer): Token = {
     // #[
     val start = self.pos
-    var end = self.pos + 1 as u32
+    var end = start + 1 as u32
 
     if (self.hasNext() && self.peekChar() == 0x5b) { // [
       end = end + 1 as u32
@@ -149,13 +159,13 @@ impl Lexer {
 
   private fun eatSingleChar(self: Lexer, tokenType: TokenType): Token = {
     val start = self.pos
-    var end = self.pos + 1 as u32
+    var end = start + 1 as u32
     Token(tokenType, start, end)
   }
 
   private fun eatWhitespace(self: Lexer): Token = {
     val start = self.pos
-    var end = self.pos
+    var end = start
     val len = self.source.length
     loop {
       if (end >= len) break
@@ -174,7 +184,7 @@ impl Lexer {
 
   private fun eatOperator(self: Lexer): Token = {
     val start = self.pos
-    var end = self.pos
+    var end = start
     val len = self.source.length
     loop {
       if (end >= len) break
@@ -206,7 +216,7 @@ impl Lexer {
 
   private fun eatLineComment(self: Lexer): Token = {
     val start = self.pos
-    var end = self.pos
+    var end = start
     val len = self.source.length
 
     loop {
@@ -229,7 +239,7 @@ impl Lexer {
 
   private fun eatMultiLineComment(self: Lexer): Token = {
     val start = self.pos
-    var end = self.pos
+    var end = start
     val len = self.source.length
 
     loop {
@@ -257,7 +267,7 @@ impl Lexer {
 
   private fun eatUnknown(self: Lexer): Token = {
     val start = self.pos
-    var end = self.pos
+    var end = start
     val len = self.source.length
     loop {
       if (end >= len) break
@@ -277,7 +287,7 @@ impl Lexer {
 
   private fun eatString(self: Lexer): Token = {
     val start = self.pos
-    var end = self.pos
+    var end = start
     val len = self.source.length
     loop {
       if (end >= len) break
@@ -296,7 +306,7 @@ impl Lexer {
 
   private fun eatNumber(self: Lexer): Token = {
     val start = self.pos
-    var end = self.pos
+    var end = start
     val len = self.source.length
 
     val char = self.source[end]
@@ -387,7 +397,7 @@ impl Lexer {
 
   private fun eatNewLine(self: Lexer): Token = {
     val start = self.pos
-    var end = self.pos
+    var end = start
     val len = self.source.length
     loop {
       if (end >= len) break
@@ -410,7 +420,7 @@ impl Lexer {
   private fun eatIdentifier(self: Lexer): Token = {
     // '$'? [A-Za-z_]([A-Za-z0-9_$])*
     val start = self.pos
-    var end = self.pos
+    var end = start
     val len = self.source.length
 
     // TODO: Validate first char

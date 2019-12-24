@@ -57,12 +57,10 @@
                   |-NameIdentifier
                     |-Identifier=array
               |-IndexExpression
-                |-VectorOpen=[
                 |-Reference
                   |-QName
                     |-NameIdentifier
                       |-Identifier=index
-                |-VectorClose=]
             |-AssignmentKeyword
               |-Operator==
             |-AsExpression
@@ -130,7 +128,6 @@
             |-CodeBlock
               |-IfExpression
                 |-IfBody
-                  |-ParenthesesOpen=(
                   |-RelExpression
                     |-Reference
                       |-QName
@@ -148,7 +145,6 @@
                           |-Operator=.
                         |-NameIdentifier
                           |-Identifier=length
-                  |-ParenthesesClose=)
                 |-CodeBlock
                   |-BreakStatement
                     |-Identifier=break
@@ -163,12 +159,10 @@
                         |-NameIdentifier
                           |-Identifier=str
                     |-IndexExpression
-                      |-VectorOpen=[
                       |-Reference
                         |-QName
                           |-NameIdentifier
                             |-Identifier=i
-                      |-VectorClose=]
                   |-AsKeyword
                     |-Identifier=as
                   |-Type
@@ -178,7 +172,6 @@
                           |-Identifier=u32
               |-IfExpression
                 |-IfBody
-                  |-ParenthesesOpen=(
                   |-AndExpression
                     |-RelExpression
                       |-Reference
@@ -222,7 +215,6 @@
                             |-Operator=.
                           |-NameIdentifier
                             |-Identifier=length
-                  |-ParenthesesClose=)
                 |-CodeBlock
                   |-VarDeclaration
                     |-NameIdentifier
@@ -235,7 +227,6 @@
                             |-NameIdentifier
                               |-Identifier=str
                         |-IndexExpression
-                          |-VectorOpen=[
                           |-AddExpression
                             |-Reference
                               |-QName
@@ -244,7 +235,6 @@
                             |-AddOperator
                               |-Operator=+
                             |-NumberLiteral=0x1
-                          |-VectorClose=]
                       |-AsKeyword
                         |-Identifier=as
                       |-Type
@@ -254,7 +244,6 @@
                               |-Identifier=u32
                   |-IfExpression
                     |-IfBody
-                      |-ParenthesesOpen=(
                       |-AndExpression
                         |-RelExpression
                           |-Reference
@@ -274,7 +263,6 @@
                           |-RelOperator
                             |-Operator=<=
                           |-NumberLiteral=0xdfff
-                      |-ParenthesesClose=)
                     |-CodeBlock
                       |-AssignExpression
                         |-Reference
@@ -310,7 +298,6 @@
                         |-Identifier=continue
               |-IfExpression
                 |-IfBody
-                  |-ParenthesesOpen=(
                   |-RelExpression
                     |-Reference
                       |-QName
@@ -319,7 +306,6 @@
                     |-RelOperator
                       |-Operator=>=
                     |-NumberLiteral=0x800
-                  |-ParenthesesClose=)
                 |-CodeBlock
                   |-AssignExpression
                     |-Reference
@@ -338,7 +324,6 @@
                       |-NumberLiteral=0x3
                 |-IfExpression
                   |-IfBody
-                    |-ParenthesesOpen=(
                     |-RelExpression
                       |-Reference
                         |-QName
@@ -347,7 +332,6 @@
                       |-RelOperator
                         |-Operator=>=
                       |-NumberLiteral=0x80
-                    |-ParenthesesClose=)
                   |-CodeBlock
                     |-AssignExpression
                       |-Reference
@@ -468,7 +452,6 @@
             |-CodeBlock
               |-IfExpression
                 |-IfBody
-                  |-ParenthesesOpen=(
                   |-RelExpression
                     |-Reference
                       |-QName
@@ -486,7 +469,6 @@
                           |-Operator=.
                         |-NameIdentifier
                           |-Identifier=length
-                  |-ParenthesesClose=)
                 |-CodeBlock
                   |-BreakStatement
                     |-Identifier=break
@@ -501,12 +483,10 @@
                         |-NameIdentifier
                           |-Identifier=str
                     |-IndexExpression
-                      |-VectorOpen=[
                       |-Reference
                         |-QName
                           |-NameIdentifier
                             |-Identifier=i
-                      |-VectorClose=]
                   |-AsKeyword
                     |-Identifier=as
                   |-Type
@@ -516,7 +496,6 @@
                           |-Identifier=u32
               |-IfExpression
                 |-IfBody
-                  |-ParenthesesOpen=(
                   |-AndExpression
                     |-RelExpression
                       |-Reference
@@ -560,7 +539,6 @@
                             |-Operator=.
                           |-NameIdentifier
                             |-Identifier=length
-                  |-ParenthesesClose=)
                 |-CodeBlock
                   |-VarDeclaration
                     |-NameIdentifier
@@ -573,7 +551,6 @@
                             |-NameIdentifier
                               |-Identifier=str
                         |-IndexExpression
-                          |-VectorOpen=[
                           |-AddExpression
                             |-Reference
                               |-QName
@@ -582,7 +559,6 @@
                             |-AddOperator
                               |-Operator=+
                             |-NumberLiteral=0x1
-                          |-VectorClose=]
                       |-AsKeyword
                         |-Identifier=as
                       |-Type
@@ -592,7 +568,6 @@
                               |-Identifier=u32
                   |-IfExpression
                     |-IfBody
-                      |-ParenthesesOpen=(
                       |-AndExpression
                         |-RelExpression
                           |-Reference
@@ -612,7 +587,6 @@
                           |-RelOperator
                             |-Operator=<=
                           |-NumberLiteral=0xdfff
-                      |-ParenthesesClose=)
                     |-CodeBlock
                       |-VarDeclaration
                         |-NameIdentifier
@@ -815,7 +789,6 @@
                         |-Identifier=continue
               |-IfExpression
                 |-IfBody
-                  |-ParenthesesOpen=(
                   |-RelExpression
                     |-Reference
                       |-QName
@@ -824,7 +797,6 @@
                     |-RelOperator
                       |-Operator=>=
                     |-NumberLiteral=0x800
-                  |-ParenthesesClose=)
                 |-CodeBlock
                   |-AssignExpression
                     |-Reference
@@ -936,7 +908,6 @@
                             |-NumberLiteral=0x40
                 |-IfExpression
                   |-IfBody
-                    |-ParenthesesOpen=(
                     |-RelExpression
                       |-Reference
                         |-QName
@@ -945,7 +916,6 @@
                       |-RelOperator
                         |-Operator=>=
                       |-NumberLiteral=0x80
-                    |-ParenthesesClose=)
                   |-CodeBlock
                     |-AssignExpression
                       |-Reference

@@ -69,21 +69,23 @@ var backtrack = parser.lexer.pos
       if (TEST) support::env::printf(repeat("| ", level) ++ "| Terminal(" ++ TokenType.toString(tokenType) ++ ")")
       if (TEST) support::env::printf(repeat("| ", level) ++ "|   from:" ++ parser.lexer.source.substring(parser.lexer.pos as i32))
       val lexer = parser.lexer
-      val token = lexer.eat()
-      if (token.tokenType == tokenType)
+      val token = lexer.peek()
+      if (token.tokenType == tokenType) {
+        lexer.eat()
         Leaf(token, token.textIn(lexer.source))
-      else
+      } else
         Nil
     }
     case is StrictTerminal(tokenType, value) -> {
       if (TEST) support::env::printf(repeat("| ", level) ++ "| StrictTerminal(" ++ TokenType.toString(tokenType) ++ ")")
       if (TEST) support::env::printf(repeat("| ", level) ++ "|   from:" ++ parser.lexer.source.substring(parser.lexer.pos as i32))
       val lexer = parser.lexer
-      val token = lexer.eat()
+      val token = lexer.peek()
       val tokenValue = token.textIn(lexer.source)
-      if (token.tokenType == tokenType && value == tokenValue)
+      if (token.tokenType == tokenType && value == tokenValue) {
+        lexer.eat()
         Leaf(token, tokenValue)
-      else
+      } else
         Nil
     }
     case is Or(lhs, rhs) -> {
@@ -140,6 +142,7 @@ var backtrack = parser.lexer.pos
     }
     case is NonTerminal(name) -> {
       if (TEST) support::env::printf(repeat("| ", level) ++ "| NonTerminal("++name++")")
+      // support::env::printf(repeat("  ", level) ++ name)
       parse(name, parser, level + 1)
     }
     case is OneOrMore(rule) -> {
@@ -181,7 +184,7 @@ var backtrack = parser.lexer.pos
       if (TEST) support::env::printf(repeat("| ", level) ++ "| LookAhead")
       val ret = parse(rule, parser, level + 1)
       // rewind
-      parser.lexer.pos = backtrack
+      parser.lexer.seek(backtrack)
       match ret {
         case is Nil -> Nil
         else -> Rule0
@@ -191,17 +194,14 @@ var backtrack = parser.lexer.pos
       if (TEST) support::env::printf(repeat("| ", level) ++ "| NegativeLookAhead")
       val ret = parse(rule, parser, level + 1)
       // rewind
-      parser.lexer.pos = backtrack
+      parser.lexer.seek(backtrack)
       match ret {
         case is Nil -> Rule0
         else -> Nil
       }
     }
     case is Fail(message) -> {
-      val lexer = parser.lexer
-      val token = lexer.eat()
-      val tokenValue = token.textIn(lexer.source)
-      SyntaxError(token, message)
+      SyntaxError(parser.lexer.peek(), message)
     }
     case is Push(name, rule) -> {
       val ret = parse(rule, parser, level + 1)
@@ -223,7 +223,7 @@ var backtrack = parser.lexer.pos
   if (result is Nil) {
     if (parser.lexer.pos != backtrack){
       if (TEST) support::env::printf(repeat("| ", level) ++ "|<- backtracking from:" ++ parser.lexer.source.substring(parser.lexer.pos as i32))
-      parser.lexer.pos = backtrack
+      parser.lexer.seek(backtrack)
       if (TEST) support::env::printf(repeat("| ", level) ++ "|<- backtracking to:" ++ parser.lexer.source.substring(parser.lexer.pos as i32))
     }
   } else {

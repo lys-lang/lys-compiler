@@ -329,7 +329,6 @@
         |-WasmExpression
           |-Operator=%
           |-Identifier=wasm
-          |-CurlyBracesOpen={
           |-SExpression
             |-SSymbol
               |-Identifier=memory
@@ -341,7 +340,6 @@
               |-QName
                 |-NameIdentifier
                   |-Identifier=$pages
-          |-CurlyBracesClose=}
   |-FunctionDirective
     |-Decorators
       <Rule0>
@@ -366,13 +364,11 @@
         |-WasmExpression
           |-Operator=%
           |-Identifier=wasm
-          |-CurlyBracesOpen={
           |-SExpression
             |-SSymbol
               |-Identifier=memory
               |-Operator=.
               |-Identifier=size
-          |-CurlyBracesClose=}
   |-FunctionDirective
     |-Decorators
       <Rule0>
@@ -499,7 +495,6 @@
         |-CodeBlock
           |-IfExpression
             |-IfBody
-              |-ParenthesesOpen=(
               |-EqExpression
                 |-Reference
                   |-QName
@@ -516,7 +511,6 @@
                       |-QName
                         |-NameIdentifier
                           |-Identifier=u32
-              |-ParenthesesClose=)
             |-AtomicExpression
               |-Reference
                 |-QName
@@ -526,7 +520,6 @@
                 <Rule0>
           |-IfExpression
             |-IfBody
-              |-ParenthesesOpen=(
               |-RelExpression
                 |-Reference
                   |-QName
@@ -538,7 +531,6 @@
                   |-QName
                     |-NameIdentifier
                       |-Identifier=MAX_SIZE_32
-              |-ParenthesesClose=)
             |-AtomicExpression
               |-Reference
                 |-QName
@@ -624,7 +616,6 @@
                 <Rule0>
           |-IfExpression
             |-IfBody
-              |-ParenthesesOpen=(
               |-RelExpression
                 |-Reference
                   |-QName
@@ -640,7 +631,6 @@
                   |-ShiftOperator
                     |-Operator=<<
                   |-NumberLiteral=16
-              |-ParenthesesClose=)
             |-CodeBlock
               |-ValDeclaration
                 |-NameIdentifier
@@ -692,7 +682,6 @@
                           |-Identifier=pagesNeeded
               |-IfExpression
                 |-IfBody
-                  |-ParenthesesOpen=(
                   |-RelExpression
                     |-AtomicExpression
                       |-Reference
@@ -715,11 +704,9 @@
                           |-QName
                             |-NameIdentifier
                               |-Identifier=u32
-                  |-ParenthesesClose=)
                 |-CodeBlock
                   |-IfExpression
                     |-IfBody
-                      |-ParenthesesOpen=(
                       |-RelExpression
                         |-AtomicExpression
                           |-Reference
@@ -742,7 +729,6 @@
                               |-QName
                                 |-NameIdentifier
                                   |-Identifier=u32
-                      |-ParenthesesClose=)
                     |-CodeBlock
                       |-AtomicExpression
                         |-Reference
@@ -913,7 +899,6 @@
             |-CodeBlock
               |-IfExpression
                 |-IfBody
-                  |-ParenthesesOpen=(
                   |-RelExpression
                     |-Reference
                       |-QName
@@ -925,7 +910,6 @@
                       |-QName
                         |-NameIdentifier
                           |-Identifier=length
-                  |-ParenthesesClose=)
                 |-CodeBlock
                   |-BreakStatement
                     |-Identifier=break
@@ -1054,7 +1038,6 @@
         |-WasmExpression
           |-Operator=%
           |-Identifier=wasm
-          |-CurlyBracesOpen={
           |-SExpression
             |-SSymbol
               |-Identifier=local
@@ -1174,5 +1157,4 @@
                 |-QName
                   |-NameIdentifier
                     |-Identifier=$cont
-          |-CurlyBracesClose=}
   |-EndOfFile=
