@@ -49,7 +49,7 @@
                   |-NameIdentifier
                     |-Identifier=discriminant
               |-AsKeyword
-                |-Identifier=as
+                |-Keyword=as
               |-Type
                 |-Reference
                   |-QName
@@ -119,7 +119,7 @@
                         |-Operator=<<
                       |-NumberLiteral=1
             |-AsKeyword
-              |-Identifier=as
+              |-Keyword=as
             |-Type
               |-Reference
                 |-QName
@@ -128,140 +128,136 @@
   |-TypeDirective
     |-NameIdentifier
       |-Identifier=UCS2
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=void
-  |-<UNEXPECTED TOKEN>=
-
-
-  |-<UNEXPECTED TOKEN>=impl
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=UCS2
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>={
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=// Converts a pointer resulted from a allocBytes to a string
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=fun
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=fromPtr
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=bytesPointer
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=UnsafeCPointer
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=string
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=%
-  |-<UNEXPECTED TOKEN>=wasm
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>={
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=i64
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=or
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=      
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=call
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$stringDiscriminant
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=      
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=i64
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=and
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=        
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=i64
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=const
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=0xFFFFFFFF
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=        
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=i64
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=extend_u
-  |-<UNEXPECTED TOKEN>=/
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=          
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=sub
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=            
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=get_local
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$bytesPointer
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=            
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=const
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=4
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=}
-  |-<UNEXPECTED TOKEN>=
-
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=fun
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=toPtr
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=str
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=string
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=UnsafeCPointer
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=str
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=as
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=UnsafeCPointer
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=}
+    |-ValueType
+      |-Operator==
+      |-Type
+        |-Reference
+          |-QName
+            |-NameIdentifier
+              |-Identifier=void
+  |-ImplDirective
+    |-Reference
+      |-QName
+        |-NameIdentifier
+          |-Identifier=UCS2
+    |-NamespaceElementList
+      |-FunctionDirective
+        |-Decorators
+          <Rule0>
+        |-FunDeclaration
+          |-FunctionName
+            |-NameIdentifier
+              |-Identifier=fromPtr
+          |-FunctionParamsList
+            |-ParameterList
+              |-Parameter
+                |-NameIdentifier
+                  |-Identifier=bytesPointer
+                |-OfType
+                  |-Operator=:
+                  |-Type
+                    |-Reference
+                      |-QName
+                        |-NameIdentifier
+                          |-Identifier=UnsafeCPointer
+          |-OfType
+            |-Operator=:
+            |-Type
+              |-Reference
+                |-QName
+                  |-NameIdentifier
+                    |-Identifier=string
+          |-FunAssignExpression
+            |-Operator==
+            |-WasmExpression
+              |-Operator=%
+              |-Identifier=wasm
+              |-SExpression
+                |-SSymbol
+                  |-Identifier=i64
+                  |-Operator=.
+                  |-Identifier=or
+                |-SExpression
+                  |-SSymbol
+                    |-Identifier=call
+                  |-QName
+                    |-NameIdentifier
+                      |-Identifier=$stringDiscriminant
+                |-SExpression
+                  |-SSymbol
+                    |-Identifier=i64
+                    |-Operator=.
+                    |-Identifier=and
+                  |-SExpression
+                    |-SSymbol
+                      |-Identifier=i64
+                      |-Operator=.
+                      |-Keyword=const
+                    |-NegNumberLiteral
+                      |-NumberLiteral=0xFFFFFFFF
+                  |-SExpression
+                    |-SSymbol
+                      |-Identifier=i64
+                      |-Operator=.
+                      |-Identifier=extend_u
+                      |-Operator=/
+                      |-Identifier=i32
+                    |-SExpression
+                      |-SSymbol
+                        |-Identifier=i32
+                        |-Operator=.
+                        |-Identifier=sub
+                      |-SExpression
+                        |-SSymbol
+                          |-Identifier=get_local
+                        |-QName
+                          |-NameIdentifier
+                            |-Identifier=$bytesPointer
+                      |-SExpression
+                        |-SSymbol
+                          |-Identifier=i32
+                          |-Operator=.
+                          |-Keyword=const
+                        |-NegNumberLiteral
+                          |-NumberLiteral=4
+      |-FunctionDirective
+        |-Decorators
+          <Rule0>
+        |-FunDeclaration
+          |-FunctionName
+            |-NameIdentifier
+              |-Identifier=toPtr
+          |-FunctionParamsList
+            |-ParameterList
+              |-Parameter
+                |-NameIdentifier
+                  |-Identifier=str
+                |-OfType
+                  |-Operator=:
+                  |-Type
+                    |-Reference
+                      |-QName
+                        |-NameIdentifier
+                          |-Identifier=string
+          |-OfType
+            |-Operator=:
+            |-Type
+              |-Reference
+                |-QName
+                  |-NameIdentifier
+                    |-Identifier=UnsafeCPointer
+          |-FunAssignExpression
+            |-Operator==
+            |-AsExpression
+              |-Reference
+                |-QName
+                  |-NameIdentifier
+                    |-Identifier=str
+              |-AsKeyword
+                |-Keyword=as
+              |-Type
+                |-Reference
+                  |-QName
+                    |-NameIdentifier
+                      |-Identifier=UnsafeCPointer
+  |-EndOfFile=

@@ -440,7 +440,7 @@
               |-AsExpression
                 |-NumberLiteral=0
                 |-AsKeyword
-                  |-Identifier=as
+                  |-Keyword=as
                 |-Type
                   |-Reference
                     |-QName
@@ -495,7 +495,7 @@
                 |-AsExpression
                   |-NumberLiteral=0
                   |-AsKeyword
-                    |-Identifier=as
+                    |-Keyword=as
                   |-Type
                     |-Reference
                       |-QName
@@ -552,7 +552,7 @@
                   |-AsExpression
                     |-NumberLiteral=16
                     |-AsKeyword
-                      |-Identifier=as
+                      |-Keyword=as
                     |-Type
                       |-Reference
                         |-QName
@@ -573,7 +573,7 @@
                       |-AsExpression
                         |-NumberLiteral=16
                         |-AsKeyword
-                          |-Identifier=as
+                          |-Keyword=as
                         |-Type
                           |-Reference
                             |-QName
@@ -688,7 +688,7 @@
                     |-AsExpression
                       |-NumberLiteral=0
                       |-AsKeyword
-                        |-Identifier=as
+                        |-Keyword=as
                       |-Type
                         |-Reference
                           |-QName
@@ -713,7 +713,7 @@
                         |-AsExpression
                           |-NumberLiteral=0
                           |-AsKeyword
-                            |-Identifier=as
+                            |-Keyword=as
                           |-Type
                             |-Reference
                               |-QName
@@ -748,7 +748,7 @@
             |-AsExpression
               |-NumberLiteral=16
               |-AsKeyword
-                |-Identifier=as
+                |-Keyword=as
               |-Type
                 |-Reference
                   |-QName
@@ -847,7 +847,7 @@
             |-AsExpression
               |-NumberLiteral=0
               |-AsKeyword
-                |-Identifier=as
+                |-Keyword=as
               |-Type
                 |-Reference
                   |-QName
@@ -863,7 +863,7 @@
                   |-NameIdentifier
                     |-Identifier=src
               |-AsKeyword
-                |-Identifier=as
+                |-Keyword=as
               |-Type
                 |-Reference
                   |-QName
@@ -879,7 +879,7 @@
                   |-NameIdentifier
                     |-Identifier=dst
               |-AsKeyword
-                |-Identifier=as
+                |-Keyword=as
               |-Type
                 |-Reference
                   |-QName
@@ -902,7 +902,7 @@
                           |-Identifier=length
                 |-CodeBlock
                   |-BreakStatement
-                    |-Identifier=break
+                    |-Keyword=break
               |-AtomicExpression
                 |-Reference
                   |-QName
@@ -958,14 +958,14 @@
                   |-AsExpression
                     |-NumberLiteral=1
                     |-AsKeyword
-                      |-Identifier=as
+                      |-Keyword=as
                     |-Type
                       |-Reference
                         |-QName
                           |-NameIdentifier
                             |-Identifier=u32
               |-ContinueStatement
-                |-Identifier=continue
+                |-Keyword=continue
           |-AddExpression
             |-Reference
               |-QName
@@ -1068,7 +1068,7 @@
                 |-Identifier=$exit
             |-SExpression
               |-SSymbol
-                |-Identifier=loop
+                |-Keyword=loop
               |-QName
                 |-NameIdentifier
                   |-Identifier=$cont
@@ -1138,7 +1138,7 @@
                     |-SSymbol
                       |-Identifier=i32
                       |-Operator=.
-                      |-Identifier=const
+                      |-Keyword=const
                     |-NegNumberLiteral
                       |-NumberLiteral=1
               |-SExpression

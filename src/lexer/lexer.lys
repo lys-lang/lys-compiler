@@ -356,42 +356,52 @@ impl Lexer {
           end = end + 1 as u32
           continue
         }
+      } else {
+        end = readFloatNumberEndPoition(self, start, len)
       }
     } else {
-      var hasExponent = false
-      var hasDecimalPoint = false
-
-      loop {
-        if (end >= len) break
-
-        val char = self.source[end]
-
-        if (!isNumber(char))  // \n
-        if (char != 0x2e || hasDecimalPoint)
-        if (char != 0x65 || hasExponent)
-        if (char != 0x45 || hasExponent)
-          break
-
-        if (char == 0x2e) {
-          hasDecimalPoint = true
-        }
-
-        if (char == 0x65 || char == 0x45) {
-          val char = self.source[end + 1 as u32]
-          if (char == 0x2b || char == 0x2d) {
-            // +-
-            end = end + 1 as u32
-          }
-          hasExponent = true
-          hasDecimalPoint = true
-        }
-
-        end = end + 1 as u32
-        continue
-      }
+      end = readFloatNumberEndPoition(self, start, len)
     }
 
     Token(NumberLiteral, start, end)
+  }
+
+  fun readFloatNumberEndPoition(self: Lexer, start: u32, len: u32): u32 = {
+    var end = start
+
+    var hasExponent = false
+    var hasDecimalPoint = false
+
+    loop {
+      if (end >= len) break
+
+      val char = self.source[end]
+
+      if (!isNumber(char))  // \n
+      if (char != 0x2e || hasDecimalPoint)
+      if (char != 0x65 || hasExponent)
+      if (char != 0x45 || hasExponent)
+        break
+
+      if (char == 0x2e) {
+        hasDecimalPoint = true
+      }
+
+      if (char == 0x65 || char == 0x45) {
+        val char = self.source[end + 1 as u32]
+        if (char == 0x2b || char == 0x2d) {
+          // +-
+          end = end + 1 as u32
+        }
+        hasExponent = true
+        hasDecimalPoint = true
+      }
+
+      end = end + 1 as u32
+      continue
+    }
+
+    end
   }
 
 
@@ -416,6 +426,107 @@ impl Lexer {
     }
     Token(NewLine, start, end)
   }
+
+  fun isKeyword(str: string): boolean =
+    match str[0 as u32] {
+      case 0x61 -> match str {
+        case "abstract" -> true
+        case "async" -> true
+        case "await" -> true
+        case "as" -> true
+        else -> false
+      }
+      case 0x62 -> match str {
+        case "break" -> true
+        else -> false
+      }
+      case 0x63 -> match str {
+        case "case" -> true
+        case "class" -> true
+        case "const" -> true
+        case "continue" -> true
+        else -> false
+      }
+      case 0x64 -> match str {
+        case "declare" -> true
+        case "delete" -> true
+        case "defer" -> true
+        case "do" -> true
+        else -> false
+      }
+      case 0x65 -> match str {
+        case "effect" -> true
+        case "else" -> true
+        case "enum" -> true
+        case "extends" -> true
+        else -> false
+      }
+      case 0x66 -> match str {
+        case "false" -> true
+        case "finally" -> true
+        case "for" -> true
+        case "fun" -> true
+        else -> false
+      }
+      case 0x69 -> match str {
+        case "if" -> true
+        case "impl" -> true
+        case "import" -> true
+        case "in" -> true
+        case "is" -> true
+        else -> false
+      }
+      case 0x6c -> match str {
+        case "let" -> true
+        case "loop" -> true
+        else -> false
+      }
+      case 0x6d -> match str {
+        case "match" -> true
+        else -> false
+      }
+      case 0x6e -> match str {
+        case "new" -> true
+        else -> false
+      }
+      case 0x70 -> match str {
+        case "package" -> true
+        case "private" -> true
+        case "public" -> true
+        case "protected" -> true
+        else -> false
+      }
+      case 0x73 -> match str {
+        case "struct" -> true
+        else -> false
+      }
+      case 0x74 -> match str {
+        case "trait" -> true
+        case "true" -> true
+        case "try" -> true
+        case "type" -> true
+        else -> false
+      }
+      case 0x75 -> match str {
+        case "using" -> true
+        else -> false
+      }
+      case 0x76 -> match str {
+        case "val" -> true
+        case "var" -> true
+        else -> false
+      }
+      case 0x77 -> match str {
+        case "while" -> true
+        case "with" -> true
+        else -> false
+      }
+      case 0x79 -> match str {
+        case "yield" -> true
+        else -> false
+      }
+      else -> false
+    }
 
   private fun eatIdentifier(self: Lexer): Token = {
     // '$'? [A-Za-z_]([A-Za-z0-9_$])*
@@ -443,7 +554,14 @@ impl Lexer {
       end = end + 1 as u32
       continue
     }
-    Token(Identifier, start, end)
+
+    val text = self.source.substring(start as i32, end as i32)
+
+    if (isKeyword(text)) {
+      Token(Keyword, start, end)
+    } else {
+      Token(Identifier, start, end)
+    }
   }
 
   fun isNumber(char: u32): boolean = {

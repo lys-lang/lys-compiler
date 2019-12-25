@@ -16,41 +16,24 @@
       |-NameIdentifier
         |-Identifier=a
       |-Operator==
-      |-AssignExpression
-        |-AtomicExpression
-          |-NumberLiteral=0
-          |-MemberExpression
-            |-BinMemberOperator
-              |-Operator=.
-            |-<UNEXPECTED TOKEN>=123
-            |-<UNEXPECTED TOKEN>=
-
-            |-<UNEXPECTED TOKEN>=var
-            |-<UNEXPECTED TOKEN>= 
+      |-NumberLiteral=0.123
+  |-VarDirective
+    |-VarDeclaration
+      |-NameIdentifier
+        |-Identifier=a
+      |-Operator==
+      |-NumberLiteral=0.1E-12
+  |-VarDirective
+    |-VarDeclaration
+      |-NameIdentifier
+        |-Identifier=a
+      |-Operator==
+      |-PostfixNumber
+        |-NumberLiteral=1
+        |-Reference
+          |-QName
             |-NameIdentifier
-              |-Identifier=a
-        |-AssignmentKeyword
-          |-Operator==
-        |-AtomicExpression
-          |-NumberLiteral=0
-          |-MemberExpression
-            |-BinMemberOperator
-              |-Operator=.
-            |-<UNEXPECTED TOKEN>=1E-12
-            |-<UNEXPECTED TOKEN>=
-
-            |-<UNEXPECTED TOKEN>=var
-            |-<UNEXPECTED TOKEN>= 
-            |-NameIdentifier
-              |-Identifier=a
-        |-AssignmentKeyword
-          |-Operator==
-        |-PostfixNumber
-          |-NumberLiteral=1
-          |-Reference
-            |-QName
-              |-NameIdentifier
-                |-Identifier=_u32
+              |-Identifier=_u32
   |-VarDirective
     |-VarDeclaration
       |-NameIdentifier
@@ -91,12 +74,12 @@
         |-Identifier=a
       |-Operator==
       |-BooleanLiteral
-        |-Identifier=true
+        |-Keyword=true
   |-VarDirective
     |-VarDeclaration
       |-NameIdentifier
         |-Identifier=a
       |-Operator==
       |-BooleanLiteral
-        |-Identifier=false
+        |-Keyword=false
   |-EndOfFile=

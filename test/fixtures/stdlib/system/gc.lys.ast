@@ -2,134 +2,152 @@
   |-TypeDirective
     |-NameIdentifier
       |-Identifier=Object
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=%
-  |-<UNEXPECTED TOKEN>=struct
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>={
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=}
-  |-<UNEXPECTED TOKEN>=
-
-
-  |-<UNEXPECTED TOKEN>=impl
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=Object
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>={
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=fun
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=apply
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=size
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=Object
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=%
-  |-<UNEXPECTED TOKEN>=wasm
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>={
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=call
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$system
-  |-<UNEXPECTED TOKEN>=::
-  |-<UNEXPECTED TOKEN>=core
-  |-<UNEXPECTED TOKEN>=::
-  |-<UNEXPECTED TOKEN>=memory
-  |-<UNEXPECTED TOKEN>=::
-  |-<UNEXPECTED TOKEN>=calloc
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=add
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=i32
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=const
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=16
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=get_local
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=$size
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=}
-  |-<UNEXPECTED TOKEN>=
-
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=fun
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=link
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=parent
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=ref
-  |-<UNEXPECTED TOKEN>=,
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=child
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=ref
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=void
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>={
-  |-<UNEXPECTED TOKEN>=}
-  |-<UNEXPECTED TOKEN>=
-
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=/** Unlinks this object from its list. */
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=fun
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=unlink
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=self
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=ref
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=void
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>={
-  |-<UNEXPECTED TOKEN>=}
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=}
+    |-ValueType
+      |-Operator==
+      |-StructLiteral
+        |-Operator=%
+        |-Keyword=struct
+        |-StructParamsList
+          |-ParameterList
+            <Rule0>
+  |-ImplDirective
+    |-Reference
+      |-QName
+        |-NameIdentifier
+          |-Identifier=Object
+    |-NamespaceElementList
+      |-FunctionDirective
+        |-Decorators
+          <Rule0>
+        |-FunDeclaration
+          |-FunctionName
+            |-NameIdentifier
+              |-Identifier=apply
+          |-FunctionParamsList
+            |-ParameterList
+              |-Parameter
+                |-NameIdentifier
+                  |-Identifier=size
+                |-OfType
+                  |-Operator=:
+                  |-Type
+                    |-Reference
+                      |-QName
+                        |-NameIdentifier
+                          |-Identifier=i32
+          |-OfType
+            |-Operator=:
+            |-Type
+              |-Reference
+                |-QName
+                  |-NameIdentifier
+                    |-Identifier=Object
+          |-FunAssignExpression
+            |-Operator==
+            |-WasmExpression
+              |-Operator=%
+              |-Identifier=wasm
+              |-SExpression
+                |-SSymbol
+                  |-Identifier=call
+                |-QName
+                  |-NameIdentifier
+                    |-Identifier=$system
+                  |-Operator=::
+                  |-NameIdentifier
+                    |-Identifier=core
+                  |-Operator=::
+                  |-NameIdentifier
+                    |-Identifier=memory
+                  |-Operator=::
+                  |-NameIdentifier
+                    |-Identifier=calloc
+                |-SExpression
+                  |-SSymbol
+                    |-Identifier=i32
+                    |-Operator=.
+                    |-Identifier=add
+                  |-SExpression
+                    |-SSymbol
+                      |-Identifier=i32
+                      |-Operator=.
+                      |-Keyword=const
+                    |-NegNumberLiteral
+                      |-NumberLiteral=16
+                  |-SExpression
+                    |-SSymbol
+                      |-Identifier=get_local
+                    |-QName
+                      |-NameIdentifier
+                        |-Identifier=$size
+      |-FunctionDirective
+        |-Decorators
+          <Rule0>
+        |-FunDeclaration
+          |-FunctionName
+            |-NameIdentifier
+              |-Identifier=link
+          |-FunctionParamsList
+            |-ParameterList
+              |-Parameter
+                |-NameIdentifier
+                  |-Identifier=parent
+                |-OfType
+                  |-Operator=:
+                  |-Type
+                    |-Reference
+                      |-QName
+                        |-NameIdentifier
+                          |-Identifier=ref
+              |-Parameter
+                |-NameIdentifier
+                  |-Identifier=child
+                |-OfType
+                  |-Operator=:
+                  |-Type
+                    |-Reference
+                      |-QName
+                        |-NameIdentifier
+                          |-Identifier=ref
+          |-OfType
+            |-Operator=:
+            |-Type
+              |-Reference
+                |-QName
+                  |-NameIdentifier
+                    |-Identifier=void
+          |-FunAssignExpression
+            |-Operator==
+            |-CodeBlock
+              <Rule0>
+      |-FunctionDirective
+        |-Decorators
+          <Rule0>
+        |-FunDeclaration
+          |-FunctionName
+            |-NameIdentifier
+              |-Identifier=unlink
+          |-FunctionParamsList
+            |-ParameterList
+              |-Parameter
+                |-NameIdentifier
+                  |-Identifier=self
+                |-OfType
+                  |-Operator=:
+                  |-Type
+                    |-Reference
+                      |-QName
+                        |-NameIdentifier
+                          |-Identifier=ref
+          |-OfType
+            |-Operator=:
+            |-Type
+              |-Reference
+                |-QName
+                  |-NameIdentifier
+                    |-Identifier=void
+          |-FunAssignExpression
+            |-Operator==
+            |-CodeBlock
+              <Rule0>
+  |-EndOfFile=

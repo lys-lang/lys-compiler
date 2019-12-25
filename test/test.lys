@@ -242,6 +242,18 @@ fun numbers(): void = {
   }
 
   {
+    val p = Lexer("0.0")
+    validateToken(p, NumberLiteral, "0.0")
+    validateToken(p, EndOfFile, "")
+  }
+
+  {
+    val p = Lexer("0.1")
+    validateToken(p, NumberLiteral, "0.1")
+    validateToken(p, EndOfFile, "")
+  }
+
+  {
     val p = Lexer("0o1234560789 ")
     validateToken(p, NumberLiteral, "0o12345607")
     validateToken(p, NumberLiteral, "89")
@@ -499,8 +511,8 @@ fun jsonParser(): void = {
       Or(NonTerminal("number"),
       Or(NonTerminal("object"), NonTerminal("array")))))))
     ) ++
-    Nominal("false", StrictTerminal(Identifier, "false")) ++
-    Nominal("true", StrictTerminal(Identifier, "true")) ++
+    Nominal("false", StrictTerminal(Keyword, "false")) ++
+    Nominal("true", StrictTerminal(Keyword, "true")) ++
     Nominal("null", StrictTerminal(Identifier, "null")) ++
     Nominal("string", Terminal(StringLiteral)) ++
     Nominal("number", Terminal(NumberLiteral)) ++
@@ -751,8 +763,8 @@ fun errorRecovery(): void = {
     Nominal("value",
       Or(NonTerminal("true"), NonTerminal("false"), NonTerminal("null"), NonTerminal("string"), NonTerminal("number"), NonTerminal("object"), NonTerminal("array"))
     ) ++
-    Nominal("false", StrictTerminal(Identifier, "false")) ++
-    Nominal("true", StrictTerminal(Identifier, "true")) ++
+    Nominal("false", StrictTerminal(Keyword, "false")) ++
+    Nominal("true", StrictTerminal(Keyword, "true")) ++
     Nominal("null", StrictTerminal(Identifier, "null")) ++
     Nominal("string", Terminal(StringLiteral)) ++
     Nominal("number", Terminal(NumberLiteral)) ++

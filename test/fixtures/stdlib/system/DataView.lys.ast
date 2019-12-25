@@ -21,105 +21,140 @@
         |-NameIdentifier
           |-Identifier=DataView
     |-NamespaceElementList
-      |-<UNEXPECTED TOKEN>=fun
-      |-<UNEXPECTED TOKEN>= 
-      |-<UNEXPECTED TOKEN>=[
-      |-<UNEXPECTED TOKEN>=]
-      |-<UNEXPECTED TOKEN>=(
-      |-<UNEXPECTED TOKEN>=self
-      |-<UNEXPECTED TOKEN>=:
-      |-<UNEXPECTED TOKEN>= 
-      |-<UNEXPECTED TOKEN>=DataView
-      |-<UNEXPECTED TOKEN>=,
-      |-<UNEXPECTED TOKEN>= 
-      |-<UNEXPECTED TOKEN>=at
-      |-<UNEXPECTED TOKEN>=:
-      |-<UNEXPECTED TOKEN>= 
-      |-<UNEXPECTED TOKEN>=u32
-      |-<UNEXPECTED TOKEN>=)
-      |-<UNEXPECTED TOKEN>=:
-      |-<UNEXPECTED TOKEN>= 
-      |-<UNEXPECTED TOKEN>=u8
-      |-<UNEXPECTED TOKEN>= 
-      |-<UNEXPECTED TOKEN>==
-      |-<UNEXPECTED TOKEN>= 
-      |-<UNEXPECTED TOKEN>={
-      |-<UNEXPECTED TOKEN>=
-
-      |-<UNEXPECTED TOKEN>=    
-      |-<UNEXPECTED TOKEN>=if
-      |-<UNEXPECTED TOKEN>= 
-      |-<UNEXPECTED TOKEN>=(
-      |-<UNEXPECTED TOKEN>=at
-      |-<UNEXPECTED TOKEN>= 
-      |-<UNEXPECTED TOKEN>=>
-      |-<UNEXPECTED TOKEN>= 
-      |-<UNEXPECTED TOKEN>=self
-      |-<UNEXPECTED TOKEN>=.
-      |-<UNEXPECTED TOKEN>=buffer
-      |-<UNEXPECTED TOKEN>=.
-      |-<UNEXPECTED TOKEN>=length
-      |-<UNEXPECTED TOKEN>=)
-      |-<UNEXPECTED TOKEN>= 
-      |-<UNEXPECTED TOKEN>={
-      |-<UNEXPECTED TOKEN>=
-
-      |-<UNEXPECTED TOKEN>=      
-      |-<UNEXPECTED TOKEN>=panic
-      |-<UNEXPECTED TOKEN>=(
-      |-<UNEXPECTED TOKEN>=)
-      |-<UNEXPECTED TOKEN>=
-
-      |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=if
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=at
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=<
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=0
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=as
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=u32
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>={
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=      
-  |-<UNEXPECTED TOKEN>=panic
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=}
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=u8
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=load
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=self
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=buffer
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=ptr
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=as
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=ref
-  |-<UNEXPECTED TOKEN>=,
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=at
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=}
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=}
+      |-FunctionDirective
+        |-Decorators
+          <Rule0>
+        |-FunDeclaration
+          |-FunctionName
+            |-FunOperator
+              |-VectorOpen=[
+              |-VectorClose=]
+          |-FunctionParamsList
+            |-ParameterList
+              |-Parameter
+                |-NameIdentifier
+                  |-Identifier=self
+                |-OfType
+                  |-Operator=:
+                  |-Type
+                    |-Reference
+                      |-QName
+                        |-NameIdentifier
+                          |-Identifier=DataView
+              |-Parameter
+                |-NameIdentifier
+                  |-Identifier=at
+                |-OfType
+                  |-Operator=:
+                  |-Type
+                    |-Reference
+                      |-QName
+                        |-NameIdentifier
+                          |-Identifier=u32
+          |-OfType
+            |-Operator=:
+            |-Type
+              |-Reference
+                |-QName
+                  |-NameIdentifier
+                    |-Identifier=u8
+          |-FunAssignExpression
+            |-Operator==
+            |-CodeBlock
+              |-IfExpression
+                |-IfBody
+                  |-RelExpression
+                    |-Reference
+                      |-QName
+                        |-NameIdentifier
+                          |-Identifier=at
+                    |-RelOperator
+                      |-Operator=>
+                    |-AtomicExpression
+                      |-Reference
+                        |-QName
+                          |-NameIdentifier
+                            |-Identifier=self
+                      |-MemberExpression
+                        |-BinMemberOperator
+                          |-Operator=.
+                        |-NameIdentifier
+                          |-Identifier=buffer
+                      |-MemberExpression
+                        |-BinMemberOperator
+                          |-Operator=.
+                        |-NameIdentifier
+                          |-Identifier=length
+                |-CodeBlock
+                  |-AtomicExpression
+                    |-Reference
+                      |-QName
+                        |-NameIdentifier
+                          |-Identifier=panic
+                    |-CallArguments
+                      <Rule0>
+              |-IfExpression
+                |-IfBody
+                  |-RelExpression
+                    |-Reference
+                      |-QName
+                        |-NameIdentifier
+                          |-Identifier=at
+                    |-RelOperator
+                      |-Operator=<
+                    |-AsExpression
+                      |-NumberLiteral=0
+                      |-AsKeyword
+                        |-Keyword=as
+                      |-Type
+                        |-Reference
+                          |-QName
+                            |-NameIdentifier
+                              |-Identifier=u32
+                |-CodeBlock
+                  |-AtomicExpression
+                    |-Reference
+                      |-QName
+                        |-NameIdentifier
+                          |-Identifier=panic
+                    |-CallArguments
+                      <Rule0>
+              |-AtomicExpression
+                |-Reference
+                  |-QName
+                    |-NameIdentifier
+                      |-Identifier=u8
+                |-MemberExpression
+                  |-BinMemberOperator
+                    |-Operator=.
+                  |-NameIdentifier
+                    |-Identifier=load
+                |-CallArguments
+                  |-AsExpression
+                    |-AtomicExpression
+                      |-Reference
+                        |-QName
+                          |-NameIdentifier
+                            |-Identifier=self
+                      |-MemberExpression
+                        |-BinMemberOperator
+                          |-Operator=.
+                        |-NameIdentifier
+                          |-Identifier=buffer
+                      |-MemberExpression
+                        |-BinMemberOperator
+                          |-Operator=.
+                        |-NameIdentifier
+                          |-Identifier=ptr
+                    |-AsKeyword
+                      |-Keyword=as
+                    |-Type
+                      |-Reference
+                        |-QName
+                          |-NameIdentifier
+                            |-Identifier=ref
+                  |-Reference
+                    |-QName
+                      |-NameIdentifier
+                        |-Identifier=at
+  |-EndOfFile=

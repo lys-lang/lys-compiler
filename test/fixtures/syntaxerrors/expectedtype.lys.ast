@@ -5,14 +5,14 @@
         |-Identifier=x
       |-Operator==
       |-CodeBlock
-        |-Reference
-          |-QName
-            |-NameIdentifier
-              |-Identifier=a
-        |-<UNEXPECTED TOKEN>=is
-        |-<UNEXPECTED TOKEN>=
-
-        |-<UNEXPECTED TOKEN>=  
+        |-IsExpression
+          |-Reference
+            |-QName
+              |-NameIdentifier
+                |-Identifier=a
+          |-IsKeyword
+            |-Keyword=is
+          |-<SyntaxError>=A type was expected
         |-<UNEXPECTED TOKEN>=1
         |-<UNEXPECTED TOKEN>=
 
@@ -28,7 +28,7 @@
               |-NameIdentifier
                 |-Identifier=a
           |-AsKeyword
-            |-Identifier=as
+            |-Keyword=as
           |-<SyntaxError>=A type was expected
         |-<UNEXPECTED TOKEN>={
   |-<UNEXPECTED TOKEN>=}
