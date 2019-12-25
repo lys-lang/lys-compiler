@@ -1,92 +1,92 @@
-|-Document
-  |-VarDirective
-    |-VarDeclaration
-      |-NameIdentifier
+|-Document(0,94)
+  |-VarDirective(0,30)
+    |-VarDeclaration(0,30)
+      |-NameIdentifier(4,5)
         |-Identifier=x
       |-Operator==
-      |-AtomicExpression
-        |-Reference
-          |-QName
-            |-NameIdentifier
+      |-AtomicExpression(8,30)
+        |-Reference(8,9)
+          |-QName(8,9)
+            |-NameIdentifier(8,9)
               |-Identifier=a
-        |-MemberExpression
-          |-BinMemberOperator
+        |-MemberExpression(9,13)
+          |-BinMemberOperator(9,10)
             |-Operator=.
-          |-NameIdentifier
+          |-NameIdentifier(10,13)
             |-Identifier=map
-        |-CallArguments
-          |-Reference
-            |-QName
-              |-NameIdentifier
+        |-CallArguments(13,16)
+          |-Reference(14,15)
+            |-QName(14,15)
+              |-NameIdentifier(14,15)
                 |-Identifier=b
-        |-MemberExpression
-          |-BinMemberOperator
+        |-MemberExpression(16,20)
+          |-BinMemberOperator(16,17)
             |-Operator=.
-          |-NameIdentifier
+          |-NameIdentifier(17,20)
             |-Identifier=map
-        |-CallArguments
-          |-Reference
-            |-QName
-              |-NameIdentifier
+        |-CallArguments(20,23)
+          |-Reference(21,22)
+            |-QName(21,22)
+              |-NameIdentifier(21,22)
                 |-Identifier=c
-        |-MemberExpression
-          |-BinMemberOperator
+        |-MemberExpression(23,27)
+          |-BinMemberOperator(23,24)
             |-Operator=.
-          |-NameIdentifier
+          |-NameIdentifier(24,27)
             |-Identifier=map
-        |-CallArguments
-          |-Reference
-            |-QName
-              |-NameIdentifier
+        |-CallArguments(27,30)
+          |-Reference(28,29)
+            |-QName(28,29)
+              |-NameIdentifier(28,29)
                 |-Identifier=d
-  |-VarDirective
-    |-VarDeclaration
-      |-NameIdentifier
+  |-VarDirective(31,60)
+    |-VarDeclaration(31,60)
+      |-NameIdentifier(35,36)
         |-Identifier=y
       |-Operator==
-      |-AddExpression
+      |-AddExpression(39,60)
         |-NumberLiteral=1
-        |-AddOperator
+        |-AddOperator(41,42)
           |-Operator=+
-        |-MulExpression
+        |-MulExpression(43,52)
           |-NumberLiteral=2
-          |-MulOperator
+          |-MulOperator(45,46)
             |-Operator=*
           |-NumberLiteral=3
-          |-MulOperator
+          |-MulOperator(49,50)
             |-Operator=/
           |-NumberLiteral=4
-        |-AddOperator
+        |-AddOperator(53,54)
           |-Operator=-
-        |-MulExpression
+        |-MulExpression(55,60)
           |-NumberLiteral=5
-          |-MulOperator
+          |-MulOperator(57,58)
             |-Operator=%
           |-NumberLiteral=6
-  |-VarDirective
-    |-VarDeclaration
-      |-NameIdentifier
+  |-VarDirective(61,94)
+    |-VarDeclaration(61,94)
+      |-NameIdentifier(65,66)
         |-Identifier=z
       |-Operator==
-      |-MulExpression
-        |-ParenExpression
-          |-AddExpression
+      |-MulExpression(69,94)
+        |-ParenExpression(69,76)
+          |-AddExpression(70,75)
             |-NumberLiteral=1
-            |-AddOperator
+            |-AddOperator(72,73)
               |-Operator=+
             |-NumberLiteral=2
-        |-MulOperator
+        |-MulOperator(77,78)
           |-Operator=*
         |-NumberLiteral=3
-        |-MulOperator
+        |-MulOperator(81,82)
           |-Operator=/
-        |-ParenExpression
-          |-AddExpression
+        |-ParenExpression(83,90)
+          |-AddExpression(84,89)
             |-NumberLiteral=4
-            |-AddOperator
+            |-AddOperator(86,87)
               |-Operator=-
             |-NumberLiteral=5
-        |-MulOperator
+        |-MulOperator(91,92)
           |-Operator=%
         |-NumberLiteral=6
   |-EndOfFile=

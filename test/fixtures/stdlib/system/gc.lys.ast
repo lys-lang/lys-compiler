@@ -1,153 +1,153 @@
-|-Document
-  |-TypeDirective
-    |-NameIdentifier
+|-Document(0,970)
+  |-TypeDirective(671,696)
+    |-NameIdentifier(676,682)
       |-Identifier=Object
-    |-ValueType
+    |-ValueType(683,696)
       |-Operator==
-      |-StructLiteral
+      |-StructLiteral(685,696)
         |-Operator=%
         |-Keyword=struct
-        |-StructParamsList
-          |-ParameterList
+        |-StructParamsList(693,696)
+          |-ParameterList(695,695)
             <Rule0>
-  |-ImplDirective
-    |-Reference
-      |-QName
-        |-NameIdentifier
+  |-ImplDirective(698,970)
+    |-Reference(703,709)
+      |-QName(703,709)
+        |-NameIdentifier(703,709)
           |-Identifier=Object
-    |-NamespaceElementList
-      |-FunctionDirective
-        |-Decorators
+    |-NamespaceElementList(710,970)
+      |-FunctionDirective(714,844)
+        |-Decorators(714,714)
           <Rule0>
-        |-FunDeclaration
-          |-FunctionName
-            |-NameIdentifier
+        |-FunDeclaration(714,844)
+          |-FunctionName(718,723)
+            |-NameIdentifier(718,723)
               |-Identifier=apply
-          |-FunctionParamsList
-            |-ParameterList
-              |-Parameter
-                |-NameIdentifier
+          |-FunctionParamsList(723,734)
+            |-ParameterList(724,733)
+              |-Parameter(724,733)
+                |-NameIdentifier(724,728)
                   |-Identifier=size
-                |-OfType
+                |-OfType(728,733)
                   |-Operator=:
-                  |-Type
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+                  |-Type(730,733)
+                    |-Reference(730,733)
+                      |-QName(730,733)
+                        |-NameIdentifier(730,733)
                           |-Identifier=i32
-          |-OfType
+          |-OfType(734,743)
             |-Operator=:
-            |-Type
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+            |-Type(736,742)
+              |-Reference(736,742)
+                |-QName(736,742)
+                  |-NameIdentifier(736,742)
                     |-Identifier=Object
-          |-FunAssignExpression
+          |-FunAssignExpression(743,844)
             |-Operator==
-            |-WasmExpression
+            |-WasmExpression(745,844)
               |-Operator=%
               |-Identifier=wasm
-              |-SExpression
-                |-SSymbol
+              |-SExpression(757,839)
+                |-SSymbol(758,762)
                   |-Identifier=call
-                |-QName
-                  |-NameIdentifier
+                |-QName(763,792)
+                  |-NameIdentifier(763,770)
                     |-Identifier=$system
                   |-Operator=::
-                  |-NameIdentifier
+                  |-NameIdentifier(772,776)
                     |-Identifier=core
                   |-Operator=::
-                  |-NameIdentifier
+                  |-NameIdentifier(778,784)
                     |-Identifier=memory
                   |-Operator=::
-                  |-NameIdentifier
+                  |-NameIdentifier(786,792)
                     |-Identifier=calloc
-                |-SExpression
-                  |-SSymbol
+                |-SExpression(793,835)
+                  |-SSymbol(794,801)
                     |-Identifier=i32
                     |-Operator=.
                     |-Identifier=add
-                  |-SExpression
-                    |-SSymbol
+                  |-SExpression(802,817)
+                    |-SSymbol(803,812)
                       |-Identifier=i32
                       |-Operator=.
                       |-Keyword=const
-                    |-NegNumberLiteral
+                    |-NegNumberLiteral(813,815)
                       |-NumberLiteral=16
-                  |-SExpression
-                    |-SSymbol
+                  |-SExpression(817,834)
+                    |-SSymbol(818,827)
                       |-Identifier=get_local
-                    |-QName
-                      |-NameIdentifier
+                    |-QName(828,833)
+                      |-NameIdentifier(828,833)
                         |-Identifier=$size
-      |-FunctionDirective
-        |-Decorators
+      |-FunctionDirective(844,888)
+        |-Decorators(844,844)
           <Rule0>
-        |-FunDeclaration
-          |-FunctionName
-            |-NameIdentifier
+        |-FunDeclaration(844,888)
+          |-FunctionName(848,852)
+            |-NameIdentifier(848,852)
               |-Identifier=link
-          |-FunctionParamsList
-            |-ParameterList
-              |-Parameter
-                |-NameIdentifier
+          |-FunctionParamsList(852,877)
+            |-ParameterList(853,876)
+              |-Parameter(853,864)
+                |-NameIdentifier(853,859)
                   |-Identifier=parent
-                |-OfType
+                |-OfType(859,864)
                   |-Operator=:
-                  |-Type
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+                  |-Type(861,864)
+                    |-Reference(861,864)
+                      |-QName(861,864)
+                        |-NameIdentifier(861,864)
                           |-Identifier=ref
-              |-Parameter
-                |-NameIdentifier
+              |-Parameter(866,876)
+                |-NameIdentifier(866,871)
                   |-Identifier=child
-                |-OfType
+                |-OfType(871,876)
                   |-Operator=:
-                  |-Type
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+                  |-Type(873,876)
+                    |-Reference(873,876)
+                      |-QName(873,876)
+                        |-NameIdentifier(873,876)
                           |-Identifier=ref
-          |-OfType
+          |-OfType(877,884)
             |-Operator=:
-            |-Type
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+            |-Type(879,883)
+              |-Reference(879,883)
+                |-QName(879,883)
+                  |-NameIdentifier(879,883)
                     |-Identifier=void
-          |-FunAssignExpression
+          |-FunAssignExpression(884,888)
             |-Operator==
-            |-CodeBlock
+            |-CodeBlock(886,888)
               <Rule0>
-      |-FunctionDirective
-        |-Decorators
+      |-FunctionDirective(936,968)
+        |-Decorators(936,936)
           <Rule0>
-        |-FunDeclaration
-          |-FunctionName
-            |-NameIdentifier
+        |-FunDeclaration(936,968)
+          |-FunctionName(940,946)
+            |-NameIdentifier(940,946)
               |-Identifier=unlink
-          |-FunctionParamsList
-            |-ParameterList
-              |-Parameter
-                |-NameIdentifier
+          |-FunctionParamsList(946,957)
+            |-ParameterList(947,956)
+              |-Parameter(947,956)
+                |-NameIdentifier(947,951)
                   |-Identifier=self
-                |-OfType
+                |-OfType(951,956)
                   |-Operator=:
-                  |-Type
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+                  |-Type(953,956)
+                    |-Reference(953,956)
+                      |-QName(953,956)
+                        |-NameIdentifier(953,956)
                           |-Identifier=ref
-          |-OfType
+          |-OfType(957,964)
             |-Operator=:
-            |-Type
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+            |-Type(959,963)
+              |-Reference(959,963)
+                |-QName(959,963)
+                  |-NameIdentifier(959,963)
                     |-Identifier=void
-          |-FunAssignExpression
+          |-FunAssignExpression(964,968)
             |-Operator==
-            |-CodeBlock
+            |-CodeBlock(966,968)
               <Rule0>
   |-EndOfFile=

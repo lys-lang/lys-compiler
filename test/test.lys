@@ -412,24 +412,24 @@ fun testPrintAst(): void = {
     printAst(
       AstCons(
         Node("Test1", AstCons(
-          Node("Test1.1", Leaf(testToken, "Hi")),
-          Node("Test1.2", Leaf(testToken, "Hi"))
-        )),
+          Node("Test1.1", Leaf(testToken, "Hi"), 0x1, 0x2),
+          Node("Test1.2", Leaf(testToken, "Hi"), 0x1, 0x2)
+        ), 0x1, 0x2),
         Node("Test2", AstCons(
-          Node("Test2.1", Leaf(testToken, "Hi")),
-          Node("Test2.2", Leaf(testToken, "Hi"))
-        ))
+          Node("Test2.1", Leaf(testToken, "Hi"), 0x1, 0x2),
+          Node("Test2.2", Leaf(testToken, "Hi"), 0x1, 0x2)
+        ), 0x1, 0x2)
       )
     , 0),
-    "|-Test1\n" ++
-    "  |-Test1.1\n" ++
+    "|-Test1(1,2)\n" ++
+    "  |-Test1.1(1,2)\n" ++
     "    |-Identifier=Hi\n" ++
-    "  |-Test1.2\n" ++
+    "  |-Test1.2(1,2)\n" ++
     "    |-Identifier=Hi\n" ++
-    "|-Test2\n" ++
-    "  |-Test2.1\n" ++
+    "|-Test2(1,2)\n" ++
+    "  |-Test2.1(1,2)\n" ++
     "    |-Identifier=Hi\n" ++
-    "  |-Test2.2\n" ++
+    "  |-Test2.2(1,2)\n" ++
     "    |-Identifier=Hi",
     "test printAst"
   )
@@ -745,7 +745,7 @@ fun discardSemantics(): void = {
 
   mustEqual(
     printAst(verifyParsing("A B C", "value", grammar), 0),
-    "|-valuex\n" ++
+    "|-valuex(0,5)\n" ++
     "  |-Identifier=A\n" ++
     "  |-Identifier=B",
     "Validate tree"

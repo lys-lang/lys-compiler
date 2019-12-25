@@ -1,88 +1,88 @@
-|-Document
-  |-FunctionDirective
-    |-Decorators
+|-Document(0,133)
+  |-FunctionDirective(0,29)
+    |-Decorators(0,0)
       <Rule0>
-    |-FunDeclaration
-      |-FunctionName
-        |-NameIdentifier
+    |-FunDeclaration(0,29)
+      |-FunctionName(4,5)
+        |-NameIdentifier(4,5)
           |-Identifier=y
-      |-FunctionParamsList
-        |-ParameterList
+      |-FunctionParamsList(5,7)
+        |-ParameterList(6,6)
           <Rule0>
-      |-OfType
+      |-OfType(7,14)
         |-Operator=:
-        |-Type
-          |-Reference
-            |-QName
-              |-NameIdentifier
+        |-Type(9,13)
+          |-Reference(9,13)
+            |-QName(9,13)
+              |-NameIdentifier(9,13)
                 |-Identifier=void
-      |-FunAssignExpression
+      |-FunAssignExpression(14,29)
         |-Operator==
-        |-CodeBlock
+        |-CodeBlock(16,29)
           <Rule0>
-  |-FunctionDirective
-    |-Decorators
+  |-FunctionDirective(31,133)
+    |-Decorators(31,31)
       <Rule0>
-    |-FunDeclaration
-      |-FunctionName
-        |-NameIdentifier
+    |-FunDeclaration(31,133)
+      |-FunctionName(35,36)
+        |-NameIdentifier(35,36)
           |-Identifier=x
-      |-FunctionParamsList
-        |-ParameterList
-          |-Parameter
-            |-NameIdentifier
+      |-FunctionParamsList(36,44)
+        |-ParameterList(37,43)
+          |-Parameter(37,43)
+            |-NameIdentifier(37,38)
               |-Identifier=a
-            |-OfType
+            |-OfType(38,43)
               |-Operator=:
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-Type(40,43)
+                |-Reference(40,43)
+                  |-QName(40,43)
+                    |-NameIdentifier(40,43)
                       |-Identifier=i32
-      |-OfType
+      |-OfType(44,50)
         |-Operator=:
-        |-Type
-          |-Reference
-            |-QName
-              |-NameIdentifier
+        |-Type(46,49)
+          |-Reference(46,49)
+            |-QName(46,49)
+              |-NameIdentifier(46,49)
                 |-Identifier=i32
-      |-FunAssignExpression
+      |-FunAssignExpression(50,133)
         |-Operator==
-        |-CodeBlock
-          |-VarDeclaration
-            |-NameIdentifier
+        |-CodeBlock(52,133)
+          |-VarDeclaration(56,127)
+            |-NameIdentifier(60,61)
               |-Identifier=z
             |-Operator==
-            |-MatchExpression
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+            |-MatchExpression(64,127)
+              |-Reference(70,71)
+                |-QName(70,71)
+                  |-NameIdentifier(70,71)
                     |-Identifier=a
-              |-MatchBody
-                |-CaseLiteral
+              |-MatchBody(72,127)
+                |-CaseLiteral(78,89)
                   |-NumberLiteral=1
                   |-Operator=->
                   |-NumberLiteral=1
-                |-CaseLiteral
+                |-CaseLiteral(94,107)
                   |-NumberLiteral=2
                   |-Operator=->
-                  |-AtomicExpression
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+                  |-AtomicExpression(104,107)
+                    |-Reference(104,105)
+                      |-QName(104,105)
+                        |-NameIdentifier(104,105)
                           |-Identifier=y
-                    |-CallArguments
+                    |-CallArguments(105,107)
                       <Rule0>
-                |-CaseElse
-                  |-NameIdentifier
+                |-CaseElse(112,123)
+                  |-NameIdentifier(117,118)
                     |-Identifier=x
                   |-Operator=->
-                  |-Reference
-                    |-QName
-                      |-NameIdentifier
+                  |-Reference(122,123)
+                    |-QName(122,123)
+                      |-NameIdentifier(122,123)
                         |-Identifier=x
-          |-Reference
-            |-QName
-              |-NameIdentifier
+          |-Reference(130,131)
+            |-QName(130,131)
+              |-NameIdentifier(130,131)
                 |-Identifier=z
   |-EndOfFile=
