@@ -1,0 +1,293 @@
+|-Document
+  |-EffectDirective
+    |-EffectDeclaration
+      |-NameIdentifier
+        |-Identifier=exn
+      |-EffectElementList
+        |-EffectElements
+          |-EffectMemberDeclaration
+            |-NameIdentifier
+              |-Identifier=raise
+            |-FunctionParamsList
+              |-ParameterList
+                <Rule0>
+            |-OfType
+              |-Operator=:
+              |-Type
+                |-Reference
+                  |-QName
+                    |-NameIdentifier
+                      |-Identifier=_
+  |-EffectDirective
+    |-EffectDeclaration
+      |-NameIdentifier
+        |-Identifier=exn
+      |-TypeParameters
+        |-TypeVariableList
+          |-TypeVariable
+            |-NameIdentifier
+              |-Identifier=T
+      |-EffectElementList
+        |-EffectElements
+          |-EffectMemberDeclaration
+            |-NameIdentifier
+              |-Identifier=raise
+            |-FunctionParamsList
+              |-ParameterList
+                <Rule0>
+            |-OfType
+              |-Operator=:
+              |-Type
+                |-Reference
+                  |-QName
+                    |-NameIdentifier
+                      |-Identifier=T
+  |-FunctionDirective
+    |-Decorators
+      <Rule0>
+    |-FunDeclaration
+      |-FunctionName
+        |-NameIdentifier
+          |-Identifier=sqr
+      |-FunctionParamsList
+        |-ParameterList
+          |-Parameter
+            |-NameIdentifier
+              |-Identifier=x
+            |-OfType
+              |-Operator=:
+              |-Type
+                |-Reference
+                  |-QName
+                    |-NameIdentifier
+                      |-Identifier=i32
+      |-OfType
+        |-Operator=:
+        |-FunctionEffect
+          |-Type
+            |-Reference
+              |-QName
+                |-NameIdentifier
+                  |-Identifier=total
+        |-Type
+          |-Reference
+            |-QName
+              |-NameIdentifier
+                |-Identifier=i32
+      |-FunAssignExpression
+        |-Operator==
+        |-MulExpression
+          |-Reference
+            |-QName
+              |-NameIdentifier
+                |-Identifier=x
+          |-MulOperator
+            |-Operator=*
+          |-Reference
+            |-QName
+              |-NameIdentifier
+                |-Identifier=x
+  |-FunctionDirective
+    |-Decorators
+      <Rule0>
+    |-FunDeclaration
+      |-FunctionName
+        |-NameIdentifier
+          |-Identifier=sqr
+      |-FunctionParamsList
+        |-ParameterList
+          |-Parameter
+            |-NameIdentifier
+              |-Identifier=x
+            |-OfType
+              |-Operator=:
+              |-Type
+                |-Reference
+                  |-QName
+                    |-NameIdentifier
+                      |-Identifier=i32
+      |-OfType
+        |-Operator=:
+        |-<SyntaxError>=A type or effect was expected
+  |-<UNEXPECTED TOKEN>=<>
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=i32
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=x
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=*
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=x
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=fun
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=sqr
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=x
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=i32
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=i32
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=x
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=*
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=x
+  |-<UNEXPECTED TOKEN>=
+
+
+  |-<UNEXPECTED TOKEN>=fun
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=safeDiv
+  |-<UNEXPECTED TOKEN>=<
+  |-<UNEXPECTED TOKEN>=T
+  |-<UNEXPECTED TOKEN>=>
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=a
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=T
+  |-<UNEXPECTED TOKEN>=,
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=b
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=T
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=<
+  |-<UNEXPECTED TOKEN>=exn
+  |-<UNEXPECTED TOKEN>=|
+  |-<UNEXPECTED TOKEN>=_
+  |-<UNEXPECTED TOKEN>=>
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=T
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>={
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=if
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=b
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>===
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=0
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>={
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=    
+  |-<UNEXPECTED TOKEN>=raise
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=}
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=else
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>={
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=    
+  |-<UNEXPECTED TOKEN>=a
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=/
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=b
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=}
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=}
+  |-<UNEXPECTED TOKEN>=
+
+
+  |-<UNEXPECTED TOKEN>=fun
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=zeroDiv
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=a
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=i32
+  |-<UNEXPECTED TOKEN>=,
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=b
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=i32
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=<
+  |-<UNEXPECTED TOKEN>=_
+  |-<UNEXPECTED TOKEN>=>
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=i32
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>={
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=if
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=b
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>===
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=0
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>={
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=    
+  |-<UNEXPECTED TOKEN>=raise
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=}
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=else
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>={
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=    
+  |-<UNEXPECTED TOKEN>=a
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=/
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=b
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=}
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=}

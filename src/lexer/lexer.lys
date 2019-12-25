@@ -1,15 +1,15 @@
+import src::helpers
 import src::lexer::tokens
 
-struct Lexer(source: string, pos: u32)
-struct None()
+struct Lexer(source: string, pos: u32, currentToken: Nil | Token)
 
-var instance: Lexer | None = None
+var instance: Lexer | Nil = Nil
 
 /**
  * Updates the Lexer with a string.
  */
 fun instantiate(str: string): void = {
-  instance = Lexer(str, 0 as u32)
+  instance = Lexer(str)
 }
 
 fun eat(): string = match instance {
@@ -26,7 +26,7 @@ fun eat(): string = match instance {
 impl Lexer {
   // Overload constructor
   fun apply(str: string): Lexer = {
-    Lexer(str, 0 as u32)
+    Lexer(str, 0 as u32, Nil)
   }
 
   #[method]
@@ -40,12 +40,16 @@ impl Lexer {
 
   #[method]
   fun seek(self: Lexer, position: u32): void = {
-    self.pos = position
+    if (position != self.pos) {
+      self.currentToken = Nil
+      self.pos = position
+    }
   }
 
   #[method]
   fun next(self: Lexer): u32 = {
     self.pos = self.pos + 1 as u32
+    self.currentToken = Nil
     self.source[self.pos] as u32
   }
 
@@ -103,29 +107,35 @@ impl Lexer {
 
   #[method]
   fun peek(self: Lexer): Token = {
-    if (self.pos == self.source.length) {
-      Token(EndOfFile, self.source.length, self.source.length)
-    } else match self.tokenStart(self.head()) {
-      case is Whitespace -> eatWhitespace(self)
-      case is NewLine -> eatNewLine(self)
-      case is StringLiteral -> eatString(self)
-      case is Identifier -> eatIdentifier(self)
-      case is MacroDecoration -> eatMacroDecoration(self)
-      case is ParenthesesOpen -> eatSingleChar(self, ParenthesesOpen)
-      case is ParenthesesClose -> eatSingleChar(self, ParenthesesClose)
-      case is CurlyBracesOpen -> eatSingleChar(self, CurlyBracesOpen)
-      case is CurlyBracesClose -> eatSingleChar(self, CurlyBracesClose)
-      case is Comma -> eatSingleChar(self, Comma)
-      case is VectorOpen -> eatSingleChar(self, VectorOpen)
-      case is VectorClose -> eatSingleChar(self, VectorClose)
-      case is LineComment -> eatLineComment(self)
-      case is MultiLineComment -> eatMultiLineComment(self)
-      case is Operator -> eatOperator(self)
-      case is NumberLiteral -> eatNumber(self)
-      else -> eatUnknown(self)
+    match self.currentToken {
+      case is Nil -> {
+        val t = if (self.pos == self.source.length) {
+          Token(EndOfFile, self.source.length, self.source.length)
+        } else match self.tokenStart(self.head()) {
+          case is Whitespace -> eatWhitespace(self)
+          case is NewLine -> eatNewLine(self)
+          case is StringLiteral -> eatString(self)
+          case is Identifier -> eatIdentifier(self)
+          case is MacroDecoration -> eatMacroDecoration(self)
+          case is ParenthesesOpen -> eatSingleChar(self, ParenthesesOpen)
+          case is ParenthesesClose -> eatSingleChar(self, ParenthesesClose)
+          case is CurlyBracesOpen -> eatSingleChar(self, CurlyBracesOpen)
+          case is CurlyBracesClose -> eatSingleChar(self, CurlyBracesClose)
+          case is Comma -> eatSingleChar(self, Comma)
+          case is VectorOpen -> eatSingleChar(self, VectorOpen)
+          case is VectorClose -> eatSingleChar(self, VectorClose)
+          case is LineComment -> eatLineComment(self)
+          case is MultiLineComment -> eatMultiLineComment(self)
+          case is Operator -> eatOperator(self)
+          case is NumberLiteral -> eatNumber(self)
+          else -> eatUnknown(self)
+        }
+        self.currentToken = t
+        t
+      }
+      case x is Token -> x
     }
   }
-
 
   #[method]
   fun eat(self: Lexer): Token = {
@@ -137,7 +147,7 @@ impl Lexer {
   private fun eatMacroDecoration(self: Lexer): Token = {
     // #[
     val start = self.pos
-    var end = self.pos + 1 as u32
+    var end = start + 1 as u32
 
     if (self.hasNext() && self.peekChar() == 0x5b) { // [
       end = end + 1 as u32
@@ -149,13 +159,13 @@ impl Lexer {
 
   private fun eatSingleChar(self: Lexer, tokenType: TokenType): Token = {
     val start = self.pos
-    var end = self.pos + 1 as u32
+    var end = start + 1 as u32
     Token(tokenType, start, end)
   }
 
   private fun eatWhitespace(self: Lexer): Token = {
     val start = self.pos
-    var end = self.pos
+    var end = start
     val len = self.source.length
     loop {
       if (end >= len) break
@@ -174,7 +184,7 @@ impl Lexer {
 
   private fun eatOperator(self: Lexer): Token = {
     val start = self.pos
-    var end = self.pos
+    var end = start
     val len = self.source.length
     loop {
       if (end >= len) break
@@ -206,7 +216,7 @@ impl Lexer {
 
   private fun eatLineComment(self: Lexer): Token = {
     val start = self.pos
-    var end = self.pos
+    var end = start
     val len = self.source.length
 
     loop {
@@ -229,7 +239,7 @@ impl Lexer {
 
   private fun eatMultiLineComment(self: Lexer): Token = {
     val start = self.pos
-    var end = self.pos
+    var end = start
     val len = self.source.length
 
     loop {
@@ -257,7 +267,7 @@ impl Lexer {
 
   private fun eatUnknown(self: Lexer): Token = {
     val start = self.pos
-    var end = self.pos
+    var end = start
     val len = self.source.length
     loop {
       if (end >= len) break
@@ -277,7 +287,7 @@ impl Lexer {
 
   private fun eatString(self: Lexer): Token = {
     val start = self.pos
-    var end = self.pos
+    var end = start
     val len = self.source.length
     loop {
       if (end >= len) break
@@ -296,7 +306,7 @@ impl Lexer {
 
   private fun eatNumber(self: Lexer): Token = {
     val start = self.pos
-    var end = self.pos
+    var end = start
     val len = self.source.length
 
     val char = self.source[end]
@@ -346,48 +356,58 @@ impl Lexer {
           end = end + 1 as u32
           continue
         }
+      } else {
+        end = readFloatNumberEndPoition(self, start, len)
       }
     } else {
-      var hasExponent = false
-      var hasDecimalPoint = false
-
-      loop {
-        if (end >= len) break
-
-        val char = self.source[end]
-
-        if (!isNumber(char))  // \n
-        if (char != 0x2e || hasDecimalPoint)
-        if (char != 0x65 || hasExponent)
-        if (char != 0x45 || hasExponent)
-          break
-
-        if (char == 0x2e) {
-          hasDecimalPoint = true
-        }
-
-        if (char == 0x65 || char == 0x45) {
-          val char = self.source[end + 1 as u32]
-          if (char == 0x2b || char == 0x2d) {
-            // +-
-            end = end + 1 as u32
-          }
-          hasExponent = true
-          hasDecimalPoint = true
-        }
-
-        end = end + 1 as u32
-        continue
-      }
+      end = readFloatNumberEndPoition(self, start, len)
     }
 
     Token(NumberLiteral, start, end)
   }
 
+  fun readFloatNumberEndPoition(self: Lexer, start: u32, len: u32): u32 = {
+    var end = start
+
+    var hasExponent = false
+    var hasDecimalPoint = false
+
+    loop {
+      if (end >= len) break
+
+      val char = self.source[end]
+
+      if (!isNumber(char))  // \n
+      if (char != 0x2e || hasDecimalPoint)
+      if (char != 0x65 || hasExponent)
+      if (char != 0x45 || hasExponent)
+        break
+
+      if (char == 0x2e) {
+        hasDecimalPoint = true
+      }
+
+      if (char == 0x65 || char == 0x45) {
+        val char = self.source[end + 1 as u32]
+        if (char == 0x2b || char == 0x2d) {
+          // +-
+          end = end + 1 as u32
+        }
+        hasExponent = true
+        hasDecimalPoint = true
+      }
+
+      end = end + 1 as u32
+      continue
+    }
+
+    end
+  }
+
 
   private fun eatNewLine(self: Lexer): Token = {
     val start = self.pos
-    var end = self.pos
+    var end = start
     val len = self.source.length
     loop {
       if (end >= len) break
@@ -407,10 +427,111 @@ impl Lexer {
     Token(NewLine, start, end)
   }
 
+  fun isKeyword(str: string): boolean =
+    match str[0 as u32] {
+      case 0x61 -> match str {
+        case "abstract" -> true
+        case "async" -> true
+        case "await" -> true
+        case "as" -> true
+        else -> false
+      }
+      case 0x62 -> match str {
+        case "break" -> true
+        else -> false
+      }
+      case 0x63 -> match str {
+        case "case" -> true
+        case "class" -> true
+        case "const" -> true
+        case "continue" -> true
+        else -> false
+      }
+      case 0x64 -> match str {
+        case "declare" -> true
+        case "delete" -> true
+        case "defer" -> true
+        case "do" -> true
+        else -> false
+      }
+      case 0x65 -> match str {
+        case "effect" -> true
+        case "else" -> true
+        case "enum" -> true
+        case "extends" -> true
+        else -> false
+      }
+      case 0x66 -> match str {
+        case "false" -> true
+        case "finally" -> true
+        case "for" -> true
+        case "fun" -> true
+        else -> false
+      }
+      case 0x69 -> match str {
+        case "if" -> true
+        case "impl" -> true
+        case "import" -> true
+        case "in" -> true
+        case "is" -> true
+        else -> false
+      }
+      case 0x6c -> match str {
+        case "let" -> true
+        case "loop" -> true
+        else -> false
+      }
+      case 0x6d -> match str {
+        case "match" -> true
+        else -> false
+      }
+      case 0x6e -> match str {
+        case "new" -> true
+        else -> false
+      }
+      case 0x70 -> match str {
+        case "package" -> true
+        case "private" -> true
+        case "public" -> true
+        case "protected" -> true
+        else -> false
+      }
+      case 0x73 -> match str {
+        case "struct" -> true
+        else -> false
+      }
+      case 0x74 -> match str {
+        case "trait" -> true
+        case "true" -> true
+        case "try" -> true
+        case "type" -> true
+        else -> false
+      }
+      case 0x75 -> match str {
+        case "using" -> true
+        else -> false
+      }
+      case 0x76 -> match str {
+        case "val" -> true
+        case "var" -> true
+        else -> false
+      }
+      case 0x77 -> match str {
+        case "while" -> true
+        case "with" -> true
+        else -> false
+      }
+      case 0x79 -> match str {
+        case "yield" -> true
+        else -> false
+      }
+      else -> false
+    }
+
   private fun eatIdentifier(self: Lexer): Token = {
     // '$'? [A-Za-z_]([A-Za-z0-9_$])*
     val start = self.pos
-    var end = self.pos
+    var end = start
     val len = self.source.length
 
     // TODO: Validate first char
@@ -433,7 +554,14 @@ impl Lexer {
       end = end + 1 as u32
       continue
     }
-    Token(Identifier, start, end)
+
+    val text = self.source.substring(start as i32, end as i32)
+
+    if (isKeyword(text)) {
+      Token(Keyword, start, end)
+    } else {
+      Token(Identifier, start, end)
+    }
   }
 
   fun isNumber(char: u32): boolean = {

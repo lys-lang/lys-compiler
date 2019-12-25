@@ -1,0 +1,59 @@
+|-Document
+  |-ValDirective
+    |-ValDeclaration
+      |-NameIdentifier
+        |-Identifier=x
+      |-Operator==
+      |-CodeBlock
+        |-IsExpression
+          |-Reference
+            |-QName
+              |-NameIdentifier
+                |-Identifier=a
+          |-IsKeyword
+            |-Keyword=is
+          |-<SyntaxError>=A type was expected
+        |-<UNEXPECTED TOKEN>=1
+        |-<UNEXPECTED TOKEN>=
+
+  |-ValDirective
+    |-ValDeclaration
+      |-NameIdentifier
+        |-Identifier=x
+      |-Operator==
+      |-CodeBlock
+        |-AsExpression
+          |-Reference
+            |-QName
+              |-NameIdentifier
+                |-Identifier=a
+          |-AsKeyword
+            |-Keyword=as
+          |-<SyntaxError>=A type was expected
+        |-<UNEXPECTED TOKEN>={
+  |-<UNEXPECTED TOKEN>=}
+  |-<UNEXPECTED TOKEN>=
+
+
+
+  |-<UNEXPECTED TOKEN>=type
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=b
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=a
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=|
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=type
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=b
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=a
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=&
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=.
