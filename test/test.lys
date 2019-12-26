@@ -378,7 +378,7 @@ fun verifyParsing(source: string, rule: string, grammar: Grammar): AstNode | Nil
   val parser = Parser(lexer, grammar)
   val result = parse(rule, parser, 0)
   verify(result is AstNode, "Must parse into a valid result")
-  support::env::printf(printAst(result, 0))
+  support::env::printf(printAst(result))
   verify(lexer.hasNext() == false, "Lexer should have finished scanning")
 
   END()
@@ -394,7 +394,7 @@ fun verifyParsingWithErrors(source: string, rule: string, grammar: Grammar): voi
   val parser = Parser(lexer, grammar)
   val result = parse(rule, parser, 0)
   verify(result is AstNode, "Must parse into a valid result")
-  support::env::printf(printAst(result, 0))
+  support::env::printf(printAst(result))
 
   END()
 }
@@ -420,7 +420,7 @@ fun testPrintAst(): void = {
           Node("Test2.2", Leaf(testToken, "Hi"), 0x1, 0x2)
         ), 0x1, 0x2)
       )
-    , 0),
+    ),
     "|-Test1(1,2)\n" ++
     "  |-Test1.1(1,2)\n" ++
     "    |-Identifier=Hi\n" ++
@@ -744,7 +744,7 @@ fun discardSemantics(): void = {
     )
 
   mustEqual(
-    printAst(verifyParsing("A B C", "value", grammar), 0),
+    printAst(verifyParsing("A B C", "value", grammar)),
     "|-valuex(0,5)\n" ++
     "  |-Identifier=A\n" ++
     "  |-Identifier=B",

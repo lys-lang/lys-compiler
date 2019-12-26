@@ -2,6 +2,7 @@ import src::helpers
 import src::lexer::tokens
 import src::lexer::lexer
 import src::parser::grammar
+import src::stringbuilder
 
 // AST definitions
 
@@ -14,18 +15,54 @@ enum AstNode {
   AstCons(head: AstNode, tail: AstNode)
 }
 
-fun printAst(ast: AstNode | Nil, level: i32): string = match ast {
-  case is Nil -> repeat("  ", level) ++ "<EMPTY>"
-  case is Rule0 -> repeat("  ", level) ++ "<Rule0>"
-  case is SyntaxError(token, message) -> repeat("  ", level) ++ "|-<SyntaxError>=" ++ message
-  case is Node(name, child, start, end) ->
-    repeat("  ", level) ++ "|-" ++ name ++ "(" ++ string.stringify(start) ++ "," ++ string.stringify(end) ++ ")\n" ++ printAst(child, level + 1)
-  case is Leaf(token, value) ->
-    repeat("  ", level) ++ "|-" ++ TokenType.toString(token.tokenType) ++ "=" ++ value
-  case is UnexpectedToken(token, value) ->
-    repeat("  ", level) ++ "|-<UNEXPECTED TOKEN>=" ++ value
-  case is AstCons(head, tail) ->
-    printAst(head, level) ++ "\n" ++ printAst(tail, level)
+fun printAst(ast: AstNode | Nil): string = {
+  val sb = StringBuilder()
+  printAst(ast, 0, sb)
+  sb.toString()
+}
+
+fun printAst(ast: AstNode | Nil, level: i32, sb: StringBuilder): void = match ast {
+  case is Nil -> {
+    sb.append(repeat("  ", level))
+      .append("<EMPTY>")
+  }
+  case is Rule0 -> {
+    sb.append(repeat("  ", level))
+      .append("<Rule0>")
+  }
+  case is SyntaxError(token, message) -> {
+    sb.append(repeat("  ", level))
+      .append("|-<SyntaxError>=")
+      .append(message)
+  }
+  case is Node(name, child, start, end) -> {
+    sb.append(repeat("  ", level))
+      .append("|-")
+      .append(name)
+      .append("(")
+      .append(string.stringify(start))
+      .append(",")
+      .append(string.stringify(end))
+      .append(")\n")
+      printAst(child, level + 1, sb)
+  }
+  case is Leaf(token, value) -> {
+    sb.append(repeat("  ", level))
+      .append("|-")
+      .append(TokenType.toString(token.tokenType))
+      .append("=")
+      .append(value)
+  }
+  case is UnexpectedToken(token, value) -> {
+    sb.append(repeat("  ", level))
+      .append("|-<UNEXPECTED TOKEN>=")
+      .append(value)
+  }
+  case is AstCons(head, tail) -> {
+    printAst(head, level, sb)
+    sb.append("\n")
+    printAst(tail, level, sb)
+  }
 }
 
 // Parser definitions
