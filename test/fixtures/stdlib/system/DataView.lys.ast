@@ -1,160 +1,160 @@
-|-Document
-  |-StructDirective
-    |-StructDeclaration
-      |-NameIdentifier
+|-Document(0,274)
+  |-StructDirective(0,30)
+    |-StructDeclaration(7,30)
+      |-NameIdentifier(7,15)
         |-Identifier=DataView
-      |-FunctionParamsList
-        |-ParameterList
-          |-Parameter
-            |-NameIdentifier
+      |-FunctionParamsList(15,30)
+        |-ParameterList(16,29)
+          |-Parameter(16,29)
+            |-NameIdentifier(16,22)
               |-Identifier=buffer
-            |-OfType
+            |-OfType(22,29)
               |-Operator=:
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-Type(24,29)
+                |-Reference(24,29)
+                  |-QName(24,29)
+                    |-NameIdentifier(24,29)
                       |-Identifier=bytes
-  |-ImplDirective
-    |-Reference
-      |-QName
-        |-NameIdentifier
+  |-ImplDirective(71,274)
+    |-Reference(76,84)
+      |-QName(76,84)
+        |-NameIdentifier(76,84)
           |-Identifier=DataView
-    |-NamespaceElementList
-      |-FunctionDirective
-        |-Decorators
+    |-NamespaceElementList(85,274)
+      |-FunctionDirective(89,272)
+        |-Decorators(89,89)
           <Rule0>
-        |-FunDeclaration
-          |-FunctionName
-            |-FunOperator
+        |-FunDeclaration(89,272)
+          |-FunctionName(93,95)
+            |-FunOperator(93,95)
               |-VectorOpen=[
               |-VectorClose=]
-          |-FunctionParamsList
-            |-ParameterList
-              |-Parameter
-                |-NameIdentifier
+          |-FunctionParamsList(95,120)
+            |-ParameterList(96,119)
+              |-Parameter(96,110)
+                |-NameIdentifier(96,100)
                   |-Identifier=self
-                |-OfType
+                |-OfType(100,110)
                   |-Operator=:
-                  |-Type
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+                  |-Type(102,110)
+                    |-Reference(102,110)
+                      |-QName(102,110)
+                        |-NameIdentifier(102,110)
                           |-Identifier=DataView
-              |-Parameter
-                |-NameIdentifier
+              |-Parameter(112,119)
+                |-NameIdentifier(112,114)
                   |-Identifier=at
-                |-OfType
+                |-OfType(114,119)
                   |-Operator=:
-                  |-Type
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+                  |-Type(116,119)
+                    |-Reference(116,119)
+                      |-QName(116,119)
+                        |-NameIdentifier(116,119)
                           |-Identifier=u32
-          |-OfType
+          |-OfType(120,125)
             |-Operator=:
-            |-Type
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+            |-Type(122,124)
+              |-Reference(122,124)
+                |-QName(122,124)
+                  |-NameIdentifier(122,124)
                     |-Identifier=u8
-          |-FunAssignExpression
+          |-FunAssignExpression(125,272)
             |-Operator==
-            |-CodeBlock
-              |-IfExpression
-                |-IfBody
-                  |-RelExpression
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+            |-CodeBlock(127,272)
+              |-IfExpression(133,183)
+                |-IfBody(136,161)
+                  |-RelExpression(137,160)
+                    |-Reference(137,139)
+                      |-QName(137,139)
+                        |-NameIdentifier(137,139)
                           |-Identifier=at
-                    |-RelOperator
+                    |-RelOperator(140,141)
                       |-Operator=>
-                    |-AtomicExpression
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+                    |-AtomicExpression(142,160)
+                      |-Reference(142,146)
+                        |-QName(142,146)
+                          |-NameIdentifier(142,146)
                             |-Identifier=self
-                      |-MemberExpression
-                        |-BinMemberOperator
+                      |-MemberExpression(146,153)
+                        |-BinMemberOperator(146,147)
                           |-Operator=.
-                        |-NameIdentifier
+                        |-NameIdentifier(147,153)
                           |-Identifier=buffer
-                      |-MemberExpression
-                        |-BinMemberOperator
+                      |-MemberExpression(153,160)
+                        |-BinMemberOperator(153,154)
                           |-Operator=.
-                        |-NameIdentifier
+                        |-NameIdentifier(154,160)
                           |-Identifier=length
-                |-CodeBlock
-                  |-AtomicExpression
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+                |-CodeBlock(162,183)
+                  |-AtomicExpression(170,177)
+                    |-Reference(170,175)
+                      |-QName(170,175)
+                        |-NameIdentifier(170,175)
                           |-Identifier=panic
-                    |-CallArguments
+                    |-CallArguments(175,177)
                       <Rule0>
-              |-IfExpression
-                |-IfBody
-                  |-RelExpression
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+              |-IfExpression(188,228)
+                |-IfBody(191,206)
+                  |-RelExpression(192,205)
+                    |-Reference(192,194)
+                      |-QName(192,194)
+                        |-NameIdentifier(192,194)
                           |-Identifier=at
-                    |-RelOperator
+                    |-RelOperator(195,196)
                       |-Operator=<
-                    |-AsExpression
+                    |-AsExpression(197,205)
                       |-NumberLiteral=0
-                      |-AsKeyword
+                      |-AsKeyword(199,202)
                         |-Keyword=as
-                      |-Type
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                      |-Type(202,205)
+                        |-Reference(202,205)
+                          |-QName(202,205)
+                            |-NameIdentifier(202,205)
                               |-Identifier=u32
-                |-CodeBlock
-                  |-AtomicExpression
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+                |-CodeBlock(207,228)
+                  |-AtomicExpression(215,222)
+                    |-Reference(215,220)
+                      |-QName(215,220)
+                        |-NameIdentifier(215,220)
                           |-Identifier=panic
-                    |-CallArguments
+                    |-CallArguments(220,222)
                       <Rule0>
-              |-AtomicExpression
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-AtomicExpression(233,268)
+                |-Reference(233,235)
+                  |-QName(233,235)
+                    |-NameIdentifier(233,235)
                       |-Identifier=u8
-                |-MemberExpression
-                  |-BinMemberOperator
+                |-MemberExpression(235,240)
+                  |-BinMemberOperator(235,236)
                     |-Operator=.
-                  |-NameIdentifier
+                  |-NameIdentifier(236,240)
                     |-Identifier=load
-                |-CallArguments
-                  |-AsExpression
-                    |-AtomicExpression
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+                |-CallArguments(240,268)
+                  |-AsExpression(241,263)
+                    |-AtomicExpression(241,256)
+                      |-Reference(241,245)
+                        |-QName(241,245)
+                          |-NameIdentifier(241,245)
                             |-Identifier=self
-                      |-MemberExpression
-                        |-BinMemberOperator
+                      |-MemberExpression(245,252)
+                        |-BinMemberOperator(245,246)
                           |-Operator=.
-                        |-NameIdentifier
+                        |-NameIdentifier(246,252)
                           |-Identifier=buffer
-                      |-MemberExpression
-                        |-BinMemberOperator
+                      |-MemberExpression(252,256)
+                        |-BinMemberOperator(252,253)
                           |-Operator=.
-                        |-NameIdentifier
+                        |-NameIdentifier(253,256)
                           |-Identifier=ptr
-                    |-AsKeyword
+                    |-AsKeyword(257,260)
                       |-Keyword=as
-                    |-Type
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+                    |-Type(260,263)
+                      |-Reference(260,263)
+                        |-QName(260,263)
+                          |-NameIdentifier(260,263)
                             |-Identifier=ref
-                  |-Reference
-                    |-QName
-                      |-NameIdentifier
+                  |-Reference(265,267)
+                    |-QName(265,267)
+                      |-NameIdentifier(265,267)
                         |-Identifier=at
   |-EndOfFile=

@@ -1,0 +1,67 @@
+
+enum StringBuilderLinkedList {
+  StringBuilderEmpty()
+  StringBuilderCons(head: string, tail: StringBuilderLinkedList)
+}
+struct StringBuilder(mutableHead: StringBuilderLinkedList)
+
+impl StringBuilder {
+  fun apply(): StringBuilder = {
+    StringBuilder(StringBuilderEmpty)
+  }
+
+  #[method]
+  fun append(self: StringBuilder, str: string): StringBuilder = {
+    self.mutableHead = StringBuilderCons(str, self.mutableHead)
+    self
+  }
+
+  // Calculates the length of the string to build
+  private fun calculateLength(self: StringBuilderLinkedList): u32 = {
+    var current = self
+    var len = 0x0
+
+    loop {
+      match current {
+        case is StringBuilderEmpty -> 0x0
+        case x is StringBuilderCons(head, tail) -> {
+          current = tail
+          len = len + head.length
+          continue
+        }
+      }
+    }
+
+    len
+  }
+
+  #[method]
+  fun toString(self: StringBuilder): string = {
+    var current = self.mutableHead
+    val len = calculateLength(current)
+
+    if (len == 0x0) {
+      ""
+    } else {
+      val $ret = bytes(len * 0x2)
+
+      var cursor = $ret.ptr + len * 0x2
+
+      loop {
+        match current {
+          case is StringBuilderEmpty -> 0x0
+          case x is StringBuilderCons(head, tail) -> {
+            val l = head.length * 0x2
+            cursor = cursor - l
+            system::core::memory::memcpy(cursor, head.ptr, l)
+
+            current = tail
+            continue
+          }
+        }
+      }
+
+      string.fromBytes($ret)
+    }
+  }
+}

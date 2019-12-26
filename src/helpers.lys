@@ -1,5 +1,6 @@
 // How do we define the abscense of a value?
 struct Nil()
+struct GenericCons(head: ref, tail: ref)
 
 // repeats a string
 fun repeat(str: string, times: i32): string = {

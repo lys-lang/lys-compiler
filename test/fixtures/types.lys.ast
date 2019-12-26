@@ -1,684 +1,684 @@
-|-Document
-  |-TypeDirective
-    |-NameIdentifier
+|-Document(0,901)
+  |-TypeDirective(0,43)
+    |-NameIdentifier(5,9)
       |-Identifier=bool
-    |-ValueType
+    |-ValueType(10,43)
       |-Operator==
-      |-StackLiteral
+      |-StackLiteral(12,43)
         |-Operator=%
         |-Identifier=stack
-        |-NameLiteralPair
-          |-NameIdentifier
+        |-NameLiteralPair(21,39)
+          |-NameIdentifier(21,33)
             |-Identifier=lowLevelType
           |-Operator==
           |-StringLiteral="i32"
-  |-EnumDirective
-    |-NameIdentifier
+  |-EnumDirective(43,78)
+    |-NameIdentifier(48,53)
       |-Identifier=Color
-    |-TypeDeclElements
-      |-StructDeclaration
-        |-NameIdentifier
+    |-TypeDeclElements(58,76)
+      |-StructDeclaration(58,61)
+        |-NameIdentifier(58,61)
           |-Identifier=Red
-      |-StructDeclaration
-        |-NameIdentifier
+      |-StructDeclaration(64,69)
+        |-NameIdentifier(64,69)
           |-Identifier=Green
-      |-StructDeclaration
-        |-NameIdentifier
+      |-StructDeclaration(72,76)
+        |-NameIdentifier(72,76)
           |-Identifier=Blue
-  |-TypeDirective
-    |-NameIdentifier
+  |-TypeDirective(80,103)
+    |-NameIdentifier(85,91)
       |-Identifier=theFn1
-    |-ValueType
+    |-ValueType(92,103)
       |-Operator==
-      |-Type
-        |-UnionType
-          |-Reference
-            |-QName
-              |-NameIdentifier
+      |-Type(94,103)
+        |-UnionType(94,103)
+          |-Reference(94,95)
+            |-QName(94,95)
+              |-NameIdentifier(94,95)
                 |-Identifier=A
           |-Operator=|
-          |-Reference
-            |-QName
-              |-NameIdentifier
+          |-Reference(98,99)
+            |-QName(98,99)
+              |-NameIdentifier(98,99)
                 |-Identifier=B
           |-Operator=|
-          |-Reference
-            |-QName
-              |-NameIdentifier
+          |-Reference(102,103)
+            |-QName(102,103)
+              |-NameIdentifier(102,103)
                 |-Identifier=C
-  |-TypeDirective
-    |-NameIdentifier
+  |-TypeDirective(105,131)
+    |-NameIdentifier(110,116)
       |-Identifier=theFn1
-    |-ValueType
+    |-ValueType(117,131)
       |-Operator==
-      |-Type
-        |-FunctionTypeLiteral
+      |-Type(119,131)
+        |-FunctionTypeLiteral(119,131)
           |-Keyword=fun
-          |-FunctionTypeParameters
+          |-FunctionTypeParameters(122,124)
             <Rule0>
           |-Operator=->
-          |-Type
-            |-Reference
-              |-QName
-                |-NameIdentifier
+          |-Type(127,131)
+            |-Reference(127,131)
+              |-QName(127,131)
+                |-NameIdentifier(127,131)
                   |-Identifier=void
-  |-TypeDirective
-    |-NameIdentifier
+  |-TypeDirective(132,163)
+    |-NameIdentifier(137,143)
       |-Identifier=theFn2
-    |-ValueType
+    |-ValueType(144,163)
       |-Operator==
-      |-Type
-        |-FunctionTypeLiteral
+      |-Type(146,163)
+        |-FunctionTypeLiteral(146,163)
           |-Keyword=fun
-          |-FunctionTypeParameters
-            |-FunctionTypeParameter
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+          |-FunctionTypeParameters(150,156)
+            |-FunctionTypeParameter(151,155)
+              |-Type(151,155)
+                |-Reference(151,155)
+                  |-QName(151,155)
+                    |-NameIdentifier(151,155)
                       |-Identifier=bool
           |-Operator=->
-          |-Type
-            |-Reference
-              |-QName
-                |-NameIdentifier
+          |-Type(159,163)
+            |-Reference(159,163)
+              |-QName(159,163)
+                |-NameIdentifier(159,163)
                   |-Identifier=void
-  |-TypeDirective
-    |-NameIdentifier
+  |-TypeDirective(164,199)
+    |-NameIdentifier(169,175)
       |-Identifier=theFn3
-    |-ValueType
+    |-ValueType(176,199)
       |-Operator==
-      |-Type
-        |-FunctionTypeLiteral
+      |-Type(178,199)
+        |-FunctionTypeLiteral(178,199)
           |-Keyword=fun
-          |-FunctionTypeParameters
-            |-FunctionTypeParameter
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+          |-FunctionTypeParameters(181,192)
+            |-FunctionTypeParameter(182,186)
+              |-Type(182,186)
+                |-Reference(182,186)
+                  |-QName(182,186)
+                    |-NameIdentifier(182,186)
                       |-Identifier=bool
-            |-FunctionTypeParameter
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+            |-FunctionTypeParameter(187,191)
+              |-Type(187,191)
+                |-Reference(187,191)
+                  |-QName(187,191)
+                    |-NameIdentifier(187,191)
                       |-Identifier=bool
           |-Operator=->
-          |-Type
-            |-Reference
-              |-QName
-                |-NameIdentifier
+          |-Type(195,199)
+            |-Reference(195,199)
+              |-QName(195,199)
+                |-NameIdentifier(195,199)
                   |-Identifier=void
-  |-TypeDirective
-    |-NameIdentifier
+  |-TypeDirective(200,236)
+    |-NameIdentifier(205,211)
       |-Identifier=theFn4
-    |-ValueType
+    |-ValueType(212,236)
       |-Operator==
-      |-Type
-        |-FunctionTypeLiteral
+      |-Type(214,236)
+        |-FunctionTypeLiteral(214,236)
           |-Keyword=fun
-          |-FunctionTypeParameters
-            |-FunctionTypeParameter
-              |-NameIdentifier
+          |-FunctionTypeParameters(220,229)
+            |-FunctionTypeParameter(221,228)
+              |-NameIdentifier(221,222)
                 |-Identifier=x
               |-Operator=:
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-Type(224,228)
+                |-Reference(224,228)
+                  |-QName(224,228)
+                    |-NameIdentifier(224,228)
                       |-Identifier=bool
           |-Operator=->
-          |-Type
-            |-Reference
-              |-QName
-                |-NameIdentifier
+          |-Type(232,236)
+            |-Reference(232,236)
+              |-QName(232,236)
+                |-NameIdentifier(232,236)
                   |-Identifier=void
-  |-TypeDirective
-    |-NameIdentifier
+  |-TypeDirective(237,280)
+    |-NameIdentifier(242,248)
       |-Identifier=theFn5
-    |-ValueType
+    |-ValueType(249,280)
       |-Operator==
-      |-Type
-        |-FunctionTypeLiteral
+      |-Type(251,280)
+        |-FunctionTypeLiteral(251,280)
           |-Keyword=fun
-          |-FunctionTypeParameters
-            |-FunctionTypeParameter
-              |-NameIdentifier
+          |-FunctionTypeParameters(254,274)
+            |-FunctionTypeParameter(256,264)
+              |-NameIdentifier(256,257)
                 |-Identifier=x
               |-Operator=:
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-Type(260,264)
+                |-Reference(260,264)
+                  |-QName(260,264)
+                    |-NameIdentifier(260,264)
                       |-Identifier=bool
-            |-FunctionTypeParameter
-              |-NameIdentifier
+            |-FunctionTypeParameter(267,273)
+              |-NameIdentifier(267,268)
                 |-Identifier=b
               |-Operator=:
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-Type(270,273)
+                |-Reference(270,273)
+                  |-QName(270,273)
+                    |-NameIdentifier(270,273)
                       |-Identifier=i32
           |-Operator=->
-          |-Type
-            |-Reference
-              |-QName
-                |-NameIdentifier
+          |-Type(276,280)
+            |-Reference(276,280)
+              |-QName(276,280)
+                |-NameIdentifier(276,280)
                   |-Identifier=void
-  |-TypeDirective
-    |-NameIdentifier
+  |-TypeDirective(281,323)
+    |-NameIdentifier(286,292)
       |-Identifier=theFn6
-    |-ValueType
+    |-ValueType(293,323)
       |-Operator==
-      |-Type
-        |-FunctionTypeLiteral
+      |-Type(295,323)
+        |-FunctionTypeLiteral(295,323)
           |-Keyword=fun
-          |-FunctionTypeParameters
-            |-FunctionTypeParameter
-              |-NameIdentifier
+          |-FunctionTypeParameters(298,317)
+            |-FunctionTypeParameter(300,308)
+              |-NameIdentifier(300,301)
                 |-Identifier=x
               |-Operator=:
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-Type(304,308)
+                |-Reference(304,308)
+                  |-QName(304,308)
+                    |-NameIdentifier(304,308)
                       |-Identifier=bool
-            |-FunctionTypeParameter
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+            |-FunctionTypeParameter(312,315)
+              |-Type(312,315)
+                |-Reference(312,315)
+                  |-QName(312,315)
+                    |-NameIdentifier(312,315)
                       |-Identifier=i32
           |-Operator=->
-          |-Type
-            |-Reference
-              |-QName
-                |-NameIdentifier
+          |-Type(320,323)
+            |-Reference(320,323)
+              |-QName(320,323)
+                |-NameIdentifier(320,323)
                   |-Identifier=i32
-  |-FunctionDirective
-    |-Decorators
+  |-FunctionDirective(325,385)
+    |-Decorators(325,325)
       <Rule0>
-    |-PrivateModifier
+    |-PrivateModifier(325,333)
       <Rule0>
-    |-FunDeclaration
-      |-FunctionName
-        |-NameIdentifier
+    |-FunDeclaration(333,385)
+      |-FunctionName(337,344)
+        |-NameIdentifier(337,344)
           |-Identifier=compare
-      |-FunctionParamsList
-        |-ParameterList
-          |-Parameter
-            |-NameIdentifier
+      |-FunctionParamsList(344,364)
+        |-ParameterList(345,363)
+          |-Parameter(345,353)
+            |-NameIdentifier(345,346)
               |-Identifier=a
-            |-OfType
+            |-OfType(346,353)
               |-Operator=:
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-Type(348,353)
+                |-Reference(348,353)
+                  |-QName(348,353)
+                    |-NameIdentifier(348,353)
                       |-Identifier=Color
-          |-Parameter
-            |-NameIdentifier
+          |-Parameter(355,363)
+            |-NameIdentifier(355,356)
               |-Identifier=b
-            |-OfType
+            |-OfType(356,363)
               |-Operator=:
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-Type(358,363)
+                |-Reference(358,363)
+                  |-QName(358,363)
+                    |-NameIdentifier(358,363)
                       |-Identifier=Color
-      |-OfType
+      |-OfType(364,371)
         |-Operator=:
-        |-Type
-          |-Reference
-            |-QName
-              |-NameIdentifier
+        |-Type(366,370)
+          |-Reference(366,370)
+            |-QName(366,370)
+              |-NameIdentifier(366,370)
                 |-Identifier=bool
-      |-FunAssignExpression
+      |-FunAssignExpression(371,385)
         |-Operator==
-        |-CodeBlock
-          |-EqExpression
-            |-Reference
-              |-QName
-                |-NameIdentifier
+        |-CodeBlock(373,385)
+          |-EqExpression(377,383)
+            |-Reference(377,378)
+              |-QName(377,378)
+                |-NameIdentifier(377,378)
                   |-Identifier=a
-            |-EqOperator
+            |-EqOperator(379,381)
               |-Operator===
-            |-Reference
-              |-QName
-                |-NameIdentifier
+            |-Reference(382,383)
+              |-QName(382,383)
+                |-NameIdentifier(382,383)
                   |-Identifier=b
-  |-FunctionDirective
-    |-Decorators
+  |-FunctionDirective(387,424)
+    |-Decorators(387,387)
       <Rule0>
-    |-FunDeclaration
-      |-FunctionName
-        |-NameIdentifier
+    |-FunDeclaration(387,424)
+      |-FunctionName(391,395)
+        |-NameIdentifier(391,395)
           |-Identifier=main
-      |-FunctionParamsList
-        |-ParameterList
+      |-FunctionParamsList(395,397)
+        |-ParameterList(396,396)
           <Rule0>
-      |-OfType
+      |-OfType(397,403)
         |-Operator=:
-        |-Type
-          |-Reference
-            |-QName
-              |-NameIdentifier
+        |-Type(399,402)
+          |-Reference(399,402)
+            |-QName(399,402)
+              |-NameIdentifier(399,402)
                 |-Identifier=i32
-      |-FunAssignExpression
+      |-FunAssignExpression(403,424)
         |-Operator==
-        |-AtomicExpression
-          |-Reference
-            |-QName
-              |-NameIdentifier
+        |-AtomicExpression(405,424)
+          |-Reference(405,412)
+            |-QName(405,412)
+              |-NameIdentifier(405,412)
                 |-Identifier=compare
-          |-CallArguments
-            |-Reference
-              |-QName
-                |-NameIdentifier
+          |-CallArguments(412,424)
+            |-Reference(413,416)
+              |-QName(413,416)
+                |-NameIdentifier(413,416)
                   |-Identifier=Red
-            |-Reference
-              |-QName
-                |-NameIdentifier
+            |-Reference(418,423)
+              |-QName(418,423)
+                |-NameIdentifier(418,423)
                   |-Identifier=Green
-  |-VarDirective
-    |-VarDeclaration
-      |-NameIdentifier
+  |-VarDirective(426,476)
+    |-VarDeclaration(426,476)
+      |-NameIdentifier(430,434)
         |-Identifier=test
-      |-OfType
+      |-OfType(434,473)
         |-Operator=:
-        |-Type
-          |-FunctionTypeLiteral
+        |-Type(436,472)
+          |-FunctionTypeLiteral(436,472)
             |-Keyword=fun
-            |-FunctionTypeParameters
+            |-FunctionTypeParameters(439,441)
               <Rule0>
             |-Operator=->
-            |-Type
-              |-UnionType
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+            |-Type(445,472)
+              |-UnionType(445,472)
+                |-Reference(445,449)
+                  |-QName(445,449)
+                    |-NameIdentifier(445,449)
                       |-Identifier=void
                 |-Operator=|
-                |-FunctionTypeLiteral
+                |-FunctionTypeLiteral(452,472)
                   |-Keyword=fun
-                  |-FunctionTypeParameters
-                    |-FunctionTypeParameter
-                      |-NameIdentifier
+                  |-FunctionTypeParameters(455,465)
+                    |-FunctionTypeParameter(457,464)
+                      |-NameIdentifier(457,458)
                         |-Identifier=a
                       |-Operator=:
-                      |-Type
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                      |-Type(461,464)
+                        |-Reference(461,464)
+                          |-QName(461,464)
+                            |-NameIdentifier(461,464)
                               |-Identifier=i32
                   |-Operator=->
-                  |-Type
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+                  |-Type(469,472)
+                    |-Reference(469,472)
+                      |-QName(469,472)
+                        |-NameIdentifier(469,472)
                           |-Identifier=i32
       |-Operator==
       |-NumberLiteral=1
-  |-VarDirective
-    |-VarDeclaration
-      |-NameIdentifier
+  |-VarDirective(477,505)
+    |-VarDeclaration(477,505)
+      |-NameIdentifier(481,485)
         |-Identifier=test
-      |-OfType
+      |-OfType(485,502)
         |-Operator=:
-        |-Type
-          |-UnionType
-            |-Reference
-              |-QName
-                |-NameIdentifier
+        |-Type(487,501)
+          |-UnionType(487,501)
+            |-Reference(487,488)
+              |-QName(487,488)
+                |-NameIdentifier(487,488)
                   |-Identifier=a
             |-Operator=|
-            |-IntersectionType
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+            |-IntersectionType(489,493)
+              |-Reference(489,490)
+                |-QName(489,490)
+                  |-NameIdentifier(489,490)
                     |-Identifier=b
               |-Operator=&
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+              |-Reference(492,493)
+                |-QName(492,493)
+                  |-NameIdentifier(492,493)
                     |-Identifier=c
             |-Operator=|
-            |-IntersectionType
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+            |-IntersectionType(496,501)
+              |-Reference(496,497)
+                |-QName(496,497)
+                  |-NameIdentifier(496,497)
                     |-Identifier=d
               |-Operator=&
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+              |-Reference(500,501)
+                |-QName(500,501)
+                  |-NameIdentifier(500,501)
                     |-Identifier=b
       |-Operator==
       |-NumberLiteral=1
-  |-VarDirective
-    |-VarDeclaration
-      |-NameIdentifier
+  |-VarDirective(506,523)
+    |-VarDeclaration(506,523)
+      |-NameIdentifier(510,514)
         |-Identifier=test
-      |-OfType
+      |-OfType(514,520)
         |-Operator=:
-        |-Type
-          |-UnionType
-            |-Reference
-              |-QName
-                |-NameIdentifier
+        |-Type(516,519)
+          |-UnionType(516,519)
+            |-Reference(516,517)
+              |-QName(516,517)
+                |-NameIdentifier(516,517)
                   |-Identifier=_
             |-Operator=|
-            |-Reference
-              |-QName
-                |-NameIdentifier
+            |-Reference(518,519)
+              |-QName(518,519)
+                |-NameIdentifier(518,519)
                   |-Identifier=_
       |-Operator==
       |-NumberLiteral=1
-  |-VarDirective
-    |-VarDeclaration
-      |-NameIdentifier
+  |-VarDirective(524,551)
+    |-VarDeclaration(524,551)
+      |-NameIdentifier(528,532)
         |-Identifier=test
-      |-OfType
+      |-OfType(532,548)
         |-Operator=:
-        |-Type
-          |-FunctionTypeLiteral
+        |-Type(534,547)
+          |-FunctionTypeLiteral(534,547)
             |-Keyword=fun
-            |-FunctionTypeParameters
+            |-FunctionTypeParameters(537,539)
               <Rule0>
             |-Operator=->
-            |-Type
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+            |-Type(543,547)
+              |-Reference(543,547)
+                |-QName(543,547)
+                  |-NameIdentifier(543,547)
                     |-Identifier=void
       |-Operator==
       |-NumberLiteral=1
-  |-VarDirective
-    |-VarDeclaration
-      |-NameIdentifier
+  |-VarDirective(552,597)
+    |-VarDeclaration(552,597)
+      |-NameIdentifier(556,560)
         |-Identifier=test
-      |-OfType
+      |-OfType(560,594)
         |-Operator=:
-        |-Type
-          |-FunctionTypeLiteral
+        |-Type(562,593)
+          |-FunctionTypeLiteral(562,593)
             |-Keyword=fun
-            |-FunctionTypeParameters
+            |-FunctionTypeParameters(565,567)
               <Rule0>
             |-Operator=->
-            |-Type
-              |-IntersectionType
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+            |-Type(571,593)
+              |-IntersectionType(571,593)
+                |-Reference(571,575)
+                  |-QName(571,575)
+                    |-NameIdentifier(571,575)
                       |-Identifier=void
                 |-Operator=&
-                |-FunctionTypeLiteral
+                |-FunctionTypeLiteral(578,593)
                   |-Keyword=fun
-                  |-FunctionTypeParameters
-                    |-FunctionTypeParameter
-                      |-Type
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                  |-FunctionTypeParameters(581,586)
+                    |-FunctionTypeParameter(582,585)
+                      |-Type(582,585)
+                        |-Reference(582,585)
+                          |-QName(582,585)
+                            |-NameIdentifier(582,585)
                               |-Identifier=i32
                   |-Operator=->
-                  |-Type
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+                  |-Type(590,593)
+                    |-Reference(590,593)
+                      |-QName(590,593)
+                        |-NameIdentifier(590,593)
                           |-Identifier=i32
       |-Operator==
       |-NumberLiteral=1
-  |-VarDirective
-    |-VarDeclaration
-      |-NameIdentifier
+  |-VarDirective(599,627)
+    |-VarDeclaration(599,627)
+      |-NameIdentifier(603,607)
         |-Identifier=test
-      |-OfType
+      |-OfType(607,624)
         |-Operator=:
-        |-Type
-          |-UnionType
-            |-Reference
-              |-QName
-                |-NameIdentifier
+        |-Type(609,623)
+          |-UnionType(609,623)
+            |-Reference(609,610)
+              |-QName(609,610)
+                |-NameIdentifier(609,610)
                   |-Identifier=a
             |-Operator=|
-            |-IntersectionType
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+            |-IntersectionType(611,615)
+              |-Reference(611,612)
+                |-QName(611,612)
+                  |-NameIdentifier(611,612)
                     |-Identifier=b
               |-Operator=&
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+              |-Reference(614,615)
+                |-QName(614,615)
+                  |-NameIdentifier(614,615)
                     |-Identifier=c
             |-Operator=|
-            |-IntersectionType
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+            |-IntersectionType(618,623)
+              |-Reference(618,619)
+                |-QName(618,619)
+                  |-NameIdentifier(618,619)
                     |-Identifier=d
               |-Operator=&
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+              |-Reference(622,623)
+                |-QName(622,623)
+                  |-NameIdentifier(622,623)
                     |-Identifier=b
       |-Operator==
       |-NumberLiteral=1
-  |-VarDirective
-    |-VarDeclaration
-      |-NameIdentifier
+  |-VarDirective(628,660)
+    |-VarDeclaration(628,660)
+      |-NameIdentifier(632,636)
         |-Identifier=test
-      |-OfType
+      |-OfType(636,657)
         |-Operator=:
-        |-Type
-          |-UnionType
-            |-Reference
-              |-QName
-                |-NameIdentifier
+        |-Type(638,656)
+          |-UnionType(638,656)
+            |-Reference(638,639)
+              |-QName(638,639)
+                |-NameIdentifier(638,639)
                   |-Identifier=a
             |-Operator=|
-            |-TypeParen
-              |-Type
-                |-IntersectionType
-                  |-Reference
-                    |-QName
-                      |-NameIdentifier
+            |-TypeParen(640,646)
+              |-Type(641,645)
+                |-IntersectionType(641,645)
+                  |-Reference(641,642)
+                    |-QName(641,642)
+                      |-NameIdentifier(641,642)
                         |-Identifier=b
                   |-Operator=&
-                  |-Reference
-                    |-QName
-                      |-NameIdentifier
+                  |-Reference(644,645)
+                    |-QName(644,645)
+                      |-NameIdentifier(644,645)
                         |-Identifier=c
             |-Operator=|
-            |-TypeParen
-              |-Type
-                |-IntersectionType
-                  |-Reference
-                    |-QName
-                      |-NameIdentifier
+            |-TypeParen(649,656)
+              |-Type(650,655)
+                |-IntersectionType(650,655)
+                  |-Reference(650,651)
+                    |-QName(650,651)
+                      |-NameIdentifier(650,651)
                         |-Identifier=d
                   |-Operator=&
-                  |-Reference
-                    |-QName
-                      |-NameIdentifier
+                  |-Reference(654,655)
+                    |-QName(654,655)
+                      |-NameIdentifier(654,655)
                         |-Identifier=b
       |-Operator==
       |-NumberLiteral=1
-  |-VarDirective
-    |-VarDeclaration
-      |-NameIdentifier
+  |-VarDirective(661,694)
+    |-VarDeclaration(661,694)
+      |-NameIdentifier(665,669)
         |-Identifier=test
-      |-OfType
+      |-OfType(669,691)
         |-Operator=:
-        |-Type
-          |-FunctionTypeLiteral
+        |-Type(671,690)
+          |-FunctionTypeLiteral(671,690)
             |-Keyword=fun
-            |-FunctionTypeParameters
-              |-FunctionTypeParameter
-                |-NameIdentifier
+            |-FunctionTypeParameters(674,682)
+              |-FunctionTypeParameter(675,681)
+                |-NameIdentifier(675,676)
                   |-Identifier=a
                 |-Operator=:
-                |-Type
-                  |-Reference
-                    |-QName
-                      |-NameIdentifier
+                |-Type(678,681)
+                  |-Reference(678,681)
+                    |-QName(678,681)
+                      |-NameIdentifier(678,681)
                         |-Identifier=i32
             |-Operator=->
-            |-Type
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+            |-Type(686,690)
+              |-Reference(686,690)
+                |-QName(686,690)
+                  |-NameIdentifier(686,690)
                     |-Identifier=void
       |-Operator==
       |-NumberLiteral=1
-  |-VarDirective
-    |-VarDeclaration
-      |-NameIdentifier
+  |-VarDirective(695,743)
+    |-VarDeclaration(695,743)
+      |-NameIdentifier(699,703)
         |-Identifier=test
-      |-OfType
+      |-OfType(703,740)
         |-Operator=:
-        |-Type
-          |-FunctionTypeLiteral
+        |-Type(705,739)
+          |-FunctionTypeLiteral(705,739)
             |-Keyword=fun
-            |-FunctionTypeParameters
-              |-FunctionTypeParameter
-                |-NameIdentifier
+            |-FunctionTypeParameters(708,723)
+              |-FunctionTypeParameter(709,715)
+                |-NameIdentifier(709,710)
                   |-Identifier=a
                 |-Operator=:
-                |-Type
-                  |-Reference
-                    |-QName
-                      |-NameIdentifier
+                |-Type(712,715)
+                  |-Reference(712,715)
+                    |-QName(712,715)
+                      |-NameIdentifier(712,715)
                         |-Identifier=i32
-              |-FunctionTypeParameter
-                |-NameIdentifier
+              |-FunctionTypeParameter(716,722)
+                |-NameIdentifier(716,717)
                   |-Identifier=b
                 |-Operator=:
-                |-Type
-                  |-Reference
-                    |-QName
-                      |-NameIdentifier
+                |-Type(719,722)
+                  |-Reference(719,722)
+                    |-QName(719,722)
+                      |-NameIdentifier(719,722)
                         |-Identifier=i32
             |-Operator=->
-            |-Type
-              |-TypeParen
-                |-Type
-                  |-UnionType
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+            |-Type(727,739)
+              |-TypeParen(727,739)
+                |-Type(728,738)
+                  |-UnionType(728,738)
+                    |-Reference(728,732)
+                      |-QName(728,732)
+                        |-NameIdentifier(728,732)
                           |-Identifier=void
                     |-Operator=|
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+                    |-Reference(735,738)
+                      |-QName(735,738)
+                        |-NameIdentifier(735,738)
                           |-Identifier=i32
       |-Operator==
       |-NumberLiteral=1
-  |-VarDirective
-    |-VarDeclaration
-      |-NameIdentifier
+  |-VarDirective(744,786)
+    |-VarDeclaration(744,786)
+      |-NameIdentifier(748,752)
         |-Identifier=test
-      |-OfType
+      |-OfType(752,783)
         |-Operator=:
-        |-Type
-          |-FunctionTypeLiteral
+        |-Type(754,782)
+          |-FunctionTypeLiteral(754,782)
             |-Keyword=fun
-            |-FunctionTypeParameters
-              |-FunctionTypeParameter
-                |-Type
-                  |-Reference
-                    |-QName
-                      |-NameIdentifier
+            |-FunctionTypeParameters(757,766)
+              |-FunctionTypeParameter(758,761)
+                |-Type(758,761)
+                  |-Reference(758,761)
+                    |-QName(758,761)
+                      |-NameIdentifier(758,761)
                         |-Identifier=i32
-              |-FunctionTypeParameter
-                |-Type
-                  |-Reference
-                    |-QName
-                      |-NameIdentifier
+              |-FunctionTypeParameter(762,765)
+                |-Type(762,765)
+                  |-Reference(762,765)
+                    |-QName(762,765)
+                      |-NameIdentifier(762,765)
                         |-Identifier=i32
             |-Operator=->
-            |-Type
-              |-TypeParen
-                |-Type
-                  |-UnionType
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+            |-Type(770,782)
+              |-TypeParen(770,782)
+                |-Type(771,781)
+                  |-UnionType(771,781)
+                    |-Reference(771,775)
+                      |-QName(771,775)
+                        |-NameIdentifier(771,775)
                           |-Identifier=void
                     |-Operator=|
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+                    |-Reference(778,781)
+                      |-QName(778,781)
+                        |-NameIdentifier(778,781)
                           |-Identifier=i32
       |-Operator==
       |-NumberLiteral=1
-  |-EnumDirective
-    |-NameIdentifier
+  |-EnumDirective(788,901)
+    |-NameIdentifier(793,799)
       |-Identifier=Number
-    |-TypeDeclElements
-      |-StructDeclaration
-        |-NameIdentifier
+    |-TypeDeclElements(804,899)
+      |-StructDeclaration(804,812)
+        |-NameIdentifier(804,812)
           |-Identifier=Infinity
-      |-StructDeclaration
-        |-NameIdentifier
+      |-StructDeclaration(815,819)
+        |-NameIdentifier(815,819)
           |-Identifier=NDet
-      |-StructDeclaration
-        |-NameIdentifier
+      |-StructDeclaration(822,839)
+        |-NameIdentifier(822,826)
           |-Identifier=Real
-        |-FunctionParamsList
-          |-ParameterList
-            |-Parameter
-              |-NameIdentifier
+        |-FunctionParamsList(826,839)
+          |-ParameterList(827,838)
+            |-Parameter(827,838)
+              |-NameIdentifier(827,833)
                 |-Identifier=number
-              |-OfType
+              |-OfType(833,838)
                 |-Operator=:
-                |-Type
-                  |-Reference
-                    |-QName
-                      |-NameIdentifier
+                |-Type(835,838)
+                  |-Reference(835,838)
+                    |-QName(835,838)
+                      |-NameIdentifier(835,838)
                         |-Identifier=f32
-      |-StructDeclaration
-        |-NameIdentifier
+      |-StructDeclaration(842,862)
+        |-NameIdentifier(842,849)
           |-Identifier=Natural
-        |-FunctionParamsList
-          |-ParameterList
-            |-Parameter
-              |-NameIdentifier
+        |-FunctionParamsList(849,862)
+          |-ParameterList(850,861)
+            |-Parameter(850,861)
+              |-NameIdentifier(850,856)
                 |-Identifier=number
-              |-OfType
+              |-OfType(856,861)
                 |-Operator=:
-                |-Type
-                  |-Reference
-                    |-QName
-                      |-NameIdentifier
+                |-Type(858,861)
+                  |-Reference(858,861)
+                    |-QName(858,861)
+                      |-NameIdentifier(858,861)
                         |-Identifier=i32
-      |-StructDeclaration
-        |-NameIdentifier
+      |-StructDeclaration(865,899)
+        |-NameIdentifier(865,872)
           |-Identifier=Complex
-        |-FunctionParamsList
-          |-ParameterList
-            |-Parameter
-              |-NameIdentifier
+        |-FunctionParamsList(872,899)
+          |-ParameterList(873,898)
+            |-Parameter(873,882)
+              |-NameIdentifier(873,877)
                 |-Identifier=real
-              |-OfType
+              |-OfType(877,882)
                 |-Operator=:
-                |-Type
-                  |-Reference
-                    |-QName
-                      |-NameIdentifier
+                |-Type(879,882)
+                  |-Reference(879,882)
+                    |-QName(879,882)
+                      |-NameIdentifier(879,882)
                         |-Identifier=f32
-            |-Parameter
-              |-NameIdentifier
+            |-Parameter(884,898)
+              |-NameIdentifier(884,893)
                 |-Identifier=imaginary
-              |-OfType
+              |-OfType(893,898)
                 |-Operator=:
-                |-Type
-                  |-Reference
-                    |-QName
-                      |-NameIdentifier
+                |-Type(895,898)
+                  |-Reference(895,898)
+                    |-QName(895,898)
+                      |-NameIdentifier(895,898)
                         |-Identifier=f32
   |-EndOfFile=

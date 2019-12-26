@@ -378,7 +378,7 @@ fun verifyParsing(source: string, rule: string, grammar: Grammar): AstNode | Nil
   val parser = Parser(lexer, grammar)
   val result = parse(rule, parser, 0)
   verify(result is AstNode, "Must parse into a valid result")
-  support::env::printf(printAst(result, 0))
+  support::env::printf(printAst(result))
   verify(lexer.hasNext() == false, "Lexer should have finished scanning")
 
   END()
@@ -394,7 +394,7 @@ fun verifyParsingWithErrors(source: string, rule: string, grammar: Grammar): voi
   val parser = Parser(lexer, grammar)
   val result = parse(rule, parser, 0)
   verify(result is AstNode, "Must parse into a valid result")
-  support::env::printf(printAst(result, 0))
+  support::env::printf(printAst(result))
 
   END()
 }
@@ -412,24 +412,24 @@ fun testPrintAst(): void = {
     printAst(
       AstCons(
         Node("Test1", AstCons(
-          Node("Test1.1", Leaf(testToken, "Hi")),
-          Node("Test1.2", Leaf(testToken, "Hi"))
-        )),
+          Node("Test1.1", Leaf(testToken, "Hi"), 0x1, 0x2),
+          Node("Test1.2", Leaf(testToken, "Hi"), 0x1, 0x2)
+        ), 0x1, 0x2),
         Node("Test2", AstCons(
-          Node("Test2.1", Leaf(testToken, "Hi")),
-          Node("Test2.2", Leaf(testToken, "Hi"))
-        ))
+          Node("Test2.1", Leaf(testToken, "Hi"), 0x1, 0x2),
+          Node("Test2.2", Leaf(testToken, "Hi"), 0x1, 0x2)
+        ), 0x1, 0x2)
       )
-    , 0),
-    "|-Test1\n" ++
-    "  |-Test1.1\n" ++
+    ),
+    "|-Test1(1,2)\n" ++
+    "  |-Test1.1(1,2)\n" ++
     "    |-Identifier=Hi\n" ++
-    "  |-Test1.2\n" ++
+    "  |-Test1.2(1,2)\n" ++
     "    |-Identifier=Hi\n" ++
-    "|-Test2\n" ++
-    "  |-Test2.1\n" ++
+    "|-Test2(1,2)\n" ++
+    "  |-Test2.1(1,2)\n" ++
     "    |-Identifier=Hi\n" ++
-    "  |-Test2.2\n" ++
+    "  |-Test2.2(1,2)\n" ++
     "    |-Identifier=Hi",
     "test printAst"
   )
@@ -744,8 +744,8 @@ fun discardSemantics(): void = {
     )
 
   mustEqual(
-    printAst(verifyParsing("A B C", "value", grammar), 0),
-    "|-valuex\n" ++
+    printAst(verifyParsing("A B C", "value", grammar)),
+    "|-valuex(0,5)\n" ++
     "  |-Identifier=A\n" ++
     "  |-Identifier=B",
     "Validate tree"

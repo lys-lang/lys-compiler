@@ -1,1055 +1,1055 @@
-|-Document
-  |-FunctionDirective
-    |-Decorators
+|-Document(0,1854)
+  |-FunctionDirective(0,108)
+    |-Decorators(0,0)
       <Rule0>
-    |-PrivateModifier
+    |-PrivateModifier(0,8)
       <Rule0>
-    |-FunDeclaration
-      |-FunctionName
-        |-NameIdentifier
+    |-FunDeclaration(8,108)
+      |-FunctionName(12,16)
+        |-NameIdentifier(12,16)
           |-Identifier=push
-      |-FunctionParamsList
-        |-ParameterList
-          |-Parameter
-            |-NameIdentifier
+      |-FunctionParamsList(16,54)
+        |-ParameterList(17,53)
+          |-Parameter(17,27)
+            |-NameIdentifier(17,22)
               |-Identifier=index
-            |-OfType
+            |-OfType(22,27)
               |-Operator=:
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-Type(24,27)
+                |-Reference(24,27)
+                  |-QName(24,27)
+                    |-NameIdentifier(24,27)
                       |-Identifier=u32
-          |-Parameter
-            |-NameIdentifier
+          |-Parameter(29,41)
+            |-NameIdentifier(29,34)
               |-Identifier=array
-            |-OfType
+            |-OfType(34,41)
               |-Operator=:
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-Type(36,41)
+                |-Reference(36,41)
+                  |-QName(36,41)
+                    |-NameIdentifier(36,41)
                       |-Identifier=bytes
-          |-Parameter
-            |-NameIdentifier
+          |-Parameter(43,53)
+            |-NameIdentifier(43,48)
               |-Identifier=value
-            |-OfType
+            |-OfType(48,53)
               |-Operator=:
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-Type(50,53)
+                |-Reference(50,53)
+                  |-QName(50,53)
+                    |-NameIdentifier(50,53)
                       |-Identifier=u32
-      |-OfType
+      |-OfType(54,60)
         |-Operator=:
-        |-Type
-          |-Reference
-            |-QName
-              |-NameIdentifier
+        |-Type(56,59)
+          |-Reference(56,59)
+            |-QName(56,59)
+              |-NameIdentifier(56,59)
                 |-Identifier=u32
-      |-FunAssignExpression
+      |-FunAssignExpression(60,108)
         |-Operator==
-        |-CodeBlock
-          |-AssignExpression
-            |-AtomicExpression
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+        |-CodeBlock(62,108)
+          |-AssignExpression(66,92)
+            |-AtomicExpression(66,78)
+              |-Reference(66,71)
+                |-QName(66,71)
+                  |-NameIdentifier(66,71)
                     |-Identifier=array
-              |-IndexExpression
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-IndexExpression(71,78)
+                |-Reference(72,77)
+                  |-QName(72,77)
+                    |-NameIdentifier(72,77)
                       |-Identifier=index
-            |-AssignmentKeyword
+            |-AssignmentKeyword(79,80)
               |-Operator==
-            |-AsExpression
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+            |-AsExpression(81,92)
+              |-Reference(81,86)
+                |-QName(81,86)
+                  |-NameIdentifier(81,86)
                     |-Identifier=value
-              |-AsKeyword
+              |-AsKeyword(87,90)
                 |-Keyword=as
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-Type(90,92)
+                |-Reference(90,92)
+                  |-QName(90,92)
+                    |-NameIdentifier(90,92)
                       |-Identifier=u8
-          |-AddExpression
-            |-Reference
-              |-QName
-                |-NameIdentifier
+          |-AddExpression(95,106)
+            |-Reference(95,100)
+              |-QName(95,100)
+                |-NameIdentifier(95,100)
                   |-Identifier=index
-            |-AddOperator
+            |-AddOperator(101,102)
               |-Operator=+
             |-NumberLiteral=0x1
-  |-FunctionDirective
-    |-Decorators
+  |-FunctionDirective(168,718)
+    |-Decorators(168,168)
       <Rule0>
-    |-PrivateModifier
+    |-PrivateModifier(168,176)
       <Rule0>
-    |-FunDeclaration
-      |-FunctionName
-        |-NameIdentifier
+    |-FunDeclaration(176,718)
+      |-FunctionName(180,187)
+        |-NameIdentifier(180,187)
           |-Identifier=utf8Len
-      |-FunctionParamsList
-        |-ParameterList
-          |-Parameter
-            |-NameIdentifier
+      |-FunctionParamsList(187,200)
+        |-ParameterList(188,199)
+          |-Parameter(188,199)
+            |-NameIdentifier(188,191)
               |-Identifier=str
-            |-OfType
+            |-OfType(191,199)
               |-Operator=:
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-Type(193,199)
+                |-Reference(193,199)
+                  |-QName(193,199)
+                    |-NameIdentifier(193,199)
                       |-Identifier=string
-      |-OfType
+      |-OfType(200,206)
         |-Operator=:
-        |-Type
-          |-Reference
-            |-QName
-              |-NameIdentifier
+        |-Type(202,205)
+          |-Reference(202,205)
+            |-QName(202,205)
+              |-NameIdentifier(202,205)
                 |-Identifier=u32
-      |-FunAssignExpression
+      |-FunAssignExpression(206,718)
         |-Operator==
-        |-CodeBlock
-          |-VarDeclaration
-            |-NameIdentifier
+        |-CodeBlock(208,718)
+          |-VarDeclaration(212,225)
+            |-NameIdentifier(216,219)
               |-Identifier=len
             |-Operator==
             |-NumberLiteral=0x0
-          |-VarDeclaration
-            |-NameIdentifier
+          |-VarDeclaration(228,239)
+            |-NameIdentifier(232,233)
               |-Identifier=i
             |-Operator==
             |-NumberLiteral=0x0
-          |-LoopExpression
-            |-CodeBlock
-              |-IfExpression
-                |-IfBody
-                  |-RelExpression
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+          |-LoopExpression(243,709)
+            |-CodeBlock(248,709)
+              |-IfExpression(254,294)
+                |-IfBody(257,274)
+                  |-RelExpression(258,273)
+                    |-Reference(258,259)
+                      |-QName(258,259)
+                        |-NameIdentifier(258,259)
                           |-Identifier=i
-                    |-RelOperator
+                    |-RelOperator(260,262)
                       |-Operator=>=
-                    |-AtomicExpression
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+                    |-AtomicExpression(263,273)
+                      |-Reference(263,266)
+                        |-QName(263,266)
+                          |-NameIdentifier(263,266)
                             |-Identifier=str
-                      |-MemberExpression
-                        |-BinMemberOperator
+                      |-MemberExpression(266,273)
+                        |-BinMemberOperator(266,267)
                           |-Operator=.
-                        |-NameIdentifier
+                        |-NameIdentifier(267,273)
                           |-Identifier=length
-                |-CodeBlock
-                  |-BreakStatement
+                |-CodeBlock(275,294)
+                  |-BreakStatement(283,288)
                     |-Keyword=break
-              |-ValDeclaration
-                |-NameIdentifier
+              |-ValDeclaration(300,321)
+                |-NameIdentifier(304,305)
                   |-Identifier=c
                 |-Operator==
-                |-AsExpression
-                  |-AtomicExpression
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+                |-AsExpression(308,321)
+                  |-AtomicExpression(308,314)
+                    |-Reference(308,311)
+                      |-QName(308,311)
+                        |-NameIdentifier(308,311)
                           |-Identifier=str
-                    |-IndexExpression
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+                    |-IndexExpression(311,314)
+                      |-Reference(312,313)
+                        |-QName(312,313)
+                          |-NameIdentifier(312,313)
                             |-Identifier=i
-                  |-AsKeyword
+                  |-AsKeyword(315,318)
                     |-Keyword=as
-                  |-Type
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+                  |-Type(318,321)
+                    |-Reference(318,321)
+                      |-QName(318,321)
+                        |-NameIdentifier(318,321)
                           |-Identifier=u32
-              |-IfExpression
-                |-IfBody
-                  |-AndExpression
-                    |-RelExpression
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+              |-IfExpression(327,539)
+                |-IfBody(330,384)
+                  |-AndExpression(331,383)
+                    |-RelExpression(331,342)
+                      |-Reference(331,332)
+                        |-QName(331,332)
+                          |-NameIdentifier(331,332)
                             |-Identifier=c
-                      |-RelOperator
+                      |-RelOperator(333,335)
                         |-Operator=>=
                       |-NumberLiteral=0xd800
-                    |-AndKeyword
+                    |-AndKeyword(343,345)
                       |-Operator=&&
-                    |-RelExpression
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+                    |-RelExpression(346,357)
+                      |-Reference(346,347)
+                        |-QName(346,347)
+                          |-NameIdentifier(346,347)
                             |-Identifier=c
-                      |-RelOperator
+                      |-RelOperator(348,350)
                         |-Operator=<=
                       |-NumberLiteral=0xdbff
-                    |-AndKeyword
+                    |-AndKeyword(358,360)
                       |-Operator=&&
-                    |-RelExpression
-                      |-ParenExpression
-                        |-AddExpression
-                          |-Reference
-                            |-QName
-                              |-NameIdentifier
+                    |-RelExpression(361,383)
+                      |-ParenExpression(361,370)
+                        |-AddExpression(362,369)
+                          |-Reference(362,363)
+                            |-QName(362,363)
+                              |-NameIdentifier(362,363)
                                 |-Identifier=i
-                          |-AddOperator
+                          |-AddOperator(364,365)
                             |-Operator=+
                           |-NumberLiteral=0x1
-                      |-RelOperator
+                      |-RelOperator(371,372)
                         |-Operator=<
-                      |-AtomicExpression
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                      |-AtomicExpression(373,383)
+                        |-Reference(373,376)
+                          |-QName(373,376)
+                            |-NameIdentifier(373,376)
                               |-Identifier=str
-                        |-MemberExpression
-                          |-BinMemberOperator
+                        |-MemberExpression(376,383)
+                          |-BinMemberOperator(376,377)
                             |-Operator=.
-                          |-NameIdentifier
+                          |-NameIdentifier(377,383)
                             |-Identifier=length
-                |-CodeBlock
-                  |-VarDeclaration
-                    |-NameIdentifier
+                |-CodeBlock(385,539)
+                  |-VarDeclaration(393,421)
+                    |-NameIdentifier(397,399)
                       |-Identifier=cn
                     |-Operator==
-                    |-AsExpression
-                      |-AtomicExpression
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                    |-AsExpression(402,421)
+                      |-AtomicExpression(402,414)
+                        |-Reference(402,405)
+                          |-QName(402,405)
+                            |-NameIdentifier(402,405)
                               |-Identifier=str
-                        |-IndexExpression
-                          |-AddExpression
-                            |-Reference
-                              |-QName
-                                |-NameIdentifier
+                        |-IndexExpression(405,414)
+                          |-AddExpression(406,413)
+                            |-Reference(406,407)
+                              |-QName(406,407)
+                                |-NameIdentifier(406,407)
                                   |-Identifier=i
-                            |-AddOperator
+                            |-AddOperator(408,409)
                               |-Operator=+
                             |-NumberLiteral=0x1
-                      |-AsKeyword
+                      |-AsKeyword(415,418)
                         |-Keyword=as
-                      |-Type
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                      |-Type(418,421)
+                        |-Reference(418,421)
+                          |-QName(418,421)
+                            |-NameIdentifier(418,421)
                               |-Identifier=u32
-                  |-IfExpression
-                    |-IfBody
-                      |-AndExpression
-                        |-RelExpression
-                          |-Reference
-                            |-QName
-                              |-NameIdentifier
+                  |-IfExpression(429,533)
+                    |-IfBody(432,462)
+                      |-AndExpression(433,461)
+                        |-RelExpression(433,445)
+                          |-Reference(433,435)
+                            |-QName(433,435)
+                              |-NameIdentifier(433,435)
                                 |-Identifier=cn
-                          |-RelOperator
+                          |-RelOperator(436,438)
                             |-Operator=>=
                           |-NumberLiteral=0xdc00
-                        |-AndKeyword
+                        |-AndKeyword(446,448)
                           |-Operator=&&
-                        |-RelExpression
-                          |-Reference
-                            |-QName
-                              |-NameIdentifier
+                        |-RelExpression(449,461)
+                          |-Reference(449,451)
+                            |-QName(449,451)
+                              |-NameIdentifier(449,451)
                                 |-Identifier=cn
-                          |-RelOperator
+                          |-RelOperator(452,454)
                             |-Operator=<=
                           |-NumberLiteral=0xdfff
-                    |-CodeBlock
-                      |-AssignExpression
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                    |-CodeBlock(463,533)
+                      |-AssignExpression(473,488)
+                        |-Reference(473,476)
+                          |-QName(473,476)
+                            |-NameIdentifier(473,476)
                               |-Identifier=len
-                        |-AssignmentKeyword
+                        |-AssignmentKeyword(477,478)
                           |-Operator==
-                        |-AddExpression
-                          |-Reference
-                            |-QName
-                              |-NameIdentifier
+                        |-AddExpression(479,488)
+                          |-Reference(479,482)
+                            |-QName(479,482)
+                              |-NameIdentifier(479,482)
                                 |-Identifier=len
-                          |-AddOperator
+                          |-AddOperator(483,484)
                             |-Operator=+
                           |-NumberLiteral=0x4
-                      |-AssignExpression
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                      |-AssignExpression(497,508)
+                        |-Reference(497,498)
+                          |-QName(497,498)
+                            |-NameIdentifier(497,498)
                               |-Identifier=i
-                        |-AssignmentKeyword
+                        |-AssignmentKeyword(499,500)
                           |-Operator==
-                        |-AddExpression
-                          |-Reference
-                            |-QName
-                              |-NameIdentifier
+                        |-AddExpression(501,508)
+                          |-Reference(501,502)
+                            |-QName(501,502)
+                              |-NameIdentifier(501,502)
                                 |-Identifier=i
-                          |-AddOperator
+                          |-AddOperator(503,504)
                             |-Operator=+
                           |-NumberLiteral=0x2
-                      |-ContinueStatement
+                      |-ContinueStatement(517,525)
                         |-Keyword=continue
-              |-IfExpression
-                |-IfBody
-                  |-RelExpression
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+              |-IfExpression(545,675)
+                |-IfBody(548,560)
+                  |-RelExpression(549,559)
+                    |-Reference(549,550)
+                      |-QName(549,550)
+                        |-NameIdentifier(549,550)
                           |-Identifier=c
-                    |-RelOperator
+                    |-RelOperator(551,553)
                       |-Operator=>=
                     |-NumberLiteral=0x800
-                |-CodeBlock
-                  |-AssignExpression
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+                |-CodeBlock(561,590)
+                  |-AssignExpression(569,584)
+                    |-Reference(569,572)
+                      |-QName(569,572)
+                        |-NameIdentifier(569,572)
                           |-Identifier=len
-                    |-AssignmentKeyword
+                    |-AssignmentKeyword(573,574)
                       |-Operator==
-                    |-AddExpression
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+                    |-AddExpression(575,584)
+                      |-Reference(575,578)
+                        |-QName(575,578)
+                          |-NameIdentifier(575,578)
                             |-Identifier=len
-                      |-AddOperator
+                      |-AddOperator(579,580)
                         |-Operator=+
                       |-NumberLiteral=0x3
-                |-IfExpression
-                  |-IfBody
-                    |-RelExpression
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+                |-IfExpression(596,675)
+                  |-IfBody(599,610)
+                    |-RelExpression(600,609)
+                      |-Reference(600,601)
+                        |-QName(600,601)
+                          |-NameIdentifier(600,601)
                             |-Identifier=c
-                      |-RelOperator
+                      |-RelOperator(602,604)
                         |-Operator=>=
                       |-NumberLiteral=0x80
-                  |-CodeBlock
-                    |-AssignExpression
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+                  |-CodeBlock(611,640)
+                    |-AssignExpression(619,634)
+                      |-Reference(619,622)
+                        |-QName(619,622)
+                          |-NameIdentifier(619,622)
                             |-Identifier=len
-                      |-AssignmentKeyword
+                      |-AssignmentKeyword(623,624)
                         |-Operator==
-                      |-AddExpression
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                      |-AddExpression(625,634)
+                        |-Reference(625,628)
+                          |-QName(625,628)
+                            |-NameIdentifier(625,628)
                               |-Identifier=len
-                        |-AddOperator
+                        |-AddOperator(629,630)
                           |-Operator=+
                         |-NumberLiteral=0x2
-                  |-CodeBlock
-                    |-AssignExpression
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+                  |-CodeBlock(646,675)
+                    |-AssignExpression(654,669)
+                      |-Reference(654,657)
+                        |-QName(654,657)
+                          |-NameIdentifier(654,657)
                             |-Identifier=len
-                      |-AssignmentKeyword
+                      |-AssignmentKeyword(658,659)
                         |-Operator==
-                      |-AddExpression
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                      |-AddExpression(660,669)
+                        |-Reference(660,663)
+                          |-QName(660,663)
+                            |-NameIdentifier(660,663)
                               |-Identifier=len
-                        |-AddOperator
+                        |-AddOperator(664,665)
                           |-Operator=+
                         |-NumberLiteral=0x1
-              |-AssignExpression
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-AssignExpression(681,692)
+                |-Reference(681,682)
+                  |-QName(681,682)
+                    |-NameIdentifier(681,682)
                       |-Identifier=i
-                |-AssignmentKeyword
+                |-AssignmentKeyword(683,684)
                   |-Operator==
-                |-AddExpression
-                  |-Reference
-                    |-QName
-                      |-NameIdentifier
+                |-AddExpression(685,692)
+                  |-Reference(685,686)
+                    |-QName(685,686)
+                      |-NameIdentifier(685,686)
                         |-Identifier=i
-                  |-AddOperator
+                  |-AddOperator(687,688)
                     |-Operator=+
                   |-NumberLiteral=0x1
-              |-ContinueStatement
+              |-ContinueStatement(697,705)
                 |-Keyword=continue
-          |-Reference
-            |-QName
-              |-NameIdentifier
+          |-Reference(713,716)
+            |-QName(713,716)
+              |-NameIdentifier(713,716)
                 |-Identifier=len
-  |-FunctionDirective
-    |-Decorators
+  |-FunctionDirective(779,1854)
+    |-Decorators(779,779)
       <Rule0>
-    |-FunDeclaration
-      |-FunctionName
-        |-NameIdentifier
+    |-FunDeclaration(779,1854)
+      |-FunctionName(783,789)
+        |-NameIdentifier(783,789)
           |-Identifier=toUtf8
-      |-FunctionParamsList
-        |-ParameterList
-          |-Parameter
-            |-NameIdentifier
+      |-FunctionParamsList(789,802)
+        |-ParameterList(790,801)
+          |-Parameter(790,801)
+            |-NameIdentifier(790,793)
               |-Identifier=str
-            |-OfType
+            |-OfType(793,801)
               |-Operator=:
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-Type(795,801)
+                |-Reference(795,801)
+                  |-QName(795,801)
+                    |-NameIdentifier(795,801)
                       |-Identifier=string
-      |-OfType
+      |-OfType(802,810)
         |-Operator=:
-        |-Type
-          |-Reference
-            |-QName
-              |-NameIdentifier
+        |-Type(804,809)
+          |-Reference(804,809)
+            |-QName(804,809)
+              |-NameIdentifier(804,809)
                 |-Identifier=bytes
-      |-FunAssignExpression
+      |-FunAssignExpression(810,1854)
         |-Operator==
-        |-CodeBlock
-          |-VarDeclaration
-            |-NameIdentifier
+        |-CodeBlock(812,1854)
+          |-VarDeclaration(816,851)
+            |-NameIdentifier(820,823)
               |-Identifier=out
             |-Operator==
-            |-AtomicExpression
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+            |-AtomicExpression(826,851)
+              |-Reference(826,831)
+                |-QName(826,831)
+                  |-NameIdentifier(826,831)
                     |-Identifier=bytes
-              |-CallArguments
-                |-AddExpression
-                  |-AtomicExpression
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+              |-CallArguments(831,851)
+                |-AddExpression(832,850)
+                  |-AtomicExpression(832,844)
+                    |-Reference(832,839)
+                      |-QName(832,839)
+                        |-NameIdentifier(832,839)
                           |-Identifier=utf8Len
-                    |-CallArguments
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+                    |-CallArguments(839,844)
+                      |-Reference(840,843)
+                        |-QName(840,843)
+                          |-NameIdentifier(840,843)
                             |-Identifier=str
-                  |-AddOperator
+                  |-AddOperator(845,846)
                     |-Operator=+
                   |-NumberLiteral=0x1
-          |-VarDeclaration
-            |-NameIdentifier
+          |-VarDeclaration(855,866)
+            |-NameIdentifier(859,860)
               |-Identifier=i
             |-Operator==
             |-NumberLiteral=0x0
-          |-VarDeclaration
-            |-NameIdentifier
+          |-VarDeclaration(869,880)
+            |-NameIdentifier(873,874)
               |-Identifier=j
             |-Operator==
             |-NumberLiteral=0x0
-          |-LoopExpression
-            |-CodeBlock
-              |-IfExpression
-                |-IfBody
-                  |-RelExpression
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+          |-LoopExpression(884,1782)
+            |-CodeBlock(889,1782)
+              |-IfExpression(895,935)
+                |-IfBody(898,915)
+                  |-RelExpression(899,914)
+                    |-Reference(899,900)
+                      |-QName(899,900)
+                        |-NameIdentifier(899,900)
                           |-Identifier=i
-                    |-RelOperator
+                    |-RelOperator(901,903)
                       |-Operator=>=
-                    |-AtomicExpression
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+                    |-AtomicExpression(904,914)
+                      |-Reference(904,907)
+                        |-QName(904,907)
+                          |-NameIdentifier(904,907)
                             |-Identifier=str
-                      |-MemberExpression
-                        |-BinMemberOperator
+                      |-MemberExpression(907,914)
+                        |-BinMemberOperator(907,908)
                           |-Operator=.
-                        |-NameIdentifier
+                        |-NameIdentifier(908,914)
                           |-Identifier=length
-                |-CodeBlock
-                  |-BreakStatement
+                |-CodeBlock(916,935)
+                  |-BreakStatement(924,929)
                     |-Keyword=break
-              |-ValDeclaration
-                |-NameIdentifier
+              |-ValDeclaration(941,962)
+                |-NameIdentifier(945,946)
                   |-Identifier=c
                 |-Operator==
-                |-AsExpression
-                  |-AtomicExpression
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+                |-AsExpression(949,962)
+                  |-AtomicExpression(949,955)
+                    |-Reference(949,952)
+                      |-QName(949,952)
+                        |-NameIdentifier(949,952)
                           |-Identifier=str
-                    |-IndexExpression
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+                    |-IndexExpression(952,955)
+                      |-Reference(953,954)
+                        |-QName(953,954)
+                          |-NameIdentifier(953,954)
                             |-Identifier=i
-                  |-AsKeyword
+                  |-AsKeyword(956,959)
                     |-Keyword=as
-                  |-Type
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+                  |-Type(959,962)
+                    |-Reference(959,962)
+                      |-QName(959,962)
+                        |-NameIdentifier(959,962)
                           |-Identifier=u32
-              |-IfExpression
-                |-IfBody
-                  |-AndExpression
-                    |-RelExpression
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+              |-IfExpression(968,1433)
+                |-IfBody(971,1025)
+                  |-AndExpression(972,1024)
+                    |-RelExpression(972,983)
+                      |-Reference(972,973)
+                        |-QName(972,973)
+                          |-NameIdentifier(972,973)
                             |-Identifier=c
-                      |-RelOperator
+                      |-RelOperator(974,976)
                         |-Operator=>=
                       |-NumberLiteral=0xd800
-                    |-AndKeyword
+                    |-AndKeyword(984,986)
                       |-Operator=&&
-                    |-RelExpression
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+                    |-RelExpression(987,998)
+                      |-Reference(987,988)
+                        |-QName(987,988)
+                          |-NameIdentifier(987,988)
                             |-Identifier=c
-                      |-RelOperator
+                      |-RelOperator(989,991)
                         |-Operator=<=
                       |-NumberLiteral=0xdbff
-                    |-AndKeyword
+                    |-AndKeyword(999,1001)
                       |-Operator=&&
-                    |-RelExpression
-                      |-ParenExpression
-                        |-AddExpression
-                          |-Reference
-                            |-QName
-                              |-NameIdentifier
+                    |-RelExpression(1002,1024)
+                      |-ParenExpression(1002,1011)
+                        |-AddExpression(1003,1010)
+                          |-Reference(1003,1004)
+                            |-QName(1003,1004)
+                              |-NameIdentifier(1003,1004)
                                 |-Identifier=i
-                          |-AddOperator
+                          |-AddOperator(1005,1006)
                             |-Operator=+
                           |-NumberLiteral=0x1
-                      |-RelOperator
+                      |-RelOperator(1012,1013)
                         |-Operator=<
-                      |-AtomicExpression
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                      |-AtomicExpression(1014,1024)
+                        |-Reference(1014,1017)
+                          |-QName(1014,1017)
+                            |-NameIdentifier(1014,1017)
                               |-Identifier=str
-                        |-MemberExpression
-                          |-BinMemberOperator
+                        |-MemberExpression(1017,1024)
+                          |-BinMemberOperator(1017,1018)
                             |-Operator=.
-                          |-NameIdentifier
+                          |-NameIdentifier(1018,1024)
                             |-Identifier=length
-                |-CodeBlock
-                  |-VarDeclaration
-                    |-NameIdentifier
+                |-CodeBlock(1026,1433)
+                  |-VarDeclaration(1034,1062)
+                    |-NameIdentifier(1038,1040)
                       |-Identifier=cn
                     |-Operator==
-                    |-AsExpression
-                      |-AtomicExpression
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                    |-AsExpression(1043,1062)
+                      |-AtomicExpression(1043,1055)
+                        |-Reference(1043,1046)
+                          |-QName(1043,1046)
+                            |-NameIdentifier(1043,1046)
                               |-Identifier=str
-                        |-IndexExpression
-                          |-AddExpression
-                            |-Reference
-                              |-QName
-                                |-NameIdentifier
+                        |-IndexExpression(1046,1055)
+                          |-AddExpression(1047,1054)
+                            |-Reference(1047,1048)
+                              |-QName(1047,1048)
+                                |-NameIdentifier(1047,1048)
                                   |-Identifier=i
-                            |-AddOperator
+                            |-AddOperator(1049,1050)
                               |-Operator=+
                             |-NumberLiteral=0x1
-                      |-AsKeyword
+                      |-AsKeyword(1056,1059)
                         |-Keyword=as
-                      |-Type
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                      |-Type(1059,1062)
+                        |-Reference(1059,1062)
+                          |-QName(1059,1062)
+                            |-NameIdentifier(1059,1062)
                               |-Identifier=u32
-                  |-IfExpression
-                    |-IfBody
-                      |-AndExpression
-                        |-RelExpression
-                          |-Reference
-                            |-QName
-                              |-NameIdentifier
+                  |-IfExpression(1070,1427)
+                    |-IfBody(1073,1103)
+                      |-AndExpression(1074,1102)
+                        |-RelExpression(1074,1086)
+                          |-Reference(1074,1076)
+                            |-QName(1074,1076)
+                              |-NameIdentifier(1074,1076)
                                 |-Identifier=cn
-                          |-RelOperator
+                          |-RelOperator(1077,1079)
                             |-Operator=>=
                           |-NumberLiteral=0xdc00
-                        |-AndKeyword
+                        |-AndKeyword(1087,1089)
                           |-Operator=&&
-                        |-RelExpression
-                          |-Reference
-                            |-QName
-                              |-NameIdentifier
+                        |-RelExpression(1090,1102)
+                          |-Reference(1090,1092)
+                            |-QName(1090,1092)
+                              |-NameIdentifier(1090,1092)
                                 |-Identifier=cn
-                          |-RelOperator
+                          |-RelOperator(1093,1095)
                             |-Operator=<=
                           |-NumberLiteral=0xdfff
-                    |-CodeBlock
-                      |-VarDeclaration
-                        |-NameIdentifier
+                    |-CodeBlock(1104,1427)
+                      |-VarDeclaration(1114,1167)
+                        |-NameIdentifier(1118,1120)
                           |-Identifier=pt
                         |-Operator==
-                        |-AddExpression
-                          |-MulExpression
-                            |-ParenExpression
-                              |-AddExpression
-                                |-Reference
-                                  |-QName
-                                    |-NameIdentifier
+                        |-AddExpression(1123,1167)
+                          |-MulExpression(1123,1143)
+                            |-ParenExpression(1123,1135)
+                              |-AddExpression(1124,1134)
+                                |-Reference(1124,1125)
+                                  |-QName(1124,1125)
+                                    |-NameIdentifier(1124,1125)
                                       |-Identifier=c
-                                |-AddOperator
+                                |-AddOperator(1126,1127)
                                   |-Operator=-
                                 |-NumberLiteral=0xd800
-                            |-MulOperator
+                            |-MulOperator(1136,1137)
                               |-Operator=*
                             |-NumberLiteral=0x400
-                          |-AddOperator
+                          |-AddOperator(1144,1145)
                             |-Operator=+
-                          |-Reference
-                            |-QName
-                              |-NameIdentifier
+                          |-Reference(1146,1148)
+                            |-QName(1146,1148)
+                              |-NameIdentifier(1146,1148)
                                 |-Identifier=cn
-                          |-AddOperator
+                          |-AddOperator(1149,1150)
                             |-Operator=-
                           |-NumberLiteral=0xdc00
-                          |-AddOperator
+                          |-AddOperator(1158,1159)
                             |-Operator=+
                           |-NumberLiteral=0x10000
-                      |-AssignExpression
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                      |-AssignExpression(1177,1227)
+                        |-Reference(1177,1178)
+                          |-QName(1177,1178)
+                            |-NameIdentifier(1177,1178)
                               |-Identifier=j
-                        |-AssignmentKeyword
+                        |-AssignmentKeyword(1179,1180)
                           |-Operator==
-                        |-AtomicExpression
-                          |-Reference
-                            |-QName
-                              |-NameIdentifier
+                        |-AtomicExpression(1181,1227)
+                          |-Reference(1181,1185)
+                            |-QName(1181,1185)
+                              |-NameIdentifier(1181,1185)
                                 |-Identifier=push
-                          |-CallArguments
-                            |-Reference
-                              |-QName
-                                |-NameIdentifier
+                          |-CallArguments(1185,1227)
+                            |-Reference(1186,1187)
+                              |-QName(1186,1187)
+                                |-NameIdentifier(1186,1187)
                                   |-Identifier=j
-                            |-Reference
-                              |-QName
-                                |-NameIdentifier
+                            |-Reference(1189,1192)
+                              |-QName(1189,1192)
+                                |-NameIdentifier(1189,1192)
                                   |-Identifier=out
-                            |-AddExpression
+                            |-AddExpression(1194,1226)
                               |-NumberLiteral=0xf0
-                              |-AddOperator
+                              |-AddOperator(1199,1200)
                                 |-Operator=+
-                              |-ParenExpression
-                                |-MulExpression
-                                  |-Reference
-                                    |-QName
-                                      |-NameIdentifier
+                              |-ParenExpression(1201,1226)
+                                |-MulExpression(1202,1225)
+                                  |-Reference(1202,1204)
+                                    |-QName(1202,1204)
+                                      |-NameIdentifier(1202,1204)
                                         |-Identifier=pt
-                                  |-MulOperator
+                                  |-MulOperator(1205,1206)
                                     |-Operator=/
                                   |-NumberLiteral=0x40
-                                  |-MulOperator
+                                  |-MulOperator(1212,1213)
                                     |-Operator=/
                                   |-NumberLiteral=0x40
-                                  |-MulOperator
+                                  |-MulOperator(1219,1220)
                                     |-Operator=/
                                   |-NumberLiteral=0x40
-                      |-AssignExpression
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                      |-AssignExpression(1236,1286)
+                        |-Reference(1236,1237)
+                          |-QName(1236,1237)
+                            |-NameIdentifier(1236,1237)
                               |-Identifier=j
-                        |-AssignmentKeyword
+                        |-AssignmentKeyword(1238,1239)
                           |-Operator==
-                        |-AtomicExpression
-                          |-Reference
-                            |-QName
-                              |-NameIdentifier
+                        |-AtomicExpression(1240,1286)
+                          |-Reference(1240,1244)
+                            |-QName(1240,1244)
+                              |-NameIdentifier(1240,1244)
                                 |-Identifier=push
-                          |-CallArguments
-                            |-Reference
-                              |-QName
-                                |-NameIdentifier
+                          |-CallArguments(1244,1286)
+                            |-Reference(1245,1246)
+                              |-QName(1245,1246)
+                                |-NameIdentifier(1245,1246)
                                   |-Identifier=j
-                            |-Reference
-                              |-QName
-                                |-NameIdentifier
+                            |-Reference(1248,1251)
+                              |-QName(1248,1251)
+                                |-NameIdentifier(1248,1251)
                                   |-Identifier=out
-                            |-AddExpression
+                            |-AddExpression(1253,1285)
                               |-NumberLiteral=0x80
-                              |-AddOperator
+                              |-AddOperator(1258,1259)
                                 |-Operator=+
-                              |-MulExpression
-                                |-ParenExpression
-                                  |-MulExpression
-                                    |-Reference
-                                      |-QName
-                                        |-NameIdentifier
+                              |-MulExpression(1260,1285)
+                                |-ParenExpression(1260,1278)
+                                  |-MulExpression(1261,1277)
+                                    |-Reference(1261,1263)
+                                      |-QName(1261,1263)
+                                        |-NameIdentifier(1261,1263)
                                           |-Identifier=pt
-                                    |-MulOperator
+                                    |-MulOperator(1264,1265)
                                       |-Operator=/
                                     |-NumberLiteral=0x40
-                                    |-MulOperator
+                                    |-MulOperator(1271,1272)
                                       |-Operator=/
                                     |-NumberLiteral=0x40
-                                |-MulOperator
+                                |-MulOperator(1279,1280)
                                   |-Operator=%
                                 |-NumberLiteral=0x40
-                      |-AssignExpression
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                      |-AssignExpression(1295,1338)
+                        |-Reference(1295,1296)
+                          |-QName(1295,1296)
+                            |-NameIdentifier(1295,1296)
                               |-Identifier=j
-                        |-AssignmentKeyword
+                        |-AssignmentKeyword(1297,1298)
                           |-Operator==
-                        |-AtomicExpression
-                          |-Reference
-                            |-QName
-                              |-NameIdentifier
+                        |-AtomicExpression(1299,1338)
+                          |-Reference(1299,1303)
+                            |-QName(1299,1303)
+                              |-NameIdentifier(1299,1303)
                                 |-Identifier=push
-                          |-CallArguments
-                            |-Reference
-                              |-QName
-                                |-NameIdentifier
+                          |-CallArguments(1303,1338)
+                            |-Reference(1304,1305)
+                              |-QName(1304,1305)
+                                |-NameIdentifier(1304,1305)
                                   |-Identifier=j
-                            |-Reference
-                              |-QName
-                                |-NameIdentifier
+                            |-Reference(1307,1310)
+                              |-QName(1307,1310)
+                                |-NameIdentifier(1307,1310)
                                   |-Identifier=out
-                            |-AddExpression
+                            |-AddExpression(1312,1337)
                               |-NumberLiteral=0x80
-                              |-AddOperator
+                              |-AddOperator(1317,1318)
                                 |-Operator=+
-                              |-MulExpression
-                                |-ParenExpression
-                                  |-MulExpression
-                                    |-Reference
-                                      |-QName
-                                        |-NameIdentifier
+                              |-MulExpression(1319,1337)
+                                |-ParenExpression(1319,1330)
+                                  |-MulExpression(1320,1329)
+                                    |-Reference(1320,1322)
+                                      |-QName(1320,1322)
+                                        |-NameIdentifier(1320,1322)
                                           |-Identifier=pt
-                                    |-MulOperator
+                                    |-MulOperator(1323,1324)
                                       |-Operator=/
                                     |-NumberLiteral=0x40
-                                |-MulOperator
+                                |-MulOperator(1331,1332)
                                   |-Operator=%
                                 |-NumberLiteral=0x40
-                      |-AssignExpression
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                      |-AssignExpression(1347,1381)
+                        |-Reference(1347,1348)
+                          |-QName(1347,1348)
+                            |-NameIdentifier(1347,1348)
                               |-Identifier=j
-                        |-AssignmentKeyword
+                        |-AssignmentKeyword(1349,1350)
                           |-Operator==
-                        |-AtomicExpression
-                          |-Reference
-                            |-QName
-                              |-NameIdentifier
+                        |-AtomicExpression(1351,1381)
+                          |-Reference(1351,1355)
+                            |-QName(1351,1355)
+                              |-NameIdentifier(1351,1355)
                                 |-Identifier=push
-                          |-CallArguments
-                            |-Reference
-                              |-QName
-                                |-NameIdentifier
+                          |-CallArguments(1355,1381)
+                            |-Reference(1356,1357)
+                              |-QName(1356,1357)
+                                |-NameIdentifier(1356,1357)
                                   |-Identifier=j
-                            |-Reference
-                              |-QName
-                                |-NameIdentifier
+                            |-Reference(1359,1362)
+                              |-QName(1359,1362)
+                                |-NameIdentifier(1359,1362)
                                   |-Identifier=out
-                            |-AddExpression
+                            |-AddExpression(1364,1380)
                               |-NumberLiteral=0x80
-                              |-AddOperator
+                              |-AddOperator(1369,1370)
                                 |-Operator=+
-                              |-MulExpression
-                                |-Reference
-                                  |-QName
-                                    |-NameIdentifier
+                              |-MulExpression(1371,1380)
+                                |-Reference(1371,1373)
+                                  |-QName(1371,1373)
+                                    |-NameIdentifier(1371,1373)
                                       |-Identifier=pt
-                                |-MulOperator
+                                |-MulOperator(1374,1375)
                                   |-Operator=%
                                 |-NumberLiteral=0x40
-                      |-AssignExpression
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                      |-AssignExpression(1391,1402)
+                        |-Reference(1391,1392)
+                          |-QName(1391,1392)
+                            |-NameIdentifier(1391,1392)
                               |-Identifier=i
-                        |-AssignmentKeyword
+                        |-AssignmentKeyword(1393,1394)
                           |-Operator==
-                        |-AddExpression
-                          |-Reference
-                            |-QName
-                              |-NameIdentifier
+                        |-AddExpression(1395,1402)
+                          |-Reference(1395,1396)
+                            |-QName(1395,1396)
+                              |-NameIdentifier(1395,1396)
                                 |-Identifier=i
-                          |-AddOperator
+                          |-AddOperator(1397,1398)
                             |-Operator=+
                           |-NumberLiteral=0x2
-                      |-ContinueStatement
+                      |-ContinueStatement(1411,1419)
                         |-Keyword=continue
-              |-IfExpression
-                |-IfBody
-                  |-RelExpression
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+              |-IfExpression(1439,1747)
+                |-IfBody(1442,1454)
+                  |-RelExpression(1443,1453)
+                    |-Reference(1443,1444)
+                      |-QName(1443,1444)
+                        |-NameIdentifier(1443,1444)
                           |-Identifier=c
-                    |-RelOperator
+                    |-RelOperator(1445,1447)
                       |-Operator=>=
                     |-NumberLiteral=0x800
-                |-CodeBlock
-                  |-AssignExpression
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+                |-CodeBlock(1455,1600)
+                  |-AssignExpression(1463,1505)
+                    |-Reference(1463,1464)
+                      |-QName(1463,1464)
+                        |-NameIdentifier(1463,1464)
                           |-Identifier=j
-                    |-AssignmentKeyword
+                    |-AssignmentKeyword(1465,1466)
                       |-Operator==
-                    |-AtomicExpression
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+                    |-AtomicExpression(1467,1505)
+                      |-Reference(1467,1471)
+                        |-QName(1467,1471)
+                          |-NameIdentifier(1467,1471)
                             |-Identifier=push
-                      |-CallArguments
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                      |-CallArguments(1471,1505)
+                        |-Reference(1472,1473)
+                          |-QName(1472,1473)
+                            |-NameIdentifier(1472,1473)
                               |-Identifier=j
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                        |-Reference(1475,1478)
+                          |-QName(1475,1478)
+                            |-NameIdentifier(1475,1478)
                               |-Identifier=out
-                        |-AddExpression
+                        |-AddExpression(1480,1504)
                           |-NumberLiteral=0xe0
-                          |-AddOperator
+                          |-AddOperator(1485,1486)
                             |-Operator=+
-                          |-ParenExpression
-                            |-MulExpression
-                              |-Reference
-                                |-QName
-                                  |-NameIdentifier
+                          |-ParenExpression(1487,1504)
+                            |-MulExpression(1488,1503)
+                              |-Reference(1488,1489)
+                                |-QName(1488,1489)
+                                  |-NameIdentifier(1488,1489)
                                     |-Identifier=c
-                              |-MulOperator
+                              |-MulOperator(1490,1491)
                                 |-Operator=/
                               |-NumberLiteral=0x40
-                              |-MulOperator
+                              |-MulOperator(1497,1498)
                                 |-Operator=/
                               |-NumberLiteral=0x40
-                  |-AssignExpression
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+                  |-AssignExpression(1512,1554)
+                    |-Reference(1512,1513)
+                      |-QName(1512,1513)
+                        |-NameIdentifier(1512,1513)
                           |-Identifier=j
-                    |-AssignmentKeyword
+                    |-AssignmentKeyword(1514,1515)
                       |-Operator==
-                    |-AtomicExpression
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+                    |-AtomicExpression(1516,1554)
+                      |-Reference(1516,1520)
+                        |-QName(1516,1520)
+                          |-NameIdentifier(1516,1520)
                             |-Identifier=push
-                      |-CallArguments
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                      |-CallArguments(1520,1554)
+                        |-Reference(1521,1522)
+                          |-QName(1521,1522)
+                            |-NameIdentifier(1521,1522)
                               |-Identifier=j
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                        |-Reference(1524,1527)
+                          |-QName(1524,1527)
+                            |-NameIdentifier(1524,1527)
                               |-Identifier=out
-                        |-AddExpression
+                        |-AddExpression(1529,1553)
                           |-NumberLiteral=0x80
-                          |-AddOperator
+                          |-AddOperator(1534,1535)
                             |-Operator=+
-                          |-MulExpression
-                            |-ParenExpression
-                              |-MulExpression
-                                |-Reference
-                                  |-QName
-                                    |-NameIdentifier
+                          |-MulExpression(1536,1553)
+                            |-ParenExpression(1536,1546)
+                              |-MulExpression(1537,1545)
+                                |-Reference(1537,1538)
+                                  |-QName(1537,1538)
+                                    |-NameIdentifier(1537,1538)
                                       |-Identifier=c
-                                |-MulOperator
+                                |-MulOperator(1539,1540)
                                   |-Operator=/
                                 |-NumberLiteral=0x40
-                            |-MulOperator
+                            |-MulOperator(1547,1548)
                               |-Operator=%
                             |-NumberLiteral=0x40
-                  |-AssignExpression
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+                  |-AssignExpression(1561,1594)
+                    |-Reference(1561,1562)
+                      |-QName(1561,1562)
+                        |-NameIdentifier(1561,1562)
                           |-Identifier=j
-                    |-AssignmentKeyword
+                    |-AssignmentKeyword(1563,1564)
                       |-Operator==
-                    |-AtomicExpression
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+                    |-AtomicExpression(1565,1594)
+                      |-Reference(1565,1569)
+                        |-QName(1565,1569)
+                          |-NameIdentifier(1565,1569)
                             |-Identifier=push
-                      |-CallArguments
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                      |-CallArguments(1569,1594)
+                        |-Reference(1570,1571)
+                          |-QName(1570,1571)
+                            |-NameIdentifier(1570,1571)
                               |-Identifier=j
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                        |-Reference(1573,1576)
+                          |-QName(1573,1576)
+                            |-NameIdentifier(1573,1576)
                               |-Identifier=out
-                        |-AddExpression
+                        |-AddExpression(1578,1593)
                           |-NumberLiteral=0x80
-                          |-AddOperator
+                          |-AddOperator(1583,1584)
                             |-Operator=+
-                          |-MulExpression
-                            |-Reference
-                              |-QName
-                                |-NameIdentifier
+                          |-MulExpression(1585,1593)
+                            |-Reference(1585,1586)
+                              |-QName(1585,1586)
+                                |-NameIdentifier(1585,1586)
                                   |-Identifier=c
-                            |-MulOperator
+                            |-MulOperator(1587,1588)
                               |-Operator=%
                             |-NumberLiteral=0x40
-                |-IfExpression
-                  |-IfBody
-                    |-RelExpression
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+                |-IfExpression(1606,1747)
+                  |-IfBody(1609,1620)
+                    |-RelExpression(1610,1619)
+                      |-Reference(1610,1611)
+                        |-QName(1610,1611)
+                          |-NameIdentifier(1610,1611)
                             |-Identifier=c
-                      |-RelOperator
+                      |-RelOperator(1612,1614)
                         |-Operator=>=
                       |-NumberLiteral=0x80
-                  |-CodeBlock
-                    |-AssignExpression
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+                  |-CodeBlock(1621,1708)
+                    |-AssignExpression(1629,1662)
+                      |-Reference(1629,1630)
+                        |-QName(1629,1630)
+                          |-NameIdentifier(1629,1630)
                             |-Identifier=j
-                      |-AssignmentKeyword
+                      |-AssignmentKeyword(1631,1632)
                         |-Operator==
-                      |-AtomicExpression
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                      |-AtomicExpression(1633,1662)
+                        |-Reference(1633,1637)
+                          |-QName(1633,1637)
+                            |-NameIdentifier(1633,1637)
                               |-Identifier=push
-                        |-CallArguments
-                          |-Reference
-                            |-QName
-                              |-NameIdentifier
+                        |-CallArguments(1637,1662)
+                          |-Reference(1638,1639)
+                            |-QName(1638,1639)
+                              |-NameIdentifier(1638,1639)
                                 |-Identifier=j
-                          |-Reference
-                            |-QName
-                              |-NameIdentifier
+                          |-Reference(1641,1644)
+                            |-QName(1641,1644)
+                              |-NameIdentifier(1641,1644)
                                 |-Identifier=out
-                          |-AddExpression
+                          |-AddExpression(1646,1661)
                             |-NumberLiteral=0xc0
-                            |-AddOperator
+                            |-AddOperator(1651,1652)
                               |-Operator=+
-                            |-MulExpression
-                              |-Reference
-                                |-QName
-                                  |-NameIdentifier
+                            |-MulExpression(1653,1661)
+                              |-Reference(1653,1654)
+                                |-QName(1653,1654)
+                                  |-NameIdentifier(1653,1654)
                                     |-Identifier=c
-                              |-MulOperator
+                              |-MulOperator(1655,1656)
                                 |-Operator=/
                               |-NumberLiteral=0x40
-                    |-AssignExpression
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+                    |-AssignExpression(1669,1702)
+                      |-Reference(1669,1670)
+                        |-QName(1669,1670)
+                          |-NameIdentifier(1669,1670)
                             |-Identifier=j
-                      |-AssignmentKeyword
+                      |-AssignmentKeyword(1671,1672)
                         |-Operator==
-                      |-AtomicExpression
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                      |-AtomicExpression(1673,1702)
+                        |-Reference(1673,1677)
+                          |-QName(1673,1677)
+                            |-NameIdentifier(1673,1677)
                               |-Identifier=push
-                        |-CallArguments
-                          |-Reference
-                            |-QName
-                              |-NameIdentifier
+                        |-CallArguments(1677,1702)
+                          |-Reference(1678,1679)
+                            |-QName(1678,1679)
+                              |-NameIdentifier(1678,1679)
                                 |-Identifier=j
-                          |-Reference
-                            |-QName
-                              |-NameIdentifier
+                          |-Reference(1681,1684)
+                            |-QName(1681,1684)
+                              |-NameIdentifier(1681,1684)
                                 |-Identifier=out
-                          |-AddExpression
+                          |-AddExpression(1686,1701)
                             |-NumberLiteral=0x80
-                            |-AddOperator
+                            |-AddOperator(1691,1692)
                               |-Operator=+
-                            |-MulExpression
-                              |-Reference
-                                |-QName
-                                  |-NameIdentifier
+                            |-MulExpression(1693,1701)
+                              |-Reference(1693,1694)
+                                |-QName(1693,1694)
+                                  |-NameIdentifier(1693,1694)
                                     |-Identifier=c
-                              |-MulOperator
+                              |-MulOperator(1695,1696)
                                 |-Operator=%
                               |-NumberLiteral=0x40
-                  |-CodeBlock
-                    |-AssignExpression
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+                  |-CodeBlock(1714,1747)
+                    |-AssignExpression(1722,1741)
+                      |-Reference(1722,1723)
+                        |-QName(1722,1723)
+                          |-NameIdentifier(1722,1723)
                             |-Identifier=j
-                      |-AssignmentKeyword
+                      |-AssignmentKeyword(1724,1725)
                         |-Operator==
-                      |-AtomicExpression
-                        |-Reference
-                          |-QName
-                            |-NameIdentifier
+                      |-AtomicExpression(1726,1741)
+                        |-Reference(1726,1730)
+                          |-QName(1726,1730)
+                            |-NameIdentifier(1726,1730)
                               |-Identifier=push
-                        |-CallArguments
-                          |-Reference
-                            |-QName
-                              |-NameIdentifier
+                        |-CallArguments(1730,1741)
+                          |-Reference(1731,1732)
+                            |-QName(1731,1732)
+                              |-NameIdentifier(1731,1732)
                                 |-Identifier=j
-                          |-Reference
-                            |-QName
-                              |-NameIdentifier
+                          |-Reference(1734,1737)
+                            |-QName(1734,1737)
+                              |-NameIdentifier(1734,1737)
                                 |-Identifier=out
-                          |-Reference
-                            |-QName
-                              |-NameIdentifier
+                          |-Reference(1739,1740)
+                            |-QName(1739,1740)
+                              |-NameIdentifier(1739,1740)
                                 |-Identifier=c
-              |-AssignExpression
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-AssignExpression(1753,1764)
+                |-Reference(1753,1754)
+                  |-QName(1753,1754)
+                    |-NameIdentifier(1753,1754)
                       |-Identifier=i
-                |-AssignmentKeyword
+                |-AssignmentKeyword(1755,1756)
                   |-Operator==
-                |-AddExpression
-                  |-Reference
-                    |-QName
-                      |-NameIdentifier
+                |-AddExpression(1757,1764)
+                  |-Reference(1757,1758)
+                    |-QName(1757,1758)
+                      |-NameIdentifier(1757,1758)
                         |-Identifier=i
-                  |-AddOperator
+                  |-AddOperator(1759,1760)
                     |-Operator=+
                   |-NumberLiteral=0x1
-              |-ContinueStatement
+              |-ContinueStatement(1770,1778)
                 |-Keyword=continue
-          |-AssignExpression
-            |-Reference
-              |-QName
-                |-NameIdentifier
+          |-AssignExpression(1824,1845)
+            |-Reference(1824,1825)
+              |-QName(1824,1825)
+                |-NameIdentifier(1824,1825)
                   |-Identifier=j
-            |-AssignmentKeyword
+            |-AssignmentKeyword(1826,1827)
               |-Operator==
-            |-AtomicExpression
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+            |-AtomicExpression(1828,1845)
+              |-Reference(1828,1832)
+                |-QName(1828,1832)
+                  |-NameIdentifier(1828,1832)
                     |-Identifier=push
-              |-CallArguments
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-CallArguments(1832,1845)
+                |-Reference(1833,1834)
+                  |-QName(1833,1834)
+                    |-NameIdentifier(1833,1834)
                       |-Identifier=j
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+                |-Reference(1836,1839)
+                  |-QName(1836,1839)
+                    |-NameIdentifier(1836,1839)
                       |-Identifier=out
                 |-NumberLiteral=0x0
-          |-Reference
-            |-QName
-              |-NameIdentifier
+          |-Reference(1849,1852)
+            |-QName(1849,1852)
+              |-NameIdentifier(1849,1852)
                 |-Identifier=out
   |-EndOfFile=

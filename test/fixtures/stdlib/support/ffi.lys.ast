@@ -1,263 +1,263 @@
-|-Document
-  |-FunctionDirective
-    |-Decorators
+|-Document(0,711)
+  |-FunctionDirective(0,118)
+    |-Decorators(0,0)
       <Rule0>
-    |-PrivateModifier
+    |-PrivateModifier(0,8)
       <Rule0>
-    |-FunDeclaration
-      |-FunctionName
-        |-NameIdentifier
+    |-FunDeclaration(8,118)
+      |-FunctionName(12,30)
+        |-NameIdentifier(12,30)
           |-Identifier=stringDiscriminant
-      |-FunctionParamsList
-        |-ParameterList
+      |-FunctionParamsList(30,32)
+        |-ParameterList(31,31)
           <Rule0>
-      |-OfType
+      |-OfType(32,38)
         |-Operator=:
-        |-Type
-          |-Reference
-            |-QName
-              |-NameIdentifier
+        |-Type(34,37)
+          |-Reference(34,37)
+            |-QName(34,37)
+              |-NameIdentifier(34,37)
                 |-Identifier=u64
-      |-FunAssignExpression
+      |-FunAssignExpression(38,118)
         |-Operator==
-        |-CodeBlock
-          |-ValDeclaration
-            |-NameIdentifier
+        |-CodeBlock(40,118)
+          |-ValDeclaration(44,88)
+            |-NameIdentifier(48,60)
               |-Identifier=discriminant
-            |-OfType
+            |-OfType(60,66)
               |-Operator=:
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-Type(62,65)
+                |-Reference(62,65)
+                  |-QName(62,65)
+                    |-NameIdentifier(62,65)
                       |-Identifier=u32
             |-Operator==
-            |-AtomicExpression
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+            |-AtomicExpression(68,88)
+              |-Reference(68,74)
+                |-QName(68,74)
+                  |-NameIdentifier(68,74)
                     |-Identifier=string
-              |-MemberExpression
-                |-BinMemberOperator
+              |-MemberExpression(74,88)
+                |-BinMemberOperator(74,76)
                   |-Operator=.^
-                |-NameIdentifier
+                |-NameIdentifier(76,88)
                   |-Identifier=discriminant
-          |-ShiftExpression
-            |-AsExpression
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+          |-ShiftExpression(91,116)
+            |-AsExpression(91,110)
+              |-Reference(91,103)
+                |-QName(91,103)
+                  |-NameIdentifier(91,103)
                     |-Identifier=discriminant
-              |-AsKeyword
+              |-AsKeyword(104,107)
                 |-Keyword=as
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-Type(107,110)
+                |-Reference(107,110)
+                  |-QName(107,110)
+                    |-NameIdentifier(107,110)
                       |-Identifier=u64
-            |-ShiftOperator
+            |-ShiftOperator(111,113)
               |-Operator=<<
             |-NumberLiteral=32
-  |-FunctionDirective
-    |-Decorators
-      |-Decorator
-        |-NameIdentifier
+  |-FunctionDirective(120,279)
+    |-Decorators(120,151)
+      |-Decorator(120,151)
+        |-NameIdentifier(122,128)
           |-Identifier=export
         |-StringLiteral="ffi_allocateString"
-    |-PrivateModifier
+    |-PrivateModifier(151,159)
       <Rule0>
-    |-FunDeclaration
-      |-FunctionName
-        |-NameIdentifier
+    |-FunDeclaration(159,279)
+      |-FunctionName(163,177)
+        |-NameIdentifier(163,177)
           |-Identifier=allocateString
-      |-FunctionParamsList
-        |-ParameterList
-          |-Parameter
-            |-NameIdentifier
+      |-FunctionParamsList(177,195)
+        |-ParameterList(178,194)
+          |-Parameter(178,194)
+            |-NameIdentifier(178,189)
               |-Identifier=sizeInChars
-            |-OfType
+            |-OfType(189,194)
               |-Operator=:
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-Type(191,194)
+                |-Reference(191,194)
+                  |-QName(191,194)
+                    |-NameIdentifier(191,194)
                       |-Identifier=u32
-      |-OfType
+      |-OfType(195,212)
         |-Operator=:
-        |-Type
-          |-Reference
-            |-QName
-              |-NameIdentifier
+        |-Type(197,211)
+          |-Reference(197,211)
+            |-QName(197,211)
+              |-NameIdentifier(197,211)
                 |-Identifier=UnsafeCPointer
-      |-FunAssignExpression
+      |-FunAssignExpression(212,279)
         |-Operator==
-        |-CodeBlock
-          |-AsExpression
-            |-AtomicExpression
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+        |-CodeBlock(214,279)
+          |-AsExpression(218,277)
+            |-AtomicExpression(218,259)
+              |-Reference(218,224)
+                |-QName(218,224)
+                  |-NameIdentifier(218,224)
                     |-Identifier=string
-              |-MemberExpression
-                |-BinMemberOperator
+              |-MemberExpression(224,234)
+                |-BinMemberOperator(224,225)
                   |-Operator=.
-                |-NameIdentifier
+                |-NameIdentifier(225,234)
                   |-Identifier=fromBytes
-              |-CallArguments
-                |-AtomicExpression
-                  |-Reference
-                    |-QName
-                      |-NameIdentifier
+              |-CallArguments(234,259)
+                |-AtomicExpression(235,258)
+                  |-Reference(235,240)
+                    |-QName(235,240)
+                      |-NameIdentifier(235,240)
                         |-Identifier=bytes
-                  |-CallArguments
-                    |-ShiftExpression
-                      |-Reference
-                        |-QName
-                          |-NameIdentifier
+                  |-CallArguments(240,258)
+                    |-ShiftExpression(241,257)
+                      |-Reference(241,252)
+                        |-QName(241,252)
+                          |-NameIdentifier(241,252)
                             |-Identifier=sizeInChars
-                      |-ShiftOperator
+                      |-ShiftOperator(253,255)
                         |-Operator=<<
                       |-NumberLiteral=1
-            |-AsKeyword
+            |-AsKeyword(260,263)
               |-Keyword=as
-            |-Type
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+            |-Type(263,277)
+              |-Reference(263,277)
+                |-QName(263,277)
+                  |-NameIdentifier(263,277)
                     |-Identifier=UnsafeCPointer
-  |-TypeDirective
-    |-NameIdentifier
+  |-TypeDirective(281,297)
+    |-NameIdentifier(286,290)
       |-Identifier=UCS2
-    |-ValueType
+    |-ValueType(291,297)
       |-Operator==
-      |-Type
-        |-Reference
-          |-QName
-            |-NameIdentifier
+      |-Type(293,297)
+        |-Reference(293,297)
+          |-QName(293,297)
+            |-NameIdentifier(293,297)
               |-Identifier=void
-  |-ImplDirective
-    |-Reference
-      |-QName
-        |-NameIdentifier
+  |-ImplDirective(299,711)
+    |-Reference(304,308)
+      |-QName(304,308)
+        |-NameIdentifier(304,308)
           |-Identifier=UCS2
-    |-NamespaceElementList
-      |-FunctionDirective
-        |-Decorators
+    |-NamespaceElementList(309,711)
+      |-FunctionDirective(376,647)
+        |-Decorators(376,376)
           <Rule0>
-        |-FunDeclaration
-          |-FunctionName
-            |-NameIdentifier
+        |-FunDeclaration(376,647)
+          |-FunctionName(380,387)
+            |-NameIdentifier(380,387)
               |-Identifier=fromPtr
-          |-FunctionParamsList
-            |-ParameterList
-              |-Parameter
-                |-NameIdentifier
+          |-FunctionParamsList(387,417)
+            |-ParameterList(388,416)
+              |-Parameter(388,416)
+                |-NameIdentifier(388,400)
                   |-Identifier=bytesPointer
-                |-OfType
+                |-OfType(400,416)
                   |-Operator=:
-                  |-Type
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+                  |-Type(402,416)
+                    |-Reference(402,416)
+                      |-QName(402,416)
+                        |-NameIdentifier(402,416)
                           |-Identifier=UnsafeCPointer
-          |-OfType
+          |-OfType(417,426)
             |-Operator=:
-            |-Type
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+            |-Type(419,425)
+              |-Reference(419,425)
+                |-QName(419,425)
+                  |-NameIdentifier(419,425)
                     |-Identifier=string
-          |-FunAssignExpression
+          |-FunAssignExpression(426,647)
             |-Operator==
-            |-WasmExpression
+            |-WasmExpression(428,647)
               |-Operator=%
               |-Identifier=wasm
-              |-SExpression
-                |-SSymbol
+              |-SExpression(440,642)
+                |-SSymbol(441,447)
                   |-Identifier=i64
                   |-Operator=.
                   |-Identifier=or
-                |-SExpression
-                  |-SSymbol
+                |-SExpression(454,487)
+                  |-SSymbol(455,459)
                     |-Identifier=call
-                  |-QName
-                    |-NameIdentifier
+                  |-QName(460,479)
+                    |-NameIdentifier(460,479)
                       |-Identifier=$stringDiscriminant
-                |-SExpression
-                  |-SSymbol
+                |-SExpression(487,638)
+                  |-SSymbol(488,495)
                     |-Identifier=i64
                     |-Operator=.
                     |-Identifier=and
-                  |-SExpression
-                    |-SSymbol
+                  |-SExpression(504,535)
+                    |-SSymbol(505,514)
                       |-Identifier=i64
                       |-Operator=.
                       |-Keyword=const
-                    |-NegNumberLiteral
+                    |-NegNumberLiteral(515,525)
                       |-NumberLiteral=0xFFFFFFFF
-                  |-SExpression
-                    |-SSymbol
+                  |-SExpression(535,637)
+                    |-SSymbol(536,552)
                       |-Identifier=i64
                       |-Operator=.
                       |-Identifier=extend_u
                       |-Operator=/
                       |-Identifier=i32
-                    |-SExpression
-                      |-SSymbol
+                    |-SExpression(563,636)
+                      |-SSymbol(564,571)
                         |-Identifier=i32
                         |-Operator=.
                         |-Identifier=sub
-                      |-SExpression
-                        |-SSymbol
+                      |-SExpression(584,622)
+                        |-SSymbol(585,594)
                           |-Identifier=get_local
-                        |-QName
-                          |-NameIdentifier
+                        |-QName(595,608)
+                          |-NameIdentifier(595,608)
                             |-Identifier=$bytesPointer
-                      |-SExpression
-                        |-SSymbol
+                      |-SExpression(622,635)
+                        |-SSymbol(623,632)
                           |-Identifier=i32
                           |-Operator=.
                           |-Keyword=const
-                        |-NegNumberLiteral
+                        |-NegNumberLiteral(633,634)
                           |-NumberLiteral=4
-      |-FunctionDirective
-        |-Decorators
+      |-FunctionDirective(647,709)
+        |-Decorators(647,647)
           <Rule0>
-        |-FunDeclaration
-          |-FunctionName
-            |-NameIdentifier
+        |-FunDeclaration(647,709)
+          |-FunctionName(651,656)
+            |-NameIdentifier(651,656)
               |-Identifier=toPtr
-          |-FunctionParamsList
-            |-ParameterList
-              |-Parameter
-                |-NameIdentifier
+          |-FunctionParamsList(656,669)
+            |-ParameterList(657,668)
+              |-Parameter(657,668)
+                |-NameIdentifier(657,660)
                   |-Identifier=str
-                |-OfType
+                |-OfType(660,668)
                   |-Operator=:
-                  |-Type
-                    |-Reference
-                      |-QName
-                        |-NameIdentifier
+                  |-Type(662,668)
+                    |-Reference(662,668)
+                      |-QName(662,668)
+                        |-NameIdentifier(662,668)
                           |-Identifier=string
-          |-OfType
+          |-OfType(669,686)
             |-Operator=:
-            |-Type
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+            |-Type(671,685)
+              |-Reference(671,685)
+                |-QName(671,685)
+                  |-NameIdentifier(671,685)
                     |-Identifier=UnsafeCPointer
-          |-FunAssignExpression
+          |-FunAssignExpression(686,709)
             |-Operator==
-            |-AsExpression
-              |-Reference
-                |-QName
-                  |-NameIdentifier
+            |-AsExpression(688,709)
+              |-Reference(688,691)
+                |-QName(688,691)
+                  |-NameIdentifier(688,691)
                     |-Identifier=str
-              |-AsKeyword
+              |-AsKeyword(692,695)
                 |-Keyword=as
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-Type(695,709)
+                |-Reference(695,709)
+                  |-QName(695,709)
+                    |-NameIdentifier(695,709)
                       |-Identifier=UnsafeCPointer
   |-EndOfFile=

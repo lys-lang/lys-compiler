@@ -1,112 +1,112 @@
-|-Document
-  |-EffectDirective
-    |-EffectDeclaration
-      |-NameIdentifier
+|-Document(0,353)
+  |-EffectDirective(0,27)
+    |-EffectDeclaration(7,27)
+      |-NameIdentifier(7,10)
         |-Identifier=exn
-      |-EffectElementList
-        |-EffectElements
-          |-EffectMemberDeclaration
-            |-NameIdentifier
+      |-EffectElementList(11,27)
+        |-EffectElements(15,26)
+          |-EffectMemberDeclaration(15,26)
+            |-NameIdentifier(15,20)
               |-Identifier=raise
-            |-FunctionParamsList
-              |-ParameterList
+            |-FunctionParamsList(20,22)
+              |-ParameterList(21,21)
                 <Rule0>
-            |-OfType
+            |-OfType(22,26)
               |-Operator=:
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-Type(24,25)
+                |-Reference(24,25)
+                  |-QName(24,25)
+                    |-NameIdentifier(24,25)
                       |-Identifier=_
-  |-EffectDirective
-    |-EffectDeclaration
-      |-NameIdentifier
+  |-EffectDirective(29,59)
+    |-EffectDeclaration(36,59)
+      |-NameIdentifier(36,39)
         |-Identifier=exn
-      |-TypeParameters
-        |-TypeVariableList
-          |-TypeVariable
-            |-NameIdentifier
+      |-TypeParameters(39,43)
+        |-TypeVariableList(40,41)
+          |-TypeVariable(40,41)
+            |-NameIdentifier(40,41)
               |-Identifier=T
-      |-EffectElementList
-        |-EffectElements
-          |-EffectMemberDeclaration
-            |-NameIdentifier
+      |-EffectElementList(43,59)
+        |-EffectElements(47,58)
+          |-EffectMemberDeclaration(47,58)
+            |-NameIdentifier(47,52)
               |-Identifier=raise
-            |-FunctionParamsList
-              |-ParameterList
+            |-FunctionParamsList(52,54)
+              |-ParameterList(53,53)
                 <Rule0>
-            |-OfType
+            |-OfType(54,58)
               |-Operator=:
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-Type(56,57)
+                |-Reference(56,57)
+                  |-QName(56,57)
+                    |-NameIdentifier(56,57)
                       |-Identifier=T
-  |-FunctionDirective
-    |-Decorators
+  |-FunctionDirective(61,97)
+    |-Decorators(61,61)
       <Rule0>
-    |-FunDeclaration
-      |-FunctionName
-        |-NameIdentifier
+    |-FunDeclaration(61,97)
+      |-FunctionName(65,68)
+        |-NameIdentifier(65,68)
           |-Identifier=sqr
-      |-FunctionParamsList
-        |-ParameterList
-          |-Parameter
-            |-NameIdentifier
+      |-FunctionParamsList(68,76)
+        |-ParameterList(69,75)
+          |-Parameter(69,75)
+            |-NameIdentifier(69,70)
               |-Identifier=x
-            |-OfType
+            |-OfType(70,75)
               |-Operator=:
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-Type(72,75)
+                |-Reference(72,75)
+                  |-QName(72,75)
+                    |-NameIdentifier(72,75)
                       |-Identifier=i32
-      |-OfType
+      |-OfType(76,90)
         |-Operator=:
-        |-FunctionEffect
-          |-Type
-            |-Reference
-              |-QName
-                |-NameIdentifier
+        |-FunctionEffect(78,85)
+          |-Type(79,84)
+            |-Reference(79,84)
+              |-QName(79,84)
+                |-NameIdentifier(79,84)
                   |-Identifier=total
-        |-Type
-          |-Reference
-            |-QName
-              |-NameIdentifier
+        |-Type(86,89)
+          |-Reference(86,89)
+            |-QName(86,89)
+              |-NameIdentifier(86,89)
                 |-Identifier=i32
-      |-FunAssignExpression
+      |-FunAssignExpression(90,97)
         |-Operator==
-        |-MulExpression
-          |-Reference
-            |-QName
-              |-NameIdentifier
+        |-MulExpression(92,97)
+          |-Reference(92,93)
+            |-QName(92,93)
+              |-NameIdentifier(92,93)
                 |-Identifier=x
-          |-MulOperator
+          |-MulOperator(94,95)
             |-Operator=*
-          |-Reference
-            |-QName
-              |-NameIdentifier
+          |-Reference(96,97)
+            |-QName(96,97)
+              |-NameIdentifier(96,97)
                 |-Identifier=x
-  |-FunctionDirective
-    |-Decorators
+  |-FunctionDirective(98,115)
+    |-Decorators(98,98)
       <Rule0>
-    |-FunDeclaration
-      |-FunctionName
-        |-NameIdentifier
+    |-FunDeclaration(98,115)
+      |-FunctionName(102,105)
+        |-NameIdentifier(102,105)
           |-Identifier=sqr
-      |-FunctionParamsList
-        |-ParameterList
-          |-Parameter
-            |-NameIdentifier
+      |-FunctionParamsList(105,113)
+        |-ParameterList(106,112)
+          |-Parameter(106,112)
+            |-NameIdentifier(106,107)
               |-Identifier=x
-            |-OfType
+            |-OfType(107,112)
               |-Operator=:
-              |-Type
-                |-Reference
-                  |-QName
-                    |-NameIdentifier
+              |-Type(109,112)
+                |-Reference(109,112)
+                  |-QName(109,112)
+                    |-NameIdentifier(109,112)
                       |-Identifier=i32
-      |-OfType
+      |-OfType(113,114)
         |-Operator=:
         |-<SyntaxError>=A type or effect was expected
   |-<UNEXPECTED TOKEN>=<>
