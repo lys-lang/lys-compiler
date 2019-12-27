@@ -16,7 +16,13 @@ fun rest(astNode: AstNode): AstNode = match astNode {
   else -> Rule0
 }
 
-fun nameOrEmpty(astNode: AstNode): NameIdentifierNode | ErrorNode =
+fun nameOrEmpty(astNode: AstNode): NameIdentifierNode | EmptyNode =
+  match processNode(astNode) {
+    case name is NameIdentifierNode -> name
+    else -> EmptyNode
+  }
+
+fun nameOrError(astNode: AstNode): NameIdentifierNode | ErrorNode =
   match processNode(astNode) {
     case name is NameIdentifierNode -> name
     else -> ErrorNode
@@ -37,10 +43,12 @@ fun processNode(astNode: AstNode): CodeNode = match astNode {
   case is Node(name, child) -> match name {
     case "Document" -> Document(astNode, processNode(child))
     case "PrivateModifier" -> PrivateModifierNode(astNode)
+    case "ImportDirective" -> ImportDirectiveNode(astNode, fqnOrEmpty(first(child)), nameOrEmpty(second(child)))
     case "NameIdentifier" -> processNode(child)
+    case "QName" -> QNameNode(astNode, processNode(child))
     case "Type" -> processNode(child)
     case "Reference" -> ReferenceNode(astNode, fqnOrEmpty(child))
-    case "TypeDirective" -> TypeDirectiveNode(astNode, nameOrEmpty(first(child)), processNode(second(child)))
+    case "TypeDirective" -> TypeDirectiveNode(astNode, nameOrError(first(child)), processNode(second(child)))
     case "VarDirective" -> {
       var e1 = processNode(first(child))
       val isPrivate = e1 is PrivateModifierNode
@@ -62,7 +70,7 @@ fun processNode(astNode: AstNode): CodeNode = match astNode {
       VarDirectiveNode(astNode, decl)
     }
     case "VarDeclaration" -> {
-      var name = nameOrEmpty(first(child))
+      var name = nameOrError(first(child))
 
       match rest(child) {
         case is AstCons(head, tail) -> VarDeclarationNode(astNode, name, processNode(head), processNode(tail))

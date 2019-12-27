@@ -27,7 +27,7 @@ enum CodeNode {
   ParenExpressionNode(astNode: AstNode, expression: CodeNode)
 
   ImplDirectiveNode(astNode: AstNode, targetImpl: ReferenceNode, baseImpl: ReferenceNode | EmptyNode, headDirective: CodeNode)
-  ImportDirectiveNode(astNode: AstNode, module: QNameNode | EmptyNode, alias: NameIdentifierNode | EmptyNode)
+  ImportDirectiveNode(astNode: AstNode, module: QNameNode | ErrorNode, alias: NameIdentifierNode | EmptyNode)
   FunDirectiveNode(astNode: AstNode, headDecorator: CodeNode, function: FunctionNode)
   EffectDirectiveNode(astNode: AstNode, effectDecl: EffectDeclarationNode)
   OverloadedFunDirectiveNode(astNode: AstNode, functionName: NameIdentifierNode, headFun: CodeNode)
@@ -456,7 +456,9 @@ impl CodeNode {
     match self {
       case is CodeNodeCons(head, tail) -> {
         printAst(head, sb, indentation)
-        printAst(tail, sb, indentation)
+        if (!(tail is EmptyNode)) {
+          printAst(tail, sb, indentation)
+        }
       }
       else -> {
         sb
@@ -504,6 +506,9 @@ impl CodeNode {
             printAst(parameters, sb, indentation + 1)
             printAst(returnType, sb, indentation + 1)
             printAst(effect, sb, indentation + 1)
+          }
+          case is QNameNode(astNode, names) -> {
+            printAst(names, sb, indentation + 1)
           }
           case is ReferenceNode(astNode, variable) -> {
             // support::env::printf("> ReferenceNode")
