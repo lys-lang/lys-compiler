@@ -23,8 +23,35 @@
       |-NameIdentifierNode name=d
       |-EmptyNode
       |-FloatLiteralNode value=1.0
-  |-ErrorNode
-  |-ErrorNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-PrivateModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=test
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Int
+      |-FloatLiteralNode value=1
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-PrivateModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=test
+      |-ParameterNode
+        |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Float
+      |-ParameterNode
+        |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Double
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Float
+      |-FloatLiteralNode value=1
   |-VarDirectiveNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=a
@@ -49,8 +76,33 @@
       |-NameIdentifierNode name=d
       |-EmptyNode
       |-FloatLiteralNode value=1.0
-  |-ErrorNode
-  |-ErrorNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=test
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Int
+      |-FloatLiteralNode value=1
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=test
+      |-ParameterNode
+        |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Float
+      |-ParameterNode
+        |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Double
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Float
+      |-FloatLiteralNode value=1
   |-ImportDirectiveNode
     |-QNameNode
       |-NameIdentifierNode name=module

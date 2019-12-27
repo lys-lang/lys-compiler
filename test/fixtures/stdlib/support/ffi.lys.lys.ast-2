@@ -1,6 +1,51 @@
 |-Document
-  |-ErrorNode
-  |-ErrorNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-PrivateModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=stringDiscriminant
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=u64
+      |-BlockNode
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=discriminant
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+          |-ErrorNode
+        |-BinaryExpressionNode
+          |-AsExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=discriminant
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u64
+          |-NameIdentifierNode name=<<
+          |-FloatLiteralNode value=32
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-ErrorNode
+      |-StringLiteralNode value="ffi_allocateString"
+    |-PrivateModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=allocateString
+      |-ParameterNode
+        |-NameIdentifierNode name=sizeInChars
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=u32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=UnsafeCPointer
+      |-BlockNode
+        |-AsExpressionNode
+          |-ErrorNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=UnsafeCPointer
   |-TypeDirectiveNode
     |-NameIdentifierNode name=UCS2
     |-ReferenceNode
@@ -11,5 +56,49 @@
     |-ReferenceNode
       |-QNameNode
         |-NameIdentifierNode name=UCS2
-    |-ErrorNode
-    |-ErrorNode
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=fromPtr
+        |-ParameterNode
+          |-NameIdentifierNode name=bytesPointer
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=UnsafeCPointer
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=string
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.or
+            |-WasmAtomNode symbol=call
+              |-QNameNode
+                |-NameIdentifierNode name=$stringDiscriminant
+            |-WasmAtomNode symbol=i64.and
+              |-WasmAtomNode symbol=i64.const
+                |-ErrorNode
+              |-WasmAtomNode symbol=i64.extend_u/i32
+                |-WasmAtomNode symbol=i32.sub
+                  |-WasmAtomNode symbol=get_local
+                    |-QNameNode
+                      |-NameIdentifierNode name=$bytesPointer
+                  |-WasmAtomNode symbol=i32.const
+                    |-ErrorNode
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=toPtr
+        |-ParameterNode
+          |-NameIdentifierNode name=str
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=string
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=UnsafeCPointer
+        |-AsExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=str
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=UnsafeCPointer

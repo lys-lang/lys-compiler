@@ -4,9 +4,8 @@
       |-Identifier=Object
     |-Type(685,696)
       |-StructLiteral(685,696)
-        |-StructParamsList(693,696)
-          |-(List)(695,695)
-            <Rule0>
+        |-(List)(695,695)
+          <Rule0>
   |-ImplDirective(698,970)
     |-Reference(703,709)
       |-QName(703,709)
@@ -20,6 +19,8 @@
           |-FunctionName(718,723)
             |-NameIdentifier(718,723)
               |-Identifier=apply
+          |-TypeParameters(723,723)
+            <Rule0>
           |-FunctionParamsList(723,734)
             |-(List)(724,733)
               |-Parameter(724,733)
@@ -30,12 +31,13 @@
                     |-QName(730,733)
                       |-NameIdentifier(730,733)
                         |-Identifier=i32
-          |-Type(736,742)
-            |-Reference(736,742)
-              |-QName(736,742)
-                |-NameIdentifier(736,742)
-                  |-Identifier=Object
-          |-FunAssignExpression(743,844)
+          |-ReturnType(734,743)
+            |-Type(736,742)
+              |-Reference(736,742)
+                |-QName(736,742)
+                  |-NameIdentifier(736,742)
+                    |-Identifier=Object
+          |-FunctionBody(743,844)
             |-WasmExpression(745,844)
               |-SExpression(757,839)
                 |-SSymbol(758,762)
@@ -52,10 +54,12 @@
                 |-SExpression(793,835)
                   |-SSymbol(794,801)
                     |-Identifier=i32
+                    |-Operator=.
                     |-Identifier=add
                   |-SExpression(802,817)
                     |-SSymbol(803,812)
                       |-Identifier=i32
+                      |-Operator=.
                       |-Keyword=const
                     |-NegNumberLiteral(813,815)
                       |-NumberLiteral=16
@@ -72,6 +76,8 @@
           |-FunctionName(848,852)
             |-NameIdentifier(848,852)
               |-Identifier=link
+          |-TypeParameters(852,852)
+            <Rule0>
           |-FunctionParamsList(852,877)
             |-(List)(853,876)
               |-Parameter(853,864)
@@ -90,12 +96,13 @@
                     |-QName(873,876)
                       |-NameIdentifier(873,876)
                         |-Identifier=ref
-          |-Type(879,883)
-            |-Reference(879,883)
-              |-QName(879,883)
-                |-NameIdentifier(879,883)
-                  |-Identifier=void
-          |-FunAssignExpression(884,888)
+          |-ReturnType(877,884)
+            |-Type(879,883)
+              |-Reference(879,883)
+                |-QName(879,883)
+                  |-NameIdentifier(879,883)
+                    |-Identifier=void
+          |-FunctionBody(884,888)
             |-CodeBlock(886,888)
               <Rule0>
       |-FunctionDirective(936,968)
@@ -105,6 +112,8 @@
           |-FunctionName(940,946)
             |-NameIdentifier(940,946)
               |-Identifier=unlink
+          |-TypeParameters(946,946)
+            <Rule0>
           |-FunctionParamsList(946,957)
             |-(List)(947,956)
               |-Parameter(947,956)
@@ -115,12 +124,13 @@
                     |-QName(953,956)
                       |-NameIdentifier(953,956)
                         |-Identifier=ref
-          |-Type(959,963)
-            |-Reference(959,963)
-              |-QName(959,963)
-                |-NameIdentifier(959,963)
-                  |-Identifier=void
-          |-FunAssignExpression(964,968)
+          |-ReturnType(957,964)
+            |-Type(959,963)
+              |-Reference(959,963)
+                |-QName(959,963)
+                  |-NameIdentifier(959,963)
+                    |-Identifier=void
+          |-FunctionBody(964,968)
             |-CodeBlock(966,968)
               <Rule0>
   |-EndOfFile=

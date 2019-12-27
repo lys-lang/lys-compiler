@@ -5,5 +5,31 @@
       |-NameIdentifierNode name=core
       |-NameIdentifierNode name=native
     |-EmptyNode
-  |-ErrorNode
-  |-ErrorNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=retain
+      |-ParameterNode
+        |-NameIdentifierNode name=reference
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=ref
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-EmptyNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=release
+      |-ParameterNode
+        |-NameIdentifierNode name=reference
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=ref
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-EmptyNode

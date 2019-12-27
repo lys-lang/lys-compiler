@@ -13,6 +13,8 @@
       |-FunctionName(29,35)
         |-NameIdentifier(29,35)
           |-Identifier=assert
+      |-TypeParameters(35,35)
+        <Rule0>
       |-FunctionParamsList(35,47)
         |-(List)(36,46)
           |-Parameter(36,46)
@@ -23,16 +25,18 @@
                 |-QName(39,46)
                   |-NameIdentifier(39,46)
                     |-Identifier=boolean
-      |-Type(49,53)
-        |-Reference(49,53)
-          |-QName(49,53)
-            |-NameIdentifier(49,53)
-              |-Identifier=void
-      |-FunAssignExpression(54,77)
+      |-ReturnType(47,54)
+        |-Type(49,53)
+          |-Reference(49,53)
+            |-QName(49,53)
+              |-NameIdentifier(49,53)
+                |-Identifier=void
+      |-FunctionBody(54,77)
         |-CodeBlock(56,77)
           |-IfExpression(60,75)
             |-IfBody(63,67)
-              |-NegExpression(64,66)
+              |-UnaryExpression(64,66)
+                |-Operator=!
                 |-Reference(65,66)
                   |-QName(65,66)
                     |-NameIdentifier(65,66)
@@ -51,6 +55,8 @@
       |-FunctionName(83,94)
         |-NameIdentifier(83,94)
           |-Identifier=assertEqual
+      |-TypeParameters(94,94)
+        <Rule0>
       |-FunctionParamsList(94,118)
         |-(List)(95,117)
           |-Parameter(95,105)
@@ -69,12 +75,13 @@
                 |-QName(110,117)
                   |-NameIdentifier(110,117)
                     |-Identifier=boolean
-      |-Type(120,124)
-        |-Reference(120,124)
-          |-QName(120,124)
-            |-NameIdentifier(120,124)
-              |-Identifier=void
-      |-FunAssignExpression(125,147)
+      |-ReturnType(118,125)
+        |-Type(120,124)
+          |-Reference(120,124)
+            |-QName(120,124)
+              |-NameIdentifier(120,124)
+                |-Identifier=void
+      |-FunctionBody(125,147)
         |-CodeBlock(127,147)
           |-AtomicExpression(131,145)
             |-Reference(131,137)
@@ -99,6 +106,8 @@
       |-FunctionName(153,164)
         |-NameIdentifier(153,164)
           |-Identifier=assertEqual
+      |-TypeParameters(164,164)
+        <Rule0>
       |-FunctionParamsList(164,180)
         |-(List)(165,179)
           |-Parameter(165,171)
@@ -117,12 +126,13 @@
                 |-QName(176,179)
                   |-NameIdentifier(176,179)
                     |-Identifier=i32
-      |-Type(182,186)
-        |-Reference(182,186)
-          |-QName(182,186)
-            |-NameIdentifier(182,186)
-              |-Identifier=void
-      |-FunAssignExpression(187,209)
+      |-ReturnType(180,187)
+        |-Type(182,186)
+          |-Reference(182,186)
+            |-QName(182,186)
+              |-NameIdentifier(182,186)
+                |-Identifier=void
+      |-FunctionBody(187,209)
         |-CodeBlock(189,209)
           |-AtomicExpression(193,207)
             |-Reference(193,199)
@@ -147,6 +157,8 @@
       |-FunctionName(215,226)
         |-NameIdentifier(215,226)
           |-Identifier=assertEqual
+      |-TypeParameters(226,226)
+        <Rule0>
       |-FunctionParamsList(226,242)
         |-(List)(227,241)
           |-Parameter(227,233)
@@ -165,12 +177,13 @@
                 |-QName(238,241)
                   |-NameIdentifier(238,241)
                     |-Identifier=u32
-      |-Type(244,248)
-        |-Reference(244,248)
-          |-QName(244,248)
-            |-NameIdentifier(244,248)
-              |-Identifier=void
-      |-FunAssignExpression(249,271)
+      |-ReturnType(242,249)
+        |-Type(244,248)
+          |-Reference(244,248)
+            |-QName(244,248)
+              |-NameIdentifier(244,248)
+                |-Identifier=void
+      |-FunctionBody(249,271)
         |-CodeBlock(251,271)
           |-AtomicExpression(255,269)
             |-Reference(255,261)
@@ -195,6 +208,8 @@
       |-FunctionName(277,288)
         |-NameIdentifier(277,288)
           |-Identifier=assertEqual
+      |-TypeParameters(288,288)
+        <Rule0>
       |-FunctionParamsList(288,304)
         |-(List)(289,303)
           |-Parameter(289,295)
@@ -213,12 +228,13 @@
                 |-QName(300,303)
                   |-NameIdentifier(300,303)
                     |-Identifier=f32
-      |-Type(306,310)
-        |-Reference(306,310)
-          |-QName(306,310)
-            |-NameIdentifier(306,310)
-              |-Identifier=void
-      |-FunAssignExpression(311,333)
+      |-ReturnType(304,311)
+        |-Type(306,310)
+          |-Reference(306,310)
+            |-QName(306,310)
+              |-NameIdentifier(306,310)
+                |-Identifier=void
+      |-FunctionBody(311,333)
         |-CodeBlock(313,333)
           |-AtomicExpression(317,331)
             |-Reference(317,323)
@@ -243,6 +259,8 @@
       |-FunctionName(339,350)
         |-NameIdentifier(339,350)
           |-Identifier=assertEqual
+      |-TypeParameters(350,350)
+        <Rule0>
       |-FunctionParamsList(350,366)
         |-(List)(351,365)
           |-Parameter(351,357)
@@ -261,12 +279,13 @@
                 |-QName(362,365)
                   |-NameIdentifier(362,365)
                     |-Identifier=f64
-      |-Type(368,372)
-        |-Reference(368,372)
-          |-QName(368,372)
-            |-NameIdentifier(368,372)
-              |-Identifier=void
-      |-FunAssignExpression(373,395)
+      |-ReturnType(366,373)
+        |-Type(368,372)
+          |-Reference(368,372)
+            |-QName(368,372)
+              |-NameIdentifier(368,372)
+                |-Identifier=void
+      |-FunctionBody(373,395)
         |-CodeBlock(375,395)
           |-AtomicExpression(379,393)
             |-Reference(379,385)
@@ -291,6 +310,8 @@
       |-FunctionName(401,412)
         |-NameIdentifier(401,412)
           |-Identifier=assertEqual
+      |-TypeParameters(412,412)
+        <Rule0>
       |-FunctionParamsList(412,428)
         |-(List)(413,427)
           |-Parameter(413,419)
@@ -309,12 +330,13 @@
                 |-QName(424,427)
                   |-NameIdentifier(424,427)
                     |-Identifier=i64
-      |-Type(430,434)
-        |-Reference(430,434)
-          |-QName(430,434)
-            |-NameIdentifier(430,434)
-              |-Identifier=void
-      |-FunAssignExpression(435,457)
+      |-ReturnType(428,435)
+        |-Type(430,434)
+          |-Reference(430,434)
+            |-QName(430,434)
+              |-NameIdentifier(430,434)
+                |-Identifier=void
+      |-FunctionBody(435,457)
         |-CodeBlock(437,457)
           |-AtomicExpression(441,455)
             |-Reference(441,447)

@@ -1,3 +1,72 @@
 |-Document
-  |-ErrorNode
-  |-ErrorNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=x
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-FunctionNode
+          |-NameIdentifierNode name=repeat
+          |-ParameterNode
+            |-NameIdentifierNode name=number
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=i32
+          |-ParameterNode
+            |-NameIdentifierNode name=fn
+            |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=void
+          |-BlockNode
+            |-ErrorNode
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=x
+          |-EmptyNode
+          |-FloatLiteralNode value=1
+        |-ErrorNode
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=y
+          |-EmptyNode
+          |-FloatLiteralNode value=2
+        |-ErrorNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=main
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-BlockNode
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=counter
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=i32
+          |-FloatLiteralNode value=0
+        |-FunctionNode
+          |-NameIdentifierNode name=add
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=i32
+          |-BlockNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=counter
+              |-NameIdentifierNode name==
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=counter
+                |-NameIdentifierNode name=+
+                |-FloatLiteralNode value=1
+        |-ErrorNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=counter

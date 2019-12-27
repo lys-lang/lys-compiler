@@ -6,15 +6,18 @@
       |-FunctionName(4,5)
         |-NameIdentifier(4,5)
           |-Identifier=y
+      |-TypeParameters(5,5)
+        <Rule0>
       |-FunctionParamsList(5,7)
         |-(List)(6,6)
           <Rule0>
-      |-Type(9,13)
-        |-Reference(9,13)
-          |-QName(9,13)
-            |-NameIdentifier(9,13)
-              |-Identifier=void
-      |-FunAssignExpression(14,29)
+      |-ReturnType(7,14)
+        |-Type(9,13)
+          |-Reference(9,13)
+            |-QName(9,13)
+              |-NameIdentifier(9,13)
+                |-Identifier=void
+      |-FunctionBody(14,29)
         |-CodeBlock(16,29)
           <Rule0>
   |-FunctionDirective(31,133)
@@ -24,6 +27,8 @@
       |-FunctionName(35,36)
         |-NameIdentifier(35,36)
           |-Identifier=x
+      |-TypeParameters(36,36)
+        <Rule0>
       |-FunctionParamsList(36,44)
         |-(List)(37,43)
           |-Parameter(37,43)
@@ -34,12 +39,13 @@
                 |-QName(40,43)
                   |-NameIdentifier(40,43)
                     |-Identifier=i32
-      |-Type(46,49)
-        |-Reference(46,49)
-          |-QName(46,49)
-            |-NameIdentifier(46,49)
-              |-Identifier=i32
-      |-FunAssignExpression(50,133)
+      |-ReturnType(44,50)
+        |-Type(46,49)
+          |-Reference(46,49)
+            |-QName(46,49)
+              |-NameIdentifier(46,49)
+                |-Identifier=i32
+      |-FunctionBody(50,133)
         |-CodeBlock(52,133)
           |-VarDeclaration(56,127)
             |-NameIdentifier(60,61)

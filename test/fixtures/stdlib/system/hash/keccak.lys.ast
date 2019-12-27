@@ -34,15 +34,18 @@
           |-FunctionName(562,567)
             |-NameIdentifier(562,567)
               |-Identifier=apply
+          |-TypeParameters(567,567)
+            <Rule0>
           |-FunctionParamsList(567,569)
             |-(List)(568,568)
               <Rule0>
-          |-Type(571,577)
-            |-Reference(571,577)
-              |-QName(571,577)
-                |-NameIdentifier(571,577)
-                  |-Identifier=Keccak
-          |-FunAssignExpression(578,1018)
+          |-ReturnType(569,578)
+            |-Type(571,577)
+              |-Reference(571,577)
+                |-QName(571,577)
+                  |-NameIdentifier(571,577)
+                    |-Identifier=Keccak
+          |-FunctionBody(578,1018)
             |-CodeBlock(580,1018)
               |-ValDeclaration(891,922)
                 |-NameIdentifier(895,902)
@@ -88,8 +91,7 @@
                         |-NameIdentifier(973,980)
                           |-Identifier=context
                     |-MemberExpression(980,984)
-                      |-BinMemberOperator(980,981)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(981,984)
                         |-Identifier=ptr
               |-AtomicExpression(991,1014)
@@ -113,6 +115,8 @@
           |-FunctionName(1026,1031)
             |-NameIdentifier(1026,1031)
               |-Identifier=reset
+          |-TypeParameters(1031,1031)
+            <Rule0>
           |-FunctionParamsList(1031,1045)
             |-(List)(1032,1044)
               |-Parameter(1032,1044)
@@ -123,12 +127,13 @@
                     |-QName(1038,1044)
                       |-NameIdentifier(1038,1044)
                         |-Identifier=Keccak
-          |-Type(1047,1051)
-            |-Reference(1047,1051)
-              |-QName(1047,1051)
-                |-NameIdentifier(1047,1051)
-                  |-Identifier=void
-          |-FunAssignExpression(1052,1089)
+          |-ReturnType(1045,1052)
+            |-Type(1047,1051)
+              |-Reference(1047,1051)
+                |-QName(1047,1051)
+                  |-NameIdentifier(1047,1051)
+                    |-Identifier=void
+          |-FunctionBody(1052,1089)
             |-CodeBlock(1054,1089)
               |-AtomicExpression(1060,1085)
                 |-Reference(1060,1070)
@@ -142,13 +147,11 @@
                         |-NameIdentifier(1071,1075)
                           |-Identifier=self
                     |-MemberExpression(1075,1080)
-                      |-BinMemberOperator(1075,1076)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(1076,1080)
                         |-Identifier=data
                     |-MemberExpression(1080,1084)
-                      |-BinMemberOperator(1080,1081)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(1081,1084)
                         |-Identifier=ptr
       |-FunctionDirective(1093,1184)
@@ -158,6 +161,8 @@
           |-FunctionName(1097,1103)
             |-NameIdentifier(1097,1103)
               |-Identifier=update
+          |-TypeParameters(1103,1103)
+            <Rule0>
           |-FunctionParamsList(1103,1130)
             |-(List)(1104,1129)
               |-Parameter(1104,1116)
@@ -176,12 +181,13 @@
                     |-QName(1124,1129)
                       |-NameIdentifier(1124,1129)
                         |-Identifier=bytes
-          |-Type(1132,1136)
-            |-Reference(1132,1136)
-              |-QName(1132,1136)
-                |-NameIdentifier(1132,1136)
-                  |-Identifier=void
-          |-FunAssignExpression(1137,1184)
+          |-ReturnType(1130,1137)
+            |-Type(1132,1136)
+              |-Reference(1132,1136)
+                |-QName(1132,1136)
+                  |-NameIdentifier(1132,1136)
+                    |-Identifier=void
+          |-FunctionBody(1137,1184)
             |-CodeBlock(1139,1184)
               |-AtomicExpression(1145,1180)
                 |-Reference(1145,1151)
@@ -199,8 +205,7 @@
                         |-NameIdentifier(1158,1162)
                           |-Identifier=data
                     |-MemberExpression(1162,1166)
-                      |-BinMemberOperator(1162,1163)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(1163,1166)
                         |-Identifier=ptr
                   |-AtomicExpression(1168,1179)
@@ -209,8 +214,7 @@
                         |-NameIdentifier(1168,1172)
                           |-Identifier=data
                     |-MemberExpression(1172,1179)
-                      |-BinMemberOperator(1172,1173)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(1173,1179)
                         |-Identifier=length
       |-FunctionDirective(1188,1302)
@@ -220,6 +224,8 @@
           |-FunctionName(1192,1198)
             |-NameIdentifier(1192,1198)
               |-Identifier=update
+          |-TypeParameters(1198,1198)
+            <Rule0>
           |-FunctionParamsList(1198,1239)
             |-(List)(1199,1238)
               |-Parameter(1199,1211)
@@ -246,12 +252,13 @@
                     |-QName(1235,1238)
                       |-NameIdentifier(1235,1238)
                         |-Identifier=u32
-          |-Type(1241,1245)
-            |-Reference(1241,1245)
-              |-QName(1241,1245)
-                |-NameIdentifier(1241,1245)
-                  |-Identifier=void
-          |-FunAssignExpression(1246,1302)
+          |-ReturnType(1239,1246)
+            |-Type(1241,1245)
+              |-Reference(1241,1245)
+                |-QName(1241,1245)
+                  |-NameIdentifier(1241,1245)
+                    |-Identifier=void
+          |-FunctionBody(1246,1302)
             |-CodeBlock(1248,1302)
               |-AtomicExpression(1254,1298)
                 |-Reference(1254,1266)
@@ -265,13 +272,11 @@
                         |-NameIdentifier(1267,1271)
                           |-Identifier=self
                     |-MemberExpression(1271,1276)
-                      |-BinMemberOperator(1271,1272)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(1272,1276)
                         |-Identifier=data
                     |-MemberExpression(1276,1280)
-                      |-BinMemberOperator(1276,1277)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(1277,1280)
                         |-Identifier=ptr
                   |-Reference(1282,1289)
@@ -289,6 +294,8 @@
           |-FunctionName(1310,1316)
             |-NameIdentifier(1310,1316)
               |-Identifier=digest
+          |-TypeParameters(1316,1316)
+            <Rule0>
           |-FunctionParamsList(1316,1330)
             |-(List)(1317,1329)
               |-Parameter(1317,1329)
@@ -299,12 +306,13 @@
                     |-QName(1323,1329)
                       |-NameIdentifier(1323,1329)
                         |-Identifier=Keccak
-          |-Type(1332,1337)
-            |-Reference(1332,1337)
-              |-QName(1332,1337)
-                |-NameIdentifier(1332,1337)
-                  |-Identifier=bytes
-          |-FunAssignExpression(1338,1411)
+          |-ReturnType(1330,1338)
+            |-Type(1332,1337)
+              |-Reference(1332,1337)
+                |-QName(1332,1337)
+                  |-NameIdentifier(1332,1337)
+                    |-Identifier=bytes
+          |-FunctionBody(1338,1411)
             |-CodeBlock(1340,1411)
               |-AtomicExpression(1346,1390)
                 |-Reference(1346,1358)
@@ -318,13 +326,11 @@
                         |-NameIdentifier(1359,1363)
                           |-Identifier=self
                     |-MemberExpression(1363,1368)
-                      |-BinMemberOperator(1363,1364)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(1364,1368)
                         |-Identifier=data
                     |-MemberExpression(1368,1372)
-                      |-BinMemberOperator(1368,1369)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(1369,1372)
                         |-Identifier=ptr
                   |-AtomicExpression(1374,1389)
@@ -333,13 +339,11 @@
                         |-NameIdentifier(1374,1378)
                           |-Identifier=self
                     |-MemberExpression(1378,1385)
-                      |-BinMemberOperator(1378,1379)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(1379,1385)
                         |-Identifier=result
                     |-MemberExpression(1385,1389)
-                      |-BinMemberOperator(1385,1386)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(1386,1389)
                         |-Identifier=ptr
               |-AtomicExpression(1396,1407)
@@ -348,8 +352,7 @@
                     |-NameIdentifier(1396,1400)
                       |-Identifier=self
                 |-MemberExpression(1400,1407)
-                  |-BinMemberOperator(1400,1401)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(1401,1407)
                     |-Identifier=result
       |-FunctionDirective(1446,4680)
@@ -361,6 +364,8 @@
           |-FunctionName(1458,1469)
             |-NameIdentifier(1458,1469)
               |-Identifier=keccakTheta
+          |-TypeParameters(1469,1469)
+            <Rule0>
           |-FunctionParamsList(1469,1483)
             |-(List)(1470,1482)
               |-Parameter(1470,1482)
@@ -371,12 +376,13 @@
                     |-QName(1479,1482)
                       |-NameIdentifier(1479,1482)
                         |-Identifier=ref
-          |-Type(1485,1489)
-            |-Reference(1485,1489)
-              |-QName(1485,1489)
-                |-NameIdentifier(1485,1489)
-                  |-Identifier=void
-          |-FunAssignExpression(1490,4680)
+          |-ReturnType(1483,1490)
+            |-Type(1485,1489)
+              |-Reference(1485,1489)
+                |-QName(1485,1489)
+                  |-NameIdentifier(1485,1489)
+                    |-Identifier=void
+          |-FunctionBody(1490,4680)
             |-CodeBlock(1492,4680)
               |-ValDeclaration(1565,1751)
                 |-NameIdentifier(1569,1571)
@@ -388,8 +394,7 @@
                         |-NameIdentifier(1582,1585)
                           |-Identifier=i64
                     |-MemberExpression(1585,1590)
-                      |-BinMemberOperator(1585,1586)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(1586,1590)
                         |-Identifier=load
                     |-CallArguments(1590,1609)
@@ -411,8 +416,7 @@
                         |-NameIdentifier(1612,1615)
                           |-Identifier=i64
                     |-MemberExpression(1615,1620)
-                      |-BinMemberOperator(1615,1616)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(1616,1620)
                         |-Identifier=load
                     |-CallArguments(1620,1640)
@@ -434,8 +438,7 @@
                         |-NameIdentifier(1651,1654)
                           |-Identifier=i64
                     |-MemberExpression(1654,1659)
-                      |-BinMemberOperator(1654,1655)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(1655,1659)
                         |-Identifier=load
                     |-CallArguments(1659,1679)
@@ -457,8 +460,7 @@
                         |-NameIdentifier(1682,1685)
                           |-Identifier=i64
                     |-MemberExpression(1685,1690)
-                      |-BinMemberOperator(1685,1686)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(1686,1690)
                         |-Identifier=load
                     |-CallArguments(1690,1711)
@@ -480,8 +482,7 @@
                         |-NameIdentifier(1722,1725)
                           |-Identifier=i64
                     |-MemberExpression(1725,1730)
-                      |-BinMemberOperator(1725,1726)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(1726,1730)
                         |-Identifier=load
                     |-CallArguments(1730,1751)
@@ -506,8 +507,7 @@
                         |-NameIdentifier(1774,1777)
                           |-Identifier=i64
                     |-MemberExpression(1777,1782)
-                      |-BinMemberOperator(1777,1778)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(1778,1782)
                         |-Identifier=load
                     |-CallArguments(1782,1801)
@@ -529,8 +529,7 @@
                         |-NameIdentifier(1804,1807)
                           |-Identifier=i64
                     |-MemberExpression(1807,1812)
-                      |-BinMemberOperator(1807,1808)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(1808,1812)
                         |-Identifier=load
                     |-CallArguments(1812,1832)
@@ -552,8 +551,7 @@
                         |-NameIdentifier(1843,1846)
                           |-Identifier=i64
                     |-MemberExpression(1846,1851)
-                      |-BinMemberOperator(1846,1847)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(1847,1851)
                         |-Identifier=load
                     |-CallArguments(1851,1871)
@@ -575,8 +573,7 @@
                         |-NameIdentifier(1874,1877)
                           |-Identifier=i64
                     |-MemberExpression(1877,1882)
-                      |-BinMemberOperator(1877,1878)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(1878,1882)
                         |-Identifier=load
                     |-CallArguments(1882,1903)
@@ -598,8 +595,7 @@
                         |-NameIdentifier(1914,1917)
                           |-Identifier=i64
                     |-MemberExpression(1917,1922)
-                      |-BinMemberOperator(1917,1918)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(1918,1922)
                         |-Identifier=load
                     |-CallArguments(1922,1943)
@@ -624,8 +620,7 @@
                         |-NameIdentifier(1966,1969)
                           |-Identifier=i64
                     |-MemberExpression(1969,1974)
-                      |-BinMemberOperator(1969,1970)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(1970,1974)
                         |-Identifier=load
                     |-CallArguments(1974,1994)
@@ -647,8 +642,7 @@
                         |-NameIdentifier(1997,2000)
                           |-Identifier=i64
                     |-MemberExpression(2000,2005)
-                      |-BinMemberOperator(2000,2001)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(2001,2005)
                         |-Identifier=load
                     |-CallArguments(2005,2025)
@@ -670,8 +664,7 @@
                         |-NameIdentifier(2036,2039)
                           |-Identifier=i64
                     |-MemberExpression(2039,2044)
-                      |-BinMemberOperator(2039,2040)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(2040,2044)
                         |-Identifier=load
                     |-CallArguments(2044,2064)
@@ -693,8 +686,7 @@
                         |-NameIdentifier(2067,2070)
                           |-Identifier=i64
                     |-MemberExpression(2070,2075)
-                      |-BinMemberOperator(2070,2071)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(2071,2075)
                         |-Identifier=load
                     |-CallArguments(2075,2096)
@@ -716,8 +708,7 @@
                         |-NameIdentifier(2107,2110)
                           |-Identifier=i64
                     |-MemberExpression(2110,2115)
-                      |-BinMemberOperator(2110,2111)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(2111,2115)
                         |-Identifier=load
                     |-CallArguments(2115,2136)
@@ -742,8 +733,7 @@
                         |-NameIdentifier(2159,2162)
                           |-Identifier=i64
                     |-MemberExpression(2162,2167)
-                      |-BinMemberOperator(2162,2163)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(2163,2167)
                         |-Identifier=load
                     |-CallArguments(2167,2187)
@@ -765,8 +755,7 @@
                         |-NameIdentifier(2190,2193)
                           |-Identifier=i64
                     |-MemberExpression(2193,2198)
-                      |-BinMemberOperator(2193,2194)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(2194,2198)
                         |-Identifier=load
                     |-CallArguments(2198,2218)
@@ -788,8 +777,7 @@
                         |-NameIdentifier(2229,2232)
                           |-Identifier=i64
                     |-MemberExpression(2232,2237)
-                      |-BinMemberOperator(2232,2233)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(2233,2237)
                         |-Identifier=load
                     |-CallArguments(2237,2258)
@@ -811,8 +799,7 @@
                         |-NameIdentifier(2261,2264)
                           |-Identifier=i64
                     |-MemberExpression(2264,2269)
-                      |-BinMemberOperator(2264,2265)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(2265,2269)
                         |-Identifier=load
                     |-CallArguments(2269,2290)
@@ -834,8 +821,7 @@
                         |-NameIdentifier(2301,2304)
                           |-Identifier=i64
                     |-MemberExpression(2304,2309)
-                      |-BinMemberOperator(2304,2305)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(2305,2309)
                         |-Identifier=load
                     |-CallArguments(2309,2330)
@@ -860,8 +846,7 @@
                         |-NameIdentifier(2353,2356)
                           |-Identifier=i64
                     |-MemberExpression(2356,2361)
-                      |-BinMemberOperator(2356,2357)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(2357,2361)
                         |-Identifier=load
                     |-CallArguments(2361,2381)
@@ -883,8 +868,7 @@
                         |-NameIdentifier(2384,2387)
                           |-Identifier=i64
                     |-MemberExpression(2387,2392)
-                      |-BinMemberOperator(2387,2388)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(2388,2392)
                         |-Identifier=load
                     |-CallArguments(2392,2412)
@@ -906,8 +890,7 @@
                         |-NameIdentifier(2423,2426)
                           |-Identifier=i64
                     |-MemberExpression(2426,2431)
-                      |-BinMemberOperator(2426,2427)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(2427,2431)
                         |-Identifier=load
                     |-CallArguments(2431,2452)
@@ -929,8 +912,7 @@
                         |-NameIdentifier(2455,2458)
                           |-Identifier=i64
                     |-MemberExpression(2458,2463)
-                      |-BinMemberOperator(2458,2459)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(2459,2463)
                         |-Identifier=load
                     |-CallArguments(2463,2484)
@@ -952,8 +934,7 @@
                         |-NameIdentifier(2495,2498)
                           |-Identifier=i64
                     |-MemberExpression(2498,2503)
-                      |-BinMemberOperator(2498,2499)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(2499,2503)
                         |-Identifier=load
                     |-CallArguments(2503,2524)
@@ -983,8 +964,7 @@
                         |-NameIdentifier(2544,2547)
                           |-Identifier=i64
                     |-MemberExpression(2547,2552)
-                      |-BinMemberOperator(2547,2548)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(2548,2552)
                         |-Identifier=rotl
                     |-CallArguments(2552,2566)
@@ -1014,8 +994,7 @@
                         |-NameIdentifier(2585,2588)
                           |-Identifier=i64
                     |-MemberExpression(2588,2593)
-                      |-BinMemberOperator(2588,2589)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(2589,2593)
                         |-Identifier=rotl
                     |-CallArguments(2593,2607)
@@ -1045,8 +1024,7 @@
                         |-NameIdentifier(2626,2629)
                           |-Identifier=i64
                     |-MemberExpression(2629,2634)
-                      |-BinMemberOperator(2629,2630)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(2630,2634)
                         |-Identifier=rotl
                     |-CallArguments(2634,2648)
@@ -1076,8 +1054,7 @@
                         |-NameIdentifier(2667,2670)
                           |-Identifier=i64
                     |-MemberExpression(2670,2675)
-                      |-BinMemberOperator(2670,2671)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(2671,2675)
                         |-Identifier=rotl
                     |-CallArguments(2675,2689)
@@ -1107,8 +1084,7 @@
                         |-NameIdentifier(2708,2711)
                           |-Identifier=i64
                     |-MemberExpression(2711,2716)
-                      |-BinMemberOperator(2711,2712)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(2712,2716)
                         |-Identifier=rotl
                     |-CallArguments(2716,2730)
@@ -1129,8 +1105,7 @@
                     |-NameIdentifier(2880,2883)
                       |-Identifier=i64
                 |-MemberExpression(2883,2889)
-                  |-BinMemberOperator(2883,2884)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(2884,2889)
                     |-Identifier=store
                 |-CallArguments(2889,2942)
@@ -1145,8 +1120,7 @@
                           |-NameIdentifier(2899,2902)
                             |-Identifier=i64
                       |-MemberExpression(2902,2907)
-                        |-BinMemberOperator(2902,2903)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(2903,2907)
                           |-Identifier=load
                       |-CallArguments(2907,2926)
@@ -1179,8 +1153,7 @@
                     |-NameIdentifier(2947,2950)
                       |-Identifier=i64
                 |-MemberExpression(2950,2956)
-                  |-BinMemberOperator(2950,2951)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(2951,2956)
                     |-Identifier=store
                 |-CallArguments(2956,3011)
@@ -1195,8 +1168,7 @@
                           |-NameIdentifier(2966,2969)
                             |-Identifier=i64
                       |-MemberExpression(2969,2974)
-                        |-BinMemberOperator(2969,2970)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(2970,2974)
                           |-Identifier=load
                       |-CallArguments(2974,2994)
@@ -1229,8 +1201,7 @@
                     |-NameIdentifier(3016,3019)
                       |-Identifier=i64
                 |-MemberExpression(3019,3025)
-                  |-BinMemberOperator(3019,3020)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(3020,3025)
                     |-Identifier=store
                 |-CallArguments(3025,3080)
@@ -1245,8 +1216,7 @@
                           |-NameIdentifier(3035,3038)
                             |-Identifier=i64
                       |-MemberExpression(3038,3043)
-                        |-BinMemberOperator(3038,3039)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(3039,3043)
                           |-Identifier=load
                       |-CallArguments(3043,3063)
@@ -1279,8 +1249,7 @@
                     |-NameIdentifier(3085,3088)
                       |-Identifier=i64
                 |-MemberExpression(3088,3094)
-                  |-BinMemberOperator(3088,3089)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(3089,3094)
                     |-Identifier=store
                 |-CallArguments(3094,3151)
@@ -1295,8 +1264,7 @@
                           |-NameIdentifier(3104,3107)
                             |-Identifier=i64
                       |-MemberExpression(3107,3112)
-                        |-BinMemberOperator(3107,3108)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(3108,3112)
                           |-Identifier=load
                       |-CallArguments(3112,3133)
@@ -1329,8 +1297,7 @@
                     |-NameIdentifier(3156,3159)
                       |-Identifier=i64
                 |-MemberExpression(3159,3165)
-                  |-BinMemberOperator(3159,3160)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(3160,3165)
                     |-Identifier=store
                 |-CallArguments(3165,3222)
@@ -1345,8 +1312,7 @@
                           |-NameIdentifier(3175,3178)
                             |-Identifier=i64
                       |-MemberExpression(3178,3183)
-                        |-BinMemberOperator(3178,3179)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(3179,3183)
                           |-Identifier=load
                       |-CallArguments(3183,3204)
@@ -1379,8 +1345,7 @@
                     |-NameIdentifier(3241,3244)
                       |-Identifier=i64
                 |-MemberExpression(3244,3250)
-                  |-BinMemberOperator(3244,3245)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(3245,3250)
                     |-Identifier=store
                 |-CallArguments(3250,3303)
@@ -1395,8 +1360,7 @@
                           |-NameIdentifier(3260,3263)
                             |-Identifier=i64
                       |-MemberExpression(3263,3268)
-                        |-BinMemberOperator(3263,3264)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(3264,3268)
                           |-Identifier=load
                       |-CallArguments(3268,3287)
@@ -1429,8 +1393,7 @@
                     |-NameIdentifier(3308,3311)
                       |-Identifier=i64
                 |-MemberExpression(3311,3317)
-                  |-BinMemberOperator(3311,3312)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(3312,3317)
                     |-Identifier=store
                 |-CallArguments(3317,3372)
@@ -1445,8 +1408,7 @@
                           |-NameIdentifier(3327,3330)
                             |-Identifier=i64
                       |-MemberExpression(3330,3335)
-                        |-BinMemberOperator(3330,3331)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(3331,3335)
                           |-Identifier=load
                       |-CallArguments(3335,3355)
@@ -1479,8 +1441,7 @@
                     |-NameIdentifier(3377,3380)
                       |-Identifier=i64
                 |-MemberExpression(3380,3386)
-                  |-BinMemberOperator(3380,3381)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(3381,3386)
                     |-Identifier=store
                 |-CallArguments(3386,3441)
@@ -1495,8 +1456,7 @@
                           |-NameIdentifier(3396,3399)
                             |-Identifier=i64
                       |-MemberExpression(3399,3404)
-                        |-BinMemberOperator(3399,3400)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(3400,3404)
                           |-Identifier=load
                       |-CallArguments(3404,3424)
@@ -1529,8 +1489,7 @@
                     |-NameIdentifier(3446,3449)
                       |-Identifier=i64
                 |-MemberExpression(3449,3455)
-                  |-BinMemberOperator(3449,3450)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(3450,3455)
                     |-Identifier=store
                 |-CallArguments(3455,3512)
@@ -1545,8 +1504,7 @@
                           |-NameIdentifier(3465,3468)
                             |-Identifier=i64
                       |-MemberExpression(3468,3473)
-                        |-BinMemberOperator(3468,3469)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(3469,3473)
                           |-Identifier=load
                       |-CallArguments(3473,3494)
@@ -1579,8 +1537,7 @@
                     |-NameIdentifier(3517,3520)
                       |-Identifier=i64
                 |-MemberExpression(3520,3526)
-                  |-BinMemberOperator(3520,3521)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(3521,3526)
                     |-Identifier=store
                 |-CallArguments(3526,3583)
@@ -1595,8 +1552,7 @@
                           |-NameIdentifier(3536,3539)
                             |-Identifier=i64
                       |-MemberExpression(3539,3544)
-                        |-BinMemberOperator(3539,3540)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(3540,3544)
                           |-Identifier=load
                       |-CallArguments(3544,3565)
@@ -1629,8 +1585,7 @@
                     |-NameIdentifier(3602,3605)
                       |-Identifier=i64
                 |-MemberExpression(3605,3611)
-                  |-BinMemberOperator(3605,3606)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(3606,3611)
                     |-Identifier=store
                 |-CallArguments(3611,3666)
@@ -1645,8 +1600,7 @@
                           |-NameIdentifier(3621,3624)
                             |-Identifier=i64
                       |-MemberExpression(3624,3629)
-                        |-BinMemberOperator(3624,3625)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(3625,3629)
                           |-Identifier=load
                       |-CallArguments(3629,3649)
@@ -1679,8 +1633,7 @@
                     |-NameIdentifier(3671,3674)
                       |-Identifier=i64
                 |-MemberExpression(3674,3680)
-                  |-BinMemberOperator(3674,3675)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(3675,3680)
                     |-Identifier=store
                 |-CallArguments(3680,3735)
@@ -1695,8 +1648,7 @@
                           |-NameIdentifier(3690,3693)
                             |-Identifier=i64
                       |-MemberExpression(3693,3698)
-                        |-BinMemberOperator(3693,3694)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(3694,3698)
                           |-Identifier=load
                       |-CallArguments(3698,3718)
@@ -1729,8 +1681,7 @@
                     |-NameIdentifier(3740,3743)
                       |-Identifier=i64
                 |-MemberExpression(3743,3749)
-                  |-BinMemberOperator(3743,3744)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(3744,3749)
                     |-Identifier=store
                 |-CallArguments(3749,3804)
@@ -1745,8 +1696,7 @@
                           |-NameIdentifier(3759,3762)
                             |-Identifier=i64
                       |-MemberExpression(3762,3767)
-                        |-BinMemberOperator(3762,3763)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(3763,3767)
                           |-Identifier=load
                       |-CallArguments(3767,3787)
@@ -1779,8 +1729,7 @@
                     |-NameIdentifier(3809,3812)
                       |-Identifier=i64
                 |-MemberExpression(3812,3818)
-                  |-BinMemberOperator(3812,3813)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(3813,3818)
                     |-Identifier=store
                 |-CallArguments(3818,3875)
@@ -1795,8 +1744,7 @@
                           |-NameIdentifier(3828,3831)
                             |-Identifier=i64
                       |-MemberExpression(3831,3836)
-                        |-BinMemberOperator(3831,3832)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(3832,3836)
                           |-Identifier=load
                       |-CallArguments(3836,3857)
@@ -1829,8 +1777,7 @@
                     |-NameIdentifier(3880,3883)
                       |-Identifier=i64
                 |-MemberExpression(3883,3889)
-                  |-BinMemberOperator(3883,3884)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(3884,3889)
                     |-Identifier=store
                 |-CallArguments(3889,3946)
@@ -1845,8 +1792,7 @@
                           |-NameIdentifier(3899,3902)
                             |-Identifier=i64
                       |-MemberExpression(3902,3907)
-                        |-BinMemberOperator(3902,3903)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(3903,3907)
                           |-Identifier=load
                       |-CallArguments(3907,3928)
@@ -1879,8 +1825,7 @@
                     |-NameIdentifier(3965,3968)
                       |-Identifier=i64
                 |-MemberExpression(3968,3974)
-                  |-BinMemberOperator(3968,3969)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(3969,3974)
                     |-Identifier=store
                 |-CallArguments(3974,4029)
@@ -1895,8 +1840,7 @@
                           |-NameIdentifier(3984,3987)
                             |-Identifier=i64
                       |-MemberExpression(3987,3992)
-                        |-BinMemberOperator(3987,3988)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(3988,3992)
                           |-Identifier=load
                       |-CallArguments(3992,4012)
@@ -1929,8 +1873,7 @@
                     |-NameIdentifier(4034,4037)
                       |-Identifier=i64
                 |-MemberExpression(4037,4043)
-                  |-BinMemberOperator(4037,4038)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(4038,4043)
                     |-Identifier=store
                 |-CallArguments(4043,4098)
@@ -1945,8 +1888,7 @@
                           |-NameIdentifier(4053,4056)
                             |-Identifier=i64
                       |-MemberExpression(4056,4061)
-                        |-BinMemberOperator(4056,4057)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(4057,4061)
                           |-Identifier=load
                       |-CallArguments(4061,4081)
@@ -1979,8 +1921,7 @@
                     |-NameIdentifier(4103,4106)
                       |-Identifier=i64
                 |-MemberExpression(4106,4112)
-                  |-BinMemberOperator(4106,4107)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(4107,4112)
                     |-Identifier=store
                 |-CallArguments(4112,4169)
@@ -1995,8 +1936,7 @@
                           |-NameIdentifier(4122,4125)
                             |-Identifier=i64
                       |-MemberExpression(4125,4130)
-                        |-BinMemberOperator(4125,4126)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(4126,4130)
                           |-Identifier=load
                       |-CallArguments(4130,4151)
@@ -2029,8 +1969,7 @@
                     |-NameIdentifier(4174,4177)
                       |-Identifier=i64
                 |-MemberExpression(4177,4183)
-                  |-BinMemberOperator(4177,4178)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(4178,4183)
                     |-Identifier=store
                 |-CallArguments(4183,4240)
@@ -2045,8 +1984,7 @@
                           |-NameIdentifier(4193,4196)
                             |-Identifier=i64
                       |-MemberExpression(4196,4201)
-                        |-BinMemberOperator(4196,4197)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(4197,4201)
                           |-Identifier=load
                       |-CallArguments(4201,4222)
@@ -2079,8 +2017,7 @@
                     |-NameIdentifier(4245,4248)
                       |-Identifier=i64
                 |-MemberExpression(4248,4254)
-                  |-BinMemberOperator(4248,4249)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(4249,4254)
                     |-Identifier=store
                 |-CallArguments(4254,4311)
@@ -2095,8 +2032,7 @@
                           |-NameIdentifier(4264,4267)
                             |-Identifier=i64
                       |-MemberExpression(4267,4272)
-                        |-BinMemberOperator(4267,4268)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(4268,4272)
                           |-Identifier=load
                       |-CallArguments(4272,4293)
@@ -2129,8 +2065,7 @@
                     |-NameIdentifier(4330,4333)
                       |-Identifier=i64
                 |-MemberExpression(4333,4339)
-                  |-BinMemberOperator(4333,4334)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(4334,4339)
                     |-Identifier=store
                 |-CallArguments(4339,4394)
@@ -2145,8 +2080,7 @@
                           |-NameIdentifier(4349,4352)
                             |-Identifier=i64
                       |-MemberExpression(4352,4357)
-                        |-BinMemberOperator(4352,4353)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(4353,4357)
                           |-Identifier=load
                       |-CallArguments(4357,4377)
@@ -2179,8 +2113,7 @@
                     |-NameIdentifier(4399,4402)
                       |-Identifier=i64
                 |-MemberExpression(4402,4408)
-                  |-BinMemberOperator(4402,4403)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(4403,4408)
                     |-Identifier=store
                 |-CallArguments(4408,4463)
@@ -2195,8 +2128,7 @@
                           |-NameIdentifier(4418,4421)
                             |-Identifier=i64
                       |-MemberExpression(4421,4426)
-                        |-BinMemberOperator(4421,4422)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(4422,4426)
                           |-Identifier=load
                       |-CallArguments(4426,4446)
@@ -2229,8 +2161,7 @@
                     |-NameIdentifier(4468,4471)
                       |-Identifier=i64
                 |-MemberExpression(4471,4477)
-                  |-BinMemberOperator(4471,4472)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(4472,4477)
                     |-Identifier=store
                 |-CallArguments(4477,4534)
@@ -2245,8 +2176,7 @@
                           |-NameIdentifier(4487,4490)
                             |-Identifier=i64
                       |-MemberExpression(4490,4495)
-                        |-BinMemberOperator(4490,4491)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(4491,4495)
                           |-Identifier=load
                       |-CallArguments(4495,4516)
@@ -2279,8 +2209,7 @@
                     |-NameIdentifier(4539,4542)
                       |-Identifier=i64
                 |-MemberExpression(4542,4548)
-                  |-BinMemberOperator(4542,4543)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(4543,4548)
                     |-Identifier=store
                 |-CallArguments(4548,4605)
@@ -2295,8 +2224,7 @@
                           |-NameIdentifier(4558,4561)
                             |-Identifier=i64
                       |-MemberExpression(4561,4566)
-                        |-BinMemberOperator(4561,4562)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(4562,4566)
                           |-Identifier=load
                       |-CallArguments(4566,4587)
@@ -2329,8 +2257,7 @@
                     |-NameIdentifier(4610,4613)
                       |-Identifier=i64
                 |-MemberExpression(4613,4619)
-                  |-BinMemberOperator(4613,4614)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(4614,4619)
                     |-Identifier=store
                 |-CallArguments(4619,4676)
@@ -2345,8 +2272,7 @@
                           |-NameIdentifier(4629,4632)
                             |-Identifier=i64
                       |-MemberExpression(4632,4637)
-                        |-BinMemberOperator(4632,4633)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(4633,4637)
                           |-Identifier=load
                       |-CallArguments(4637,4658)
@@ -2382,6 +2308,8 @@
           |-FunctionName(4696,4705)
             |-NameIdentifier(4696,4705)
               |-Identifier=keccakRho
+          |-TypeParameters(4705,4705)
+            <Rule0>
           |-FunctionParamsList(4705,4743)
             |-(List)(4706,4742)
               |-Parameter(4706,4721)
@@ -2400,12 +2328,13 @@
                     |-QName(4739,4742)
                       |-NameIdentifier(4739,4742)
                         |-Identifier=ref
-          |-Type(4745,4749)
-            |-Reference(4745,4749)
-              |-QName(4745,4749)
-                |-NameIdentifier(4745,4749)
-                  |-Identifier=void
-          |-FunAssignExpression(4750,5121)
+          |-ReturnType(4743,4750)
+            |-Type(4745,4749)
+              |-Reference(4745,4749)
+                |-QName(4745,4749)
+                  |-NameIdentifier(4745,4749)
+                    |-Identifier=void
+          |-FunctionBody(4750,5121)
             |-CodeBlock(4752,5121)
               |-VarDeclaration(4758,4774)
                 |-NameIdentifier(4762,4763)
@@ -2464,8 +2393,7 @@
                             |-NameIdentifier(4894,4897)
                               |-Identifier=i64
                         |-MemberExpression(4897,4903)
-                          |-BinMemberOperator(4897,4898)
-                            <Rule0>
+                          |-Operator=.
                           |-NameIdentifier(4898,4903)
                             |-Identifier=store
                         |-CallArguments(4903,5060)
@@ -2479,8 +2407,7 @@
                                 |-NameIdentifier(4926,4929)
                                   |-Identifier=i64
                             |-MemberExpression(4929,4934)
-                              |-BinMemberOperator(4929,4930)
-                                <Rule0>
+                              |-Operator=.
                               |-NameIdentifier(4930,4934)
                                 |-Identifier=rotl
                             |-CallArguments(4934,5032)
@@ -2490,8 +2417,7 @@
                                     |-NameIdentifier(4948,4951)
                                       |-Identifier=i64
                                 |-MemberExpression(4951,4956)
-                                  |-BinMemberOperator(4951,4952)
-                                    <Rule0>
+                                  |-Operator=.
                                   |-NameIdentifier(4952,4956)
                                     |-Identifier=load
                                 |-CallArguments(4956,4976)
@@ -2509,8 +2435,7 @@
                                     |-NameIdentifier(4990,4993)
                                       |-Identifier=i64
                                 |-MemberExpression(4993,5001)
-                                  |-BinMemberOperator(4993,4994)
-                                    <Rule0>
+                                  |-Operator=.
                                   |-NameIdentifier(4994,5001)
                                     |-Identifier=load8_u
                                 |-CallArguments(5001,5020)
@@ -2556,6 +2481,8 @@
           |-FunctionName(5137,5145)
             |-NameIdentifier(5137,5145)
               |-Identifier=keccakPi
+          |-TypeParameters(5145,5145)
+            <Rule0>
           |-FunctionParamsList(5145,5159)
             |-(List)(5146,5158)
               |-Parameter(5146,5158)
@@ -2566,12 +2493,13 @@
                     |-QName(5155,5158)
                       |-NameIdentifier(5155,5158)
                         |-Identifier=ref
-          |-Type(5161,5165)
-            |-Reference(5161,5165)
-              |-QName(5161,5165)
-                |-NameIdentifier(5161,5165)
-                  |-Identifier=void
-          |-FunAssignExpression(5166,6888)
+          |-ReturnType(5159,5166)
+            |-Type(5161,5165)
+              |-Reference(5161,5165)
+                |-QName(5161,5165)
+                  |-NameIdentifier(5161,5165)
+                    |-Identifier=void
+          |-FunctionBody(5166,6888)
             |-CodeBlock(5168,6888)
               |-ValDeclaration(5174,5210)
                 |-NameIdentifier(5178,5180)
@@ -2582,8 +2510,7 @@
                       |-NameIdentifier(5183,5186)
                         |-Identifier=i64
                   |-MemberExpression(5186,5191)
-                    |-BinMemberOperator(5186,5187)
-                      <Rule0>
+                    |-Operator=.
                     |-NameIdentifier(5187,5191)
                       |-Identifier=load
                   |-CallArguments(5191,5210)
@@ -2604,8 +2531,7 @@
                     |-NameIdentifier(5303,5306)
                       |-Identifier=i64
                 |-MemberExpression(5306,5312)
-                  |-BinMemberOperator(5306,5307)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(5307,5312)
                     |-Identifier=store
                 |-CallArguments(5312,5361)
@@ -2619,8 +2545,7 @@
                         |-NameIdentifier(5322,5325)
                           |-Identifier=i64
                     |-MemberExpression(5325,5330)
-                      |-BinMemberOperator(5325,5326)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(5326,5330)
                         |-Identifier=load
                     |-CallArguments(5330,5350)
@@ -2648,8 +2573,7 @@
                     |-NameIdentifier(5366,5369)
                       |-Identifier=i64
                 |-MemberExpression(5369,5375)
-                  |-BinMemberOperator(5369,5370)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(5370,5375)
                     |-Identifier=store
                 |-CallArguments(5375,5425)
@@ -2663,8 +2587,7 @@
                         |-NameIdentifier(5385,5388)
                           |-Identifier=i64
                     |-MemberExpression(5388,5393)
-                      |-BinMemberOperator(5388,5389)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(5389,5393)
                         |-Identifier=load
                     |-CallArguments(5393,5413)
@@ -2692,8 +2615,7 @@
                     |-NameIdentifier(5430,5433)
                       |-Identifier=i64
                 |-MemberExpression(5433,5439)
-                  |-BinMemberOperator(5433,5434)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(5434,5439)
                     |-Identifier=store
                 |-CallArguments(5439,5490)
@@ -2707,8 +2629,7 @@
                         |-NameIdentifier(5449,5452)
                           |-Identifier=i64
                     |-MemberExpression(5452,5457)
-                      |-BinMemberOperator(5452,5453)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(5453,5457)
                         |-Identifier=load
                     |-CallArguments(5457,5478)
@@ -2736,8 +2657,7 @@
                     |-NameIdentifier(5495,5498)
                       |-Identifier=i64
                 |-MemberExpression(5498,5504)
-                  |-BinMemberOperator(5498,5499)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(5499,5504)
                     |-Identifier=store
                 |-CallArguments(5504,5556)
@@ -2751,8 +2671,7 @@
                         |-NameIdentifier(5514,5517)
                           |-Identifier=i64
                     |-MemberExpression(5517,5522)
-                      |-BinMemberOperator(5517,5518)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(5518,5522)
                         |-Identifier=load
                     |-CallArguments(5522,5543)
@@ -2780,8 +2699,7 @@
                     |-NameIdentifier(5561,5564)
                       |-Identifier=i64
                 |-MemberExpression(5564,5570)
-                  |-BinMemberOperator(5564,5565)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(5565,5570)
                     |-Identifier=store
                 |-CallArguments(5570,5622)
@@ -2795,8 +2713,7 @@
                         |-NameIdentifier(5580,5583)
                           |-Identifier=i64
                     |-MemberExpression(5583,5588)
-                      |-BinMemberOperator(5583,5584)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(5584,5588)
                         |-Identifier=load
                     |-CallArguments(5588,5609)
@@ -2824,8 +2741,7 @@
                     |-NameIdentifier(5627,5630)
                       |-Identifier=i64
                 |-MemberExpression(5630,5636)
-                  |-BinMemberOperator(5630,5631)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(5631,5636)
                     |-Identifier=store
                 |-CallArguments(5636,5687)
@@ -2839,8 +2755,7 @@
                         |-NameIdentifier(5646,5649)
                           |-Identifier=i64
                     |-MemberExpression(5649,5654)
-                      |-BinMemberOperator(5649,5650)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(5650,5654)
                         |-Identifier=load
                     |-CallArguments(5654,5674)
@@ -2868,8 +2783,7 @@
                     |-NameIdentifier(5692,5695)
                       |-Identifier=i64
                 |-MemberExpression(5695,5701)
-                  |-BinMemberOperator(5695,5696)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(5696,5701)
                     |-Identifier=store
                 |-CallArguments(5701,5751)
@@ -2883,8 +2797,7 @@
                         |-NameIdentifier(5711,5714)
                           |-Identifier=i64
                     |-MemberExpression(5714,5719)
-                      |-BinMemberOperator(5714,5715)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(5715,5719)
                         |-Identifier=load
                     |-CallArguments(5719,5739)
@@ -2912,8 +2825,7 @@
                     |-NameIdentifier(5756,5759)
                       |-Identifier=i64
                 |-MemberExpression(5759,5765)
-                  |-BinMemberOperator(5759,5760)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(5760,5765)
                     |-Identifier=store
                 |-CallArguments(5765,5816)
@@ -2927,8 +2839,7 @@
                         |-NameIdentifier(5775,5778)
                           |-Identifier=i64
                     |-MemberExpression(5778,5783)
-                      |-BinMemberOperator(5778,5779)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(5779,5783)
                         |-Identifier=load
                     |-CallArguments(5783,5804)
@@ -2956,8 +2867,7 @@
                     |-NameIdentifier(5821,5824)
                       |-Identifier=i64
                 |-MemberExpression(5824,5830)
-                  |-BinMemberOperator(5824,5825)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(5825,5830)
                     |-Identifier=store
                 |-CallArguments(5830,5882)
@@ -2971,8 +2881,7 @@
                         |-NameIdentifier(5840,5843)
                           |-Identifier=i64
                     |-MemberExpression(5843,5848)
-                      |-BinMemberOperator(5843,5844)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(5844,5848)
                         |-Identifier=load
                     |-CallArguments(5848,5869)
@@ -3000,8 +2909,7 @@
                     |-NameIdentifier(5887,5890)
                       |-Identifier=i64
                 |-MemberExpression(5890,5896)
-                  |-BinMemberOperator(5890,5891)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(5891,5896)
                     |-Identifier=store
                 |-CallArguments(5896,5948)
@@ -3015,8 +2923,7 @@
                         |-NameIdentifier(5906,5909)
                           |-Identifier=i64
                     |-MemberExpression(5909,5914)
-                      |-BinMemberOperator(5909,5910)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(5910,5914)
                         |-Identifier=load
                     |-CallArguments(5914,5935)
@@ -3044,8 +2951,7 @@
                     |-NameIdentifier(5953,5956)
                       |-Identifier=i64
                 |-MemberExpression(5956,5962)
-                  |-BinMemberOperator(5956,5957)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(5957,5962)
                     |-Identifier=store
                 |-CallArguments(5962,6014)
@@ -3059,8 +2965,7 @@
                         |-NameIdentifier(5972,5975)
                           |-Identifier=i64
                     |-MemberExpression(5975,5980)
-                      |-BinMemberOperator(5975,5976)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(5976,5980)
                         |-Identifier=load
                     |-CallArguments(5980,6001)
@@ -3088,8 +2993,7 @@
                     |-NameIdentifier(6019,6022)
                       |-Identifier=i64
                 |-MemberExpression(6022,6028)
-                  |-BinMemberOperator(6022,6023)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(6023,6028)
                     |-Identifier=store
                 |-CallArguments(6028,6079)
@@ -3103,8 +3007,7 @@
                         |-NameIdentifier(6038,6041)
                           |-Identifier=i64
                     |-MemberExpression(6041,6046)
-                      |-BinMemberOperator(6041,6042)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(6042,6046)
                         |-Identifier=load
                     |-CallArguments(6046,6066)
@@ -3132,8 +3035,7 @@
                     |-NameIdentifier(6084,6087)
                       |-Identifier=i64
                 |-MemberExpression(6087,6093)
-                  |-BinMemberOperator(6087,6088)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(6088,6093)
                     |-Identifier=store
                 |-CallArguments(6093,6144)
@@ -3147,8 +3049,7 @@
                         |-NameIdentifier(6103,6106)
                           |-Identifier=i64
                     |-MemberExpression(6106,6111)
-                      |-BinMemberOperator(6106,6107)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(6107,6111)
                         |-Identifier=load
                     |-CallArguments(6111,6132)
@@ -3176,8 +3077,7 @@
                     |-NameIdentifier(6149,6152)
                       |-Identifier=i64
                 |-MemberExpression(6152,6158)
-                  |-BinMemberOperator(6152,6153)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(6153,6158)
                     |-Identifier=store
                 |-CallArguments(6158,6210)
@@ -3191,8 +3091,7 @@
                         |-NameIdentifier(6168,6171)
                           |-Identifier=i64
                     |-MemberExpression(6171,6176)
-                      |-BinMemberOperator(6171,6172)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(6172,6176)
                         |-Identifier=load
                     |-CallArguments(6176,6197)
@@ -3220,8 +3119,7 @@
                     |-NameIdentifier(6215,6218)
                       |-Identifier=i64
                 |-MemberExpression(6218,6224)
-                  |-BinMemberOperator(6218,6219)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(6219,6224)
                     |-Identifier=store
                 |-CallArguments(6224,6275)
@@ -3235,8 +3133,7 @@
                         |-NameIdentifier(6234,6237)
                           |-Identifier=i64
                     |-MemberExpression(6237,6242)
-                      |-BinMemberOperator(6237,6238)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(6238,6242)
                         |-Identifier=load
                     |-CallArguments(6242,6262)
@@ -3264,8 +3161,7 @@
                     |-NameIdentifier(6280,6283)
                       |-Identifier=i64
                 |-MemberExpression(6283,6289)
-                  |-BinMemberOperator(6283,6284)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(6284,6289)
                     |-Identifier=store
                 |-CallArguments(6289,6340)
@@ -3279,8 +3175,7 @@
                         |-NameIdentifier(6299,6302)
                           |-Identifier=i64
                     |-MemberExpression(6302,6307)
-                      |-BinMemberOperator(6302,6303)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(6303,6307)
                         |-Identifier=load
                     |-CallArguments(6307,6328)
@@ -3308,8 +3203,7 @@
                     |-NameIdentifier(6345,6348)
                       |-Identifier=i64
                 |-MemberExpression(6348,6354)
-                  |-BinMemberOperator(6348,6349)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(6349,6354)
                     |-Identifier=store
                 |-CallArguments(6354,6405)
@@ -3323,8 +3217,7 @@
                         |-NameIdentifier(6364,6367)
                           |-Identifier=i64
                     |-MemberExpression(6367,6372)
-                      |-BinMemberOperator(6367,6368)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(6368,6372)
                         |-Identifier=load
                     |-CallArguments(6372,6392)
@@ -3352,8 +3245,7 @@
                     |-NameIdentifier(6410,6413)
                       |-Identifier=i64
                 |-MemberExpression(6413,6419)
-                  |-BinMemberOperator(6413,6414)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(6414,6419)
                     |-Identifier=store
                 |-CallArguments(6419,6469)
@@ -3367,8 +3259,7 @@
                         |-NameIdentifier(6429,6432)
                           |-Identifier=i64
                     |-MemberExpression(6432,6437)
-                      |-BinMemberOperator(6432,6433)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(6433,6437)
                         |-Identifier=load
                     |-CallArguments(6437,6457)
@@ -3396,8 +3287,7 @@
                     |-NameIdentifier(6474,6477)
                       |-Identifier=i64
                 |-MemberExpression(6477,6483)
-                  |-BinMemberOperator(6477,6478)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(6478,6483)
                     |-Identifier=store
                 |-CallArguments(6483,6534)
@@ -3411,8 +3301,7 @@
                         |-NameIdentifier(6493,6496)
                           |-Identifier=i64
                     |-MemberExpression(6496,6501)
-                      |-BinMemberOperator(6496,6497)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(6497,6501)
                         |-Identifier=load
                     |-CallArguments(6501,6522)
@@ -3440,8 +3329,7 @@
                     |-NameIdentifier(6539,6542)
                       |-Identifier=i64
                 |-MemberExpression(6542,6548)
-                  |-BinMemberOperator(6542,6543)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(6543,6548)
                     |-Identifier=store
                 |-CallArguments(6548,6600)
@@ -3455,8 +3343,7 @@
                         |-NameIdentifier(6558,6561)
                           |-Identifier=i64
                     |-MemberExpression(6561,6566)
-                      |-BinMemberOperator(6561,6562)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(6562,6566)
                         |-Identifier=load
                     |-CallArguments(6566,6587)
@@ -3484,8 +3371,7 @@
                     |-NameIdentifier(6605,6608)
                       |-Identifier=i64
                 |-MemberExpression(6608,6614)
-                  |-BinMemberOperator(6608,6609)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(6609,6614)
                     |-Identifier=store
                 |-CallArguments(6614,6665)
@@ -3499,8 +3385,7 @@
                         |-NameIdentifier(6624,6627)
                           |-Identifier=i64
                     |-MemberExpression(6627,6632)
-                      |-BinMemberOperator(6627,6628)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(6628,6632)
                         |-Identifier=load
                     |-CallArguments(6632,6652)
@@ -3528,8 +3413,7 @@
                     |-NameIdentifier(6670,6673)
                       |-Identifier=i64
                 |-MemberExpression(6673,6679)
-                  |-BinMemberOperator(6673,6674)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(6674,6679)
                     |-Identifier=store
                 |-CallArguments(6679,6729)
@@ -3543,8 +3427,7 @@
                         |-NameIdentifier(6689,6692)
                           |-Identifier=i64
                     |-MemberExpression(6692,6697)
-                      |-BinMemberOperator(6692,6693)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(6693,6697)
                         |-Identifier=load
                     |-CallArguments(6697,6717)
@@ -3572,8 +3455,7 @@
                     |-NameIdentifier(6734,6737)
                       |-Identifier=i64
                 |-MemberExpression(6737,6743)
-                  |-BinMemberOperator(6737,6738)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(6738,6743)
                     |-Identifier=store
                 |-CallArguments(6743,6793)
@@ -3587,8 +3469,7 @@
                         |-NameIdentifier(6753,6756)
                           |-Identifier=i64
                     |-MemberExpression(6756,6761)
-                      |-BinMemberOperator(6756,6757)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(6757,6761)
                         |-Identifier=load
                     |-CallArguments(6761,6781)
@@ -3616,8 +3497,7 @@
                     |-NameIdentifier(6851,6854)
                       |-Identifier=i64
                 |-MemberExpression(6854,6860)
-                  |-BinMemberOperator(6854,6855)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(6855,6860)
                     |-Identifier=store
                 |-CallArguments(6860,6884)
@@ -3645,6 +3525,8 @@
           |-FunctionName(6904,6913)
             |-NameIdentifier(6904,6913)
               |-Identifier=keccakChi
+          |-TypeParameters(6913,6913)
+            <Rule0>
           |-FunctionParamsList(6913,6927)
             |-(List)(6914,6926)
               |-Parameter(6914,6926)
@@ -3655,12 +3537,13 @@
                     |-QName(6923,6926)
                       |-NameIdentifier(6923,6926)
                         |-Identifier=ref
-          |-Type(6929,6933)
-            |-Reference(6929,6933)
-              |-QName(6929,6933)
-                |-NameIdentifier(6929,6933)
-                  |-Identifier=void
-          |-FunAssignExpression(6934,8162)
+          |-ReturnType(6927,6934)
+            |-Type(6929,6933)
+              |-Reference(6929,6933)
+                |-QName(6929,6933)
+                  |-NameIdentifier(6929,6933)
+                    |-Identifier=void
+          |-FunctionBody(6934,8162)
             |-CodeBlock(6936,8162)
               |-VarDeclaration(6942,6958)
                 |-NameIdentifier(6946,6947)
@@ -3700,8 +3583,7 @@
                           |-NameIdentifier(7062,7065)
                             |-Identifier=i64
                       |-MemberExpression(7065,7070)
-                        |-BinMemberOperator(7065,7066)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(7066,7070)
                           |-Identifier=load
                       |-CallArguments(7070,7087)
@@ -3725,8 +3607,7 @@
                           |-NameIdentifier(7103,7106)
                             |-Identifier=i64
                       |-MemberExpression(7106,7111)
-                        |-BinMemberOperator(7106,7107)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(7107,7111)
                           |-Identifier=load
                       |-CallArguments(7111,7141)
@@ -3757,8 +3638,7 @@
                         |-NameIdentifier(7186,7189)
                           |-Identifier=i64
                     |-MemberExpression(7189,7195)
-                      |-BinMemberOperator(7189,7190)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(7190,7195)
                         |-Identifier=store
                     |-CallArguments(7195,7311)
@@ -3773,8 +3653,7 @@
                               |-NameIdentifier(7213,7216)
                                 |-Identifier=i64
                           |-MemberExpression(7216,7221)
-                            |-BinMemberOperator(7216,7217)
-                              <Rule0>
+                            |-Operator=.
                             |-NameIdentifier(7217,7221)
                               |-Identifier=load
                           |-CallArguments(7221,7238)
@@ -3792,7 +3671,8 @@
                         |-Operator=^
                         |-ParenExpression(7241,7287)
                           |-BinaryOpExpression(7242,7286)
-                            |-BinNegExpression(7242,7245)
+                            |-UnaryExpression(7242,7245)
+                              |-Operator=~
                               |-Reference(7243,7245)
                                 |-QName(7243,7245)
                                   |-NameIdentifier(7243,7245)
@@ -3804,8 +3684,7 @@
                                   |-NameIdentifier(7248,7251)
                                     |-Identifier=i64
                               |-MemberExpression(7251,7256)
-                                |-BinMemberOperator(7251,7252)
-                                  <Rule0>
+                                |-Operator=.
                                 |-NameIdentifier(7252,7256)
                                   |-Identifier=load
                               |-CallArguments(7256,7286)
@@ -3843,8 +3722,7 @@
                         |-NameIdentifier(7362,7365)
                           |-Identifier=i64
                     |-MemberExpression(7365,7371)
-                      |-BinMemberOperator(7365,7366)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(7366,7371)
                         |-Identifier=store
                     |-CallArguments(7371,7549)
@@ -3859,8 +3737,7 @@
                               |-NameIdentifier(7389,7392)
                                 |-Identifier=i64
                           |-MemberExpression(7392,7397)
-                            |-BinMemberOperator(7392,7393)
-                              <Rule0>
+                            |-Operator=.
                             |-NameIdentifier(7393,7397)
                               |-Identifier=load
                           |-CallArguments(7397,7427)
@@ -3888,15 +3765,15 @@
                         |-Operator=^
                         |-ParenExpression(7430,7512)
                           |-BinaryOpExpression(7431,7511)
-                            |-BinNegExpression(7431,7470)
+                            |-UnaryExpression(7431,7470)
+                              |-Operator=~
                               |-AtomicExpression(7432,7470)
                                 |-Reference(7432,7435)
                                   |-QName(7432,7435)
                                     |-NameIdentifier(7432,7435)
                                       |-Identifier=i64
                                 |-MemberExpression(7435,7440)
-                                  |-BinMemberOperator(7435,7436)
-                                    <Rule0>
+                                  |-Operator=.
                                   |-NameIdentifier(7436,7440)
                                     |-Identifier=load
                                 |-CallArguments(7440,7470)
@@ -3928,8 +3805,7 @@
                                   |-NameIdentifier(7473,7476)
                                     |-Identifier=i64
                               |-MemberExpression(7476,7481)
-                                |-BinMemberOperator(7476,7477)
-                                  <Rule0>
+                                |-Operator=.
                                 |-NameIdentifier(7477,7481)
                                   |-Identifier=load
                               |-CallArguments(7481,7511)
@@ -3977,8 +3853,7 @@
                         |-NameIdentifier(7600,7603)
                           |-Identifier=i64
                     |-MemberExpression(7603,7609)
-                      |-BinMemberOperator(7603,7604)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(7604,7609)
                         |-Identifier=store
                     |-CallArguments(7609,7787)
@@ -3993,8 +3868,7 @@
                               |-NameIdentifier(7627,7630)
                                 |-Identifier=i64
                           |-MemberExpression(7630,7635)
-                            |-BinMemberOperator(7630,7631)
-                              <Rule0>
+                            |-Operator=.
                             |-NameIdentifier(7631,7635)
                               |-Identifier=load
                           |-CallArguments(7635,7665)
@@ -4022,15 +3896,15 @@
                         |-Operator=^
                         |-ParenExpression(7668,7750)
                           |-BinaryOpExpression(7669,7749)
-                            |-BinNegExpression(7669,7708)
+                            |-UnaryExpression(7669,7708)
+                              |-Operator=~
                               |-AtomicExpression(7670,7708)
                                 |-Reference(7670,7673)
                                   |-QName(7670,7673)
                                     |-NameIdentifier(7670,7673)
                                       |-Identifier=i64
                                 |-MemberExpression(7673,7678)
-                                  |-BinMemberOperator(7673,7674)
-                                    <Rule0>
+                                  |-Operator=.
                                   |-NameIdentifier(7674,7678)
                                     |-Identifier=load
                                 |-CallArguments(7678,7708)
@@ -4062,8 +3936,7 @@
                                   |-NameIdentifier(7711,7714)
                                     |-Identifier=i64
                               |-MemberExpression(7714,7719)
-                                |-BinMemberOperator(7714,7715)
-                                  <Rule0>
+                                |-Operator=.
                                 |-NameIdentifier(7715,7719)
                                   |-Identifier=load
                               |-CallArguments(7719,7749)
@@ -4111,8 +3984,7 @@
                         |-NameIdentifier(7832,7835)
                           |-Identifier=i64
                     |-MemberExpression(7835,7841)
-                      |-BinMemberOperator(7835,7836)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(7836,7841)
                         |-Identifier=store
                     |-CallArguments(7841,7983)
@@ -4127,8 +3999,7 @@
                               |-NameIdentifier(7859,7862)
                                 |-Identifier=i64
                           |-MemberExpression(7862,7867)
-                            |-BinMemberOperator(7862,7863)
-                              <Rule0>
+                            |-Operator=.
                             |-NameIdentifier(7863,7867)
                               |-Identifier=load
                           |-CallArguments(7867,7897)
@@ -4156,15 +4027,15 @@
                         |-Operator=^
                         |-ParenExpression(7900,7946)
                           |-BinaryOpExpression(7901,7945)
-                            |-BinNegExpression(7901,7940)
+                            |-UnaryExpression(7901,7940)
+                              |-Operator=~
                               |-AtomicExpression(7902,7940)
                                 |-Reference(7902,7905)
                                   |-QName(7902,7905)
                                     |-NameIdentifier(7902,7905)
                                       |-Identifier=i64
                                 |-MemberExpression(7905,7910)
-                                  |-BinMemberOperator(7905,7906)
-                                    <Rule0>
+                                  |-Operator=.
                                   |-NameIdentifier(7906,7910)
                                     |-Identifier=load
                                 |-CallArguments(7910,7940)
@@ -4217,8 +4088,7 @@
                         |-NameIdentifier(8022,8025)
                           |-Identifier=i64
                     |-MemberExpression(8025,8031)
-                      |-BinMemberOperator(8025,8026)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(8026,8031)
                         |-Identifier=store
                     |-CallArguments(8031,8112)
@@ -4233,8 +4103,7 @@
                               |-NameIdentifier(8041,8044)
                                 |-Identifier=i64
                           |-MemberExpression(8044,8049)
-                            |-BinMemberOperator(8044,8045)
-                              <Rule0>
+                            |-Operator=.
                             |-NameIdentifier(8045,8049)
                               |-Identifier=load
                           |-CallArguments(8049,8079)
@@ -4261,7 +4130,8 @@
                               |-NumberLiteral=3
                         |-Operator=^
                         |-BinaryOpExpression(8082,8090)
-                          |-BinNegExpression(8082,8085)
+                          |-UnaryExpression(8082,8085)
+                            |-Operator=~
                             |-Reference(8083,8085)
                               |-QName(8083,8085)
                                 |-NameIdentifier(8083,8085)
@@ -4318,6 +4188,8 @@
           |-FunctionName(8178,8191)
             |-NameIdentifier(8178,8191)
               |-Identifier=keccakPermute
+          |-TypeParameters(8191,8191)
+            <Rule0>
           |-FunctionParamsList(8191,8211)
             |-(List)(8192,8210)
               |-Parameter(8192,8210)
@@ -4328,12 +4200,13 @@
                     |-QName(8207,8210)
                       |-NameIdentifier(8207,8210)
                         |-Identifier=u32
-          |-Type(8213,8217)
-            |-Reference(8213,8217)
-              |-QName(8213,8217)
-                |-NameIdentifier(8213,8217)
-                  |-Identifier=void
-          |-FunAssignExpression(8218,9030)
+          |-ReturnType(8211,8218)
+            |-Type(8213,8217)
+              |-Reference(8213,8217)
+                |-QName(8213,8217)
+                  |-NameIdentifier(8213,8217)
+                    |-Identifier=void
+          |-FunctionBody(8218,9030)
             |-CodeBlock(8220,9030)
               |-ValDeclaration(8226,8279)
                 |-NameIdentifier(8230,8241)
@@ -4463,8 +4336,7 @@
                             |-NameIdentifier(8850,8853)
                               |-Identifier=i64
                         |-MemberExpression(8853,8859)
-                          |-BinMemberOperator(8853,8854)
-                            <Rule0>
+                          |-Operator=.
                           |-NameIdentifier(8854,8859)
                             |-Identifier=store
                         |-CallArguments(8859,8968)
@@ -4479,8 +4351,7 @@
                                   |-NameIdentifier(8893,8896)
                                     |-Identifier=i64
                               |-MemberExpression(8896,8901)
-                                |-BinMemberOperator(8896,8897)
-                                  <Rule0>
+                                |-Operator=.
                                 |-NameIdentifier(8897,8901)
                                   |-Identifier=load
                               |-CallArguments(8901,8913)
@@ -4495,8 +4366,7 @@
                                   |-NameIdentifier(8916,8919)
                                     |-Identifier=i64
                               |-MemberExpression(8919,8924)
-                                |-BinMemberOperator(8919,8920)
-                                  <Rule0>
+                                |-Operator=.
                                 |-NameIdentifier(8920,8924)
                                   |-Identifier=load
                               |-CallArguments(8924,8958)
@@ -4542,6 +4412,8 @@
           |-FunctionName(9046,9057)
             |-NameIdentifier(9046,9057)
               |-Identifier=keccakBlock
+          |-TypeParameters(9057,9057)
+            <Rule0>
           |-FunctionParamsList(9057,9095)
             |-(List)(9058,9094)
               |-Parameter(9058,9074)
@@ -4560,12 +4432,13 @@
                     |-QName(9091,9094)
                       |-NameIdentifier(9091,9094)
                         |-Identifier=u32
-          |-Type(9097,9101)
-            |-Reference(9097,9101)
-              |-QName(9097,9101)
-                |-NameIdentifier(9097,9101)
-                  |-Identifier=void
-          |-FunAssignExpression(9102,10877)
+          |-ReturnType(9095,9102)
+            |-Type(9097,9101)
+              |-Reference(9097,9101)
+                |-QName(9097,9101)
+                  |-NameIdentifier(9097,9101)
+                    |-Identifier=void
+          |-FunctionBody(9102,10877)
             |-CodeBlock(9104,10877)
               |-ValDeclaration(9110,9140)
                 |-NameIdentifier(9114,9119)
@@ -4599,8 +4472,7 @@
                     |-NameIdentifier(9257,9260)
                       |-Identifier=i64
                 |-MemberExpression(9260,9266)
-                  |-BinMemberOperator(9260,9261)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(9261,9266)
                     |-Identifier=store
                 |-CallArguments(9266,9342)
@@ -4615,8 +4487,7 @@
                           |-NameIdentifier(9276,9279)
                             |-Identifier=i64
                       |-MemberExpression(9279,9284)
-                        |-BinMemberOperator(9279,9280)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(9280,9284)
                           |-Identifier=load
                       |-CallArguments(9284,9303)
@@ -4638,8 +4509,7 @@
                           |-NameIdentifier(9306,9309)
                             |-Identifier=i64
                       |-MemberExpression(9309,9314)
-                        |-BinMemberOperator(9309,9310)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(9310,9314)
                           |-Identifier=load
                       |-CallArguments(9314,9331)
@@ -4667,8 +4537,7 @@
                     |-NameIdentifier(9347,9350)
                       |-Identifier=i64
                 |-MemberExpression(9350,9356)
-                  |-BinMemberOperator(9350,9351)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(9351,9356)
                     |-Identifier=store
                 |-CallArguments(9356,9432)
@@ -4683,8 +4552,7 @@
                           |-NameIdentifier(9366,9369)
                             |-Identifier=i64
                       |-MemberExpression(9369,9374)
-                        |-BinMemberOperator(9369,9370)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(9370,9374)
                           |-Identifier=load
                       |-CallArguments(9374,9393)
@@ -4706,8 +4574,7 @@
                           |-NameIdentifier(9396,9399)
                             |-Identifier=i64
                       |-MemberExpression(9399,9404)
-                        |-BinMemberOperator(9399,9400)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(9400,9404)
                           |-Identifier=load
                       |-CallArguments(9404,9421)
@@ -4735,8 +4602,7 @@
                     |-NameIdentifier(9437,9440)
                       |-Identifier=i64
                 |-MemberExpression(9440,9446)
-                  |-BinMemberOperator(9440,9441)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(9441,9446)
                     |-Identifier=store
                 |-CallArguments(9446,9525)
@@ -4751,8 +4617,7 @@
                           |-NameIdentifier(9456,9459)
                             |-Identifier=i64
                       |-MemberExpression(9459,9464)
-                        |-BinMemberOperator(9459,9460)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(9460,9464)
                           |-Identifier=load
                       |-CallArguments(9464,9484)
@@ -4774,8 +4639,7 @@
                           |-NameIdentifier(9487,9490)
                             |-Identifier=i64
                       |-MemberExpression(9490,9495)
-                        |-BinMemberOperator(9490,9491)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(9491,9495)
                           |-Identifier=load
                       |-CallArguments(9495,9513)
@@ -4803,8 +4667,7 @@
                     |-NameIdentifier(9530,9533)
                       |-Identifier=i64
                 |-MemberExpression(9533,9539)
-                  |-BinMemberOperator(9533,9534)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(9534,9539)
                     |-Identifier=store
                 |-CallArguments(9539,9618)
@@ -4819,8 +4682,7 @@
                           |-NameIdentifier(9549,9552)
                             |-Identifier=i64
                       |-MemberExpression(9552,9557)
-                        |-BinMemberOperator(9552,9553)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(9553,9557)
                           |-Identifier=load
                       |-CallArguments(9557,9577)
@@ -4842,8 +4704,7 @@
                           |-NameIdentifier(9580,9583)
                             |-Identifier=i64
                       |-MemberExpression(9583,9588)
-                        |-BinMemberOperator(9583,9584)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(9584,9588)
                           |-Identifier=load
                       |-CallArguments(9588,9606)
@@ -4871,8 +4732,7 @@
                     |-NameIdentifier(9623,9626)
                       |-Identifier=i64
                 |-MemberExpression(9626,9632)
-                  |-BinMemberOperator(9626,9627)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(9627,9632)
                     |-Identifier=store
                 |-CallArguments(9632,9711)
@@ -4887,8 +4747,7 @@
                           |-NameIdentifier(9642,9645)
                             |-Identifier=i64
                       |-MemberExpression(9645,9650)
-                        |-BinMemberOperator(9645,9646)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(9646,9650)
                           |-Identifier=load
                       |-CallArguments(9650,9670)
@@ -4910,8 +4769,7 @@
                           |-NameIdentifier(9673,9676)
                             |-Identifier=i64
                       |-MemberExpression(9676,9681)
-                        |-BinMemberOperator(9676,9677)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(9677,9681)
                           |-Identifier=load
                       |-CallArguments(9681,9699)
@@ -4939,8 +4797,7 @@
                     |-NameIdentifier(9716,9719)
                       |-Identifier=i64
                 |-MemberExpression(9719,9725)
-                  |-BinMemberOperator(9719,9720)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(9720,9725)
                     |-Identifier=store
                 |-CallArguments(9725,9804)
@@ -4955,8 +4812,7 @@
                           |-NameIdentifier(9735,9738)
                             |-Identifier=i64
                       |-MemberExpression(9738,9743)
-                        |-BinMemberOperator(9738,9739)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(9739,9743)
                           |-Identifier=load
                       |-CallArguments(9743,9763)
@@ -4978,8 +4834,7 @@
                           |-NameIdentifier(9766,9769)
                             |-Identifier=i64
                       |-MemberExpression(9769,9774)
-                        |-BinMemberOperator(9769,9770)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(9770,9774)
                           |-Identifier=load
                       |-CallArguments(9774,9792)
@@ -5007,8 +4862,7 @@
                     |-NameIdentifier(9809,9812)
                       |-Identifier=i64
                 |-MemberExpression(9812,9818)
-                  |-BinMemberOperator(9812,9813)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(9813,9818)
                     |-Identifier=store
                 |-CallArguments(9818,9897)
@@ -5023,8 +4877,7 @@
                           |-NameIdentifier(9828,9831)
                             |-Identifier=i64
                       |-MemberExpression(9831,9836)
-                        |-BinMemberOperator(9831,9832)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(9832,9836)
                           |-Identifier=load
                       |-CallArguments(9836,9856)
@@ -5046,8 +4899,7 @@
                           |-NameIdentifier(9859,9862)
                             |-Identifier=i64
                       |-MemberExpression(9862,9867)
-                        |-BinMemberOperator(9862,9863)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(9863,9867)
                           |-Identifier=load
                       |-CallArguments(9867,9885)
@@ -5075,8 +4927,7 @@
                     |-NameIdentifier(9902,9905)
                       |-Identifier=i64
                 |-MemberExpression(9905,9911)
-                  |-BinMemberOperator(9905,9906)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(9906,9911)
                     |-Identifier=store
                 |-CallArguments(9911,9990)
@@ -5091,8 +4942,7 @@
                           |-NameIdentifier(9921,9924)
                             |-Identifier=i64
                       |-MemberExpression(9924,9929)
-                        |-BinMemberOperator(9924,9925)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(9925,9929)
                           |-Identifier=load
                       |-CallArguments(9929,9949)
@@ -5114,8 +4964,7 @@
                           |-NameIdentifier(9952,9955)
                             |-Identifier=i64
                       |-MemberExpression(9955,9960)
-                        |-BinMemberOperator(9955,9956)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(9956,9960)
                           |-Identifier=load
                       |-CallArguments(9960,9978)
@@ -5143,8 +4992,7 @@
                     |-NameIdentifier(9995,9998)
                       |-Identifier=i64
                 |-MemberExpression(9998,10004)
-                  |-BinMemberOperator(9998,9999)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(9999,10004)
                     |-Identifier=store
                 |-CallArguments(10004,10083)
@@ -5159,8 +5007,7 @@
                           |-NameIdentifier(10014,10017)
                             |-Identifier=i64
                       |-MemberExpression(10017,10022)
-                        |-BinMemberOperator(10017,10018)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(10018,10022)
                           |-Identifier=load
                       |-CallArguments(10022,10042)
@@ -5182,8 +5029,7 @@
                           |-NameIdentifier(10045,10048)
                             |-Identifier=i64
                       |-MemberExpression(10048,10053)
-                        |-BinMemberOperator(10048,10049)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(10049,10053)
                           |-Identifier=load
                       |-CallArguments(10053,10071)
@@ -5211,8 +5057,7 @@
                     |-NameIdentifier(10088,10091)
                       |-Identifier=i64
                 |-MemberExpression(10091,10097)
-                  |-BinMemberOperator(10091,10092)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(10092,10097)
                     |-Identifier=store
                 |-CallArguments(10097,10176)
@@ -5227,8 +5072,7 @@
                           |-NameIdentifier(10107,10110)
                             |-Identifier=i64
                       |-MemberExpression(10110,10115)
-                        |-BinMemberOperator(10110,10111)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(10111,10115)
                           |-Identifier=load
                       |-CallArguments(10115,10135)
@@ -5250,8 +5094,7 @@
                           |-NameIdentifier(10138,10141)
                             |-Identifier=i64
                       |-MemberExpression(10141,10146)
-                        |-BinMemberOperator(10141,10142)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(10142,10146)
                           |-Identifier=load
                       |-CallArguments(10146,10164)
@@ -5279,8 +5122,7 @@
                     |-NameIdentifier(10181,10184)
                       |-Identifier=i64
                 |-MemberExpression(10184,10190)
-                  |-BinMemberOperator(10184,10185)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(10185,10190)
                     |-Identifier=store
                 |-CallArguments(10190,10269)
@@ -5295,8 +5137,7 @@
                           |-NameIdentifier(10200,10203)
                             |-Identifier=i64
                       |-MemberExpression(10203,10208)
-                        |-BinMemberOperator(10203,10204)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(10204,10208)
                           |-Identifier=load
                       |-CallArguments(10208,10228)
@@ -5318,8 +5159,7 @@
                           |-NameIdentifier(10231,10234)
                             |-Identifier=i64
                       |-MemberExpression(10234,10239)
-                        |-BinMemberOperator(10234,10235)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(10235,10239)
                           |-Identifier=load
                       |-CallArguments(10239,10257)
@@ -5347,8 +5187,7 @@
                     |-NameIdentifier(10274,10277)
                       |-Identifier=i64
                 |-MemberExpression(10277,10283)
-                  |-BinMemberOperator(10277,10278)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(10278,10283)
                     |-Identifier=store
                 |-CallArguments(10283,10362)
@@ -5363,8 +5202,7 @@
                           |-NameIdentifier(10293,10296)
                             |-Identifier=i64
                       |-MemberExpression(10296,10301)
-                        |-BinMemberOperator(10296,10297)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(10297,10301)
                           |-Identifier=load
                       |-CallArguments(10301,10321)
@@ -5386,8 +5224,7 @@
                           |-NameIdentifier(10324,10327)
                             |-Identifier=i64
                       |-MemberExpression(10327,10332)
-                        |-BinMemberOperator(10327,10328)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(10328,10332)
                           |-Identifier=load
                       |-CallArguments(10332,10350)
@@ -5415,8 +5252,7 @@
                     |-NameIdentifier(10367,10370)
                       |-Identifier=i64
                 |-MemberExpression(10370,10376)
-                  |-BinMemberOperator(10370,10371)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(10371,10376)
                     |-Identifier=store
                 |-CallArguments(10376,10455)
@@ -5431,8 +5267,7 @@
                           |-NameIdentifier(10386,10389)
                             |-Identifier=i64
                       |-MemberExpression(10389,10394)
-                        |-BinMemberOperator(10389,10390)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(10390,10394)
                           |-Identifier=load
                       |-CallArguments(10394,10414)
@@ -5454,8 +5289,7 @@
                           |-NameIdentifier(10417,10420)
                             |-Identifier=i64
                       |-MemberExpression(10420,10425)
-                        |-BinMemberOperator(10420,10421)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(10421,10425)
                           |-Identifier=load
                       |-CallArguments(10425,10443)
@@ -5483,8 +5317,7 @@
                     |-NameIdentifier(10460,10463)
                       |-Identifier=i64
                 |-MemberExpression(10463,10469)
-                  |-BinMemberOperator(10463,10464)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(10464,10469)
                     |-Identifier=store
                 |-CallArguments(10469,10551)
@@ -5499,8 +5332,7 @@
                           |-NameIdentifier(10479,10482)
                             |-Identifier=i64
                       |-MemberExpression(10482,10487)
-                        |-BinMemberOperator(10482,10483)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(10483,10487)
                           |-Identifier=load
                       |-CallArguments(10487,10508)
@@ -5522,8 +5354,7 @@
                           |-NameIdentifier(10511,10514)
                             |-Identifier=i64
                       |-MemberExpression(10514,10519)
-                        |-BinMemberOperator(10514,10515)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(10515,10519)
                           |-Identifier=load
                       |-CallArguments(10519,10538)
@@ -5551,8 +5382,7 @@
                     |-NameIdentifier(10556,10559)
                       |-Identifier=i64
                 |-MemberExpression(10559,10565)
-                  |-BinMemberOperator(10559,10560)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(10560,10565)
                     |-Identifier=store
                 |-CallArguments(10565,10647)
@@ -5567,8 +5397,7 @@
                           |-NameIdentifier(10575,10578)
                             |-Identifier=i64
                       |-MemberExpression(10578,10583)
-                        |-BinMemberOperator(10578,10579)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(10579,10583)
                           |-Identifier=load
                       |-CallArguments(10583,10604)
@@ -5590,8 +5419,7 @@
                           |-NameIdentifier(10607,10610)
                             |-Identifier=i64
                       |-MemberExpression(10610,10615)
-                        |-BinMemberOperator(10610,10611)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(10611,10615)
                           |-Identifier=load
                       |-CallArguments(10615,10634)
@@ -5619,8 +5447,7 @@
                     |-NameIdentifier(10652,10655)
                       |-Identifier=i64
                 |-MemberExpression(10655,10661)
-                  |-BinMemberOperator(10655,10656)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(10656,10661)
                     |-Identifier=store
                 |-CallArguments(10661,10743)
@@ -5635,8 +5462,7 @@
                           |-NameIdentifier(10671,10674)
                             |-Identifier=i64
                       |-MemberExpression(10674,10679)
-                        |-BinMemberOperator(10674,10675)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(10675,10679)
                           |-Identifier=load
                       |-CallArguments(10679,10700)
@@ -5658,8 +5484,7 @@
                           |-NameIdentifier(10703,10706)
                             |-Identifier=i64
                       |-MemberExpression(10706,10711)
-                        |-BinMemberOperator(10706,10707)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(10707,10711)
                           |-Identifier=load
                       |-CallArguments(10711,10730)
@@ -5687,8 +5512,7 @@
                     |-NameIdentifier(10748,10751)
                       |-Identifier=i64
                 |-MemberExpression(10751,10757)
-                  |-BinMemberOperator(10751,10752)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(10752,10757)
                     |-Identifier=store
                 |-CallArguments(10757,10839)
@@ -5703,8 +5527,7 @@
                           |-NameIdentifier(10767,10770)
                             |-Identifier=i64
                       |-MemberExpression(10770,10775)
-                        |-BinMemberOperator(10770,10771)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(10771,10775)
                           |-Identifier=load
                       |-CallArguments(10775,10796)
@@ -5726,8 +5549,7 @@
                           |-NameIdentifier(10799,10802)
                             |-Identifier=i64
                       |-MemberExpression(10802,10807)
-                        |-BinMemberOperator(10802,10803)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(10803,10807)
                           |-Identifier=load
                       |-CallArguments(10807,10826)
@@ -5768,6 +5590,8 @@
           |-FunctionName(10931,10941)
             |-NameIdentifier(10931,10941)
               |-Identifier=keccakInit
+          |-TypeParameters(10941,10941)
+            <Rule0>
           |-FunctionParamsList(10941,10961)
             |-(List)(10942,10960)
               |-Parameter(10942,10960)
@@ -5778,12 +5602,13 @@
                     |-QName(10957,10960)
                       |-NameIdentifier(10957,10960)
                         |-Identifier=u32
-          |-Type(10963,10967)
-            |-Reference(10963,10967)
-              |-QName(10963,10967)
-                |-NameIdentifier(10963,10967)
-                  |-Identifier=void
-          |-FunAssignExpression(10968,13828)
+          |-ReturnType(10961,10968)
+            |-Type(10963,10967)
+              |-Reference(10963,10967)
+                |-QName(10963,10967)
+                  |-NameIdentifier(10963,10967)
+                    |-Identifier=void
+          |-FunctionBody(10968,13828)
             |-CodeBlock(10970,13828)
               |-AtomicExpression(10976,11002)
                 |-Reference(10976,10987)
@@ -5824,8 +5649,7 @@
                     |-NameIdentifier(11123,11126)
                       |-Identifier=u64
                 |-MemberExpression(11126,11132)
-                  |-BinMemberOperator(11126,11127)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(11127,11132)
                     |-Identifier=store
                 |-CallArguments(11132,11175)
@@ -5847,8 +5671,7 @@
                     |-NameIdentifier(11180,11183)
                       |-Identifier=u64
                 |-MemberExpression(11183,11189)
-                  |-BinMemberOperator(11183,11184)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(11184,11189)
                     |-Identifier=store
                 |-CallArguments(11189,11232)
@@ -5870,8 +5693,7 @@
                     |-NameIdentifier(11237,11240)
                       |-Identifier=u64
                 |-MemberExpression(11240,11246)
-                  |-BinMemberOperator(11240,11241)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(11241,11246)
                     |-Identifier=store
                 |-CallArguments(11246,11290)
@@ -5893,8 +5715,7 @@
                     |-NameIdentifier(11295,11298)
                       |-Identifier=u64
                 |-MemberExpression(11298,11304)
-                  |-BinMemberOperator(11298,11299)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(11299,11304)
                     |-Identifier=store
                 |-CallArguments(11304,11348)
@@ -5916,8 +5737,7 @@
                     |-NameIdentifier(11353,11356)
                       |-Identifier=u64
                 |-MemberExpression(11356,11362)
-                  |-BinMemberOperator(11356,11357)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(11357,11362)
                     |-Identifier=store
                 |-CallArguments(11362,11406)
@@ -5939,8 +5759,7 @@
                     |-NameIdentifier(11411,11414)
                       |-Identifier=u64
                 |-MemberExpression(11414,11420)
-                  |-BinMemberOperator(11414,11415)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(11415,11420)
                     |-Identifier=store
                 |-CallArguments(11420,11464)
@@ -5962,8 +5781,7 @@
                     |-NameIdentifier(11469,11472)
                       |-Identifier=u64
                 |-MemberExpression(11472,11478)
-                  |-BinMemberOperator(11472,11473)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(11473,11478)
                     |-Identifier=store
                 |-CallArguments(11478,11522)
@@ -5985,8 +5803,7 @@
                     |-NameIdentifier(11527,11530)
                       |-Identifier=u64
                 |-MemberExpression(11530,11536)
-                  |-BinMemberOperator(11530,11531)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(11531,11536)
                     |-Identifier=store
                 |-CallArguments(11536,11580)
@@ -6008,8 +5825,7 @@
                     |-NameIdentifier(11585,11588)
                       |-Identifier=u64
                 |-MemberExpression(11588,11594)
-                  |-BinMemberOperator(11588,11589)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(11589,11594)
                     |-Identifier=store
                 |-CallArguments(11594,11638)
@@ -6031,8 +5847,7 @@
                     |-NameIdentifier(11643,11646)
                       |-Identifier=u64
                 |-MemberExpression(11646,11652)
-                  |-BinMemberOperator(11646,11647)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(11647,11652)
                     |-Identifier=store
                 |-CallArguments(11652,11696)
@@ -6054,8 +5869,7 @@
                     |-NameIdentifier(11701,11704)
                       |-Identifier=u64
                 |-MemberExpression(11704,11710)
-                  |-BinMemberOperator(11704,11705)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(11705,11710)
                     |-Identifier=store
                 |-CallArguments(11710,11754)
@@ -6077,8 +5891,7 @@
                     |-NameIdentifier(11759,11762)
                       |-Identifier=u64
                 |-MemberExpression(11762,11768)
-                  |-BinMemberOperator(11762,11763)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(11763,11768)
                     |-Identifier=store
                 |-CallArguments(11768,11812)
@@ -6100,8 +5913,7 @@
                     |-NameIdentifier(11817,11820)
                       |-Identifier=u64
                 |-MemberExpression(11820,11826)
-                  |-BinMemberOperator(11820,11821)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(11821,11826)
                     |-Identifier=store
                 |-CallArguments(11826,11870)
@@ -6123,8 +5935,7 @@
                     |-NameIdentifier(11875,11878)
                       |-Identifier=u64
                 |-MemberExpression(11878,11884)
-                  |-BinMemberOperator(11878,11879)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(11879,11884)
                     |-Identifier=store
                 |-CallArguments(11884,11929)
@@ -6146,8 +5957,7 @@
                     |-NameIdentifier(11934,11937)
                       |-Identifier=u64
                 |-MemberExpression(11937,11943)
-                  |-BinMemberOperator(11937,11938)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(11938,11943)
                     |-Identifier=store
                 |-CallArguments(11943,11988)
@@ -6169,8 +5979,7 @@
                     |-NameIdentifier(11993,11996)
                       |-Identifier=u64
                 |-MemberExpression(11996,12002)
-                  |-BinMemberOperator(11996,11997)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(11997,12002)
                     |-Identifier=store
                 |-CallArguments(12002,12047)
@@ -6192,8 +6001,7 @@
                     |-NameIdentifier(12052,12055)
                       |-Identifier=u64
                 |-MemberExpression(12055,12061)
-                  |-BinMemberOperator(12055,12056)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(12056,12061)
                     |-Identifier=store
                 |-CallArguments(12061,12106)
@@ -6215,8 +6023,7 @@
                     |-NameIdentifier(12111,12114)
                       |-Identifier=u64
                 |-MemberExpression(12114,12120)
-                  |-BinMemberOperator(12114,12115)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(12115,12120)
                     |-Identifier=store
                 |-CallArguments(12120,12165)
@@ -6238,8 +6045,7 @@
                     |-NameIdentifier(12170,12173)
                       |-Identifier=u64
                 |-MemberExpression(12173,12179)
-                  |-BinMemberOperator(12173,12174)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(12174,12179)
                     |-Identifier=store
                 |-CallArguments(12179,12224)
@@ -6261,8 +6067,7 @@
                     |-NameIdentifier(12229,12232)
                       |-Identifier=u64
                 |-MemberExpression(12232,12238)
-                  |-BinMemberOperator(12232,12233)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(12233,12238)
                     |-Identifier=store
                 |-CallArguments(12238,12283)
@@ -6284,8 +6089,7 @@
                     |-NameIdentifier(12288,12291)
                       |-Identifier=u64
                 |-MemberExpression(12291,12297)
-                  |-BinMemberOperator(12291,12292)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(12292,12297)
                     |-Identifier=store
                 |-CallArguments(12297,12342)
@@ -6307,8 +6111,7 @@
                     |-NameIdentifier(12347,12350)
                       |-Identifier=u64
                 |-MemberExpression(12350,12356)
-                  |-BinMemberOperator(12350,12351)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(12351,12356)
                     |-Identifier=store
                 |-CallArguments(12356,12401)
@@ -6330,8 +6133,7 @@
                     |-NameIdentifier(12406,12409)
                       |-Identifier=u64
                 |-MemberExpression(12409,12415)
-                  |-BinMemberOperator(12409,12410)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(12410,12415)
                     |-Identifier=store
                 |-CallArguments(12415,12460)
@@ -6353,8 +6155,7 @@
                     |-NameIdentifier(12465,12468)
                       |-Identifier=u64
                 |-MemberExpression(12468,12474)
-                  |-BinMemberOperator(12468,12469)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(12469,12474)
                     |-Identifier=store
                 |-CallArguments(12474,12519)
@@ -6399,8 +6200,7 @@
                     |-NameIdentifier(12644,12646)
                       |-Identifier=u8
                 |-MemberExpression(12646,12652)
-                  |-BinMemberOperator(12646,12647)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(12647,12652)
                     |-Identifier=store
                 |-CallArguments(12652,12687)
@@ -6428,8 +6228,7 @@
                     |-NameIdentifier(12692,12694)
                       |-Identifier=u8
                 |-MemberExpression(12694,12700)
-                  |-BinMemberOperator(12694,12695)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(12695,12700)
                     |-Identifier=store
                 |-CallArguments(12700,12736)
@@ -6457,8 +6256,7 @@
                     |-NameIdentifier(12741,12743)
                       |-Identifier=u8
                 |-MemberExpression(12743,12749)
-                  |-BinMemberOperator(12743,12744)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(12744,12749)
                     |-Identifier=store
                 |-CallArguments(12749,12785)
@@ -6486,8 +6284,7 @@
                     |-NameIdentifier(12790,12792)
                       |-Identifier=u8
                 |-MemberExpression(12792,12798)
-                  |-BinMemberOperator(12792,12793)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(12793,12798)
                     |-Identifier=store
                 |-CallArguments(12798,12834)
@@ -6515,8 +6312,7 @@
                     |-NameIdentifier(12839,12841)
                       |-Identifier=u8
                 |-MemberExpression(12841,12847)
-                  |-BinMemberOperator(12841,12842)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(12842,12847)
                     |-Identifier=store
                 |-CallArguments(12847,12883)
@@ -6544,8 +6340,7 @@
                     |-NameIdentifier(12888,12890)
                       |-Identifier=u8
                 |-MemberExpression(12890,12896)
-                  |-BinMemberOperator(12890,12891)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(12891,12896)
                     |-Identifier=store
                 |-CallArguments(12896,12932)
@@ -6573,8 +6368,7 @@
                     |-NameIdentifier(12937,12939)
                       |-Identifier=u8
                 |-MemberExpression(12939,12945)
-                  |-BinMemberOperator(12939,12940)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(12940,12945)
                     |-Identifier=store
                 |-CallArguments(12945,12980)
@@ -6602,8 +6396,7 @@
                     |-NameIdentifier(12985,12987)
                       |-Identifier=u8
                 |-MemberExpression(12987,12993)
-                  |-BinMemberOperator(12987,12988)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(12988,12993)
                     |-Identifier=store
                 |-CallArguments(12993,13029)
@@ -6631,8 +6424,7 @@
                     |-NameIdentifier(13034,13036)
                       |-Identifier=u8
                 |-MemberExpression(13036,13042)
-                  |-BinMemberOperator(13036,13037)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(13037,13042)
                     |-Identifier=store
                 |-CallArguments(13042,13078)
@@ -6660,8 +6452,7 @@
                     |-NameIdentifier(13083,13085)
                       |-Identifier=u8
                 |-MemberExpression(13085,13091)
-                  |-BinMemberOperator(13085,13086)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(13086,13091)
                     |-Identifier=store
                 |-CallArguments(13091,13126)
@@ -6689,8 +6480,7 @@
                     |-NameIdentifier(13131,13133)
                       |-Identifier=u8
                 |-MemberExpression(13133,13139)
-                  |-BinMemberOperator(13133,13134)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(13134,13139)
                     |-Identifier=store
                 |-CallArguments(13139,13176)
@@ -6718,8 +6508,7 @@
                     |-NameIdentifier(13181,13183)
                       |-Identifier=u8
                 |-MemberExpression(13183,13189)
-                  |-BinMemberOperator(13183,13184)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(13184,13189)
                     |-Identifier=store
                 |-CallArguments(13189,13226)
@@ -6747,8 +6536,7 @@
                     |-NameIdentifier(13231,13233)
                       |-Identifier=u8
                 |-MemberExpression(13233,13239)
-                  |-BinMemberOperator(13233,13234)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(13234,13239)
                     |-Identifier=store
                 |-CallArguments(13239,13276)
@@ -6776,8 +6564,7 @@
                     |-NameIdentifier(13281,13283)
                       |-Identifier=u8
                 |-MemberExpression(13283,13289)
-                  |-BinMemberOperator(13283,13284)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(13284,13289)
                     |-Identifier=store
                 |-CallArguments(13289,13326)
@@ -6805,8 +6592,7 @@
                     |-NameIdentifier(13331,13333)
                       |-Identifier=u8
                 |-MemberExpression(13333,13339)
-                  |-BinMemberOperator(13333,13334)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(13334,13339)
                     |-Identifier=store
                 |-CallArguments(13339,13376)
@@ -6834,8 +6620,7 @@
                     |-NameIdentifier(13381,13383)
                       |-Identifier=u8
                 |-MemberExpression(13383,13389)
-                  |-BinMemberOperator(13383,13384)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(13384,13389)
                     |-Identifier=store
                 |-CallArguments(13389,13426)
@@ -6863,8 +6648,7 @@
                     |-NameIdentifier(13431,13433)
                       |-Identifier=u8
                 |-MemberExpression(13433,13439)
-                  |-BinMemberOperator(13433,13434)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(13434,13439)
                     |-Identifier=store
                 |-CallArguments(13439,13476)
@@ -6892,8 +6676,7 @@
                     |-NameIdentifier(13481,13483)
                       |-Identifier=u8
                 |-MemberExpression(13483,13489)
-                  |-BinMemberOperator(13483,13484)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(13484,13489)
                     |-Identifier=store
                 |-CallArguments(13489,13526)
@@ -6921,8 +6704,7 @@
                     |-NameIdentifier(13531,13533)
                       |-Identifier=u8
                 |-MemberExpression(13533,13539)
-                  |-BinMemberOperator(13533,13534)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(13534,13539)
                     |-Identifier=store
                 |-CallArguments(13539,13575)
@@ -6950,8 +6732,7 @@
                     |-NameIdentifier(13580,13582)
                       |-Identifier=u8
                 |-MemberExpression(13582,13588)
-                  |-BinMemberOperator(13582,13583)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(13583,13588)
                     |-Identifier=store
                 |-CallArguments(13588,13625)
@@ -6979,8 +6760,7 @@
                     |-NameIdentifier(13630,13632)
                       |-Identifier=u8
                 |-MemberExpression(13632,13638)
-                  |-BinMemberOperator(13632,13633)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(13633,13638)
                     |-Identifier=store
                 |-CallArguments(13638,13674)
@@ -7008,8 +6788,7 @@
                     |-NameIdentifier(13679,13681)
                       |-Identifier=u8
                 |-MemberExpression(13681,13687)
-                  |-BinMemberOperator(13681,13682)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(13682,13687)
                     |-Identifier=store
                 |-CallArguments(13687,13724)
@@ -7037,8 +6816,7 @@
                     |-NameIdentifier(13729,13731)
                       |-Identifier=u8
                 |-MemberExpression(13731,13737)
-                  |-BinMemberOperator(13731,13732)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(13732,13737)
                     |-Identifier=store
                 |-CallArguments(13737,13774)
@@ -7066,8 +6844,7 @@
                     |-NameIdentifier(13779,13781)
                       |-Identifier=u8
                 |-MemberExpression(13781,13787)
-                  |-BinMemberOperator(13781,13782)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(13782,13787)
                     |-Identifier=store
                 |-CallArguments(13787,13824)
@@ -7098,6 +6875,8 @@
           |-FunctionName(13872,13883)
             |-NameIdentifier(13872,13883)
               |-Identifier=keccakReset
+          |-TypeParameters(13883,13883)
+            <Rule0>
           |-FunctionParamsList(13883,13903)
             |-(List)(13884,13902)
               |-Parameter(13884,13902)
@@ -7108,12 +6887,13 @@
                     |-QName(13899,13902)
                       |-NameIdentifier(13899,13902)
                         |-Identifier=u32
-          |-Type(13905,13909)
-            |-Reference(13905,13909)
-              |-QName(13905,13909)
-                |-NameIdentifier(13905,13909)
-                  |-Identifier=void
-          |-FunAssignExpression(13910,14022)
+          |-ReturnType(13903,13910)
+            |-Type(13905,13909)
+              |-Reference(13905,13909)
+                |-QName(13905,13909)
+                  |-NameIdentifier(13905,13909)
+                    |-Identifier=void
+          |-FunctionBody(13910,14022)
             |-CodeBlock(13912,14022)
               |-AtomicExpression(13954,14018)
                 |-Reference(13954,13982)
@@ -7154,6 +6934,8 @@
           |-FunctionName(14079,14091)
             |-NameIdentifier(14079,14091)
               |-Identifier=keccakUpdate
+          |-TypeParameters(14091,14091)
+            <Rule0>
           |-FunctionParamsList(14091,14147)
             |-(List)(14092,14146)
               |-Parameter(14092,14110)
@@ -7180,12 +6962,13 @@
                     |-QName(14143,14146)
                       |-NameIdentifier(14143,14146)
                         |-Identifier=u32
-          |-Type(14149,14153)
-            |-Reference(14149,14153)
-              |-QName(14149,14153)
-                |-NameIdentifier(14149,14153)
-                  |-Identifier=void
-          |-FunAssignExpression(14154,15710)
+          |-ReturnType(14147,14154)
+            |-Type(14149,14153)
+              |-Reference(14149,14153)
+                |-QName(14149,14153)
+                  |-NameIdentifier(14149,14153)
+                    |-Identifier=void
+          |-FunctionBody(14154,15710)
             |-CodeBlock(14156,15710)
               |-ValDeclaration(14204,14262)
                 |-NameIdentifier(14208,14224)
@@ -7235,8 +7018,7 @@
                       |-NameIdentifier(14373,14376)
                         |-Identifier=u32
                   |-MemberExpression(14376,14381)
-                    |-BinMemberOperator(14376,14377)
-                      <Rule0>
+                    |-Operator=.
                     |-NameIdentifier(14377,14381)
                       |-Identifier=load
                   |-CallArguments(14381,14399)
@@ -7408,8 +7190,7 @@
                         |-NameIdentifier(15081,15084)
                           |-Identifier=u32
                     |-MemberExpression(15084,15090)
-                      |-BinMemberOperator(15084,15085)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(15085,15090)
                         |-Identifier=store
                     |-CallArguments(15090,15122)
@@ -7563,8 +7344,7 @@
                         |-NameIdentifier(15642,15645)
                           |-Identifier=u32
                     |-MemberExpression(15645,15651)
-                      |-BinMemberOperator(15645,15646)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(15646,15651)
                         |-Identifier=store
                     |-CallArguments(15651,15700)
@@ -7591,6 +7371,8 @@
           |-FunctionName(15831,15843)
             |-NameIdentifier(15831,15843)
               |-Identifier=keccakFinish
+          |-TypeParameters(15843,15843)
+            <Rule0>
           |-FunctionParamsList(15843,15882)
             |-(List)(15844,15881)
               |-Parameter(15844,15862)
@@ -7609,12 +7391,13 @@
                     |-QName(15878,15881)
                       |-NameIdentifier(15878,15881)
                         |-Identifier=u32
-          |-Type(15884,15888)
-            |-Reference(15884,15888)
-              |-QName(15884,15888)
-                |-NameIdentifier(15884,15888)
-                  |-Identifier=void
-          |-FunAssignExpression(15889,17058)
+          |-ReturnType(15882,15889)
+            |-Type(15884,15888)
+              |-Reference(15884,15888)
+                |-QName(15884,15888)
+                  |-NameIdentifier(15884,15888)
+                    |-Identifier=void
+          |-FunctionBody(15889,17058)
             |-CodeBlock(15892,17058)
               |-VarDeclaration(15933,15979)
                 |-NameIdentifier(15937,15950)
@@ -7654,8 +7437,7 @@
                       |-NameIdentifier(16046,16049)
                         |-Identifier=u32
                   |-MemberExpression(16049,16054)
-                    |-BinMemberOperator(16049,16050)
-                      <Rule0>
+                    |-Operator=.
                     |-NameIdentifier(16050,16054)
                       |-Identifier=load
                   |-CallArguments(16054,16147)
@@ -7727,8 +7509,7 @@
                     |-NameIdentifier(16346,16348)
                       |-Identifier=u8
                 |-MemberExpression(16348,16354)
-                  |-BinMemberOperator(16348,16349)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(16349,16354)
                     |-Identifier=store
                 |-CallArguments(16354,16428)
@@ -7743,8 +7524,7 @@
                           |-NameIdentifier(16367,16369)
                             |-Identifier=u8
                       |-MemberExpression(16369,16374)
-                        |-BinMemberOperator(16369,16370)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(16370,16374)
                           |-Identifier=load
                       |-CallArguments(16374,16400)
@@ -7787,8 +7567,7 @@
                     |-NameIdentifier(16518,16520)
                       |-Identifier=u8
                 |-MemberExpression(16520,16526)
-                  |-BinMemberOperator(16520,16521)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(16521,16526)
                     |-Identifier=store
                 |-CallArguments(16526,16600)
@@ -7803,8 +7582,7 @@
                           |-NameIdentifier(16539,16541)
                             |-Identifier=u8
                       |-MemberExpression(16541,16546)
-                        |-BinMemberOperator(16541,16542)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(16542,16546)
                           |-Identifier=load
                       |-CallArguments(16546,16572)
@@ -7874,8 +7652,7 @@
                     |-NameIdentifier(16807,16810)
                       |-Identifier=i64
                 |-MemberExpression(16810,16816)
-                  |-BinMemberOperator(16810,16811)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(16811,16816)
                     |-Identifier=store
                 |-CallArguments(16816,16849)
@@ -7889,8 +7666,7 @@
                         |-NameIdentifier(16828,16831)
                           |-Identifier=i64
                     |-MemberExpression(16831,16836)
-                      |-BinMemberOperator(16831,16832)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(16832,16836)
                         |-Identifier=load
                     |-CallArguments(16836,16848)
@@ -7904,8 +7680,7 @@
                     |-NameIdentifier(16854,16857)
                       |-Identifier=i64
                 |-MemberExpression(16857,16863)
-                  |-BinMemberOperator(16857,16858)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(16858,16863)
                     |-Identifier=store
                 |-CallArguments(16863,16916)
@@ -7919,8 +7694,7 @@
                         |-NameIdentifier(16875,16878)
                           |-Identifier=i64
                     |-MemberExpression(16878,16883)
-                      |-BinMemberOperator(16878,16879)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(16879,16883)
                         |-Identifier=load
                     |-CallArguments(16883,16905)
@@ -7948,8 +7722,7 @@
                     |-NameIdentifier(16921,16924)
                       |-Identifier=i64
                 |-MemberExpression(16924,16930)
-                  |-BinMemberOperator(16924,16925)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(16925,16930)
                     |-Identifier=store
                 |-CallArguments(16930,16985)
@@ -7963,8 +7736,7 @@
                         |-NameIdentifier(16942,16945)
                           |-Identifier=i64
                     |-MemberExpression(16945,16950)
-                      |-BinMemberOperator(16945,16946)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(16946,16950)
                         |-Identifier=load
                     |-CallArguments(16950,16973)
@@ -7992,8 +7764,7 @@
                     |-NameIdentifier(16990,16993)
                       |-Identifier=i64
                 |-MemberExpression(16993,16999)
-                  |-BinMemberOperator(16993,16994)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(16994,16999)
                     |-Identifier=store
                 |-CallArguments(16999,17054)
@@ -8007,8 +7778,7 @@
                         |-NameIdentifier(17011,17014)
                           |-Identifier=i64
                     |-MemberExpression(17014,17019)
-                      |-BinMemberOperator(17014,17015)
-                        <Rule0>
+                      |-Operator=.
                       |-NameIdentifier(17015,17019)
                         |-Identifier=load
                     |-CallArguments(17019,17042)

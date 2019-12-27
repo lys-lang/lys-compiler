@@ -14,6 +14,8 @@
       |-FunctionName(33,39)
         |-NameIdentifier(33,39)
           |-Identifier=retain
+      |-TypeParameters(39,39)
+        <Rule0>
       |-FunctionParamsList(39,55)
         |-(List)(40,54)
           |-Parameter(40,54)
@@ -24,12 +26,13 @@
                 |-QName(51,54)
                   |-NameIdentifier(51,54)
                     |-Identifier=ref
-      |-Type(57,61)
-        |-Reference(57,61)
-          |-QName(57,61)
-            |-NameIdentifier(57,61)
-              |-Identifier=void
-      |-FunAssignExpression(62,68)
+      |-ReturnType(55,62)
+        |-Type(57,61)
+          |-Reference(57,61)
+            |-QName(57,61)
+              |-NameIdentifier(57,61)
+                |-Identifier=void
+      |-FunctionBody(62,68)
         |-CodeBlock(64,68)
           <Rule0>
   |-FunctionDirective(70,110)
@@ -39,6 +42,8 @@
       |-FunctionName(74,81)
         |-NameIdentifier(74,81)
           |-Identifier=release
+      |-TypeParameters(81,81)
+        <Rule0>
       |-FunctionParamsList(81,97)
         |-(List)(82,96)
           |-Parameter(82,96)
@@ -49,12 +54,13 @@
                 |-QName(93,96)
                   |-NameIdentifier(93,96)
                     |-Identifier=ref
-      |-Type(99,103)
-        |-Reference(99,103)
-          |-QName(99,103)
-            |-NameIdentifier(99,103)
-              |-Identifier=void
-      |-FunAssignExpression(104,110)
+      |-ReturnType(97,104)
+        |-Type(99,103)
+          |-Reference(99,103)
+            |-QName(99,103)
+              |-NameIdentifier(99,103)
+                |-Identifier=void
+      |-FunctionBody(104,110)
         |-CodeBlock(106,110)
           <Rule0>
   |-EndOfFile=

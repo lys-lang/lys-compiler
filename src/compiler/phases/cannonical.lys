@@ -39,11 +39,25 @@ fun referenceOrError(astNode: AstNode): ReferenceNode | ErrorNode =
     else -> ErrorNode
   }
 
+fun funOrError(astNode: AstNode): FunctionNode | ErrorNode =
+  match processNode(astNode) {
+    case name is FunctionNode -> name
+    else -> ErrorNode
+  }
+
 fun fqnOrEmpty(astNode: AstNode): QNameNode | ErrorNode =
   match processNode(astNode) {
     case name is QNameNode -> name
     else -> ErrorNode
   }
+
+fun textOf(astNode: AstNode): string = match astNode {
+  case x is Rule0 -> ""
+  case x is Leaf(token, value) -> value
+  case is AstCons(head, tail) -> textOf(head) ++ textOf(tail)
+  case is Node(name, child) -> textOf(child)
+  else -> ""
+}
 
 fun processNode(astNode: AstNode): CodeNode = match astNode {
   case is Rule0 -> EmptyNode
@@ -62,6 +76,41 @@ fun processNode(astNode: AstNode): CodeNode = match astNode {
     case "Type" -> processNode(child)
     case "Reference" -> ReferenceNode(astNode, fqnOrEmpty(child))
     case "FunctionParamsList" -> processNode(child)
+    case "Decorators" -> processNode(child)
+
+    case "TypeParameters" -> processNode(child)
+    case "ReturnType" -> processNode(child)
+    case "FunctionBody" -> processNode(child)
+    case "FunctionName" -> processNode(child)
+    case "FunOperator" -> processNode(child)
+    case "Decorators" -> processNode(child)
+    case "LoopExpression" -> LoopNode(astNode, processNode(child))
+    case "Decorator" -> DecoratorNode(astNode, nameOrError(child), processNode(rest(child)))
+
+    case "WasmExpression" -> WasmExpressionNode(astNode, processNode(child))
+    case "SExpression" -> WasmAtomNode(astNode, textOf(first(child)), processNode(rest(child)))
+
+    case "FunctionDirective" -> {
+      val decorators = processNode(first(child))
+
+      FunDirectiveNode(astNode, decorators, funOrError(rest(child)))
+    }
+    case "FunDeclaration" -> {
+      var resto = child
+      val name = nameOrError(first(resto))
+      resto = rest(resto)
+      val typeParameters = processNode(first(resto))
+      resto = rest(resto)
+      val parameters = processNode(first(resto))
+      resto = rest(resto)
+      val returnType = processNode(first(resto))
+      resto = rest(resto)
+      val body = processNode(first(resto))
+
+      FunctionNode(astNode, name, parameters, returnType, body)
+    }
+    case "StructLiteral" -> StructTypeNode(astNode, processNode(child))
+    case "UnaryExpression" -> UnaryExpressionNode(astNode, nameOrError(first(child)), processNode(rest(child)))
     case "Parameter" -> ParameterNode(astNode, nameOrError(first(child)), processNode(rest(child)))
     case "EnumDirective" -> EnumDirectiveNode(astNode, nameOrError(first(child)), processNode(rest(child)))
     case "ImplDirective" -> {

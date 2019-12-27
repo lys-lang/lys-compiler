@@ -8,15 +8,18 @@
       |-FunctionName(12,30)
         |-NameIdentifier(12,30)
           |-Identifier=stringDiscriminant
+      |-TypeParameters(30,30)
+        <Rule0>
       |-FunctionParamsList(30,32)
         |-(List)(31,31)
           <Rule0>
-      |-Type(34,37)
-        |-Reference(34,37)
-          |-QName(34,37)
-            |-NameIdentifier(34,37)
-              |-Identifier=u64
-      |-FunAssignExpression(38,118)
+      |-ReturnType(32,38)
+        |-Type(34,37)
+          |-Reference(34,37)
+            |-QName(34,37)
+              |-NameIdentifier(34,37)
+                |-Identifier=u64
+      |-FunctionBody(38,118)
         |-CodeBlock(40,118)
           |-ValDeclaration(44,88)
             |-NameIdentifier(48,60)
@@ -32,8 +35,7 @@
                   |-NameIdentifier(68,74)
                     |-Identifier=string
               |-MemberExpression(74,88)
-                |-BinMemberOperator(74,76)
-                  <Rule0>
+                |-Operator=.^
                 |-NameIdentifier(76,88)
                   |-Identifier=discriminant
           |-BinaryOpExpression(91,116)
@@ -61,6 +63,8 @@
       |-FunctionName(163,177)
         |-NameIdentifier(163,177)
           |-Identifier=allocateString
+      |-TypeParameters(177,177)
+        <Rule0>
       |-FunctionParamsList(177,195)
         |-(List)(178,194)
           |-Parameter(178,194)
@@ -71,12 +75,13 @@
                 |-QName(191,194)
                   |-NameIdentifier(191,194)
                     |-Identifier=u32
-      |-Type(197,211)
-        |-Reference(197,211)
-          |-QName(197,211)
-            |-NameIdentifier(197,211)
-              |-Identifier=UnsafeCPointer
-      |-FunAssignExpression(212,279)
+      |-ReturnType(195,212)
+        |-Type(197,211)
+          |-Reference(197,211)
+            |-QName(197,211)
+              |-NameIdentifier(197,211)
+                |-Identifier=UnsafeCPointer
+      |-FunctionBody(212,279)
         |-CodeBlock(214,279)
           |-AsExpression(218,277)
             |-AtomicExpression(218,259)
@@ -85,8 +90,7 @@
                   |-NameIdentifier(218,224)
                     |-Identifier=string
               |-MemberExpression(224,234)
-                |-BinMemberOperator(224,225)
-                  <Rule0>
+                |-Operator=.
                 |-NameIdentifier(225,234)
                   |-Identifier=fromBytes
               |-CallArguments(234,259)
@@ -129,6 +133,8 @@
           |-FunctionName(380,387)
             |-NameIdentifier(380,387)
               |-Identifier=fromPtr
+          |-TypeParameters(387,387)
+            <Rule0>
           |-FunctionParamsList(387,417)
             |-(List)(388,416)
               |-Parameter(388,416)
@@ -139,16 +145,18 @@
                     |-QName(402,416)
                       |-NameIdentifier(402,416)
                         |-Identifier=UnsafeCPointer
-          |-Type(419,425)
-            |-Reference(419,425)
-              |-QName(419,425)
-                |-NameIdentifier(419,425)
-                  |-Identifier=string
-          |-FunAssignExpression(426,647)
+          |-ReturnType(417,426)
+            |-Type(419,425)
+              |-Reference(419,425)
+                |-QName(419,425)
+                  |-NameIdentifier(419,425)
+                    |-Identifier=string
+          |-FunctionBody(426,647)
             |-WasmExpression(428,647)
               |-SExpression(440,642)
                 |-SSymbol(441,447)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=or
                 |-SExpression(454,487)
                   |-SSymbol(455,459)
@@ -159,21 +167,26 @@
                 |-SExpression(487,638)
                   |-SSymbol(488,495)
                     |-Identifier=i64
+                    |-Operator=.
                     |-Identifier=and
                   |-SExpression(504,535)
                     |-SSymbol(505,514)
                       |-Identifier=i64
+                      |-Operator=.
                       |-Keyword=const
                     |-NegNumberLiteral(515,525)
                       |-NumberLiteral=0xFFFFFFFF
                   |-SExpression(535,637)
                     |-SSymbol(536,552)
                       |-Identifier=i64
+                      |-Operator=.
                       |-Identifier=extend_u
+                      |-Operator=/
                       |-Identifier=i32
                     |-SExpression(563,636)
                       |-SSymbol(564,571)
                         |-Identifier=i32
+                        |-Operator=.
                         |-Identifier=sub
                       |-SExpression(584,622)
                         |-SSymbol(585,594)
@@ -184,6 +197,7 @@
                       |-SExpression(622,635)
                         |-SSymbol(623,632)
                           |-Identifier=i32
+                          |-Operator=.
                           |-Keyword=const
                         |-NegNumberLiteral(633,634)
                           |-NumberLiteral=4
@@ -194,6 +208,8 @@
           |-FunctionName(651,656)
             |-NameIdentifier(651,656)
               |-Identifier=toPtr
+          |-TypeParameters(656,656)
+            <Rule0>
           |-FunctionParamsList(656,669)
             |-(List)(657,668)
               |-Parameter(657,668)
@@ -204,12 +220,13 @@
                     |-QName(662,668)
                       |-NameIdentifier(662,668)
                         |-Identifier=string
-          |-Type(671,685)
-            |-Reference(671,685)
-              |-QName(671,685)
-                |-NameIdentifier(671,685)
-                  |-Identifier=UnsafeCPointer
-          |-FunAssignExpression(686,709)
+          |-ReturnType(669,686)
+            |-Type(671,685)
+              |-Reference(671,685)
+                |-QName(671,685)
+                  |-NameIdentifier(671,685)
+                    |-Identifier=UnsafeCPointer
+          |-FunctionBody(686,709)
             |-AsExpression(688,709)
               |-Reference(688,691)
                 |-QName(688,691)

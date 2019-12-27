@@ -120,7 +120,9 @@
         |-FunDeclaration(378,451)
           |-FunctionName(382,384)
             |-FunOperator(382,384)
-              <Rule0>
+              |-Keyword=as
+          |-TypeParameters(384,384)
+            <Rule0>
           |-FunctionParamsList(384,394)
             |-(List)(385,393)
               |-Parameter(385,393)
@@ -131,16 +133,18 @@
                     |-QName(390,393)
                       |-NameIdentifier(390,393)
                         |-Identifier=u64
-          |-Type(396,399)
-            |-Reference(396,399)
-              |-QName(396,399)
-                |-NameIdentifier(396,399)
-                  |-Identifier=f32
-          |-FunAssignExpression(400,451)
+          |-ReturnType(394,400)
+            |-Type(396,399)
+              |-Reference(396,399)
+                |-QName(396,399)
+                  |-NameIdentifier(396,399)
+                    |-Identifier=f32
+          |-FunctionBody(400,451)
             |-WasmExpression(402,451)
               |-SExpression(410,447)
                 |-SSymbol(411,428)
                   |-Identifier=f32
+                  |-Operator=.
                   |-Identifier=convert_i64_u
                 |-SExpression(429,445)
                   |-SSymbol(430,439)
@@ -154,7 +158,9 @@
         |-FunDeclaration(451,525)
           |-FunctionName(455,457)
             |-FunOperator(455,457)
-              <Rule0>
+              |-Keyword=as
+          |-TypeParameters(457,457)
+            <Rule0>
           |-FunctionParamsList(457,467)
             |-(List)(458,466)
               |-Parameter(458,466)
@@ -165,16 +171,18 @@
                     |-QName(463,466)
                       |-NameIdentifier(463,466)
                         |-Identifier=u64
-          |-Type(469,472)
-            |-Reference(469,472)
-              |-QName(469,472)
-                |-NameIdentifier(469,472)
-                  |-Identifier=f64
-          |-FunAssignExpression(473,525)
+          |-ReturnType(467,473)
+            |-Type(469,472)
+              |-Reference(469,472)
+                |-QName(469,472)
+                  |-NameIdentifier(469,472)
+                    |-Identifier=f64
+          |-FunctionBody(473,525)
             |-WasmExpression(475,525)
               |-SExpression(483,520)
                 |-SSymbol(484,501)
                   |-Identifier=f64
+                  |-Operator=.
                   |-Identifier=convert_i64_u
                 |-SExpression(502,518)
                   |-SSymbol(503,512)
@@ -190,7 +198,9 @@
         |-FunDeclaration(539,634)
           |-FunctionName(543,545)
             |-FunOperator(543,545)
-              <Rule0>
+              |-Keyword=as
+          |-TypeParameters(545,545)
+            <Rule0>
           |-FunctionParamsList(545,555)
             |-(List)(546,554)
               |-Parameter(546,554)
@@ -201,26 +211,30 @@
                     |-QName(551,554)
                       |-NameIdentifier(551,554)
                         |-Identifier=u64
-          |-Type(557,559)
-            |-Reference(557,559)
-              |-QName(557,559)
-                |-NameIdentifier(557,559)
-                  |-Identifier=u8
-          |-FunAssignExpression(560,634)
+          |-ReturnType(555,560)
+            |-Type(557,559)
+              |-Reference(557,559)
+                |-QName(557,559)
+                  |-NameIdentifier(557,559)
+                    |-Identifier=u8
+          |-FunctionBody(560,634)
             |-WasmExpression(562,634)
               |-SExpression(570,629)
                 |-SSymbol(571,578)
                   |-Identifier=i32
+                  |-Operator=.
                   |-Identifier=and
                 |-SExpression(579,596)
                   |-SSymbol(580,589)
                     |-Identifier=i32
+                    |-Operator=.
                     |-Keyword=const
                   |-NegNumberLiteral(590,594)
                     |-NumberLiteral=0xFF
                 |-SExpression(596,627)
                   |-SSymbol(597,609)
                     |-Identifier=i32
+                    |-Operator=.
                     |-Identifier=wrap_i64
                   |-SExpression(610,626)
                     |-SSymbol(611,620)
@@ -236,7 +250,9 @@
         |-FunDeclaration(648,746)
           |-FunctionName(652,654)
             |-FunOperator(652,654)
-              <Rule0>
+              |-Keyword=as
+          |-TypeParameters(654,654)
+            <Rule0>
           |-FunctionParamsList(654,664)
             |-(List)(655,663)
               |-Parameter(655,663)
@@ -247,26 +263,30 @@
                     |-QName(660,663)
                       |-NameIdentifier(660,663)
                         |-Identifier=u64
-          |-Type(666,669)
-            |-Reference(666,669)
-              |-QName(666,669)
-                |-NameIdentifier(666,669)
-                  |-Identifier=u16
-          |-FunAssignExpression(670,746)
+          |-ReturnType(664,670)
+            |-Type(666,669)
+              |-Reference(666,669)
+                |-QName(666,669)
+                  |-NameIdentifier(666,669)
+                    |-Identifier=u16
+          |-FunctionBody(670,746)
             |-WasmExpression(672,746)
               |-SExpression(680,741)
                 |-SSymbol(681,688)
                   |-Identifier=i32
+                  |-Operator=.
                   |-Identifier=and
                 |-SExpression(689,708)
                   |-SSymbol(690,699)
                     |-Identifier=i32
+                    |-Operator=.
                     |-Keyword=const
                   |-NegNumberLiteral(700,706)
                     |-NumberLiteral=0xFFFF
                 |-SExpression(708,739)
                   |-SSymbol(709,721)
                     |-Identifier=i32
+                    |-Operator=.
                     |-Identifier=wrap_i64
                   |-SExpression(722,738)
                     |-SSymbol(723,732)
@@ -282,7 +302,9 @@
         |-FunDeclaration(760,814)
           |-FunctionName(764,766)
             |-FunOperator(764,766)
-              <Rule0>
+              |-Keyword=as
+          |-TypeParameters(766,766)
+            <Rule0>
           |-FunctionParamsList(766,776)
             |-(List)(767,775)
               |-Parameter(767,775)
@@ -293,12 +315,13 @@
                     |-QName(772,775)
                       |-NameIdentifier(772,775)
                         |-Identifier=u64
-          |-Type(778,781)
-            |-Reference(778,781)
-              |-QName(778,781)
-                |-NameIdentifier(778,781)
-                  |-Identifier=i64
-          |-FunAssignExpression(782,814)
+          |-ReturnType(776,782)
+            |-Type(778,781)
+              |-Reference(778,781)
+                |-QName(778,781)
+                  |-NameIdentifier(778,781)
+                    |-Identifier=i64
+          |-FunctionBody(782,814)
             |-WasmExpression(784,814)
               |-SExpression(792,809)
                 |-SSymbol(793,802)
@@ -314,7 +337,9 @@
         |-FunDeclaration(828,902)
           |-FunctionName(832,834)
             |-FunOperator(832,834)
-              <Rule0>
+              |-Keyword=as
+          |-TypeParameters(834,834)
+            <Rule0>
           |-FunctionParamsList(834,844)
             |-(List)(835,843)
               |-Parameter(835,843)
@@ -325,16 +350,18 @@
                     |-QName(840,843)
                       |-NameIdentifier(840,843)
                         |-Identifier=u64
-          |-Type(846,849)
-            |-Reference(846,849)
-              |-QName(846,849)
-                |-NameIdentifier(846,849)
-                  |-Identifier=f32
-          |-FunAssignExpression(850,902)
+          |-ReturnType(844,850)
+            |-Type(846,849)
+              |-Reference(846,849)
+                |-QName(846,849)
+                  |-NameIdentifier(846,849)
+                    |-Identifier=f32
+          |-FunctionBody(850,902)
             |-WasmExpression(852,902)
               |-SExpression(860,897)
                 |-SSymbol(861,878)
                   |-Identifier=f32
+                  |-Operator=.
                   |-Identifier=convert_i64_u
                 |-SExpression(879,895)
                   |-SSymbol(880,889)
@@ -350,7 +377,9 @@
         |-FunDeclaration(916,985)
           |-FunctionName(920,922)
             |-FunOperator(920,922)
-              <Rule0>
+              |-Keyword=as
+          |-TypeParameters(922,922)
+            <Rule0>
           |-FunctionParamsList(922,932)
             |-(List)(923,931)
               |-Parameter(923,931)
@@ -361,16 +390,18 @@
                     |-QName(928,931)
                       |-NameIdentifier(928,931)
                         |-Identifier=u64
-          |-Type(934,937)
-            |-Reference(934,937)
-              |-QName(934,937)
-                |-NameIdentifier(934,937)
-                  |-Identifier=i32
-          |-FunAssignExpression(938,985)
+          |-ReturnType(932,938)
+            |-Type(934,937)
+              |-Reference(934,937)
+                |-QName(934,937)
+                  |-NameIdentifier(934,937)
+                    |-Identifier=i32
+          |-FunctionBody(938,985)
             |-WasmExpression(940,985)
               |-SExpression(948,980)
                 |-SSymbol(949,961)
                   |-Identifier=i32
+                  |-Operator=.
                   |-Identifier=wrap_i64
                 |-SExpression(962,978)
                   |-SSymbol(963,972)
@@ -386,7 +417,9 @@
         |-FunDeclaration(999,1068)
           |-FunctionName(1003,1005)
             |-FunOperator(1003,1005)
-              <Rule0>
+              |-Keyword=as
+          |-TypeParameters(1005,1005)
+            <Rule0>
           |-FunctionParamsList(1005,1015)
             |-(List)(1006,1014)
               |-Parameter(1006,1014)
@@ -397,16 +430,18 @@
                     |-QName(1011,1014)
                       |-NameIdentifier(1011,1014)
                         |-Identifier=u64
-          |-Type(1017,1020)
-            |-Reference(1017,1020)
-              |-QName(1017,1020)
-                |-NameIdentifier(1017,1020)
-                  |-Identifier=u32
-          |-FunAssignExpression(1021,1068)
+          |-ReturnType(1015,1021)
+            |-Type(1017,1020)
+              |-Reference(1017,1020)
+                |-QName(1017,1020)
+                  |-NameIdentifier(1017,1020)
+                    |-Identifier=u32
+          |-FunctionBody(1021,1068)
             |-WasmExpression(1023,1068)
               |-SExpression(1031,1063)
                 |-SSymbol(1032,1044)
                   |-Identifier=i32
+                  |-Operator=.
                   |-Identifier=wrap_i64
                 |-SExpression(1045,1061)
                   |-SSymbol(1046,1055)
@@ -421,6 +456,8 @@
           |-FunctionName(1072,1074)
             |-FunOperator(1072,1074)
               |-Operator===
+          |-TypeParameters(1074,1074)
+            <Rule0>
           |-FunctionParamsList(1074,1094)
             |-(List)(1075,1093)
               |-Parameter(1075,1083)
@@ -439,16 +476,18 @@
                     |-QName(1090,1093)
                       |-NameIdentifier(1090,1093)
                         |-Identifier=u64
-          |-Type(1096,1103)
-            |-Reference(1096,1103)
-              |-QName(1096,1103)
-                |-NameIdentifier(1096,1103)
-                  |-Identifier=boolean
-          |-FunAssignExpression(1104,1161)
+          |-ReturnType(1094,1104)
+            |-Type(1096,1103)
+              |-Reference(1096,1103)
+                |-QName(1096,1103)
+                  |-NameIdentifier(1096,1103)
+                    |-Identifier=boolean
+          |-FunctionBody(1104,1161)
             |-WasmExpression(1106,1161)
               |-SExpression(1114,1157)
                 |-SSymbol(1115,1121)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=eq
                 |-SExpression(1122,1139)
                   |-SSymbol(1123,1132)
@@ -469,6 +508,8 @@
           |-FunctionName(1165,1167)
             |-FunOperator(1165,1167)
               |-Operator===
+          |-TypeParameters(1167,1167)
+            <Rule0>
           |-FunctionParamsList(1167,1187)
             |-(List)(1168,1186)
               |-Parameter(1168,1176)
@@ -487,16 +528,18 @@
                     |-QName(1183,1186)
                       |-NameIdentifier(1183,1186)
                         |-Identifier=u32
-          |-Type(1189,1196)
-            |-Reference(1189,1196)
-              |-QName(1189,1196)
-                |-NameIdentifier(1189,1196)
-                  |-Identifier=boolean
-          |-FunAssignExpression(1197,1273)
+          |-ReturnType(1187,1197)
+            |-Type(1189,1196)
+              |-Reference(1189,1196)
+                |-QName(1189,1196)
+                  |-NameIdentifier(1189,1196)
+                    |-Identifier=boolean
+          |-FunctionBody(1197,1273)
             |-WasmExpression(1199,1273)
               |-SExpression(1207,1269)
                 |-SSymbol(1208,1214)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=eq
                 |-SExpression(1215,1232)
                   |-SSymbol(1216,1225)
@@ -507,6 +550,7 @@
                 |-SExpression(1232,1267)
                   |-SSymbol(1233,1249)
                     |-Identifier=i64
+                    |-Operator=.
                     |-Identifier=extend_i32_u
                   |-SExpression(1250,1266)
                     |-SSymbol(1251,1260)
@@ -521,6 +565,8 @@
           |-FunctionName(1277,1279)
             |-FunOperator(1277,1279)
               |-Operator===
+          |-TypeParameters(1279,1279)
+            <Rule0>
           |-FunctionParamsList(1279,1299)
             |-(List)(1280,1298)
               |-Parameter(1280,1288)
@@ -539,16 +585,18 @@
                     |-QName(1295,1298)
                       |-NameIdentifier(1295,1298)
                         |-Identifier=u16
-          |-Type(1301,1308)
-            |-Reference(1301,1308)
-              |-QName(1301,1308)
-                |-NameIdentifier(1301,1308)
-                  |-Identifier=boolean
-          |-FunAssignExpression(1309,1385)
+          |-ReturnType(1299,1309)
+            |-Type(1301,1308)
+              |-Reference(1301,1308)
+                |-QName(1301,1308)
+                  |-NameIdentifier(1301,1308)
+                    |-Identifier=boolean
+          |-FunctionBody(1309,1385)
             |-WasmExpression(1311,1385)
               |-SExpression(1319,1381)
                 |-SSymbol(1320,1326)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=eq
                 |-SExpression(1327,1344)
                   |-SSymbol(1328,1337)
@@ -559,6 +607,7 @@
                 |-SExpression(1344,1379)
                   |-SSymbol(1345,1361)
                     |-Identifier=i64
+                    |-Operator=.
                     |-Identifier=extend_i32_u
                   |-SExpression(1362,1378)
                     |-SSymbol(1363,1372)
@@ -573,6 +622,8 @@
           |-FunctionName(1389,1391)
             |-FunOperator(1389,1391)
               |-Operator===
+          |-TypeParameters(1391,1391)
+            <Rule0>
           |-FunctionParamsList(1391,1410)
             |-(List)(1392,1409)
               |-Parameter(1392,1400)
@@ -591,16 +642,18 @@
                     |-QName(1407,1409)
                       |-NameIdentifier(1407,1409)
                         |-Identifier=u8
-          |-Type(1412,1419)
-            |-Reference(1412,1419)
-              |-QName(1412,1419)
-                |-NameIdentifier(1412,1419)
-                  |-Identifier=boolean
-          |-FunAssignExpression(1420,1496)
+          |-ReturnType(1410,1420)
+            |-Type(1412,1419)
+              |-Reference(1412,1419)
+                |-QName(1412,1419)
+                  |-NameIdentifier(1412,1419)
+                    |-Identifier=boolean
+          |-FunctionBody(1420,1496)
             |-WasmExpression(1422,1496)
               |-SExpression(1430,1492)
                 |-SSymbol(1431,1437)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=eq
                 |-SExpression(1438,1455)
                   |-SSymbol(1439,1448)
@@ -611,6 +664,7 @@
                 |-SExpression(1455,1490)
                   |-SSymbol(1456,1472)
                     |-Identifier=i64
+                    |-Operator=.
                     |-Identifier=extend_i32_u
                   |-SExpression(1473,1489)
                     |-SSymbol(1474,1483)
@@ -625,6 +679,8 @@
           |-FunctionName(1500,1502)
             |-FunOperator(1500,1502)
               |-Operator=!=
+          |-TypeParameters(1502,1502)
+            <Rule0>
           |-FunctionParamsList(1502,1522)
             |-(List)(1503,1521)
               |-Parameter(1503,1511)
@@ -643,16 +699,18 @@
                     |-QName(1518,1521)
                       |-NameIdentifier(1518,1521)
                         |-Identifier=u64
-          |-Type(1524,1531)
-            |-Reference(1524,1531)
-              |-QName(1524,1531)
-                |-NameIdentifier(1524,1531)
-                  |-Identifier=boolean
-          |-FunAssignExpression(1532,1589)
+          |-ReturnType(1522,1532)
+            |-Type(1524,1531)
+              |-Reference(1524,1531)
+                |-QName(1524,1531)
+                  |-NameIdentifier(1524,1531)
+                    |-Identifier=boolean
+          |-FunctionBody(1532,1589)
             |-WasmExpression(1534,1589)
               |-SExpression(1542,1585)
                 |-SSymbol(1543,1549)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=ne
                 |-SExpression(1550,1567)
                   |-SSymbol(1551,1560)
@@ -673,6 +731,8 @@
           |-FunctionName(1593,1594)
             |-FunOperator(1593,1594)
               |-Operator=+
+          |-TypeParameters(1594,1594)
+            <Rule0>
           |-FunctionParamsList(1594,1614)
             |-(List)(1595,1613)
               |-Parameter(1595,1603)
@@ -691,16 +751,18 @@
                     |-QName(1610,1613)
                       |-NameIdentifier(1610,1613)
                         |-Identifier=u64
-          |-Type(1616,1619)
-            |-Reference(1616,1619)
-              |-QName(1616,1619)
-                |-NameIdentifier(1616,1619)
-                  |-Identifier=u64
-          |-FunAssignExpression(1620,1678)
+          |-ReturnType(1614,1620)
+            |-Type(1616,1619)
+              |-Reference(1616,1619)
+                |-QName(1616,1619)
+                  |-NameIdentifier(1616,1619)
+                    |-Identifier=u64
+          |-FunctionBody(1620,1678)
             |-WasmExpression(1622,1678)
               |-SExpression(1630,1674)
                 |-SSymbol(1631,1638)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=add
                 |-SExpression(1639,1656)
                   |-SSymbol(1640,1649)
@@ -721,6 +783,8 @@
           |-FunctionName(1682,1683)
             |-FunOperator(1682,1683)
               |-Operator=-
+          |-TypeParameters(1683,1683)
+            <Rule0>
           |-FunctionParamsList(1683,1703)
             |-(List)(1684,1702)
               |-Parameter(1684,1692)
@@ -739,16 +803,18 @@
                     |-QName(1699,1702)
                       |-NameIdentifier(1699,1702)
                         |-Identifier=u64
-          |-Type(1705,1708)
-            |-Reference(1705,1708)
-              |-QName(1705,1708)
-                |-NameIdentifier(1705,1708)
-                  |-Identifier=u64
-          |-FunAssignExpression(1709,1767)
+          |-ReturnType(1703,1709)
+            |-Type(1705,1708)
+              |-Reference(1705,1708)
+                |-QName(1705,1708)
+                  |-NameIdentifier(1705,1708)
+                    |-Identifier=u64
+          |-FunctionBody(1709,1767)
             |-WasmExpression(1711,1767)
               |-SExpression(1719,1763)
                 |-SSymbol(1720,1727)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=sub
                 |-SExpression(1728,1745)
                   |-SSymbol(1729,1738)
@@ -769,6 +835,8 @@
           |-FunctionName(1771,1772)
             |-FunOperator(1771,1772)
               |-Operator=*
+          |-TypeParameters(1772,1772)
+            <Rule0>
           |-FunctionParamsList(1772,1792)
             |-(List)(1773,1791)
               |-Parameter(1773,1781)
@@ -787,16 +855,18 @@
                     |-QName(1788,1791)
                       |-NameIdentifier(1788,1791)
                         |-Identifier=u64
-          |-Type(1794,1797)
-            |-Reference(1794,1797)
-              |-QName(1794,1797)
-                |-NameIdentifier(1794,1797)
-                  |-Identifier=u64
-          |-FunAssignExpression(1798,1856)
+          |-ReturnType(1792,1798)
+            |-Type(1794,1797)
+              |-Reference(1794,1797)
+                |-QName(1794,1797)
+                  |-NameIdentifier(1794,1797)
+                    |-Identifier=u64
+          |-FunctionBody(1798,1856)
             |-WasmExpression(1800,1856)
               |-SExpression(1808,1852)
                 |-SSymbol(1809,1816)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=mul
                 |-SExpression(1817,1834)
                   |-SSymbol(1818,1827)
@@ -817,6 +887,8 @@
           |-FunctionName(1860,1861)
             |-FunOperator(1860,1861)
               |-Operator=/
+          |-TypeParameters(1861,1861)
+            <Rule0>
           |-FunctionParamsList(1861,1881)
             |-(List)(1862,1880)
               |-Parameter(1862,1870)
@@ -835,16 +907,18 @@
                     |-QName(1877,1880)
                       |-NameIdentifier(1877,1880)
                         |-Identifier=u64
-          |-Type(1883,1886)
-            |-Reference(1883,1886)
-              |-QName(1883,1886)
-                |-NameIdentifier(1883,1886)
-                  |-Identifier=u64
-          |-FunAssignExpression(1887,1947)
+          |-ReturnType(1881,1887)
+            |-Type(1883,1886)
+              |-Reference(1883,1886)
+                |-QName(1883,1886)
+                  |-NameIdentifier(1883,1886)
+                    |-Identifier=u64
+          |-FunctionBody(1887,1947)
             |-WasmExpression(1889,1947)
               |-SExpression(1897,1943)
                 |-SSymbol(1898,1907)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=div_u
                 |-SExpression(1908,1925)
                   |-SSymbol(1909,1918)
@@ -865,6 +939,8 @@
           |-FunctionName(1951,1952)
             |-FunOperator(1951,1952)
               |-Operator=~
+          |-TypeParameters(1952,1952)
+            <Rule0>
           |-FunctionParamsList(1952,1962)
             |-(List)(1953,1961)
               |-Parameter(1953,1961)
@@ -875,20 +951,23 @@
                     |-QName(1958,1961)
                       |-NameIdentifier(1958,1961)
                         |-Identifier=u64
-          |-Type(1964,1967)
-            |-Reference(1964,1967)
-              |-QName(1964,1967)
-                |-NameIdentifier(1964,1967)
-                  |-Identifier=u64
-          |-FunAssignExpression(1968,2040)
+          |-ReturnType(1962,1968)
+            |-Type(1964,1967)
+              |-Reference(1964,1967)
+                |-QName(1964,1967)
+                  |-NameIdentifier(1964,1967)
+                    |-Identifier=u64
+          |-FunctionBody(1968,2040)
             |-WasmExpression(1970,2040)
               |-SExpression(1978,2036)
                 |-SSymbol(1979,1986)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=xor
                 |-SExpression(1987,2018)
                   |-SSymbol(1988,1997)
                     |-Identifier=i64
+                    |-Operator=.
                     |-Keyword=const
                   |-NegNumberLiteral(1998,2016)
                     |-NumberLiteral=0xFFFFFFFFFFFFFFFF
@@ -905,6 +984,8 @@
           |-FunctionName(2044,2047)
             |-FunOperator(2044,2047)
               |-Operator=>>>
+          |-TypeParameters(2047,2047)
+            <Rule0>
           |-FunctionParamsList(2047,2067)
             |-(List)(2048,2066)
               |-Parameter(2048,2056)
@@ -923,12 +1004,13 @@
                     |-QName(2063,2066)
                       |-NameIdentifier(2063,2066)
                         |-Identifier=i32
-          |-Type(2069,2072)
-            |-Reference(2069,2072)
-              |-QName(2069,2072)
-                |-NameIdentifier(2069,2072)
-                  |-Identifier=u64
-          |-FunAssignExpression(2073,2095)
+          |-ReturnType(2067,2073)
+            |-Type(2069,2072)
+              |-Reference(2069,2072)
+                |-QName(2069,2072)
+                  |-NameIdentifier(2069,2072)
+                    |-Identifier=u64
+          |-FunctionBody(2073,2095)
             |-BinaryOpExpression(2075,2095)
               |-Reference(2075,2078)
                 |-QName(2075,2078)
@@ -953,6 +1035,8 @@
           |-FunctionName(2102,2104)
             |-FunOperator(2102,2104)
               |-Operator=>>
+          |-TypeParameters(2104,2104)
+            <Rule0>
           |-FunctionParamsList(2104,2124)
             |-(List)(2105,2123)
               |-Parameter(2105,2113)
@@ -971,12 +1055,13 @@
                     |-QName(2120,2123)
                       |-NameIdentifier(2120,2123)
                         |-Identifier=i32
-          |-Type(2126,2129)
-            |-Reference(2126,2129)
-              |-QName(2126,2129)
-                |-NameIdentifier(2126,2129)
-                  |-Identifier=u64
-          |-FunAssignExpression(2130,2151)
+          |-ReturnType(2124,2130)
+            |-Type(2126,2129)
+              |-Reference(2126,2129)
+                |-QName(2126,2129)
+                  |-NameIdentifier(2126,2129)
+                    |-Identifier=u64
+          |-FunctionBody(2130,2151)
             |-BinaryOpExpression(2132,2151)
               |-Reference(2132,2135)
                 |-QName(2132,2135)
@@ -1001,6 +1086,8 @@
           |-FunctionName(2158,2160)
             |-FunOperator(2158,2160)
               |-Operator=<<
+          |-TypeParameters(2160,2160)
+            <Rule0>
           |-FunctionParamsList(2160,2180)
             |-(List)(2161,2179)
               |-Parameter(2161,2169)
@@ -1019,12 +1106,13 @@
                     |-QName(2176,2179)
                       |-NameIdentifier(2176,2179)
                         |-Identifier=i32
-          |-Type(2182,2185)
-            |-Reference(2182,2185)
-              |-QName(2182,2185)
-                |-NameIdentifier(2182,2185)
-                  |-Identifier=u64
-          |-FunAssignExpression(2186,2207)
+          |-ReturnType(2180,2186)
+            |-Type(2182,2185)
+              |-Reference(2182,2185)
+                |-QName(2182,2185)
+                  |-NameIdentifier(2182,2185)
+                    |-Identifier=u64
+          |-FunctionBody(2186,2207)
             |-BinaryOpExpression(2188,2207)
               |-Reference(2188,2191)
                 |-QName(2188,2191)
@@ -1049,6 +1137,8 @@
           |-FunctionName(2214,2217)
             |-FunOperator(2214,2217)
               |-Operator=>>>
+          |-TypeParameters(2217,2217)
+            <Rule0>
           |-FunctionParamsList(2217,2237)
             |-(List)(2218,2236)
               |-Parameter(2218,2226)
@@ -1067,16 +1157,18 @@
                     |-QName(2233,2236)
                       |-NameIdentifier(2233,2236)
                         |-Identifier=i64
-          |-Type(2239,2242)
-            |-Reference(2239,2242)
-              |-QName(2239,2242)
-                |-NameIdentifier(2239,2242)
-                  |-Identifier=u64
-          |-FunAssignExpression(2243,2303)
+          |-ReturnType(2237,2243)
+            |-Type(2239,2242)
+              |-Reference(2239,2242)
+                |-QName(2239,2242)
+                  |-NameIdentifier(2239,2242)
+                    |-Identifier=u64
+          |-FunctionBody(2243,2303)
             |-WasmExpression(2245,2303)
               |-SExpression(2253,2299)
                 |-SSymbol(2254,2263)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=shr_u
                 |-SExpression(2264,2281)
                   |-SSymbol(2265,2274)
@@ -1097,6 +1189,8 @@
           |-FunctionName(2307,2309)
             |-FunOperator(2307,2309)
               |-Operator=>>
+          |-TypeParameters(2309,2309)
+            <Rule0>
           |-FunctionParamsList(2309,2329)
             |-(List)(2310,2328)
               |-Parameter(2310,2318)
@@ -1115,16 +1209,18 @@
                     |-QName(2325,2328)
                       |-NameIdentifier(2325,2328)
                         |-Identifier=i64
-          |-Type(2331,2334)
-            |-Reference(2331,2334)
-              |-QName(2331,2334)
-                |-NameIdentifier(2331,2334)
-                  |-Identifier=u64
-          |-FunAssignExpression(2335,2395)
+          |-ReturnType(2329,2335)
+            |-Type(2331,2334)
+              |-Reference(2331,2334)
+                |-QName(2331,2334)
+                  |-NameIdentifier(2331,2334)
+                    |-Identifier=u64
+          |-FunctionBody(2335,2395)
             |-WasmExpression(2337,2395)
               |-SExpression(2345,2391)
                 |-SSymbol(2346,2355)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=shr_s
                 |-SExpression(2356,2373)
                   |-SSymbol(2357,2366)
@@ -1145,6 +1241,8 @@
           |-FunctionName(2399,2401)
             |-FunOperator(2399,2401)
               |-Operator=<<
+          |-TypeParameters(2401,2401)
+            <Rule0>
           |-FunctionParamsList(2401,2421)
             |-(List)(2402,2420)
               |-Parameter(2402,2410)
@@ -1163,16 +1261,18 @@
                     |-QName(2417,2420)
                       |-NameIdentifier(2417,2420)
                         |-Identifier=i64
-          |-Type(2423,2426)
-            |-Reference(2423,2426)
-              |-QName(2423,2426)
-                |-NameIdentifier(2423,2426)
-                  |-Identifier=u64
-          |-FunAssignExpression(2427,2485)
+          |-ReturnType(2421,2427)
+            |-Type(2423,2426)
+              |-Reference(2423,2426)
+                |-QName(2423,2426)
+                  |-NameIdentifier(2423,2426)
+                    |-Identifier=u64
+          |-FunctionBody(2427,2485)
             |-WasmExpression(2429,2485)
               |-SExpression(2437,2481)
                 |-SSymbol(2438,2445)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=shl
                 |-SExpression(2446,2463)
                   |-SSymbol(2447,2456)
@@ -1193,6 +1293,8 @@
           |-FunctionName(2489,2491)
             |-FunOperator(2489,2491)
               |-Operator=>=
+          |-TypeParameters(2491,2491)
+            <Rule0>
           |-FunctionParamsList(2491,2511)
             |-(List)(2492,2510)
               |-Parameter(2492,2500)
@@ -1211,16 +1313,18 @@
                     |-QName(2507,2510)
                       |-NameIdentifier(2507,2510)
                         |-Identifier=u64
-          |-Type(2513,2520)
-            |-Reference(2513,2520)
-              |-QName(2513,2520)
-                |-NameIdentifier(2513,2520)
-                  |-Identifier=boolean
-          |-FunAssignExpression(2521,2580)
+          |-ReturnType(2511,2521)
+            |-Type(2513,2520)
+              |-Reference(2513,2520)
+                |-QName(2513,2520)
+                  |-NameIdentifier(2513,2520)
+                    |-Identifier=boolean
+          |-FunctionBody(2521,2580)
             |-WasmExpression(2523,2580)
               |-SExpression(2531,2576)
                 |-SSymbol(2532,2540)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=ge_u
                 |-SExpression(2541,2558)
                   |-SSymbol(2542,2551)
@@ -1241,6 +1345,8 @@
           |-FunctionName(2584,2586)
             |-FunOperator(2584,2586)
               |-Operator=<=
+          |-TypeParameters(2586,2586)
+            <Rule0>
           |-FunctionParamsList(2586,2606)
             |-(List)(2587,2605)
               |-Parameter(2587,2595)
@@ -1259,16 +1365,18 @@
                     |-QName(2602,2605)
                       |-NameIdentifier(2602,2605)
                         |-Identifier=u64
-          |-Type(2608,2615)
-            |-Reference(2608,2615)
-              |-QName(2608,2615)
-                |-NameIdentifier(2608,2615)
-                  |-Identifier=boolean
-          |-FunAssignExpression(2616,2675)
+          |-ReturnType(2606,2616)
+            |-Type(2608,2615)
+              |-Reference(2608,2615)
+                |-QName(2608,2615)
+                  |-NameIdentifier(2608,2615)
+                    |-Identifier=boolean
+          |-FunctionBody(2616,2675)
             |-WasmExpression(2618,2675)
               |-SExpression(2626,2671)
                 |-SSymbol(2627,2635)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=le_u
                 |-SExpression(2636,2653)
                   |-SSymbol(2637,2646)
@@ -1289,6 +1397,8 @@
           |-FunctionName(2679,2680)
             |-FunOperator(2679,2680)
               |-Operator=>
+          |-TypeParameters(2680,2680)
+            <Rule0>
           |-FunctionParamsList(2680,2700)
             |-(List)(2681,2699)
               |-Parameter(2681,2689)
@@ -1307,16 +1417,18 @@
                     |-QName(2696,2699)
                       |-NameIdentifier(2696,2699)
                         |-Identifier=u64
-          |-Type(2702,2709)
-            |-Reference(2702,2709)
-              |-QName(2702,2709)
-                |-NameIdentifier(2702,2709)
-                  |-Identifier=boolean
-          |-FunAssignExpression(2710,2769)
+          |-ReturnType(2700,2710)
+            |-Type(2702,2709)
+              |-Reference(2702,2709)
+                |-QName(2702,2709)
+                  |-NameIdentifier(2702,2709)
+                    |-Identifier=boolean
+          |-FunctionBody(2710,2769)
             |-WasmExpression(2712,2769)
               |-SExpression(2720,2765)
                 |-SSymbol(2721,2729)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=gt_u
                 |-SExpression(2730,2747)
                   |-SSymbol(2731,2740)
@@ -1337,6 +1449,8 @@
           |-FunctionName(2773,2774)
             |-FunOperator(2773,2774)
               |-Operator=<
+          |-TypeParameters(2774,2774)
+            <Rule0>
           |-FunctionParamsList(2774,2794)
             |-(List)(2775,2793)
               |-Parameter(2775,2783)
@@ -1355,16 +1469,18 @@
                     |-QName(2790,2793)
                       |-NameIdentifier(2790,2793)
                         |-Identifier=u64
-          |-Type(2796,2803)
-            |-Reference(2796,2803)
-              |-QName(2796,2803)
-                |-NameIdentifier(2796,2803)
-                  |-Identifier=boolean
-          |-FunAssignExpression(2804,2863)
+          |-ReturnType(2794,2804)
+            |-Type(2796,2803)
+              |-Reference(2796,2803)
+                |-QName(2796,2803)
+                  |-NameIdentifier(2796,2803)
+                    |-Identifier=boolean
+          |-FunctionBody(2804,2863)
             |-WasmExpression(2806,2863)
               |-SExpression(2814,2859)
                 |-SSymbol(2815,2823)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=lt_u
                 |-SExpression(2824,2841)
                   |-SSymbol(2825,2834)
@@ -1385,6 +1501,8 @@
           |-FunctionName(2867,2868)
             |-FunOperator(2867,2868)
               |-Operator=%
+          |-TypeParameters(2868,2868)
+            <Rule0>
           |-FunctionParamsList(2868,2888)
             |-(List)(2869,2887)
               |-Parameter(2869,2877)
@@ -1403,16 +1521,18 @@
                     |-QName(2884,2887)
                       |-NameIdentifier(2884,2887)
                         |-Identifier=u64
-          |-Type(2890,2893)
-            |-Reference(2890,2893)
-              |-QName(2890,2893)
-                |-NameIdentifier(2890,2893)
-                  |-Identifier=u64
-          |-FunAssignExpression(2894,2954)
+          |-ReturnType(2888,2894)
+            |-Type(2890,2893)
+              |-Reference(2890,2893)
+                |-QName(2890,2893)
+                  |-NameIdentifier(2890,2893)
+                    |-Identifier=u64
+          |-FunctionBody(2894,2954)
             |-WasmExpression(2896,2954)
               |-SExpression(2904,2950)
                 |-SSymbol(2905,2914)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=rem_u
                 |-SExpression(2915,2932)
                   |-SSymbol(2916,2925)
@@ -1433,6 +1553,8 @@
           |-FunctionName(2958,2959)
             |-FunOperator(2958,2959)
               |-Operator=&
+          |-TypeParameters(2959,2959)
+            <Rule0>
           |-FunctionParamsList(2959,2979)
             |-(List)(2960,2978)
               |-Parameter(2960,2968)
@@ -1451,16 +1573,18 @@
                     |-QName(2975,2978)
                       |-NameIdentifier(2975,2978)
                         |-Identifier=u64
-          |-Type(2981,2984)
-            |-Reference(2981,2984)
-              |-QName(2981,2984)
-                |-NameIdentifier(2981,2984)
-                  |-Identifier=u64
-          |-FunAssignExpression(2985,3043)
+          |-ReturnType(2979,2985)
+            |-Type(2981,2984)
+              |-Reference(2981,2984)
+                |-QName(2981,2984)
+                  |-NameIdentifier(2981,2984)
+                    |-Identifier=u64
+          |-FunctionBody(2985,3043)
             |-WasmExpression(2987,3043)
               |-SExpression(2995,3039)
                 |-SSymbol(2996,3003)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=and
                 |-SExpression(3004,3021)
                   |-SSymbol(3005,3014)
@@ -1481,6 +1605,8 @@
           |-FunctionName(3047,3048)
             |-FunOperator(3047,3048)
               |-Operator=&
+          |-TypeParameters(3048,3048)
+            <Rule0>
           |-FunctionParamsList(3048,3068)
             |-(List)(3049,3067)
               |-Parameter(3049,3057)
@@ -1499,12 +1625,13 @@
                     |-QName(3064,3067)
                       |-NameIdentifier(3064,3067)
                         |-Identifier=i32
-          |-Type(3070,3073)
-            |-Reference(3070,3073)
-              |-QName(3070,3073)
-                |-NameIdentifier(3070,3073)
-                  |-Identifier=i32
-          |-FunAssignExpression(3074,3094)
+          |-ReturnType(3068,3074)
+            |-Type(3070,3073)
+              |-Reference(3070,3073)
+                |-QName(3070,3073)
+                  |-NameIdentifier(3070,3073)
+                    |-Identifier=i32
+          |-FunctionBody(3074,3094)
             |-BinaryOpExpression(3076,3094)
               |-ParenExpression(3076,3088)
                 |-AsExpression(3077,3087)
@@ -1529,6 +1656,8 @@
           |-FunctionName(3101,3102)
             |-FunOperator(3101,3102)
               |-Operator=&
+          |-TypeParameters(3102,3102)
+            <Rule0>
           |-FunctionParamsList(3102,3122)
             |-(List)(3103,3121)
               |-Parameter(3103,3111)
@@ -1547,12 +1676,13 @@
                     |-QName(3118,3121)
                       |-NameIdentifier(3118,3121)
                         |-Identifier=u32
-          |-Type(3124,3127)
-            |-Reference(3124,3127)
-              |-QName(3124,3127)
-                |-NameIdentifier(3124,3127)
-                  |-Identifier=u32
-          |-FunAssignExpression(3128,3148)
+          |-ReturnType(3122,3128)
+            |-Type(3124,3127)
+              |-Reference(3124,3127)
+                |-QName(3124,3127)
+                  |-NameIdentifier(3124,3127)
+                    |-Identifier=u32
+          |-FunctionBody(3128,3148)
             |-BinaryOpExpression(3130,3148)
               |-ParenExpression(3130,3142)
                 |-AsExpression(3131,3141)
@@ -1577,6 +1707,8 @@
           |-FunctionName(3155,3156)
             |-FunOperator(3155,3156)
               |-Operator=|
+          |-TypeParameters(3156,3156)
+            <Rule0>
           |-FunctionParamsList(3156,3176)
             |-(List)(3157,3175)
               |-Parameter(3157,3165)
@@ -1595,16 +1727,18 @@
                     |-QName(3172,3175)
                       |-NameIdentifier(3172,3175)
                         |-Identifier=u64
-          |-Type(3178,3181)
-            |-Reference(3178,3181)
-              |-QName(3178,3181)
-                |-NameIdentifier(3178,3181)
-                  |-Identifier=u64
-          |-FunAssignExpression(3182,3239)
+          |-ReturnType(3176,3182)
+            |-Type(3178,3181)
+              |-Reference(3178,3181)
+                |-QName(3178,3181)
+                  |-NameIdentifier(3178,3181)
+                    |-Identifier=u64
+          |-FunctionBody(3182,3239)
             |-WasmExpression(3184,3239)
               |-SExpression(3192,3235)
                 |-SSymbol(3193,3199)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=or
                 |-SExpression(3200,3217)
                   |-SSymbol(3201,3210)
@@ -1625,6 +1759,8 @@
           |-FunctionName(3243,3244)
             |-FunOperator(3243,3244)
               |-Operator=^
+          |-TypeParameters(3244,3244)
+            <Rule0>
           |-FunctionParamsList(3244,3264)
             |-(List)(3245,3263)
               |-Parameter(3245,3253)
@@ -1643,16 +1779,18 @@
                     |-QName(3260,3263)
                       |-NameIdentifier(3260,3263)
                         |-Identifier=u64
-          |-Type(3266,3269)
-            |-Reference(3266,3269)
-              |-QName(3266,3269)
-                |-NameIdentifier(3266,3269)
-                  |-Identifier=u64
-          |-FunAssignExpression(3270,3329)
+          |-ReturnType(3264,3270)
+            |-Type(3266,3269)
+              |-Reference(3266,3269)
+                |-QName(3266,3269)
+                  |-NameIdentifier(3266,3269)
+                    |-Identifier=u64
+          |-FunctionBody(3270,3329)
             |-WasmExpression(3272,3329)
               |-SExpression(3280,3324)
                 |-SSymbol(3281,3288)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=xor
                 |-SExpression(3289,3306)
                   |-SSymbol(3290,3299)
@@ -1673,6 +1811,8 @@
           |-FunctionName(3333,3338)
             |-NameIdentifier(3333,3338)
               |-Identifier=store
+          |-TypeParameters(3338,3338)
+            <Rule0>
           |-FunctionParamsList(3338,3358)
             |-(List)(3339,3357)
               |-Parameter(3339,3347)
@@ -1691,16 +1831,18 @@
                     |-QName(3354,3357)
                       |-NameIdentifier(3354,3357)
                         |-Identifier=u64
-          |-Type(3360,3364)
-            |-Reference(3360,3364)
-              |-QName(3360,3364)
-                |-NameIdentifier(3360,3364)
-                  |-Identifier=void
-          |-FunAssignExpression(3365,3455)
+          |-ReturnType(3358,3365)
+            |-Type(3360,3364)
+              |-Reference(3360,3364)
+                |-QName(3360,3364)
+                  |-NameIdentifier(3360,3364)
+                    |-Identifier=void
+          |-FunctionBody(3365,3455)
             |-WasmExpression(3367,3455)
               |-SExpression(3379,3450)
                 |-SSymbol(3380,3389)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=store
                 |-SExpression(3390,3430)
                   |-SSymbol(3391,3395)
@@ -1727,6 +1869,8 @@
           |-FunctionName(3459,3464)
             |-NameIdentifier(3459,3464)
               |-Identifier=store
+          |-TypeParameters(3464,3464)
+            <Rule0>
           |-FunctionParamsList(3464,3497)
             |-(List)(3465,3496)
               |-Parameter(3465,3473)
@@ -1753,20 +1897,23 @@
                     |-QName(3493,3496)
                       |-NameIdentifier(3493,3496)
                         |-Identifier=u32
-          |-Type(3499,3503)
-            |-Reference(3499,3503)
-              |-QName(3499,3503)
-                |-NameIdentifier(3499,3503)
-                  |-Identifier=void
-          |-FunAssignExpression(3504,3664)
+          |-ReturnType(3497,3504)
+            |-Type(3499,3503)
+              |-Reference(3499,3503)
+                |-QName(3499,3503)
+                  |-NameIdentifier(3499,3503)
+                    |-Identifier=void
+          |-FunctionBody(3504,3664)
             |-WasmExpression(3506,3664)
               |-SExpression(3518,3659)
                 |-SSymbol(3519,3528)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=store
                 |-SExpression(3535,3634)
                   |-SSymbol(3536,3543)
                     |-Identifier=i32
+                    |-Operator=.
                     |-Identifier=add
                   |-SExpression(3552,3580)
                     |-SSymbol(3553,3562)
@@ -1799,6 +1946,8 @@
           |-FunctionName(3668,3672)
             |-NameIdentifier(3668,3672)
               |-Identifier=load
+          |-TypeParameters(3672,3672)
+            <Rule0>
           |-FunctionParamsList(3672,3682)
             |-(List)(3673,3681)
               |-Parameter(3673,3681)
@@ -1809,16 +1958,18 @@
                     |-QName(3678,3681)
                       |-NameIdentifier(3678,3681)
                         |-Identifier=ref
-          |-Type(3684,3687)
-            |-Reference(3684,3687)
-              |-QName(3684,3687)
-                |-NameIdentifier(3684,3687)
-                  |-Identifier=u64
-          |-FunAssignExpression(3688,3760)
+          |-ReturnType(3682,3688)
+            |-Type(3684,3687)
+              |-Reference(3684,3687)
+                |-QName(3684,3687)
+                  |-NameIdentifier(3684,3687)
+                    |-Identifier=u64
+          |-FunctionBody(3688,3760)
             |-WasmExpression(3690,3760)
               |-SExpression(3702,3755)
                 |-SSymbol(3703,3711)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=load
                 |-SExpression(3712,3751)
                   |-SSymbol(3713,3717)
@@ -1839,6 +1990,8 @@
           |-FunctionName(3764,3768)
             |-NameIdentifier(3764,3768)
               |-Identifier=load
+          |-TypeParameters(3768,3768)
+            <Rule0>
           |-FunctionParamsList(3768,3791)
             |-(List)(3769,3790)
               |-Parameter(3769,3777)
@@ -1857,20 +2010,23 @@
                     |-QName(3787,3790)
                       |-NameIdentifier(3787,3790)
                         |-Identifier=u32
-          |-Type(3793,3796)
-            |-Reference(3793,3796)
-              |-QName(3793,3796)
-                |-NameIdentifier(3793,3796)
-                  |-Identifier=u64
-          |-FunAssignExpression(3797,3933)
+          |-ReturnType(3791,3797)
+            |-Type(3793,3796)
+              |-Reference(3793,3796)
+                |-QName(3793,3796)
+                  |-NameIdentifier(3793,3796)
+                    |-Identifier=u64
+          |-FunctionBody(3797,3933)
             |-WasmExpression(3799,3933)
               |-SExpression(3811,3928)
                 |-SSymbol(3812,3820)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=load
                 |-SExpression(3827,3924)
                   |-SSymbol(3828,3835)
                     |-Identifier=i32
+                    |-Operator=.
                     |-Identifier=add
                   |-SExpression(3844,3872)
                     |-SSymbol(3845,3854)
@@ -1897,6 +2053,8 @@
           |-FunctionName(3937,3944)
             |-NameIdentifier(3937,3944)
               |-Identifier=load8_u
+          |-TypeParameters(3944,3944)
+            <Rule0>
           |-FunctionParamsList(3944,3967)
             |-(List)(3945,3966)
               |-Parameter(3945,3953)
@@ -1915,20 +2073,23 @@
                     |-QName(3963,3966)
                       |-NameIdentifier(3963,3966)
                         |-Identifier=u32
-          |-Type(3969,3972)
-            |-Reference(3969,3972)
-              |-QName(3969,3972)
-                |-NameIdentifier(3969,3972)
-                  |-Identifier=u64
-          |-FunAssignExpression(3973,4109)
+          |-ReturnType(3967,3973)
+            |-Type(3969,3972)
+              |-Reference(3969,3972)
+                |-QName(3969,3972)
+                  |-NameIdentifier(3969,3972)
+                    |-Identifier=u64
+          |-FunctionBody(3973,4109)
             |-WasmExpression(3975,4109)
               |-SExpression(3987,4107)
                 |-SSymbol(3988,3999)
                   |-Identifier=i64
+                  |-Operator=.
                   |-Identifier=load8_u
                 |-SExpression(4006,4103)
                   |-SSymbol(4007,4014)
                     |-Identifier=i32
+                    |-Operator=.
                     |-Identifier=add
                   |-SExpression(4023,4051)
                     |-SSymbol(4024,4033)

@@ -17,18 +17,769 @@
     |-ReferenceNode
       |-QNameNode
         |-NameIdentifierNode name=Keccak
-    |-ErrorNode
-    |-ErrorNode
-    |-ErrorNode
-    |-ErrorNode
-    |-ErrorNode
-    |-ErrorNode
-    |-ErrorNode
-    |-ErrorNode
-    |-ErrorNode
-    |-ErrorNode
-    |-ErrorNode
-    |-ErrorNode
-    |-ErrorNode
-    |-ErrorNode
-    |-ErrorNode
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=apply
+        |-EmptyNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Keccak
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=context
+            |-EmptyNode
+            |-ErrorNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=result
+            |-EmptyNode
+            |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=reset
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Keccak
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-BlockNode
+          |-ErrorNode
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=update
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Keccak
+        |-ParameterNode
+          |-NameIdentifierNode name=data
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=bytes
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-BlockNode
+          |-ErrorNode
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=update
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Keccak
+        |-ParameterNode
+          |-NameIdentifierNode name=address
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ParameterNode
+          |-NameIdentifierNode name=length
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-BlockNode
+          |-ErrorNode
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=digest
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Keccak
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=bytes
+        |-BlockNode
+          |-ErrorNode
+          |-ErrorNode
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=keccakTheta
+        |-ParameterNode
+          |-NameIdentifierNode name=context
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=C0
+            |-EmptyNode
+            |-BinaryExpressionNode
+              |-ErrorNode
+              |-ErrorNode
+              |-NameIdentifierNode name=^
+              |-ErrorNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=C1
+            |-EmptyNode
+            |-BinaryExpressionNode
+              |-ErrorNode
+              |-ErrorNode
+              |-NameIdentifierNode name=^
+              |-ErrorNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=C2
+            |-EmptyNode
+            |-BinaryExpressionNode
+              |-ErrorNode
+              |-ErrorNode
+              |-NameIdentifierNode name=^
+              |-ErrorNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=C3
+            |-EmptyNode
+            |-BinaryExpressionNode
+              |-ErrorNode
+              |-ErrorNode
+              |-NameIdentifierNode name=^
+              |-ErrorNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=C4
+            |-EmptyNode
+            |-BinaryExpressionNode
+              |-ErrorNode
+              |-ErrorNode
+              |-NameIdentifierNode name=^
+              |-ErrorNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=D0
+            |-EmptyNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=C4
+              |-NameIdentifierNode name=^
+              |-ErrorNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=D1
+            |-EmptyNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=C0
+              |-NameIdentifierNode name=^
+              |-ErrorNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=D2
+            |-EmptyNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=C1
+              |-NameIdentifierNode name=^
+              |-ErrorNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=D3
+            |-EmptyNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=C2
+              |-NameIdentifierNode name=^
+              |-ErrorNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=D4
+            |-EmptyNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=C3
+              |-NameIdentifierNode name=^
+              |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=keccakRho
+        |-ParameterNode
+          |-NameIdentifierNode name=contextRef
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ParameterNode
+          |-NameIdentifierNode name=rotationConsts
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=i
+            |-EmptyNode
+            |-AsExpressionNode
+              |-FloatLiteralNode value=0
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=u32
+          |-LoopNode
+            |-BlockNode
+              |-ErrorNode
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=keccakPi
+        |-ParameterNode
+          |-NameIdentifierNode name=context
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=A1
+            |-EmptyNode
+            |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=keccakChi
+        |-ParameterNode
+          |-NameIdentifierNode name=context
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=i
+            |-EmptyNode
+            |-AsExpressionNode
+              |-FloatLiteralNode value=0
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=u32
+          |-LoopNode
+            |-BlockNode
+              |-ErrorNode
+              |-VarDeclarationNode
+                |-NameIdentifierNode name=A0
+                |-EmptyNode
+                |-ErrorNode
+              |-VarDeclarationNode
+                |-NameIdentifierNode name=A1
+                |-EmptyNode
+                |-ErrorNode
+              |-ErrorNode
+              |-ErrorNode
+              |-ErrorNode
+              |-ErrorNode
+              |-ErrorNode
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=i
+                |-NameIdentifierNode name==
+                |-BinaryExpressionNode
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=i
+                  |-NameIdentifierNode name=+
+                  |-AsExpressionNode
+                    |-FloatLiteralNode value=5
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=u32
+              |-ErrorNode
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=keccakPermute
+        |-ParameterNode
+          |-NameIdentifierNode name=contextOffset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=roundConsts
+            |-EmptyNode
+            |-AsExpressionNode
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=contextOffset
+                |-NameIdentifierNode name=+
+                |-AsExpressionNode
+                  |-FloatLiteralNode value=400
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=u32
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ref
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=rotationConsts
+            |-EmptyNode
+            |-AsExpressionNode
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=contextOffset
+                |-NameIdentifierNode name=+
+                |-AsExpressionNode
+                  |-FloatLiteralNode value=592
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=u32
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ref
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=contextRef
+            |-EmptyNode
+            |-AsExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=contextOffset
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ref
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=round
+            |-EmptyNode
+            |-FloatLiteralNode value=0
+          |-LoopNode
+            |-BlockNode
+              |-ErrorNode
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=keccakBlock
+        |-ParameterNode
+          |-NameIdentifierNode name=inputOffset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ParameterNode
+          |-NameIdentifierNode name=contextOffset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=input
+            |-EmptyNode
+            |-AsExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=inputOffset
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ref
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=context
+            |-EmptyNode
+            |-AsExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=contextOffset
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ref
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=keccakInit
+        |-ParameterNode
+          |-NameIdentifierNode name=contextOffset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-BlockNode
+          |-ErrorNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=roundConsts
+            |-EmptyNode
+            |-AsExpressionNode
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=contextOffset
+                |-NameIdentifierNode name=+
+                |-AsExpressionNode
+                  |-FloatLiteralNode value=400
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=u32
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ref
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=rotationConsts
+            |-EmptyNode
+            |-AsExpressionNode
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=contextOffset
+                |-NameIdentifierNode name=+
+                |-AsExpressionNode
+                  |-FloatLiteralNode value=592
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=u32
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ref
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=keccakReset
+        |-ParameterNode
+          |-NameIdentifierNode name=contextOffset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-BlockNode
+          |-ErrorNode
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=keccakUpdate
+        |-ParameterNode
+          |-NameIdentifierNode name=contextOffset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ParameterNode
+          |-NameIdentifierNode name=inputOffset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ParameterNode
+          |-NameIdentifierNode name=inputLength
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=residueOffsetRef
+            |-EmptyNode
+            |-AsExpressionNode
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=contextOffset
+                |-NameIdentifierNode name=+
+                |-AsExpressionNode
+                  |-FloatLiteralNode value=200
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=u32
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ref
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=residueBuffer
+            |-EmptyNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=contextOffset
+              |-NameIdentifierNode name=+
+              |-AsExpressionNode
+                |-FloatLiteralNode value=208
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=u32
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=residueIndex
+            |-EmptyNode
+            |-ErrorNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=mutInputLength
+            |-EmptyNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=inputLength
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=mutInputOffset
+            |-EmptyNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=inputOffset
+          |-ErrorNode
+          |-LoopNode
+            |-BlockNode
+              |-ErrorNode
+              |-ErrorNode
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=mutInputOffset
+                |-NameIdentifierNode name==
+                |-BinaryExpressionNode
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=mutInputOffset
+                  |-NameIdentifierNode name=+
+                  |-AsExpressionNode
+                    |-FloatLiteralNode value=136
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=u32
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=mutInputLength
+                |-NameIdentifierNode name==
+                |-BinaryExpressionNode
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=mutInputLength
+                  |-NameIdentifierNode name=-
+                  |-AsExpressionNode
+                    |-FloatLiteralNode value=136
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=u32
+              |-ErrorNode
+          |-ErrorNode
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=keccakFinish
+        |-ParameterNode
+          |-NameIdentifierNode name=contextOffset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ParameterNode
+          |-NameIdentifierNode name=outputOffset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=residueBuffer
+            |-EmptyNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=contextOffset
+              |-NameIdentifierNode name=+
+              |-AsExpressionNode
+                |-FloatLiteralNode value=208
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=u32
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=residueRef
+            |-EmptyNode
+            |-AsExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=residueBuffer
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ref
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=residueIndex
+            |-EmptyNode
+            |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=residueIndex
+            |-NameIdentifierNode name==
+            |-AsExpressionNode
+              |-FloatLiteralNode value=135
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=u32
+          |-ErrorNode
+          |-ErrorNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=outputRef
+            |-EmptyNode
+            |-AsExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=outputOffset
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ref
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=contextRef
+            |-EmptyNode
+            |-AsExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=contextOffset
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ref
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode

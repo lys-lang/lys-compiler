@@ -46,15 +46,18 @@
       |-FunctionName(101,105)
         |-NameIdentifier(101,105)
           |-Identifier=test
+      |-TypeParameters(105,105)
+        <Rule0>
       |-FunctionParamsList(105,107)
         |-(List)(106,106)
           <Rule0>
-      |-Type(109,112)
-        |-Reference(109,112)
-          |-QName(109,112)
-            |-NameIdentifier(109,112)
-              |-Identifier=Int
-      |-FunAssignExpression(113,116)
+      |-ReturnType(107,113)
+        |-Type(109,112)
+          |-Reference(109,112)
+            |-QName(109,112)
+              |-NameIdentifier(109,112)
+                |-Identifier=Int
+      |-FunctionBody(113,116)
         |-NumberLiteral=1
   |-FunctionDirective(117,165)
     |-Decorators(117,117)
@@ -65,6 +68,8 @@
       |-FunctionName(129,133)
         |-NameIdentifier(129,133)
           |-Identifier=test
+      |-TypeParameters(133,133)
+        <Rule0>
       |-FunctionParamsList(133,154)
         |-(List)(134,153)
           |-Parameter(134,142)
@@ -83,12 +88,13 @@
                 |-QName(147,153)
                   |-NameIdentifier(147,153)
                     |-Identifier=Double
-      |-Type(156,161)
-        |-Reference(156,161)
-          |-QName(156,161)
-            |-NameIdentifier(156,161)
-              |-Identifier=Float
-      |-FunAssignExpression(162,165)
+      |-ReturnType(154,162)
+        |-Type(156,161)
+          |-Reference(156,161)
+            |-QName(156,161)
+              |-NameIdentifier(156,161)
+                |-Identifier=Float
+      |-FunctionBody(162,165)
         |-NumberLiteral=1
   |-VarDirective(167,176)
     |-VarDeclaration(167,176)
@@ -127,15 +133,18 @@
       |-FunctionName(229,233)
         |-NameIdentifier(229,233)
           |-Identifier=test
+      |-TypeParameters(233,233)
+        <Rule0>
       |-FunctionParamsList(233,235)
         |-(List)(234,234)
           <Rule0>
-      |-Type(237,240)
-        |-Reference(237,240)
-          |-QName(237,240)
-            |-NameIdentifier(237,240)
-              |-Identifier=Int
-      |-FunAssignExpression(241,244)
+      |-ReturnType(235,241)
+        |-Type(237,240)
+          |-Reference(237,240)
+            |-QName(237,240)
+              |-NameIdentifier(237,240)
+                |-Identifier=Int
+      |-FunctionBody(241,244)
         |-NumberLiteral=1
   |-FunctionDirective(245,285)
     |-Decorators(245,245)
@@ -144,6 +153,8 @@
       |-FunctionName(249,253)
         |-NameIdentifier(249,253)
           |-Identifier=test
+      |-TypeParameters(253,253)
+        <Rule0>
       |-FunctionParamsList(253,274)
         |-(List)(254,273)
           |-Parameter(254,262)
@@ -162,12 +173,13 @@
                 |-QName(267,273)
                   |-NameIdentifier(267,273)
                     |-Identifier=Double
-      |-Type(276,281)
-        |-Reference(276,281)
-          |-QName(276,281)
-            |-NameIdentifier(276,281)
-              |-Identifier=Float
-      |-FunAssignExpression(282,285)
+      |-ReturnType(274,282)
+        |-Type(276,281)
+          |-Reference(276,281)
+            |-QName(276,281)
+              |-NameIdentifier(276,281)
+                |-Identifier=Float
+      |-FunctionBody(282,285)
         |-NumberLiteral=1
   |-ImportDirective(287,301)
     |-QName(294,300)

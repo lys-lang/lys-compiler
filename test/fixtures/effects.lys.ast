@@ -3,6 +3,8 @@
     |-EffectDeclaration(7,27)
       |-NameIdentifier(7,10)
         |-Identifier=exn
+      |-TypeParameters(11,11)
+        <Rule0>
       |-EffectElementList(11,27)
         |-EffectElements(15,26)
           |-EffectMemberDeclaration(15,26)
@@ -45,6 +47,8 @@
       |-FunctionName(65,68)
         |-NameIdentifier(65,68)
           |-Identifier=sqr
+      |-TypeParameters(68,68)
+        <Rule0>
       |-FunctionParamsList(68,76)
         |-(List)(69,75)
           |-Parameter(69,75)
@@ -55,18 +59,19 @@
                 |-QName(72,75)
                   |-NameIdentifier(72,75)
                     |-Identifier=i32
-      |-FunctionEffect(78,85)
-        |-Type(79,84)
-          |-Reference(79,84)
-            |-QName(79,84)
-              |-NameIdentifier(79,84)
-                |-Identifier=total
-      |-Type(86,89)
-        |-Reference(86,89)
-          |-QName(86,89)
-            |-NameIdentifier(86,89)
-              |-Identifier=i32
-      |-FunAssignExpression(90,97)
+      |-ReturnType(76,90)
+        |-FunctionEffect(78,85)
+          |-Type(79,84)
+            |-Reference(79,84)
+              |-QName(79,84)
+                |-NameIdentifier(79,84)
+                  |-Identifier=total
+        |-Type(86,89)
+          |-Reference(86,89)
+            |-QName(86,89)
+              |-NameIdentifier(86,89)
+                |-Identifier=i32
+      |-FunctionBody(90,97)
         |-BinaryOpExpression(92,97)
           |-Reference(92,93)
             |-QName(92,93)
@@ -84,6 +89,8 @@
       |-FunctionName(102,105)
         |-NameIdentifier(102,105)
           |-Identifier=sqr
+      |-TypeParameters(105,105)
+        <Rule0>
       |-FunctionParamsList(105,113)
         |-(List)(106,112)
           |-Parameter(106,112)
@@ -94,7 +101,10 @@
                 |-QName(109,112)
                   |-NameIdentifier(109,112)
                     |-Identifier=i32
-      |-<SyntaxError>=A type or effect was expected
+      |-ReturnType(113,114)
+        |-<SyntaxError>=A type or effect was expected
+      |-FunctionBody(115,115)
+        <Rule0>
   |-<UNEXPECTED TOKEN>=<>
   |-<UNEXPECTED TOKEN>= 
   |-<UNEXPECTED TOKEN>=i32

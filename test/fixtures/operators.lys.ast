@@ -5,7 +5,9 @@
     |-FunDeclaration(0,26)
       |-FunctionName(4,6)
         |-FunOperator(4,6)
-          <Rule0>
+          |-Keyword=as
+      |-TypeParameters(6,6)
+        <Rule0>
       |-FunctionParamsList(6,18)
         |-(List)(7,17)
           |-Parameter(7,11)
@@ -24,12 +26,13 @@
                 |-QName(16,17)
                   |-NameIdentifier(16,17)
                     |-Identifier=B
-      |-Type(19,22)
-        |-Reference(19,22)
-          |-QName(19,22)
-            |-NameIdentifier(19,22)
-              |-Identifier=i32
-      |-FunAssignExpression(23,26)
+      |-ReturnType(18,23)
+        |-Type(19,22)
+          |-Reference(19,22)
+            |-QName(19,22)
+              |-NameIdentifier(19,22)
+                |-Identifier=i32
+      |-FunctionBody(23,26)
         |-NumberLiteral=0
   |-FunctionDirective(27,53)
     |-Decorators(27,27)
@@ -37,7 +40,9 @@
     |-FunDeclaration(27,53)
       |-FunctionName(31,33)
         |-FunOperator(31,33)
-          <Rule0>
+          |-Keyword=is
+      |-TypeParameters(33,33)
+        <Rule0>
       |-FunctionParamsList(33,45)
         |-(List)(34,44)
           |-Parameter(34,38)
@@ -56,12 +61,13 @@
                 |-QName(43,44)
                   |-NameIdentifier(43,44)
                     |-Identifier=B
-      |-Type(46,49)
-        |-Reference(46,49)
-          |-QName(46,49)
-            |-NameIdentifier(46,49)
-              |-Identifier=i32
-      |-FunAssignExpression(50,53)
+      |-ReturnType(45,50)
+        |-Type(46,49)
+          |-Reference(46,49)
+            |-QName(46,49)
+              |-NameIdentifier(46,49)
+                |-Identifier=i32
+      |-FunctionBody(50,53)
         |-NumberLiteral=0
   |-FunctionDirective(54,79)
     |-Decorators(54,54)
@@ -70,6 +76,8 @@
       |-FunctionName(58,59)
         |-FunOperator(58,59)
           |-Operator=+
+      |-TypeParameters(59,59)
+        <Rule0>
       |-FunctionParamsList(59,71)
         |-(List)(60,70)
           |-Parameter(60,64)
@@ -88,12 +96,13 @@
                 |-QName(69,70)
                   |-NameIdentifier(69,70)
                     |-Identifier=B
-      |-Type(72,75)
-        |-Reference(72,75)
-          |-QName(72,75)
-            |-NameIdentifier(72,75)
-              |-Identifier=i32
-      |-FunAssignExpression(76,79)
+      |-ReturnType(71,76)
+        |-Type(72,75)
+          |-Reference(72,75)
+            |-QName(72,75)
+              |-NameIdentifier(72,75)
+                |-Identifier=i32
+      |-FunctionBody(76,79)
         |-NumberLiteral=0
   |-FunctionDirective(80,105)
     |-Decorators(80,80)
@@ -102,6 +111,8 @@
       |-FunctionName(84,85)
         |-FunOperator(84,85)
           |-Operator=-
+      |-TypeParameters(85,85)
+        <Rule0>
       |-FunctionParamsList(85,97)
         |-(List)(86,96)
           |-Parameter(86,90)
@@ -120,12 +131,13 @@
                 |-QName(95,96)
                   |-NameIdentifier(95,96)
                     |-Identifier=B
-      |-Type(98,101)
-        |-Reference(98,101)
-          |-QName(98,101)
-            |-NameIdentifier(98,101)
-              |-Identifier=i32
-      |-FunAssignExpression(102,105)
+      |-ReturnType(97,102)
+        |-Type(98,101)
+          |-Reference(98,101)
+            |-QName(98,101)
+              |-NameIdentifier(98,101)
+                |-Identifier=i32
+      |-FunctionBody(102,105)
         |-NumberLiteral=0
   |-FunctionDirective(106,132)
     |-Decorators(106,106)
@@ -134,6 +146,8 @@
       |-FunctionName(110,112)
         |-FunOperator(110,112)
           |-Operator=>>
+      |-TypeParameters(112,112)
+        <Rule0>
       |-FunctionParamsList(112,124)
         |-(List)(113,123)
           |-Parameter(113,117)
@@ -152,12 +166,13 @@
                 |-QName(122,123)
                   |-NameIdentifier(122,123)
                     |-Identifier=B
-      |-Type(125,128)
-        |-Reference(125,128)
-          |-QName(125,128)
-            |-NameIdentifier(125,128)
-              |-Identifier=i32
-      |-FunAssignExpression(129,132)
+      |-ReturnType(124,129)
+        |-Type(125,128)
+          |-Reference(125,128)
+            |-QName(125,128)
+              |-NameIdentifier(125,128)
+                |-Identifier=i32
+      |-FunctionBody(129,132)
         |-NumberLiteral=0
   |-FunctionDirective(133,159)
     |-Decorators(133,133)
@@ -166,6 +181,8 @@
       |-FunctionName(137,139)
         |-FunOperator(137,139)
           |-Operator=<<
+      |-TypeParameters(139,139)
+        <Rule0>
       |-FunctionParamsList(139,151)
         |-(List)(140,150)
           |-Parameter(140,144)
@@ -184,12 +201,13 @@
                 |-QName(149,150)
                   |-NameIdentifier(149,150)
                     |-Identifier=B
-      |-Type(152,155)
-        |-Reference(152,155)
-          |-QName(152,155)
-            |-NameIdentifier(152,155)
-              |-Identifier=i32
-      |-FunAssignExpression(156,159)
+      |-ReturnType(151,156)
+        |-Type(152,155)
+          |-Reference(152,155)
+            |-QName(152,155)
+              |-NameIdentifier(152,155)
+                |-Identifier=i32
+      |-FunctionBody(156,159)
         |-NumberLiteral=0
   |-FunctionDirective(160,186)
     |-Decorators(160,160)
@@ -198,6 +216,8 @@
       |-FunctionName(164,166)
         |-FunOperator(164,166)
           |-Operator===
+      |-TypeParameters(166,166)
+        <Rule0>
       |-FunctionParamsList(166,178)
         |-(List)(167,177)
           |-Parameter(167,171)
@@ -216,12 +236,13 @@
                 |-QName(176,177)
                   |-NameIdentifier(176,177)
                     |-Identifier=B
-      |-Type(179,182)
-        |-Reference(179,182)
-          |-QName(179,182)
-            |-NameIdentifier(179,182)
-              |-Identifier=i32
-      |-FunAssignExpression(183,186)
+      |-ReturnType(178,183)
+        |-Type(179,182)
+          |-Reference(179,182)
+            |-QName(179,182)
+              |-NameIdentifier(179,182)
+                |-Identifier=i32
+      |-FunctionBody(183,186)
         |-NumberLiteral=0
   |-FunctionDirective(187,213)
     |-Decorators(187,187)
@@ -230,6 +251,8 @@
       |-FunctionName(191,193)
         |-FunOperator(191,193)
           |-Operator=!=
+      |-TypeParameters(193,193)
+        <Rule0>
       |-FunctionParamsList(193,205)
         |-(List)(194,204)
           |-Parameter(194,198)
@@ -248,12 +271,13 @@
                 |-QName(203,204)
                   |-NameIdentifier(203,204)
                     |-Identifier=B
-      |-Type(206,209)
-        |-Reference(206,209)
-          |-QName(206,209)
-            |-NameIdentifier(206,209)
-              |-Identifier=i32
-      |-FunAssignExpression(210,213)
+      |-ReturnType(205,210)
+        |-Type(206,209)
+          |-Reference(206,209)
+            |-QName(206,209)
+              |-NameIdentifier(206,209)
+                |-Identifier=i32
+      |-FunctionBody(210,213)
         |-NumberLiteral=0
   |-FunctionDirective(214,239)
     |-Decorators(214,214)
@@ -262,6 +286,8 @@
       |-FunctionName(218,219)
         |-FunOperator(218,219)
           |-Operator=+
+      |-TypeParameters(219,219)
+        <Rule0>
       |-FunctionParamsList(219,231)
         |-(List)(220,230)
           |-Parameter(220,224)
@@ -280,12 +306,13 @@
                 |-QName(229,230)
                   |-NameIdentifier(229,230)
                     |-Identifier=B
-      |-Type(232,235)
-        |-Reference(232,235)
-          |-QName(232,235)
-            |-NameIdentifier(232,235)
-              |-Identifier=i32
-      |-FunAssignExpression(236,239)
+      |-ReturnType(231,236)
+        |-Type(232,235)
+          |-Reference(232,235)
+            |-QName(232,235)
+              |-NameIdentifier(232,235)
+                |-Identifier=i32
+      |-FunctionBody(236,239)
         |-NumberLiteral=0
   |-FunctionDirective(240,265)
     |-Decorators(240,240)
@@ -294,6 +321,8 @@
       |-FunctionName(244,245)
         |-FunOperator(244,245)
           |-Operator=*
+      |-TypeParameters(245,245)
+        <Rule0>
       |-FunctionParamsList(245,257)
         |-(List)(246,256)
           |-Parameter(246,250)
@@ -312,12 +341,13 @@
                 |-QName(255,256)
                   |-NameIdentifier(255,256)
                     |-Identifier=B
-      |-Type(258,261)
-        |-Reference(258,261)
-          |-QName(258,261)
-            |-NameIdentifier(258,261)
-              |-Identifier=i32
-      |-FunAssignExpression(262,265)
+      |-ReturnType(257,262)
+        |-Type(258,261)
+          |-Reference(258,261)
+            |-QName(258,261)
+              |-NameIdentifier(258,261)
+                |-Identifier=i32
+      |-FunctionBody(262,265)
         |-NumberLiteral=0
   |-FunctionDirective(266,292)
     |-Decorators(266,266)
@@ -326,6 +356,8 @@
       |-FunctionName(270,272)
         |-FunOperator(270,272)
           |-Operator=**
+      |-TypeParameters(272,272)
+        <Rule0>
       |-FunctionParamsList(272,284)
         |-(List)(273,283)
           |-Parameter(273,277)
@@ -344,12 +376,13 @@
                 |-QName(282,283)
                   |-NameIdentifier(282,283)
                     |-Identifier=B
-      |-Type(285,288)
-        |-Reference(285,288)
-          |-QName(285,288)
-            |-NameIdentifier(285,288)
-              |-Identifier=i32
-      |-FunAssignExpression(289,292)
+      |-ReturnType(284,289)
+        |-Type(285,288)
+          |-Reference(285,288)
+            |-QName(285,288)
+              |-NameIdentifier(285,288)
+                |-Identifier=i32
+      |-FunctionBody(289,292)
         |-NumberLiteral=0
   |-FunctionDirective(293,318)
     |-Decorators(293,293)
@@ -358,6 +391,8 @@
       |-FunctionName(297,298)
         |-FunOperator(297,298)
           |-Operator=/
+      |-TypeParameters(298,298)
+        <Rule0>
       |-FunctionParamsList(298,310)
         |-(List)(299,309)
           |-Parameter(299,303)
@@ -376,12 +411,13 @@
                 |-QName(308,309)
                   |-NameIdentifier(308,309)
                     |-Identifier=B
-      |-Type(311,314)
-        |-Reference(311,314)
-          |-QName(311,314)
-            |-NameIdentifier(311,314)
-              |-Identifier=i32
-      |-FunAssignExpression(315,318)
+      |-ReturnType(310,315)
+        |-Type(311,314)
+          |-Reference(311,314)
+            |-QName(311,314)
+              |-NameIdentifier(311,314)
+                |-Identifier=i32
+      |-FunctionBody(315,318)
         |-NumberLiteral=0
   |-FunctionDirective(319,344)
     |-Decorators(319,319)
@@ -390,6 +426,8 @@
       |-FunctionName(323,324)
         |-FunOperator(323,324)
           |-Operator=%
+      |-TypeParameters(324,324)
+        <Rule0>
       |-FunctionParamsList(324,336)
         |-(List)(325,335)
           |-Parameter(325,329)
@@ -408,12 +446,13 @@
                 |-QName(334,335)
                   |-NameIdentifier(334,335)
                     |-Identifier=B
-      |-Type(337,340)
-        |-Reference(337,340)
-          |-QName(337,340)
-            |-NameIdentifier(337,340)
-              |-Identifier=i32
-      |-FunAssignExpression(341,344)
+      |-ReturnType(336,341)
+        |-Type(337,340)
+          |-Reference(337,340)
+            |-QName(337,340)
+              |-NameIdentifier(337,340)
+                |-Identifier=i32
+      |-FunctionBody(341,344)
         |-NumberLiteral=0
   |-FunctionDirective(345,370)
     |-Decorators(345,345)
@@ -422,6 +461,8 @@
       |-FunctionName(349,350)
         |-FunOperator(349,350)
           |-Operator=>
+      |-TypeParameters(350,350)
+        <Rule0>
       |-FunctionParamsList(350,362)
         |-(List)(351,361)
           |-Parameter(351,355)
@@ -440,12 +481,13 @@
                 |-QName(360,361)
                   |-NameIdentifier(360,361)
                     |-Identifier=B
-      |-Type(363,366)
-        |-Reference(363,366)
-          |-QName(363,366)
-            |-NameIdentifier(363,366)
-              |-Identifier=i32
-      |-FunAssignExpression(367,370)
+      |-ReturnType(362,367)
+        |-Type(363,366)
+          |-Reference(363,366)
+            |-QName(363,366)
+              |-NameIdentifier(363,366)
+                |-Identifier=i32
+      |-FunctionBody(367,370)
         |-NumberLiteral=0
   |-FunctionDirective(371,396)
     |-Decorators(371,371)
@@ -454,6 +496,8 @@
       |-FunctionName(375,376)
         |-FunOperator(375,376)
           |-Operator=<
+      |-TypeParameters(376,376)
+        <Rule0>
       |-FunctionParamsList(376,388)
         |-(List)(377,387)
           |-Parameter(377,381)
@@ -472,12 +516,13 @@
                 |-QName(386,387)
                   |-NameIdentifier(386,387)
                     |-Identifier=B
-      |-Type(389,392)
-        |-Reference(389,392)
-          |-QName(389,392)
-            |-NameIdentifier(389,392)
-              |-Identifier=i32
-      |-FunAssignExpression(393,396)
+      |-ReturnType(388,393)
+        |-Type(389,392)
+          |-Reference(389,392)
+            |-QName(389,392)
+              |-NameIdentifier(389,392)
+                |-Identifier=i32
+      |-FunctionBody(393,396)
         |-NumberLiteral=0
   |-FunctionDirective(397,423)
     |-Decorators(397,397)
@@ -486,6 +531,8 @@
       |-FunctionName(401,403)
         |-FunOperator(401,403)
           |-Operator=>=
+      |-TypeParameters(403,403)
+        <Rule0>
       |-FunctionParamsList(403,415)
         |-(List)(404,414)
           |-Parameter(404,408)
@@ -504,12 +551,13 @@
                 |-QName(413,414)
                   |-NameIdentifier(413,414)
                     |-Identifier=B
-      |-Type(416,419)
-        |-Reference(416,419)
-          |-QName(416,419)
-            |-NameIdentifier(416,419)
-              |-Identifier=i32
-      |-FunAssignExpression(420,423)
+      |-ReturnType(415,420)
+        |-Type(416,419)
+          |-Reference(416,419)
+            |-QName(416,419)
+              |-NameIdentifier(416,419)
+                |-Identifier=i32
+      |-FunctionBody(420,423)
         |-NumberLiteral=0
   |-FunctionDirective(424,450)
     |-Decorators(424,424)
@@ -518,6 +566,8 @@
       |-FunctionName(428,430)
         |-FunOperator(428,430)
           |-Operator=<=
+      |-TypeParameters(430,430)
+        <Rule0>
       |-FunctionParamsList(430,442)
         |-(List)(431,441)
           |-Parameter(431,435)
@@ -536,11 +586,12 @@
                 |-QName(440,441)
                   |-NameIdentifier(440,441)
                     |-Identifier=B
-      |-Type(443,446)
-        |-Reference(443,446)
-          |-QName(443,446)
-            |-NameIdentifier(443,446)
-              |-Identifier=i32
-      |-FunAssignExpression(447,450)
+      |-ReturnType(442,447)
+        |-Type(443,446)
+          |-Reference(443,446)
+            |-QName(443,446)
+              |-NameIdentifier(443,446)
+                |-Identifier=i32
+      |-FunctionBody(447,450)
         |-NumberLiteral=0
   |-EndOfFile=

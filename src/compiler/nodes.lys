@@ -19,7 +19,7 @@ enum CodeNode {
   MemberNode(astNode: AstNode, lhs: CodeNode, operator: string, rhs: CodeNode)
   DecoratorNode(astNode: AstNode, decoratorName: NameIdentifierNode | ErrorNode, headArgument: CodeNode)
   ParameterNode(astNode: AstNode, parameterName: NameIdentifierNode | ErrorNode, parameterType: CodeNode)
-  FunctionNode(astNode: AstNode, functionName: NameIdentifierNode, headParameter: CodeNode, returnType: CodeNode, body: CodeNode)
+  FunctionNode(astNode: AstNode, functionName: NameIdentifierNode | ErrorNode, headParameter: CodeNode, returnType: CodeNode, body: CodeNode)
   VarDeclarationNode(astNode: AstNode, isMutable: boolean, name: NameIdentifierNode | ErrorNode, typeDecl: CodeNode, value: CodeNode)
   AssignmentNode(astNode: AstNode, lhs: CodeNode, rhs: CodeNode)
 
@@ -27,7 +27,7 @@ enum CodeNode {
 
   ImplDirectiveNode(astNode: AstNode, baseImpl: ReferenceNode | EmptyNode, targetImpl: ReferenceNode | ErrorNode, headDirective: CodeNode)
   ImportDirectiveNode(astNode: AstNode, module: QNameNode | ErrorNode, alias: NameIdentifierNode | EmptyNode)
-  FunDirectiveNode(astNode: AstNode, headDecorator: CodeNode, function: FunctionNode)
+  FunDirectiveNode(astNode: AstNode, headDecorator: CodeNode, function: FunctionNode | ErrorNode)
   EffectDirectiveNode(astNode: AstNode, effectDecl: EffectDeclarationNode)
   OverloadedFunDirectiveNode(astNode: AstNode, functionName: NameIdentifierNode, headFun: CodeNode)
   VarDirectiveNode(astNode: AstNode, decl: VarDeclarationNode | EmptyNode)
@@ -59,7 +59,7 @@ enum CodeNode {
   BinaryExpressionNode(astNode: AstNode, lhs: CodeNode, operator: NameIdentifierNode | ErrorNode, rhs: CodeNode)
   AsExpressionNode(astNode: AstNode, lhs: CodeNode, rhs: CodeNode)
   IsExpressionNode(astNode: AstNode, lhs: CodeNode, rhs: CodeNode)
-  UnaryExpressionNode(astNode: AstNode, operator: NameIdentifierNode, rhs: CodeNode)
+  UnaryExpressionNode(astNode: AstNode, operator: NameIdentifierNode | ErrorNode, rhs: CodeNode)
   WasmAtomNode(astNode: AstNode, symbol: string, headArgument: CodeNode)
   WasmExpressionNode(astNode: AstNode, headAtom: CodeNode)
 

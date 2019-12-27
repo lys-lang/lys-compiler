@@ -42,6 +42,8 @@
       |-Identifier=theFn1
     |-Type(119,131)
       |-FunctionTypeLiteral(119,131)
+        |-TypeParameters(122,122)
+          <Rule0>
         |-FunctionTypeParameters(122,124)
           <Rule0>
         |-Type(127,131)
@@ -54,6 +56,8 @@
       |-Identifier=theFn2
     |-Type(146,163)
       |-FunctionTypeLiteral(146,163)
+        |-TypeParameters(150,150)
+          <Rule0>
         |-FunctionTypeParameters(150,156)
           |-FunctionTypeParameter(151,155)
             |-Type(151,155)
@@ -71,6 +75,8 @@
       |-Identifier=theFn3
     |-Type(178,199)
       |-FunctionTypeLiteral(178,199)
+        |-TypeParameters(181,181)
+          <Rule0>
         |-FunctionTypeParameters(181,192)
           |-FunctionTypeParameter(182,186)
             |-Type(182,186)
@@ -94,6 +100,8 @@
       |-Identifier=theFn4
     |-Type(214,236)
       |-FunctionTypeLiteral(214,236)
+        |-TypeParameters(220,220)
+          <Rule0>
         |-FunctionTypeParameters(220,229)
           |-FunctionTypeParameter(221,228)
             |-NameIdentifier(221,222)
@@ -113,6 +121,8 @@
       |-Identifier=theFn5
     |-Type(251,280)
       |-FunctionTypeLiteral(251,280)
+        |-TypeParameters(254,254)
+          <Rule0>
         |-FunctionTypeParameters(254,274)
           |-FunctionTypeParameter(256,264)
             |-NameIdentifier(256,257)
@@ -140,6 +150,8 @@
       |-Identifier=theFn6
     |-Type(295,323)
       |-FunctionTypeLiteral(295,323)
+        |-TypeParameters(298,298)
+          <Rule0>
         |-FunctionTypeParameters(298,317)
           |-FunctionTypeParameter(300,308)
             |-NameIdentifier(300,301)
@@ -169,6 +181,8 @@
       |-FunctionName(337,344)
         |-NameIdentifier(337,344)
           |-Identifier=compare
+      |-TypeParameters(344,344)
+        <Rule0>
       |-FunctionParamsList(344,364)
         |-(List)(345,363)
           |-Parameter(345,353)
@@ -187,12 +201,13 @@
                 |-QName(358,363)
                   |-NameIdentifier(358,363)
                     |-Identifier=Color
-      |-Type(366,370)
-        |-Reference(366,370)
-          |-QName(366,370)
-            |-NameIdentifier(366,370)
-              |-Identifier=bool
-      |-FunAssignExpression(371,385)
+      |-ReturnType(364,371)
+        |-Type(366,370)
+          |-Reference(366,370)
+            |-QName(366,370)
+              |-NameIdentifier(366,370)
+                |-Identifier=bool
+      |-FunctionBody(371,385)
         |-CodeBlock(373,385)
           |-BinaryOpExpression(377,383)
             |-Reference(377,378)
@@ -211,15 +226,18 @@
       |-FunctionName(391,395)
         |-NameIdentifier(391,395)
           |-Identifier=main
+      |-TypeParameters(395,395)
+        <Rule0>
       |-FunctionParamsList(395,397)
         |-(List)(396,396)
           <Rule0>
-      |-Type(399,402)
-        |-Reference(399,402)
-          |-QName(399,402)
-            |-NameIdentifier(399,402)
-              |-Identifier=i32
-      |-FunAssignExpression(403,424)
+      |-ReturnType(397,403)
+        |-Type(399,402)
+          |-Reference(399,402)
+            |-QName(399,402)
+              |-NameIdentifier(399,402)
+                |-Identifier=i32
+      |-FunctionBody(403,424)
         |-AtomicExpression(405,424)
           |-Reference(405,412)
             |-QName(405,412)
@@ -240,6 +258,8 @@
         |-Identifier=test
       |-Type(436,472)
         |-FunctionTypeLiteral(436,472)
+          |-TypeParameters(439,439)
+            <Rule0>
           |-FunctionTypeParameters(439,441)
             <Rule0>
           |-Type(445,472)
@@ -249,6 +269,8 @@
                   |-NameIdentifier(445,449)
                     |-Identifier=void
               |-FunctionTypeLiteral(452,472)
+                |-TypeParameters(455,455)
+                  <Rule0>
                 |-FunctionTypeParameters(455,465)
                   |-FunctionTypeParameter(457,464)
                     |-NameIdentifier(457,458)
@@ -314,6 +336,8 @@
         |-Identifier=test
       |-Type(534,547)
         |-FunctionTypeLiteral(534,547)
+          |-TypeParameters(537,537)
+            <Rule0>
           |-FunctionTypeParameters(537,539)
             <Rule0>
           |-Type(543,547)
@@ -328,6 +352,8 @@
         |-Identifier=test
       |-Type(562,593)
         |-FunctionTypeLiteral(562,593)
+          |-TypeParameters(565,565)
+            <Rule0>
           |-FunctionTypeParameters(565,567)
             <Rule0>
           |-Type(571,593)
@@ -337,6 +363,8 @@
                   |-NameIdentifier(571,575)
                     |-Identifier=void
               |-FunctionTypeLiteral(578,593)
+                |-TypeParameters(581,581)
+                  <Rule0>
                 |-FunctionTypeParameters(581,586)
                   |-FunctionTypeParameter(582,585)
                     |-Type(582,585)
@@ -418,6 +446,8 @@
         |-Identifier=test
       |-Type(671,690)
         |-FunctionTypeLiteral(671,690)
+          |-TypeParameters(674,674)
+            <Rule0>
           |-FunctionTypeParameters(674,682)
             |-FunctionTypeParameter(675,681)
               |-NameIdentifier(675,676)
@@ -439,6 +469,8 @@
         |-Identifier=test
       |-Type(705,739)
         |-FunctionTypeLiteral(705,739)
+          |-TypeParameters(708,708)
+            <Rule0>
           |-FunctionTypeParameters(708,723)
             |-FunctionTypeParameter(709,715)
               |-NameIdentifier(709,710)
@@ -475,6 +507,8 @@
         |-Identifier=test
       |-Type(754,782)
         |-FunctionTypeLiteral(754,782)
+          |-TypeParameters(757,757)
+            <Rule0>
           |-FunctionTypeParameters(757,766)
             |-FunctionTypeParameter(758,761)
               |-Type(758,761)

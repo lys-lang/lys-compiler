@@ -46,8 +46,42 @@
   |-TypeDirectiveNode
     |-NameIdentifierNode name=theFn6
     |-ErrorNode
-  |-ErrorNode
-  |-ErrorNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-PrivateModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=compare
+      |-ParameterNode
+        |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Color
+      |-ParameterNode
+        |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Color
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=bool
+      |-BlockNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=a
+          |-NameIdentifierNode name===
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=main
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-ErrorNode
   |-VarDirectiveNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=test

@@ -12,4 +12,24 @@
     |-ReferenceNode
       |-QNameNode
         |-NameIdentifierNode name=DataView
-    |-ErrorNode
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-ErrorNode
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=DataView
+        |-ParameterNode
+          |-NameIdentifierNode name=at
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=u8
+        |-BlockNode
+          |-ErrorNode
+          |-ErrorNode
+          |-ErrorNode

@@ -27,6 +27,8 @@
             |-FunOperator(93,95)
               |-VectorOpen=[
               |-VectorClose=]
+          |-TypeParameters(95,95)
+            <Rule0>
           |-FunctionParamsList(95,120)
             |-(List)(96,119)
               |-Parameter(96,110)
@@ -45,12 +47,13 @@
                     |-QName(116,119)
                       |-NameIdentifier(116,119)
                         |-Identifier=u32
-          |-Type(122,124)
-            |-Reference(122,124)
-              |-QName(122,124)
-                |-NameIdentifier(122,124)
-                  |-Identifier=u8
-          |-FunAssignExpression(125,272)
+          |-ReturnType(120,125)
+            |-Type(122,124)
+              |-Reference(122,124)
+                |-QName(122,124)
+                  |-NameIdentifier(122,124)
+                    |-Identifier=u8
+          |-FunctionBody(125,272)
             |-CodeBlock(127,272)
               |-IfExpression(133,183)
                 |-IfBody(136,161)
@@ -66,13 +69,11 @@
                           |-NameIdentifier(142,146)
                             |-Identifier=self
                       |-MemberExpression(146,153)
-                        |-BinMemberOperator(146,147)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(147,153)
                           |-Identifier=buffer
                       |-MemberExpression(153,160)
-                        |-BinMemberOperator(153,154)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(154,160)
                           |-Identifier=length
                 |-CodeBlock(162,183)
@@ -112,8 +113,7 @@
                     |-NameIdentifier(233,235)
                       |-Identifier=u8
                 |-MemberExpression(235,240)
-                  |-BinMemberOperator(235,236)
-                    <Rule0>
+                  |-Operator=.
                   |-NameIdentifier(236,240)
                     |-Identifier=load
                 |-CallArguments(240,268)
@@ -124,13 +124,11 @@
                           |-NameIdentifier(241,245)
                             |-Identifier=self
                       |-MemberExpression(245,252)
-                        |-BinMemberOperator(245,246)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(246,252)
                           |-Identifier=buffer
                       |-MemberExpression(252,256)
-                        |-BinMemberOperator(252,253)
-                          <Rule0>
+                        |-Operator=.
                         |-NameIdentifier(253,256)
                           |-Identifier=ptr
                     |-Type(260,263)

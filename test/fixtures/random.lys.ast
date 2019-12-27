@@ -6,15 +6,18 @@
       |-FunctionName(4,11)
         |-NameIdentifier(4,11)
           |-Identifier=nextInt
+      |-TypeParameters(11,11)
+        <Rule0>
       |-FunctionParamsList(11,13)
         |-(List)(12,12)
           <Rule0>
-      |-Type(15,18)
-        |-Reference(15,18)
-          |-QName(15,18)
-            |-NameIdentifier(15,18)
-              |-Identifier=i32
-      |-FunAssignExpression(19,22)
+      |-ReturnType(13,19)
+        |-Type(15,18)
+          |-Reference(15,18)
+            |-QName(15,18)
+              |-NameIdentifier(15,18)
+                |-Identifier=i32
+      |-FunctionBody(19,22)
         |-NumberLiteral=0
   |-FunctionDirective(23,49)
     |-Decorators(23,23)
@@ -23,14 +26,17 @@
       |-FunctionName(27,36)
         |-NameIdentifier(27,36)
           |-Identifier=nextFloat
+      |-TypeParameters(36,36)
+        <Rule0>
       |-FunctionParamsList(36,38)
         |-(List)(37,37)
           <Rule0>
-      |-Type(40,43)
-        |-Reference(40,43)
-          |-QName(40,43)
-            |-NameIdentifier(40,43)
-              |-Identifier=f32
-      |-FunAssignExpression(44,49)
+      |-ReturnType(38,44)
+        |-Type(40,43)
+          |-Reference(40,43)
+            |-QName(40,43)
+              |-NameIdentifier(40,43)
+                |-Identifier=f32
+      |-FunctionBody(44,49)
         |-NumberLiteral=0.0
   |-EndOfFile=
