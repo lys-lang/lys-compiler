@@ -98,7 +98,7 @@
   |-TypeDirective(312,365)
     |-NameIdentifier(317,320)
       |-Identifier=u32
-    |-ValueType(321,365)
+    |-Type(323,365)
       |-StackLiteral(323,365)
         |-NameLiteralPair(332,350)
           |-NameIdentifier(332,344)
@@ -125,18 +125,16 @@
             |-Parameter(385,393)
               |-NameIdentifier(385,388)
                 |-Identifier=lhs
-              |-OfType(388,393)
-                |-Type(390,393)
-                  |-Reference(390,393)
-                    |-QName(390,393)
-                      |-NameIdentifier(390,393)
-                        |-Identifier=u32
-          |-OfType(394,400)
-            |-Type(396,399)
-              |-Reference(396,399)
-                |-QName(396,399)
-                  |-NameIdentifier(396,399)
-                    |-Identifier=i64
+              |-Type(390,393)
+                |-Reference(390,393)
+                  |-QName(390,393)
+                    |-NameIdentifier(390,393)
+                      |-Identifier=u32
+          |-Type(396,399)
+            |-Reference(396,399)
+              |-QName(396,399)
+                |-NameIdentifier(396,399)
+                  |-Identifier=i64
           |-FunAssignExpression(400,450)
             |-WasmExpression(402,450)
               |-SExpression(410,446)
@@ -160,18 +158,16 @@
             |-Parameter(457,465)
               |-NameIdentifier(457,460)
                 |-Identifier=lhs
-              |-OfType(460,465)
-                |-Type(462,465)
-                  |-Reference(462,465)
-                    |-QName(462,465)
-                      |-NameIdentifier(462,465)
-                        |-Identifier=u32
-          |-OfType(466,472)
-            |-Type(468,471)
-              |-Reference(468,471)
-                |-QName(468,471)
-                  |-NameIdentifier(468,471)
-                    |-Identifier=u64
+              |-Type(462,465)
+                |-Reference(462,465)
+                  |-QName(462,465)
+                    |-NameIdentifier(462,465)
+                      |-Identifier=u32
+          |-Type(468,471)
+            |-Reference(468,471)
+              |-QName(468,471)
+                |-NameIdentifier(468,471)
+                  |-Identifier=u64
           |-FunAssignExpression(472,522)
             |-WasmExpression(474,522)
               |-SExpression(482,518)
@@ -195,18 +191,16 @@
             |-Parameter(529,537)
               |-NameIdentifier(529,532)
                 |-Identifier=lhs
-              |-OfType(532,537)
-                |-Type(534,537)
-                  |-Reference(534,537)
-                    |-QName(534,537)
-                      |-NameIdentifier(534,537)
-                        |-Identifier=u32
-          |-OfType(538,544)
-            |-Type(540,543)
-              |-Reference(540,543)
-                |-QName(540,543)
-                  |-NameIdentifier(540,543)
-                    |-Identifier=f32
+              |-Type(534,537)
+                |-Reference(534,537)
+                  |-QName(534,537)
+                    |-NameIdentifier(534,537)
+                      |-Identifier=u32
+          |-Type(540,543)
+            |-Reference(540,543)
+              |-QName(540,543)
+                |-NameIdentifier(540,543)
+                  |-Identifier=f32
           |-FunAssignExpression(544,595)
             |-WasmExpression(546,595)
               |-SExpression(554,591)
@@ -230,18 +224,16 @@
             |-Parameter(602,610)
               |-NameIdentifier(602,605)
                 |-Identifier=lhs
-              |-OfType(605,610)
-                |-Type(607,610)
-                  |-Reference(607,610)
-                    |-QName(607,610)
-                      |-NameIdentifier(607,610)
-                        |-Identifier=u32
-          |-OfType(611,617)
-            |-Type(613,616)
-              |-Reference(613,616)
-                |-QName(613,616)
-                  |-NameIdentifier(613,616)
-                    |-Identifier=f64
+              |-Type(607,610)
+                |-Reference(607,610)
+                  |-QName(607,610)
+                    |-NameIdentifier(607,610)
+                      |-Identifier=u32
+          |-Type(613,616)
+            |-Reference(613,616)
+              |-QName(613,616)
+                |-NameIdentifier(613,616)
+                  |-Identifier=f64
           |-FunAssignExpression(617,669)
             |-WasmExpression(619,669)
               |-SExpression(627,664)
@@ -267,18 +259,16 @@
             |-Parameter(690,698)
               |-NameIdentifier(690,693)
                 |-Identifier=lhs
-              |-OfType(693,698)
-                |-Type(695,698)
-                  |-Reference(695,698)
-                    |-QName(695,698)
-                      |-NameIdentifier(695,698)
-                        |-Identifier=u32
-          |-OfType(699,705)
-            |-Type(701,704)
-              |-Reference(701,704)
-                |-QName(701,704)
-                  |-NameIdentifier(701,704)
-                    |-Identifier=i32
+              |-Type(695,698)
+                |-Reference(695,698)
+                  |-QName(695,698)
+                    |-NameIdentifier(695,698)
+                      |-Identifier=u32
+          |-Type(701,704)
+            |-Reference(701,704)
+              |-QName(701,704)
+                |-NameIdentifier(701,704)
+                  |-Identifier=i32
           |-FunAssignExpression(705,737)
             |-WasmExpression(707,737)
               |-SExpression(715,732)
@@ -300,18 +290,16 @@
             |-Parameter(758,766)
               |-NameIdentifier(758,761)
                 |-Identifier=lhs
-              |-OfType(761,766)
-                |-Type(763,766)
-                  |-Reference(763,766)
-                    |-QName(763,766)
-                      |-NameIdentifier(763,766)
-                        |-Identifier=u32
-          |-OfType(767,773)
-            |-Type(769,772)
-              |-Reference(769,772)
-                |-QName(769,772)
-                  |-NameIdentifier(769,772)
-                    |-Identifier=i16
+              |-Type(763,766)
+                |-Reference(763,766)
+                  |-QName(763,766)
+                    |-NameIdentifier(763,766)
+                      |-Identifier=u32
+          |-Type(769,772)
+            |-Reference(769,772)
+              |-QName(769,772)
+                |-NameIdentifier(769,772)
+                  |-Identifier=i16
           |-FunAssignExpression(773,857)
             |-WasmExpression(775,857)
               |-SExpression(783,852)
@@ -353,18 +341,16 @@
             |-Parameter(878,886)
               |-NameIdentifier(878,881)
                 |-Identifier=lhs
-              |-OfType(881,886)
-                |-Type(883,886)
-                  |-Reference(883,886)
-                    |-QName(883,886)
-                      |-NameIdentifier(883,886)
-                        |-Identifier=u32
-          |-OfType(887,892)
-            |-Type(889,891)
-              |-Reference(889,891)
-                |-QName(889,891)
-                  |-NameIdentifier(889,891)
-                    |-Identifier=u8
+              |-Type(883,886)
+                |-Reference(883,886)
+                  |-QName(883,886)
+                    |-NameIdentifier(883,886)
+                      |-Identifier=u32
+          |-Type(889,891)
+            |-Reference(889,891)
+              |-QName(889,891)
+                |-NameIdentifier(889,891)
+                  |-Identifier=u8
           |-FunAssignExpression(892,951)
             |-WasmExpression(894,951)
               |-SExpression(902,946)
@@ -396,18 +382,16 @@
             |-Parameter(972,980)
               |-NameIdentifier(972,975)
                 |-Identifier=lhs
-              |-OfType(975,980)
-                |-Type(977,980)
-                  |-Reference(977,980)
-                    |-QName(977,980)
-                      |-NameIdentifier(977,980)
-                        |-Identifier=u32
-          |-OfType(981,987)
-            |-Type(983,986)
-              |-Reference(983,986)
-                |-QName(983,986)
-                  |-NameIdentifier(983,986)
-                    |-Identifier=ref
+              |-Type(977,980)
+                |-Reference(977,980)
+                  |-QName(977,980)
+                    |-NameIdentifier(977,980)
+                      |-Identifier=u32
+          |-Type(983,986)
+            |-Reference(983,986)
+              |-QName(983,986)
+                |-NameIdentifier(983,986)
+                  |-Identifier=ref
           |-FunAssignExpression(987,1038)
             |-WasmExpression(989,1038)
               |-SExpression(997,1033)
@@ -431,27 +415,24 @@
             |-Parameter(1045,1053)
               |-NameIdentifier(1045,1048)
                 |-Identifier=lhs
-              |-OfType(1048,1053)
-                |-Type(1050,1053)
-                  |-Reference(1050,1053)
-                    |-QName(1050,1053)
-                      |-NameIdentifier(1050,1053)
-                        |-Identifier=u32
+              |-Type(1050,1053)
+                |-Reference(1050,1053)
+                  |-QName(1050,1053)
+                    |-NameIdentifier(1050,1053)
+                      |-Identifier=u32
             |-Parameter(1055,1063)
               |-NameIdentifier(1055,1058)
                 |-Identifier=rhs
-              |-OfType(1058,1063)
-                |-Type(1060,1063)
-                  |-Reference(1060,1063)
-                    |-QName(1060,1063)
-                      |-NameIdentifier(1060,1063)
-                        |-Identifier=u32
-          |-OfType(1064,1074)
-            |-Type(1066,1073)
-              |-Reference(1066,1073)
-                |-QName(1066,1073)
-                  |-NameIdentifier(1066,1073)
-                    |-Identifier=boolean
+              |-Type(1060,1063)
+                |-Reference(1060,1063)
+                  |-QName(1060,1063)
+                    |-NameIdentifier(1060,1063)
+                      |-Identifier=u32
+          |-Type(1066,1073)
+            |-Reference(1066,1073)
+              |-QName(1066,1073)
+                |-NameIdentifier(1066,1073)
+                  |-Identifier=boolean
           |-FunAssignExpression(1074,1131)
             |-WasmExpression(1076,1131)
               |-SExpression(1084,1127)
@@ -481,27 +462,24 @@
             |-Parameter(1138,1146)
               |-NameIdentifier(1138,1141)
                 |-Identifier=lhs
-              |-OfType(1141,1146)
-                |-Type(1143,1146)
-                  |-Reference(1143,1146)
-                    |-QName(1143,1146)
-                      |-NameIdentifier(1143,1146)
-                        |-Identifier=u32
+              |-Type(1143,1146)
+                |-Reference(1143,1146)
+                  |-QName(1143,1146)
+                    |-NameIdentifier(1143,1146)
+                      |-Identifier=u32
             |-Parameter(1148,1156)
               |-NameIdentifier(1148,1151)
                 |-Identifier=rhs
-              |-OfType(1151,1156)
-                |-Type(1153,1156)
-                  |-Reference(1153,1156)
-                    |-QName(1153,1156)
-                      |-NameIdentifier(1153,1156)
-                        |-Identifier=u16
-          |-OfType(1157,1167)
-            |-Type(1159,1166)
-              |-Reference(1159,1166)
-                |-QName(1159,1166)
-                  |-NameIdentifier(1159,1166)
-                    |-Identifier=boolean
+              |-Type(1153,1156)
+                |-Reference(1153,1156)
+                  |-QName(1153,1156)
+                    |-NameIdentifier(1153,1156)
+                      |-Identifier=u16
+          |-Type(1159,1166)
+            |-Reference(1159,1166)
+              |-QName(1159,1166)
+                |-NameIdentifier(1159,1166)
+                  |-Identifier=boolean
           |-FunAssignExpression(1167,1224)
             |-WasmExpression(1169,1224)
               |-SExpression(1177,1220)
@@ -531,27 +509,24 @@
             |-Parameter(1231,1239)
               |-NameIdentifier(1231,1234)
                 |-Identifier=lhs
-              |-OfType(1234,1239)
-                |-Type(1236,1239)
-                  |-Reference(1236,1239)
-                    |-QName(1236,1239)
-                      |-NameIdentifier(1236,1239)
-                        |-Identifier=u32
+              |-Type(1236,1239)
+                |-Reference(1236,1239)
+                  |-QName(1236,1239)
+                    |-NameIdentifier(1236,1239)
+                      |-Identifier=u32
             |-Parameter(1241,1248)
               |-NameIdentifier(1241,1244)
                 |-Identifier=rhs
-              |-OfType(1244,1248)
-                |-Type(1246,1248)
-                  |-Reference(1246,1248)
-                    |-QName(1246,1248)
-                      |-NameIdentifier(1246,1248)
-                        |-Identifier=u8
-          |-OfType(1249,1259)
-            |-Type(1251,1258)
-              |-Reference(1251,1258)
-                |-QName(1251,1258)
-                  |-NameIdentifier(1251,1258)
-                    |-Identifier=boolean
+              |-Type(1246,1248)
+                |-Reference(1246,1248)
+                  |-QName(1246,1248)
+                    |-NameIdentifier(1246,1248)
+                      |-Identifier=u8
+          |-Type(1251,1258)
+            |-Reference(1251,1258)
+              |-QName(1251,1258)
+                |-NameIdentifier(1251,1258)
+                  |-Identifier=boolean
           |-FunAssignExpression(1259,1316)
             |-WasmExpression(1261,1316)
               |-SExpression(1269,1312)
@@ -581,27 +556,24 @@
             |-Parameter(1323,1331)
               |-NameIdentifier(1323,1326)
                 |-Identifier=lhs
-              |-OfType(1326,1331)
-                |-Type(1328,1331)
-                  |-Reference(1328,1331)
-                    |-QName(1328,1331)
-                      |-NameIdentifier(1328,1331)
-                        |-Identifier=u32
+              |-Type(1328,1331)
+                |-Reference(1328,1331)
+                  |-QName(1328,1331)
+                    |-NameIdentifier(1328,1331)
+                      |-Identifier=u32
             |-Parameter(1333,1341)
               |-NameIdentifier(1333,1336)
                 |-Identifier=rhs
-              |-OfType(1336,1341)
-                |-Type(1338,1341)
-                  |-Reference(1338,1341)
-                    |-QName(1338,1341)
-                      |-NameIdentifier(1338,1341)
-                        |-Identifier=u32
-          |-OfType(1342,1352)
-            |-Type(1344,1351)
-              |-Reference(1344,1351)
-                |-QName(1344,1351)
-                  |-NameIdentifier(1344,1351)
-                    |-Identifier=boolean
+              |-Type(1338,1341)
+                |-Reference(1338,1341)
+                  |-QName(1338,1341)
+                    |-NameIdentifier(1338,1341)
+                      |-Identifier=u32
+          |-Type(1344,1351)
+            |-Reference(1344,1351)
+              |-QName(1344,1351)
+                |-NameIdentifier(1344,1351)
+                  |-Identifier=boolean
           |-FunAssignExpression(1352,1409)
             |-WasmExpression(1354,1409)
               |-SExpression(1362,1405)
@@ -631,27 +603,24 @@
             |-Parameter(1415,1423)
               |-NameIdentifier(1415,1418)
                 |-Identifier=lhs
-              |-OfType(1418,1423)
-                |-Type(1420,1423)
-                  |-Reference(1420,1423)
-                    |-QName(1420,1423)
-                      |-NameIdentifier(1420,1423)
-                        |-Identifier=u32
+              |-Type(1420,1423)
+                |-Reference(1420,1423)
+                  |-QName(1420,1423)
+                    |-NameIdentifier(1420,1423)
+                      |-Identifier=u32
             |-Parameter(1425,1433)
               |-NameIdentifier(1425,1428)
                 |-Identifier=rhs
-              |-OfType(1428,1433)
-                |-Type(1430,1433)
-                  |-Reference(1430,1433)
-                    |-QName(1430,1433)
-                      |-NameIdentifier(1430,1433)
-                        |-Identifier=u32
-          |-OfType(1434,1440)
-            |-Type(1436,1439)
-              |-Reference(1436,1439)
-                |-QName(1436,1439)
-                  |-NameIdentifier(1436,1439)
-                    |-Identifier=u32
+              |-Type(1430,1433)
+                |-Reference(1430,1433)
+                  |-QName(1430,1433)
+                    |-NameIdentifier(1430,1433)
+                      |-Identifier=u32
+          |-Type(1436,1439)
+            |-Reference(1436,1439)
+              |-QName(1436,1439)
+                |-NameIdentifier(1436,1439)
+                  |-Identifier=u32
           |-FunAssignExpression(1440,1498)
             |-WasmExpression(1442,1498)
               |-SExpression(1450,1494)
@@ -681,27 +650,24 @@
             |-Parameter(1504,1512)
               |-NameIdentifier(1504,1507)
                 |-Identifier=lhs
-              |-OfType(1507,1512)
-                |-Type(1509,1512)
-                  |-Reference(1509,1512)
-                    |-QName(1509,1512)
-                      |-NameIdentifier(1509,1512)
-                        |-Identifier=u32
+              |-Type(1509,1512)
+                |-Reference(1509,1512)
+                  |-QName(1509,1512)
+                    |-NameIdentifier(1509,1512)
+                      |-Identifier=u32
             |-Parameter(1514,1522)
               |-NameIdentifier(1514,1517)
                 |-Identifier=rhs
-              |-OfType(1517,1522)
-                |-Type(1519,1522)
-                  |-Reference(1519,1522)
-                    |-QName(1519,1522)
-                      |-NameIdentifier(1519,1522)
-                        |-Identifier=u32
-          |-OfType(1523,1529)
-            |-Type(1525,1528)
-              |-Reference(1525,1528)
-                |-QName(1525,1528)
-                  |-NameIdentifier(1525,1528)
-                    |-Identifier=u32
+              |-Type(1519,1522)
+                |-Reference(1519,1522)
+                  |-QName(1519,1522)
+                    |-NameIdentifier(1519,1522)
+                      |-Identifier=u32
+          |-Type(1525,1528)
+            |-Reference(1525,1528)
+              |-QName(1525,1528)
+                |-NameIdentifier(1525,1528)
+                  |-Identifier=u32
           |-FunAssignExpression(1529,1586)
             |-WasmExpression(1531,1586)
               |-SExpression(1539,1582)
@@ -731,27 +697,24 @@
             |-Parameter(1592,1600)
               |-NameIdentifier(1592,1595)
                 |-Identifier=lhs
-              |-OfType(1595,1600)
-                |-Type(1597,1600)
-                  |-Reference(1597,1600)
-                    |-QName(1597,1600)
-                      |-NameIdentifier(1597,1600)
-                        |-Identifier=u32
+              |-Type(1597,1600)
+                |-Reference(1597,1600)
+                  |-QName(1597,1600)
+                    |-NameIdentifier(1597,1600)
+                      |-Identifier=u32
             |-Parameter(1602,1610)
               |-NameIdentifier(1602,1605)
                 |-Identifier=rhs
-              |-OfType(1605,1610)
-                |-Type(1607,1610)
-                  |-Reference(1607,1610)
-                    |-QName(1607,1610)
-                      |-NameIdentifier(1607,1610)
-                        |-Identifier=u32
-          |-OfType(1611,1617)
-            |-Type(1613,1616)
-              |-Reference(1613,1616)
-                |-QName(1613,1616)
-                  |-NameIdentifier(1613,1616)
-                    |-Identifier=u32
+              |-Type(1607,1610)
+                |-Reference(1607,1610)
+                  |-QName(1607,1610)
+                    |-NameIdentifier(1607,1610)
+                      |-Identifier=u32
+          |-Type(1613,1616)
+            |-Reference(1613,1616)
+              |-QName(1613,1616)
+                |-NameIdentifier(1613,1616)
+                  |-Identifier=u32
           |-FunAssignExpression(1617,1675)
             |-WasmExpression(1619,1675)
               |-SExpression(1627,1671)
@@ -781,27 +744,24 @@
             |-Parameter(1681,1689)
               |-NameIdentifier(1681,1684)
                 |-Identifier=lhs
-              |-OfType(1684,1689)
-                |-Type(1686,1689)
-                  |-Reference(1686,1689)
-                    |-QName(1686,1689)
-                      |-NameIdentifier(1686,1689)
-                        |-Identifier=u32
+              |-Type(1686,1689)
+                |-Reference(1686,1689)
+                  |-QName(1686,1689)
+                    |-NameIdentifier(1686,1689)
+                      |-Identifier=u32
             |-Parameter(1691,1699)
               |-NameIdentifier(1691,1694)
                 |-Identifier=rhs
-              |-OfType(1694,1699)
-                |-Type(1696,1699)
-                  |-Reference(1696,1699)
-                    |-QName(1696,1699)
-                      |-NameIdentifier(1696,1699)
-                        |-Identifier=u32
-          |-OfType(1700,1706)
-            |-Type(1702,1705)
-              |-Reference(1702,1705)
-                |-QName(1702,1705)
-                  |-NameIdentifier(1702,1705)
-                    |-Identifier=u32
+              |-Type(1696,1699)
+                |-Reference(1696,1699)
+                  |-QName(1696,1699)
+                    |-NameIdentifier(1696,1699)
+                      |-Identifier=u32
+          |-Type(1702,1705)
+            |-Reference(1702,1705)
+              |-QName(1702,1705)
+                |-NameIdentifier(1702,1705)
+                  |-Identifier=u32
           |-FunAssignExpression(1706,1764)
             |-WasmExpression(1708,1764)
               |-SExpression(1716,1760)
@@ -831,27 +791,24 @@
             |-Parameter(1770,1778)
               |-NameIdentifier(1770,1773)
                 |-Identifier=lhs
-              |-OfType(1773,1778)
-                |-Type(1775,1778)
-                  |-Reference(1775,1778)
-                    |-QName(1775,1778)
-                      |-NameIdentifier(1775,1778)
-                        |-Identifier=u32
+              |-Type(1775,1778)
+                |-Reference(1775,1778)
+                  |-QName(1775,1778)
+                    |-NameIdentifier(1775,1778)
+                      |-Identifier=u32
             |-Parameter(1780,1788)
               |-NameIdentifier(1780,1783)
                 |-Identifier=rhs
-              |-OfType(1783,1788)
-                |-Type(1785,1788)
-                  |-Reference(1785,1788)
-                    |-QName(1785,1788)
-                      |-NameIdentifier(1785,1788)
-                        |-Identifier=u32
-          |-OfType(1789,1795)
-            |-Type(1791,1794)
-              |-Reference(1791,1794)
-                |-QName(1791,1794)
-                  |-NameIdentifier(1791,1794)
-                    |-Identifier=u32
+              |-Type(1785,1788)
+                |-Reference(1785,1788)
+                  |-QName(1785,1788)
+                    |-NameIdentifier(1785,1788)
+                      |-Identifier=u32
+          |-Type(1791,1794)
+            |-Reference(1791,1794)
+              |-QName(1791,1794)
+                |-NameIdentifier(1791,1794)
+                  |-Identifier=u32
           |-FunAssignExpression(1795,1853)
             |-WasmExpression(1797,1853)
               |-SExpression(1805,1849)
@@ -881,27 +838,24 @@
             |-Parameter(1859,1867)
               |-NameIdentifier(1859,1862)
                 |-Identifier=lhs
-              |-OfType(1862,1867)
-                |-Type(1864,1867)
-                  |-Reference(1864,1867)
-                    |-QName(1864,1867)
-                      |-NameIdentifier(1864,1867)
-                        |-Identifier=u32
+              |-Type(1864,1867)
+                |-Reference(1864,1867)
+                  |-QName(1864,1867)
+                    |-NameIdentifier(1864,1867)
+                      |-Identifier=u32
             |-Parameter(1869,1877)
               |-NameIdentifier(1869,1872)
                 |-Identifier=rhs
-              |-OfType(1872,1877)
-                |-Type(1874,1877)
-                  |-Reference(1874,1877)
-                    |-QName(1874,1877)
-                      |-NameIdentifier(1874,1877)
-                        |-Identifier=u32
-          |-OfType(1878,1884)
-            |-Type(1880,1883)
-              |-Reference(1880,1883)
-                |-QName(1880,1883)
-                  |-NameIdentifier(1880,1883)
-                    |-Identifier=u32
+              |-Type(1874,1877)
+                |-Reference(1874,1877)
+                  |-QName(1874,1877)
+                    |-NameIdentifier(1874,1877)
+                      |-Identifier=u32
+          |-Type(1880,1883)
+            |-Reference(1880,1883)
+              |-QName(1880,1883)
+                |-NameIdentifier(1880,1883)
+                  |-Identifier=u32
           |-FunAssignExpression(1884,1942)
             |-WasmExpression(1886,1942)
               |-SExpression(1894,1938)
@@ -931,27 +885,24 @@
             |-Parameter(1948,1956)
               |-NameIdentifier(1948,1951)
                 |-Identifier=lhs
-              |-OfType(1951,1956)
-                |-Type(1953,1956)
-                  |-Reference(1953,1956)
-                    |-QName(1953,1956)
-                      |-NameIdentifier(1953,1956)
-                        |-Identifier=u32
+              |-Type(1953,1956)
+                |-Reference(1953,1956)
+                  |-QName(1953,1956)
+                    |-NameIdentifier(1953,1956)
+                      |-Identifier=u32
             |-Parameter(1958,1966)
               |-NameIdentifier(1958,1961)
                 |-Identifier=rhs
-              |-OfType(1961,1966)
-                |-Type(1963,1966)
-                  |-Reference(1963,1966)
-                    |-QName(1963,1966)
-                      |-NameIdentifier(1963,1966)
-                        |-Identifier=u32
-          |-OfType(1967,1973)
-            |-Type(1969,1972)
-              |-Reference(1969,1972)
-                |-QName(1969,1972)
-                  |-NameIdentifier(1969,1972)
-                    |-Identifier=u32
+              |-Type(1963,1966)
+                |-Reference(1963,1966)
+                  |-QName(1963,1966)
+                    |-NameIdentifier(1963,1966)
+                      |-Identifier=u32
+          |-Type(1969,1972)
+            |-Reference(1969,1972)
+              |-QName(1969,1972)
+                |-NameIdentifier(1969,1972)
+                  |-Identifier=u32
           |-FunAssignExpression(1973,2033)
             |-WasmExpression(1975,2033)
               |-SExpression(1983,2029)
@@ -981,18 +932,16 @@
             |-Parameter(2039,2047)
               |-NameIdentifier(2039,2042)
                 |-Identifier=rhs
-              |-OfType(2042,2047)
-                |-Type(2044,2047)
-                  |-Reference(2044,2047)
-                    |-QName(2044,2047)
-                      |-NameIdentifier(2044,2047)
-                        |-Identifier=u32
-          |-OfType(2048,2054)
-            |-Type(2050,2053)
-              |-Reference(2050,2053)
-                |-QName(2050,2053)
-                  |-NameIdentifier(2050,2053)
-                    |-Identifier=u32
+              |-Type(2044,2047)
+                |-Reference(2044,2047)
+                  |-QName(2044,2047)
+                    |-NameIdentifier(2044,2047)
+                      |-Identifier=u32
+          |-Type(2050,2053)
+            |-Reference(2050,2053)
+              |-QName(2050,2053)
+                |-NameIdentifier(2050,2053)
+                  |-Identifier=u32
           |-FunAssignExpression(2054,2118)
             |-WasmExpression(2056,2118)
               |-SExpression(2064,2114)
@@ -1022,27 +971,24 @@
             |-Parameter(2126,2134)
               |-NameIdentifier(2126,2129)
                 |-Identifier=lhs
-              |-OfType(2129,2134)
-                |-Type(2131,2134)
-                  |-Reference(2131,2134)
-                    |-QName(2131,2134)
-                      |-NameIdentifier(2131,2134)
-                        |-Identifier=u32
+              |-Type(2131,2134)
+                |-Reference(2131,2134)
+                  |-QName(2131,2134)
+                    |-NameIdentifier(2131,2134)
+                      |-Identifier=u32
             |-Parameter(2136,2144)
               |-NameIdentifier(2136,2139)
                 |-Identifier=rhs
-              |-OfType(2139,2144)
-                |-Type(2141,2144)
-                  |-Reference(2141,2144)
-                    |-QName(2141,2144)
-                      |-NameIdentifier(2141,2144)
-                        |-Identifier=i32
-          |-OfType(2145,2151)
-            |-Type(2147,2150)
-              |-Reference(2147,2150)
-                |-QName(2147,2150)
-                  |-NameIdentifier(2147,2150)
-                    |-Identifier=u32
+              |-Type(2141,2144)
+                |-Reference(2141,2144)
+                  |-QName(2141,2144)
+                    |-NameIdentifier(2141,2144)
+                      |-Identifier=i32
+          |-Type(2147,2150)
+            |-Reference(2147,2150)
+              |-QName(2147,2150)
+                |-NameIdentifier(2147,2150)
+                  |-Identifier=u32
           |-FunAssignExpression(2151,2211)
             |-WasmExpression(2153,2211)
               |-SExpression(2161,2207)
@@ -1072,32 +1018,29 @@
             |-Parameter(2218,2226)
               |-NameIdentifier(2218,2221)
                 |-Identifier=lhs
-              |-OfType(2221,2226)
-                |-Type(2223,2226)
-                  |-Reference(2223,2226)
-                    |-QName(2223,2226)
-                      |-NameIdentifier(2223,2226)
-                        |-Identifier=u32
+              |-Type(2223,2226)
+                |-Reference(2223,2226)
+                  |-QName(2223,2226)
+                    |-NameIdentifier(2223,2226)
+                      |-Identifier=u32
             |-Parameter(2228,2242)
               |-NameIdentifier(2228,2231)
                 |-Identifier=rhs
-              |-OfType(2231,2242)
-                |-Type(2233,2242)
-                  |-UnionType(2233,2242)
-                    |-Reference(2233,2236)
-                      |-QName(2233,2236)
-                        |-NameIdentifier(2233,2236)
-                          |-Identifier=i32
-                    |-Reference(2239,2242)
-                      |-QName(2239,2242)
-                        |-NameIdentifier(2239,2242)
-                          |-Identifier=u32
-          |-OfType(2243,2249)
-            |-Type(2245,2248)
-              |-Reference(2245,2248)
-                |-QName(2245,2248)
-                  |-NameIdentifier(2245,2248)
-                    |-Identifier=u32
+              |-Type(2233,2242)
+                |-UnionType(2233,2242)
+                  |-Reference(2233,2236)
+                    |-QName(2233,2236)
+                      |-NameIdentifier(2233,2236)
+                        |-Identifier=i32
+                  |-Reference(2239,2242)
+                    |-QName(2239,2242)
+                      |-NameIdentifier(2239,2242)
+                        |-Identifier=u32
+          |-Type(2245,2248)
+            |-Reference(2245,2248)
+              |-QName(2245,2248)
+                |-NameIdentifier(2245,2248)
+                  |-Identifier=u32
           |-FunAssignExpression(2249,2309)
             |-WasmExpression(2251,2309)
               |-SExpression(2259,2305)
@@ -1127,32 +1070,29 @@
             |-Parameter(2316,2324)
               |-NameIdentifier(2316,2319)
                 |-Identifier=lhs
-              |-OfType(2319,2324)
-                |-Type(2321,2324)
-                  |-Reference(2321,2324)
-                    |-QName(2321,2324)
-                      |-NameIdentifier(2321,2324)
-                        |-Identifier=u32
+              |-Type(2321,2324)
+                |-Reference(2321,2324)
+                  |-QName(2321,2324)
+                    |-NameIdentifier(2321,2324)
+                      |-Identifier=u32
             |-Parameter(2326,2340)
               |-NameIdentifier(2326,2329)
                 |-Identifier=rhs
-              |-OfType(2329,2340)
-                |-Type(2331,2340)
-                  |-UnionType(2331,2340)
-                    |-Reference(2331,2334)
-                      |-QName(2331,2334)
-                        |-NameIdentifier(2331,2334)
-                          |-Identifier=i32
-                    |-Reference(2337,2340)
-                      |-QName(2337,2340)
-                        |-NameIdentifier(2337,2340)
-                          |-Identifier=u32
-          |-OfType(2341,2347)
-            |-Type(2343,2346)
-              |-Reference(2343,2346)
-                |-QName(2343,2346)
-                  |-NameIdentifier(2343,2346)
-                    |-Identifier=u32
+              |-Type(2331,2340)
+                |-UnionType(2331,2340)
+                  |-Reference(2331,2334)
+                    |-QName(2331,2334)
+                      |-NameIdentifier(2331,2334)
+                        |-Identifier=i32
+                  |-Reference(2337,2340)
+                    |-QName(2337,2340)
+                      |-NameIdentifier(2337,2340)
+                        |-Identifier=u32
+          |-Type(2343,2346)
+            |-Reference(2343,2346)
+              |-QName(2343,2346)
+                |-NameIdentifier(2343,2346)
+                  |-Identifier=u32
           |-FunAssignExpression(2347,2405)
             |-WasmExpression(2349,2405)
               |-SExpression(2357,2401)
@@ -1182,27 +1122,24 @@
             |-Parameter(2411,2419)
               |-NameIdentifier(2411,2414)
                 |-Identifier=lhs
-              |-OfType(2414,2419)
-                |-Type(2416,2419)
-                  |-Reference(2416,2419)
-                    |-QName(2416,2419)
-                      |-NameIdentifier(2416,2419)
-                        |-Identifier=u32
+              |-Type(2416,2419)
+                |-Reference(2416,2419)
+                  |-QName(2416,2419)
+                    |-NameIdentifier(2416,2419)
+                      |-Identifier=u32
             |-Parameter(2421,2429)
               |-NameIdentifier(2421,2424)
                 |-Identifier=rhs
-              |-OfType(2424,2429)
-                |-Type(2426,2429)
-                  |-Reference(2426,2429)
-                    |-QName(2426,2429)
-                      |-NameIdentifier(2426,2429)
-                        |-Identifier=u32
-          |-OfType(2430,2436)
-            |-Type(2432,2435)
-              |-Reference(2432,2435)
-                |-QName(2432,2435)
-                  |-NameIdentifier(2432,2435)
-                    |-Identifier=u32
+              |-Type(2426,2429)
+                |-Reference(2426,2429)
+                  |-QName(2426,2429)
+                    |-NameIdentifier(2426,2429)
+                      |-Identifier=u32
+          |-Type(2432,2435)
+            |-Reference(2432,2435)
+              |-QName(2432,2435)
+                |-NameIdentifier(2432,2435)
+                  |-Identifier=u32
           |-FunAssignExpression(2436,2494)
             |-WasmExpression(2438,2494)
               |-SExpression(2446,2490)
@@ -1232,27 +1169,24 @@
             |-Parameter(2501,2509)
               |-NameIdentifier(2501,2504)
                 |-Identifier=lhs
-              |-OfType(2504,2509)
-                |-Type(2506,2509)
-                  |-Reference(2506,2509)
-                    |-QName(2506,2509)
-                      |-NameIdentifier(2506,2509)
-                        |-Identifier=u32
+              |-Type(2506,2509)
+                |-Reference(2506,2509)
+                  |-QName(2506,2509)
+                    |-NameIdentifier(2506,2509)
+                      |-Identifier=u32
             |-Parameter(2511,2519)
               |-NameIdentifier(2511,2514)
                 |-Identifier=rhs
-              |-OfType(2514,2519)
-                |-Type(2516,2519)
-                  |-Reference(2516,2519)
-                    |-QName(2516,2519)
-                      |-NameIdentifier(2516,2519)
-                        |-Identifier=u32
-          |-OfType(2520,2530)
-            |-Type(2522,2529)
-              |-Reference(2522,2529)
-                |-QName(2522,2529)
-                  |-NameIdentifier(2522,2529)
-                    |-Identifier=boolean
+              |-Type(2516,2519)
+                |-Reference(2516,2519)
+                  |-QName(2516,2519)
+                    |-NameIdentifier(2516,2519)
+                      |-Identifier=u32
+          |-Type(2522,2529)
+            |-Reference(2522,2529)
+              |-QName(2522,2529)
+                |-NameIdentifier(2522,2529)
+                  |-Identifier=boolean
           |-FunAssignExpression(2530,2589)
             |-WasmExpression(2532,2589)
               |-SExpression(2540,2585)
@@ -1282,27 +1216,24 @@
             |-Parameter(2596,2604)
               |-NameIdentifier(2596,2599)
                 |-Identifier=lhs
-              |-OfType(2599,2604)
-                |-Type(2601,2604)
-                  |-Reference(2601,2604)
-                    |-QName(2601,2604)
-                      |-NameIdentifier(2601,2604)
-                        |-Identifier=u32
+              |-Type(2601,2604)
+                |-Reference(2601,2604)
+                  |-QName(2601,2604)
+                    |-NameIdentifier(2601,2604)
+                      |-Identifier=u32
             |-Parameter(2606,2614)
               |-NameIdentifier(2606,2609)
                 |-Identifier=rhs
-              |-OfType(2609,2614)
-                |-Type(2611,2614)
-                  |-Reference(2611,2614)
-                    |-QName(2611,2614)
-                      |-NameIdentifier(2611,2614)
-                        |-Identifier=u32
-          |-OfType(2615,2625)
-            |-Type(2617,2624)
-              |-Reference(2617,2624)
-                |-QName(2617,2624)
-                  |-NameIdentifier(2617,2624)
-                    |-Identifier=boolean
+              |-Type(2611,2614)
+                |-Reference(2611,2614)
+                  |-QName(2611,2614)
+                    |-NameIdentifier(2611,2614)
+                      |-Identifier=u32
+          |-Type(2617,2624)
+            |-Reference(2617,2624)
+              |-QName(2617,2624)
+                |-NameIdentifier(2617,2624)
+                  |-Identifier=boolean
           |-FunAssignExpression(2625,2684)
             |-WasmExpression(2627,2684)
               |-SExpression(2635,2680)
@@ -1332,27 +1263,24 @@
             |-Parameter(2690,2698)
               |-NameIdentifier(2690,2693)
                 |-Identifier=lhs
-              |-OfType(2693,2698)
-                |-Type(2695,2698)
-                  |-Reference(2695,2698)
-                    |-QName(2695,2698)
-                      |-NameIdentifier(2695,2698)
-                        |-Identifier=u32
+              |-Type(2695,2698)
+                |-Reference(2695,2698)
+                  |-QName(2695,2698)
+                    |-NameIdentifier(2695,2698)
+                      |-Identifier=u32
             |-Parameter(2700,2708)
               |-NameIdentifier(2700,2703)
                 |-Identifier=rhs
-              |-OfType(2703,2708)
-                |-Type(2705,2708)
-                  |-Reference(2705,2708)
-                    |-QName(2705,2708)
-                      |-NameIdentifier(2705,2708)
-                        |-Identifier=u32
-          |-OfType(2709,2719)
-            |-Type(2711,2718)
-              |-Reference(2711,2718)
-                |-QName(2711,2718)
-                  |-NameIdentifier(2711,2718)
-                    |-Identifier=boolean
+              |-Type(2705,2708)
+                |-Reference(2705,2708)
+                  |-QName(2705,2708)
+                    |-NameIdentifier(2705,2708)
+                      |-Identifier=u32
+          |-Type(2711,2718)
+            |-Reference(2711,2718)
+              |-QName(2711,2718)
+                |-NameIdentifier(2711,2718)
+                  |-Identifier=boolean
           |-FunAssignExpression(2719,2778)
             |-WasmExpression(2721,2778)
               |-SExpression(2729,2774)
@@ -1382,27 +1310,24 @@
             |-Parameter(2784,2792)
               |-NameIdentifier(2784,2787)
                 |-Identifier=lhs
-              |-OfType(2787,2792)
-                |-Type(2789,2792)
-                  |-Reference(2789,2792)
-                    |-QName(2789,2792)
-                      |-NameIdentifier(2789,2792)
-                        |-Identifier=u32
+              |-Type(2789,2792)
+                |-Reference(2789,2792)
+                  |-QName(2789,2792)
+                    |-NameIdentifier(2789,2792)
+                      |-Identifier=u32
             |-Parameter(2794,2802)
               |-NameIdentifier(2794,2797)
                 |-Identifier=rhs
-              |-OfType(2797,2802)
-                |-Type(2799,2802)
-                  |-Reference(2799,2802)
-                    |-QName(2799,2802)
-                      |-NameIdentifier(2799,2802)
-                        |-Identifier=u32
-          |-OfType(2803,2813)
-            |-Type(2805,2812)
-              |-Reference(2805,2812)
-                |-QName(2805,2812)
-                  |-NameIdentifier(2805,2812)
-                    |-Identifier=boolean
+              |-Type(2799,2802)
+                |-Reference(2799,2802)
+                  |-QName(2799,2802)
+                    |-NameIdentifier(2799,2802)
+                      |-Identifier=u32
+          |-Type(2805,2812)
+            |-Reference(2805,2812)
+              |-QName(2805,2812)
+                |-NameIdentifier(2805,2812)
+                  |-Identifier=boolean
           |-FunAssignExpression(2813,2872)
             |-WasmExpression(2815,2872)
               |-SExpression(2823,2868)
@@ -1432,27 +1357,24 @@
             |-Parameter(2878,2886)
               |-NameIdentifier(2878,2881)
                 |-Identifier=lhs
-              |-OfType(2881,2886)
-                |-Type(2883,2886)
-                  |-Reference(2883,2886)
-                    |-QName(2883,2886)
-                      |-NameIdentifier(2883,2886)
-                        |-Identifier=u32
+              |-Type(2883,2886)
+                |-Reference(2883,2886)
+                  |-QName(2883,2886)
+                    |-NameIdentifier(2883,2886)
+                      |-Identifier=u32
             |-Parameter(2888,2896)
               |-NameIdentifier(2888,2891)
                 |-Identifier=rhs
-              |-OfType(2891,2896)
-                |-Type(2893,2896)
-                  |-Reference(2893,2896)
-                    |-QName(2893,2896)
-                      |-NameIdentifier(2893,2896)
-                        |-Identifier=u32
-          |-OfType(2897,2903)
-            |-Type(2899,2902)
-              |-Reference(2899,2902)
-                |-QName(2899,2902)
-                  |-NameIdentifier(2899,2902)
-                    |-Identifier=u32
+              |-Type(2893,2896)
+                |-Reference(2893,2896)
+                  |-QName(2893,2896)
+                    |-NameIdentifier(2893,2896)
+                      |-Identifier=u32
+          |-Type(2899,2902)
+            |-Reference(2899,2902)
+              |-QName(2899,2902)
+                |-NameIdentifier(2899,2902)
+                  |-Identifier=u32
           |-FunAssignExpression(2903,2964)
             |-WasmExpression(2905,2964)
               |-SExpression(2913,2959)
@@ -1482,27 +1404,24 @@
             |-Parameter(2974,2982)
               |-NameIdentifier(2974,2977)
                 |-Identifier=lhs
-              |-OfType(2977,2982)
-                |-Type(2979,2982)
-                  |-Reference(2979,2982)
-                    |-QName(2979,2982)
-                      |-NameIdentifier(2979,2982)
-                        |-Identifier=ref
+              |-Type(2979,2982)
+                |-Reference(2979,2982)
+                  |-QName(2979,2982)
+                    |-NameIdentifier(2979,2982)
+                      |-Identifier=ref
             |-Parameter(2984,2992)
               |-NameIdentifier(2984,2987)
                 |-Identifier=rhs
-              |-OfType(2987,2992)
-                |-Type(2989,2992)
-                  |-Reference(2989,2992)
-                    |-QName(2989,2992)
-                      |-NameIdentifier(2989,2992)
-                        |-Identifier=u32
-          |-OfType(2993,3000)
-            |-Type(2995,2999)
-              |-Reference(2995,2999)
-                |-QName(2995,2999)
-                  |-NameIdentifier(2995,2999)
-                    |-Identifier=void
+              |-Type(2989,2992)
+                |-Reference(2989,2992)
+                  |-QName(2989,2992)
+                    |-NameIdentifier(2989,2992)
+                      |-Identifier=u32
+          |-Type(2995,2999)
+            |-Reference(2995,2999)
+              |-QName(2995,2999)
+                |-NameIdentifier(2995,2999)
+                  |-Identifier=void
           |-FunAssignExpression(3000,3090)
             |-WasmExpression(3002,3090)
               |-SExpression(3014,3085)
@@ -1538,36 +1457,32 @@
             |-Parameter(3100,3108)
               |-NameIdentifier(3100,3103)
                 |-Identifier=lhs
-              |-OfType(3103,3108)
-                |-Type(3105,3108)
-                  |-Reference(3105,3108)
-                    |-QName(3105,3108)
-                      |-NameIdentifier(3105,3108)
-                        |-Identifier=ref
+              |-Type(3105,3108)
+                |-Reference(3105,3108)
+                  |-QName(3105,3108)
+                    |-NameIdentifier(3105,3108)
+                      |-Identifier=ref
             |-Parameter(3110,3118)
               |-NameIdentifier(3110,3113)
                 |-Identifier=rhs
-              |-OfType(3113,3118)
-                |-Type(3115,3118)
-                  |-Reference(3115,3118)
-                    |-QName(3115,3118)
-                      |-NameIdentifier(3115,3118)
-                        |-Identifier=u32
+              |-Type(3115,3118)
+                |-Reference(3115,3118)
+                  |-QName(3115,3118)
+                    |-NameIdentifier(3115,3118)
+                      |-Identifier=u32
             |-Parameter(3120,3131)
               |-NameIdentifier(3120,3126)
                 |-Identifier=offset
-              |-OfType(3126,3131)
-                |-Type(3128,3131)
-                  |-Reference(3128,3131)
-                    |-QName(3128,3131)
-                      |-NameIdentifier(3128,3131)
-                        |-Identifier=u32
-          |-OfType(3132,3139)
-            |-Type(3134,3138)
-              |-Reference(3134,3138)
-                |-QName(3134,3138)
-                  |-NameIdentifier(3134,3138)
-                    |-Identifier=void
+              |-Type(3128,3131)
+                |-Reference(3128,3131)
+                  |-QName(3128,3131)
+                    |-NameIdentifier(3128,3131)
+                      |-Identifier=u32
+          |-Type(3134,3138)
+            |-Reference(3134,3138)
+              |-QName(3134,3138)
+                |-NameIdentifier(3134,3138)
+                  |-Identifier=void
           |-FunAssignExpression(3139,3299)
             |-WasmExpression(3141,3299)
               |-SExpression(3153,3294)
@@ -1613,18 +1528,16 @@
             |-Parameter(3308,3316)
               |-NameIdentifier(3308,3311)
                 |-Identifier=lhs
-              |-OfType(3311,3316)
-                |-Type(3313,3316)
-                  |-Reference(3313,3316)
-                    |-QName(3313,3316)
-                      |-NameIdentifier(3313,3316)
-                        |-Identifier=ref
-          |-OfType(3317,3323)
-            |-Type(3319,3322)
-              |-Reference(3319,3322)
-                |-QName(3319,3322)
-                  |-NameIdentifier(3319,3322)
-                    |-Identifier=u32
+              |-Type(3313,3316)
+                |-Reference(3313,3316)
+                  |-QName(3313,3316)
+                    |-NameIdentifier(3313,3316)
+                      |-Identifier=ref
+          |-Type(3319,3322)
+            |-Reference(3319,3322)
+              |-QName(3319,3322)
+                |-NameIdentifier(3319,3322)
+                  |-Identifier=u32
           |-FunAssignExpression(3323,3395)
             |-WasmExpression(3325,3395)
               |-SExpression(3337,3390)
@@ -1654,27 +1567,24 @@
             |-Parameter(3404,3412)
               |-NameIdentifier(3404,3407)
                 |-Identifier=lhs
-              |-OfType(3407,3412)
-                |-Type(3409,3412)
-                  |-Reference(3409,3412)
-                    |-QName(3409,3412)
-                      |-NameIdentifier(3409,3412)
-                        |-Identifier=ref
+              |-Type(3409,3412)
+                |-Reference(3409,3412)
+                  |-QName(3409,3412)
+                    |-NameIdentifier(3409,3412)
+                      |-Identifier=ref
             |-Parameter(3414,3425)
               |-NameIdentifier(3414,3420)
                 |-Identifier=offset
-              |-OfType(3420,3425)
-                |-Type(3422,3425)
-                  |-Reference(3422,3425)
-                    |-QName(3422,3425)
-                      |-NameIdentifier(3422,3425)
-                        |-Identifier=u32
-          |-OfType(3426,3432)
-            |-Type(3428,3431)
-              |-Reference(3428,3431)
-                |-QName(3428,3431)
-                  |-NameIdentifier(3428,3431)
-                    |-Identifier=u32
+              |-Type(3422,3425)
+                |-Reference(3422,3425)
+                  |-QName(3422,3425)
+                    |-NameIdentifier(3422,3425)
+                      |-Identifier=u32
+          |-Type(3428,3431)
+            |-Reference(3428,3431)
+              |-QName(3428,3431)
+                |-NameIdentifier(3428,3431)
+                  |-Identifier=u32
           |-FunAssignExpression(3432,3565)
             |-WasmExpression(3434,3565)
               |-SExpression(3446,3563)

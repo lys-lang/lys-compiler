@@ -2,7 +2,7 @@
   |-TypeDirective(671,696)
     |-NameIdentifier(676,682)
       |-Identifier=Object
-    |-ValueType(683,696)
+    |-Type(685,696)
       |-StructLiteral(685,696)
         |-StructParamsList(693,696)
           <Rule0>
@@ -23,18 +23,16 @@
             |-Parameter(724,733)
               |-NameIdentifier(724,728)
                 |-Identifier=size
-              |-OfType(728,733)
-                |-Type(730,733)
-                  |-Reference(730,733)
-                    |-QName(730,733)
-                      |-NameIdentifier(730,733)
-                        |-Identifier=i32
-          |-OfType(734,743)
-            |-Type(736,742)
-              |-Reference(736,742)
-                |-QName(736,742)
-                  |-NameIdentifier(736,742)
-                    |-Identifier=Object
+              |-Type(730,733)
+                |-Reference(730,733)
+                  |-QName(730,733)
+                    |-NameIdentifier(730,733)
+                      |-Identifier=i32
+          |-Type(736,742)
+            |-Reference(736,742)
+              |-QName(736,742)
+                |-NameIdentifier(736,742)
+                  |-Identifier=Object
           |-FunAssignExpression(743,844)
             |-WasmExpression(745,844)
               |-SExpression(757,839)
@@ -76,27 +74,24 @@
             |-Parameter(853,864)
               |-NameIdentifier(853,859)
                 |-Identifier=parent
-              |-OfType(859,864)
-                |-Type(861,864)
-                  |-Reference(861,864)
-                    |-QName(861,864)
-                      |-NameIdentifier(861,864)
-                        |-Identifier=ref
+              |-Type(861,864)
+                |-Reference(861,864)
+                  |-QName(861,864)
+                    |-NameIdentifier(861,864)
+                      |-Identifier=ref
             |-Parameter(866,876)
               |-NameIdentifier(866,871)
                 |-Identifier=child
-              |-OfType(871,876)
-                |-Type(873,876)
-                  |-Reference(873,876)
-                    |-QName(873,876)
-                      |-NameIdentifier(873,876)
-                        |-Identifier=ref
-          |-OfType(877,884)
-            |-Type(879,883)
-              |-Reference(879,883)
-                |-QName(879,883)
-                  |-NameIdentifier(879,883)
-                    |-Identifier=void
+              |-Type(873,876)
+                |-Reference(873,876)
+                  |-QName(873,876)
+                    |-NameIdentifier(873,876)
+                      |-Identifier=ref
+          |-Type(879,883)
+            |-Reference(879,883)
+              |-QName(879,883)
+                |-NameIdentifier(879,883)
+                  |-Identifier=void
           |-FunAssignExpression(884,888)
             |-CodeBlock(886,888)
               <Rule0>
@@ -111,18 +106,16 @@
             |-Parameter(947,956)
               |-NameIdentifier(947,951)
                 |-Identifier=self
-              |-OfType(951,956)
-                |-Type(953,956)
-                  |-Reference(953,956)
-                    |-QName(953,956)
-                      |-NameIdentifier(953,956)
-                        |-Identifier=ref
-          |-OfType(957,964)
-            |-Type(959,963)
-              |-Reference(959,963)
-                |-QName(959,963)
-                  |-NameIdentifier(959,963)
-                    |-Identifier=void
+              |-Type(953,956)
+                |-Reference(953,956)
+                  |-QName(953,956)
+                    |-NameIdentifier(953,956)
+                      |-Identifier=ref
+          |-Type(959,963)
+            |-Reference(959,963)
+              |-QName(959,963)
+                |-NameIdentifier(959,963)
+                  |-Identifier=void
           |-FunAssignExpression(964,968)
             |-CodeBlock(966,968)
               <Rule0>

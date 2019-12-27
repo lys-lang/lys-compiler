@@ -19,11 +19,11 @@ folderBasedTest(
   resolve(__dirname, "./fixtures/") + "/**/*.lys",
   async source => {
     const instance = await tokenizer();
-    const result = instance.parseAndEmit(source);
+    const result = instance.parseAndEmitAst(source);
 
     if (result == "") throw new Error("Parsing error");
 
     return result;
   },
-  ".lys.emit"
+  ".lys.ast-2"
 );

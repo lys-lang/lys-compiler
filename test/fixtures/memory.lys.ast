@@ -3,23 +3,21 @@
     |-ValDeclaration(33,53)
       |-NameIdentifier(37,44)
         |-Identifier=AL_BITS
-      |-OfType(44,50)
-        |-Type(46,49)
-          |-Reference(46,49)
-            |-QName(46,49)
-              |-NameIdentifier(46,49)
-                |-Identifier=i32
+      |-Type(46,49)
+        |-Reference(46,49)
+          |-QName(46,49)
+            |-NameIdentifier(46,49)
+              |-Identifier=i32
       |-NumberLiteral=3
   |-ValDirective(99,130)
     |-ValDeclaration(99,130)
       |-NameIdentifier(103,110)
         |-Identifier=AL_SIZE
-      |-OfType(110,116)
-        |-Type(112,115)
-          |-Reference(112,115)
-            |-QName(112,115)
-              |-NameIdentifier(112,115)
-                |-Identifier=i32
+      |-Type(112,115)
+        |-Reference(112,115)
+          |-QName(112,115)
+            |-NameIdentifier(112,115)
+              |-Identifier=i32
       |-BinaryOpExpression(118,130)
         |-NumberLiteral=1
         |-Operator=<<
@@ -31,12 +29,11 @@
     |-ValDeclaration(179,209)
       |-NameIdentifier(183,190)
         |-Identifier=AL_MASK
-      |-OfType(190,196)
-        |-Type(192,195)
-          |-Reference(192,195)
-            |-QName(192,195)
-              |-NameIdentifier(192,195)
-                |-Identifier=i32
+      |-Type(192,195)
+        |-Reference(192,195)
+          |-QName(192,195)
+            |-NameIdentifier(192,195)
+              |-Identifier=i32
       |-BinaryOpExpression(198,209)
         |-Reference(198,205)
           |-QName(198,205)
@@ -48,12 +45,11 @@
     |-ValDeclaration(250,280)
       |-NameIdentifier(254,265)
         |-Identifier=MAX_SIZE_32
-      |-OfType(265,271)
-        |-Type(267,270)
-          |-Reference(267,270)
-            |-QName(267,270)
-              |-NameIdentifier(267,270)
-                |-Identifier=i32
+      |-Type(267,270)
+        |-Reference(267,270)
+          |-QName(267,270)
+            |-NameIdentifier(267,270)
+              |-Identifier=i32
       |-BinaryOpExpression(273,280)
         |-NumberLiteral=1
         |-Operator=<<
@@ -69,12 +65,11 @@
     |-VarDeclaration(315,370)
       |-NameIdentifier(319,330)
         |-Identifier=startOffset
-      |-OfType(330,336)
-        |-Type(332,335)
-          |-Reference(332,335)
-            |-QName(332,335)
-              |-NameIdentifier(332,335)
-                |-Identifier=i32
+      |-Type(332,335)
+        |-Reference(332,335)
+          |-QName(332,335)
+            |-NameIdentifier(332,335)
+              |-Identifier=i32
       |-BinaryOpExpression(338,370)
         |-ParenExpression(338,359)
           |-BinaryOpExpression(339,358)
@@ -99,12 +94,11 @@
     |-VarDeclaration(379,408)
       |-NameIdentifier(383,389)
         |-Identifier=offset
-      |-OfType(389,395)
-        |-Type(391,394)
-          |-Reference(391,394)
-            |-QName(391,394)
-              |-NameIdentifier(391,394)
-                |-Identifier=i32
+      |-Type(391,394)
+        |-Reference(391,394)
+          |-QName(391,394)
+            |-NameIdentifier(391,394)
+              |-Identifier=i32
       |-Reference(397,408)
         |-QName(397,408)
           |-NameIdentifier(397,408)
@@ -115,12 +109,11 @@
     |-VarDeclaration(418,438)
       |-NameIdentifier(422,429)
         |-Identifier=lastPtr
-      |-OfType(429,435)
-        |-Type(431,434)
-          |-Reference(431,434)
-            |-QName(431,434)
-              |-NameIdentifier(431,434)
-                |-Identifier=i32
+      |-Type(431,434)
+        |-Reference(431,434)
+          |-QName(431,434)
+            |-NameIdentifier(431,434)
+              |-Identifier=i32
       |-NumberLiteral=0
   |-FunctionDirective(440,528)
     |-Decorators(440,440)
@@ -135,18 +128,16 @@
         |-Parameter(463,473)
           |-NameIdentifier(463,468)
             |-Identifier=pages
-          |-OfType(468,473)
-            |-Type(470,473)
-              |-Reference(470,473)
-                |-QName(470,473)
-                  |-NameIdentifier(470,473)
-                    |-Identifier=i32
-      |-OfType(474,480)
-        |-Type(476,479)
-          |-Reference(476,479)
-            |-QName(476,479)
-              |-NameIdentifier(476,479)
-                |-Identifier=i32
+          |-Type(470,473)
+            |-Reference(470,473)
+              |-QName(470,473)
+                |-NameIdentifier(470,473)
+                  |-Identifier=i32
+      |-Type(476,479)
+        |-Reference(476,479)
+          |-QName(476,479)
+            |-NameIdentifier(476,479)
+              |-Identifier=i32
       |-FunAssignExpression(480,528)
         |-WasmExpression(482,528)
           |-SExpression(492,525)
@@ -169,12 +160,11 @@
           |-Identifier=currentMemory
       |-FunctionParamsList(553,555)
         <Rule0>
-      |-OfType(555,561)
-        |-Type(557,560)
-          |-Reference(557,560)
-            |-QName(557,560)
-              |-NameIdentifier(557,560)
-                |-Identifier=i32
+      |-Type(557,560)
+        |-Reference(557,560)
+          |-QName(557,560)
+            |-NameIdentifier(557,560)
+              |-Identifier=i32
       |-FunAssignExpression(561,593)
         |-WasmExpression(563,593)
           |-SExpression(573,590)
@@ -193,27 +183,24 @@
         |-Parameter(609,615)
           |-NameIdentifier(609,610)
             |-Identifier=a
-          |-OfType(610,615)
-            |-Type(612,615)
-              |-Reference(612,615)
-                |-QName(612,615)
-                  |-NameIdentifier(612,615)
-                    |-Identifier=i32
+          |-Type(612,615)
+            |-Reference(612,615)
+              |-QName(612,615)
+                |-NameIdentifier(612,615)
+                  |-Identifier=i32
         |-Parameter(617,623)
           |-NameIdentifier(617,618)
             |-Identifier=b
-          |-OfType(618,623)
-            |-Type(620,623)
-              |-Reference(620,623)
-                |-QName(620,623)
-                  |-NameIdentifier(620,623)
-                    |-Identifier=i32
-      |-OfType(624,630)
-        |-Type(626,629)
-          |-Reference(626,629)
-            |-QName(626,629)
-              |-NameIdentifier(626,629)
-                |-Identifier=i32
+          |-Type(620,623)
+            |-Reference(620,623)
+              |-QName(620,623)
+                |-NameIdentifier(620,623)
+                  |-Identifier=i32
+      |-Type(626,629)
+        |-Reference(626,629)
+          |-QName(626,629)
+            |-NameIdentifier(626,629)
+              |-Identifier=i32
       |-FunAssignExpression(630,651)
         |-IfExpression(632,651)
           |-IfBody(635,642)
@@ -246,18 +233,16 @@
         |-Parameter(668,677)
           |-NameIdentifier(668,672)
             |-Identifier=size
-          |-OfType(672,677)
-            |-Type(674,677)
-              |-Reference(674,677)
-                |-QName(674,677)
-                  |-NameIdentifier(674,677)
-                    |-Identifier=i32
-      |-OfType(678,686)
-        |-Type(680,685)
-          |-Reference(680,685)
-            |-QName(680,685)
-              |-NameIdentifier(680,685)
-                |-Identifier=bytes
+          |-Type(674,677)
+            |-Reference(674,677)
+              |-QName(674,677)
+                |-NameIdentifier(674,677)
+                  |-Identifier=i32
+      |-Type(680,685)
+        |-Reference(680,685)
+          |-QName(680,685)
+            |-NameIdentifier(680,685)
+              |-Identifier=bytes
       |-FunAssignExpression(686,980)
         |-WasmExpression(688,980)
           |-SExpression(698,724)
@@ -350,27 +335,24 @@
         |-Parameter(991,1005)
           |-NameIdentifier(991,1000)
             |-Identifier=itemCount
-          |-OfType(1000,1005)
-            |-Type(1002,1005)
-              |-Reference(1002,1005)
-                |-QName(1002,1005)
-                  |-NameIdentifier(1002,1005)
-                    |-Identifier=i32
+          |-Type(1002,1005)
+            |-Reference(1002,1005)
+              |-QName(1002,1005)
+                |-NameIdentifier(1002,1005)
+                  |-Identifier=i32
         |-Parameter(1007,1020)
           |-NameIdentifier(1007,1015)
             |-Identifier=itemSize
-          |-OfType(1015,1020)
-            |-Type(1017,1020)
-              |-Reference(1017,1020)
-                |-QName(1017,1020)
-                  |-NameIdentifier(1017,1020)
-                    |-Identifier=i32
-      |-OfType(1021,1027)
-        |-Type(1023,1026)
-          |-Reference(1023,1026)
-            |-QName(1023,1026)
-              |-NameIdentifier(1023,1026)
-                |-Identifier=i32
+          |-Type(1017,1020)
+            |-Reference(1017,1020)
+              |-QName(1017,1020)
+                |-NameIdentifier(1017,1020)
+                  |-Identifier=i32
+      |-Type(1023,1026)
+        |-Reference(1023,1026)
+          |-QName(1023,1026)
+            |-NameIdentifier(1023,1026)
+              |-Identifier=i32
       |-FunAssignExpression(1027,1123)
         |-CodeBlock(1029,1123)
           |-ValDeclaration(1033,1064)
@@ -429,18 +411,16 @@
         |-Parameter(1136,1145)
           |-NameIdentifier(1136,1140)
             |-Identifier=size
-          |-OfType(1140,1145)
-            |-Type(1142,1145)
-              |-Reference(1142,1145)
-                |-QName(1142,1145)
-                  |-NameIdentifier(1142,1145)
-                    |-Identifier=i32
-      |-OfType(1146,1152)
-        |-Type(1148,1151)
-          |-Reference(1148,1151)
-            |-QName(1148,1151)
-              |-NameIdentifier(1148,1151)
-                |-Identifier=i32
+          |-Type(1142,1145)
+            |-Reference(1142,1145)
+              |-QName(1142,1145)
+                |-NameIdentifier(1142,1145)
+                  |-Identifier=i32
+      |-Type(1148,1151)
+        |-Reference(1148,1151)
+          |-QName(1148,1151)
+            |-NameIdentifier(1148,1151)
+              |-Identifier=i32
       |-FunAssignExpression(1152,1703)
         |-CodeBlock(1154,1703)
           |-IfExpression(1158,1701)
@@ -639,18 +619,16 @@
         |-Parameter(1714,1722)
           |-NameIdentifier(1714,1717)
             |-Identifier=ptr
-          |-OfType(1717,1722)
-            |-Type(1719,1722)
-              |-Reference(1719,1722)
-                |-QName(1719,1722)
-                  |-NameIdentifier(1719,1722)
-                    |-Identifier=i32
-      |-OfType(1723,1730)
-        |-Type(1725,1729)
-          |-Reference(1725,1729)
-            |-QName(1725,1729)
-              |-NameIdentifier(1725,1729)
-                |-Identifier=void
+          |-Type(1719,1722)
+            |-Reference(1719,1722)
+              |-QName(1719,1722)
+                |-NameIdentifier(1719,1722)
+                  |-Identifier=i32
+      |-Type(1725,1729)
+        |-Reference(1725,1729)
+          |-QName(1725,1729)
+            |-NameIdentifier(1725,1729)
+              |-Identifier=void
       |-FunAssignExpression(1730,1745)
         |-CodeBlock(1732,1745)
           <Rule0>
@@ -665,18 +643,16 @@
         |-Parameter(1764,1770)
           |-NameIdentifier(1764,1765)
             |-Identifier=v
-          |-OfType(1765,1770)
-            |-Type(1767,1770)
-              |-Reference(1767,1770)
-                |-QName(1767,1770)
-                  |-NameIdentifier(1767,1770)
-                    |-Identifier=ref
-      |-OfType(1771,1777)
-        |-Type(1773,1776)
-          |-Reference(1773,1776)
-            |-QName(1773,1776)
-              |-NameIdentifier(1773,1776)
-                |-Identifier=u64
+          |-Type(1767,1770)
+            |-Reference(1767,1770)
+              |-QName(1767,1770)
+                |-NameIdentifier(1767,1770)
+                  |-Identifier=ref
+      |-Type(1773,1776)
+        |-Reference(1773,1776)
+          |-QName(1773,1776)
+            |-NameIdentifier(1773,1776)
+              |-Identifier=u64
       |-FunAssignExpression(1777,1859)
         |-WasmExpression(1779,1859)
           |-SExpression(1789,1856)
@@ -706,36 +682,32 @@
         |-Parameter(1870,1877)
           |-NameIdentifier(1870,1872)
             |-Identifier=to
-          |-OfType(1872,1877)
-            |-Type(1874,1877)
-              |-Reference(1874,1877)
-                |-QName(1874,1877)
-                  |-NameIdentifier(1874,1877)
-                    |-Identifier=i32
+          |-Type(1874,1877)
+            |-Reference(1874,1877)
+              |-QName(1874,1877)
+                |-NameIdentifier(1874,1877)
+                  |-Identifier=i32
         |-Parameter(1879,1888)
           |-NameIdentifier(1879,1883)
             |-Identifier=from
-          |-OfType(1883,1888)
-            |-Type(1885,1888)
-              |-Reference(1885,1888)
-                |-QName(1885,1888)
-                  |-NameIdentifier(1885,1888)
-                    |-Identifier=i32
+          |-Type(1885,1888)
+            |-Reference(1885,1888)
+              |-QName(1885,1888)
+                |-NameIdentifier(1885,1888)
+                  |-Identifier=i32
         |-Parameter(1890,1898)
           |-NameIdentifier(1890,1893)
             |-Identifier=len
-          |-OfType(1893,1898)
-            |-Type(1895,1898)
-              |-Reference(1895,1898)
-                |-QName(1895,1898)
-                  |-NameIdentifier(1895,1898)
-                    |-Identifier=i32
-      |-OfType(1899,1906)
-        |-Type(1901,1905)
-          |-Reference(1901,1905)
-            |-QName(1901,1905)
-              |-NameIdentifier(1901,1905)
-                |-Identifier=void
+          |-Type(1895,1898)
+            |-Reference(1895,1898)
+              |-QName(1895,1898)
+                |-NameIdentifier(1895,1898)
+                  |-Identifier=i32
+      |-Type(1901,1905)
+        |-Reference(1901,1905)
+          |-QName(1901,1905)
+            |-NameIdentifier(1901,1905)
+              |-Identifier=void
       |-FunAssignExpression(1906,2319)
         |-WasmExpression(1908,2319)
           |-SExpression(1918,1937)
@@ -884,36 +856,32 @@
         |-Parameter(2330,2338)
           |-NameIdentifier(2330,2333)
             |-Identifier=ptr
-          |-OfType(2333,2338)
-            |-Type(2335,2338)
-              |-Reference(2335,2338)
-                |-QName(2335,2338)
-                  |-NameIdentifier(2335,2338)
-                    |-Identifier=i32
+          |-Type(2335,2338)
+            |-Reference(2335,2338)
+              |-QName(2335,2338)
+                |-NameIdentifier(2335,2338)
+                  |-Identifier=i32
         |-Parameter(2340,2352)
           |-NameIdentifier(2340,2347)
             |-Identifier=content
-          |-OfType(2347,2352)
-            |-Type(2349,2352)
-              |-Reference(2349,2352)
-                |-QName(2349,2352)
-                  |-NameIdentifier(2349,2352)
-                    |-Identifier=i32
+          |-Type(2349,2352)
+            |-Reference(2349,2352)
+              |-QName(2349,2352)
+                |-NameIdentifier(2349,2352)
+                  |-Identifier=i32
         |-Parameter(2354,2362)
           |-NameIdentifier(2354,2357)
             |-Identifier=len
-          |-OfType(2357,2362)
-            |-Type(2359,2362)
-              |-Reference(2359,2362)
-                |-QName(2359,2362)
-                  |-NameIdentifier(2359,2362)
-                    |-Identifier=i32
-      |-OfType(2363,2370)
-        |-Type(2365,2369)
-          |-Reference(2365,2369)
-            |-QName(2365,2369)
-              |-NameIdentifier(2365,2369)
-                |-Identifier=void
+          |-Type(2359,2362)
+            |-Reference(2359,2362)
+              |-QName(2359,2362)
+                |-NameIdentifier(2359,2362)
+                  |-Identifier=i32
+      |-Type(2365,2369)
+        |-Reference(2365,2369)
+          |-QName(2365,2369)
+            |-NameIdentifier(2365,2369)
+              |-Identifier=void
       |-FunAssignExpression(2370,2720)
         |-WasmExpression(2372,2720)
           |-SExpression(2382,2401)

@@ -20,12 +20,26 @@ fun parseAst(strAddress: UnsafeCPointer): UnsafeCPointer = {
 
 #[export "parseAndEmit"]
 fun parseAndEmit(strAddress: UnsafeCPointer): UnsafeCPointer = {
-  val sb = StringBuilder()
   val ast = parse(UCS2.fromPtr(strAddress), "Document", getGrammar())
   match ast {
     case ast is AstNode -> {
-      val parseTree = src::compiler::phases::cannonical::toParseTree(ast)
+      val sb = StringBuilder()
+      val parseTree = src::compiler::phases::cannonical::processNode(ast)
       CodeNode.printNode(parseTree, sb, 0)
+      sb.toString() as UnsafeCPointer
+    }
+    else -> "" as UnsafeCPointer
+  }
+}
+
+#[export "parseAndEmitAst"]
+fun parseAndEmitAst(strAddress: UnsafeCPointer): UnsafeCPointer = {
+  val ast = parse(UCS2.fromPtr(strAddress), "Document", getGrammar())
+  match ast {
+    case ast is AstNode -> {
+      val sb = StringBuilder()
+      val parseTree = src::compiler::phases::cannonical::processNode(ast)
+      CodeNode.printAst(parseTree, sb, 0)
       sb.toString() as UnsafeCPointer
     }
     else -> "" as UnsafeCPointer

@@ -3,63 +3,88 @@ import src::parser::parser
 import src::compiler::nodes
 
 
-fun first(self: AstNode): AstNode = match self {
+fun first(astNode: AstNode): AstNode = match astNode {
   case is AstCons(head, tail) -> head
-  else -> self
+  else -> astNode
 }
 
-fun second(self: AstNode): AstNode = first(rest(self))
-fun third(self: AstNode): AstNode = second(rest(self))
+fun second(astNode: AstNode): AstNode = first(rest(astNode))
+fun third(astNode: AstNode): AstNode = second(rest(astNode))
 
-fun rest(self: AstNode): AstNode = match self {
+fun rest(astNode: AstNode): AstNode = match astNode {
   case is AstCons(head, tail) -> tail
   else -> Rule0
 }
 
-fun toParseTree(self: AstNode): CodeNode = match self {
+fun nameOrEmpty(astNode: AstNode): NameIdentifierNode | ErrorNode =
+  match processNode(astNode) {
+    case name is NameIdentifierNode -> name
+    else -> ErrorNode
+  }
+
+fun fqnOrEmpty(astNode: AstNode): QNameNode | ErrorNode =
+  match processNode(astNode) {
+    case name is QNameNode -> name
+    else -> ErrorNode
+  }
+
+fun processNode(astNode: AstNode): CodeNode = match astNode {
   case is Rule0 -> EmptyNode
   case is UnexpectedToken -> EmptyNode
   case is SyntaxError -> EmptyNode
-  case is Leaf(token, value) -> toParseTree(self, token, value)
-  case is AstCons(head, tail) -> CodeNodeCons(
-    toParseTree(head), toParseTree(tail)
-  )
+  case is Leaf(token, value) -> processNode(astNode, token, value)
+  case is AstCons(head, tail) -> CodeNodeCons(processNode(head), processNode(tail))
   case is Node(name, child) -> match name {
-    case "Document" -> Document(self, toParseTree(child))
-    case "PrivateModifier" -> PrivateModifierNode(self)
-    case "NameIdentifier" -> toParseTree(child)
-    case "TypeDirective" -> TypeDirectiveNode(self, toParseTree(first(child)), toParseTree(second(child)))
+    case "Document" -> Document(astNode, processNode(child))
+    case "PrivateModifier" -> PrivateModifierNode(astNode)
+    case "NameIdentifier" -> processNode(child)
+    case "Type" -> processNode(child)
+    case "Reference" -> ReferenceNode(astNode, fqnOrEmpty(child))
+    case "TypeDirective" -> TypeDirectiveNode(astNode, nameOrEmpty(first(child)), processNode(second(child)))
     case "VarDirective" -> {
-      var e1 = toParseTree(first(child))
+      var e1 = processNode(first(child))
       val isPrivate = e1 is PrivateModifierNode
 
+      var decl: VarDeclarationNode | EmptyNode = EmptyNode
+
       if (isPrivate) {
-        VarDirectiveNode(self, first(child))
+        match processNode(first(child)) {
+          case x is VarDeclarationNode -> decl = x
+          else -> { /* error */ }
+        }
       } else {
-        VarDirectiveNode(self, first(rest(child)))
+        match processNode(first(rest(child))) {
+          case x is VarDeclarationNode -> decl = x
+          else -> { /* error */ }
+        }
       }
+
+      VarDirectiveNode(astNode, decl)
     }
     case "VarDeclaration" -> {
-      var name = toParseTree(first(child))
+      var name = nameOrEmpty(first(child))
 
       match rest(child) {
-        case is AstCons(head, tail) -> VarDeclarationNode(self, name, toParseTree(head), toParseTree(tail))
-        case ast is AstNode -> VarDeclarationNode(self, name, EmptyNode, toParseTree(ast))
+        case is AstCons(head, tail) -> VarDeclarationNode(astNode, name, processNode(head), processNode(tail))
+        case ast is AstNode -> VarDeclarationNode(astNode, name, EmptyNode, processNode(ast))
       }
     }
-    else -> EmptyNode
+    else -> {
+      support::env::printf("No handler for " ++ name)
+      EmptyNode
+    }
   }
 }
 
 
-fun toParseTree(self: AstNode, node: Token, value: string): CodeNode = match node.tokenType {
-  case is StringLiteral -> StringLiteralNode(self, value)
-  case is Identifier -> NameIdentifierNode(self, value)
-  case is Operator -> NameIdentifierNode(self, value)
-  case is NumberLiteral -> FloatLiteralNode(self, value)
+fun processNode(astNode: AstNode, node: Token, value: string): CodeNode = match node.tokenType {
+  case is StringLiteral -> StringLiteralNode(astNode, value)
+  case is Identifier -> NameIdentifierNode(astNode, value)
+  case is Operator -> NameIdentifierNode(astNode, value)
+  case is NumberLiteral -> FloatLiteralNode(astNode, value)
   case is Keyword -> match value {
-    case "true" -> BooleanLiteralNode(self, true)
-    case "false" -> BooleanLiteralNode(self, false)
+    case "true" -> BooleanLiteralNode(astNode, true)
+    case "false" -> BooleanLiteralNode(astNode, false)
     else -> EmptyNode
   }
   else -> EmptyNode

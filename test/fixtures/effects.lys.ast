@@ -10,12 +10,11 @@
               |-Identifier=raise
             |-FunctionParamsList(20,22)
               <Rule0>
-            |-OfType(22,26)
-              |-Type(24,25)
-                |-Reference(24,25)
-                  |-QName(24,25)
-                    |-NameIdentifier(24,25)
-                      |-Identifier=_
+            |-Type(24,25)
+              |-Reference(24,25)
+                |-QName(24,25)
+                  |-NameIdentifier(24,25)
+                    |-Identifier=_
   |-EffectDirective(29,59)
     |-EffectDeclaration(36,59)
       |-NameIdentifier(36,39)
@@ -32,12 +31,11 @@
               |-Identifier=raise
             |-FunctionParamsList(52,54)
               <Rule0>
-            |-OfType(54,58)
-              |-Type(56,57)
-                |-Reference(56,57)
-                  |-QName(56,57)
-                    |-NameIdentifier(56,57)
-                      |-Identifier=T
+            |-Type(56,57)
+              |-Reference(56,57)
+                |-QName(56,57)
+                  |-NameIdentifier(56,57)
+                    |-Identifier=T
   |-FunctionDirective(61,97)
     |-Decorators(61,61)
       <Rule0>
@@ -49,24 +47,22 @@
         |-Parameter(69,75)
           |-NameIdentifier(69,70)
             |-Identifier=x
-          |-OfType(70,75)
-            |-Type(72,75)
-              |-Reference(72,75)
-                |-QName(72,75)
-                  |-NameIdentifier(72,75)
-                    |-Identifier=i32
-      |-OfType(76,90)
-        |-FunctionEffect(78,85)
-          |-Type(79,84)
-            |-Reference(79,84)
-              |-QName(79,84)
-                |-NameIdentifier(79,84)
-                  |-Identifier=total
-        |-Type(86,89)
-          |-Reference(86,89)
-            |-QName(86,89)
-              |-NameIdentifier(86,89)
-                |-Identifier=i32
+          |-Type(72,75)
+            |-Reference(72,75)
+              |-QName(72,75)
+                |-NameIdentifier(72,75)
+                  |-Identifier=i32
+      |-FunctionEffect(78,85)
+        |-Type(79,84)
+          |-Reference(79,84)
+            |-QName(79,84)
+              |-NameIdentifier(79,84)
+                |-Identifier=total
+      |-Type(86,89)
+        |-Reference(86,89)
+          |-QName(86,89)
+            |-NameIdentifier(86,89)
+              |-Identifier=i32
       |-FunAssignExpression(90,97)
         |-BinaryOpExpression(92,97)
           |-Reference(92,93)
@@ -89,14 +85,12 @@
         |-Parameter(106,112)
           |-NameIdentifier(106,107)
             |-Identifier=x
-          |-OfType(107,112)
-            |-Type(109,112)
-              |-Reference(109,112)
-                |-QName(109,112)
-                  |-NameIdentifier(109,112)
-                    |-Identifier=i32
-      |-OfType(113,114)
-        |-<SyntaxError>=A type or effect was expected
+          |-Type(109,112)
+            |-Reference(109,112)
+              |-QName(109,112)
+                |-NameIdentifier(109,112)
+                  |-Identifier=i32
+      |-<SyntaxError>=A type or effect was expected
   |-<UNEXPECTED TOKEN>=<>
   |-<UNEXPECTED TOKEN>= 
   |-<UNEXPECTED TOKEN>=i32

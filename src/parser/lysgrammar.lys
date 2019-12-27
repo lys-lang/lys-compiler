@@ -246,16 +246,16 @@ fun getGrammar(): Grammar = {
         Nominal("MatchElements", Cut(Or(n("CaseCondition"), n("CaseIs"), n("CaseLiteral"), n("CaseElse")), WS)) ++
 
         Nominal("UnknownExpression", Push("UnknownExpression", t("???"))) ++
-        Nominal("ValueType", Push("ValueType",
+        Nominal("ValueType",
           Rune(
             Cons(op("="), WS),
             Or(
-              Cons(LookAhead(op("%")), Or(n("InjectedLiteral"), n("StructLiteral"), n("StackLiteral"))),
+              Push("Type", Cons(LookAhead(op("%")), Or(n("InjectedLiteral"), n("StructLiteral"), n("StackLiteral")))),
               n("Type")
             ),
             "A type value was expected"
           )
-        )) ++
+        ) ++
 
         Nominal("TypeVariableList", Push("TypeVariableList", Cons(n("TypeVariable"), ZeroOrMore(Cut(Terminal(Comma), WS, n("TypeVariable") , WS)), WS))) ++
         Nominal("TypeVariable", Push("TypeVariable", n("NameIdentifier"))) ++
@@ -269,13 +269,13 @@ fun getGrammar(): Grammar = {
             "An expression was expected"
           )
         )) ++
-        Nominal("OfType", Push("OfType",
+        Nominal("OfType",
           Rune(
             op(":"),
             Cons(WS, Optional(Cons(n("FunctionEffect"), WS)), n("Type"), WS),
             "A type or effect was expected"
           )
-        )) ++
+        ) ++
         Nominal("StructParamsList", Push("StructParamsList", Wrap(CurlyBracesOpen, Cons(WS, n("ParameterList"), WS), CurlyBracesClose))) ++
         Nominal("FunctionParamsList", Push("FunctionParamsList", Wrap(ParenthesesOpen, Cons(WS, n("ParameterList"), WS), ParenthesesClose))) ++
         Nominal("ParameterList", Optional(OneOrMoreComma(n("Parameter")))) ++
