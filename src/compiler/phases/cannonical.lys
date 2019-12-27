@@ -28,6 +28,12 @@ fun nameOrError(astNode: AstNode): NameIdentifierNode | ErrorNode =
     else -> ErrorNode
   }
 
+fun structOrError(astNode: AstNode): StructDeclarationNode | ErrorNode =
+  match processNode(astNode) {
+    case name is StructDeclarationNode -> name
+    else -> ErrorNode
+  }
+
 fun fqnOrEmpty(astNode: AstNode): QNameNode | ErrorNode =
   match processNode(astNode) {
     case name is QNameNode -> name
@@ -50,9 +56,13 @@ fun processNode(astNode: AstNode): CodeNode = match astNode {
     case "IntersectionType" -> IntersectionTypeNode(astNode, processNode(first(child)), processNode(rest(child)))
     case "Type" -> processNode(child)
     case "Reference" -> ReferenceNode(astNode, fqnOrEmpty(child))
+    case "FunctionParamsList" -> processNode(child)
+    case "Parameter" -> ParameterNode(astNode, nameOrError(first(child)), processNode(rest(child)))
     case "InjectedLiteral" -> InjectedLiteralNode(astNode)
     case "StackLiteral" -> StackLiteralNode(astNode, processNode(child))
     case "NameLiteralPair" -> NameLiteralPairNode(astNode, nameOrError(first(child)), processNode(rest(child)))
+    case "StructDirective" -> StructDirectiveNode(astNode, structOrError(child))
+    case "StructDeclaration" -> StructDeclarationNode(astNode, nameOrError(first(child)), processNode(rest(child)))
     case "BooleanLiteral" -> processNode(child)
     case "TypeParen" -> processNode(child)
     case "TypeDirective" -> TypeDirectiveNode(astNode, nameOrError(first(child)), processNode(second(child)))

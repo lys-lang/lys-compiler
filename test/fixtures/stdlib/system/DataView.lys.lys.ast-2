@@ -1,2 +1,9 @@
 |-Document
-  |-EmptyNode
+  |-StructDirectiveNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=DataView
+      |-ParameterNode
+        |-NameIdentifierNode name=buffer
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=bytes

@@ -1,2 +1,14 @@
 |-Document
-  |-EmptyNode
+  |-StructDirectiveNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Keccak
+      |-ParameterNode
+        |-NameIdentifierNode name=data
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=bytes
+      |-ParameterNode
+        |-NameIdentifierNode name=result
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=bytes
