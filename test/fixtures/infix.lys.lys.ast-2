@@ -3,14 +3,28 @@
     |-VarDeclarationNode
       |-NameIdentifierNode name=x
       |-EmptyNode
-      |-EmptyNode
+      |-ErrorNode
   |-VarDirectiveNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=y
       |-EmptyNode
-      |-EmptyNode
+      |-BinaryExpressionNode
+        |-FloatLiteralNode value=1
+        |-ErrorNode
+        |-NameIdentifierNode name=-
+        |-BinaryExpressionNode
+          |-FloatLiteralNode value=5
+          |-NameIdentifierNode name=%
+          |-FloatLiteralNode value=6
   |-VarDirectiveNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=z
       |-EmptyNode
-      |-EmptyNode
+      |-BinaryExpressionNode
+        |-BinaryExpressionNode
+          |-FloatLiteralNode value=1
+          |-NameIdentifierNode name=+
+          |-FloatLiteralNode value=2
+        |-ErrorNode
+        |-NameIdentifierNode name=%
+        |-FloatLiteralNode value=6

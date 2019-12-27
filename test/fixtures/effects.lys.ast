@@ -9,7 +9,8 @@
             |-NameIdentifier(15,20)
               |-Identifier=raise
             |-FunctionParamsList(20,22)
-              <Rule0>
+              |-(List)(21,21)
+                <Rule0>
             |-Type(24,25)
               |-Reference(24,25)
                 |-QName(24,25)
@@ -30,7 +31,8 @@
             |-NameIdentifier(47,52)
               |-Identifier=raise
             |-FunctionParamsList(52,54)
-              <Rule0>
+              |-(List)(53,53)
+                <Rule0>
             |-Type(56,57)
               |-Reference(56,57)
                 |-QName(56,57)
@@ -44,14 +46,15 @@
         |-NameIdentifier(65,68)
           |-Identifier=sqr
       |-FunctionParamsList(68,76)
-        |-Parameter(69,75)
-          |-NameIdentifier(69,70)
-            |-Identifier=x
-          |-Type(72,75)
-            |-Reference(72,75)
-              |-QName(72,75)
-                |-NameIdentifier(72,75)
-                  |-Identifier=i32
+        |-(List)(69,75)
+          |-Parameter(69,75)
+            |-NameIdentifier(69,70)
+              |-Identifier=x
+            |-Type(72,75)
+              |-Reference(72,75)
+                |-QName(72,75)
+                  |-NameIdentifier(72,75)
+                    |-Identifier=i32
       |-FunctionEffect(78,85)
         |-Type(79,84)
           |-Reference(79,84)
@@ -82,14 +85,15 @@
         |-NameIdentifier(102,105)
           |-Identifier=sqr
       |-FunctionParamsList(105,113)
-        |-Parameter(106,112)
-          |-NameIdentifier(106,107)
-            |-Identifier=x
-          |-Type(109,112)
-            |-Reference(109,112)
-              |-QName(109,112)
-                |-NameIdentifier(109,112)
-                  |-Identifier=i32
+        |-(List)(106,112)
+          |-Parameter(106,112)
+            |-NameIdentifier(106,107)
+              |-Identifier=x
+            |-Type(109,112)
+              |-Reference(109,112)
+                |-QName(109,112)
+                  |-NameIdentifier(109,112)
+                    |-Identifier=i32
       |-<SyntaxError>=A type or effect was expected
   |-<UNEXPECTED TOKEN>=<>
   |-<UNEXPECTED TOKEN>= 

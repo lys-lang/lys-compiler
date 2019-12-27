@@ -7,7 +7,8 @@
         |-NameIdentifier(4,5)
           |-Identifier=x
       |-FunctionParamsList(5,7)
-        <Rule0>
+        |-(List)(6,6)
+          <Rule0>
       |-Type(9,13)
         |-Reference(9,13)
           |-QName(9,13)
@@ -20,17 +21,18 @@
               |-NameIdentifier(24,30)
                 |-Identifier=repeat
             |-FunctionParamsList(30,47)
-              |-Parameter(31,42)
-                |-NameIdentifier(31,37)
-                  |-Identifier=number
-                |-Type(39,42)
-                  |-Reference(39,42)
-                    |-QName(39,42)
-                      |-NameIdentifier(39,42)
-                        |-Identifier=i32
-              |-Parameter(44,46)
-                |-NameIdentifier(44,46)
-                  |-Identifier=fn
+              |-(List)(31,46)
+                |-Parameter(31,42)
+                  |-NameIdentifier(31,37)
+                    |-Identifier=number
+                  |-Type(39,42)
+                    |-Reference(39,42)
+                      |-QName(39,42)
+                        |-NameIdentifier(39,42)
+                          |-Identifier=i32
+                |-Parameter(44,46)
+                  |-NameIdentifier(44,46)
+                    |-Identifier=fn
             |-Type(48,52)
               |-Reference(48,52)
                 |-QName(48,52)
@@ -101,7 +103,8 @@
         |-NameIdentifier(183,187)
           |-Identifier=main
       |-FunctionParamsList(187,189)
-        <Rule0>
+        |-(List)(188,188)
+          <Rule0>
       |-Type(191,194)
         |-Reference(191,194)
           |-QName(191,194)
@@ -123,7 +126,8 @@
               |-NameIdentifier(229,232)
                 |-Identifier=add
             |-FunctionParamsList(232,234)
-              <Rule0>
+              |-(List)(233,233)
+                <Rule0>
             |-Type(235,238)
               |-Reference(235,238)
                 |-QName(235,238)

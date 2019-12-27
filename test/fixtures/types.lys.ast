@@ -170,22 +170,23 @@
         |-NameIdentifier(337,344)
           |-Identifier=compare
       |-FunctionParamsList(344,364)
-        |-Parameter(345,353)
-          |-NameIdentifier(345,346)
-            |-Identifier=a
-          |-Type(348,353)
-            |-Reference(348,353)
-              |-QName(348,353)
-                |-NameIdentifier(348,353)
-                  |-Identifier=Color
-        |-Parameter(355,363)
-          |-NameIdentifier(355,356)
-            |-Identifier=b
-          |-Type(358,363)
-            |-Reference(358,363)
-              |-QName(358,363)
-                |-NameIdentifier(358,363)
-                  |-Identifier=Color
+        |-(List)(345,363)
+          |-Parameter(345,353)
+            |-NameIdentifier(345,346)
+              |-Identifier=a
+            |-Type(348,353)
+              |-Reference(348,353)
+                |-QName(348,353)
+                  |-NameIdentifier(348,353)
+                    |-Identifier=Color
+          |-Parameter(355,363)
+            |-NameIdentifier(355,356)
+              |-Identifier=b
+            |-Type(358,363)
+              |-Reference(358,363)
+                |-QName(358,363)
+                  |-NameIdentifier(358,363)
+                    |-Identifier=Color
       |-Type(366,370)
         |-Reference(366,370)
           |-QName(366,370)
@@ -211,7 +212,8 @@
         |-NameIdentifier(391,395)
           |-Identifier=main
       |-FunctionParamsList(395,397)
-        <Rule0>
+        |-(List)(396,396)
+          <Rule0>
       |-Type(399,402)
         |-Reference(399,402)
           |-QName(399,402)
@@ -512,44 +514,47 @@
       |-NameIdentifier(822,826)
         |-Identifier=Real
       |-FunctionParamsList(826,839)
-        |-Parameter(827,838)
-          |-NameIdentifier(827,833)
-            |-Identifier=number
-          |-Type(835,838)
-            |-Reference(835,838)
-              |-QName(835,838)
-                |-NameIdentifier(835,838)
-                  |-Identifier=f32
+        |-(List)(827,838)
+          |-Parameter(827,838)
+            |-NameIdentifier(827,833)
+              |-Identifier=number
+            |-Type(835,838)
+              |-Reference(835,838)
+                |-QName(835,838)
+                  |-NameIdentifier(835,838)
+                    |-Identifier=f32
     |-StructDeclaration(842,862)
       |-NameIdentifier(842,849)
         |-Identifier=Natural
       |-FunctionParamsList(849,862)
-        |-Parameter(850,861)
-          |-NameIdentifier(850,856)
-            |-Identifier=number
-          |-Type(858,861)
-            |-Reference(858,861)
-              |-QName(858,861)
-                |-NameIdentifier(858,861)
-                  |-Identifier=i32
+        |-(List)(850,861)
+          |-Parameter(850,861)
+            |-NameIdentifier(850,856)
+              |-Identifier=number
+            |-Type(858,861)
+              |-Reference(858,861)
+                |-QName(858,861)
+                  |-NameIdentifier(858,861)
+                    |-Identifier=i32
     |-StructDeclaration(865,899)
       |-NameIdentifier(865,872)
         |-Identifier=Complex
       |-FunctionParamsList(872,899)
-        |-Parameter(873,882)
-          |-NameIdentifier(873,877)
-            |-Identifier=real
-          |-Type(879,882)
-            |-Reference(879,882)
-              |-QName(879,882)
-                |-NameIdentifier(879,882)
-                  |-Identifier=f32
-        |-Parameter(884,898)
-          |-NameIdentifier(884,893)
-            |-Identifier=imaginary
-          |-Type(895,898)
-            |-Reference(895,898)
-              |-QName(895,898)
-                |-NameIdentifier(895,898)
-                  |-Identifier=f32
+        |-(List)(873,898)
+          |-Parameter(873,882)
+            |-NameIdentifier(873,877)
+              |-Identifier=real
+            |-Type(879,882)
+              |-Reference(879,882)
+                |-QName(879,882)
+                  |-NameIdentifier(879,882)
+                    |-Identifier=f32
+          |-Parameter(884,898)
+            |-NameIdentifier(884,893)
+              |-Identifier=imaginary
+            |-Type(895,898)
+              |-Reference(895,898)
+                |-QName(895,898)
+                  |-NameIdentifier(895,898)
+                    |-Identifier=f32
   |-EndOfFile=

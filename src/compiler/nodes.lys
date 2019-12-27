@@ -25,7 +25,7 @@ enum CodeNode {
 
   ParenExpressionNode(astNode: AstNode, expression: CodeNode)
 
-  ImplDirectiveNode(astNode: AstNode, targetImpl: ReferenceNode, baseImpl: ReferenceNode | EmptyNode, headDirective: CodeNode)
+  ImplDirectiveNode(astNode: AstNode, baseImpl: ReferenceNode | EmptyNode, targetImpl: ReferenceNode | ErrorNode, headDirective: CodeNode)
   ImportDirectiveNode(astNode: AstNode, module: QNameNode | ErrorNode, alias: NameIdentifierNode | EmptyNode)
   FunDirectiveNode(astNode: AstNode, headDecorator: CodeNode, function: FunctionNode)
   EffectDirectiveNode(astNode: AstNode, effectDecl: EffectDeclarationNode)
@@ -56,7 +56,7 @@ enum CodeNode {
 
   FunctionCallNode(astNode: AstNode, functionNode: CodeNode, headArgument: CodeNode, resolvedFunction: CodeNode)
 
-  BinaryExpressionNode(astNode: AstNode, lhs: CodeNode, operator: NameIdentifierNode, rhs: CodeNode)
+  BinaryExpressionNode(astNode: AstNode, lhs: CodeNode, operator: NameIdentifierNode | ErrorNode, rhs: CodeNode)
   AsExpressionNode(astNode: AstNode, lhs: CodeNode, rhs: CodeNode)
   IsExpressionNode(astNode: AstNode, lhs: CodeNode, rhs: CodeNode)
   UnaryExpressionNode(astNode: AstNode, operator: NameIdentifierNode, rhs: CodeNode)
@@ -239,7 +239,7 @@ impl CodeNode {
       sb.append(" = ")
       printNode(rhs, sb, indentation)
     }
-    case is ImplDirectiveNode(astNode, targetImpl, baseImpl, headDirective) -> {
+    case is ImplDirectiveNode(astNode, baseImpl, targetImpl, headDirective) -> {
       sb.append("impl ")
       if (!(baseImpl is EmptyNode)) {
         printNode(baseImpl, sb, indentation)
@@ -559,10 +559,10 @@ impl CodeNode {
             printAst(lhs, sb, indentation + 1)
             printAst(rhs, sb, indentation + 1)
           }
-          case is ImplDirectiveNode(astNode, targetImpl, baseImpl, headDirective) -> {
+          case is ImplDirectiveNode(astNode, baseImpl, targetImpl, headDirective) -> {
             // support::env::printf("> ImplDirectiveNode")
-            printAst(targetImpl, sb, indentation + 1)
             printAst(baseImpl, sb, indentation + 1)
+            printAst(targetImpl, sb, indentation + 1)
             printAst(headDirective, sb, indentation + 1)
           }
           case is ImportDirectiveNode(astNode, module, alias) -> {

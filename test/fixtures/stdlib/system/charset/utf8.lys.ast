@@ -9,30 +9,31 @@
         |-NameIdentifier(12,16)
           |-Identifier=push
       |-FunctionParamsList(16,54)
-        |-Parameter(17,27)
-          |-NameIdentifier(17,22)
-            |-Identifier=index
-          |-Type(24,27)
-            |-Reference(24,27)
-              |-QName(24,27)
-                |-NameIdentifier(24,27)
-                  |-Identifier=u32
-        |-Parameter(29,41)
-          |-NameIdentifier(29,34)
-            |-Identifier=array
-          |-Type(36,41)
-            |-Reference(36,41)
-              |-QName(36,41)
-                |-NameIdentifier(36,41)
-                  |-Identifier=bytes
-        |-Parameter(43,53)
-          |-NameIdentifier(43,48)
-            |-Identifier=value
-          |-Type(50,53)
-            |-Reference(50,53)
-              |-QName(50,53)
-                |-NameIdentifier(50,53)
-                  |-Identifier=u32
+        |-(List)(17,53)
+          |-Parameter(17,27)
+            |-NameIdentifier(17,22)
+              |-Identifier=index
+            |-Type(24,27)
+              |-Reference(24,27)
+                |-QName(24,27)
+                  |-NameIdentifier(24,27)
+                    |-Identifier=u32
+          |-Parameter(29,41)
+            |-NameIdentifier(29,34)
+              |-Identifier=array
+            |-Type(36,41)
+              |-Reference(36,41)
+                |-QName(36,41)
+                  |-NameIdentifier(36,41)
+                    |-Identifier=bytes
+          |-Parameter(43,53)
+            |-NameIdentifier(43,48)
+              |-Identifier=value
+            |-Type(50,53)
+              |-Reference(50,53)
+                |-QName(50,53)
+                  |-NameIdentifier(50,53)
+                    |-Identifier=u32
       |-Type(56,59)
         |-Reference(56,59)
           |-QName(56,59)
@@ -79,14 +80,15 @@
         |-NameIdentifier(180,187)
           |-Identifier=utf8Len
       |-FunctionParamsList(187,200)
-        |-Parameter(188,199)
-          |-NameIdentifier(188,191)
-            |-Identifier=str
-          |-Type(193,199)
-            |-Reference(193,199)
-              |-QName(193,199)
-                |-NameIdentifier(193,199)
-                  |-Identifier=string
+        |-(List)(188,199)
+          |-Parameter(188,199)
+            |-NameIdentifier(188,191)
+              |-Identifier=str
+            |-Type(193,199)
+              |-Reference(193,199)
+                |-QName(193,199)
+                  |-NameIdentifier(193,199)
+                    |-Identifier=string
       |-Type(202,205)
         |-Reference(202,205)
           |-QName(202,205)
@@ -340,14 +342,15 @@
         |-NameIdentifier(783,789)
           |-Identifier=toUtf8
       |-FunctionParamsList(789,802)
-        |-Parameter(790,801)
-          |-NameIdentifier(790,793)
-            |-Identifier=str
-          |-Type(795,801)
-            |-Reference(795,801)
-              |-QName(795,801)
-                |-NameIdentifier(795,801)
-                  |-Identifier=string
+        |-(List)(790,801)
+          |-Parameter(790,801)
+            |-NameIdentifier(790,793)
+              |-Identifier=str
+            |-Type(795,801)
+              |-Reference(795,801)
+                |-QName(795,801)
+                  |-NameIdentifier(795,801)
+                    |-Identifier=string
       |-Type(804,809)
         |-Reference(804,809)
           |-QName(804,809)

@@ -3,9 +3,19 @@
     |-VarDeclarationNode
       |-NameIdentifierNode name=x
       |-EmptyNode
-      |-EmptyNode
+      |-BlockNode
+        |-IsExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=a
+          |-EmptyNode
   |-VarDirectiveNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=x
       |-EmptyNode
-      |-EmptyNode
+      |-BlockNode
+        |-AsExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=a
+          |-EmptyNode

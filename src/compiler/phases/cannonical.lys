@@ -33,6 +33,11 @@ fun structOrError(astNode: AstNode): StructDeclarationNode | ErrorNode =
     case name is StructDeclarationNode -> name
     else -> ErrorNode
   }
+fun referenceOrError(astNode: AstNode): ReferenceNode | ErrorNode =
+  match processNode(astNode) {
+    case name is ReferenceNode -> name
+    else -> ErrorNode
+  }
 
 fun fqnOrEmpty(astNode: AstNode): QNameNode | ErrorNode =
   match processNode(astNode) {
@@ -59,12 +64,32 @@ fun processNode(astNode: AstNode): CodeNode = match astNode {
     case "FunctionParamsList" -> processNode(child)
     case "Parameter" -> ParameterNode(astNode, nameOrError(first(child)), processNode(rest(child)))
     case "EnumDirective" -> EnumDirectiveNode(astNode, nameOrError(first(child)), processNode(rest(child)))
+    case "ImplDirective" -> {
+      var firstName = referenceOrError(first(child))
+      var secondChild = processNode(second(child))
+
+      match secondChild {
+        case r is ReferenceNode ->
+          ImplDirectiveNode(astNode, r, firstName, processNode(third(child)))
+        else ->
+          ImplDirectiveNode(astNode, EmptyNode, firstName, secondChild)
+      }
+    }
     case "InjectedLiteral" -> InjectedLiteralNode(astNode)
     case "StackLiteral" -> StackLiteralNode(astNode, processNode(child))
     case "NameLiteralPair" -> NameLiteralPairNode(astNode, nameOrError(first(child)), processNode(rest(child)))
     case "StructDirective" -> StructDirectiveNode(astNode, structOrError(child))
     case "StructDeclaration" -> StructDeclarationNode(astNode, nameOrError(first(child)), processNode(rest(child)))
     case "BooleanLiteral" -> processNode(child)
+    case "ParenExpression" -> processNode(child)
+    case "AsExpression" -> AsExpressionNode(astNode, processNode(first(child)), processNode(rest(child)))
+    case "IsExpression" -> IsExpressionNode(astNode, processNode(first(child)), processNode(rest(child)))
+    case "BinaryOpExpression" -> {
+      val r = rest(child)
+      BinaryExpressionNode(astNode, processNode(first(child)), nameOrError(first(r)), processNode(rest(r)))
+    }
+    case "CodeBlock" -> BlockNode(astNode, processNode(child))
+    case "(List)" -> processNode(child)
     case "TypeParen" -> processNode(child)
     case "TypeDirective" -> TypeDirectiveNode(astNode, nameOrError(first(child)), processNode(second(child)))
     case "VarDirective" -> {
@@ -125,7 +150,7 @@ fun processNode(astNode: AstNode): CodeNode = match astNode {
     }
     else -> {
       support::env::printf("No handler for " ++ name)
-      EmptyNode
+      ErrorNode
     }
   }
 }

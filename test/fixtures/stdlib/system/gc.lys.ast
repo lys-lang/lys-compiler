@@ -5,13 +5,14 @@
     |-Type(685,696)
       |-StructLiteral(685,696)
         |-StructParamsList(693,696)
-          <Rule0>
+          |-(List)(695,695)
+            <Rule0>
   |-ImplDirective(698,970)
     |-Reference(703,709)
       |-QName(703,709)
         |-NameIdentifier(703,709)
           |-Identifier=Object
-    |-NamespaceElementList(710,970)
+    |-(List)(710,970)
       |-FunctionDirective(714,844)
         |-Decorators(714,714)
           <Rule0>
@@ -20,14 +21,15 @@
             |-NameIdentifier(718,723)
               |-Identifier=apply
           |-FunctionParamsList(723,734)
-            |-Parameter(724,733)
-              |-NameIdentifier(724,728)
-                |-Identifier=size
-              |-Type(730,733)
-                |-Reference(730,733)
-                  |-QName(730,733)
-                    |-NameIdentifier(730,733)
-                      |-Identifier=i32
+            |-(List)(724,733)
+              |-Parameter(724,733)
+                |-NameIdentifier(724,728)
+                  |-Identifier=size
+                |-Type(730,733)
+                  |-Reference(730,733)
+                    |-QName(730,733)
+                      |-NameIdentifier(730,733)
+                        |-Identifier=i32
           |-Type(736,742)
             |-Reference(736,742)
               |-QName(736,742)
@@ -71,22 +73,23 @@
             |-NameIdentifier(848,852)
               |-Identifier=link
           |-FunctionParamsList(852,877)
-            |-Parameter(853,864)
-              |-NameIdentifier(853,859)
-                |-Identifier=parent
-              |-Type(861,864)
-                |-Reference(861,864)
-                  |-QName(861,864)
-                    |-NameIdentifier(861,864)
-                      |-Identifier=ref
-            |-Parameter(866,876)
-              |-NameIdentifier(866,871)
-                |-Identifier=child
-              |-Type(873,876)
-                |-Reference(873,876)
-                  |-QName(873,876)
-                    |-NameIdentifier(873,876)
-                      |-Identifier=ref
+            |-(List)(853,876)
+              |-Parameter(853,864)
+                |-NameIdentifier(853,859)
+                  |-Identifier=parent
+                |-Type(861,864)
+                  |-Reference(861,864)
+                    |-QName(861,864)
+                      |-NameIdentifier(861,864)
+                        |-Identifier=ref
+              |-Parameter(866,876)
+                |-NameIdentifier(866,871)
+                  |-Identifier=child
+                |-Type(873,876)
+                  |-Reference(873,876)
+                    |-QName(873,876)
+                      |-NameIdentifier(873,876)
+                        |-Identifier=ref
           |-Type(879,883)
             |-Reference(879,883)
               |-QName(879,883)
@@ -103,14 +106,15 @@
             |-NameIdentifier(940,946)
               |-Identifier=unlink
           |-FunctionParamsList(946,957)
-            |-Parameter(947,956)
-              |-NameIdentifier(947,951)
-                |-Identifier=self
-              |-Type(953,956)
-                |-Reference(953,956)
-                  |-QName(953,956)
-                    |-NameIdentifier(953,956)
-                      |-Identifier=ref
+            |-(List)(947,956)
+              |-Parameter(947,956)
+                |-NameIdentifier(947,951)
+                  |-Identifier=self
+                |-Type(953,956)
+                  |-Reference(953,956)
+                    |-QName(953,956)
+                      |-NameIdentifier(953,956)
+                        |-Identifier=ref
           |-Type(959,963)
             |-Reference(959,963)
               |-QName(959,963)

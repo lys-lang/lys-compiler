@@ -9,14 +9,15 @@
         |-NameIdentifier(969,981)
           |-Identifier=keccak_theta
       |-FunctionParamsList(981,1002)
-        |-Parameter(982,1001)
-          |-NameIdentifier(982,996)
-            |-Identifier=context_offset
-          |-Type(998,1001)
-            |-Reference(998,1001)
-              |-QName(998,1001)
-                |-NameIdentifier(998,1001)
-                  |-Identifier=i32
+        |-(List)(982,1001)
+          |-Parameter(982,1001)
+            |-NameIdentifier(982,996)
+              |-Identifier=context_offset
+            |-Type(998,1001)
+              |-Reference(998,1001)
+                |-QName(998,1001)
+                  |-NameIdentifier(998,1001)
+                    |-Identifier=i32
       |-Type(1004,1008)
         |-Reference(1004,1008)
           |-QName(1004,1008)
@@ -2144,22 +2145,23 @@
         |-NameIdentifier(9330,9340)
           |-Identifier=keccak_rho
       |-FunctionParamsList(9340,9383)
-        |-Parameter(9341,9360)
-          |-NameIdentifier(9341,9355)
-            |-Identifier=context_offset
-          |-Type(9357,9360)
-            |-Reference(9357,9360)
-              |-QName(9357,9360)
-                |-NameIdentifier(9357,9360)
-                  |-Identifier=i32
-        |-Parameter(9362,9382)
-          |-NameIdentifier(9362,9377)
-            |-Identifier=rotation_consts
-          |-Type(9379,9382)
-            |-Reference(9379,9382)
-              |-QName(9379,9382)
-                |-NameIdentifier(9379,9382)
-                  |-Identifier=i32
+        |-(List)(9341,9382)
+          |-Parameter(9341,9360)
+            |-NameIdentifier(9341,9355)
+              |-Identifier=context_offset
+            |-Type(9357,9360)
+              |-Reference(9357,9360)
+                |-QName(9357,9360)
+                  |-NameIdentifier(9357,9360)
+                    |-Identifier=i32
+          |-Parameter(9362,9382)
+            |-NameIdentifier(9362,9377)
+              |-Identifier=rotation_consts
+            |-Type(9379,9382)
+              |-Reference(9379,9382)
+                |-QName(9379,9382)
+                  |-NameIdentifier(9379,9382)
+                    |-Identifier=i32
       |-Type(9385,9389)
         |-Reference(9385,9389)
           |-QName(9385,9389)
@@ -2358,14 +2360,15 @@
         |-NameIdentifier(10365,10374)
           |-Identifier=keccak_pi
       |-FunctionParamsList(10374,10395)
-        |-Parameter(10375,10394)
-          |-NameIdentifier(10375,10389)
-            |-Identifier=context_offset
-          |-Type(10391,10394)
-            |-Reference(10391,10394)
-              |-QName(10391,10394)
-                |-NameIdentifier(10391,10394)
-                  |-Identifier=i32
+        |-(List)(10375,10394)
+          |-Parameter(10375,10394)
+            |-NameIdentifier(10375,10389)
+              |-Identifier=context_offset
+            |-Type(10391,10394)
+              |-Reference(10391,10394)
+                |-QName(10391,10394)
+                  |-NameIdentifier(10391,10394)
+                    |-Identifier=i32
       |-Type(10397,10401)
         |-Reference(10397,10401)
           |-QName(10397,10401)
@@ -3364,14 +3367,15 @@
         |-NameIdentifier(13780,13790)
           |-Identifier=keccak_chi
       |-FunctionParamsList(13790,13811)
-        |-Parameter(13791,13810)
-          |-NameIdentifier(13791,13805)
-            |-Identifier=context_offset
-          |-Type(13807,13810)
-            |-Reference(13807,13810)
-              |-QName(13807,13810)
-                |-NameIdentifier(13807,13810)
-                  |-Identifier=i32
+        |-(List)(13791,13810)
+          |-Parameter(13791,13810)
+            |-NameIdentifier(13791,13805)
+              |-Identifier=context_offset
+            |-Type(13807,13810)
+              |-Reference(13807,13810)
+                |-QName(13807,13810)
+                  |-NameIdentifier(13807,13810)
+                    |-Identifier=i32
       |-Type(13813,13817)
         |-Reference(13813,13817)
           |-QName(13813,13817)
@@ -4309,14 +4313,15 @@
         |-NameIdentifier(17106,17120)
           |-Identifier=keccak_permute
       |-FunctionParamsList(17120,17141)
-        |-Parameter(17121,17140)
-          |-NameIdentifier(17121,17135)
-            |-Identifier=context_offset
-          |-Type(17137,17140)
-            |-Reference(17137,17140)
-              |-QName(17137,17140)
-                |-NameIdentifier(17137,17140)
-                  |-Identifier=i32
+        |-(List)(17121,17140)
+          |-Parameter(17121,17140)
+            |-NameIdentifier(17121,17135)
+              |-Identifier=context_offset
+            |-Type(17137,17140)
+              |-Reference(17137,17140)
+                |-QName(17137,17140)
+                  |-NameIdentifier(17137,17140)
+                    |-Identifier=i32
       |-Type(17143,17147)
         |-Reference(17143,17147)
           |-QName(17143,17147)
@@ -4590,30 +4595,31 @@
         |-NameIdentifier(18317,18329)
           |-Identifier=keccak_block
       |-FunctionParamsList(18329,18388)
-        |-Parameter(18330,18347)
-          |-NameIdentifier(18330,18342)
-            |-Identifier=input_offset
-          |-Type(18344,18347)
-            |-Reference(18344,18347)
-              |-QName(18344,18347)
-                |-NameIdentifier(18344,18347)
-                  |-Identifier=i32
-        |-Parameter(18349,18366)
-          |-NameIdentifier(18349,18361)
-            |-Identifier=input_length
-          |-Type(18363,18366)
-            |-Reference(18363,18366)
-              |-QName(18363,18366)
-                |-NameIdentifier(18363,18366)
-                  |-Identifier=i32
-        |-Parameter(18368,18387)
-          |-NameIdentifier(18368,18382)
-            |-Identifier=context_offset
-          |-Type(18384,18387)
-            |-Reference(18384,18387)
-              |-QName(18384,18387)
-                |-NameIdentifier(18384,18387)
-                  |-Identifier=i32
+        |-(List)(18330,18387)
+          |-Parameter(18330,18347)
+            |-NameIdentifier(18330,18342)
+              |-Identifier=input_offset
+            |-Type(18344,18347)
+              |-Reference(18344,18347)
+                |-QName(18344,18347)
+                  |-NameIdentifier(18344,18347)
+                    |-Identifier=i32
+          |-Parameter(18349,18366)
+            |-NameIdentifier(18349,18361)
+              |-Identifier=input_length
+            |-Type(18363,18366)
+              |-Reference(18363,18366)
+                |-QName(18363,18366)
+                  |-NameIdentifier(18363,18366)
+                    |-Identifier=i32
+          |-Parameter(18368,18387)
+            |-NameIdentifier(18368,18382)
+              |-Identifier=context_offset
+            |-Type(18384,18387)
+              |-Reference(18384,18387)
+                |-QName(18384,18387)
+                  |-NameIdentifier(18384,18387)
+                    |-Identifier=i32
       |-Type(18390,18394)
         |-Reference(18390,18394)
           |-QName(18390,18394)
@@ -5731,14 +5737,15 @@
         |-NameIdentifier(22528,22539)
           |-Identifier=keccak_init
       |-FunctionParamsList(22539,22560)
-        |-Parameter(22540,22559)
-          |-NameIdentifier(22540,22554)
-            |-Identifier=context_offset
-          |-Type(22556,22559)
-            |-Reference(22556,22559)
-              |-QName(22556,22559)
-                |-NameIdentifier(22556,22559)
-                  |-Identifier=i32
+        |-(List)(22540,22559)
+          |-Parameter(22540,22559)
+            |-NameIdentifier(22540,22554)
+              |-Identifier=context_offset
+            |-Type(22556,22559)
+              |-Reference(22556,22559)
+                |-QName(22556,22559)
+                  |-NameIdentifier(22556,22559)
+                    |-Identifier=i32
       |-Type(22562,22566)
         |-Reference(22562,22566)
           |-QName(22562,22566)
@@ -7078,14 +7085,15 @@
         |-NameIdentifier(27322,27334)
           |-Identifier=keccak_reset
       |-FunctionParamsList(27334,27355)
-        |-Parameter(27335,27354)
-          |-NameIdentifier(27335,27349)
-            |-Identifier=context_offset
-          |-Type(27351,27354)
-            |-Reference(27351,27354)
-              |-QName(27351,27354)
-                |-NameIdentifier(27351,27354)
-                  |-Identifier=i32
+        |-(List)(27335,27354)
+          |-Parameter(27335,27354)
+            |-NameIdentifier(27335,27349)
+              |-Identifier=context_offset
+            |-Type(27351,27354)
+              |-Reference(27351,27354)
+                |-QName(27351,27354)
+                  |-NameIdentifier(27351,27354)
+                    |-Identifier=i32
       |-Type(27357,27361)
         |-Reference(27357,27361)
           |-QName(27357,27361)
@@ -7127,30 +7135,31 @@
         |-NameIdentifier(27512,27525)
           |-Identifier=keccak_update
       |-FunctionParamsList(27525,27584)
-        |-Parameter(27526,27545)
-          |-NameIdentifier(27526,27540)
-            |-Identifier=context_offset
-          |-Type(27542,27545)
-            |-Reference(27542,27545)
-              |-QName(27542,27545)
-                |-NameIdentifier(27542,27545)
-                  |-Identifier=i32
-        |-Parameter(27547,27564)
-          |-NameIdentifier(27547,27559)
-            |-Identifier=input_offset
-          |-Type(27561,27564)
-            |-Reference(27561,27564)
-              |-QName(27561,27564)
-                |-NameIdentifier(27561,27564)
-                  |-Identifier=i32
-        |-Parameter(27566,27583)
-          |-NameIdentifier(27566,27578)
-            |-Identifier=input_length
-          |-Type(27580,27583)
-            |-Reference(27580,27583)
-              |-QName(27580,27583)
-                |-NameIdentifier(27580,27583)
-                  |-Identifier=i32
+        |-(List)(27526,27583)
+          |-Parameter(27526,27545)
+            |-NameIdentifier(27526,27540)
+              |-Identifier=context_offset
+            |-Type(27542,27545)
+              |-Reference(27542,27545)
+                |-QName(27542,27545)
+                  |-NameIdentifier(27542,27545)
+                    |-Identifier=i32
+          |-Parameter(27547,27564)
+            |-NameIdentifier(27547,27559)
+              |-Identifier=input_offset
+            |-Type(27561,27564)
+              |-Reference(27561,27564)
+                |-QName(27561,27564)
+                  |-NameIdentifier(27561,27564)
+                    |-Identifier=i32
+          |-Parameter(27566,27583)
+            |-NameIdentifier(27566,27578)
+              |-Identifier=input_length
+            |-Type(27580,27583)
+              |-Reference(27580,27583)
+                |-QName(27580,27583)
+                  |-NameIdentifier(27580,27583)
+                    |-Identifier=i32
       |-Type(27586,27590)
         |-Reference(27586,27590)
           |-QName(27586,27590)
@@ -7705,22 +7714,23 @@
         |-NameIdentifier(30151,30164)
           |-Identifier=keccak_finish
       |-FunctionParamsList(30164,30205)
-        |-Parameter(30165,30184)
-          |-NameIdentifier(30165,30179)
-            |-Identifier=context_offset
-          |-Type(30181,30184)
-            |-Reference(30181,30184)
-              |-QName(30181,30184)
-                |-NameIdentifier(30181,30184)
-                  |-Identifier=i32
-        |-Parameter(30186,30204)
-          |-NameIdentifier(30186,30199)
-            |-Identifier=output_offset
-          |-Type(30201,30204)
-            |-Reference(30201,30204)
-              |-QName(30201,30204)
-                |-NameIdentifier(30201,30204)
-                  |-Identifier=i32
+        |-(List)(30165,30204)
+          |-Parameter(30165,30184)
+            |-NameIdentifier(30165,30179)
+              |-Identifier=context_offset
+            |-Type(30181,30184)
+              |-Reference(30181,30184)
+                |-QName(30181,30184)
+                  |-NameIdentifier(30181,30184)
+                    |-Identifier=i32
+          |-Parameter(30186,30204)
+            |-NameIdentifier(30186,30199)
+              |-Identifier=output_offset
+            |-Type(30201,30204)
+              |-Reference(30201,30204)
+                |-QName(30201,30204)
+                  |-NameIdentifier(30201,30204)
+                    |-Identifier=i32
       |-Type(30207,30211)
         |-Reference(30207,30211)
           |-QName(30207,30211)
@@ -8162,14 +8172,15 @@
         |-NameIdentifier(32034,32040)
           |-Identifier=keccak
       |-FunctionParamsList(32040,32054)
-        |-Parameter(32041,32053)
-          |-NameIdentifier(32041,32046)
-            |-Identifier=input
-          |-Type(32048,32053)
-            |-Reference(32048,32053)
-              |-QName(32048,32053)
-                |-NameIdentifier(32048,32053)
-                  |-Identifier=bytes
+        |-(List)(32041,32053)
+          |-Parameter(32041,32053)
+            |-NameIdentifier(32041,32046)
+              |-Identifier=input
+            |-Type(32048,32053)
+              |-Reference(32048,32053)
+                |-QName(32048,32053)
+                  |-NameIdentifier(32048,32053)
+                    |-Identifier=bytes
       |-Type(32056,32061)
         |-Reference(32056,32061)
           |-QName(32056,32061)

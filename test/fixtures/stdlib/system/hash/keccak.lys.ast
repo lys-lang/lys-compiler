@@ -4,28 +4,29 @@
       |-NameIdentifier(506,512)
         |-Identifier=Keccak
       |-FunctionParamsList(512,540)
-        |-Parameter(513,524)
-          |-NameIdentifier(513,517)
-            |-Identifier=data
-          |-Type(519,524)
-            |-Reference(519,524)
-              |-QName(519,524)
-                |-NameIdentifier(519,524)
-                  |-Identifier=bytes
-        |-Parameter(526,539)
-          |-NameIdentifier(526,532)
-            |-Identifier=result
-          |-Type(534,539)
-            |-Reference(534,539)
-              |-QName(534,539)
-                |-NameIdentifier(534,539)
-                  |-Identifier=bytes
+        |-(List)(513,539)
+          |-Parameter(513,524)
+            |-NameIdentifier(513,517)
+              |-Identifier=data
+            |-Type(519,524)
+              |-Reference(519,524)
+                |-QName(519,524)
+                  |-NameIdentifier(519,524)
+                    |-Identifier=bytes
+          |-Parameter(526,539)
+            |-NameIdentifier(526,532)
+              |-Identifier=result
+            |-Type(534,539)
+              |-Reference(534,539)
+                |-QName(534,539)
+                  |-NameIdentifier(534,539)
+                    |-Identifier=bytes
   |-ImplDirective(542,17060)
     |-Reference(547,553)
       |-QName(547,553)
         |-NameIdentifier(547,553)
           |-Identifier=Keccak
-    |-NamespaceElementList(554,17060)
+    |-(List)(554,17060)
       |-FunctionDirective(558,1018)
         |-Decorators(558,558)
           <Rule0>
@@ -34,7 +35,8 @@
             |-NameIdentifier(562,567)
               |-Identifier=apply
           |-FunctionParamsList(567,569)
-            <Rule0>
+            |-(List)(568,568)
+              <Rule0>
           |-Type(571,577)
             |-Reference(571,577)
               |-QName(571,577)
@@ -112,14 +114,15 @@
             |-NameIdentifier(1026,1031)
               |-Identifier=reset
           |-FunctionParamsList(1031,1045)
-            |-Parameter(1032,1044)
-              |-NameIdentifier(1032,1036)
-                |-Identifier=self
-              |-Type(1038,1044)
-                |-Reference(1038,1044)
-                  |-QName(1038,1044)
-                    |-NameIdentifier(1038,1044)
-                      |-Identifier=Keccak
+            |-(List)(1032,1044)
+              |-Parameter(1032,1044)
+                |-NameIdentifier(1032,1036)
+                  |-Identifier=self
+                |-Type(1038,1044)
+                  |-Reference(1038,1044)
+                    |-QName(1038,1044)
+                      |-NameIdentifier(1038,1044)
+                        |-Identifier=Keccak
           |-Type(1047,1051)
             |-Reference(1047,1051)
               |-QName(1047,1051)
@@ -156,22 +159,23 @@
             |-NameIdentifier(1097,1103)
               |-Identifier=update
           |-FunctionParamsList(1103,1130)
-            |-Parameter(1104,1116)
-              |-NameIdentifier(1104,1108)
-                |-Identifier=self
-              |-Type(1110,1116)
-                |-Reference(1110,1116)
-                  |-QName(1110,1116)
-                    |-NameIdentifier(1110,1116)
-                      |-Identifier=Keccak
-            |-Parameter(1118,1129)
-              |-NameIdentifier(1118,1122)
-                |-Identifier=data
-              |-Type(1124,1129)
-                |-Reference(1124,1129)
-                  |-QName(1124,1129)
-                    |-NameIdentifier(1124,1129)
-                      |-Identifier=bytes
+            |-(List)(1104,1129)
+              |-Parameter(1104,1116)
+                |-NameIdentifier(1104,1108)
+                  |-Identifier=self
+                |-Type(1110,1116)
+                  |-Reference(1110,1116)
+                    |-QName(1110,1116)
+                      |-NameIdentifier(1110,1116)
+                        |-Identifier=Keccak
+              |-Parameter(1118,1129)
+                |-NameIdentifier(1118,1122)
+                  |-Identifier=data
+                |-Type(1124,1129)
+                  |-Reference(1124,1129)
+                    |-QName(1124,1129)
+                      |-NameIdentifier(1124,1129)
+                        |-Identifier=bytes
           |-Type(1132,1136)
             |-Reference(1132,1136)
               |-QName(1132,1136)
@@ -217,30 +221,31 @@
             |-NameIdentifier(1192,1198)
               |-Identifier=update
           |-FunctionParamsList(1198,1239)
-            |-Parameter(1199,1211)
-              |-NameIdentifier(1199,1203)
-                |-Identifier=self
-              |-Type(1205,1211)
-                |-Reference(1205,1211)
-                  |-QName(1205,1211)
-                    |-NameIdentifier(1205,1211)
-                      |-Identifier=Keccak
-            |-Parameter(1213,1225)
-              |-NameIdentifier(1213,1220)
-                |-Identifier=address
-              |-Type(1222,1225)
-                |-Reference(1222,1225)
-                  |-QName(1222,1225)
-                    |-NameIdentifier(1222,1225)
-                      |-Identifier=u32
-            |-Parameter(1227,1238)
-              |-NameIdentifier(1227,1233)
-                |-Identifier=length
-              |-Type(1235,1238)
-                |-Reference(1235,1238)
-                  |-QName(1235,1238)
-                    |-NameIdentifier(1235,1238)
-                      |-Identifier=u32
+            |-(List)(1199,1238)
+              |-Parameter(1199,1211)
+                |-NameIdentifier(1199,1203)
+                  |-Identifier=self
+                |-Type(1205,1211)
+                  |-Reference(1205,1211)
+                    |-QName(1205,1211)
+                      |-NameIdentifier(1205,1211)
+                        |-Identifier=Keccak
+              |-Parameter(1213,1225)
+                |-NameIdentifier(1213,1220)
+                  |-Identifier=address
+                |-Type(1222,1225)
+                  |-Reference(1222,1225)
+                    |-QName(1222,1225)
+                      |-NameIdentifier(1222,1225)
+                        |-Identifier=u32
+              |-Parameter(1227,1238)
+                |-NameIdentifier(1227,1233)
+                  |-Identifier=length
+                |-Type(1235,1238)
+                  |-Reference(1235,1238)
+                    |-QName(1235,1238)
+                      |-NameIdentifier(1235,1238)
+                        |-Identifier=u32
           |-Type(1241,1245)
             |-Reference(1241,1245)
               |-QName(1241,1245)
@@ -285,14 +290,15 @@
             |-NameIdentifier(1310,1316)
               |-Identifier=digest
           |-FunctionParamsList(1316,1330)
-            |-Parameter(1317,1329)
-              |-NameIdentifier(1317,1321)
-                |-Identifier=self
-              |-Type(1323,1329)
-                |-Reference(1323,1329)
-                  |-QName(1323,1329)
-                    |-NameIdentifier(1323,1329)
-                      |-Identifier=Keccak
+            |-(List)(1317,1329)
+              |-Parameter(1317,1329)
+                |-NameIdentifier(1317,1321)
+                  |-Identifier=self
+                |-Type(1323,1329)
+                  |-Reference(1323,1329)
+                    |-QName(1323,1329)
+                      |-NameIdentifier(1323,1329)
+                        |-Identifier=Keccak
           |-Type(1332,1337)
             |-Reference(1332,1337)
               |-QName(1332,1337)
@@ -356,14 +362,15 @@
             |-NameIdentifier(1458,1469)
               |-Identifier=keccakTheta
           |-FunctionParamsList(1469,1483)
-            |-Parameter(1470,1482)
-              |-NameIdentifier(1470,1477)
-                |-Identifier=context
-              |-Type(1479,1482)
-                |-Reference(1479,1482)
-                  |-QName(1479,1482)
-                    |-NameIdentifier(1479,1482)
-                      |-Identifier=ref
+            |-(List)(1470,1482)
+              |-Parameter(1470,1482)
+                |-NameIdentifier(1470,1477)
+                  |-Identifier=context
+                |-Type(1479,1482)
+                  |-Reference(1479,1482)
+                    |-QName(1479,1482)
+                      |-NameIdentifier(1479,1482)
+                        |-Identifier=ref
           |-Type(1485,1489)
             |-Reference(1485,1489)
               |-QName(1485,1489)
@@ -2376,22 +2383,23 @@
             |-NameIdentifier(4696,4705)
               |-Identifier=keccakRho
           |-FunctionParamsList(4705,4743)
-            |-Parameter(4706,4721)
-              |-NameIdentifier(4706,4716)
-                |-Identifier=contextRef
-              |-Type(4718,4721)
-                |-Reference(4718,4721)
-                  |-QName(4718,4721)
-                    |-NameIdentifier(4718,4721)
-                      |-Identifier=ref
-            |-Parameter(4723,4742)
-              |-NameIdentifier(4723,4737)
-                |-Identifier=rotationConsts
-              |-Type(4739,4742)
-                |-Reference(4739,4742)
-                  |-QName(4739,4742)
-                    |-NameIdentifier(4739,4742)
-                      |-Identifier=ref
+            |-(List)(4706,4742)
+              |-Parameter(4706,4721)
+                |-NameIdentifier(4706,4716)
+                  |-Identifier=contextRef
+                |-Type(4718,4721)
+                  |-Reference(4718,4721)
+                    |-QName(4718,4721)
+                      |-NameIdentifier(4718,4721)
+                        |-Identifier=ref
+              |-Parameter(4723,4742)
+                |-NameIdentifier(4723,4737)
+                  |-Identifier=rotationConsts
+                |-Type(4739,4742)
+                  |-Reference(4739,4742)
+                    |-QName(4739,4742)
+                      |-NameIdentifier(4739,4742)
+                        |-Identifier=ref
           |-Type(4745,4749)
             |-Reference(4745,4749)
               |-QName(4745,4749)
@@ -2549,14 +2557,15 @@
             |-NameIdentifier(5137,5145)
               |-Identifier=keccakPi
           |-FunctionParamsList(5145,5159)
-            |-Parameter(5146,5158)
-              |-NameIdentifier(5146,5153)
-                |-Identifier=context
-              |-Type(5155,5158)
-                |-Reference(5155,5158)
-                  |-QName(5155,5158)
-                    |-NameIdentifier(5155,5158)
-                      |-Identifier=ref
+            |-(List)(5146,5158)
+              |-Parameter(5146,5158)
+                |-NameIdentifier(5146,5153)
+                  |-Identifier=context
+                |-Type(5155,5158)
+                  |-Reference(5155,5158)
+                    |-QName(5155,5158)
+                      |-NameIdentifier(5155,5158)
+                        |-Identifier=ref
           |-Type(5161,5165)
             |-Reference(5161,5165)
               |-QName(5161,5165)
@@ -3637,14 +3646,15 @@
             |-NameIdentifier(6904,6913)
               |-Identifier=keccakChi
           |-FunctionParamsList(6913,6927)
-            |-Parameter(6914,6926)
-              |-NameIdentifier(6914,6921)
-                |-Identifier=context
-              |-Type(6923,6926)
-                |-Reference(6923,6926)
-                  |-QName(6923,6926)
-                    |-NameIdentifier(6923,6926)
-                      |-Identifier=ref
+            |-(List)(6914,6926)
+              |-Parameter(6914,6926)
+                |-NameIdentifier(6914,6921)
+                  |-Identifier=context
+                |-Type(6923,6926)
+                  |-Reference(6923,6926)
+                    |-QName(6923,6926)
+                      |-NameIdentifier(6923,6926)
+                        |-Identifier=ref
           |-Type(6929,6933)
             |-Reference(6929,6933)
               |-QName(6929,6933)
@@ -4309,14 +4319,15 @@
             |-NameIdentifier(8178,8191)
               |-Identifier=keccakPermute
           |-FunctionParamsList(8191,8211)
-            |-Parameter(8192,8210)
-              |-NameIdentifier(8192,8205)
-                |-Identifier=contextOffset
-              |-Type(8207,8210)
-                |-Reference(8207,8210)
-                  |-QName(8207,8210)
-                    |-NameIdentifier(8207,8210)
-                      |-Identifier=u32
+            |-(List)(8192,8210)
+              |-Parameter(8192,8210)
+                |-NameIdentifier(8192,8205)
+                  |-Identifier=contextOffset
+                |-Type(8207,8210)
+                  |-Reference(8207,8210)
+                    |-QName(8207,8210)
+                      |-NameIdentifier(8207,8210)
+                        |-Identifier=u32
           |-Type(8213,8217)
             |-Reference(8213,8217)
               |-QName(8213,8217)
@@ -4532,22 +4543,23 @@
             |-NameIdentifier(9046,9057)
               |-Identifier=keccakBlock
           |-FunctionParamsList(9057,9095)
-            |-Parameter(9058,9074)
-              |-NameIdentifier(9058,9069)
-                |-Identifier=inputOffset
-              |-Type(9071,9074)
-                |-Reference(9071,9074)
-                  |-QName(9071,9074)
-                    |-NameIdentifier(9071,9074)
-                      |-Identifier=u32
-            |-Parameter(9076,9094)
-              |-NameIdentifier(9076,9089)
-                |-Identifier=contextOffset
-              |-Type(9091,9094)
-                |-Reference(9091,9094)
-                  |-QName(9091,9094)
-                    |-NameIdentifier(9091,9094)
-                      |-Identifier=u32
+            |-(List)(9058,9094)
+              |-Parameter(9058,9074)
+                |-NameIdentifier(9058,9069)
+                  |-Identifier=inputOffset
+                |-Type(9071,9074)
+                  |-Reference(9071,9074)
+                    |-QName(9071,9074)
+                      |-NameIdentifier(9071,9074)
+                        |-Identifier=u32
+              |-Parameter(9076,9094)
+                |-NameIdentifier(9076,9089)
+                  |-Identifier=contextOffset
+                |-Type(9091,9094)
+                  |-Reference(9091,9094)
+                    |-QName(9091,9094)
+                      |-NameIdentifier(9091,9094)
+                        |-Identifier=u32
           |-Type(9097,9101)
             |-Reference(9097,9101)
               |-QName(9097,9101)
@@ -5757,14 +5769,15 @@
             |-NameIdentifier(10931,10941)
               |-Identifier=keccakInit
           |-FunctionParamsList(10941,10961)
-            |-Parameter(10942,10960)
-              |-NameIdentifier(10942,10955)
-                |-Identifier=contextOffset
-              |-Type(10957,10960)
-                |-Reference(10957,10960)
-                  |-QName(10957,10960)
-                    |-NameIdentifier(10957,10960)
-                      |-Identifier=u32
+            |-(List)(10942,10960)
+              |-Parameter(10942,10960)
+                |-NameIdentifier(10942,10955)
+                  |-Identifier=contextOffset
+                |-Type(10957,10960)
+                  |-Reference(10957,10960)
+                    |-QName(10957,10960)
+                      |-NameIdentifier(10957,10960)
+                        |-Identifier=u32
           |-Type(10963,10967)
             |-Reference(10963,10967)
               |-QName(10963,10967)
@@ -7086,14 +7099,15 @@
             |-NameIdentifier(13872,13883)
               |-Identifier=keccakReset
           |-FunctionParamsList(13883,13903)
-            |-Parameter(13884,13902)
-              |-NameIdentifier(13884,13897)
-                |-Identifier=contextOffset
-              |-Type(13899,13902)
-                |-Reference(13899,13902)
-                  |-QName(13899,13902)
-                    |-NameIdentifier(13899,13902)
-                      |-Identifier=u32
+            |-(List)(13884,13902)
+              |-Parameter(13884,13902)
+                |-NameIdentifier(13884,13897)
+                  |-Identifier=contextOffset
+                |-Type(13899,13902)
+                  |-Reference(13899,13902)
+                    |-QName(13899,13902)
+                      |-NameIdentifier(13899,13902)
+                        |-Identifier=u32
           |-Type(13905,13909)
             |-Reference(13905,13909)
               |-QName(13905,13909)
@@ -7141,30 +7155,31 @@
             |-NameIdentifier(14079,14091)
               |-Identifier=keccakUpdate
           |-FunctionParamsList(14091,14147)
-            |-Parameter(14092,14110)
-              |-NameIdentifier(14092,14105)
-                |-Identifier=contextOffset
-              |-Type(14107,14110)
-                |-Reference(14107,14110)
-                  |-QName(14107,14110)
-                    |-NameIdentifier(14107,14110)
-                      |-Identifier=u32
-            |-Parameter(14112,14128)
-              |-NameIdentifier(14112,14123)
-                |-Identifier=inputOffset
-              |-Type(14125,14128)
-                |-Reference(14125,14128)
-                  |-QName(14125,14128)
-                    |-NameIdentifier(14125,14128)
-                      |-Identifier=u32
-            |-Parameter(14130,14146)
-              |-NameIdentifier(14130,14141)
-                |-Identifier=inputLength
-              |-Type(14143,14146)
-                |-Reference(14143,14146)
-                  |-QName(14143,14146)
-                    |-NameIdentifier(14143,14146)
-                      |-Identifier=u32
+            |-(List)(14092,14146)
+              |-Parameter(14092,14110)
+                |-NameIdentifier(14092,14105)
+                  |-Identifier=contextOffset
+                |-Type(14107,14110)
+                  |-Reference(14107,14110)
+                    |-QName(14107,14110)
+                      |-NameIdentifier(14107,14110)
+                        |-Identifier=u32
+              |-Parameter(14112,14128)
+                |-NameIdentifier(14112,14123)
+                  |-Identifier=inputOffset
+                |-Type(14125,14128)
+                  |-Reference(14125,14128)
+                    |-QName(14125,14128)
+                      |-NameIdentifier(14125,14128)
+                        |-Identifier=u32
+              |-Parameter(14130,14146)
+                |-NameIdentifier(14130,14141)
+                  |-Identifier=inputLength
+                |-Type(14143,14146)
+                  |-Reference(14143,14146)
+                    |-QName(14143,14146)
+                      |-NameIdentifier(14143,14146)
+                        |-Identifier=u32
           |-Type(14149,14153)
             |-Reference(14149,14153)
               |-QName(14149,14153)
@@ -7577,22 +7592,23 @@
             |-NameIdentifier(15831,15843)
               |-Identifier=keccakFinish
           |-FunctionParamsList(15843,15882)
-            |-Parameter(15844,15862)
-              |-NameIdentifier(15844,15857)
-                |-Identifier=contextOffset
-              |-Type(15859,15862)
-                |-Reference(15859,15862)
-                  |-QName(15859,15862)
-                    |-NameIdentifier(15859,15862)
-                      |-Identifier=u32
-            |-Parameter(15864,15881)
-              |-NameIdentifier(15864,15876)
-                |-Identifier=outputOffset
-              |-Type(15878,15881)
-                |-Reference(15878,15881)
-                  |-QName(15878,15881)
-                    |-NameIdentifier(15878,15881)
-                      |-Identifier=u32
+            |-(List)(15844,15881)
+              |-Parameter(15844,15862)
+                |-NameIdentifier(15844,15857)
+                  |-Identifier=contextOffset
+                |-Type(15859,15862)
+                  |-Reference(15859,15862)
+                    |-QName(15859,15862)
+                      |-NameIdentifier(15859,15862)
+                        |-Identifier=u32
+              |-Parameter(15864,15881)
+                |-NameIdentifier(15864,15876)
+                  |-Identifier=outputOffset
+                |-Type(15878,15881)
+                  |-Reference(15878,15881)
+                    |-QName(15878,15881)
+                      |-NameIdentifier(15878,15881)
+                        |-Identifier=u32
           |-Type(15884,15888)
             |-Reference(15884,15888)
               |-QName(15884,15888)

@@ -30,26 +30,28 @@
           |-NameIdentifierNode name=C
   |-TypeDirectiveNode
     |-NameIdentifierNode name=theFn1
-    |-EmptyNode
+    |-ErrorNode
   |-TypeDirectiveNode
     |-NameIdentifierNode name=theFn2
-    |-EmptyNode
+    |-ErrorNode
   |-TypeDirectiveNode
     |-NameIdentifierNode name=theFn3
-    |-EmptyNode
+    |-ErrorNode
   |-TypeDirectiveNode
     |-NameIdentifierNode name=theFn4
-    |-EmptyNode
+    |-ErrorNode
   |-TypeDirectiveNode
     |-NameIdentifierNode name=theFn5
-    |-EmptyNode
+    |-ErrorNode
   |-TypeDirectiveNode
     |-NameIdentifierNode name=theFn6
-    |-EmptyNode
+    |-ErrorNode
+  |-ErrorNode
+  |-ErrorNode
   |-VarDirectiveNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=test
-      |-EmptyNode
+      |-ErrorNode
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
     |-VarDeclarationNode
@@ -87,34 +89,12 @@
   |-VarDirectiveNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=test
-      |-EmptyNode
+      |-ErrorNode
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=test
-      |-EmptyNode
-      |-FloatLiteralNode value=1
-  |-VarDirectiveNode
-    |-VarDeclarationNode
-      |-NameIdentifierNode name=test
-      |-UnionTypeNode
-        |-ReferenceNode
-          |-QNameNode
-            |-NameIdentifierNode name=a
-        |-IntersectionTypeNode
-          |-ReferenceNode
-            |-QNameNode
-              |-NameIdentifierNode name=b
-          |-ReferenceNode
-            |-QNameNode
-              |-NameIdentifierNode name=c
-        |-IntersectionTypeNode
-          |-ReferenceNode
-            |-QNameNode
-              |-NameIdentifierNode name=d
-          |-ReferenceNode
-            |-QNameNode
-              |-NameIdentifierNode name=b
+      |-ErrorNode
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
     |-VarDeclarationNode
@@ -141,17 +121,39 @@
   |-VarDirectiveNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=test
-      |-EmptyNode
+      |-UnionTypeNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
+        |-IntersectionTypeNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=c
+        |-IntersectionTypeNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=d
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=test
-      |-EmptyNode
+      |-ErrorNode
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=test
-      |-EmptyNode
+      |-ErrorNode
+      |-FloatLiteralNode value=1
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=test
+      |-ErrorNode
       |-FloatLiteralNode value=1
   |-EnumDirectiveNode
     |-NameIdentifierNode name=Number

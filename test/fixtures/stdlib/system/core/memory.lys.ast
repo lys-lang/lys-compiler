@@ -199,7 +199,8 @@
         |-NameIdentifier(755,763)
           |-Identifier=segfault
       |-FunctionParamsList(763,765)
-        <Rule0>
+        |-(List)(764,764)
+          <Rule0>
       |-Type(767,771)
         |-Reference(767,771)
           |-QName(767,771)
@@ -221,7 +222,8 @@
         |-NameIdentifier(813,825)
           |-Identifier=getMaxMemory
       |-FunctionParamsList(825,827)
-        <Rule0>
+        |-(List)(826,826)
+          <Rule0>
       |-Type(829,832)
         |-Reference(829,832)
           |-QName(829,832)
@@ -242,14 +244,15 @@
         |-NameIdentifier(855,865)
           |-Identifier=growMemory
       |-FunctionParamsList(865,877)
-        |-Parameter(866,876)
-          |-NameIdentifier(866,871)
-            |-Identifier=pages
-          |-Type(873,876)
-            |-Reference(873,876)
-              |-QName(873,876)
-                |-NameIdentifier(873,876)
-                  |-Identifier=u32
+        |-(List)(866,876)
+          |-Parameter(866,876)
+            |-NameIdentifier(866,871)
+              |-Identifier=pages
+            |-Type(873,876)
+              |-Reference(873,876)
+                |-QName(873,876)
+                  |-NameIdentifier(873,876)
+                    |-Identifier=u32
       |-Type(879,882)
         |-Reference(879,882)
           |-QName(879,882)
@@ -277,7 +280,8 @@
         |-NameIdentifier(943,956)
           |-Identifier=currentMemory
       |-FunctionParamsList(956,958)
-        <Rule0>
+        |-(List)(957,957)
+          <Rule0>
       |-Type(960,963)
         |-Reference(960,963)
           |-QName(960,963)
@@ -297,22 +301,23 @@
         |-NameIdentifier(997,1003)
           |-Identifier=calloc
       |-FunctionParamsList(1003,1034)
-        |-Parameter(1004,1018)
-          |-NameIdentifier(1004,1013)
-            |-Identifier=itemCount
-          |-Type(1015,1018)
-            |-Reference(1015,1018)
-              |-QName(1015,1018)
-                |-NameIdentifier(1015,1018)
-                  |-Identifier=u32
-        |-Parameter(1020,1033)
-          |-NameIdentifier(1020,1028)
-            |-Identifier=itemSize
-          |-Type(1030,1033)
-            |-Reference(1030,1033)
-              |-QName(1030,1033)
-                |-NameIdentifier(1030,1033)
-                  |-Identifier=u32
+        |-(List)(1004,1033)
+          |-Parameter(1004,1018)
+            |-NameIdentifier(1004,1013)
+              |-Identifier=itemCount
+            |-Type(1015,1018)
+              |-Reference(1015,1018)
+                |-QName(1015,1018)
+                  |-NameIdentifier(1015,1018)
+                    |-Identifier=u32
+          |-Parameter(1020,1033)
+            |-NameIdentifier(1020,1028)
+              |-Identifier=itemSize
+            |-Type(1030,1033)
+              |-Reference(1030,1033)
+                |-QName(1030,1033)
+                  |-NameIdentifier(1030,1033)
+                    |-Identifier=u32
       |-Type(1036,1039)
         |-Reference(1036,1039)
           |-QName(1036,1039)
@@ -379,14 +384,15 @@
         |-NameIdentifier(1148,1154)
           |-Identifier=malloc
       |-FunctionParamsList(1154,1165)
-        |-Parameter(1155,1164)
-          |-NameIdentifier(1155,1159)
-            |-Identifier=size
-          |-Type(1161,1164)
-            |-Reference(1161,1164)
-              |-QName(1161,1164)
-                |-NameIdentifier(1161,1164)
-                  |-Identifier=u32
+        |-(List)(1155,1164)
+          |-Parameter(1155,1164)
+            |-NameIdentifier(1155,1159)
+              |-Identifier=size
+            |-Type(1161,1164)
+              |-Reference(1161,1164)
+                |-QName(1161,1164)
+                  |-NameIdentifier(1161,1164)
+                    |-Identifier=u32
       |-Type(1167,1170)
         |-Reference(1167,1170)
           |-QName(1167,1170)
@@ -638,14 +644,15 @@
         |-NameIdentifier(1740,1744)
           |-Identifier=free
       |-FunctionParamsList(1744,1754)
-        |-Parameter(1745,1753)
-          |-NameIdentifier(1745,1748)
-            |-Identifier=ptr
-          |-Type(1750,1753)
-            |-Reference(1750,1753)
-              |-QName(1750,1753)
-                |-NameIdentifier(1750,1753)
-                  |-Identifier=i32
+        |-(List)(1745,1753)
+          |-Parameter(1745,1753)
+            |-NameIdentifier(1745,1748)
+              |-Identifier=ptr
+            |-Type(1750,1753)
+              |-Reference(1750,1753)
+                |-QName(1750,1753)
+                  |-NameIdentifier(1750,1753)
+                    |-Identifier=i32
       |-Type(1756,1760)
         |-Reference(1756,1760)
           |-QName(1756,1760)
@@ -662,30 +669,31 @@
         |-NameIdentifier(1782,1788)
           |-Identifier=memcpy
       |-FunctionParamsList(1788,1821)
-        |-Parameter(1789,1797)
-          |-NameIdentifier(1789,1792)
-            |-Identifier=dst
-          |-Type(1794,1797)
-            |-Reference(1794,1797)
-              |-QName(1794,1797)
-                |-NameIdentifier(1794,1797)
-                  |-Identifier=u32
-        |-Parameter(1799,1807)
-          |-NameIdentifier(1799,1802)
-            |-Identifier=src
-          |-Type(1804,1807)
-            |-Reference(1804,1807)
-              |-QName(1804,1807)
-                |-NameIdentifier(1804,1807)
-                  |-Identifier=u32
-        |-Parameter(1809,1820)
-          |-NameIdentifier(1809,1815)
-            |-Identifier=length
-          |-Type(1817,1820)
-            |-Reference(1817,1820)
-              |-QName(1817,1820)
-                |-NameIdentifier(1817,1820)
-                  |-Identifier=u32
+        |-(List)(1789,1820)
+          |-Parameter(1789,1797)
+            |-NameIdentifier(1789,1792)
+              |-Identifier=dst
+            |-Type(1794,1797)
+              |-Reference(1794,1797)
+                |-QName(1794,1797)
+                  |-NameIdentifier(1794,1797)
+                    |-Identifier=u32
+          |-Parameter(1799,1807)
+            |-NameIdentifier(1799,1802)
+              |-Identifier=src
+            |-Type(1804,1807)
+              |-Reference(1804,1807)
+                |-QName(1804,1807)
+                  |-NameIdentifier(1804,1807)
+                    |-Identifier=u32
+          |-Parameter(1809,1820)
+            |-NameIdentifier(1809,1815)
+              |-Identifier=length
+            |-Type(1817,1820)
+              |-Reference(1817,1820)
+                |-QName(1817,1820)
+                  |-NameIdentifier(1817,1820)
+                    |-Identifier=u32
       |-Type(1823,1826)
         |-Reference(1823,1826)
           |-QName(1823,1826)
@@ -828,30 +836,31 @@
         |-NameIdentifier(2052,2058)
           |-Identifier=memset
       |-FunctionParamsList(2058,2091)
-        |-Parameter(2059,2067)
-          |-NameIdentifier(2059,2062)
-            |-Identifier=ptr
-          |-Type(2064,2067)
-            |-Reference(2064,2067)
-              |-QName(2064,2067)
-                |-NameIdentifier(2064,2067)
-                  |-Identifier=u32
-        |-Parameter(2069,2080)
-          |-NameIdentifier(2069,2076)
-            |-Identifier=content
-          |-Type(2078,2080)
-            |-Reference(2078,2080)
-              |-QName(2078,2080)
-                |-NameIdentifier(2078,2080)
-                  |-Identifier=u8
-        |-Parameter(2082,2090)
-          |-NameIdentifier(2082,2085)
-            |-Identifier=len
-          |-Type(2087,2090)
-            |-Reference(2087,2090)
-              |-QName(2087,2090)
-                |-NameIdentifier(2087,2090)
-                  |-Identifier=u32
+        |-(List)(2059,2090)
+          |-Parameter(2059,2067)
+            |-NameIdentifier(2059,2062)
+              |-Identifier=ptr
+            |-Type(2064,2067)
+              |-Reference(2064,2067)
+                |-QName(2064,2067)
+                  |-NameIdentifier(2064,2067)
+                    |-Identifier=u32
+          |-Parameter(2069,2080)
+            |-NameIdentifier(2069,2076)
+              |-Identifier=content
+            |-Type(2078,2080)
+              |-Reference(2078,2080)
+                |-QName(2078,2080)
+                  |-NameIdentifier(2078,2080)
+                    |-Identifier=u8
+          |-Parameter(2082,2090)
+            |-NameIdentifier(2082,2085)
+              |-Identifier=len
+            |-Type(2087,2090)
+              |-Reference(2087,2090)
+                |-QName(2087,2090)
+                  |-NameIdentifier(2087,2090)
+                    |-Identifier=u32
       |-Type(2093,2097)
         |-Reference(2093,2097)
           |-QName(2093,2097)

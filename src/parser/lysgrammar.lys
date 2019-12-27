@@ -278,7 +278,7 @@ fun getGrammar(): Grammar = {
         ) ++
         Nominal("StructParamsList", Push("StructParamsList", Wrap(CurlyBracesOpen, Cons(WS, n("ParameterList"), WS), CurlyBracesClose))) ++
         Nominal("FunctionParamsList", Push("FunctionParamsList", Wrap(ParenthesesOpen, Cons(WS, n("ParameterList"), WS), ParenthesesClose))) ++
-        Nominal("ParameterList", Optional(OneOrMoreComma(n("Parameter")))) ++
+        Nominal("ParameterList", Push("(List)", Optional(OneOrMoreComma(n("Parameter"))))) ++
         Nominal("Parameter", Push("Parameter", Cons(n("NameIdentifier"), WS, Optional(n("OfType")), WS))) ++
 
         Nominal("StructDeclaration", Push("StructDeclaration", Cons(n("NameIdentifier"), Optional(n("FunctionParamsList"))))) ++
@@ -300,7 +300,7 @@ fun getGrammar(): Grammar = {
             )
         ))) ++
 
-        Nominal("NamespaceElementList", Push("NamespaceElementList",
+        Nominal("NamespaceElementList", Push("(List)",
           Wrap(CurlyBracesOpen, Cons(WS, ZeroOrMore(Cons(n("ImplInnerDirective"), WS))), CurlyBracesClose))
         ) ++
         Nominal("EffectDeclaration", Push("EffectDeclaration", Cons(n("NameIdentifier"), WS, Optional(n("TypeParameters")), n("EffectElementList")))) ++

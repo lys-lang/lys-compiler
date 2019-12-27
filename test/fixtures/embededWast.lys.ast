@@ -11,7 +11,8 @@
         |-NameIdentifier(22,26)
           |-Identifier=test
       |-FunctionParamsList(26,28)
-        <Rule0>
+        |-(List)(27,27)
+          <Rule0>
       |-Type(30,34)
         |-Reference(30,34)
           |-QName(30,34)
@@ -32,7 +33,8 @@
         |-NameIdentifier(71,75)
           |-Identifier=test
       |-FunctionParamsList(75,77)
-        <Rule0>
+        |-(List)(76,76)
+          <Rule0>
       |-Type(79,83)
         |-Reference(79,83)
           |-QName(79,83)
@@ -53,7 +55,8 @@
         |-NameIdentifier(118,122)
           |-Identifier=test
       |-FunctionParamsList(122,124)
-        <Rule0>
+        |-(List)(123,123)
+          <Rule0>
       |-Type(126,130)
         |-Reference(126,130)
           |-QName(126,130)
@@ -75,14 +78,15 @@
         |-NameIdentifier(165,171)
           |-Identifier=malloc
       |-FunctionParamsList(171,182)
-        |-Parameter(172,181)
-          |-NameIdentifier(172,176)
-            |-Identifier=size
-          |-Type(178,181)
-            |-Reference(178,181)
-              |-QName(178,181)
-                |-NameIdentifier(178,181)
-                  |-Identifier=i32
+        |-(List)(172,181)
+          |-Parameter(172,181)
+            |-NameIdentifier(172,176)
+              |-Identifier=size
+            |-Type(178,181)
+              |-Reference(178,181)
+                |-QName(178,181)
+                  |-NameIdentifier(178,181)
+                    |-Identifier=i32
       |-Type(184,187)
         |-Reference(184,187)
           |-QName(184,187)
@@ -147,22 +151,23 @@
         |-NameIdentifier(400,406)
           |-Identifier=strAdd
       |-FunctionParamsList(406,422)
-        |-Parameter(407,413)
-          |-NameIdentifier(407,408)
-            |-Identifier=a
-          |-Type(410,413)
-            |-Reference(410,413)
-              |-QName(410,413)
-                |-NameIdentifier(410,413)
-                  |-Identifier=i32
-        |-Parameter(415,421)
-          |-NameIdentifier(415,416)
-            |-Identifier=b
-          |-Type(418,421)
-            |-Reference(418,421)
-              |-QName(418,421)
-                |-NameIdentifier(418,421)
-                  |-Identifier=i32
+        |-(List)(407,421)
+          |-Parameter(407,413)
+            |-NameIdentifier(407,408)
+              |-Identifier=a
+            |-Type(410,413)
+              |-Reference(410,413)
+                |-QName(410,413)
+                  |-NameIdentifier(410,413)
+                    |-Identifier=i32
+          |-Parameter(415,421)
+            |-NameIdentifier(415,416)
+              |-Identifier=b
+            |-Type(418,421)
+              |-Reference(418,421)
+                |-QName(418,421)
+                  |-NameIdentifier(418,421)
+                    |-Identifier=i32
       |-Type(424,427)
         |-Reference(424,427)
           |-QName(424,427)

@@ -70,35 +70,61 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=u32
-      |-EmptyNode
+      |-BinaryExpressionNode
+        |-FloatLiteralNode value=0x1
+        |-NameIdentifierNode name=<<
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=AL_BITS
   |-VarDirectiveNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=AL_MASK
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=u32
-      |-EmptyNode
+      |-BinaryExpressionNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=AL_SIZE
+        |-NameIdentifierNode name=-
+        |-FloatLiteralNode value=0x1
   |-VarDirectiveNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=MAX_SIZE_32
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=u32
-      |-EmptyNode
+      |-BinaryExpressionNode
+        |-FloatLiteralNode value=0x1
+        |-NameIdentifierNode name=<<
+        |-FloatLiteralNode value=0x1E
   |-VarDirectiveNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=HEAP_BASE
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=u32
-      |-EmptyNode
+      |-BinaryExpressionNode
+        |-FloatLiteralNode value=0x40
+        |-NameIdentifierNode name=*
+        |-FloatLiteralNode value=0x400
   |-VarDirectiveNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=startOffset
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=u32
-      |-EmptyNode
+      |-BinaryExpressionNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=HEAP_BASE
+          |-NameIdentifierNode name=+
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=AL_MASK
+        |-NameIdentifierNode name=&
+        |-ErrorNode
   |-VarDirectiveNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=offset
@@ -108,3 +134,12 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=startOffset
+  |-ErrorNode
+  |-ErrorNode
+  |-ErrorNode
+  |-ErrorNode
+  |-ErrorNode
+  |-ErrorNode
+  |-ErrorNode
+  |-ErrorNode
+  |-ErrorNode
