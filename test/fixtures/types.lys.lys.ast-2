@@ -1,10 +1,22 @@
 |-Document
   |-TypeDirectiveNode
     |-NameIdentifierNode name=bool
-    |-EmptyNode
+    |-StackLiteralNode
+      |-NameLiteralPairNode
+        |-NameIdentifierNode name=lowLevelType
+        |-StringLiteralNode value="i32"
   |-TypeDirectiveNode
     |-NameIdentifierNode name=theFn1
-    |-EmptyNode
+    |-UnionTypeNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=A
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=B
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=C
   |-TypeDirectiveNode
     |-NameIdentifierNode name=theFn1
     |-EmptyNode
@@ -24,22 +36,109 @@
     |-NameIdentifierNode name=theFn6
     |-EmptyNode
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=test
+      |-EmptyNode
+      |-FloatLiteralNode value=1
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=test
+      |-UnionTypeNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
+        |-IntersectionTypeNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=c
+        |-IntersectionTypeNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=d
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+      |-FloatLiteralNode value=1
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=test
+      |-UnionTypeNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=_
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=_
+      |-FloatLiteralNode value=1
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=test
+      |-EmptyNode
+      |-FloatLiteralNode value=1
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=test
+      |-EmptyNode
+      |-FloatLiteralNode value=1
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=test
+      |-UnionTypeNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
+        |-IntersectionTypeNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=c
+        |-IntersectionTypeNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=d
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+      |-FloatLiteralNode value=1
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=test
+      |-UnionTypeNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
+        |-IntersectionTypeNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=c
+        |-IntersectionTypeNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=d
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+      |-FloatLiteralNode value=1
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=test
+      |-EmptyNode
+      |-FloatLiteralNode value=1
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=test
+      |-EmptyNode
+      |-FloatLiteralNode value=1
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=test
+      |-EmptyNode
+      |-FloatLiteralNode value=1

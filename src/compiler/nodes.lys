@@ -21,7 +21,7 @@ enum CodeNode {
   DecoratorNode(astNode: AstNode, decoratorName: NameIdentifierNode, headArgument: CodeNode)
   ParameterNode(astNode: AstNode, parameterName: NameIdentifierNode, parameterType: CodeNode)
   FunctionNode(astNode: AstNode, functionName: NameIdentifierNode, headParameter: CodeNode, returnType: CodeNode, body: CodeNode)
-  VarDeclarationNode(astNode: AstNode, name: NameIdentifierNode | ErrorNode, typeDecl: CodeNode, value: CodeNode)
+  VarDeclarationNode(astNode: AstNode, isMutable: boolean, name: NameIdentifierNode | ErrorNode, typeDecl: CodeNode, value: CodeNode)
   AssignmentNode(astNode: AstNode, lhs: CodeNode, rhs: CodeNode)
 
   ParenExpressionNode(astNode: AstNode, expression: CodeNode)
@@ -43,6 +43,10 @@ enum CodeNode {
   StringLiteralNode(astNode: AstNode, value: string)
 
   UnknownExpressionNode(astNode: AstNode)
+
+  InjectedLiteralNode(astNode: AstNode)
+  StackLiteralNode(astNode: AstNode, headNames: CodeNode)
+  NameLiteralPairNode(astNode: AstNode, name: NameIdentifierNode | ErrorNode, value: CodeNode)
 
   StackTypeNode(astNode: AstNode, headMeta: CodeNode)
   StructTypeNode(astNode: AstNode, headParameter: CodeNode)
@@ -140,6 +144,9 @@ impl CodeNode {
     case is LoopNode -> "LoopNode"
     case is ContinueNode -> "ContinueNode"
     case is BreakNode -> "BreakNode"
+    case is InjectedLiteralNode -> "InjectedLiteralNode"
+    case is StackLiteralNode -> "StackLiteralNode"
+    case is NameLiteralPairNode -> "NameLiteralPairNode"
   }
 
   fun printWithSeparator(self: CodeNode, sb: StringBuilder, indentation: i32, separator: string): void = {
@@ -216,7 +223,7 @@ impl CodeNode {
         printNode(body, sb, indentation)
       }
     }
-    case is VarDeclarationNode(astNode, name, typeDecl, value) -> {
+    case is VarDeclarationNode(astNode, isMutable, name, typeDecl, value) -> {
       sb.append("var ")
       printNode(name, sb, indentation)
       if (!(typeDecl is EmptyNode)) {
@@ -466,7 +473,7 @@ impl CodeNode {
           .append("|-")
           .append(CodeNode.nodeName(self))
 
-        support::env::printf(ind ++ CodeNode.nodeName(self))
+        // support::env::printf(ind ++ CodeNode.nodeName(self))
 
         match self {
           case is NameIdentifierNode(astNode, name) -> sb.append(" name=").append(name)
@@ -540,7 +547,14 @@ impl CodeNode {
             printAst(returnType, sb, indentation + 1)
             printAst(body, sb, indentation + 1)
           }
-          case is VarDeclarationNode(astNode, name, typeDecl, value) -> {
+          case is NameLiteralPairNode(astNode, name, value) -> {
+            printAst(name, sb, indentation + 1)
+            printAst(value, sb, indentation + 1)
+          }
+          case is StackLiteralNode(astNode, headNames) -> {
+            printAst(headNames, sb, indentation + 1)
+          }
+          case is VarDeclarationNode(astNode, isMutable, name, typeDecl, value) -> {
             // support::env::printf("> VarDeclarationNode")
             printAst(name, sb, indentation + 1)
             printAst(typeDecl, sb, indentation + 1)

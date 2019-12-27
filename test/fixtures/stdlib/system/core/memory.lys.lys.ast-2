@@ -60,6 +60,51 @@
       |-NameIdentifierNode name=math
     |-EmptyNode
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=AL_BITS
+      |-EmptyNode
+      |-FloatLiteralNode value=4
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=AL_SIZE
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=u32
+      |-EmptyNode
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=AL_MASK
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=u32
+      |-EmptyNode
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=MAX_SIZE_32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=u32
+      |-EmptyNode
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=HEAP_BASE
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=u32
+      |-EmptyNode
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=startOffset
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=u32
+      |-EmptyNode
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=offset
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=u32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=startOffset

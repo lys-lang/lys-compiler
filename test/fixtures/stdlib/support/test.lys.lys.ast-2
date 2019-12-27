@@ -1,4 +1,11 @@
 |-Document
   |-EmptyNode
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=lastErrorMessage
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=ErrorMessage
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=EmptyMessage

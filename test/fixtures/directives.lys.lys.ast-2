@@ -1,20 +1,52 @@
 |-Document
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=a
+      |-EmptyNode
+      |-FloatLiteralNode value=1
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=b
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Float
+      |-FloatLiteralNode value=1
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=c
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Double
+      |-FloatLiteralNode value=1
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=d
+      |-EmptyNode
+      |-FloatLiteralNode value=1.0
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=a
+      |-EmptyNode
+      |-FloatLiteralNode value=1
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=b
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Float
+      |-FloatLiteralNode value=1
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=c
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Double
+      |-FloatLiteralNode value=1
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=d
+      |-EmptyNode
+      |-FloatLiteralNode value=1.0
   |-ImportDirectiveNode
     |-QNameNode
       |-NameIdentifierNode name=module

@@ -1,8 +1,57 @@
 |-Document
-  |-EmptyNode
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=AL_BITS
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-FloatLiteralNode value=3
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=AL_SIZE
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-EmptyNode
   |-VarDirectiveNode
-    |-EmptyNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=AL_MASK
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-EmptyNode
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=MAX_SIZE_32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-EmptyNode
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=HEAP_BASE
+      |-EmptyNode
+      |-FloatLiteralNode value=0
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=startOffset
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-EmptyNode
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=offset
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=startOffset
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=lastPtr
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-FloatLiteralNode value=0

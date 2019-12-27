@@ -25,13 +25,25 @@
     |-EmptyNode
   |-TypeDirectiveNode
     |-NameIdentifierNode name=void
-    |-EmptyNode
+    |-StackLiteralNode
+      |-NameLiteralPairNode
+        |-NameIdentifierNode name=lowLevelType
+        |-StringLiteralNode value="void"
+      |-NameLiteralPairNode
+        |-NameIdentifierNode name=byteSize
+        |-FloatLiteralNode value=0
   |-TypeDirectiveNode
     |-NameIdentifierNode name=ref
-    |-EmptyNode
+    |-InjectedLiteralNode
   |-TypeDirectiveNode
     |-NameIdentifierNode name=never
-    |-EmptyNode
+    |-InjectedLiteralNode
   |-TypeDirectiveNode
     |-NameIdentifierNode name=UnsafeCPointer
-    |-EmptyNode
+    |-StackLiteralNode
+      |-NameLiteralPairNode
+        |-NameIdentifierNode name=lowLevelType
+        |-StringLiteralNode value="i32"
+      |-NameLiteralPairNode
+        |-NameIdentifierNode name=byteSize
+        |-FloatLiteralNode value=4

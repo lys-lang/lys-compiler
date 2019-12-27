@@ -73,4 +73,10 @@
     |-EmptyNode
   |-TypeDirectiveNode
     |-NameIdentifierNode name=f32
-    |-EmptyNode
+    |-StackLiteralNode
+      |-NameLiteralPairNode
+        |-NameIdentifierNode name=lowLevelType
+        |-StringLiteralNode value="f32"
+      |-NameLiteralPairNode
+        |-NameIdentifierNode name=byteSize
+        |-FloatLiteralNode value=4

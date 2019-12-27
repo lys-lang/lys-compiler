@@ -46,8 +46,15 @@ fun processNode(astNode: AstNode): CodeNode = match astNode {
     case "ImportDirective" -> ImportDirectiveNode(astNode, fqnOrEmpty(first(child)), nameOrEmpty(second(child)))
     case "NameIdentifier" -> processNode(child)
     case "QName" -> QNameNode(astNode, processNode(child))
+    case "UnionType" -> UnionTypeNode(astNode, processNode(first(child)), processNode(rest(child)))
+    case "IntersectionType" -> IntersectionTypeNode(astNode, processNode(first(child)), processNode(rest(child)))
     case "Type" -> processNode(child)
     case "Reference" -> ReferenceNode(astNode, fqnOrEmpty(child))
+    case "InjectedLiteral" -> InjectedLiteralNode(astNode)
+    case "StackLiteral" -> StackLiteralNode(astNode, processNode(child))
+    case "NameLiteralPair" -> NameLiteralPairNode(astNode, nameOrError(first(child)), processNode(rest(child)))
+    case "BooleanLiteral" -> processNode(child)
+    case "TypeParen" -> processNode(child)
     case "TypeDirective" -> TypeDirectiveNode(astNode, nameOrError(first(child)), processNode(second(child)))
     case "VarDirective" -> {
       var e1 = processNode(first(child))
@@ -56,12 +63,32 @@ fun processNode(astNode: AstNode): CodeNode = match astNode {
       var decl: VarDeclarationNode | EmptyNode = EmptyNode
 
       if (isPrivate) {
-        match processNode(first(child)) {
+        match processNode(second(child)) {
           case x is VarDeclarationNode -> decl = x
           else -> { /* error */ }
         }
       } else {
-        match processNode(first(rest(child))) {
+        match e1 {
+          case x is VarDeclarationNode -> decl = x
+          else -> { /* error */ }
+        }
+      }
+
+      VarDirectiveNode(astNode, decl)
+    }
+    case "ValDirective" -> {
+      var e1 = processNode(first(child))
+      val isPrivate = e1 is PrivateModifierNode
+
+      var decl: VarDeclarationNode | EmptyNode = EmptyNode
+
+      if (isPrivate) {
+        match processNode(second(child)) {
+          case x is VarDeclarationNode -> decl = x
+          else -> { /* error */ }
+        }
+      } else {
+        match e1 {
           case x is VarDeclarationNode -> decl = x
           else -> { /* error */ }
         }
@@ -73,8 +100,16 @@ fun processNode(astNode: AstNode): CodeNode = match astNode {
       var name = nameOrError(first(child))
 
       match rest(child) {
-        case is AstCons(head, tail) -> VarDeclarationNode(astNode, name, processNode(head), processNode(tail))
-        case ast is AstNode -> VarDeclarationNode(astNode, name, EmptyNode, processNode(ast))
+        case is AstCons(head, tail) -> VarDeclarationNode(astNode, true, name, processNode(head), processNode(tail))
+        case ast is AstNode -> VarDeclarationNode(astNode, true, name, EmptyNode, processNode(ast))
+      }
+    }
+    case "ValDeclaration" -> {
+      var name = nameOrError(first(child))
+
+      match rest(child) {
+        case is AstCons(head, tail) -> VarDeclarationNode(astNode, false, name, processNode(head), processNode(tail))
+        case ast is AstNode -> VarDeclarationNode(astNode, false, name, EmptyNode, processNode(ast))
       }
     }
     else -> {

@@ -79,4 +79,10 @@
     |-EmptyNode
   |-TypeDirectiveNode
     |-NameIdentifierNode name=string
-    |-EmptyNode
+    |-StackLiteralNode
+      |-NameLiteralPairNode
+        |-NameIdentifierNode name=lowLevelType
+        |-StringLiteralNode value="i64"
+      |-NameLiteralPairNode
+        |-NameIdentifierNode name=byteSize
+        |-FloatLiteralNode value=8
