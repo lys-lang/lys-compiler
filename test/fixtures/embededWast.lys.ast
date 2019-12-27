@@ -11,20 +11,16 @@
         |-NameIdentifier(22,26)
           |-Identifier=test
       |-FunctionParamsList(26,28)
-        |-ParameterList(27,27)
-          <Rule0>
+        <Rule0>
       |-OfType(28,35)
-        |-Operator=:
         |-Type(30,34)
           |-Reference(30,34)
             |-QName(30,34)
               |-NameIdentifier(30,34)
                 |-Identifier=void
       |-FunAssignExpression(35,49)
-        |-Operator==
         |-WasmExpression(37,49)
-          |-Operator=%
-          |-Identifier=wasm
+          <Rule0>
   |-FunctionDirective(49,96)
     |-Decorators(49,59)
       |-Decorator(49,59)
@@ -37,20 +33,16 @@
         |-NameIdentifier(71,75)
           |-Identifier=test
       |-FunctionParamsList(75,77)
-        |-ParameterList(76,76)
-          <Rule0>
+        <Rule0>
       |-OfType(77,84)
-        |-Operator=:
         |-Type(79,83)
           |-Reference(79,83)
             |-QName(79,83)
               |-NameIdentifier(79,83)
                 |-Identifier=void
       |-FunAssignExpression(84,96)
-        |-Operator==
         |-WasmExpression(86,96)
-          |-Operator=%
-          |-Identifier=wasm
+          <Rule0>
   |-FunctionDirective(96,142)
     |-Decorators(96,106)
       |-Decorator(96,106)
@@ -63,25 +55,20 @@
         |-NameIdentifier(118,122)
           |-Identifier=test
       |-FunctionParamsList(122,124)
-        |-ParameterList(123,123)
-          <Rule0>
+        <Rule0>
       |-OfType(124,131)
-        |-Operator=:
         |-Type(126,130)
           |-Reference(126,130)
             |-QName(126,130)
               |-NameIdentifier(126,130)
                 |-Identifier=void
       |-FunAssignExpression(131,142)
-        |-Operator==
         |-WasmExpression(133,142)
-          |-Operator=%
-          |-Identifier=wasm
+          <Rule0>
   |-VarDirective(142,159)
     |-VarDeclaration(142,159)
       |-NameIdentifier(146,155)
         |-Identifier=freeblock
-      |-Operator==
       |-NumberLiteral=0
   |-FunctionDirective(161,396)
     |-Decorators(161,161)
@@ -91,29 +78,23 @@
         |-NameIdentifier(165,171)
           |-Identifier=malloc
       |-FunctionParamsList(171,182)
-        |-ParameterList(172,181)
-          |-Parameter(172,181)
-            |-NameIdentifier(172,176)
-              |-Identifier=size
-            |-OfType(176,181)
-              |-Operator=:
-              |-Type(178,181)
-                |-Reference(178,181)
-                  |-QName(178,181)
-                    |-NameIdentifier(178,181)
-                      |-Identifier=i32
+        |-Parameter(172,181)
+          |-NameIdentifier(172,176)
+            |-Identifier=size
+          |-OfType(176,181)
+            |-Type(178,181)
+              |-Reference(178,181)
+                |-QName(178,181)
+                  |-NameIdentifier(178,181)
+                    |-Identifier=i32
       |-OfType(182,188)
-        |-Operator=:
         |-Type(184,187)
           |-Reference(184,187)
             |-QName(184,187)
               |-NameIdentifier(184,187)
                 |-Identifier=i32
       |-FunAssignExpression(188,396)
-        |-Operator==
         |-WasmExpression(190,396)
-          |-Operator=%
-          |-Identifier=wasm
           |-SExpression(200,223)
             |-SSymbol(201,206)
               |-Identifier=local
@@ -144,7 +125,6 @@
             |-SExpression(300,368)
               |-SSymbol(301,308)
                 |-Identifier=i32
-                |-Operator=.
                 |-Identifier=add
               |-SExpression(315,342)
                 |-SSymbol(316,325)
@@ -172,39 +152,32 @@
         |-NameIdentifier(400,406)
           |-Identifier=strAdd
       |-FunctionParamsList(406,422)
-        |-ParameterList(407,421)
-          |-Parameter(407,413)
-            |-NameIdentifier(407,408)
-              |-Identifier=a
-            |-OfType(408,413)
-              |-Operator=:
-              |-Type(410,413)
-                |-Reference(410,413)
-                  |-QName(410,413)
-                    |-NameIdentifier(410,413)
-                      |-Identifier=i32
-          |-Parameter(415,421)
-            |-NameIdentifier(415,416)
-              |-Identifier=b
-            |-OfType(416,421)
-              |-Operator=:
-              |-Type(418,421)
-                |-Reference(418,421)
-                  |-QName(418,421)
-                    |-NameIdentifier(418,421)
-                      |-Identifier=i32
+        |-Parameter(407,413)
+          |-NameIdentifier(407,408)
+            |-Identifier=a
+          |-OfType(408,413)
+            |-Type(410,413)
+              |-Reference(410,413)
+                |-QName(410,413)
+                  |-NameIdentifier(410,413)
+                    |-Identifier=i32
+        |-Parameter(415,421)
+          |-NameIdentifier(415,416)
+            |-Identifier=b
+          |-OfType(416,421)
+            |-Type(418,421)
+              |-Reference(418,421)
+                |-QName(418,421)
+                  |-NameIdentifier(418,421)
+                    |-Identifier=i32
       |-OfType(422,428)
-        |-Operator=:
         |-Type(424,427)
           |-Reference(424,427)
             |-QName(424,427)
               |-NameIdentifier(424,427)
                 |-Identifier=i32
       |-FunAssignExpression(428,1175)
-        |-Operator==
         |-WasmExpression(430,1175)
-          |-Operator=%
-          |-Identifier=wasm
           |-SExpression(440,459)
             |-SSymbol(441,446)
               |-Identifier=local
@@ -244,7 +217,6 @@
               |-SExpression(532,547)
                 |-SSymbol(533,544)
                   |-Identifier=i32
-                  |-Operator=.
                   |-Identifier=load8_u
                 |-QName(545,546)
                   |-NameIdentifier(545,546)
@@ -258,12 +230,10 @@
               |-SExpression(575,700)
                 |-SSymbol(576,583)
                   |-Identifier=i32
-                  |-Operator=.
                   |-Identifier=sub
                 |-SExpression(592,674)
                   |-SSymbol(593,600)
                     |-Identifier=i32
-                    |-Operator=.
                     |-Identifier=add
                   |-SExpression(611,640)
                     |-SSymbol(612,621)
@@ -274,7 +244,6 @@
                   |-SExpression(640,664)
                     |-SSymbol(641,652)
                       |-Identifier=i32
-                      |-Operator=.
                       |-Identifier=load8_u
                     |-QName(653,654)
                       |-NameIdentifier(653,654)
@@ -282,7 +251,6 @@
                 |-SExpression(674,694)
                   |-SSymbol(675,684)
                     |-Identifier=i32
-                    |-Operator=.
                     |-Keyword=const
                   |-NegNumberLiteral(685,686)
                     |-NumberLiteral=1
@@ -301,7 +269,6 @@
                 |-SExpression(752,828)
                   |-SSymbol(753,760)
                     |-Identifier=i32
-                    |-Operator=.
                     |-Identifier=add
                   |-SExpression(771,798)
                     |-SSymbol(772,781)
@@ -312,14 +279,12 @@
                   |-SExpression(798,820)
                     |-SSymbol(799,808)
                       |-Identifier=i32
-                      |-Operator=.
                       |-Keyword=const
                     |-NegNumberLiteral(809,810)
                       |-NumberLiteral=1
             |-SExpression(840,911)
               |-SSymbol(841,851)
                 |-Identifier=i32
-                |-Operator=.
                 |-Identifier=store8
               |-SExpression(858,884)
                 |-SSymbol(859,868)
@@ -366,12 +331,10 @@
               |-SExpression(1014,1143)
                 |-SSymbol(1015,1022)
                   |-Identifier=i32
-                  |-Operator=.
                   |-Identifier=sub
                 |-SExpression(1031,1117)
                   |-SSymbol(1032,1039)
                     |-Identifier=i32
-                    |-Operator=.
                     |-Identifier=add
                   |-SExpression(1050,1080)
                     |-SSymbol(1051,1060)
@@ -388,7 +351,6 @@
                 |-SExpression(1117,1137)
                   |-SSymbol(1118,1127)
                     |-Identifier=i32
-                    |-Operator=.
                     |-Keyword=const
                   |-NegNumberLiteral(1128,1129)
                     |-NumberLiteral=1

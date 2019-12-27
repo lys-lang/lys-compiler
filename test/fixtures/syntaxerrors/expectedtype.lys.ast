@@ -3,15 +3,12 @@
     |-ValDeclaration(0,22)
       |-NameIdentifier(4,5)
         |-Identifier=x
-      |-Operator==
       |-CodeBlock(8,22)
         |-IsExpression(12,19)
           |-Reference(12,13)
             |-QName(12,13)
               |-NameIdentifier(12,13)
                 |-Identifier=a
-          |-IsKeyword(14,19)
-            |-Keyword=is
           |-<SyntaxError>=A type was expected
         |-<UNEXPECTED TOKEN>=1
         |-<UNEXPECTED TOKEN>=
@@ -20,15 +17,12 @@
     |-ValDeclaration(23,42)
       |-NameIdentifier(27,28)
         |-Identifier=x
-      |-Operator==
       |-CodeBlock(31,42)
         |-AsExpression(35,40)
           |-Reference(35,36)
             |-QName(35,36)
               |-NameIdentifier(35,36)
                 |-Identifier=a
-          |-AsKeyword(37,40)
-            |-Keyword=as
           |-<SyntaxError>=A type was expected
         |-<UNEXPECTED TOKEN>={
   |-<UNEXPECTED TOKEN>=}

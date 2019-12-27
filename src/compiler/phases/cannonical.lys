@@ -1,0 +1,66 @@
+import src::lexer::tokens
+import src::parser::parser
+import src::compiler::nodes
+
+
+fun first(self: AstNode): AstNode = match self {
+  case is AstCons(head, tail) -> head
+  else -> self
+}
+
+fun second(self: AstNode): AstNode = first(rest(self))
+fun third(self: AstNode): AstNode = second(rest(self))
+
+fun rest(self: AstNode): AstNode = match self {
+  case is AstCons(head, tail) -> tail
+  else -> Rule0
+}
+
+fun toParseTree(self: AstNode): CodeNode = match self {
+  case is Rule0 -> EmptyNode
+  case is UnexpectedToken -> EmptyNode
+  case is SyntaxError -> EmptyNode
+  case is Leaf(token, value) -> toParseTree(self, token, value)
+  case is AstCons(head, tail) -> CodeNodeCons(
+    toParseTree(head), toParseTree(tail)
+  )
+  case is Node(name, child) -> match name {
+    case "Document" -> Document(self, toParseTree(child))
+    case "PrivateModifier" -> PrivateModifierNode(self)
+    case "NameIdentifier" -> toParseTree(child)
+    case "TypeDirective" -> TypeDirectiveNode(self, toParseTree(first(child)), toParseTree(second(child)))
+    case "VarDirective" -> {
+      var e1 = toParseTree(first(child))
+      val isPrivate = e1 is PrivateModifierNode
+
+      if (isPrivate) {
+        VarDirectiveNode(self, first(child))
+      } else {
+        VarDirectiveNode(self, first(rest(child)))
+      }
+    }
+    case "VarDeclaration" -> {
+      var name = toParseTree(first(child))
+
+      match rest(child) {
+        case is AstCons(head, tail) -> VarDeclarationNode(self, name, toParseTree(head), toParseTree(tail))
+        case ast is AstNode -> VarDeclarationNode(self, name, EmptyNode, toParseTree(ast))
+      }
+    }
+    else -> EmptyNode
+  }
+}
+
+
+fun toParseTree(self: AstNode, node: Token, value: string): CodeNode = match node.tokenType {
+  case is StringLiteral -> StringLiteralNode(self, value)
+  case is Identifier -> NameIdentifierNode(self, value)
+  case is Operator -> NameIdentifierNode(self, value)
+  case is NumberLiteral -> FloatLiteralNode(self, value)
+  case is Keyword -> match value {
+    case "true" -> BooleanLiteralNode(self, true)
+    case "false" -> BooleanLiteralNode(self, false)
+    else -> EmptyNode
+  }
+  else -> EmptyNode
+}

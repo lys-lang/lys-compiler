@@ -13,12 +13,17 @@ export async function tokenizer() {
     return readStringFromHeap(instance, instance.exports.parseAst(writeStringToHeap(instance, source)));
   }
 
+  function parseAndEmit(source: string): string {
+    return readStringFromHeap(instance, instance.exports.parseAndEmit(writeStringToHeap(instance, source)));
+  }
+
   function startLexer(data: string) {
     instance.exports.startLexer(writeStringToHeap(instance, data));
   }
 
   return {
     startLexer,
+    parseAndEmit,
     parseAst,
     eat
   };

@@ -9,29 +9,24 @@
         |-NameIdentifier(12,30)
           |-Identifier=stringDiscriminant
       |-FunctionParamsList(30,32)
-        |-ParameterList(31,31)
-          <Rule0>
+        <Rule0>
       |-OfType(32,38)
-        |-Operator=:
         |-Type(34,37)
           |-Reference(34,37)
             |-QName(34,37)
               |-NameIdentifier(34,37)
                 |-Identifier=u64
       |-FunAssignExpression(38,118)
-        |-Operator==
         |-CodeBlock(40,118)
           |-ValDeclaration(44,88)
             |-NameIdentifier(48,60)
               |-Identifier=discriminant
             |-OfType(60,66)
-              |-Operator=:
               |-Type(62,65)
                 |-Reference(62,65)
                   |-QName(62,65)
                     |-NameIdentifier(62,65)
                       |-Identifier=u32
-            |-Operator==
             |-AtomicExpression(68,88)
               |-Reference(68,74)
                 |-QName(68,74)
@@ -39,24 +34,21 @@
                     |-Identifier=string
               |-MemberExpression(74,88)
                 |-BinMemberOperator(74,76)
-                  |-Operator=.^
+                  <Rule0>
                 |-NameIdentifier(76,88)
                   |-Identifier=discriminant
-          |-ShiftExpression(91,116)
+          |-BinaryOpExpression(91,116)
             |-AsExpression(91,110)
               |-Reference(91,103)
                 |-QName(91,103)
                   |-NameIdentifier(91,103)
                     |-Identifier=discriminant
-              |-AsKeyword(104,107)
-                |-Keyword=as
               |-Type(107,110)
                 |-Reference(107,110)
                   |-QName(107,110)
                     |-NameIdentifier(107,110)
                       |-Identifier=u64
-            |-ShiftOperator(111,113)
-              |-Operator=<<
+            |-Operator=<<
             |-NumberLiteral=32
   |-FunctionDirective(120,279)
     |-Decorators(120,151)
@@ -71,26 +63,22 @@
         |-NameIdentifier(163,177)
           |-Identifier=allocateString
       |-FunctionParamsList(177,195)
-        |-ParameterList(178,194)
-          |-Parameter(178,194)
-            |-NameIdentifier(178,189)
-              |-Identifier=sizeInChars
-            |-OfType(189,194)
-              |-Operator=:
-              |-Type(191,194)
-                |-Reference(191,194)
-                  |-QName(191,194)
-                    |-NameIdentifier(191,194)
-                      |-Identifier=u32
+        |-Parameter(178,194)
+          |-NameIdentifier(178,189)
+            |-Identifier=sizeInChars
+          |-OfType(189,194)
+            |-Type(191,194)
+              |-Reference(191,194)
+                |-QName(191,194)
+                  |-NameIdentifier(191,194)
+                    |-Identifier=u32
       |-OfType(195,212)
-        |-Operator=:
         |-Type(197,211)
           |-Reference(197,211)
             |-QName(197,211)
               |-NameIdentifier(197,211)
                 |-Identifier=UnsafeCPointer
       |-FunAssignExpression(212,279)
-        |-Operator==
         |-CodeBlock(214,279)
           |-AsExpression(218,277)
             |-AtomicExpression(218,259)
@@ -100,7 +88,7 @@
                     |-Identifier=string
               |-MemberExpression(224,234)
                 |-BinMemberOperator(224,225)
-                  |-Operator=.
+                  <Rule0>
                 |-NameIdentifier(225,234)
                   |-Identifier=fromBytes
               |-CallArguments(234,259)
@@ -110,16 +98,13 @@
                       |-NameIdentifier(235,240)
                         |-Identifier=bytes
                   |-CallArguments(240,258)
-                    |-ShiftExpression(241,257)
+                    |-BinaryOpExpression(241,257)
                       |-Reference(241,252)
                         |-QName(241,252)
                           |-NameIdentifier(241,252)
                             |-Identifier=sizeInChars
-                      |-ShiftOperator(253,255)
-                        |-Operator=<<
+                      |-Operator=<<
                       |-NumberLiteral=1
-            |-AsKeyword(260,263)
-              |-Keyword=as
             |-Type(263,277)
               |-Reference(263,277)
                 |-QName(263,277)
@@ -129,7 +114,6 @@
     |-NameIdentifier(286,290)
       |-Identifier=UCS2
     |-ValueType(291,297)
-      |-Operator==
       |-Type(293,297)
         |-Reference(293,297)
           |-QName(293,297)
@@ -149,33 +133,26 @@
             |-NameIdentifier(380,387)
               |-Identifier=fromPtr
           |-FunctionParamsList(387,417)
-            |-ParameterList(388,416)
-              |-Parameter(388,416)
-                |-NameIdentifier(388,400)
-                  |-Identifier=bytesPointer
-                |-OfType(400,416)
-                  |-Operator=:
-                  |-Type(402,416)
-                    |-Reference(402,416)
-                      |-QName(402,416)
-                        |-NameIdentifier(402,416)
-                          |-Identifier=UnsafeCPointer
+            |-Parameter(388,416)
+              |-NameIdentifier(388,400)
+                |-Identifier=bytesPointer
+              |-OfType(400,416)
+                |-Type(402,416)
+                  |-Reference(402,416)
+                    |-QName(402,416)
+                      |-NameIdentifier(402,416)
+                        |-Identifier=UnsafeCPointer
           |-OfType(417,426)
-            |-Operator=:
             |-Type(419,425)
               |-Reference(419,425)
                 |-QName(419,425)
                   |-NameIdentifier(419,425)
                     |-Identifier=string
           |-FunAssignExpression(426,647)
-            |-Operator==
             |-WasmExpression(428,647)
-              |-Operator=%
-              |-Identifier=wasm
               |-SExpression(440,642)
                 |-SSymbol(441,447)
                   |-Identifier=i64
-                  |-Operator=.
                   |-Identifier=or
                 |-SExpression(454,487)
                   |-SSymbol(455,459)
@@ -186,26 +163,21 @@
                 |-SExpression(487,638)
                   |-SSymbol(488,495)
                     |-Identifier=i64
-                    |-Operator=.
                     |-Identifier=and
                   |-SExpression(504,535)
                     |-SSymbol(505,514)
                       |-Identifier=i64
-                      |-Operator=.
                       |-Keyword=const
                     |-NegNumberLiteral(515,525)
                       |-NumberLiteral=0xFFFFFFFF
                   |-SExpression(535,637)
                     |-SSymbol(536,552)
                       |-Identifier=i64
-                      |-Operator=.
                       |-Identifier=extend_u
-                      |-Operator=/
                       |-Identifier=i32
                     |-SExpression(563,636)
                       |-SSymbol(564,571)
                         |-Identifier=i32
-                        |-Operator=.
                         |-Identifier=sub
                       |-SExpression(584,622)
                         |-SSymbol(585,594)
@@ -216,7 +188,6 @@
                       |-SExpression(622,635)
                         |-SSymbol(623,632)
                           |-Identifier=i32
-                          |-Operator=.
                           |-Keyword=const
                         |-NegNumberLiteral(633,634)
                           |-NumberLiteral=4
@@ -228,33 +199,27 @@
             |-NameIdentifier(651,656)
               |-Identifier=toPtr
           |-FunctionParamsList(656,669)
-            |-ParameterList(657,668)
-              |-Parameter(657,668)
-                |-NameIdentifier(657,660)
-                  |-Identifier=str
-                |-OfType(660,668)
-                  |-Operator=:
-                  |-Type(662,668)
-                    |-Reference(662,668)
-                      |-QName(662,668)
-                        |-NameIdentifier(662,668)
-                          |-Identifier=string
+            |-Parameter(657,668)
+              |-NameIdentifier(657,660)
+                |-Identifier=str
+              |-OfType(660,668)
+                |-Type(662,668)
+                  |-Reference(662,668)
+                    |-QName(662,668)
+                      |-NameIdentifier(662,668)
+                        |-Identifier=string
           |-OfType(669,686)
-            |-Operator=:
             |-Type(671,685)
               |-Reference(671,685)
                 |-QName(671,685)
                   |-NameIdentifier(671,685)
                     |-Identifier=UnsafeCPointer
           |-FunAssignExpression(686,709)
-            |-Operator==
             |-AsExpression(688,709)
               |-Reference(688,691)
                 |-QName(688,691)
                   |-NameIdentifier(688,691)
                     |-Identifier=str
-              |-AsKeyword(692,695)
-                |-Keyword=as
               |-Type(695,709)
                 |-Reference(695,709)
                   |-QName(695,709)
