@@ -284,7 +284,7 @@ fun getGrammar(): Grammar = {
         Nominal("StructDeclaration", Push("StructDeclaration", Cons(n("NameIdentifier"), Optional(n("FunctionParamsList"))))) ++
         Nominal("EffectMemberDeclaration", Push("EffectMemberDeclaration", Cons(n("NameIdentifier"), WS, n("FunctionParamsList"), n("OfType")))) ++
         Nominal("TraitDeclElements", Push("TraitDeclElements", OneOrMore(Cons(WS, n("FunctionDirective"))))) ++
-        Nominal("TypeDeclElements", Push("TypeDeclElements", OneOrMore(Cons(WS, n("StructDeclaration"))))) ++
+        Nominal("TypeDeclElements", OneOrMore(Cons(WS, n("StructDeclaration")))) ++
         Nominal("EffectElements", Push("EffectElements", OneOrMore(Cons(WS, n("EffectMemberDeclaration"))))) ++
 
         Nominal("FunctionName", Push("FunctionName", Or(n("NameIdentifier"), n("FunOperator")))) ++

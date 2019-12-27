@@ -3,6 +3,18 @@
     |-StructDeclarationNode
       |-NameIdentifierNode name=TestStruct
       |-EmptyNode
+  |-EnumDirectiveNode
+    |-NameIdentifierNode name=ErrorMessage
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=EmptyMessage
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Message
+      |-ParameterNode
+        |-NameIdentifierNode name=message
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=string
   |-VarDirectiveNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=lastErrorMessage

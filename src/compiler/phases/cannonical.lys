@@ -58,6 +58,7 @@ fun processNode(astNode: AstNode): CodeNode = match astNode {
     case "Reference" -> ReferenceNode(astNode, fqnOrEmpty(child))
     case "FunctionParamsList" -> processNode(child)
     case "Parameter" -> ParameterNode(astNode, nameOrError(first(child)), processNode(rest(child)))
+    case "EnumDirective" -> EnumDirectiveNode(astNode, nameOrError(first(child)), processNode(rest(child)))
     case "InjectedLiteral" -> InjectedLiteralNode(astNode)
     case "StackLiteral" -> StackLiteralNode(astNode, processNode(child))
     case "NameLiteralPair" -> NameLiteralPairNode(astNode, nameOrError(first(child)), processNode(rest(child)))

@@ -33,7 +33,7 @@ enum CodeNode {
   VarDirectiveNode(astNode: AstNode, decl: VarDeclarationNode | EmptyNode)
   TypeDirectiveNode(astNode: AstNode, name: NameIdentifierNode | ErrorNode, declType: CodeNode)
   TraitDirectiveNode(astNode: AstNode, name: NameIdentifierNode, headDirective: CodeNode)
-  EnumDirectiveNode(astNode: AstNode, name: NameIdentifierNode, headDeclaration: CodeNode)
+  EnumDirectiveNode(astNode: AstNode, name: NameIdentifierNode | ErrorNode, headDeclaration: CodeNode)
   StructDirectiveNode(astNode: AstNode, decl: StructDeclarationNode | ErrorNode)
 
   FloatLiteralNode(astNode: AstNode, value: string)

@@ -5,6 +5,17 @@
       |-NameLiteralPairNode
         |-NameIdentifierNode name=lowLevelType
         |-StringLiteralNode value="i32"
+  |-EnumDirectiveNode
+    |-NameIdentifierNode name=Color
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Red
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Green
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Blue
+      |-EmptyNode
   |-TypeDirectiveNode
     |-NameIdentifierNode name=theFn1
     |-UnionTypeNode
@@ -142,3 +153,37 @@
       |-NameIdentifierNode name=test
       |-EmptyNode
       |-FloatLiteralNode value=1
+  |-EnumDirectiveNode
+    |-NameIdentifierNode name=Number
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Infinity
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=NDet
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Real
+      |-ParameterNode
+        |-NameIdentifierNode name=number
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=f32
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Natural
+      |-ParameterNode
+        |-NameIdentifierNode name=number
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Complex
+      |-ParameterNode
+        |-NameIdentifierNode name=real
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=f32
+      |-ParameterNode
+        |-NameIdentifierNode name=imaginary
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=f32
