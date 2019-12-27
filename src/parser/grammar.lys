@@ -4,20 +4,104 @@ import src::helpers
 // Parsing rules definitions
 
 enum ParserRule {
+  /*
+   * Matches a tokenType from the lexer.
+   * execution of this node returns Leaf | Nil
+   */
   Terminal(tokenType: TokenType)
+
+  /*
+   * Matches a tokenType from the lexer and also its value.
+   * execution of this node returns Leaf | Nil
+   */
   StrictTerminal(tokenType: TokenType, value: string)
+
+  /*
+   * Matches a grammatical construction by name
+   * execution of this node returns AstNode | Nil
+   */
   NonTerminal(name: string)
+
+  /*
+   * Matches the first rule,
+   * if it returns Nil, matches the second rule and returns its value
+   * execution of this node returns AstNode | Nil
+   */
   Or(lhs: ParserRule, rhs: ParserRule)
+
+  /*
+   * Matches the rule, one or more times.
+   * Returns an AstCons with the list of results.
+   * execution of this node returns AstCons | AstNode | Nil
+   */
   OneOrMore(rule: ParserRule)
+
+  /*
+   * Matches the rule, zero or more times.
+   * Returns an AstCons with the list of results.
+   * execution of this node returns AstCons | AstNode | Rule0
+   */
   ZeroOrMore(rule: ParserRule)
+
+  /*
+   * Matches the head rule, then it tries to match the tail rule.
+   * Returns an AstCons with the list of results.
+   * execution of this node returns AstCons | Nil
+   */
   Cons(head: ParserRule, tail: ParserRule)
+
+  /*
+   * Matches the head rule, then it tries to match the tail rule.
+   * If the tail rule fails, it will consume UnexpectedTokens until it matches the
+   * tail rule.
+   * Returns an AstCons with the list of results.
+   * execution of this node returns AstCons | Nil
+   */
   Cut(head: ParserRule, tail: ParserRule)
+
+  /*
+   * Matches the rule, if it doesn't match, returns Rule0.
+   * execution of this node returns AstCons | Nil
+   */
   Optional(rule: ParserRule)
+
+  /*
+   * Execution of this rule eats a token and returns a SyntaxError
+   * execution of this node returns SyntaxError
+   */
   Fail(message: string)
+
+  /*
+   * Matches the rule, returns Rule0 if it succeeds, Nil if it fails.
+   * After matching the rule, it rewinds the cursor of the lexer.
+   * execution of this node returns Rule0 | Nil
+   */
   LookAhead(rule: ParserRule)
+
+  /*
+   * Matches the rule, returns Nil if it succeeds, Rule0 if it fails.
+   * After matching the rule, it rewinds the cursor of the lexer.
+   * execution of this node returns Rule0 | Nil
+   */
   NegativeLookAhead(rule: ParserRule)
+
+  /*
+   * Matches the rule, returns Rule0 if it succeeds, Nil if it fails.
+   * execution of this node returns Rule0 | Nil
+   */
   Discard(rule: ParserRule)
+
+  /*
+   * Matches the rule, if it succeeds, pushes a named Node to the AST
+   * execution of this node returns Node | Nil
+   */
   Push(name: string, rule: ParserRule)
+
+  /*
+   * Matches the rule, if it succeeds and it has many children,
+   * pushes a named Node to the AST
+   * execution of this node returns Node | Nil
+   */
   PushIfManyChildren(name: string, rule: ParserRule)
 }
 

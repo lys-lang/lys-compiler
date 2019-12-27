@@ -5,7 +5,6 @@
     |-VarDeclaration(8,17)
       |-NameIdentifier(12,13)
         |-Identifier=a
-      |-Operator==
       |-NumberLiteral=1
   |-VarDirective(18,42)
     |-PrivateModifier(18,26)
@@ -14,13 +13,11 @@
       |-NameIdentifier(30,31)
         |-Identifier=b
       |-OfType(31,39)
-        |-Operator=:
         |-Type(33,38)
           |-Reference(33,38)
             |-QName(33,38)
               |-NameIdentifier(33,38)
                 |-Identifier=Float
-      |-Operator==
       |-NumberLiteral=1
   |-VarDirective(43,68)
     |-PrivateModifier(43,51)
@@ -29,13 +26,11 @@
       |-NameIdentifier(55,56)
         |-Identifier=c
       |-OfType(56,65)
-        |-Operator=:
         |-Type(58,64)
           |-Reference(58,64)
             |-QName(58,64)
               |-NameIdentifier(58,64)
                 |-Identifier=Double
-      |-Operator==
       |-NumberLiteral=1
   |-VarDirective(69,88)
     |-PrivateModifier(69,77)
@@ -43,7 +38,6 @@
     |-VarDeclaration(77,88)
       |-NameIdentifier(81,82)
         |-Identifier=d
-      |-Operator==
       |-NumberLiteral=1.0
   |-FunctionDirective(89,116)
     |-Decorators(89,89)
@@ -55,17 +49,14 @@
         |-NameIdentifier(101,105)
           |-Identifier=test
       |-FunctionParamsList(105,107)
-        |-ParameterList(106,106)
-          <Rule0>
+        <Rule0>
       |-OfType(107,113)
-        |-Operator=:
         |-Type(109,112)
           |-Reference(109,112)
             |-QName(109,112)
               |-NameIdentifier(109,112)
                 |-Identifier=Int
       |-FunAssignExpression(113,116)
-        |-Operator==
         |-NumberLiteral=1
   |-FunctionDirective(117,165)
     |-Decorators(117,117)
@@ -77,74 +68,63 @@
         |-NameIdentifier(129,133)
           |-Identifier=test
       |-FunctionParamsList(133,154)
-        |-ParameterList(134,153)
-          |-Parameter(134,142)
-            |-NameIdentifier(134,135)
-              |-Identifier=a
-            |-OfType(135,142)
-              |-Operator=:
-              |-Type(137,142)
-                |-Reference(137,142)
-                  |-QName(137,142)
-                    |-NameIdentifier(137,142)
-                      |-Identifier=Float
-          |-Parameter(144,153)
-            |-NameIdentifier(144,145)
-              |-Identifier=b
-            |-OfType(145,153)
-              |-Operator=:
-              |-Type(147,153)
-                |-Reference(147,153)
-                  |-QName(147,153)
-                    |-NameIdentifier(147,153)
-                      |-Identifier=Double
+        |-Parameter(134,142)
+          |-NameIdentifier(134,135)
+            |-Identifier=a
+          |-OfType(135,142)
+            |-Type(137,142)
+              |-Reference(137,142)
+                |-QName(137,142)
+                  |-NameIdentifier(137,142)
+                    |-Identifier=Float
+        |-Parameter(144,153)
+          |-NameIdentifier(144,145)
+            |-Identifier=b
+          |-OfType(145,153)
+            |-Type(147,153)
+              |-Reference(147,153)
+                |-QName(147,153)
+                  |-NameIdentifier(147,153)
+                    |-Identifier=Double
       |-OfType(154,162)
-        |-Operator=:
         |-Type(156,161)
           |-Reference(156,161)
             |-QName(156,161)
               |-NameIdentifier(156,161)
                 |-Identifier=Float
       |-FunAssignExpression(162,165)
-        |-Operator==
         |-NumberLiteral=1
   |-VarDirective(167,176)
     |-VarDeclaration(167,176)
       |-NameIdentifier(171,172)
         |-Identifier=a
-      |-Operator==
       |-NumberLiteral=1
   |-VarDirective(177,193)
     |-VarDeclaration(177,193)
       |-NameIdentifier(181,182)
         |-Identifier=b
       |-OfType(182,190)
-        |-Operator=:
         |-Type(184,189)
           |-Reference(184,189)
             |-QName(184,189)
               |-NameIdentifier(184,189)
                 |-Identifier=Float
-      |-Operator==
       |-NumberLiteral=1
   |-VarDirective(194,211)
     |-VarDeclaration(194,211)
       |-NameIdentifier(198,199)
         |-Identifier=c
       |-OfType(199,208)
-        |-Operator=:
         |-Type(201,207)
           |-Reference(201,207)
             |-QName(201,207)
               |-NameIdentifier(201,207)
                 |-Identifier=Double
-      |-Operator==
       |-NumberLiteral=1
   |-VarDirective(212,223)
     |-VarDeclaration(212,223)
       |-NameIdentifier(216,217)
         |-Identifier=d
-      |-Operator==
       |-NumberLiteral=1.0
   |-FunctionDirective(225,244)
     |-Decorators(225,225)
@@ -154,17 +134,14 @@
         |-NameIdentifier(229,233)
           |-Identifier=test
       |-FunctionParamsList(233,235)
-        |-ParameterList(234,234)
-          <Rule0>
+        <Rule0>
       |-OfType(235,241)
-        |-Operator=:
         |-Type(237,240)
           |-Reference(237,240)
             |-QName(237,240)
               |-NameIdentifier(237,240)
                 |-Identifier=Int
       |-FunAssignExpression(241,244)
-        |-Operator==
         |-NumberLiteral=1
   |-FunctionDirective(245,285)
     |-Decorators(245,245)
@@ -174,36 +151,31 @@
         |-NameIdentifier(249,253)
           |-Identifier=test
       |-FunctionParamsList(253,274)
-        |-ParameterList(254,273)
-          |-Parameter(254,262)
-            |-NameIdentifier(254,255)
-              |-Identifier=a
-            |-OfType(255,262)
-              |-Operator=:
-              |-Type(257,262)
-                |-Reference(257,262)
-                  |-QName(257,262)
-                    |-NameIdentifier(257,262)
-                      |-Identifier=Float
-          |-Parameter(264,273)
-            |-NameIdentifier(264,265)
-              |-Identifier=b
-            |-OfType(265,273)
-              |-Operator=:
-              |-Type(267,273)
-                |-Reference(267,273)
-                  |-QName(267,273)
-                    |-NameIdentifier(267,273)
-                      |-Identifier=Double
+        |-Parameter(254,262)
+          |-NameIdentifier(254,255)
+            |-Identifier=a
+          |-OfType(255,262)
+            |-Type(257,262)
+              |-Reference(257,262)
+                |-QName(257,262)
+                  |-NameIdentifier(257,262)
+                    |-Identifier=Float
+        |-Parameter(264,273)
+          |-NameIdentifier(264,265)
+            |-Identifier=b
+          |-OfType(265,273)
+            |-Type(267,273)
+              |-Reference(267,273)
+                |-QName(267,273)
+                  |-NameIdentifier(267,273)
+                    |-Identifier=Double
       |-OfType(274,282)
-        |-Operator=:
         |-Type(276,281)
           |-Reference(276,281)
             |-QName(276,281)
               |-NameIdentifier(276,281)
                 |-Identifier=Float
       |-FunAssignExpression(282,285)
-        |-Operator==
         |-NumberLiteral=1
   |-ImportDirective(287,301)
     |-QName(294,300)
@@ -217,17 +189,14 @@
     |-QName(323,340)
       |-NameIdentifier(323,329)
         |-Identifier=module
-      |-Operator=::
       |-NameIdentifier(331,340)
         |-Identifier=submodule
   |-ImportDirective(341,372)
     |-QName(348,370)
       |-NameIdentifier(348,354)
         |-Identifier=github
-      |-Operator=::
       |-NameIdentifier(356,362)
         |-Identifier=menduz
-      |-Operator=::
       |-NameIdentifier(364,370)
         |-Identifier=aureum
   |-ImportDirective(372,386)
@@ -242,58 +211,44 @@
     |-QName(408,425)
       |-NameIdentifier(408,414)
         |-Identifier=module
-      |-Operator=::
       |-NameIdentifier(416,425)
         |-Identifier=submodule
   |-ImportDirective(426,457)
     |-QName(433,455)
       |-NameIdentifier(433,439)
         |-Identifier=github
-      |-Operator=::
       |-NameIdentifier(441,447)
         |-Identifier=menduz
-      |-Operator=::
       |-NameIdentifier(449,455)
         |-Identifier=aureum
   |-ImportDirective(457,475)
     |-QName(464,470)
       |-NameIdentifier(464,470)
         |-Identifier=module
-    |-AsKeyword(471,474)
-      |-Keyword=as
     |-NameIdentifier(474,475)
       |-Identifier=X
   |-ImportDirective(476,495)
     |-QName(483,490)
       |-NameIdentifier(483,490)
         |-Identifier=module2
-    |-AsKeyword(491,494)
-      |-Keyword=as
     |-NameIdentifier(494,495)
       |-Identifier=Y
   |-ImportDirective(496,525)
     |-QName(503,520)
       |-NameIdentifier(503,509)
         |-Identifier=module
-      |-Operator=::
       |-NameIdentifier(511,520)
         |-Identifier=submodule
-    |-AsKeyword(521,524)
-      |-Keyword=as
     |-NameIdentifier(524,525)
       |-Identifier=Z
   |-ImportDirective(526,560)
     |-QName(533,555)
       |-NameIdentifier(533,539)
         |-Identifier=github
-      |-Operator=::
       |-NameIdentifier(541,547)
         |-Identifier=menduz
-      |-Operator=::
       |-NameIdentifier(549,555)
         |-Identifier=aureum
-    |-AsKeyword(556,559)
-      |-Keyword=as
     |-NameIdentifier(559,560)
       |-Identifier=W
   |-EndOfFile=

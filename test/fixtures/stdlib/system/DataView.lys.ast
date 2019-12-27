@@ -4,17 +4,15 @@
       |-NameIdentifier(7,15)
         |-Identifier=DataView
       |-FunctionParamsList(15,30)
-        |-ParameterList(16,29)
-          |-Parameter(16,29)
-            |-NameIdentifier(16,22)
-              |-Identifier=buffer
-            |-OfType(22,29)
-              |-Operator=:
-              |-Type(24,29)
-                |-Reference(24,29)
-                  |-QName(24,29)
-                    |-NameIdentifier(24,29)
-                      |-Identifier=bytes
+        |-Parameter(16,29)
+          |-NameIdentifier(16,22)
+            |-Identifier=buffer
+          |-OfType(22,29)
+            |-Type(24,29)
+              |-Reference(24,29)
+                |-QName(24,29)
+                  |-NameIdentifier(24,29)
+                    |-Identifier=bytes
   |-ImplDirective(71,274)
     |-Reference(76,84)
       |-QName(76,84)
@@ -30,46 +28,40 @@
               |-VectorOpen=[
               |-VectorClose=]
           |-FunctionParamsList(95,120)
-            |-ParameterList(96,119)
-              |-Parameter(96,110)
-                |-NameIdentifier(96,100)
-                  |-Identifier=self
-                |-OfType(100,110)
-                  |-Operator=:
-                  |-Type(102,110)
-                    |-Reference(102,110)
-                      |-QName(102,110)
-                        |-NameIdentifier(102,110)
-                          |-Identifier=DataView
-              |-Parameter(112,119)
-                |-NameIdentifier(112,114)
-                  |-Identifier=at
-                |-OfType(114,119)
-                  |-Operator=:
-                  |-Type(116,119)
-                    |-Reference(116,119)
-                      |-QName(116,119)
-                        |-NameIdentifier(116,119)
-                          |-Identifier=u32
+            |-Parameter(96,110)
+              |-NameIdentifier(96,100)
+                |-Identifier=self
+              |-OfType(100,110)
+                |-Type(102,110)
+                  |-Reference(102,110)
+                    |-QName(102,110)
+                      |-NameIdentifier(102,110)
+                        |-Identifier=DataView
+            |-Parameter(112,119)
+              |-NameIdentifier(112,114)
+                |-Identifier=at
+              |-OfType(114,119)
+                |-Type(116,119)
+                  |-Reference(116,119)
+                    |-QName(116,119)
+                      |-NameIdentifier(116,119)
+                        |-Identifier=u32
           |-OfType(120,125)
-            |-Operator=:
             |-Type(122,124)
               |-Reference(122,124)
                 |-QName(122,124)
                   |-NameIdentifier(122,124)
                     |-Identifier=u8
           |-FunAssignExpression(125,272)
-            |-Operator==
             |-CodeBlock(127,272)
               |-IfExpression(133,183)
                 |-IfBody(136,161)
-                  |-RelExpression(137,160)
+                  |-BinaryOpExpression(137,160)
                     |-Reference(137,139)
                       |-QName(137,139)
                         |-NameIdentifier(137,139)
                           |-Identifier=at
-                    |-RelOperator(140,141)
-                      |-Operator=>
+                    |-Operator=>
                     |-AtomicExpression(142,160)
                       |-Reference(142,146)
                         |-QName(142,146)
@@ -77,12 +69,12 @@
                             |-Identifier=self
                       |-MemberExpression(146,153)
                         |-BinMemberOperator(146,147)
-                          |-Operator=.
+                          <Rule0>
                         |-NameIdentifier(147,153)
                           |-Identifier=buffer
                       |-MemberExpression(153,160)
                         |-BinMemberOperator(153,154)
-                          |-Operator=.
+                          <Rule0>
                         |-NameIdentifier(154,160)
                           |-Identifier=length
                 |-CodeBlock(162,183)
@@ -95,17 +87,14 @@
                       <Rule0>
               |-IfExpression(188,228)
                 |-IfBody(191,206)
-                  |-RelExpression(192,205)
+                  |-BinaryOpExpression(192,205)
                     |-Reference(192,194)
                       |-QName(192,194)
                         |-NameIdentifier(192,194)
                           |-Identifier=at
-                    |-RelOperator(195,196)
-                      |-Operator=<
+                    |-Operator=<
                     |-AsExpression(197,205)
                       |-NumberLiteral=0
-                      |-AsKeyword(199,202)
-                        |-Keyword=as
                       |-Type(202,205)
                         |-Reference(202,205)
                           |-QName(202,205)
@@ -126,7 +115,7 @@
                       |-Identifier=u8
                 |-MemberExpression(235,240)
                   |-BinMemberOperator(235,236)
-                    |-Operator=.
+                    <Rule0>
                   |-NameIdentifier(236,240)
                     |-Identifier=load
                 |-CallArguments(240,268)
@@ -138,16 +127,14 @@
                             |-Identifier=self
                       |-MemberExpression(245,252)
                         |-BinMemberOperator(245,246)
-                          |-Operator=.
+                          <Rule0>
                         |-NameIdentifier(246,252)
                           |-Identifier=buffer
                       |-MemberExpression(252,256)
                         |-BinMemberOperator(252,253)
-                          |-Operator=.
+                          <Rule0>
                         |-NameIdentifier(253,256)
                           |-Identifier=ptr
-                    |-AsKeyword(257,260)
-                      |-Keyword=as
                     |-Type(260,263)
                       |-Reference(260,263)
                         |-QName(260,263)

@@ -3,7 +3,6 @@
     |-VarDeclaration(0,30)
       |-NameIdentifier(4,5)
         |-Identifier=x
-      |-Operator==
       |-AtomicExpression(8,30)
         |-Reference(8,9)
           |-QName(8,9)
@@ -11,7 +10,7 @@
               |-Identifier=a
         |-MemberExpression(9,13)
           |-BinMemberOperator(9,10)
-            |-Operator=.
+            <Rule0>
           |-NameIdentifier(10,13)
             |-Identifier=map
         |-CallArguments(13,16)
@@ -21,7 +20,7 @@
                 |-Identifier=b
         |-MemberExpression(16,20)
           |-BinMemberOperator(16,17)
-            |-Operator=.
+            <Rule0>
           |-NameIdentifier(17,20)
             |-Identifier=map
         |-CallArguments(20,23)
@@ -31,7 +30,7 @@
                 |-Identifier=c
         |-MemberExpression(23,27)
           |-BinMemberOperator(23,24)
-            |-Operator=.
+            <Rule0>
           |-NameIdentifier(24,27)
             |-Identifier=map
         |-CallArguments(27,30)
@@ -43,50 +42,38 @@
     |-VarDeclaration(31,60)
       |-NameIdentifier(35,36)
         |-Identifier=y
-      |-Operator==
-      |-AddExpression(39,60)
+      |-BinaryOpExpression(39,60)
         |-NumberLiteral=1
-        |-AddOperator(41,42)
-          |-Operator=+
-        |-MulExpression(43,52)
+        |-Operator=+
+        |-BinaryOpExpression(43,52)
           |-NumberLiteral=2
-          |-MulOperator(45,46)
-            |-Operator=*
+          |-Operator=*
           |-NumberLiteral=3
-          |-MulOperator(49,50)
-            |-Operator=/
+          |-Operator=/
           |-NumberLiteral=4
-        |-AddOperator(53,54)
-          |-Operator=-
-        |-MulExpression(55,60)
+        |-Operator=-
+        |-BinaryOpExpression(55,60)
           |-NumberLiteral=5
-          |-MulOperator(57,58)
-            |-Operator=%
+          |-Operator=%
           |-NumberLiteral=6
   |-VarDirective(61,94)
     |-VarDeclaration(61,94)
       |-NameIdentifier(65,66)
         |-Identifier=z
-      |-Operator==
-      |-MulExpression(69,94)
+      |-BinaryOpExpression(69,94)
         |-ParenExpression(69,76)
-          |-AddExpression(70,75)
+          |-BinaryOpExpression(70,75)
             |-NumberLiteral=1
-            |-AddOperator(72,73)
-              |-Operator=+
+            |-Operator=+
             |-NumberLiteral=2
-        |-MulOperator(77,78)
-          |-Operator=*
+        |-Operator=*
         |-NumberLiteral=3
-        |-MulOperator(81,82)
-          |-Operator=/
+        |-Operator=/
         |-ParenExpression(83,90)
-          |-AddExpression(84,89)
+          |-BinaryOpExpression(84,89)
             |-NumberLiteral=4
-            |-AddOperator(86,87)
-              |-Operator=-
+            |-Operator=-
             |-NumberLiteral=5
-        |-MulOperator(91,92)
-          |-Operator=%
+        |-Operator=%
         |-NumberLiteral=6
   |-EndOfFile=

@@ -7,17 +7,14 @@
         |-NameIdentifier(4,5)
           |-Identifier=y
       |-FunctionParamsList(5,7)
-        |-ParameterList(6,6)
-          <Rule0>
+        <Rule0>
       |-OfType(7,14)
-        |-Operator=:
         |-Type(9,13)
           |-Reference(9,13)
             |-QName(9,13)
               |-NameIdentifier(9,13)
                 |-Identifier=void
       |-FunAssignExpression(14,29)
-        |-Operator==
         |-CodeBlock(16,29)
           <Rule0>
   |-FunctionDirective(31,133)
@@ -28,31 +25,26 @@
         |-NameIdentifier(35,36)
           |-Identifier=x
       |-FunctionParamsList(36,44)
-        |-ParameterList(37,43)
-          |-Parameter(37,43)
-            |-NameIdentifier(37,38)
-              |-Identifier=a
-            |-OfType(38,43)
-              |-Operator=:
-              |-Type(40,43)
-                |-Reference(40,43)
-                  |-QName(40,43)
-                    |-NameIdentifier(40,43)
-                      |-Identifier=i32
+        |-Parameter(37,43)
+          |-NameIdentifier(37,38)
+            |-Identifier=a
+          |-OfType(38,43)
+            |-Type(40,43)
+              |-Reference(40,43)
+                |-QName(40,43)
+                  |-NameIdentifier(40,43)
+                    |-Identifier=i32
       |-OfType(44,50)
-        |-Operator=:
         |-Type(46,49)
           |-Reference(46,49)
             |-QName(46,49)
               |-NameIdentifier(46,49)
                 |-Identifier=i32
       |-FunAssignExpression(50,133)
-        |-Operator==
         |-CodeBlock(52,133)
           |-VarDeclaration(56,127)
             |-NameIdentifier(60,61)
               |-Identifier=z
-            |-Operator==
             |-MatchExpression(64,127)
               |-Reference(70,71)
                 |-QName(70,71)
@@ -61,11 +53,9 @@
               |-MatchBody(72,127)
                 |-CaseLiteral(78,89)
                   |-NumberLiteral=1
-                  |-Operator=->
                   |-NumberLiteral=1
                 |-CaseLiteral(94,107)
                   |-NumberLiteral=2
-                  |-Operator=->
                   |-AtomicExpression(104,107)
                     |-Reference(104,105)
                       |-QName(104,105)
@@ -76,7 +66,6 @@
                 |-CaseElse(112,123)
                   |-NameIdentifier(117,118)
                     |-Identifier=x
-                  |-Operator=->
                   |-Reference(122,123)
                     |-QName(122,123)
                       |-NameIdentifier(122,123)

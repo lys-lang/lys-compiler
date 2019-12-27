@@ -9,10 +9,8 @@
             |-NameIdentifier(15,20)
               |-Identifier=raise
             |-FunctionParamsList(20,22)
-              |-ParameterList(21,21)
-                <Rule0>
+              <Rule0>
             |-OfType(22,26)
-              |-Operator=:
               |-Type(24,25)
                 |-Reference(24,25)
                   |-QName(24,25)
@@ -33,10 +31,8 @@
             |-NameIdentifier(47,52)
               |-Identifier=raise
             |-FunctionParamsList(52,54)
-              |-ParameterList(53,53)
-                <Rule0>
+              <Rule0>
             |-OfType(54,58)
-              |-Operator=:
               |-Type(56,57)
                 |-Reference(56,57)
                   |-QName(56,57)
@@ -50,19 +46,16 @@
         |-NameIdentifier(65,68)
           |-Identifier=sqr
       |-FunctionParamsList(68,76)
-        |-ParameterList(69,75)
-          |-Parameter(69,75)
-            |-NameIdentifier(69,70)
-              |-Identifier=x
-            |-OfType(70,75)
-              |-Operator=:
-              |-Type(72,75)
-                |-Reference(72,75)
-                  |-QName(72,75)
-                    |-NameIdentifier(72,75)
-                      |-Identifier=i32
+        |-Parameter(69,75)
+          |-NameIdentifier(69,70)
+            |-Identifier=x
+          |-OfType(70,75)
+            |-Type(72,75)
+              |-Reference(72,75)
+                |-QName(72,75)
+                  |-NameIdentifier(72,75)
+                    |-Identifier=i32
       |-OfType(76,90)
-        |-Operator=:
         |-FunctionEffect(78,85)
           |-Type(79,84)
             |-Reference(79,84)
@@ -75,14 +68,12 @@
               |-NameIdentifier(86,89)
                 |-Identifier=i32
       |-FunAssignExpression(90,97)
-        |-Operator==
-        |-MulExpression(92,97)
+        |-BinaryOpExpression(92,97)
           |-Reference(92,93)
             |-QName(92,93)
               |-NameIdentifier(92,93)
                 |-Identifier=x
-          |-MulOperator(94,95)
-            |-Operator=*
+          |-Operator=*
           |-Reference(96,97)
             |-QName(96,97)
               |-NameIdentifier(96,97)
@@ -95,19 +86,16 @@
         |-NameIdentifier(102,105)
           |-Identifier=sqr
       |-FunctionParamsList(105,113)
-        |-ParameterList(106,112)
-          |-Parameter(106,112)
-            |-NameIdentifier(106,107)
-              |-Identifier=x
-            |-OfType(107,112)
-              |-Operator=:
-              |-Type(109,112)
-                |-Reference(109,112)
-                  |-QName(109,112)
-                    |-NameIdentifier(109,112)
-                      |-Identifier=i32
+        |-Parameter(106,112)
+          |-NameIdentifier(106,107)
+            |-Identifier=x
+          |-OfType(107,112)
+            |-Type(109,112)
+              |-Reference(109,112)
+                |-QName(109,112)
+                  |-NameIdentifier(109,112)
+                    |-Identifier=i32
       |-OfType(113,114)
-        |-Operator=:
         |-<SyntaxError>=A type or effect was expected
   |-<UNEXPECTED TOKEN>=<>
   |-<UNEXPECTED TOKEN>= 

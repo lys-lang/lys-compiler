@@ -7,35 +7,28 @@
         |-NameIdentifier(388,392)
           |-Identifier=DJB2
       |-FunctionParamsList(392,406)
-        |-ParameterList(393,405)
-          |-Parameter(393,405)
-            |-NameIdentifier(393,398)
-              |-Identifier=input
-            |-OfType(398,405)
-              |-Operator=:
-              |-Type(400,405)
-                |-Reference(400,405)
-                  |-QName(400,405)
-                    |-NameIdentifier(400,405)
-                      |-Identifier=bytes
+        |-Parameter(393,405)
+          |-NameIdentifier(393,398)
+            |-Identifier=input
+          |-OfType(398,405)
+            |-Type(400,405)
+              |-Reference(400,405)
+                |-QName(400,405)
+                  |-NameIdentifier(400,405)
+                    |-Identifier=bytes
       |-OfType(406,412)
-        |-Operator=:
         |-Type(408,411)
           |-Reference(408,411)
             |-QName(408,411)
               |-NameIdentifier(408,411)
                 |-Identifier=u64
       |-FunAssignExpression(412,637)
-        |-Operator==
         |-CodeBlock(414,637)
           |-VarDeclaration(418,440)
             |-NameIdentifier(422,426)
               |-Identifier=hash
-            |-Operator==
             |-AsExpression(429,440)
               |-NumberLiteral=5381
-              |-AsKeyword(434,437)
-                |-Keyword=as
               |-Type(437,440)
                 |-Reference(437,440)
                   |-QName(437,440)
@@ -44,11 +37,8 @@
           |-VarDeclaration(443,459)
             |-NameIdentifier(447,448)
               |-Identifier=i
-            |-Operator==
             |-AsExpression(451,459)
               |-NumberLiteral=0
-              |-AsKeyword(453,456)
-                |-Keyword=as
               |-Type(456,459)
                 |-Reference(456,459)
                   |-QName(456,459)
@@ -57,7 +47,6 @@
           |-ValDeclaration(462,489)
             |-NameIdentifier(466,470)
               |-Identifier=$ref
-            |-Operator==
             |-AsExpression(473,489)
               |-AtomicExpression(473,482)
                 |-Reference(473,478)
@@ -66,11 +55,9 @@
                       |-Identifier=input
                 |-MemberExpression(478,482)
                   |-BinMemberOperator(478,479)
-                    |-Operator=.
+                    <Rule0>
                   |-NameIdentifier(479,482)
                     |-Identifier=ptr
-              |-AsKeyword(483,486)
-                |-Keyword=as
               |-Type(486,489)
                 |-Reference(486,489)
                   |-QName(486,489)
@@ -80,13 +67,12 @@
             |-CodeBlock(498,627)
               |-IfExpression(504,532)
                 |-IfBody(507,526)
-                  |-RelExpression(508,525)
+                  |-BinaryOpExpression(508,525)
                     |-Reference(508,509)
                       |-QName(508,509)
                         |-NameIdentifier(508,509)
                           |-Identifier=i
-                    |-RelOperator(510,512)
-                      |-Operator=>=
+                    |-Operator=>=
                     |-AtomicExpression(513,525)
                       |-Reference(513,518)
                         |-QName(513,518)
@@ -94,38 +80,34 @@
                             |-Identifier=input
                       |-MemberExpression(518,525)
                         |-BinMemberOperator(518,519)
-                          |-Operator=.
+                          <Rule0>
                         |-NameIdentifier(519,525)
                           |-Identifier=length
                 |-BreakStatement(527,532)
-                  |-Keyword=break
-              |-AssignExpression(538,588)
+                  <Rule0>
+              |-BinaryOpExpression(538,588)
                 |-Reference(538,542)
                   |-QName(538,542)
                     |-NameIdentifier(538,542)
                       |-Identifier=hash
-                |-AssignmentKeyword(543,544)
-                  |-Operator==
-                |-AddExpression(545,588)
+                |-Operator==
+                |-BinaryOpExpression(545,588)
                   |-ParenExpression(545,565)
-                    |-AddExpression(546,564)
+                    |-BinaryOpExpression(546,564)
                       |-ParenExpression(546,557)
-                        |-ShiftExpression(547,556)
+                        |-BinaryOpExpression(547,556)
                           |-Reference(547,551)
                             |-QName(547,551)
                               |-NameIdentifier(547,551)
                                 |-Identifier=hash
-                          |-ShiftOperator(552,554)
-                            |-Operator=<<
+                          |-Operator=<<
                           |-NumberLiteral=5
-                      |-AddOperator(558,559)
-                        |-Operator=+
+                      |-Operator=+
                       |-Reference(560,564)
                         |-QName(560,564)
                           |-NameIdentifier(560,564)
                             |-Identifier=hash
-                  |-AddOperator(566,567)
-                    |-Operator=+
+                  |-Operator=+
                   |-AtomicExpression(568,588)
                     |-Reference(568,571)
                       |-QName(568,571)
@@ -133,7 +115,7 @@
                           |-Identifier=u64
                     |-MemberExpression(571,579)
                       |-BinMemberOperator(571,572)
-                        |-Operator=.
+                        <Rule0>
                       |-NameIdentifier(572,579)
                         |-Identifier=load8_u
                     |-CallArguments(579,588)
@@ -145,31 +127,27 @@
                         |-QName(586,587)
                           |-NameIdentifier(586,587)
                             |-Identifier=i
-              |-AssignExpression(594,610)
+              |-BinaryOpExpression(594,610)
                 |-Reference(594,595)
                   |-QName(594,595)
                     |-NameIdentifier(594,595)
                       |-Identifier=i
-                |-AssignmentKeyword(596,597)
-                  |-Operator==
-                |-AddExpression(598,610)
+                |-Operator==
+                |-BinaryOpExpression(598,610)
                   |-Reference(598,599)
                     |-QName(598,599)
                       |-NameIdentifier(598,599)
                         |-Identifier=i
-                  |-AddOperator(600,601)
-                    |-Operator=+
+                  |-Operator=+
                   |-AsExpression(602,610)
                     |-NumberLiteral=1
-                    |-AsKeyword(604,607)
-                      |-Keyword=as
                     |-Type(607,610)
                       |-Reference(607,610)
                         |-QName(607,610)
                           |-NameIdentifier(607,610)
                             |-Identifier=u32
               |-ContinueStatement(615,623)
-                |-Keyword=continue
+                <Rule0>
           |-Reference(631,635)
             |-QName(631,635)
               |-NameIdentifier(631,635)

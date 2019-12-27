@@ -4,8 +4,7 @@
       |-NameIdentifier(7,17)
         |-Identifier=TestStruct
       |-FunctionParamsList(17,19)
-        |-ParameterList(18,18)
-          <Rule0>
+        <Rule0>
   |-FunctionDirective(21,50)
     |-Decorators(21,21)
       <Rule0>
@@ -14,26 +13,22 @@
         |-NameIdentifier(25,33)
           |-Identifier=identity
       |-FunctionParamsList(33,41)
-        |-ParameterList(34,40)
-          |-Parameter(34,40)
-            |-NameIdentifier(34,35)
-              |-Identifier=x
-            |-OfType(35,40)
-              |-Operator=:
-              |-Type(37,40)
-                |-Reference(37,40)
-                  |-QName(37,40)
-                    |-NameIdentifier(37,40)
-                      |-Identifier=i32
+        |-Parameter(34,40)
+          |-NameIdentifier(34,35)
+            |-Identifier=x
+          |-OfType(35,40)
+            |-Type(37,40)
+              |-Reference(37,40)
+                |-QName(37,40)
+                  |-NameIdentifier(37,40)
+                    |-Identifier=i32
       |-OfType(41,47)
-        |-Operator=:
         |-Type(43,46)
           |-Reference(43,46)
             |-QName(43,46)
               |-NameIdentifier(43,46)
                 |-Identifier=i32
       |-FunAssignExpression(47,50)
-        |-Operator==
         |-Reference(49,50)
           |-QName(49,50)
             |-NameIdentifier(49,50)
@@ -46,26 +41,22 @@
         |-NameIdentifier(55,63)
           |-Identifier=identity
       |-FunctionParamsList(63,71)
-        |-ParameterList(64,70)
-          |-Parameter(64,70)
-            |-NameIdentifier(64,65)
-              |-Identifier=x
-            |-OfType(65,70)
-              |-Operator=:
-              |-Type(67,70)
-                |-Reference(67,70)
-                  |-QName(67,70)
-                    |-NameIdentifier(67,70)
-                      |-Identifier=f32
+        |-Parameter(64,70)
+          |-NameIdentifier(64,65)
+            |-Identifier=x
+          |-OfType(65,70)
+            |-Type(67,70)
+              |-Reference(67,70)
+                |-QName(67,70)
+                  |-NameIdentifier(67,70)
+                    |-Identifier=f32
       |-OfType(71,77)
-        |-Operator=:
         |-Type(73,76)
           |-Reference(73,76)
             |-QName(73,76)
               |-NameIdentifier(73,76)
                 |-Identifier=f32
       |-FunAssignExpression(77,80)
-        |-Operator==
         |-Reference(79,80)
           |-QName(79,80)
             |-NameIdentifier(79,80)
@@ -78,26 +69,22 @@
         |-NameIdentifier(85,93)
           |-Identifier=identity
       |-FunctionParamsList(93,101)
-        |-ParameterList(94,100)
-          |-Parameter(94,100)
-            |-NameIdentifier(94,95)
-              |-Identifier=x
-            |-OfType(95,100)
-              |-Operator=:
-              |-Type(97,100)
-                |-Reference(97,100)
-                  |-QName(97,100)
-                    |-NameIdentifier(97,100)
-                      |-Identifier=f64
+        |-Parameter(94,100)
+          |-NameIdentifier(94,95)
+            |-Identifier=x
+          |-OfType(95,100)
+            |-Type(97,100)
+              |-Reference(97,100)
+                |-QName(97,100)
+                  |-NameIdentifier(97,100)
+                    |-Identifier=f64
       |-OfType(101,107)
-        |-Operator=:
         |-Type(103,106)
           |-Reference(103,106)
             |-QName(103,106)
               |-NameIdentifier(103,106)
                 |-Identifier=f64
       |-FunAssignExpression(107,110)
-        |-Operator==
         |-Reference(109,110)
           |-QName(109,110)
             |-NameIdentifier(109,110)
@@ -110,26 +97,22 @@
         |-NameIdentifier(115,123)
           |-Identifier=identity
       |-FunctionParamsList(123,131)
-        |-ParameterList(124,130)
-          |-Parameter(124,130)
-            |-NameIdentifier(124,125)
-              |-Identifier=x
-            |-OfType(125,130)
-              |-Operator=:
-              |-Type(127,130)
-                |-Reference(127,130)
-                  |-QName(127,130)
-                    |-NameIdentifier(127,130)
-                      |-Identifier=f32
+        |-Parameter(124,130)
+          |-NameIdentifier(124,125)
+            |-Identifier=x
+          |-OfType(125,130)
+            |-Type(127,130)
+              |-Reference(127,130)
+                |-QName(127,130)
+                  |-NameIdentifier(127,130)
+                    |-Identifier=f32
       |-OfType(131,137)
-        |-Operator=:
         |-Type(133,136)
           |-Reference(133,136)
             |-QName(133,136)
               |-NameIdentifier(133,136)
                 |-Identifier=f32
       |-FunAssignExpression(137,140)
-        |-Operator==
         |-Reference(139,140)
           |-QName(139,140)
             |-NameIdentifier(139,140)
@@ -145,29 +128,25 @@
         |-NameIdentifier(179,186)
           |-Identifier=Message
         |-FunctionParamsList(186,203)
-          |-ParameterList(187,202)
-            |-Parameter(187,202)
-              |-NameIdentifier(187,194)
-                |-Identifier=message
-              |-OfType(194,202)
-                |-Operator=:
-                |-Type(196,202)
-                  |-Reference(196,202)
-                    |-QName(196,202)
-                      |-NameIdentifier(196,202)
-                        |-Identifier=string
+          |-Parameter(187,202)
+            |-NameIdentifier(187,194)
+              |-Identifier=message
+            |-OfType(194,202)
+              |-Type(196,202)
+                |-Reference(196,202)
+                  |-QName(196,202)
+                    |-NameIdentifier(196,202)
+                      |-Identifier=string
   |-VarDirective(207,256)
     |-VarDeclaration(207,256)
       |-NameIdentifier(211,227)
         |-Identifier=lastErrorMessage
       |-OfType(227,242)
-        |-Operator=:
         |-Type(229,241)
           |-Reference(229,241)
             |-QName(229,241)
               |-NameIdentifier(229,241)
                 |-Identifier=ErrorMessage
-      |-Operator==
       |-Reference(244,256)
         |-QName(244,256)
           |-NameIdentifier(244,256)
@@ -180,46 +159,40 @@
         |-NameIdentifier(262,271)
           |-Identifier=mustEqual
       |-FunctionParamsList(271,315)
-        |-ParameterList(272,314)
-          |-Parameter(272,282)
-            |-NameIdentifier(272,277)
-              |-Identifier=given
-            |-OfType(277,282)
-              |-Operator=:
-              |-Type(279,282)
-                |-Reference(279,282)
-                  |-QName(279,282)
-                    |-NameIdentifier(279,282)
-                      |-Identifier=f64
-          |-Parameter(284,297)
-            |-NameIdentifier(284,292)
-              |-Identifier=expected
-            |-OfType(292,297)
-              |-Operator=:
-              |-Type(294,297)
-                |-Reference(294,297)
-                  |-QName(294,297)
-                    |-NameIdentifier(294,297)
-                      |-Identifier=f64
-          |-Parameter(299,314)
-            |-NameIdentifier(299,306)
-              |-Identifier=message
-            |-OfType(306,314)
-              |-Operator=:
-              |-Type(308,314)
-                |-Reference(308,314)
-                  |-QName(308,314)
-                    |-NameIdentifier(308,314)
-                      |-Identifier=string
+        |-Parameter(272,282)
+          |-NameIdentifier(272,277)
+            |-Identifier=given
+          |-OfType(277,282)
+            |-Type(279,282)
+              |-Reference(279,282)
+                |-QName(279,282)
+                  |-NameIdentifier(279,282)
+                    |-Identifier=f64
+        |-Parameter(284,297)
+          |-NameIdentifier(284,292)
+            |-Identifier=expected
+          |-OfType(292,297)
+            |-Type(294,297)
+              |-Reference(294,297)
+                |-QName(294,297)
+                  |-NameIdentifier(294,297)
+                    |-Identifier=f64
+        |-Parameter(299,314)
+          |-NameIdentifier(299,306)
+            |-Identifier=message
+          |-OfType(306,314)
+            |-Type(308,314)
+              |-Reference(308,314)
+                |-QName(308,314)
+                  |-NameIdentifier(308,314)
+                    |-Identifier=string
       |-OfType(315,322)
-        |-Operator=:
         |-Type(317,321)
           |-Reference(317,321)
             |-QName(317,321)
               |-NameIdentifier(317,321)
                 |-Identifier=void
       |-FunAssignExpression(322,495)
-        |-Operator==
         |-CodeBlock(324,495)
           |-AtomicExpression(328,362)
             |-Reference(328,334)
@@ -227,13 +200,12 @@
                 |-NameIdentifier(328,334)
                   |-Identifier=verify
             |-CallArguments(334,362)
-              |-EqExpression(335,352)
+              |-BinaryOpExpression(335,352)
                 |-Reference(335,340)
                   |-QName(335,340)
                     |-NameIdentifier(335,340)
                       |-Identifier=given
-                |-EqOperator(341,343)
-                  |-Operator===
+                |-Operator===
                 |-Reference(344,352)
                   |-QName(344,352)
                     |-NameIdentifier(344,352)
@@ -244,13 +216,12 @@
                     |-Identifier=message
           |-IfExpression(365,493)
             |-IfBody(368,387)
-              |-EqExpression(369,386)
+              |-BinaryOpExpression(369,386)
                 |-Reference(369,374)
                   |-QName(369,374)
                     |-NameIdentifier(369,374)
                       |-Identifier=given
-                |-EqOperator(375,377)
-                  |-Operator=!=
+                |-Operator=!=
                 |-Reference(378,386)
                   |-QName(378,386)
                     |-NameIdentifier(378,386)
@@ -261,10 +232,8 @@
                   |-QName(394,414)
                     |-NameIdentifier(394,401)
                       |-Identifier=support
-                    |-Operator=::
                     |-NameIdentifier(403,406)
                       |-Identifier=env
-                    |-Operator=::
                     |-NameIdentifier(408,414)
                       |-Identifier=printf
                 |-CallArguments(414,436)
@@ -278,10 +247,8 @@
                   |-QName(441,461)
                     |-NameIdentifier(441,448)
                       |-Identifier=support
-                    |-Operator=::
                     |-NameIdentifier(450,453)
                       |-Identifier=env
-                    |-Operator=::
                     |-NameIdentifier(455,461)
                       |-Identifier=printf
                 |-CallArguments(461,489)
@@ -298,46 +265,40 @@
         |-NameIdentifier(501,510)
           |-Identifier=mustEqual
       |-FunctionParamsList(510,554)
-        |-ParameterList(511,553)
-          |-Parameter(511,521)
-            |-NameIdentifier(511,516)
-              |-Identifier=given
-            |-OfType(516,521)
-              |-Operator=:
-              |-Type(518,521)
-                |-Reference(518,521)
-                  |-QName(518,521)
-                    |-NameIdentifier(518,521)
-                      |-Identifier=f32
-          |-Parameter(523,536)
-            |-NameIdentifier(523,531)
-              |-Identifier=expected
-            |-OfType(531,536)
-              |-Operator=:
-              |-Type(533,536)
-                |-Reference(533,536)
-                  |-QName(533,536)
-                    |-NameIdentifier(533,536)
-                      |-Identifier=f32
-          |-Parameter(538,553)
-            |-NameIdentifier(538,545)
-              |-Identifier=message
-            |-OfType(545,553)
-              |-Operator=:
-              |-Type(547,553)
-                |-Reference(547,553)
-                  |-QName(547,553)
-                    |-NameIdentifier(547,553)
-                      |-Identifier=string
+        |-Parameter(511,521)
+          |-NameIdentifier(511,516)
+            |-Identifier=given
+          |-OfType(516,521)
+            |-Type(518,521)
+              |-Reference(518,521)
+                |-QName(518,521)
+                  |-NameIdentifier(518,521)
+                    |-Identifier=f32
+        |-Parameter(523,536)
+          |-NameIdentifier(523,531)
+            |-Identifier=expected
+          |-OfType(531,536)
+            |-Type(533,536)
+              |-Reference(533,536)
+                |-QName(533,536)
+                  |-NameIdentifier(533,536)
+                    |-Identifier=f32
+        |-Parameter(538,553)
+          |-NameIdentifier(538,545)
+            |-Identifier=message
+          |-OfType(545,553)
+            |-Type(547,553)
+              |-Reference(547,553)
+                |-QName(547,553)
+                  |-NameIdentifier(547,553)
+                    |-Identifier=string
       |-OfType(554,561)
-        |-Operator=:
         |-Type(556,560)
           |-Reference(556,560)
             |-QName(556,560)
               |-NameIdentifier(556,560)
                 |-Identifier=void
       |-FunAssignExpression(561,734)
-        |-Operator==
         |-CodeBlock(563,734)
           |-AtomicExpression(567,601)
             |-Reference(567,573)
@@ -345,13 +306,12 @@
                 |-NameIdentifier(567,573)
                   |-Identifier=verify
             |-CallArguments(573,601)
-              |-EqExpression(574,591)
+              |-BinaryOpExpression(574,591)
                 |-Reference(574,579)
                   |-QName(574,579)
                     |-NameIdentifier(574,579)
                       |-Identifier=given
-                |-EqOperator(580,582)
-                  |-Operator===
+                |-Operator===
                 |-Reference(583,591)
                   |-QName(583,591)
                     |-NameIdentifier(583,591)
@@ -362,13 +322,12 @@
                     |-Identifier=message
           |-IfExpression(604,732)
             |-IfBody(607,626)
-              |-EqExpression(608,625)
+              |-BinaryOpExpression(608,625)
                 |-Reference(608,613)
                   |-QName(608,613)
                     |-NameIdentifier(608,613)
                       |-Identifier=given
-                |-EqOperator(614,616)
-                  |-Operator=!=
+                |-Operator=!=
                 |-Reference(617,625)
                   |-QName(617,625)
                     |-NameIdentifier(617,625)
@@ -379,10 +338,8 @@
                   |-QName(633,653)
                     |-NameIdentifier(633,640)
                       |-Identifier=support
-                    |-Operator=::
                     |-NameIdentifier(642,645)
                       |-Identifier=env
-                    |-Operator=::
                     |-NameIdentifier(647,653)
                       |-Identifier=printf
                 |-CallArguments(653,675)
@@ -396,10 +353,8 @@
                   |-QName(680,700)
                     |-NameIdentifier(680,687)
                       |-Identifier=support
-                    |-Operator=::
                     |-NameIdentifier(689,692)
                       |-Identifier=env
-                    |-Operator=::
                     |-NameIdentifier(694,700)
                       |-Identifier=printf
                 |-CallArguments(700,728)
@@ -416,46 +371,40 @@
         |-NameIdentifier(739,748)
           |-Identifier=mustEqual
       |-FunctionParamsList(748,792)
-        |-ParameterList(749,791)
-          |-Parameter(749,759)
-            |-NameIdentifier(749,754)
-              |-Identifier=given
-            |-OfType(754,759)
-              |-Operator=:
-              |-Type(756,759)
-                |-Reference(756,759)
-                  |-QName(756,759)
-                    |-NameIdentifier(756,759)
-                      |-Identifier=u64
-          |-Parameter(761,774)
-            |-NameIdentifier(761,769)
-              |-Identifier=expected
-            |-OfType(769,774)
-              |-Operator=:
-              |-Type(771,774)
-                |-Reference(771,774)
-                  |-QName(771,774)
-                    |-NameIdentifier(771,774)
-                      |-Identifier=u64
-          |-Parameter(776,791)
-            |-NameIdentifier(776,783)
-              |-Identifier=message
-            |-OfType(783,791)
-              |-Operator=:
-              |-Type(785,791)
-                |-Reference(785,791)
-                  |-QName(785,791)
-                    |-NameIdentifier(785,791)
-                      |-Identifier=string
+        |-Parameter(749,759)
+          |-NameIdentifier(749,754)
+            |-Identifier=given
+          |-OfType(754,759)
+            |-Type(756,759)
+              |-Reference(756,759)
+                |-QName(756,759)
+                  |-NameIdentifier(756,759)
+                    |-Identifier=u64
+        |-Parameter(761,774)
+          |-NameIdentifier(761,769)
+            |-Identifier=expected
+          |-OfType(769,774)
+            |-Type(771,774)
+              |-Reference(771,774)
+                |-QName(771,774)
+                  |-NameIdentifier(771,774)
+                    |-Identifier=u64
+        |-Parameter(776,791)
+          |-NameIdentifier(776,783)
+            |-Identifier=message
+          |-OfType(783,791)
+            |-Type(785,791)
+              |-Reference(785,791)
+                |-QName(785,791)
+                  |-NameIdentifier(785,791)
+                    |-Identifier=string
       |-OfType(792,799)
-        |-Operator=:
         |-Type(794,798)
           |-Reference(794,798)
             |-QName(794,798)
               |-NameIdentifier(794,798)
                 |-Identifier=void
       |-FunAssignExpression(799,1148)
-        |-Operator==
         |-CodeBlock(801,1148)
           |-AtomicExpression(805,839)
             |-Reference(805,811)
@@ -463,13 +412,12 @@
                 |-NameIdentifier(805,811)
                   |-Identifier=verify
             |-CallArguments(811,839)
-              |-EqExpression(812,829)
+              |-BinaryOpExpression(812,829)
                 |-Reference(812,817)
                   |-QName(812,817)
                     |-NameIdentifier(812,817)
                       |-Identifier=given
-                |-EqOperator(818,820)
-                  |-Operator===
+                |-Operator===
                 |-Reference(821,829)
                   |-QName(821,829)
                     |-NameIdentifier(821,829)
@@ -480,13 +428,12 @@
                     |-Identifier=message
           |-IfExpression(842,1146)
             |-IfBody(845,864)
-              |-EqExpression(846,863)
+              |-BinaryOpExpression(846,863)
                 |-Reference(846,851)
                   |-QName(846,851)
                     |-NameIdentifier(846,851)
                       |-Identifier=given
-                |-EqOperator(852,854)
-                  |-Operator=!=
+                |-Operator=!=
                 |-Reference(855,863)
                   |-QName(855,863)
                     |-NameIdentifier(855,863)
@@ -497,26 +444,21 @@
                   |-QName(871,891)
                     |-NameIdentifier(871,878)
                       |-Identifier=support
-                    |-Operator=::
                     |-NameIdentifier(880,883)
                       |-Identifier=env
-                    |-Operator=::
                     |-NameIdentifier(885,891)
                       |-Identifier=printf
                 |-CallArguments(891,932)
                   |-StringLiteral="  given LSB: %X"
                   |-AsExpression(911,931)
                     |-ParenExpression(911,924)
-                      |-ShiftExpression(912,923)
+                      |-BinaryOpExpression(912,923)
                         |-Reference(912,917)
                           |-QName(912,917)
                             |-NameIdentifier(912,917)
                               |-Identifier=given
-                        |-ShiftOperator(918,920)
-                          |-Operator=>>
+                        |-Operator=>>
                         |-NumberLiteral=32
-                    |-AsKeyword(925,928)
-                      |-Keyword=as
                     |-Type(928,931)
                       |-Reference(928,931)
                         |-QName(928,931)
@@ -527,26 +469,21 @@
                   |-QName(937,957)
                     |-NameIdentifier(937,944)
                       |-Identifier=support
-                    |-Operator=::
                     |-NameIdentifier(946,949)
                       |-Identifier=env
-                    |-Operator=::
                     |-NameIdentifier(951,957)
                       |-Identifier=printf
                 |-CallArguments(957,1004)
                   |-StringLiteral="  expected LSB: %X"
                   |-AsExpression(980,1003)
                     |-ParenExpression(980,996)
-                      |-ShiftExpression(981,995)
+                      |-BinaryOpExpression(981,995)
                         |-Reference(981,989)
                           |-QName(981,989)
                             |-NameIdentifier(981,989)
                               |-Identifier=expected
-                        |-ShiftOperator(990,992)
-                          |-Operator=>>
+                        |-Operator=>>
                         |-NumberLiteral=32
-                    |-AsKeyword(997,1000)
-                      |-Keyword=as
                     |-Type(1000,1003)
                       |-Reference(1000,1003)
                         |-QName(1000,1003)
@@ -557,44 +494,38 @@
                   |-QName(1009,1029)
                     |-NameIdentifier(1009,1016)
                       |-Identifier=support
-                    |-Operator=::
                     |-NameIdentifier(1018,1021)
                       |-Identifier=env
-                    |-Operator=::
                     |-NameIdentifier(1023,1029)
                       |-Identifier=printf
                 |-CallArguments(1029,1070)
                   |-StringLiteral="  given MSB: %X"
                   |-ParenExpression(1049,1069)
-                    |-BitAndExpression(1050,1068)
+                    |-BinaryOpExpression(1050,1068)
                       |-Reference(1050,1055)
                         |-QName(1050,1055)
                           |-NameIdentifier(1050,1055)
                             |-Identifier=given
-                      |-BitAndOperator(1056,1057)
-                        |-Operator=&
+                      |-Operator=&
                       |-NumberLiteral=0xFFFFFFFF
               |-AtomicExpression(1075,1142)
                 |-Reference(1075,1095)
                   |-QName(1075,1095)
                     |-NameIdentifier(1075,1082)
                       |-Identifier=support
-                    |-Operator=::
                     |-NameIdentifier(1084,1087)
                       |-Identifier=env
-                    |-Operator=::
                     |-NameIdentifier(1089,1095)
                       |-Identifier=printf
                 |-CallArguments(1095,1142)
                   |-StringLiteral="  expected MSB: %X"
                   |-ParenExpression(1118,1141)
-                    |-BitAndExpression(1119,1140)
+                    |-BinaryOpExpression(1119,1140)
                       |-Reference(1119,1127)
                         |-QName(1119,1127)
                           |-NameIdentifier(1119,1127)
                             |-Identifier=expected
-                      |-BitAndOperator(1128,1129)
-                        |-Operator=&
+                      |-Operator=&
                       |-NumberLiteral=0xFFFFFFFF
   |-FunctionDirective(1150,1577)
     |-Decorators(1150,1150)
@@ -604,46 +535,40 @@
         |-NameIdentifier(1154,1163)
           |-Identifier=mustEqual
       |-FunctionParamsList(1163,1207)
-        |-ParameterList(1164,1206)
-          |-Parameter(1164,1174)
-            |-NameIdentifier(1164,1169)
-              |-Identifier=given
-            |-OfType(1169,1174)
-              |-Operator=:
-              |-Type(1171,1174)
-                |-Reference(1171,1174)
-                  |-QName(1171,1174)
-                    |-NameIdentifier(1171,1174)
-                      |-Identifier=i64
-          |-Parameter(1176,1189)
-            |-NameIdentifier(1176,1184)
-              |-Identifier=expected
-            |-OfType(1184,1189)
-              |-Operator=:
-              |-Type(1186,1189)
-                |-Reference(1186,1189)
-                  |-QName(1186,1189)
-                    |-NameIdentifier(1186,1189)
-                      |-Identifier=i64
-          |-Parameter(1191,1206)
-            |-NameIdentifier(1191,1198)
-              |-Identifier=message
-            |-OfType(1198,1206)
-              |-Operator=:
-              |-Type(1200,1206)
-                |-Reference(1200,1206)
-                  |-QName(1200,1206)
-                    |-NameIdentifier(1200,1206)
-                      |-Identifier=string
+        |-Parameter(1164,1174)
+          |-NameIdentifier(1164,1169)
+            |-Identifier=given
+          |-OfType(1169,1174)
+            |-Type(1171,1174)
+              |-Reference(1171,1174)
+                |-QName(1171,1174)
+                  |-NameIdentifier(1171,1174)
+                    |-Identifier=i64
+        |-Parameter(1176,1189)
+          |-NameIdentifier(1176,1184)
+            |-Identifier=expected
+          |-OfType(1184,1189)
+            |-Type(1186,1189)
+              |-Reference(1186,1189)
+                |-QName(1186,1189)
+                  |-NameIdentifier(1186,1189)
+                    |-Identifier=i64
+        |-Parameter(1191,1206)
+          |-NameIdentifier(1191,1198)
+            |-Identifier=message
+          |-OfType(1198,1206)
+            |-Type(1200,1206)
+              |-Reference(1200,1206)
+                |-QName(1200,1206)
+                  |-NameIdentifier(1200,1206)
+                    |-Identifier=string
       |-OfType(1207,1214)
-        |-Operator=:
         |-Type(1209,1213)
           |-Reference(1209,1213)
             |-QName(1209,1213)
               |-NameIdentifier(1209,1213)
                 |-Identifier=void
       |-FunAssignExpression(1214,1577)
-        |-Operator==
         |-CodeBlock(1216,1577)
           |-AtomicExpression(1220,1254)
             |-Reference(1220,1226)
@@ -651,13 +576,12 @@
                 |-NameIdentifier(1220,1226)
                   |-Identifier=verify
             |-CallArguments(1226,1254)
-              |-EqExpression(1227,1244)
+              |-BinaryOpExpression(1227,1244)
                 |-Reference(1227,1232)
                   |-QName(1227,1232)
                     |-NameIdentifier(1227,1232)
                       |-Identifier=given
-                |-EqOperator(1233,1235)
-                  |-Operator===
+                |-Operator===
                 |-Reference(1236,1244)
                   |-QName(1236,1244)
                     |-NameIdentifier(1236,1244)
@@ -668,13 +592,12 @@
                     |-Identifier=message
           |-IfExpression(1257,1575)
             |-IfBody(1260,1279)
-              |-EqExpression(1261,1278)
+              |-BinaryOpExpression(1261,1278)
                 |-Reference(1261,1266)
                   |-QName(1261,1266)
                     |-NameIdentifier(1261,1266)
                       |-Identifier=given
-                |-EqOperator(1267,1269)
-                  |-Operator=!=
+                |-Operator=!=
                 |-Reference(1270,1278)
                   |-QName(1270,1278)
                     |-NameIdentifier(1270,1278)
@@ -685,34 +608,27 @@
                   |-QName(1286,1306)
                     |-NameIdentifier(1286,1293)
                       |-Identifier=support
-                    |-Operator=::
                     |-NameIdentifier(1295,1298)
                       |-Identifier=env
-                    |-Operator=::
                     |-NameIdentifier(1300,1306)
                       |-Identifier=printf
                 |-CallArguments(1306,1354)
                   |-StringLiteral="  given LSB: %X"
                   |-AsExpression(1326,1353)
                     |-ParenExpression(1326,1346)
-                      |-ShiftExpression(1327,1345)
+                      |-BinaryOpExpression(1327,1345)
                         |-AsExpression(1327,1339)
                           |-Reference(1327,1332)
                             |-QName(1327,1332)
                               |-NameIdentifier(1327,1332)
                                 |-Identifier=given
-                          |-AsKeyword(1333,1336)
-                            |-Keyword=as
                           |-Type(1336,1339)
                             |-Reference(1336,1339)
                               |-QName(1336,1339)
                                 |-NameIdentifier(1336,1339)
                                   |-Identifier=u64
-                        |-ShiftOperator(1340,1342)
-                          |-Operator=>>
+                        |-Operator=>>
                         |-NumberLiteral=32
-                    |-AsKeyword(1347,1350)
-                      |-Keyword=as
                     |-Type(1350,1353)
                       |-Reference(1350,1353)
                         |-QName(1350,1353)
@@ -723,34 +639,27 @@
                   |-QName(1359,1379)
                     |-NameIdentifier(1359,1366)
                       |-Identifier=support
-                    |-Operator=::
                     |-NameIdentifier(1368,1371)
                       |-Identifier=env
-                    |-Operator=::
                     |-NameIdentifier(1373,1379)
                       |-Identifier=printf
                 |-CallArguments(1379,1433)
                   |-StringLiteral="  expected LSB: %X"
                   |-AsExpression(1402,1432)
                     |-ParenExpression(1402,1425)
-                      |-ShiftExpression(1403,1424)
+                      |-BinaryOpExpression(1403,1424)
                         |-AsExpression(1403,1418)
                           |-Reference(1403,1411)
                             |-QName(1403,1411)
                               |-NameIdentifier(1403,1411)
                                 |-Identifier=expected
-                          |-AsKeyword(1412,1415)
-                            |-Keyword=as
                           |-Type(1415,1418)
                             |-Reference(1415,1418)
                               |-QName(1415,1418)
                                 |-NameIdentifier(1415,1418)
                                   |-Identifier=u64
-                        |-ShiftOperator(1419,1421)
-                          |-Operator=>>
+                        |-Operator=>>
                         |-NumberLiteral=32
-                    |-AsKeyword(1426,1429)
-                      |-Keyword=as
                     |-Type(1429,1432)
                       |-Reference(1429,1432)
                         |-QName(1429,1432)
@@ -761,44 +670,38 @@
                   |-QName(1438,1458)
                     |-NameIdentifier(1438,1445)
                       |-Identifier=support
-                    |-Operator=::
                     |-NameIdentifier(1447,1450)
                       |-Identifier=env
-                    |-Operator=::
                     |-NameIdentifier(1452,1458)
                       |-Identifier=printf
                 |-CallArguments(1458,1499)
                   |-StringLiteral="  given MSB: %X"
                   |-ParenExpression(1478,1498)
-                    |-BitAndExpression(1479,1497)
+                    |-BinaryOpExpression(1479,1497)
                       |-Reference(1479,1484)
                         |-QName(1479,1484)
                           |-NameIdentifier(1479,1484)
                             |-Identifier=given
-                      |-BitAndOperator(1485,1486)
-                        |-Operator=&
+                      |-Operator=&
                       |-NumberLiteral=0xFFFFFFFF
               |-AtomicExpression(1504,1571)
                 |-Reference(1504,1524)
                   |-QName(1504,1524)
                     |-NameIdentifier(1504,1511)
                       |-Identifier=support
-                    |-Operator=::
                     |-NameIdentifier(1513,1516)
                       |-Identifier=env
-                    |-Operator=::
                     |-NameIdentifier(1518,1524)
                       |-Identifier=printf
                 |-CallArguments(1524,1571)
                   |-StringLiteral="  expected MSB: %X"
                   |-ParenExpression(1547,1570)
-                    |-BitAndExpression(1548,1569)
+                    |-BinaryOpExpression(1548,1569)
                       |-Reference(1548,1556)
                         |-QName(1548,1556)
                           |-NameIdentifier(1548,1556)
                             |-Identifier=expected
-                      |-BitAndOperator(1557,1558)
-                        |-Operator=&
+                      |-Operator=&
                       |-NumberLiteral=0xFFFFFFFF
   |-FunctionDirective(1579,1816)
     |-Decorators(1579,1579)
@@ -808,46 +711,40 @@
         |-NameIdentifier(1583,1592)
           |-Identifier=mustEqual
       |-FunctionParamsList(1592,1636)
-        |-ParameterList(1593,1635)
-          |-Parameter(1593,1603)
-            |-NameIdentifier(1593,1598)
-              |-Identifier=given
-            |-OfType(1598,1603)
-              |-Operator=:
-              |-Type(1600,1603)
-                |-Reference(1600,1603)
-                  |-QName(1600,1603)
-                    |-NameIdentifier(1600,1603)
-                      |-Identifier=u32
-          |-Parameter(1605,1618)
-            |-NameIdentifier(1605,1613)
-              |-Identifier=expected
-            |-OfType(1613,1618)
-              |-Operator=:
-              |-Type(1615,1618)
-                |-Reference(1615,1618)
-                  |-QName(1615,1618)
-                    |-NameIdentifier(1615,1618)
-                      |-Identifier=u32
-          |-Parameter(1620,1635)
-            |-NameIdentifier(1620,1627)
-              |-Identifier=message
-            |-OfType(1627,1635)
-              |-Operator=:
-              |-Type(1629,1635)
-                |-Reference(1629,1635)
-                  |-QName(1629,1635)
-                    |-NameIdentifier(1629,1635)
-                      |-Identifier=string
+        |-Parameter(1593,1603)
+          |-NameIdentifier(1593,1598)
+            |-Identifier=given
+          |-OfType(1598,1603)
+            |-Type(1600,1603)
+              |-Reference(1600,1603)
+                |-QName(1600,1603)
+                  |-NameIdentifier(1600,1603)
+                    |-Identifier=u32
+        |-Parameter(1605,1618)
+          |-NameIdentifier(1605,1613)
+            |-Identifier=expected
+          |-OfType(1613,1618)
+            |-Type(1615,1618)
+              |-Reference(1615,1618)
+                |-QName(1615,1618)
+                  |-NameIdentifier(1615,1618)
+                    |-Identifier=u32
+        |-Parameter(1620,1635)
+          |-NameIdentifier(1620,1627)
+            |-Identifier=message
+          |-OfType(1627,1635)
+            |-Type(1629,1635)
+              |-Reference(1629,1635)
+                |-QName(1629,1635)
+                  |-NameIdentifier(1629,1635)
+                    |-Identifier=string
       |-OfType(1636,1643)
-        |-Operator=:
         |-Type(1638,1642)
           |-Reference(1638,1642)
             |-QName(1638,1642)
               |-NameIdentifier(1638,1642)
                 |-Identifier=void
       |-FunAssignExpression(1643,1816)
-        |-Operator==
         |-CodeBlock(1645,1816)
           |-AtomicExpression(1649,1683)
             |-Reference(1649,1655)
@@ -855,13 +752,12 @@
                 |-NameIdentifier(1649,1655)
                   |-Identifier=verify
             |-CallArguments(1655,1683)
-              |-EqExpression(1656,1673)
+              |-BinaryOpExpression(1656,1673)
                 |-Reference(1656,1661)
                   |-QName(1656,1661)
                     |-NameIdentifier(1656,1661)
                       |-Identifier=given
-                |-EqOperator(1662,1664)
-                  |-Operator===
+                |-Operator===
                 |-Reference(1665,1673)
                   |-QName(1665,1673)
                     |-NameIdentifier(1665,1673)
@@ -872,13 +768,12 @@
                     |-Identifier=message
           |-IfExpression(1686,1814)
             |-IfBody(1689,1708)
-              |-EqExpression(1690,1707)
+              |-BinaryOpExpression(1690,1707)
                 |-Reference(1690,1695)
                   |-QName(1690,1695)
                     |-NameIdentifier(1690,1695)
                       |-Identifier=given
-                |-EqOperator(1696,1698)
-                  |-Operator=!=
+                |-Operator=!=
                 |-Reference(1699,1707)
                   |-QName(1699,1707)
                     |-NameIdentifier(1699,1707)
@@ -889,10 +784,8 @@
                   |-QName(1715,1735)
                     |-NameIdentifier(1715,1722)
                       |-Identifier=support
-                    |-Operator=::
                     |-NameIdentifier(1724,1727)
                       |-Identifier=env
-                    |-Operator=::
                     |-NameIdentifier(1729,1735)
                       |-Identifier=printf
                 |-CallArguments(1735,1757)
@@ -906,10 +799,8 @@
                   |-QName(1762,1782)
                     |-NameIdentifier(1762,1769)
                       |-Identifier=support
-                    |-Operator=::
                     |-NameIdentifier(1771,1774)
                       |-Identifier=env
-                    |-Operator=::
                     |-NameIdentifier(1776,1782)
                       |-Identifier=printf
                 |-CallArguments(1782,1810)
@@ -926,46 +817,40 @@
         |-NameIdentifier(1821,1830)
           |-Identifier=mustEqual
       |-FunctionParamsList(1830,1874)
-        |-ParameterList(1831,1873)
-          |-Parameter(1831,1841)
-            |-NameIdentifier(1831,1836)
-              |-Identifier=given
-            |-OfType(1836,1841)
-              |-Operator=:
-              |-Type(1838,1841)
-                |-Reference(1838,1841)
-                  |-QName(1838,1841)
-                    |-NameIdentifier(1838,1841)
-                      |-Identifier=i32
-          |-Parameter(1843,1856)
-            |-NameIdentifier(1843,1851)
-              |-Identifier=expected
-            |-OfType(1851,1856)
-              |-Operator=:
-              |-Type(1853,1856)
-                |-Reference(1853,1856)
-                  |-QName(1853,1856)
-                    |-NameIdentifier(1853,1856)
-                      |-Identifier=i32
-          |-Parameter(1858,1873)
-            |-NameIdentifier(1858,1865)
-              |-Identifier=message
-            |-OfType(1865,1873)
-              |-Operator=:
-              |-Type(1867,1873)
-                |-Reference(1867,1873)
-                  |-QName(1867,1873)
-                    |-NameIdentifier(1867,1873)
-                      |-Identifier=string
+        |-Parameter(1831,1841)
+          |-NameIdentifier(1831,1836)
+            |-Identifier=given
+          |-OfType(1836,1841)
+            |-Type(1838,1841)
+              |-Reference(1838,1841)
+                |-QName(1838,1841)
+                  |-NameIdentifier(1838,1841)
+                    |-Identifier=i32
+        |-Parameter(1843,1856)
+          |-NameIdentifier(1843,1851)
+            |-Identifier=expected
+          |-OfType(1851,1856)
+            |-Type(1853,1856)
+              |-Reference(1853,1856)
+                |-QName(1853,1856)
+                  |-NameIdentifier(1853,1856)
+                    |-Identifier=i32
+        |-Parameter(1858,1873)
+          |-NameIdentifier(1858,1865)
+            |-Identifier=message
+          |-OfType(1865,1873)
+            |-Type(1867,1873)
+              |-Reference(1867,1873)
+                |-QName(1867,1873)
+                  |-NameIdentifier(1867,1873)
+                    |-Identifier=string
       |-OfType(1874,1881)
-        |-Operator=:
         |-Type(1876,1880)
           |-Reference(1876,1880)
             |-QName(1876,1880)
               |-NameIdentifier(1876,1880)
                 |-Identifier=void
       |-FunAssignExpression(1881,2054)
-        |-Operator==
         |-CodeBlock(1883,2054)
           |-AtomicExpression(1887,1921)
             |-Reference(1887,1893)
@@ -973,13 +858,12 @@
                 |-NameIdentifier(1887,1893)
                   |-Identifier=verify
             |-CallArguments(1893,1921)
-              |-EqExpression(1894,1911)
+              |-BinaryOpExpression(1894,1911)
                 |-Reference(1894,1899)
                   |-QName(1894,1899)
                     |-NameIdentifier(1894,1899)
                       |-Identifier=given
-                |-EqOperator(1900,1902)
-                  |-Operator===
+                |-Operator===
                 |-Reference(1903,1911)
                   |-QName(1903,1911)
                     |-NameIdentifier(1903,1911)
@@ -990,13 +874,12 @@
                     |-Identifier=message
           |-IfExpression(1924,2052)
             |-IfBody(1927,1946)
-              |-EqExpression(1928,1945)
+              |-BinaryOpExpression(1928,1945)
                 |-Reference(1928,1933)
                   |-QName(1928,1933)
                     |-NameIdentifier(1928,1933)
                       |-Identifier=given
-                |-EqOperator(1934,1936)
-                  |-Operator=!=
+                |-Operator=!=
                 |-Reference(1937,1945)
                   |-QName(1937,1945)
                     |-NameIdentifier(1937,1945)
@@ -1007,10 +890,8 @@
                   |-QName(1953,1973)
                     |-NameIdentifier(1953,1960)
                       |-Identifier=support
-                    |-Operator=::
                     |-NameIdentifier(1962,1965)
                       |-Identifier=env
-                    |-Operator=::
                     |-NameIdentifier(1967,1973)
                       |-Identifier=printf
                 |-CallArguments(1973,1995)
@@ -1024,10 +905,8 @@
                   |-QName(2000,2020)
                     |-NameIdentifier(2000,2007)
                       |-Identifier=support
-                    |-Operator=::
                     |-NameIdentifier(2009,2012)
                       |-Identifier=env
-                    |-Operator=::
                     |-NameIdentifier(2014,2020)
                       |-Identifier=printf
                 |-CallArguments(2020,2048)
@@ -1044,46 +923,40 @@
         |-NameIdentifier(2060,2069)
           |-Identifier=mustEqual
       |-FunctionParamsList(2069,2121)
-        |-ParameterList(2070,2120)
-          |-Parameter(2070,2084)
-            |-NameIdentifier(2070,2075)
-              |-Identifier=given
-            |-OfType(2075,2084)
-              |-Operator=:
-              |-Type(2077,2084)
-                |-Reference(2077,2084)
-                  |-QName(2077,2084)
-                    |-NameIdentifier(2077,2084)
-                      |-Identifier=boolean
-          |-Parameter(2086,2103)
-            |-NameIdentifier(2086,2094)
-              |-Identifier=expected
-            |-OfType(2094,2103)
-              |-Operator=:
-              |-Type(2096,2103)
-                |-Reference(2096,2103)
-                  |-QName(2096,2103)
-                    |-NameIdentifier(2096,2103)
-                      |-Identifier=boolean
-          |-Parameter(2105,2120)
-            |-NameIdentifier(2105,2112)
-              |-Identifier=message
-            |-OfType(2112,2120)
-              |-Operator=:
-              |-Type(2114,2120)
-                |-Reference(2114,2120)
-                  |-QName(2114,2120)
-                    |-NameIdentifier(2114,2120)
-                      |-Identifier=string
+        |-Parameter(2070,2084)
+          |-NameIdentifier(2070,2075)
+            |-Identifier=given
+          |-OfType(2075,2084)
+            |-Type(2077,2084)
+              |-Reference(2077,2084)
+                |-QName(2077,2084)
+                  |-NameIdentifier(2077,2084)
+                    |-Identifier=boolean
+        |-Parameter(2086,2103)
+          |-NameIdentifier(2086,2094)
+            |-Identifier=expected
+          |-OfType(2094,2103)
+            |-Type(2096,2103)
+              |-Reference(2096,2103)
+                |-QName(2096,2103)
+                  |-NameIdentifier(2096,2103)
+                    |-Identifier=boolean
+        |-Parameter(2105,2120)
+          |-NameIdentifier(2105,2112)
+            |-Identifier=message
+          |-OfType(2112,2120)
+            |-Type(2114,2120)
+              |-Reference(2114,2120)
+                |-QName(2114,2120)
+                  |-NameIdentifier(2114,2120)
+                    |-Identifier=string
       |-OfType(2121,2128)
-        |-Operator=:
         |-Type(2123,2127)
           |-Reference(2123,2127)
             |-QName(2123,2127)
               |-NameIdentifier(2123,2127)
                 |-Identifier=void
       |-FunAssignExpression(2128,2170)
-        |-Operator==
         |-CodeBlock(2130,2170)
           |-AtomicExpression(2134,2168)
             |-Reference(2134,2140)
@@ -1091,13 +964,12 @@
                 |-NameIdentifier(2134,2140)
                   |-Identifier=verify
             |-CallArguments(2140,2168)
-              |-EqExpression(2141,2158)
+              |-BinaryOpExpression(2141,2158)
                 |-Reference(2141,2146)
                   |-QName(2141,2146)
                     |-NameIdentifier(2141,2146)
                       |-Identifier=given
-                |-EqOperator(2147,2149)
-                  |-Operator===
+                |-Operator===
                 |-Reference(2150,2158)
                   |-QName(2150,2158)
                     |-NameIdentifier(2150,2158)
@@ -1114,46 +986,40 @@
         |-NameIdentifier(2175,2184)
           |-Identifier=mustEqual
       |-FunctionParamsList(2184,2234)
-        |-ParameterList(2185,2233)
-          |-Parameter(2185,2198)
-            |-NameIdentifier(2185,2190)
-              |-Identifier=given
-            |-OfType(2190,2198)
-              |-Operator=:
-              |-Type(2192,2198)
-                |-Reference(2192,2198)
-                  |-QName(2192,2198)
-                    |-NameIdentifier(2192,2198)
-                      |-Identifier=string
-          |-Parameter(2200,2216)
-            |-NameIdentifier(2200,2208)
-              |-Identifier=expected
-            |-OfType(2208,2216)
-              |-Operator=:
-              |-Type(2210,2216)
-                |-Reference(2210,2216)
-                  |-QName(2210,2216)
-                    |-NameIdentifier(2210,2216)
-                      |-Identifier=string
-          |-Parameter(2218,2233)
-            |-NameIdentifier(2218,2225)
-              |-Identifier=message
-            |-OfType(2225,2233)
-              |-Operator=:
-              |-Type(2227,2233)
-                |-Reference(2227,2233)
-                  |-QName(2227,2233)
-                    |-NameIdentifier(2227,2233)
-                      |-Identifier=string
+        |-Parameter(2185,2198)
+          |-NameIdentifier(2185,2190)
+            |-Identifier=given
+          |-OfType(2190,2198)
+            |-Type(2192,2198)
+              |-Reference(2192,2198)
+                |-QName(2192,2198)
+                  |-NameIdentifier(2192,2198)
+                    |-Identifier=string
+        |-Parameter(2200,2216)
+          |-NameIdentifier(2200,2208)
+            |-Identifier=expected
+          |-OfType(2208,2216)
+            |-Type(2210,2216)
+              |-Reference(2210,2216)
+                |-QName(2210,2216)
+                  |-NameIdentifier(2210,2216)
+                    |-Identifier=string
+        |-Parameter(2218,2233)
+          |-NameIdentifier(2218,2225)
+            |-Identifier=message
+          |-OfType(2225,2233)
+            |-Type(2227,2233)
+              |-Reference(2227,2233)
+                |-QName(2227,2233)
+                  |-NameIdentifier(2227,2233)
+                    |-Identifier=string
       |-OfType(2234,2241)
-        |-Operator=:
         |-Type(2236,2240)
           |-Reference(2236,2240)
             |-QName(2236,2240)
               |-NameIdentifier(2236,2240)
                 |-Identifier=void
       |-FunAssignExpression(2241,2414)
-        |-Operator==
         |-CodeBlock(2243,2414)
           |-AtomicExpression(2247,2281)
             |-Reference(2247,2253)
@@ -1161,13 +1027,12 @@
                 |-NameIdentifier(2247,2253)
                   |-Identifier=verify
             |-CallArguments(2253,2281)
-              |-EqExpression(2254,2271)
+              |-BinaryOpExpression(2254,2271)
                 |-Reference(2254,2259)
                   |-QName(2254,2259)
                     |-NameIdentifier(2254,2259)
                       |-Identifier=given
-                |-EqOperator(2260,2262)
-                  |-Operator===
+                |-Operator===
                 |-Reference(2263,2271)
                   |-QName(2263,2271)
                     |-NameIdentifier(2263,2271)
@@ -1178,13 +1043,12 @@
                     |-Identifier=message
           |-IfExpression(2284,2412)
             |-IfBody(2287,2306)
-              |-EqExpression(2288,2305)
+              |-BinaryOpExpression(2288,2305)
                 |-Reference(2288,2293)
                   |-QName(2288,2293)
                     |-NameIdentifier(2288,2293)
                       |-Identifier=given
-                |-EqOperator(2294,2296)
-                  |-Operator=!=
+                |-Operator=!=
                 |-Reference(2297,2305)
                   |-QName(2297,2305)
                     |-NameIdentifier(2297,2305)
@@ -1195,17 +1059,14 @@
                   |-QName(2313,2333)
                     |-NameIdentifier(2313,2320)
                       |-Identifier=support
-                    |-Operator=::
                     |-NameIdentifier(2322,2325)
                       |-Identifier=env
-                    |-Operator=::
                     |-NameIdentifier(2327,2333)
                       |-Identifier=printf
                 |-CallArguments(2333,2355)
-                  |-AddExpression(2334,2354)
+                  |-BinaryOpExpression(2334,2354)
                     |-StringLiteral="  given: "
-                    |-AddOperator(2346,2348)
-                      |-Operator=++
+                    |-Operator=++
                     |-Reference(2349,2354)
                       |-QName(2349,2354)
                         |-NameIdentifier(2349,2354)
@@ -1215,17 +1076,14 @@
                   |-QName(2360,2380)
                     |-NameIdentifier(2360,2367)
                       |-Identifier=support
-                    |-Operator=::
                     |-NameIdentifier(2369,2372)
                       |-Identifier=env
-                    |-Operator=::
                     |-NameIdentifier(2374,2380)
                       |-Identifier=printf
                 |-CallArguments(2380,2408)
-                  |-AddExpression(2381,2407)
+                  |-BinaryOpExpression(2381,2407)
                     |-StringLiteral="  expected: "
-                    |-AddOperator(2396,2398)
-                      |-Operator=++
+                    |-Operator=++
                     |-Reference(2399,2407)
                       |-QName(2399,2407)
                         |-NameIdentifier(2399,2407)
@@ -1241,17 +1099,14 @@
         |-NameIdentifier(2457,2476)
           |-Identifier=getLastErrorMessage
       |-FunctionParamsList(2476,2478)
-        |-ParameterList(2477,2477)
-          <Rule0>
+        <Rule0>
       |-OfType(2478,2484)
-        |-Operator=:
         |-Type(2480,2483)
           |-Reference(2480,2483)
             |-QName(2480,2483)
               |-NameIdentifier(2480,2483)
                 |-Identifier=u32
       |-FunAssignExpression(2484,2591)
-        |-Operator==
         |-CodeBlock(2486,2591)
           |-MatchExpression(2490,2589)
             |-Reference(2496,2512)
@@ -1262,13 +1117,11 @@
               |-CaseIs(2519,2564)
                 |-NameIdentifier(2524,2525)
                   |-Identifier=m
-                |-Keyword=is
                 |-Reference(2529,2536)
                   |-QName(2529,2536)
                     |-NameIdentifier(2529,2536)
                       |-Identifier=Message
-                |-Operator=->
-                |-AddExpression(2540,2564)
+                |-BinaryOpExpression(2540,2564)
                   |-AtomicExpression(2540,2553)
                     |-Reference(2540,2541)
                       |-QName(2540,2541)
@@ -1276,31 +1129,25 @@
                           |-Identifier=m
                     |-MemberExpression(2541,2549)
                       |-BinMemberOperator(2541,2542)
-                        |-Operator=.
+                        <Rule0>
                       |-NameIdentifier(2542,2549)
                         |-Identifier=message
                     |-MemberExpression(2549,2553)
                       |-BinMemberOperator(2549,2550)
-                        |-Operator=.
+                        <Rule0>
                       |-NameIdentifier(2550,2553)
                         |-Identifier=ptr
-                  |-AddOperator(2554,2555)
-                    |-Operator=-
+                  |-Operator=-
                   |-AsExpression(2556,2564)
                     |-NumberLiteral=4
-                    |-AsKeyword(2558,2561)
-                      |-Keyword=as
                     |-Type(2561,2564)
                       |-Reference(2561,2564)
                         |-QName(2561,2564)
                           |-NameIdentifier(2561,2564)
                             |-Identifier=u32
               |-CaseElse(2569,2585)
-                |-Operator=->
                 |-AsExpression(2577,2585)
                   |-NumberLiteral=0
-                  |-AsKeyword(2579,2582)
-                    |-Keyword=as
                   |-Type(2582,2585)
                     |-Reference(2582,2585)
                       |-QName(2582,2585)
@@ -1318,26 +1165,22 @@
         |-NameIdentifier(2628,2639)
           |-Identifier=printNumber
       |-FunctionParamsList(2639,2652)
-        |-ParameterList(2640,2651)
-          |-Parameter(2640,2651)
-            |-NameIdentifier(2640,2646)
-              |-Identifier=number
-            |-OfType(2646,2651)
-              |-Operator=:
-              |-Type(2648,2651)
-                |-Reference(2648,2651)
-                  |-QName(2648,2651)
-                    |-NameIdentifier(2648,2651)
-                      |-Identifier=f32
+        |-Parameter(2640,2651)
+          |-NameIdentifier(2640,2646)
+            |-Identifier=number
+          |-OfType(2646,2651)
+            |-Type(2648,2651)
+              |-Reference(2648,2651)
+                |-QName(2648,2651)
+                  |-NameIdentifier(2648,2651)
+                    |-Identifier=f32
       |-OfType(2652,2659)
-        |-Operator=:
         |-Type(2654,2658)
           |-Reference(2654,2658)
             |-QName(2654,2658)
               |-NameIdentifier(2654,2658)
                 |-Identifier=void
       |-FunAssignExpression(2659,2668)
-        |-Operator==
         |-AtomicExpression(2661,2668)
           |-Reference(2661,2666)
             |-QName(2661,2666)
@@ -1357,26 +1200,22 @@
         |-NameIdentifier(2704,2715)
           |-Identifier=printNumber
       |-FunctionParamsList(2715,2728)
-        |-ParameterList(2716,2727)
-          |-Parameter(2716,2727)
-            |-NameIdentifier(2716,2722)
-              |-Identifier=number
-            |-OfType(2722,2727)
-              |-Operator=:
-              |-Type(2724,2727)
-                |-Reference(2724,2727)
-                  |-QName(2724,2727)
-                    |-NameIdentifier(2724,2727)
-                      |-Identifier=f64
+        |-Parameter(2716,2727)
+          |-NameIdentifier(2716,2722)
+            |-Identifier=number
+          |-OfType(2722,2727)
+            |-Type(2724,2727)
+              |-Reference(2724,2727)
+                |-QName(2724,2727)
+                  |-NameIdentifier(2724,2727)
+                    |-Identifier=f64
       |-OfType(2728,2735)
-        |-Operator=:
         |-Type(2730,2734)
           |-Reference(2730,2734)
             |-QName(2730,2734)
               |-NameIdentifier(2730,2734)
                 |-Identifier=void
       |-FunAssignExpression(2735,2744)
-        |-Operator==
         |-AtomicExpression(2737,2744)
           |-Reference(2737,2742)
             |-QName(2737,2742)
@@ -1396,26 +1235,22 @@
         |-NameIdentifier(2780,2791)
           |-Identifier=printNumber
       |-FunctionParamsList(2791,2804)
-        |-ParameterList(2792,2803)
-          |-Parameter(2792,2803)
-            |-NameIdentifier(2792,2798)
-              |-Identifier=number
-            |-OfType(2798,2803)
-              |-Operator=:
-              |-Type(2800,2803)
-                |-Reference(2800,2803)
-                  |-QName(2800,2803)
-                    |-NameIdentifier(2800,2803)
-                      |-Identifier=u32
+        |-Parameter(2792,2803)
+          |-NameIdentifier(2792,2798)
+            |-Identifier=number
+          |-OfType(2798,2803)
+            |-Type(2800,2803)
+              |-Reference(2800,2803)
+                |-QName(2800,2803)
+                  |-NameIdentifier(2800,2803)
+                    |-Identifier=u32
       |-OfType(2804,2811)
-        |-Operator=:
         |-Type(2806,2810)
           |-Reference(2806,2810)
             |-QName(2806,2810)
               |-NameIdentifier(2806,2810)
                 |-Identifier=void
       |-FunAssignExpression(2811,2820)
-        |-Operator==
         |-AtomicExpression(2813,2820)
           |-Reference(2813,2818)
             |-QName(2813,2818)
@@ -1435,26 +1270,22 @@
         |-NameIdentifier(2856,2867)
           |-Identifier=printNumber
       |-FunctionParamsList(2867,2880)
-        |-ParameterList(2868,2879)
-          |-Parameter(2868,2879)
-            |-NameIdentifier(2868,2874)
-              |-Identifier=number
-            |-OfType(2874,2879)
-              |-Operator=:
-              |-Type(2876,2879)
-                |-Reference(2876,2879)
-                  |-QName(2876,2879)
-                    |-NameIdentifier(2876,2879)
-                      |-Identifier=i32
+        |-Parameter(2868,2879)
+          |-NameIdentifier(2868,2874)
+            |-Identifier=number
+          |-OfType(2874,2879)
+            |-Type(2876,2879)
+              |-Reference(2876,2879)
+                |-QName(2876,2879)
+                  |-NameIdentifier(2876,2879)
+                    |-Identifier=i32
       |-OfType(2880,2887)
-        |-Operator=:
         |-Type(2882,2886)
           |-Reference(2882,2886)
             |-QName(2882,2886)
               |-NameIdentifier(2882,2886)
                 |-Identifier=void
       |-FunAssignExpression(2887,2896)
-        |-Operator==
         |-AtomicExpression(2889,2896)
           |-Reference(2889,2894)
             |-QName(2889,2894)
@@ -1474,26 +1305,22 @@
         |-NameIdentifier(2933,2944)
           |-Identifier=printString
       |-FunctionParamsList(2944,2957)
-        |-ParameterList(2945,2956)
-          |-Parameter(2945,2956)
-            |-NameIdentifier(2945,2951)
-              |-Identifier=number
-            |-OfType(2951,2956)
-              |-Operator=:
-              |-Type(2953,2956)
-                |-Reference(2953,2956)
-                  |-QName(2953,2956)
-                    |-NameIdentifier(2953,2956)
-                      |-Identifier=u32
+        |-Parameter(2945,2956)
+          |-NameIdentifier(2945,2951)
+            |-Identifier=number
+          |-OfType(2951,2956)
+            |-Type(2953,2956)
+              |-Reference(2953,2956)
+                |-QName(2953,2956)
+                  |-NameIdentifier(2953,2956)
+                    |-Identifier=u32
       |-OfType(2957,2964)
-        |-Operator=:
         |-Type(2959,2963)
           |-Reference(2959,2963)
             |-QName(2959,2963)
               |-NameIdentifier(2959,2963)
                 |-Identifier=void
       |-FunAssignExpression(2964,2973)
-        |-Operator==
         |-AtomicExpression(2966,2973)
           |-Reference(2966,2971)
             |-QName(2966,2971)
@@ -1509,33 +1336,29 @@
         |-NameIdentifier(2978,2989)
           |-Identifier=printString
       |-FunctionParamsList(2989,3002)
-        |-ParameterList(2990,3001)
-          |-Parameter(2990,3001)
-            |-NameIdentifier(2990,2993)
-              |-Identifier=str
-            |-OfType(2993,3001)
-              |-Operator=:
-              |-Type(2995,3001)
-                |-Reference(2995,3001)
-                  |-QName(2995,3001)
-                    |-NameIdentifier(2995,3001)
-                      |-Identifier=string
+        |-Parameter(2990,3001)
+          |-NameIdentifier(2990,2993)
+            |-Identifier=str
+          |-OfType(2993,3001)
+            |-Type(2995,3001)
+              |-Reference(2995,3001)
+                |-QName(2995,3001)
+                  |-NameIdentifier(2995,3001)
+                    |-Identifier=string
       |-OfType(3002,3009)
-        |-Operator=:
         |-Type(3004,3008)
           |-Reference(3004,3008)
             |-QName(3004,3008)
               |-NameIdentifier(3004,3008)
                 |-Identifier=void
       |-FunAssignExpression(3009,3042)
-        |-Operator==
         |-AtomicExpression(3011,3042)
           |-Reference(3011,3022)
             |-QName(3011,3022)
               |-NameIdentifier(3011,3022)
                 |-Identifier=printString
           |-CallArguments(3022,3042)
-            |-AddExpression(3023,3041)
+            |-BinaryOpExpression(3023,3041)
               |-AtomicExpression(3023,3030)
                 |-Reference(3023,3026)
                   |-QName(3023,3026)
@@ -1543,15 +1366,12 @@
                       |-Identifier=str
                 |-MemberExpression(3026,3030)
                   |-BinMemberOperator(3026,3027)
-                    |-Operator=.
+                    <Rule0>
                   |-NameIdentifier(3027,3030)
                     |-Identifier=ptr
-              |-AddOperator(3031,3032)
-                |-Operator=-
+              |-Operator=-
               |-AsExpression(3033,3041)
                 |-NumberLiteral=4
-                |-AsKeyword(3035,3038)
-                  |-Keyword=as
                 |-Type(3038,3041)
                   |-Reference(3038,3041)
                     |-QName(3038,3041)
@@ -1569,36 +1389,31 @@
         |-NameIdentifier(3079,3090)
           |-Identifier=printMemory
       |-FunctionParamsList(3090,3115)
-        |-ParameterList(3091,3114)
-          |-Parameter(3091,3101)
-            |-NameIdentifier(3091,3096)
-              |-Identifier=start
-            |-OfType(3096,3101)
-              |-Operator=:
-              |-Type(3098,3101)
-                |-Reference(3098,3101)
-                  |-QName(3098,3101)
-                    |-NameIdentifier(3098,3101)
-                      |-Identifier=u32
-          |-Parameter(3103,3114)
-            |-NameIdentifier(3103,3109)
-              |-Identifier=length
-            |-OfType(3109,3114)
-              |-Operator=:
-              |-Type(3111,3114)
-                |-Reference(3111,3114)
-                  |-QName(3111,3114)
-                    |-NameIdentifier(3111,3114)
-                      |-Identifier=i32
+        |-Parameter(3091,3101)
+          |-NameIdentifier(3091,3096)
+            |-Identifier=start
+          |-OfType(3096,3101)
+            |-Type(3098,3101)
+              |-Reference(3098,3101)
+                |-QName(3098,3101)
+                  |-NameIdentifier(3098,3101)
+                    |-Identifier=u32
+        |-Parameter(3103,3114)
+          |-NameIdentifier(3103,3109)
+            |-Identifier=length
+          |-OfType(3109,3114)
+            |-Type(3111,3114)
+              |-Reference(3111,3114)
+                |-QName(3111,3114)
+                  |-NameIdentifier(3111,3114)
+                    |-Identifier=i32
       |-OfType(3115,3122)
-        |-Operator=:
         |-Type(3117,3121)
           |-Reference(3117,3121)
             |-QName(3117,3121)
               |-NameIdentifier(3117,3121)
                 |-Identifier=void
       |-FunAssignExpression(3122,3131)
-        |-Operator==
         |-AtomicExpression(3124,3131)
           |-Reference(3124,3129)
             |-QName(3124,3129)
@@ -1618,36 +1433,31 @@
         |-NameIdentifier(3167,3178)
           |-Identifier=printMemory
       |-FunctionParamsList(3178,3203)
-        |-ParameterList(3179,3202)
-          |-Parameter(3179,3189)
-            |-NameIdentifier(3179,3184)
-              |-Identifier=start
-            |-OfType(3184,3189)
-              |-Operator=:
-              |-Type(3186,3189)
-                |-Reference(3186,3189)
-                  |-QName(3186,3189)
-                    |-NameIdentifier(3186,3189)
-                      |-Identifier=u32
-          |-Parameter(3191,3202)
-            |-NameIdentifier(3191,3197)
-              |-Identifier=length
-            |-OfType(3197,3202)
-              |-Operator=:
-              |-Type(3199,3202)
-                |-Reference(3199,3202)
-                  |-QName(3199,3202)
-                    |-NameIdentifier(3199,3202)
-                      |-Identifier=u32
+        |-Parameter(3179,3189)
+          |-NameIdentifier(3179,3184)
+            |-Identifier=start
+          |-OfType(3184,3189)
+            |-Type(3186,3189)
+              |-Reference(3186,3189)
+                |-QName(3186,3189)
+                  |-NameIdentifier(3186,3189)
+                    |-Identifier=u32
+        |-Parameter(3191,3202)
+          |-NameIdentifier(3191,3197)
+            |-Identifier=length
+          |-OfType(3197,3202)
+            |-Type(3199,3202)
+              |-Reference(3199,3202)
+                |-QName(3199,3202)
+                  |-NameIdentifier(3199,3202)
+                    |-Identifier=u32
       |-OfType(3203,3210)
-        |-Operator=:
         |-Type(3205,3209)
           |-Reference(3205,3209)
             |-QName(3205,3209)
               |-NameIdentifier(3205,3209)
                 |-Identifier=void
       |-FunAssignExpression(3210,3219)
-        |-Operator==
         |-AtomicExpression(3212,3219)
           |-Reference(3212,3217)
             |-QName(3212,3217)
@@ -1667,26 +1477,22 @@
         |-NameIdentifier(3277,3282)
           |-Identifier=START
       |-FunctionParamsList(3282,3294)
-        |-ParameterList(3283,3293)
-          |-Parameter(3283,3293)
-            |-NameIdentifier(3283,3288)
-              |-Identifier=title
-            |-OfType(3288,3293)
-              |-Operator=:
-              |-Type(3290,3293)
-                |-Reference(3290,3293)
-                  |-QName(3290,3293)
-                    |-NameIdentifier(3290,3293)
-                      |-Identifier=u32
+        |-Parameter(3283,3293)
+          |-NameIdentifier(3283,3288)
+            |-Identifier=title
+          |-OfType(3288,3293)
+            |-Type(3290,3293)
+              |-Reference(3290,3293)
+                |-QName(3290,3293)
+                  |-NameIdentifier(3290,3293)
+                    |-Identifier=u32
       |-OfType(3294,3301)
-        |-Operator=:
         |-Type(3296,3300)
           |-Reference(3296,3300)
             |-QName(3296,3300)
               |-NameIdentifier(3296,3300)
                 |-Identifier=void
       |-FunAssignExpression(3301,3310)
-        |-Operator==
         |-AtomicExpression(3303,3310)
           |-Reference(3303,3308)
             |-QName(3303,3308)
@@ -1702,33 +1508,29 @@
         |-NameIdentifier(3315,3320)
           |-Identifier=START
       |-FunctionParamsList(3320,3335)
-        |-ParameterList(3321,3334)
-          |-Parameter(3321,3334)
-            |-NameIdentifier(3321,3326)
-              |-Identifier=title
-            |-OfType(3326,3334)
-              |-Operator=:
-              |-Type(3328,3334)
-                |-Reference(3328,3334)
-                  |-QName(3328,3334)
-                    |-NameIdentifier(3328,3334)
-                      |-Identifier=string
+        |-Parameter(3321,3334)
+          |-NameIdentifier(3321,3326)
+            |-Identifier=title
+          |-OfType(3326,3334)
+            |-Type(3328,3334)
+              |-Reference(3328,3334)
+                |-QName(3328,3334)
+                  |-NameIdentifier(3328,3334)
+                    |-Identifier=string
       |-OfType(3335,3342)
-        |-Operator=:
         |-Type(3337,3341)
           |-Reference(3337,3341)
             |-QName(3337,3341)
               |-NameIdentifier(3337,3341)
                 |-Identifier=void
       |-FunAssignExpression(3342,3371)
-        |-Operator==
         |-AtomicExpression(3344,3371)
           |-Reference(3344,3349)
             |-QName(3344,3349)
               |-NameIdentifier(3344,3349)
                 |-Identifier=START
           |-CallArguments(3349,3371)
-            |-AddExpression(3350,3370)
+            |-BinaryOpExpression(3350,3370)
               |-AtomicExpression(3350,3359)
                 |-Reference(3350,3355)
                   |-QName(3350,3355)
@@ -1736,15 +1538,12 @@
                       |-Identifier=title
                 |-MemberExpression(3355,3359)
                   |-BinMemberOperator(3355,3356)
-                    |-Operator=.
+                    <Rule0>
                   |-NameIdentifier(3356,3359)
                     |-Identifier=ptr
-              |-AddOperator(3360,3361)
-                |-Operator=-
+              |-Operator=-
               |-AsExpression(3362,3370)
                 |-NumberLiteral=4
-                |-AsKeyword(3364,3367)
-                  |-Keyword=as
                 |-Type(3367,3370)
                   |-Reference(3367,3370)
                     |-QName(3367,3370)
@@ -1762,36 +1561,31 @@
         |-NameIdentifier(3414,3420)
           |-Identifier=verify
       |-FunctionParamsList(3420,3449)
-        |-ParameterList(3421,3448)
-          |-Parameter(3421,3436)
-            |-NameIdentifier(3421,3427)
-              |-Identifier=passed
-            |-OfType(3427,3436)
-              |-Operator=:
-              |-Type(3429,3436)
-                |-Reference(3429,3436)
-                  |-QName(3429,3436)
-                    |-NameIdentifier(3429,3436)
-                      |-Identifier=boolean
-          |-Parameter(3438,3448)
-            |-NameIdentifier(3438,3443)
-              |-Identifier=title
-            |-OfType(3443,3448)
-              |-Operator=:
-              |-Type(3445,3448)
-                |-Reference(3445,3448)
-                  |-QName(3445,3448)
-                    |-NameIdentifier(3445,3448)
-                      |-Identifier=u32
+        |-Parameter(3421,3436)
+          |-NameIdentifier(3421,3427)
+            |-Identifier=passed
+          |-OfType(3427,3436)
+            |-Type(3429,3436)
+              |-Reference(3429,3436)
+                |-QName(3429,3436)
+                  |-NameIdentifier(3429,3436)
+                    |-Identifier=boolean
+        |-Parameter(3438,3448)
+          |-NameIdentifier(3438,3443)
+            |-Identifier=title
+          |-OfType(3443,3448)
+            |-Type(3445,3448)
+              |-Reference(3445,3448)
+                |-QName(3445,3448)
+                  |-NameIdentifier(3445,3448)
+                    |-Identifier=u32
       |-OfType(3449,3456)
-        |-Operator=:
         |-Type(3451,3455)
           |-Reference(3451,3455)
             |-QName(3451,3455)
               |-NameIdentifier(3451,3455)
                 |-Identifier=void
       |-FunAssignExpression(3456,3465)
-        |-Operator==
         |-AtomicExpression(3458,3465)
           |-Reference(3458,3463)
             |-QName(3458,3463)
@@ -1807,36 +1601,31 @@
         |-NameIdentifier(3470,3476)
           |-Identifier=verify
       |-FunctionParamsList(3476,3508)
-        |-ParameterList(3477,3507)
-          |-Parameter(3477,3492)
-            |-NameIdentifier(3477,3483)
-              |-Identifier=passed
-            |-OfType(3483,3492)
-              |-Operator=:
-              |-Type(3485,3492)
-                |-Reference(3485,3492)
-                  |-QName(3485,3492)
-                    |-NameIdentifier(3485,3492)
-                      |-Identifier=boolean
-          |-Parameter(3494,3507)
-            |-NameIdentifier(3494,3499)
-              |-Identifier=title
-            |-OfType(3499,3507)
-              |-Operator=:
-              |-Type(3501,3507)
-                |-Reference(3501,3507)
-                  |-QName(3501,3507)
-                    |-NameIdentifier(3501,3507)
-                      |-Identifier=string
+        |-Parameter(3477,3492)
+          |-NameIdentifier(3477,3483)
+            |-Identifier=passed
+          |-OfType(3483,3492)
+            |-Type(3485,3492)
+              |-Reference(3485,3492)
+                |-QName(3485,3492)
+                  |-NameIdentifier(3485,3492)
+                    |-Identifier=boolean
+        |-Parameter(3494,3507)
+          |-NameIdentifier(3494,3499)
+            |-Identifier=title
+          |-OfType(3499,3507)
+            |-Type(3501,3507)
+              |-Reference(3501,3507)
+                |-QName(3501,3507)
+                  |-NameIdentifier(3501,3507)
+                    |-Identifier=string
       |-OfType(3508,3515)
-        |-Operator=:
         |-Type(3510,3514)
           |-Reference(3510,3514)
             |-QName(3510,3514)
               |-NameIdentifier(3510,3514)
                 |-Identifier=void
       |-FunAssignExpression(3515,3553)
-        |-Operator==
         |-AtomicExpression(3517,3553)
           |-Reference(3517,3523)
             |-QName(3517,3523)
@@ -1847,7 +1636,7 @@
               |-QName(3524,3530)
                 |-NameIdentifier(3524,3530)
                   |-Identifier=passed
-            |-AddExpression(3532,3552)
+            |-BinaryOpExpression(3532,3552)
               |-AtomicExpression(3532,3541)
                 |-Reference(3532,3537)
                   |-QName(3532,3537)
@@ -1855,15 +1644,12 @@
                       |-Identifier=title
                 |-MemberExpression(3537,3541)
                   |-BinMemberOperator(3537,3538)
-                    |-Operator=.
+                    <Rule0>
                   |-NameIdentifier(3538,3541)
                     |-Identifier=ptr
-              |-AddOperator(3542,3543)
-                |-Operator=-
+              |-Operator=-
               |-AsExpression(3544,3552)
                 |-NumberLiteral=4
-                |-AsKeyword(3546,3549)
-                  |-Keyword=as
                 |-Type(3549,3552)
                   |-Reference(3549,3552)
                     |-QName(3549,3552)
@@ -1881,17 +1667,14 @@
         |-NameIdentifier(3586,3589)
           |-Identifier=END
       |-FunctionParamsList(3589,3591)
-        |-ParameterList(3590,3590)
-          <Rule0>
+        <Rule0>
       |-OfType(3591,3598)
-        |-Operator=:
         |-Type(3593,3597)
           |-Reference(3593,3597)
             |-QName(3593,3597)
               |-NameIdentifier(3593,3597)
                 |-Identifier=void
       |-FunAssignExpression(3598,3607)
-        |-Operator==
         |-AtomicExpression(3600,3607)
           |-Reference(3600,3605)
             |-QName(3600,3605)
@@ -1907,26 +1690,22 @@
         |-NameIdentifier(3613,3619)
           |-Identifier=assert
       |-FunctionParamsList(3619,3639)
-        |-ParameterList(3620,3638)
-          |-Parameter(3620,3638)
-            |-NameIdentifier(3620,3629)
-              |-Identifier=condition
-            |-OfType(3629,3638)
-              |-Operator=:
-              |-Type(3631,3638)
-                |-Reference(3631,3638)
-                  |-QName(3631,3638)
-                    |-NameIdentifier(3631,3638)
-                      |-Identifier=boolean
+        |-Parameter(3620,3638)
+          |-NameIdentifier(3620,3629)
+            |-Identifier=condition
+          |-OfType(3629,3638)
+            |-Type(3631,3638)
+              |-Reference(3631,3638)
+                |-QName(3631,3638)
+                  |-NameIdentifier(3631,3638)
+                    |-Identifier=boolean
       |-OfType(3639,3646)
-        |-Operator=:
         |-Type(3641,3645)
           |-Reference(3641,3645)
             |-QName(3641,3645)
               |-NameIdentifier(3641,3645)
                 |-Identifier=void
       |-FunAssignExpression(3646,3682)
-        |-Operator==
         |-AtomicExpression(3648,3682)
           |-Reference(3648,3654)
             |-QName(3648,3654)
@@ -1946,36 +1725,31 @@
         |-NameIdentifier(3687,3693)
           |-Identifier=assert
       |-FunctionParamsList(3693,3730)
-        |-ParameterList(3694,3729)
-          |-Parameter(3694,3712)
-            |-NameIdentifier(3694,3703)
-              |-Identifier=condition
-            |-OfType(3703,3712)
-              |-Operator=:
-              |-Type(3705,3712)
-                |-Reference(3705,3712)
-                  |-QName(3705,3712)
-                    |-NameIdentifier(3705,3712)
-                      |-Identifier=boolean
-          |-Parameter(3714,3729)
-            |-NameIdentifier(3714,3721)
-              |-Identifier=message
-            |-OfType(3721,3729)
-              |-Operator=:
-              |-Type(3723,3729)
-                |-Reference(3723,3729)
-                  |-QName(3723,3729)
-                    |-NameIdentifier(3723,3729)
-                      |-Identifier=string
+        |-Parameter(3694,3712)
+          |-NameIdentifier(3694,3703)
+            |-Identifier=condition
+          |-OfType(3703,3712)
+            |-Type(3705,3712)
+              |-Reference(3705,3712)
+                |-QName(3705,3712)
+                  |-NameIdentifier(3705,3712)
+                    |-Identifier=boolean
+        |-Parameter(3714,3729)
+          |-NameIdentifier(3714,3721)
+            |-Identifier=message
+          |-OfType(3721,3729)
+            |-Type(3723,3729)
+              |-Reference(3723,3729)
+                |-QName(3723,3729)
+                  |-NameIdentifier(3723,3729)
+                    |-Identifier=string
       |-OfType(3730,3737)
-        |-Operator=:
         |-Type(3732,3736)
           |-Reference(3732,3736)
             |-QName(3732,3736)
               |-NameIdentifier(3732,3736)
                 |-Identifier=void
       |-FunAssignExpression(3737,3855)
-        |-Operator==
         |-CodeBlock(3739,3855)
           |-AtomicExpression(3743,3769)
             |-Reference(3743,3749)
@@ -1993,23 +1767,21 @@
                     |-Identifier=message
           |-IfExpression(3772,3853)
             |-IfBody(3775,3795)
-              |-EqExpression(3776,3794)
+              |-BinaryOpExpression(3776,3794)
                 |-Reference(3776,3785)
                   |-QName(3776,3785)
                     |-NameIdentifier(3776,3785)
                       |-Identifier=condition
-                |-EqOperator(3786,3788)
-                  |-Operator===
+                |-Operator===
                 |-BooleanLiteral(3789,3794)
-                  |-Keyword=false
+                  <Rule0>
             |-CodeBlock(3796,3853)
-              |-AssignExpression(3802,3837)
+              |-BinaryOpExpression(3802,3837)
                 |-Reference(3802,3818)
                   |-QName(3802,3818)
                     |-NameIdentifier(3802,3818)
                       |-Identifier=lastErrorMessage
-                |-AssignmentKeyword(3819,3820)
-                  |-Operator==
+                |-Operator==
                 |-AtomicExpression(3821,3837)
                   |-Reference(3821,3828)
                     |-QName(3821,3828)

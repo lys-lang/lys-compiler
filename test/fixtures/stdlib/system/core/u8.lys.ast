@@ -3,139 +3,110 @@
     |-QName(7,28)
       |-NameIdentifier(7,13)
         |-Identifier=system
-      |-Operator=::
       |-NameIdentifier(15,19)
         |-Identifier=core
-      |-Operator=::
       |-NameIdentifier(21,28)
         |-Identifier=boolean
   |-ImportDirective(29,56)
     |-QName(36,55)
       |-NameIdentifier(36,42)
         |-Identifier=system
-      |-Operator=::
       |-NameIdentifier(44,48)
         |-Identifier=core
-      |-Operator=::
       |-NameIdentifier(50,55)
         |-Identifier=bytes
   |-ImportDirective(56,81)
     |-QName(63,80)
       |-NameIdentifier(63,69)
         |-Identifier=system
-      |-Operator=::
       |-NameIdentifier(71,75)
         |-Identifier=core
-      |-Operator=::
       |-NameIdentifier(77,80)
         |-Identifier=f32
   |-ImportDirective(81,106)
     |-QName(88,105)
       |-NameIdentifier(88,94)
         |-Identifier=system
-      |-Operator=::
       |-NameIdentifier(96,100)
         |-Identifier=core
-      |-Operator=::
       |-NameIdentifier(102,105)
         |-Identifier=f64
   |-ImportDirective(106,131)
     |-QName(113,130)
       |-NameIdentifier(113,119)
         |-Identifier=system
-      |-Operator=::
       |-NameIdentifier(121,125)
         |-Identifier=core
-      |-Operator=::
       |-NameIdentifier(127,130)
         |-Identifier=i16
   |-ImportDirective(131,156)
     |-QName(138,155)
       |-NameIdentifier(138,144)
         |-Identifier=system
-      |-Operator=::
       |-NameIdentifier(146,150)
         |-Identifier=core
-      |-Operator=::
       |-NameIdentifier(152,155)
         |-Identifier=i32
   |-ImportDirective(156,181)
     |-QName(163,180)
       |-NameIdentifier(163,169)
         |-Identifier=system
-      |-Operator=::
       |-NameIdentifier(171,175)
         |-Identifier=core
-      |-Operator=::
       |-NameIdentifier(177,180)
         |-Identifier=i64
   |-ImportDirective(181,209)
     |-QName(188,208)
       |-NameIdentifier(188,194)
         |-Identifier=system
-      |-Operator=::
       |-NameIdentifier(196,200)
         |-Identifier=core
-      |-Operator=::
       |-NameIdentifier(202,208)
         |-Identifier=native
   |-ImportDirective(209,237)
     |-QName(216,236)
       |-NameIdentifier(216,222)
         |-Identifier=system
-      |-Operator=::
       |-NameIdentifier(224,228)
         |-Identifier=core
-      |-Operator=::
       |-NameIdentifier(230,236)
         |-Identifier=string
   |-ImportDirective(237,262)
     |-QName(244,261)
       |-NameIdentifier(244,250)
         |-Identifier=system
-      |-Operator=::
       |-NameIdentifier(252,256)
         |-Identifier=core
-      |-Operator=::
       |-NameIdentifier(258,261)
         |-Identifier=u16
   |-ImportDirective(262,287)
     |-QName(269,286)
       |-NameIdentifier(269,275)
         |-Identifier=system
-      |-Operator=::
       |-NameIdentifier(277,281)
         |-Identifier=core
-      |-Operator=::
       |-NameIdentifier(283,286)
         |-Identifier=u32
   |-ImportDirective(287,314)
     |-QName(294,311)
       |-NameIdentifier(294,300)
         |-Identifier=system
-      |-Operator=::
       |-NameIdentifier(302,306)
         |-Identifier=core
-      |-Operator=::
       |-NameIdentifier(308,311)
         |-Identifier=u64
   |-TypeDirective(314,366)
     |-NameIdentifier(319,321)
       |-Identifier=u8
     |-ValueType(322,366)
-      |-Operator==
       |-StackLiteral(324,366)
-        |-Operator=%
-        |-Identifier=stack
         |-NameLiteralPair(333,351)
           |-NameIdentifier(333,345)
             |-Identifier=lowLevelType
-          |-Operator==
           |-StringLiteral="i32"
         |-NameLiteralPair(352,362)
           |-NameIdentifier(352,360)
             |-Identifier=byteSize
-          |-Operator==
           |-NumberLiteral=1
   |-ImplDirective(366,2289)
     |-Reference(371,373)
@@ -149,31 +120,25 @@
         |-FunDeclaration(378,430)
           |-FunctionName(382,384)
             |-FunOperator(382,384)
-              |-Keyword=as
+              <Rule0>
           |-FunctionParamsList(384,393)
-            |-ParameterList(385,392)
-              |-Parameter(385,392)
-                |-NameIdentifier(385,388)
-                  |-Identifier=lhs
-                |-OfType(388,392)
-                  |-Operator=:
-                  |-Type(390,392)
-                    |-Reference(390,392)
-                      |-QName(390,392)
-                        |-NameIdentifier(390,392)
-                          |-Identifier=u8
+            |-Parameter(385,392)
+              |-NameIdentifier(385,388)
+                |-Identifier=lhs
+              |-OfType(388,392)
+                |-Type(390,392)
+                  |-Reference(390,392)
+                    |-QName(390,392)
+                      |-NameIdentifier(390,392)
+                        |-Identifier=u8
           |-OfType(393,399)
-            |-Operator=:
             |-Type(395,398)
               |-Reference(395,398)
                 |-QName(395,398)
                   |-NameIdentifier(395,398)
                     |-Identifier=i16
           |-FunAssignExpression(399,430)
-            |-Operator==
             |-WasmExpression(401,430)
-              |-Operator=%
-              |-Identifier=wasm
               |-SExpression(409,426)
                 |-SSymbol(410,419)
                   |-Identifier=get_local
@@ -186,31 +151,25 @@
         |-FunDeclaration(430,482)
           |-FunctionName(434,436)
             |-FunOperator(434,436)
-              |-Keyword=as
+              <Rule0>
           |-FunctionParamsList(436,445)
-            |-ParameterList(437,444)
-              |-Parameter(437,444)
-                |-NameIdentifier(437,440)
-                  |-Identifier=lhs
-                |-OfType(440,444)
-                  |-Operator=:
-                  |-Type(442,444)
-                    |-Reference(442,444)
-                      |-QName(442,444)
-                        |-NameIdentifier(442,444)
-                          |-Identifier=u8
+            |-Parameter(437,444)
+              |-NameIdentifier(437,440)
+                |-Identifier=lhs
+              |-OfType(440,444)
+                |-Type(442,444)
+                  |-Reference(442,444)
+                    |-QName(442,444)
+                      |-NameIdentifier(442,444)
+                        |-Identifier=u8
           |-OfType(445,451)
-            |-Operator=:
             |-Type(447,450)
               |-Reference(447,450)
                 |-QName(447,450)
                   |-NameIdentifier(447,450)
                     |-Identifier=u16
           |-FunAssignExpression(451,482)
-            |-Operator==
             |-WasmExpression(453,482)
-              |-Operator=%
-              |-Identifier=wasm
               |-SExpression(461,478)
                 |-SSymbol(462,471)
                   |-Identifier=get_local
@@ -223,31 +182,25 @@
         |-FunDeclaration(482,534)
           |-FunctionName(486,488)
             |-FunOperator(486,488)
-              |-Keyword=as
+              <Rule0>
           |-FunctionParamsList(488,497)
-            |-ParameterList(489,496)
-              |-Parameter(489,496)
-                |-NameIdentifier(489,492)
-                  |-Identifier=lhs
-                |-OfType(492,496)
-                  |-Operator=:
-                  |-Type(494,496)
-                    |-Reference(494,496)
-                      |-QName(494,496)
-                        |-NameIdentifier(494,496)
-                          |-Identifier=u8
+            |-Parameter(489,496)
+              |-NameIdentifier(489,492)
+                |-Identifier=lhs
+              |-OfType(492,496)
+                |-Type(494,496)
+                  |-Reference(494,496)
+                    |-QName(494,496)
+                      |-NameIdentifier(494,496)
+                        |-Identifier=u8
           |-OfType(497,503)
-            |-Operator=:
             |-Type(499,502)
               |-Reference(499,502)
                 |-QName(499,502)
                   |-NameIdentifier(499,502)
                     |-Identifier=i32
           |-FunAssignExpression(503,534)
-            |-Operator==
             |-WasmExpression(505,534)
-              |-Operator=%
-              |-Identifier=wasm
               |-SExpression(513,530)
                 |-SSymbol(514,523)
                   |-Identifier=get_local
@@ -260,31 +213,25 @@
         |-FunDeclaration(534,586)
           |-FunctionName(538,540)
             |-FunOperator(538,540)
-              |-Keyword=as
+              <Rule0>
           |-FunctionParamsList(540,549)
-            |-ParameterList(541,548)
-              |-Parameter(541,548)
-                |-NameIdentifier(541,544)
-                  |-Identifier=lhs
-                |-OfType(544,548)
-                  |-Operator=:
-                  |-Type(546,548)
-                    |-Reference(546,548)
-                      |-QName(546,548)
-                        |-NameIdentifier(546,548)
-                          |-Identifier=u8
+            |-Parameter(541,548)
+              |-NameIdentifier(541,544)
+                |-Identifier=lhs
+              |-OfType(544,548)
+                |-Type(546,548)
+                  |-Reference(546,548)
+                    |-QName(546,548)
+                      |-NameIdentifier(546,548)
+                        |-Identifier=u8
           |-OfType(549,555)
-            |-Operator=:
             |-Type(551,554)
               |-Reference(551,554)
                 |-QName(551,554)
                   |-NameIdentifier(551,554)
                     |-Identifier=u32
           |-FunAssignExpression(555,586)
-            |-Operator==
             |-WasmExpression(557,586)
-              |-Operator=%
-              |-Identifier=wasm
               |-SExpression(565,582)
                 |-SSymbol(566,575)
                   |-Identifier=get_local
@@ -297,35 +244,28 @@
         |-FunDeclaration(586,657)
           |-FunctionName(590,592)
             |-FunOperator(590,592)
-              |-Keyword=as
+              <Rule0>
           |-FunctionParamsList(592,601)
-            |-ParameterList(593,600)
-              |-Parameter(593,600)
-                |-NameIdentifier(593,596)
-                  |-Identifier=lhs
-                |-OfType(596,600)
-                  |-Operator=:
-                  |-Type(598,600)
-                    |-Reference(598,600)
-                      |-QName(598,600)
-                        |-NameIdentifier(598,600)
-                          |-Identifier=u8
+            |-Parameter(593,600)
+              |-NameIdentifier(593,596)
+                |-Identifier=lhs
+              |-OfType(596,600)
+                |-Type(598,600)
+                  |-Reference(598,600)
+                    |-QName(598,600)
+                      |-NameIdentifier(598,600)
+                        |-Identifier=u8
           |-OfType(601,607)
-            |-Operator=:
             |-Type(603,606)
               |-Reference(603,606)
                 |-QName(603,606)
                   |-NameIdentifier(603,606)
                     |-Identifier=i64
           |-FunAssignExpression(607,657)
-            |-Operator==
             |-WasmExpression(609,657)
-              |-Operator=%
-              |-Identifier=wasm
               |-SExpression(617,653)
                 |-SSymbol(618,634)
                   |-Identifier=i64
-                  |-Operator=.
                   |-Identifier=extend_i32_u
                 |-SExpression(635,651)
                   |-SSymbol(636,645)
@@ -339,35 +279,28 @@
         |-FunDeclaration(657,728)
           |-FunctionName(661,663)
             |-FunOperator(661,663)
-              |-Keyword=as
+              <Rule0>
           |-FunctionParamsList(663,672)
-            |-ParameterList(664,671)
-              |-Parameter(664,671)
-                |-NameIdentifier(664,667)
-                  |-Identifier=lhs
-                |-OfType(667,671)
-                  |-Operator=:
-                  |-Type(669,671)
-                    |-Reference(669,671)
-                      |-QName(669,671)
-                        |-NameIdentifier(669,671)
-                          |-Identifier=u8
+            |-Parameter(664,671)
+              |-NameIdentifier(664,667)
+                |-Identifier=lhs
+              |-OfType(667,671)
+                |-Type(669,671)
+                  |-Reference(669,671)
+                    |-QName(669,671)
+                      |-NameIdentifier(669,671)
+                        |-Identifier=u8
           |-OfType(672,678)
-            |-Operator=:
             |-Type(674,677)
               |-Reference(674,677)
                 |-QName(674,677)
                   |-NameIdentifier(674,677)
                     |-Identifier=u64
           |-FunAssignExpression(678,728)
-            |-Operator==
             |-WasmExpression(680,728)
-              |-Operator=%
-              |-Identifier=wasm
               |-SExpression(688,724)
                 |-SSymbol(689,705)
                   |-Identifier=i64
-                  |-Operator=.
                   |-Identifier=extend_i32_s
                 |-SExpression(706,722)
                   |-SSymbol(707,716)
@@ -381,35 +314,28 @@
         |-FunDeclaration(728,800)
           |-FunctionName(732,734)
             |-FunOperator(732,734)
-              |-Keyword=as
+              <Rule0>
           |-FunctionParamsList(734,743)
-            |-ParameterList(735,742)
-              |-Parameter(735,742)
-                |-NameIdentifier(735,738)
-                  |-Identifier=lhs
-                |-OfType(738,742)
-                  |-Operator=:
-                  |-Type(740,742)
-                    |-Reference(740,742)
-                      |-QName(740,742)
-                        |-NameIdentifier(740,742)
-                          |-Identifier=u8
+            |-Parameter(735,742)
+              |-NameIdentifier(735,738)
+                |-Identifier=lhs
+              |-OfType(738,742)
+                |-Type(740,742)
+                  |-Reference(740,742)
+                    |-QName(740,742)
+                      |-NameIdentifier(740,742)
+                        |-Identifier=u8
           |-OfType(743,749)
-            |-Operator=:
             |-Type(745,748)
               |-Reference(745,748)
                 |-QName(745,748)
                   |-NameIdentifier(745,748)
                     |-Identifier=f32
           |-FunAssignExpression(749,800)
-            |-Operator==
             |-WasmExpression(751,800)
-              |-Operator=%
-              |-Identifier=wasm
               |-SExpression(759,796)
                 |-SSymbol(760,777)
                   |-Identifier=f32
-                  |-Operator=.
                   |-Identifier=convert_i32_u
                 |-SExpression(778,794)
                   |-SSymbol(779,788)
@@ -423,35 +349,28 @@
         |-FunDeclaration(800,873)
           |-FunctionName(804,806)
             |-FunOperator(804,806)
-              |-Keyword=as
+              <Rule0>
           |-FunctionParamsList(806,815)
-            |-ParameterList(807,814)
-              |-Parameter(807,814)
-                |-NameIdentifier(807,810)
-                  |-Identifier=lhs
-                |-OfType(810,814)
-                  |-Operator=:
-                  |-Type(812,814)
-                    |-Reference(812,814)
-                      |-QName(812,814)
-                        |-NameIdentifier(812,814)
-                          |-Identifier=u8
+            |-Parameter(807,814)
+              |-NameIdentifier(807,810)
+                |-Identifier=lhs
+              |-OfType(810,814)
+                |-Type(812,814)
+                  |-Reference(812,814)
+                    |-QName(812,814)
+                      |-NameIdentifier(812,814)
+                        |-Identifier=u8
           |-OfType(815,821)
-            |-Operator=:
             |-Type(817,820)
               |-Reference(817,820)
                 |-QName(817,820)
                   |-NameIdentifier(817,820)
                     |-Identifier=f64
           |-FunAssignExpression(821,873)
-            |-Operator==
             |-WasmExpression(823,873)
-              |-Operator=%
-              |-Identifier=wasm
               |-SExpression(831,868)
                 |-SSymbol(832,849)
                   |-Identifier=f64
-                  |-Operator=.
                   |-Identifier=convert_i32_u
                 |-SExpression(850,866)
                   |-SSymbol(851,860)
@@ -467,43 +386,35 @@
             |-FunOperator(877,878)
               |-Operator=|
           |-FunctionParamsList(878,896)
-            |-ParameterList(879,895)
-              |-Parameter(879,886)
-                |-NameIdentifier(879,882)
-                  |-Identifier=lhs
-                |-OfType(882,886)
-                  |-Operator=:
-                  |-Type(884,886)
-                    |-Reference(884,886)
-                      |-QName(884,886)
-                        |-NameIdentifier(884,886)
-                          |-Identifier=u8
-              |-Parameter(888,895)
-                |-NameIdentifier(888,891)
-                  |-Identifier=rhs
-                |-OfType(891,895)
-                  |-Operator=:
-                  |-Type(893,895)
-                    |-Reference(893,895)
-                      |-QName(893,895)
-                        |-NameIdentifier(893,895)
-                          |-Identifier=u8
+            |-Parameter(879,886)
+              |-NameIdentifier(879,882)
+                |-Identifier=lhs
+              |-OfType(882,886)
+                |-Type(884,886)
+                  |-Reference(884,886)
+                    |-QName(884,886)
+                      |-NameIdentifier(884,886)
+                        |-Identifier=u8
+            |-Parameter(888,895)
+              |-NameIdentifier(888,891)
+                |-Identifier=rhs
+              |-OfType(891,895)
+                |-Type(893,895)
+                  |-Reference(893,895)
+                    |-QName(893,895)
+                      |-NameIdentifier(893,895)
+                        |-Identifier=u8
           |-OfType(896,901)
-            |-Operator=:
             |-Type(898,900)
               |-Reference(898,900)
                 |-QName(898,900)
                   |-NameIdentifier(898,900)
                     |-Identifier=u8
           |-FunAssignExpression(901,958)
-            |-Operator==
             |-WasmExpression(903,958)
-              |-Operator=%
-              |-Identifier=wasm
               |-SExpression(911,954)
                 |-SSymbol(912,918)
                   |-Identifier=i32
-                  |-Operator=.
                   |-Identifier=or
                 |-SExpression(919,936)
                   |-SSymbol(920,929)
@@ -525,43 +436,35 @@
             |-FunOperator(962,963)
               |-Operator=&
           |-FunctionParamsList(963,981)
-            |-ParameterList(964,980)
-              |-Parameter(964,971)
-                |-NameIdentifier(964,967)
-                  |-Identifier=lhs
-                |-OfType(967,971)
-                  |-Operator=:
-                  |-Type(969,971)
-                    |-Reference(969,971)
-                      |-QName(969,971)
-                        |-NameIdentifier(969,971)
-                          |-Identifier=u8
-              |-Parameter(973,980)
-                |-NameIdentifier(973,976)
-                  |-Identifier=rhs
-                |-OfType(976,980)
-                  |-Operator=:
-                  |-Type(978,980)
-                    |-Reference(978,980)
-                      |-QName(978,980)
-                        |-NameIdentifier(978,980)
-                          |-Identifier=u8
+            |-Parameter(964,971)
+              |-NameIdentifier(964,967)
+                |-Identifier=lhs
+              |-OfType(967,971)
+                |-Type(969,971)
+                  |-Reference(969,971)
+                    |-QName(969,971)
+                      |-NameIdentifier(969,971)
+                        |-Identifier=u8
+            |-Parameter(973,980)
+              |-NameIdentifier(973,976)
+                |-Identifier=rhs
+              |-OfType(976,980)
+                |-Type(978,980)
+                  |-Reference(978,980)
+                    |-QName(978,980)
+                      |-NameIdentifier(978,980)
+                        |-Identifier=u8
           |-OfType(981,986)
-            |-Operator=:
             |-Type(983,985)
               |-Reference(983,985)
                 |-QName(983,985)
                   |-NameIdentifier(983,985)
                     |-Identifier=u8
           |-FunAssignExpression(986,1044)
-            |-Operator==
             |-WasmExpression(988,1044)
-              |-Operator=%
-              |-Identifier=wasm
               |-SExpression(996,1040)
                 |-SSymbol(997,1004)
                   |-Identifier=i32
-                  |-Operator=.
                   |-Identifier=and
                 |-SExpression(1005,1022)
                   |-SSymbol(1006,1015)
@@ -583,43 +486,35 @@
             |-FunOperator(1048,1049)
               |-Operator=^
           |-FunctionParamsList(1049,1067)
-            |-ParameterList(1050,1066)
-              |-Parameter(1050,1057)
-                |-NameIdentifier(1050,1053)
-                  |-Identifier=lhs
-                |-OfType(1053,1057)
-                  |-Operator=:
-                  |-Type(1055,1057)
-                    |-Reference(1055,1057)
-                      |-QName(1055,1057)
-                        |-NameIdentifier(1055,1057)
-                          |-Identifier=u8
-              |-Parameter(1059,1066)
-                |-NameIdentifier(1059,1062)
-                  |-Identifier=rhs
-                |-OfType(1062,1066)
-                  |-Operator=:
-                  |-Type(1064,1066)
-                    |-Reference(1064,1066)
-                      |-QName(1064,1066)
-                        |-NameIdentifier(1064,1066)
-                          |-Identifier=u8
+            |-Parameter(1050,1057)
+              |-NameIdentifier(1050,1053)
+                |-Identifier=lhs
+              |-OfType(1053,1057)
+                |-Type(1055,1057)
+                  |-Reference(1055,1057)
+                    |-QName(1055,1057)
+                      |-NameIdentifier(1055,1057)
+                        |-Identifier=u8
+            |-Parameter(1059,1066)
+              |-NameIdentifier(1059,1062)
+                |-Identifier=rhs
+              |-OfType(1062,1066)
+                |-Type(1064,1066)
+                  |-Reference(1064,1066)
+                    |-QName(1064,1066)
+                      |-NameIdentifier(1064,1066)
+                        |-Identifier=u8
           |-OfType(1067,1072)
-            |-Operator=:
             |-Type(1069,1071)
               |-Reference(1069,1071)
                 |-QName(1069,1071)
                   |-NameIdentifier(1069,1071)
                     |-Identifier=u8
           |-FunAssignExpression(1072,1131)
-            |-Operator==
             |-WasmExpression(1074,1131)
-              |-Operator=%
-              |-Identifier=wasm
               |-SExpression(1082,1126)
                 |-SSymbol(1083,1090)
                   |-Identifier=i32
-                  |-Operator=.
                   |-Identifier=xor
                 |-SExpression(1091,1108)
                   |-SSymbol(1092,1101)
@@ -641,43 +536,35 @@
             |-FunOperator(1135,1137)
               |-Operator===
           |-FunctionParamsList(1137,1156)
-            |-ParameterList(1138,1155)
-              |-Parameter(1138,1145)
-                |-NameIdentifier(1138,1141)
-                  |-Identifier=lhs
-                |-OfType(1141,1145)
-                  |-Operator=:
-                  |-Type(1143,1145)
-                    |-Reference(1143,1145)
-                      |-QName(1143,1145)
-                        |-NameIdentifier(1143,1145)
-                          |-Identifier=u8
-              |-Parameter(1147,1155)
-                |-NameIdentifier(1147,1150)
-                  |-Identifier=rhs
-                |-OfType(1150,1155)
-                  |-Operator=:
-                  |-Type(1152,1155)
-                    |-Reference(1152,1155)
-                      |-QName(1152,1155)
-                        |-NameIdentifier(1152,1155)
-                          |-Identifier=u32
+            |-Parameter(1138,1145)
+              |-NameIdentifier(1138,1141)
+                |-Identifier=lhs
+              |-OfType(1141,1145)
+                |-Type(1143,1145)
+                  |-Reference(1143,1145)
+                    |-QName(1143,1145)
+                      |-NameIdentifier(1143,1145)
+                        |-Identifier=u8
+            |-Parameter(1147,1155)
+              |-NameIdentifier(1147,1150)
+                |-Identifier=rhs
+              |-OfType(1150,1155)
+                |-Type(1152,1155)
+                  |-Reference(1152,1155)
+                    |-QName(1152,1155)
+                      |-NameIdentifier(1152,1155)
+                        |-Identifier=u32
           |-OfType(1156,1166)
-            |-Operator=:
             |-Type(1158,1165)
               |-Reference(1158,1165)
                 |-QName(1158,1165)
                   |-NameIdentifier(1158,1165)
                     |-Identifier=boolean
           |-FunAssignExpression(1166,1223)
-            |-Operator==
             |-WasmExpression(1168,1223)
-              |-Operator=%
-              |-Identifier=wasm
               |-SExpression(1176,1219)
                 |-SSymbol(1177,1183)
                   |-Identifier=i32
-                  |-Operator=.
                   |-Identifier=eq
                 |-SExpression(1184,1201)
                   |-SSymbol(1185,1194)
@@ -699,43 +586,35 @@
             |-FunOperator(1227,1229)
               |-Operator===
           |-FunctionParamsList(1229,1248)
-            |-ParameterList(1230,1247)
-              |-Parameter(1230,1237)
-                |-NameIdentifier(1230,1233)
-                  |-Identifier=lhs
-                |-OfType(1233,1237)
-                  |-Operator=:
-                  |-Type(1235,1237)
-                    |-Reference(1235,1237)
-                      |-QName(1235,1237)
-                        |-NameIdentifier(1235,1237)
-                          |-Identifier=u8
-              |-Parameter(1239,1247)
-                |-NameIdentifier(1239,1242)
-                  |-Identifier=rhs
-                |-OfType(1242,1247)
-                  |-Operator=:
-                  |-Type(1244,1247)
-                    |-Reference(1244,1247)
-                      |-QName(1244,1247)
-                        |-NameIdentifier(1244,1247)
-                          |-Identifier=u16
+            |-Parameter(1230,1237)
+              |-NameIdentifier(1230,1233)
+                |-Identifier=lhs
+              |-OfType(1233,1237)
+                |-Type(1235,1237)
+                  |-Reference(1235,1237)
+                    |-QName(1235,1237)
+                      |-NameIdentifier(1235,1237)
+                        |-Identifier=u8
+            |-Parameter(1239,1247)
+              |-NameIdentifier(1239,1242)
+                |-Identifier=rhs
+              |-OfType(1242,1247)
+                |-Type(1244,1247)
+                  |-Reference(1244,1247)
+                    |-QName(1244,1247)
+                      |-NameIdentifier(1244,1247)
+                        |-Identifier=u16
           |-OfType(1248,1258)
-            |-Operator=:
             |-Type(1250,1257)
               |-Reference(1250,1257)
                 |-QName(1250,1257)
                   |-NameIdentifier(1250,1257)
                     |-Identifier=boolean
           |-FunAssignExpression(1258,1315)
-            |-Operator==
             |-WasmExpression(1260,1315)
-              |-Operator=%
-              |-Identifier=wasm
               |-SExpression(1268,1311)
                 |-SSymbol(1269,1275)
                   |-Identifier=i32
-                  |-Operator=.
                   |-Identifier=eq
                 |-SExpression(1276,1293)
                   |-SSymbol(1277,1286)
@@ -757,43 +636,35 @@
             |-FunOperator(1319,1321)
               |-Operator===
           |-FunctionParamsList(1321,1339)
-            |-ParameterList(1322,1338)
-              |-Parameter(1322,1329)
-                |-NameIdentifier(1322,1325)
-                  |-Identifier=lhs
-                |-OfType(1325,1329)
-                  |-Operator=:
-                  |-Type(1327,1329)
-                    |-Reference(1327,1329)
-                      |-QName(1327,1329)
-                        |-NameIdentifier(1327,1329)
-                          |-Identifier=u8
-              |-Parameter(1331,1338)
-                |-NameIdentifier(1331,1334)
-                  |-Identifier=rhs
-                |-OfType(1334,1338)
-                  |-Operator=:
-                  |-Type(1336,1338)
-                    |-Reference(1336,1338)
-                      |-QName(1336,1338)
-                        |-NameIdentifier(1336,1338)
-                          |-Identifier=u8
+            |-Parameter(1322,1329)
+              |-NameIdentifier(1322,1325)
+                |-Identifier=lhs
+              |-OfType(1325,1329)
+                |-Type(1327,1329)
+                  |-Reference(1327,1329)
+                    |-QName(1327,1329)
+                      |-NameIdentifier(1327,1329)
+                        |-Identifier=u8
+            |-Parameter(1331,1338)
+              |-NameIdentifier(1331,1334)
+                |-Identifier=rhs
+              |-OfType(1334,1338)
+                |-Type(1336,1338)
+                  |-Reference(1336,1338)
+                    |-QName(1336,1338)
+                      |-NameIdentifier(1336,1338)
+                        |-Identifier=u8
           |-OfType(1339,1349)
-            |-Operator=:
             |-Type(1341,1348)
               |-Reference(1341,1348)
                 |-QName(1341,1348)
                   |-NameIdentifier(1341,1348)
                     |-Identifier=boolean
           |-FunAssignExpression(1349,1407)
-            |-Operator==
             |-WasmExpression(1351,1407)
-              |-Operator=%
-              |-Identifier=wasm
               |-SExpression(1359,1402)
                 |-SSymbol(1360,1366)
                   |-Identifier=i32
-                  |-Operator=.
                   |-Identifier=eq
                 |-SExpression(1367,1384)
                   |-SSymbol(1368,1377)
@@ -815,43 +686,35 @@
             |-FunOperator(1411,1413)
               |-Operator=!=
           |-FunctionParamsList(1413,1432)
-            |-ParameterList(1414,1431)
-              |-Parameter(1414,1421)
-                |-NameIdentifier(1414,1417)
-                  |-Identifier=lhs
-                |-OfType(1417,1421)
-                  |-Operator=:
-                  |-Type(1419,1421)
-                    |-Reference(1419,1421)
-                      |-QName(1419,1421)
-                        |-NameIdentifier(1419,1421)
-                          |-Identifier=u8
-              |-Parameter(1423,1431)
-                |-NameIdentifier(1423,1426)
-                  |-Identifier=rhs
-                |-OfType(1426,1431)
-                  |-Operator=:
-                  |-Type(1428,1431)
-                    |-Reference(1428,1431)
-                      |-QName(1428,1431)
-                        |-NameIdentifier(1428,1431)
-                          |-Identifier=u32
+            |-Parameter(1414,1421)
+              |-NameIdentifier(1414,1417)
+                |-Identifier=lhs
+              |-OfType(1417,1421)
+                |-Type(1419,1421)
+                  |-Reference(1419,1421)
+                    |-QName(1419,1421)
+                      |-NameIdentifier(1419,1421)
+                        |-Identifier=u8
+            |-Parameter(1423,1431)
+              |-NameIdentifier(1423,1426)
+                |-Identifier=rhs
+              |-OfType(1426,1431)
+                |-Type(1428,1431)
+                  |-Reference(1428,1431)
+                    |-QName(1428,1431)
+                      |-NameIdentifier(1428,1431)
+                        |-Identifier=u32
           |-OfType(1432,1442)
-            |-Operator=:
             |-Type(1434,1441)
               |-Reference(1434,1441)
                 |-QName(1434,1441)
                   |-NameIdentifier(1434,1441)
                     |-Identifier=boolean
           |-FunAssignExpression(1442,1499)
-            |-Operator==
             |-WasmExpression(1444,1499)
-              |-Operator=%
-              |-Identifier=wasm
               |-SExpression(1452,1495)
                 |-SSymbol(1453,1459)
                   |-Identifier=i32
-                  |-Operator=.
                   |-Identifier=ne
                 |-SExpression(1460,1477)
                   |-SSymbol(1461,1470)
@@ -873,43 +736,35 @@
             |-FunOperator(1503,1505)
               |-Operator=!=
           |-FunctionParamsList(1505,1524)
-            |-ParameterList(1506,1523)
-              |-Parameter(1506,1513)
-                |-NameIdentifier(1506,1509)
-                  |-Identifier=lhs
-                |-OfType(1509,1513)
-                  |-Operator=:
-                  |-Type(1511,1513)
-                    |-Reference(1511,1513)
-                      |-QName(1511,1513)
-                        |-NameIdentifier(1511,1513)
-                          |-Identifier=u8
-              |-Parameter(1515,1523)
-                |-NameIdentifier(1515,1518)
-                  |-Identifier=rhs
-                |-OfType(1518,1523)
-                  |-Operator=:
-                  |-Type(1520,1523)
-                    |-Reference(1520,1523)
-                      |-QName(1520,1523)
-                        |-NameIdentifier(1520,1523)
-                          |-Identifier=u16
+            |-Parameter(1506,1513)
+              |-NameIdentifier(1506,1509)
+                |-Identifier=lhs
+              |-OfType(1509,1513)
+                |-Type(1511,1513)
+                  |-Reference(1511,1513)
+                    |-QName(1511,1513)
+                      |-NameIdentifier(1511,1513)
+                        |-Identifier=u8
+            |-Parameter(1515,1523)
+              |-NameIdentifier(1515,1518)
+                |-Identifier=rhs
+              |-OfType(1518,1523)
+                |-Type(1520,1523)
+                  |-Reference(1520,1523)
+                    |-QName(1520,1523)
+                      |-NameIdentifier(1520,1523)
+                        |-Identifier=u16
           |-OfType(1524,1534)
-            |-Operator=:
             |-Type(1526,1533)
               |-Reference(1526,1533)
                 |-QName(1526,1533)
                   |-NameIdentifier(1526,1533)
                     |-Identifier=boolean
           |-FunAssignExpression(1534,1591)
-            |-Operator==
             |-WasmExpression(1536,1591)
-              |-Operator=%
-              |-Identifier=wasm
               |-SExpression(1544,1587)
                 |-SSymbol(1545,1551)
                   |-Identifier=i32
-                  |-Operator=.
                   |-Identifier=ne
                 |-SExpression(1552,1569)
                   |-SSymbol(1553,1562)
@@ -931,43 +786,35 @@
             |-FunOperator(1595,1597)
               |-Operator=!=
           |-FunctionParamsList(1597,1615)
-            |-ParameterList(1598,1614)
-              |-Parameter(1598,1605)
-                |-NameIdentifier(1598,1601)
-                  |-Identifier=lhs
-                |-OfType(1601,1605)
-                  |-Operator=:
-                  |-Type(1603,1605)
-                    |-Reference(1603,1605)
-                      |-QName(1603,1605)
-                        |-NameIdentifier(1603,1605)
-                          |-Identifier=u8
-              |-Parameter(1607,1614)
-                |-NameIdentifier(1607,1610)
-                  |-Identifier=rhs
-                |-OfType(1610,1614)
-                  |-Operator=:
-                  |-Type(1612,1614)
-                    |-Reference(1612,1614)
-                      |-QName(1612,1614)
-                        |-NameIdentifier(1612,1614)
-                          |-Identifier=u8
+            |-Parameter(1598,1605)
+              |-NameIdentifier(1598,1601)
+                |-Identifier=lhs
+              |-OfType(1601,1605)
+                |-Type(1603,1605)
+                  |-Reference(1603,1605)
+                    |-QName(1603,1605)
+                      |-NameIdentifier(1603,1605)
+                        |-Identifier=u8
+            |-Parameter(1607,1614)
+              |-NameIdentifier(1607,1610)
+                |-Identifier=rhs
+              |-OfType(1610,1614)
+                |-Type(1612,1614)
+                  |-Reference(1612,1614)
+                    |-QName(1612,1614)
+                      |-NameIdentifier(1612,1614)
+                        |-Identifier=u8
           |-OfType(1615,1625)
-            |-Operator=:
             |-Type(1617,1624)
               |-Reference(1617,1624)
                 |-QName(1617,1624)
                   |-NameIdentifier(1617,1624)
                     |-Identifier=boolean
           |-FunAssignExpression(1625,1683)
-            |-Operator==
             |-WasmExpression(1627,1683)
-              |-Operator=%
-              |-Identifier=wasm
               |-SExpression(1635,1678)
                 |-SSymbol(1636,1642)
                   |-Identifier=i32
-                  |-Operator=.
                   |-Identifier=ne
                 |-SExpression(1643,1660)
                   |-SSymbol(1644,1653)
@@ -989,43 +836,35 @@
             |-NameIdentifier(1687,1692)
               |-Identifier=store
           |-FunctionParamsList(1692,1711)
-            |-ParameterList(1693,1710)
-              |-Parameter(1693,1701)
-                |-NameIdentifier(1693,1696)
-                  |-Identifier=lhs
-                |-OfType(1696,1701)
-                  |-Operator=:
-                  |-Type(1698,1701)
-                    |-Reference(1698,1701)
-                      |-QName(1698,1701)
-                        |-NameIdentifier(1698,1701)
-                          |-Identifier=ref
-              |-Parameter(1703,1710)
-                |-NameIdentifier(1703,1706)
-                  |-Identifier=rhs
-                |-OfType(1706,1710)
-                  |-Operator=:
-                  |-Type(1708,1710)
-                    |-Reference(1708,1710)
-                      |-QName(1708,1710)
-                        |-NameIdentifier(1708,1710)
-                          |-Identifier=u8
+            |-Parameter(1693,1701)
+              |-NameIdentifier(1693,1696)
+                |-Identifier=lhs
+              |-OfType(1696,1701)
+                |-Type(1698,1701)
+                  |-Reference(1698,1701)
+                    |-QName(1698,1701)
+                      |-NameIdentifier(1698,1701)
+                        |-Identifier=ref
+            |-Parameter(1703,1710)
+              |-NameIdentifier(1703,1706)
+                |-Identifier=rhs
+              |-OfType(1706,1710)
+                |-Type(1708,1710)
+                  |-Reference(1708,1710)
+                    |-QName(1708,1710)
+                      |-NameIdentifier(1708,1710)
+                        |-Identifier=u8
           |-OfType(1711,1718)
-            |-Operator=:
             |-Type(1713,1717)
               |-Reference(1713,1717)
                 |-QName(1713,1717)
                   |-NameIdentifier(1713,1717)
                     |-Identifier=void
           |-FunAssignExpression(1718,1809)
-            |-Operator==
             |-WasmExpression(1720,1809)
-              |-Operator=%
-              |-Identifier=wasm
               |-SExpression(1732,1804)
                 |-SSymbol(1733,1743)
                   |-Identifier=i32
-                  |-Operator=.
                   |-Identifier=store8
                 |-SExpression(1744,1784)
                   |-SSymbol(1745,1749)
@@ -1053,58 +892,48 @@
             |-NameIdentifier(1813,1818)
               |-Identifier=store
           |-FunctionParamsList(1818,1850)
-            |-ParameterList(1819,1849)
-              |-Parameter(1819,1827)
-                |-NameIdentifier(1819,1822)
-                  |-Identifier=lhs
-                |-OfType(1822,1827)
-                  |-Operator=:
-                  |-Type(1824,1827)
-                    |-Reference(1824,1827)
-                      |-QName(1824,1827)
-                        |-NameIdentifier(1824,1827)
-                          |-Identifier=ref
-              |-Parameter(1829,1836)
-                |-NameIdentifier(1829,1832)
-                  |-Identifier=rhs
-                |-OfType(1832,1836)
-                  |-Operator=:
-                  |-Type(1834,1836)
-                    |-Reference(1834,1836)
-                      |-QName(1834,1836)
-                        |-NameIdentifier(1834,1836)
-                          |-Identifier=u8
-              |-Parameter(1838,1849)
-                |-NameIdentifier(1838,1844)
-                  |-Identifier=offset
-                |-OfType(1844,1849)
-                  |-Operator=:
-                  |-Type(1846,1849)
-                    |-Reference(1846,1849)
-                      |-QName(1846,1849)
-                        |-NameIdentifier(1846,1849)
-                          |-Identifier=u32
+            |-Parameter(1819,1827)
+              |-NameIdentifier(1819,1822)
+                |-Identifier=lhs
+              |-OfType(1822,1827)
+                |-Type(1824,1827)
+                  |-Reference(1824,1827)
+                    |-QName(1824,1827)
+                      |-NameIdentifier(1824,1827)
+                        |-Identifier=ref
+            |-Parameter(1829,1836)
+              |-NameIdentifier(1829,1832)
+                |-Identifier=rhs
+              |-OfType(1832,1836)
+                |-Type(1834,1836)
+                  |-Reference(1834,1836)
+                    |-QName(1834,1836)
+                      |-NameIdentifier(1834,1836)
+                        |-Identifier=u8
+            |-Parameter(1838,1849)
+              |-NameIdentifier(1838,1844)
+                |-Identifier=offset
+              |-OfType(1844,1849)
+                |-Type(1846,1849)
+                  |-Reference(1846,1849)
+                    |-QName(1846,1849)
+                      |-NameIdentifier(1846,1849)
+                        |-Identifier=u32
           |-OfType(1850,1857)
-            |-Operator=:
             |-Type(1852,1856)
               |-Reference(1852,1856)
                 |-QName(1852,1856)
                   |-NameIdentifier(1852,1856)
                     |-Identifier=void
           |-FunAssignExpression(1857,2018)
-            |-Operator==
             |-WasmExpression(1859,2018)
-              |-Operator=%
-              |-Identifier=wasm
               |-SExpression(1871,2013)
                 |-SSymbol(1872,1882)
                   |-Identifier=i32
-                  |-Operator=.
                   |-Identifier=store8
                 |-SExpression(1889,1988)
                   |-SSymbol(1890,1897)
                     |-Identifier=i32
-                    |-Operator=.
                     |-Identifier=add
                   |-SExpression(1906,1934)
                     |-SSymbol(1907,1916)
@@ -1138,33 +967,26 @@
             |-NameIdentifier(2022,2026)
               |-Identifier=load
           |-FunctionParamsList(2026,2036)
-            |-ParameterList(2027,2035)
-              |-Parameter(2027,2035)
-                |-NameIdentifier(2027,2030)
-                  |-Identifier=lhs
-                |-OfType(2030,2035)
-                  |-Operator=:
-                  |-Type(2032,2035)
-                    |-Reference(2032,2035)
-                      |-QName(2032,2035)
-                        |-NameIdentifier(2032,2035)
-                          |-Identifier=ref
+            |-Parameter(2027,2035)
+              |-NameIdentifier(2027,2030)
+                |-Identifier=lhs
+              |-OfType(2030,2035)
+                |-Type(2032,2035)
+                  |-Reference(2032,2035)
+                    |-QName(2032,2035)
+                      |-NameIdentifier(2032,2035)
+                        |-Identifier=ref
           |-OfType(2036,2041)
-            |-Operator=:
             |-Type(2038,2040)
               |-Reference(2038,2040)
                 |-QName(2038,2040)
                   |-NameIdentifier(2038,2040)
                     |-Identifier=u8
           |-FunAssignExpression(2041,2116)
-            |-Operator==
             |-WasmExpression(2043,2116)
-              |-Operator=%
-              |-Identifier=wasm
               |-SExpression(2055,2111)
                 |-SSymbol(2056,2067)
                   |-Identifier=i32
-                  |-Operator=.
                   |-Identifier=load8_u
                 |-SExpression(2068,2107)
                   |-SSymbol(2069,2073)
@@ -1186,48 +1008,39 @@
             |-NameIdentifier(2120,2124)
               |-Identifier=load
           |-FunctionParamsList(2124,2147)
-            |-ParameterList(2125,2146)
-              |-Parameter(2125,2133)
-                |-NameIdentifier(2125,2128)
-                  |-Identifier=lhs
-                |-OfType(2128,2133)
-                  |-Operator=:
-                  |-Type(2130,2133)
-                    |-Reference(2130,2133)
-                      |-QName(2130,2133)
-                        |-NameIdentifier(2130,2133)
-                          |-Identifier=ref
-              |-Parameter(2135,2146)
-                |-NameIdentifier(2135,2141)
-                  |-Identifier=offset
-                |-OfType(2141,2146)
-                  |-Operator=:
-                  |-Type(2143,2146)
-                    |-Reference(2143,2146)
-                      |-QName(2143,2146)
-                        |-NameIdentifier(2143,2146)
-                          |-Identifier=u32
+            |-Parameter(2125,2133)
+              |-NameIdentifier(2125,2128)
+                |-Identifier=lhs
+              |-OfType(2128,2133)
+                |-Type(2130,2133)
+                  |-Reference(2130,2133)
+                    |-QName(2130,2133)
+                      |-NameIdentifier(2130,2133)
+                        |-Identifier=ref
+            |-Parameter(2135,2146)
+              |-NameIdentifier(2135,2141)
+                |-Identifier=offset
+              |-OfType(2141,2146)
+                |-Type(2143,2146)
+                  |-Reference(2143,2146)
+                    |-QName(2143,2146)
+                      |-NameIdentifier(2143,2146)
+                        |-Identifier=u32
           |-OfType(2147,2152)
-            |-Operator=:
             |-Type(2149,2151)
               |-Reference(2149,2151)
                 |-QName(2149,2151)
                   |-NameIdentifier(2149,2151)
                     |-Identifier=u8
           |-FunAssignExpression(2152,2288)
-            |-Operator==
             |-WasmExpression(2154,2288)
-              |-Operator=%
-              |-Identifier=wasm
               |-SExpression(2166,2286)
                 |-SSymbol(2167,2178)
                   |-Identifier=i32
-                  |-Operator=.
                   |-Identifier=load8_u
                 |-SExpression(2185,2282)
                   |-SSymbol(2186,2193)
                     |-Identifier=i32
-                    |-Operator=.
                     |-Identifier=add
                   |-SExpression(2202,2230)
                     |-SSymbol(2203,2212)
