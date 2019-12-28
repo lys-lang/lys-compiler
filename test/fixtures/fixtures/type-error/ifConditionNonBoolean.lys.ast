@@ -1,0 +1,26 @@
+|-Document(0,48)
+  |-FunctionDirective(0,47)
+    |-Decorators(0,0)
+      <Rule0>
+    |-FunDeclaration(0,47)
+      |-FunctionName(4,5)
+        |-NameIdentifier(4,5)
+          |-Identifier=x
+      |-TypeParameters(5,5)
+        <Rule0>
+      |-FunctionParamsList(5,7)
+        |-(List)(6,6)
+          <Rule0>
+      |-ReturnType(7,12)
+        |-Type(8,11)
+          |-Reference(8,11)
+            |-QName(8,11)
+              |-NameIdentifier(8,11)
+                |-Identifier=f32
+      |-FunctionBody(12,47)
+        |-IfExpression(16,47)
+          |-Condition(19,24)
+            |-NumberLiteral=1.2
+          |-NumberLiteral=1.0
+          |-NumberLiteral=0.0
+  |-EndOfFile=

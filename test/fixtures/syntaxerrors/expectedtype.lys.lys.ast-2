@@ -1,0 +1,21 @@
+|-Document
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=x
+      |-EmptyNode
+      |-BlockNode
+        |-IsExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=a
+          |-EmptyNode
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=x
+      |-EmptyNode
+      |-BlockNode
+        |-AsExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=a
+          |-EmptyNode

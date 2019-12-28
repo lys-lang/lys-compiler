@@ -1,0 +1,79 @@
+|-Document
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-PrivateModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=xx
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-EmptyNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=add
+      |-ParameterNode
+        |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ParameterNode
+        |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-WasmExpressionNode
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$t
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$t
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=3
+        |-WasmAtomNode symbol=call
+          |-QNameNode
+            |-NameIdentifierNode name=$xx
+        |-WasmAtomNode symbol=drop
+          |-WasmAtomNode symbol=call
+            |-QNameNode
+              |-NameIdentifierNode name=$system
+              |-NameIdentifierNode name=core
+              |-NameIdentifierNode name=memory
+              |-NameIdentifierNode name=malloc
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=1
+        |-WasmAtomNode symbol=i32.mul
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$a
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$b
+          |-WasmAtomNode symbol=get_local
+            |-QNameNode
+              |-NameIdentifierNode name=$t
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=main
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-FunctionCallNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=add
+        |-FloatLiteralNode value=1
+        |-FloatLiteralNode value=2

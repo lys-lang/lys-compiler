@@ -1,0 +1,13 @@
+|-Document
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=b
+      |-EmptyNode
+      |-FloatLiteralNode value=1
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=a
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=b
+      |-FloatLiteralNode value=1

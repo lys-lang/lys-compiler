@@ -1,0 +1,51 @@
+|-Document
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=x
+      |-EmptyNode
+      |-FloatLiteralNode value=2
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=bc
+      |-EmptyNode
+      |-FloatLiteralNode value=1
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=a
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-BlockNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=bc
+          |-NameIdentifierNode name=-
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=x
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=main
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-BlockNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=x
+          |-NameIdentifierNode name==
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=x
+            |-ErrorNode
+            |-NameIdentifierNode name=-
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=a

@@ -1,0 +1,181 @@
+|-Document
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=support
+      |-NameIdentifierNode name=test
+    |-EmptyNode
+  |-EnumDirectiveNode
+    |-NameIdentifierNode name=Tree
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Empty
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Node
+      |-ParameterNode
+        |-NameIdentifierNode name=a
+        |-UnionTypeNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Tree
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Forest
+  |-EnumDirectiveNode
+    |-NameIdentifierNode name=Forest
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Nil
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Cons
+      |-ParameterNode
+        |-NameIdentifierNode name=tree
+        |-UnionTypeNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Tree
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Forest
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=main
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=START
+          |-StringLiteralNode value="Forest & Tree tests"
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=a
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Nil
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=b
+          |-EmptyNode
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Cons
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Empty
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=c
+          |-EmptyNode
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Cons
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Nil
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=d
+          |-EmptyNode
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Cons
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Node
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Empty
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=e
+          |-EmptyNode
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Node
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Nil
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-IsExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=a
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Nil
+          |-StringLiteralNode value="a is Nil"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-IsExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=a
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Forest
+          |-StringLiteralNode value="a is Fores"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-IsExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=b
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Forest
+          |-StringLiteralNode value="b is Fores"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-IsExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=c
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Cons
+          |-StringLiteralNode value="c is Cons"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-IsExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=e
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Node
+          |-StringLiteralNode value="e is Node"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-IsExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=e
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Tree
+          |-StringLiteralNode value="e is Tree"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=END
+          |-EmptyNode

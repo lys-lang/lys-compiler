@@ -1,0 +1,61 @@
+|-Document
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=system
+      |-NameIdentifierNode name=hash
+      |-NameIdentifierNode name=keccak
+    |-EmptyNode
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=k
+      |-EmptyNode
+      |-FunctionCallNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Keccak
+        |-EmptyNode
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-ErrorNode
+      |-StringLiteralNode value="keccak"
+    |-FunctionNode
+      |-NameIdentifierNode name=keccak
+      |-ParameterNode
+        |-NameIdentifierNode name=input
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=bytes
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=bytes
+      |-BlockNode
+        |-FunctionCallNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Keccak
+            |-NameIdentifierNode name=reset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=k
+        |-FunctionCallNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Keccak
+            |-NameIdentifierNode name=update
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=k
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=input
+        |-FunctionCallNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Keccak
+            |-NameIdentifierNode name=digest
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=k

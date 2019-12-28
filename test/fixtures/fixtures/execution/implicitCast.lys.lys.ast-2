@@ -1,0 +1,130 @@
+|-Document
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=support
+      |-NameIdentifierNode name=test
+    |-EmptyNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=testMatchWithDifferentTypes
+      |-ParameterNode
+        |-NameIdentifierNode name=input
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=boolean
+      |-BlockNode
+        |-PatternMatcherNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=input
+          |-MatchLiteralNode
+            |-FloatLiteralNode value=1
+            |-EmptyNode
+          |-MatchDefaultNode
+            |-EmptyNode
+            |-EmptyNode
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=main
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=START
+          |-StringLiteralNode value="Implicit number casting"
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=aByte
+          |-EmptyNode
+          |-AsExpressionNode
+            |-FloatLiteralNode value=10
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u8
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=a
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u16
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=aByte
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=mustEqual
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=a
+          |-FloatLiteralNode value=10
+          |-StringLiteralNode value="eq(10_u16, 10_i32)"
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=x
+          |-EmptyNode
+          |-AsExpressionNode
+            |-FloatLiteralNode value=0
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=i16
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-BinaryExpressionNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=testMatchWithDifferentTypes
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=x
+            |-NameIdentifierNode name===
+            |-EmptyNode
+          |-StringLiteralNode value="match 0"
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=y
+          |-EmptyNode
+          |-AsExpressionNode
+            |-FloatLiteralNode value=1
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u8
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-BinaryExpressionNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=testMatchWithDifferentTypes
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=y
+            |-NameIdentifierNode name===
+            |-EmptyNode
+          |-StringLiteralNode value="match 1"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-BinaryExpressionNode
+            |-FloatLiteralNode value=0.0
+            |-NameIdentifierNode name===
+            |-FloatLiteralNode value=0
+          |-StringLiteralNode value="0.0 == 0"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=END
+          |-EmptyNode

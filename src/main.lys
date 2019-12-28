@@ -3,6 +3,7 @@ import src::lexer::lexer
 import src::parser::lysgrammar
 import src::parser::parser
 import src::stringbuilder
+import src::compiler::nodes
 
 #[export "startLexer"]
 fun startLexer(strAddress: UnsafeCPointer): void = instantiate(UCS2.fromPtr(strAddress))
@@ -15,4 +16,32 @@ fun parseAst(strAddress: UnsafeCPointer): UnsafeCPointer = {
   val sb = StringBuilder()
   printAst(parse(UCS2.fromPtr(strAddress), "Document", getGrammar()), 0, sb)
   sb.toString() as UnsafeCPointer
+}
+
+#[export "parseAndEmit"]
+fun parseAndEmit(strAddress: UnsafeCPointer): UnsafeCPointer = {
+  val ast = parse(UCS2.fromPtr(strAddress), "Document", getGrammar())
+  match ast {
+    case ast is AstNode -> {
+      val sb = StringBuilder()
+      val parseTree = src::compiler::phases::cannonical::processNode(ast)
+      CodeNode.printNode(parseTree, sb, 0)
+      sb.toString() as UnsafeCPointer
+    }
+    else -> "" as UnsafeCPointer
+  }
+}
+
+#[export "parseAndEmitAst"]
+fun parseAndEmitAst(strAddress: UnsafeCPointer): UnsafeCPointer = {
+  val ast = parse(UCS2.fromPtr(strAddress), "Document", getGrammar())
+  match ast {
+    case ast is AstNode -> {
+      val sb = StringBuilder()
+      val parseTree = src::compiler::phases::cannonical::processNode(ast)
+      CodeNode.printAst(parseTree, sb, 0)
+      sb.toString() as UnsafeCPointer
+    }
+    else -> "" as UnsafeCPointer
+  }
 }

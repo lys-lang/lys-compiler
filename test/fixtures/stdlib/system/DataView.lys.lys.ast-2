@@ -1,0 +1,90 @@
+|-Document
+  |-StructDirectiveNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=DataView
+      |-ParameterNode
+        |-NameIdentifierNode name=buffer
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=bytes
+  |-ImplDirectiveNode
+    |-EmptyNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=DataView
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-ErrorNode
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=DataView
+        |-ParameterNode
+          |-NameIdentifierNode name=at
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=u8
+        |-BlockNode
+          |-IfNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=at
+              |-NameIdentifierNode name=>
+              |-MemberNode operator=.
+                |-MemberNode operator=.
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=self
+                  |-NameIdentifierNode name=buffer
+                |-NameIdentifierNode name=length
+            |-BlockNode
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=panic
+                |-EmptyNode
+            |-EmptyNode
+          |-IfNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=at
+              |-NameIdentifierNode name=<
+              |-AsExpressionNode
+                |-FloatLiteralNode value=0
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=u32
+            |-BlockNode
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=panic
+                |-EmptyNode
+            |-EmptyNode
+          |-FunctionCallNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=u8
+              |-NameIdentifierNode name=load
+            |-AsExpressionNode
+              |-MemberNode operator=.
+                |-MemberNode operator=.
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=self
+                  |-NameIdentifierNode name=buffer
+                |-NameIdentifierNode name=ptr
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ref
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=at

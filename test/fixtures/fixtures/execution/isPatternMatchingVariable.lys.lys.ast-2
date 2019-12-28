@@ -1,0 +1,222 @@
+|-Document
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=support
+      |-NameIdentifierNode name=test
+    |-EmptyNode
+  |-EnumDirectiveNode
+    |-NameIdentifierNode name=Enum
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=A
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=B
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=C
+      |-EmptyNode
+  |-EnumDirectiveNode
+    |-NameIdentifierNode name=Color
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Red
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Green
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Blue
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Custom
+      |-ParameterNode
+        |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+  |-StructDirectiveNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=J
+      |-EmptyNode
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=value1
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Enum
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=A
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=value2
+      |-UnionTypeNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=A
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=B
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=A
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=value3
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=A
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=A
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=transform
+      |-ParameterNode
+        |-NameIdentifierNode name=col
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=ref
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Color
+      |-PatternMatcherNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=col
+        |-MatchCaseIsNode
+          |-NameIdentifierNode name=x
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Red
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=x
+        |-MatchCaseIsNode
+          |-NameIdentifierNode name=x
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Enum
+          |-EmptyNode
+          |-PatternMatcherNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=x
+            |-MatchCaseIsNode
+              |-EmptyNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=A
+              |-EmptyNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Red
+            |-MatchDefaultNode
+              |-EmptyNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Green
+        |-MatchDefaultNode
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Red
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=main
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=START
+          |-StringLiteralNode value="pattern matching with 'case X is <type>' setting X"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=assert
+          |-IsExpressionNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=transform
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Red
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Red
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=assert
+          |-IsExpressionNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=transform
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Blue
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Red
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=assert
+          |-IsExpressionNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=transform
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=A
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Red
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=assert
+          |-IsExpressionNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=transform
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=B
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Green
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=assert
+          |-IsExpressionNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=transform
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=J
+                |-EmptyNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Red
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=END
+          |-EmptyNode

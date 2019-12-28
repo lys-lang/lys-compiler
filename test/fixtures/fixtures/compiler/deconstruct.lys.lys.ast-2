@@ -1,0 +1,60 @@
+|-Document
+  |-EnumDirectiveNode
+    |-NameIdentifierNode name=Color
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Red
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Green
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Blue
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Custom
+      |-ParameterNode
+        |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=u32
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=isRed
+      |-ParameterNode
+        |-NameIdentifierNode name=x
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Color
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=boolean
+      |-BlockNode
+        |-PatternMatcherNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=x
+          |-MatchCaseIsNode
+            |-EmptyNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Red
+            |-EmptyNode
+            |-EmptyNode
+          |-MatchCaseIsNode
+            |-EmptyNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Custom
+            |-NameIdentifierNode name=a
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name===
+              |-FloatLiteralNode value=0xFF0000
+          |-MatchDefaultNode
+            |-EmptyNode
+            |-EmptyNode

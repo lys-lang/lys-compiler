@@ -1,0 +1,114 @@
+|-Document
+  |-TypeDirectiveNode
+    |-NameIdentifierNode name=test
+    |-StructTypeNode
+      |-EmptyNode
+  |-ImplDirectiveNode
+    |-EmptyNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=test
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=x
+        |-EmptyNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+        |-FloatLiteralNode value=1
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=x
+      |-ParameterNode
+        |-NameIdentifierNode name=a
+        |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-FloatLiteralNode value=1
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=x1
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-BinaryExpressionNode
+        |-FloatLiteralNode value=1
+        |-ErrorNode
+        |-NameIdentifierNode name=-
+        |-UnaryExpressionNode
+          |-NameIdentifierNode name=-
+          |-FloatLiteralNode value=5
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=x2
+      |-ParameterNode
+        |-NameIdentifierNode name=x
+        |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-UnaryExpressionNode
+        |-NameIdentifierNode name=~
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=x
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=x3
+      |-ParameterNode
+        |-NameIdentifierNode name=x
+        |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-UnaryExpressionNode
+        |-NameIdentifierNode name=-
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=x
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=x4
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-UnaryExpressionNode
+        |-NameIdentifierNode name=~
+        |-FloatLiteralNode value=99
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=x5
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-UnaryExpressionNode
+        |-NameIdentifierNode name=~
+        |-FunctionCallNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=test
+            |-NameIdentifierNode name=x
+          |-EmptyNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=x6
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=boolean
+      |-UnaryExpressionNode
+        |-NameIdentifierNode name=!
+        |-EmptyNode

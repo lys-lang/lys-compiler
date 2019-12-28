@@ -1,0 +1,155 @@
+|-Document
+  |-EnumDirectiveNode
+    |-NameIdentifierNode name=Maybe
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=None
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Some
+      |-ParameterNode
+        |-NameIdentifierNode name=value
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=test
+      |-ParameterNode
+        |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=boolean
+      |-PatternMatcherNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
+        |-MatchLiteralNode
+          |-FloatLiteralNode value=1
+          |-EmptyNode
+        |-MatchDefaultNode
+          |-EmptyNode
+          |-EmptyNode
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=test2
+      |-ParameterNode
+        |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-PatternMatcherNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
+        |-MatchLiteralNode
+          |-FloatLiteralNode value=10
+          |-FloatLiteralNode value=1
+        |-MatchLiteralNode
+          |-FloatLiteralNode value=20
+          |-FloatLiteralNode value=2
+        |-MatchLiteralNode
+          |-FloatLiteralNode value=30
+          |-FloatLiteralNode value=3
+        |-MatchLiteralNode
+          |-FloatLiteralNode value=40
+          |-FloatLiteralNode value=4
+        |-MatchLiteralNode
+          |-FloatLiteralNode value=50
+          |-FloatLiteralNode value=5
+        |-MatchLiteralNode
+          |-FloatLiteralNode value=60
+          |-FloatLiteralNode value=6
+        |-MatchLiteralNode
+          |-FloatLiteralNode value=70
+          |-FloatLiteralNode value=7
+        |-MatchLiteralNode
+          |-FloatLiteralNode value=80
+          |-FloatLiteralNode value=8
+        |-MatchLiteralNode
+          |-FloatLiteralNode value=90
+          |-FloatLiteralNode value=9
+        |-MatchDefaultNode
+          |-EmptyNode
+          |-FloatLiteralNode value=0
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=test3
+      |-ParameterNode
+        |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Maybe
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=boolean
+      |-PatternMatcherNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
+        |-MatchCaseIsNode
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Some
+          |-EmptyNode
+          |-EmptyNode
+        |-MatchCaseIsNode
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=None
+          |-EmptyNode
+          |-EmptyNode
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=test4
+      |-ParameterNode
+        |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Maybe
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Some
+      |-PatternMatcherNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
+        |-MatchCaseIsNode
+          |-NameIdentifierNode name=x
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Some
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=x
+        |-MatchCaseIsNode
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=None
+          |-EmptyNode
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Some
+            |-FloatLiteralNode value=0

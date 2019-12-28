@@ -1,0 +1,254 @@
+|-Document
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=system
+      |-NameIdentifierNode name=core
+      |-NameIdentifierNode name=native
+    |-EmptyNode
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=system
+      |-NameIdentifierNode name=core
+      |-NameIdentifierNode name=u32
+    |-EmptyNode
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=system
+      |-NameIdentifierNode name=core
+      |-NameIdentifierNode name=i32
+    |-EmptyNode
+  |-TypeDirectiveNode
+    |-NameIdentifierNode name=boolean
+    |-StackLiteralNode
+      |-NameLiteralPairNode
+        |-NameIdentifierNode name=lowLevelType
+        |-StringLiteralNode value="i32"
+      |-NameLiteralPairNode
+        |-NameIdentifierNode name=byteSize
+        |-FloatLiteralNode value=1
+  |-ImplDirectiveNode
+    |-EmptyNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=boolean
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=&&
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=boolean
+        |-ParameterNode
+          |-NameIdentifierNode name=rhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=boolean
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i32.and
+            |-WasmAtomNode symbol=i32.ne
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$lhs
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=0
+            |-WasmAtomNode symbol=i32.ne
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$rhs
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=0
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name===
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=boolean
+        |-ParameterNode
+          |-NameIdentifierNode name=rhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=boolean
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i32.eq
+            |-WasmAtomNode symbol=i32.eqz
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$lhs
+            |-WasmAtomNode symbol=i32.eqz
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$rhs
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=||
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=boolean
+        |-ParameterNode
+          |-NameIdentifierNode name=rhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=boolean
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i32.or
+            |-WasmAtomNode symbol=i32.ne
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$lhs
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=0
+            |-WasmAtomNode symbol=i32.ne
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$rhs
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=0
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=!
+        |-ParameterNode
+          |-NameIdentifierNode name=rhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=boolean
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-IfNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=rhs
+          |-EmptyNode
+          |-EmptyNode
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=store
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ParameterNode
+          |-NameIdentifierNode name=rhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=boolean
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i32.store8
+            |-WasmAtomNode symbol=call
+              |-QNameNode
+                |-NameIdentifierNode name=$addressFromRef
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$lhs
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rhs
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=store
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ParameterNode
+          |-NameIdentifierNode name=rhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=boolean
+        |-ParameterNode
+          |-NameIdentifierNode name=offset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i32.store8
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$offset
+              |-WasmAtomNode symbol=call
+                |-QNameNode
+                  |-NameIdentifierNode name=$addressFromRef
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$lhs
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rhs
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=load
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i32.load8_u
+            |-WasmAtomNode symbol=call
+              |-QNameNode
+                |-NameIdentifierNode name=$addressFromRef
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$lhs
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=load
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ParameterNode
+          |-NameIdentifierNode name=offset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i32.load8_u
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$offset
+              |-WasmAtomNode symbol=call
+                |-QNameNode
+                  |-NameIdentifierNode name=$addressFromRef
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$lhs

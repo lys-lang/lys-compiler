@@ -1,0 +1,234 @@
+|-Document
+  |-TypeDirectiveNode
+    |-NameIdentifierNode name=bool
+    |-StackLiteralNode
+      |-NameLiteralPairNode
+        |-NameIdentifierNode name=lowLevelType
+        |-StringLiteralNode value="i32"
+  |-EnumDirectiveNode
+    |-NameIdentifierNode name=Color
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Red
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Green
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Blue
+      |-EmptyNode
+  |-TypeDirectiveNode
+    |-NameIdentifierNode name=theFn1
+    |-UnionTypeNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=A
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=B
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=C
+  |-TypeDirectiveNode
+    |-NameIdentifierNode name=theFn1
+    |-ErrorNode
+  |-TypeDirectiveNode
+    |-NameIdentifierNode name=theFn2
+    |-ErrorNode
+  |-TypeDirectiveNode
+    |-NameIdentifierNode name=theFn3
+    |-ErrorNode
+  |-TypeDirectiveNode
+    |-NameIdentifierNode name=theFn4
+    |-ErrorNode
+  |-TypeDirectiveNode
+    |-NameIdentifierNode name=theFn5
+    |-ErrorNode
+  |-TypeDirectiveNode
+    |-NameIdentifierNode name=theFn6
+    |-ErrorNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-PrivateModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=compare
+      |-ParameterNode
+        |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Color
+      |-ParameterNode
+        |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Color
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=bool
+      |-BlockNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=a
+          |-NameIdentifierNode name===
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=main
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-FunctionCallNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=compare
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Red
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Green
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=test
+      |-ErrorNode
+      |-FloatLiteralNode value=1
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=test
+      |-UnionTypeNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
+        |-IntersectionTypeNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=c
+        |-IntersectionTypeNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=d
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+      |-FloatLiteralNode value=1
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=test
+      |-UnionTypeNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=_
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=_
+      |-FloatLiteralNode value=1
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=test
+      |-ErrorNode
+      |-FloatLiteralNode value=1
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=test
+      |-ErrorNode
+      |-FloatLiteralNode value=1
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=test
+      |-UnionTypeNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
+        |-IntersectionTypeNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=c
+        |-IntersectionTypeNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=d
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+      |-FloatLiteralNode value=1
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=test
+      |-UnionTypeNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
+        |-IntersectionTypeNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=c
+        |-IntersectionTypeNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=d
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+      |-FloatLiteralNode value=1
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=test
+      |-ErrorNode
+      |-FloatLiteralNode value=1
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=test
+      |-ErrorNode
+      |-FloatLiteralNode value=1
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=test
+      |-ErrorNode
+      |-FloatLiteralNode value=1
+  |-EnumDirectiveNode
+    |-NameIdentifierNode name=Number
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Infinity
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=NDet
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Real
+      |-ParameterNode
+        |-NameIdentifierNode name=number
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=f32
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Natural
+      |-ParameterNode
+        |-NameIdentifierNode name=number
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Complex
+      |-ParameterNode
+        |-NameIdentifierNode name=real
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=f32
+      |-ParameterNode
+        |-NameIdentifierNode name=imaginary
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=f32

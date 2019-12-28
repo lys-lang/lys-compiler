@@ -1,0 +1,6 @@
+test/fixtures/parser-error/l.lys
+    1│ var a = match x { else -> } map 1
+     │ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Unexpected end of input. Expecting Expression Got: } map 1
+     │ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Unexpected end of input. Missing CLOSE_BRACKET
+     │                           ^^^^^^^ Unexpected end of input. Expecting Expression Got: } map 1
+     │                                   Unexpected end of input. Missing CLOSE_BRACKET

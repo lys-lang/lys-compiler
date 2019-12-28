@@ -1,0 +1,931 @@
+|-Document
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=system
+      |-NameIdentifierNode name=core
+      |-NameIdentifierNode name=boolean
+    |-EmptyNode
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=system
+      |-NameIdentifierNode name=core
+      |-NameIdentifierNode name=f32
+    |-EmptyNode
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=system
+      |-NameIdentifierNode name=core
+      |-NameIdentifierNode name=f64
+    |-EmptyNode
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=system
+      |-NameIdentifierNode name=core
+      |-NameIdentifierNode name=i16
+    |-EmptyNode
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=system
+      |-NameIdentifierNode name=core
+      |-NameIdentifierNode name=i32
+    |-EmptyNode
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=system
+      |-NameIdentifierNode name=core
+      |-NameIdentifierNode name=i64
+    |-EmptyNode
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=system
+      |-NameIdentifierNode name=core
+      |-NameIdentifierNode name=string
+    |-EmptyNode
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=system
+      |-NameIdentifierNode name=core
+      |-NameIdentifierNode name=native
+    |-EmptyNode
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=system
+      |-NameIdentifierNode name=core
+      |-NameIdentifierNode name=u16
+    |-EmptyNode
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=system
+      |-NameIdentifierNode name=core
+      |-NameIdentifierNode name=u32
+    |-EmptyNode
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=system
+      |-NameIdentifierNode name=core
+      |-NameIdentifierNode name=u64
+    |-EmptyNode
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=system
+      |-NameIdentifierNode name=core
+      |-NameIdentifierNode name=u8
+    |-EmptyNode
+  |-TypeDirectiveNode
+    |-NameIdentifierNode name=bytes
+    |-StackLiteralNode
+      |-NameLiteralPairNode
+        |-NameIdentifierNode name=lowLevelType
+        |-StringLiteralNode value="i64"
+      |-NameLiteralPairNode
+        |-NameIdentifierNode name=byteSize
+        |-FloatLiteralNode value=8
+  |-ImplDirectiveNode
+    |-EmptyNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=bytes
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=bytesDiscriminant
+        |-EmptyNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=u64
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=discriminant
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u32
+            |-MemberNode operator=.^
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=bytes
+              |-NameIdentifierNode name=discriminant
+          |-BinaryExpressionNode
+            |-AsExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=discriminant
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=u64
+            |-NameIdentifierNode name=<<
+            |-FloatLiteralNode value=32
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=apply
+        |-ParameterNode
+          |-NameIdentifierNode name=size
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=bytes
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=local
+            |-QNameNode
+              |-NameIdentifierNode name=$allocation
+            |-QNameNode
+              |-NameIdentifierNode name=i32
+          |-WasmAtomNode symbol=local
+            |-QNameNode
+              |-NameIdentifierNode name=$allocationSize
+            |-QNameNode
+              |-NameIdentifierNode name=i32
+          |-WasmAtomNode symbol=local.set
+            |-QNameNode
+              |-NameIdentifierNode name=$allocationSize
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$size
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=4
+          |-WasmAtomNode symbol=local.set
+            |-QNameNode
+              |-NameIdentifierNode name=$allocation
+            |-WasmAtomNode symbol=call
+              |-QNameNode
+                |-NameIdentifierNode name=$system
+                |-NameIdentifierNode name=core
+                |-NameIdentifierNode name=memory
+                |-NameIdentifierNode name=malloc
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$allocationSize
+          |-WasmAtomNode symbol=call
+            |-QNameNode
+              |-NameIdentifierNode name=$system
+              |-NameIdentifierNode name=core
+              |-NameIdentifierNode name=memory
+              |-NameIdentifierNode name=memset
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$allocation
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=0
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$allocationSize
+          |-WasmAtomNode symbol=i32.store
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$allocation
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$size
+          |-WasmAtomNode symbol=i64.or
+            |-WasmAtomNode symbol=call
+              |-QNameNode
+                |-NameIdentifierNode name=$bytesDiscriminant
+            |-WasmAtomNode symbol=i64.extend_u/i32
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$allocation
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=toAddr
+        |-ParameterNode
+          |-NameIdentifierNode name=str
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=bytes
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=u32
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=call
+            |-QNameNode
+              |-NameIdentifierNode name=$addressFromRef
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$str
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=explicit
+        |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=as
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=bytes
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=ref
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=get_local
+            |-QNameNode
+              |-NameIdentifierNode name=$lhs
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=getter
+        |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=length
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=bytes
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=u32
+        |-FunctionCallNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u32
+            |-NameIdentifierNode name=load
+          |-AsExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=self
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=ref
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=getter
+        |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=ptr
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=bytes
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=u32
+        |-BlockNode
+          |-BinaryExpressionNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=toAddr
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=self
+            |-NameIdentifierNode name=+
+            |-AsExpressionNode
+              |-FloatLiteralNode value=4
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=u32
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=as
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=bytes
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=UnsafeCPointer
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=4
+            |-WasmAtomNode symbol=call
+              |-QNameNode
+                |-NameIdentifierNode name=$addressFromRef
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$self
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-ErrorNode
+        |-ParameterNode
+          |-NameIdentifierNode name=data
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=bytes
+        |-ParameterNode
+          |-NameIdentifierNode name=at
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=u8
+        |-BlockNode
+          |-IfNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=at
+              |-NameIdentifierNode name=>
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=data
+                |-NameIdentifierNode name=length
+            |-BlockNode
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=panic
+                |-EmptyNode
+            |-EmptyNode
+          |-IfNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=at
+              |-NameIdentifierNode name=<
+              |-AsExpressionNode
+                |-FloatLiteralNode value=0
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=u32
+            |-BlockNode
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=panic
+                |-EmptyNode
+            |-EmptyNode
+          |-FunctionCallNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=u8
+              |-NameIdentifierNode name=load
+            |-AsExpressionNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=data
+                |-NameIdentifierNode name=ptr
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ref
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=at
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-ErrorNode
+        |-ParameterNode
+          |-NameIdentifierNode name=data
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=bytes
+        |-ParameterNode
+          |-NameIdentifierNode name=at
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ParameterNode
+          |-NameIdentifierNode name=value
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u8
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-BlockNode
+          |-IfNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=at
+              |-NameIdentifierNode name=>
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=data
+                |-NameIdentifierNode name=length
+            |-BlockNode
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=panic
+                |-EmptyNode
+            |-EmptyNode
+          |-IfNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=at
+              |-NameIdentifierNode name=<
+              |-AsExpressionNode
+                |-FloatLiteralNode value=0
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=u32
+            |-BlockNode
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=panic
+                |-EmptyNode
+            |-EmptyNode
+          |-FunctionCallNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=u8
+              |-NameIdentifierNode name=store
+            |-AsExpressionNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=data
+                |-NameIdentifierNode name=ptr
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ref
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=value
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=at
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=fromString
+        |-ParameterNode
+          |-NameIdentifierNode name=str
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=string
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=bytes
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=get_local
+            |-QNameNode
+              |-NameIdentifierNode name=$str
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=get
+        |-ParameterNode
+          |-NameIdentifierNode name=data
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=bytes
+        |-ParameterNode
+          |-NameIdentifierNode name=at
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=u8
+        |-BlockNode
+          |-IfNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=at
+              |-NameIdentifierNode name=>
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=data
+                |-NameIdentifierNode name=length
+            |-BlockNode
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=panic
+                |-EmptyNode
+            |-EmptyNode
+          |-FunctionCallNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=u8
+              |-NameIdentifierNode name=load
+            |-AsExpressionNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=data
+                |-NameIdentifierNode name=ptr
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ref
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=at
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=set
+        |-ParameterNode
+          |-NameIdentifierNode name=data
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=bytes
+        |-ParameterNode
+          |-NameIdentifierNode name=at
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ParameterNode
+          |-NameIdentifierNode name=value
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u16
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-BlockNode
+          |-IfNode
+            |-BinaryExpressionNode
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=at
+                |-NameIdentifierNode name=+
+                |-AsExpressionNode
+                  |-FloatLiteralNode value=1
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=u32
+              |-NameIdentifierNode name=>
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=data
+                |-NameIdentifierNode name=length
+            |-BlockNode
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=panic
+                |-EmptyNode
+            |-EmptyNode
+          |-FunctionCallNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=u16
+              |-NameIdentifierNode name=store
+            |-AsExpressionNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=data
+                |-NameIdentifierNode name=ptr
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ref
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=value
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=at
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=set
+        |-ParameterNode
+          |-NameIdentifierNode name=data
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=bytes
+        |-ParameterNode
+          |-NameIdentifierNode name=at
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ParameterNode
+          |-NameIdentifierNode name=value
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u8
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-BlockNode
+          |-IfNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=at
+              |-NameIdentifierNode name=>
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=data
+                |-NameIdentifierNode name=length
+            |-BlockNode
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=panic
+                |-EmptyNode
+            |-EmptyNode
+          |-FunctionCallNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=u8
+              |-NameIdentifierNode name=store
+            |-AsExpressionNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=data
+                |-NameIdentifierNode name=ptr
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ref
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=value
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=at
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=store
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ParameterNode
+          |-NameIdentifierNode name=rhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=bytes
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.store
+            |-WasmAtomNode symbol=call
+              |-QNameNode
+                |-NameIdentifierNode name=$addressFromRef
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$lhs
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rhs
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=store
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ParameterNode
+          |-NameIdentifierNode name=rhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=bytes
+        |-ParameterNode
+          |-NameIdentifierNode name=offset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.store
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$offset
+              |-WasmAtomNode symbol=call
+                |-QNameNode
+                  |-NameIdentifierNode name=$addressFromRef
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$lhs
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rhs
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=load
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=bytes
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=call
+              |-QNameNode
+                |-NameIdentifierNode name=$addressFromRef
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$lhs
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=load
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ParameterNode
+          |-NameIdentifierNode name=offset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=bytes
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$offset
+              |-WasmAtomNode symbol=call
+                |-QNameNode
+                  |-NameIdentifierNode name=$addressFromRef
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$lhs
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=!=
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=bytes
+        |-ParameterNode
+          |-NameIdentifierNode name=rhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=bytes
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-UnaryExpressionNode
+          |-NameIdentifierNode name=!
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=lhs
+            |-NameIdentifierNode name===
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=rhs
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name===
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=bytes
+        |-ParameterNode
+          |-NameIdentifierNode name=rhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=bytes
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-BlockNode
+          |-IfNode
+            |-BinaryExpressionNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=lhs
+                |-NameIdentifierNode name=length
+              |-NameIdentifierNode name===
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=rhs
+                |-NameIdentifierNode name=length
+            |-BlockNode
+              |-IfNode
+                |-BinaryExpressionNode
+                  |-MemberNode operator=.
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=lhs
+                    |-NameIdentifierNode name=ptr
+                  |-NameIdentifierNode name===
+                  |-MemberNode operator=.
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=rhs
+                    |-NameIdentifierNode name=ptr
+                |-BlockNode
+                  |-EmptyNode
+                |-BlockNode
+                  |-VarDeclarationNode
+                    |-NameIdentifierNode name=len
+                    |-EmptyNode
+                    |-MemberNode operator=.
+                      |-ReferenceNode
+                        |-QNameNode
+                          |-NameIdentifierNode name=lhs
+                      |-NameIdentifierNode name=length
+                  |-VarDeclarationNode
+                    |-NameIdentifierNode name=equals
+                    |-EmptyNode
+                    |-EmptyNode
+                  |-LoopNode
+                    |-BlockNode
+                      |-BinaryExpressionNode
+                        |-ReferenceNode
+                          |-QNameNode
+                            |-NameIdentifierNode name=len
+                        |-NameIdentifierNode name==
+                        |-BinaryExpressionNode
+                          |-ReferenceNode
+                            |-QNameNode
+                              |-NameIdentifierNode name=len
+                          |-NameIdentifierNode name=-
+                          |-AsExpressionNode
+                            |-FloatLiteralNode value=1
+                            |-ReferenceNode
+                              |-QNameNode
+                                |-NameIdentifierNode name=u32
+                      |-IfNode
+                        |-BinaryExpressionNode
+                          |-FunctionCallNode
+                            |-MemberNode operator=.
+                              |-ReferenceNode
+                                |-QNameNode
+                                  |-NameIdentifierNode name=bytes
+                              |-NameIdentifierNode name=get
+                            |-ReferenceNode
+                              |-QNameNode
+                                |-NameIdentifierNode name=lhs
+                            |-ReferenceNode
+                              |-QNameNode
+                                |-NameIdentifierNode name=len
+                          |-NameIdentifierNode name=!=
+                          |-FunctionCallNode
+                            |-MemberNode operator=.
+                              |-ReferenceNode
+                                |-QNameNode
+                                  |-NameIdentifierNode name=bytes
+                              |-NameIdentifierNode name=get
+                            |-ReferenceNode
+                              |-QNameNode
+                                |-NameIdentifierNode name=rhs
+                            |-ReferenceNode
+                              |-QNameNode
+                                |-NameIdentifierNode name=len
+                        |-BlockNode
+                          |-BinaryExpressionNode
+                            |-ReferenceNode
+                              |-QNameNode
+                                |-NameIdentifierNode name=equals
+                            |-NameIdentifierNode name==
+                            |-EmptyNode
+                          |-ContinueNode
+                        |-EmptyNode
+                      |-IfNode
+                        |-BinaryExpressionNode
+                          |-ReferenceNode
+                            |-QNameNode
+                              |-NameIdentifierNode name=len
+                          |-NameIdentifierNode name=>
+                          |-AsExpressionNode
+                            |-FloatLiteralNode value=0
+                            |-ReferenceNode
+                              |-QNameNode
+                                |-NameIdentifierNode name=u32
+                        |-ContinueNode
+                        |-EmptyNode
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=equals
+            |-BlockNode
+              |-EmptyNode

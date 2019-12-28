@@ -99,7 +99,7 @@ fun eatUnexpectedToken(lexer: Lexer): AstNode = {
 val TEST = false
 
 fun parse(rule: ParserRule, parser: Parser, level: i32): AstNode | Nil = {
-var backtrack = parser.lexer.pos
+  var backtrack = parser.lexer.pos
 
   val result = match rule {
     case is Terminal(tokenType) -> {

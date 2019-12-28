@@ -1,0 +1,3134 @@
+|-Document
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-PrivateModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=keccak_theta
+      |-ParameterNode
+        |-NameIdentifierNode name=context_offset
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-WasmExpressionNode
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$C0
+          |-QNameNode
+            |-NameIdentifierNode name=i64
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$C1
+          |-QNameNode
+            |-NameIdentifierNode name=i64
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$C2
+          |-QNameNode
+            |-NameIdentifierNode name=i64
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$C3
+          |-QNameNode
+            |-NameIdentifierNode name=i64
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$C4
+          |-QNameNode
+            |-NameIdentifierNode name=i64
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$D0
+          |-QNameNode
+            |-NameIdentifierNode name=i64
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$D1
+          |-QNameNode
+            |-NameIdentifierNode name=i64
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$D2
+          |-QNameNode
+            |-NameIdentifierNode name=i64
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$D3
+          |-QNameNode
+            |-NameIdentifierNode name=i64
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$D4
+          |-QNameNode
+            |-NameIdentifierNode name=i64
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$C0
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=0
+            |-WasmAtomNode symbol=i64.xor
+              |-WasmAtomNode symbol=i64.load
+                |-WasmAtomNode symbol=i32.add
+                  |-WasmAtomNode symbol=get_local
+                    |-QNameNode
+                      |-NameIdentifierNode name=$context_offset
+                  |-WasmAtomNode symbol=i32.const
+                    |-FloatLiteralNode value=40
+              |-WasmAtomNode symbol=i64.xor
+                |-WasmAtomNode symbol=i64.load
+                  |-WasmAtomNode symbol=i32.add
+                    |-WasmAtomNode symbol=get_local
+                      |-QNameNode
+                        |-NameIdentifierNode name=$context_offset
+                    |-WasmAtomNode symbol=i32.const
+                      |-FloatLiteralNode value=80
+                |-WasmAtomNode symbol=i64.xor
+                  |-WasmAtomNode symbol=i64.load
+                    |-WasmAtomNode symbol=i32.add
+                      |-WasmAtomNode symbol=get_local
+                        |-QNameNode
+                          |-NameIdentifierNode name=$context_offset
+                      |-WasmAtomNode symbol=i32.const
+                        |-FloatLiteralNode value=120
+                  |-WasmAtomNode symbol=i64.load
+                    |-WasmAtomNode symbol=i32.add
+                      |-WasmAtomNode symbol=get_local
+                        |-QNameNode
+                          |-NameIdentifierNode name=$context_offset
+                      |-WasmAtomNode symbol=i32.const
+                        |-FloatLiteralNode value=160
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$C1
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=8
+            |-WasmAtomNode symbol=i64.xor
+              |-WasmAtomNode symbol=i64.load
+                |-WasmAtomNode symbol=i32.add
+                  |-WasmAtomNode symbol=get_local
+                    |-QNameNode
+                      |-NameIdentifierNode name=$context_offset
+                  |-WasmAtomNode symbol=i32.const
+                    |-FloatLiteralNode value=48
+              |-WasmAtomNode symbol=i64.xor
+                |-WasmAtomNode symbol=i64.load
+                  |-WasmAtomNode symbol=i32.add
+                    |-WasmAtomNode symbol=get_local
+                      |-QNameNode
+                        |-NameIdentifierNode name=$context_offset
+                    |-WasmAtomNode symbol=i32.const
+                      |-FloatLiteralNode value=88
+                |-WasmAtomNode symbol=i64.xor
+                  |-WasmAtomNode symbol=i64.load
+                    |-WasmAtomNode symbol=i32.add
+                      |-WasmAtomNode symbol=get_local
+                        |-QNameNode
+                          |-NameIdentifierNode name=$context_offset
+                      |-WasmAtomNode symbol=i32.const
+                        |-FloatLiteralNode value=128
+                  |-WasmAtomNode symbol=i64.load
+                    |-WasmAtomNode symbol=i32.add
+                      |-WasmAtomNode symbol=get_local
+                        |-QNameNode
+                          |-NameIdentifierNode name=$context_offset
+                      |-WasmAtomNode symbol=i32.const
+                        |-FloatLiteralNode value=168
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$C2
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=16
+            |-WasmAtomNode symbol=i64.xor
+              |-WasmAtomNode symbol=i64.load
+                |-WasmAtomNode symbol=i32.add
+                  |-WasmAtomNode symbol=get_local
+                    |-QNameNode
+                      |-NameIdentifierNode name=$context_offset
+                  |-WasmAtomNode symbol=i32.const
+                    |-FloatLiteralNode value=56
+              |-WasmAtomNode symbol=i64.xor
+                |-WasmAtomNode symbol=i64.load
+                  |-WasmAtomNode symbol=i32.add
+                    |-WasmAtomNode symbol=get_local
+                      |-QNameNode
+                        |-NameIdentifierNode name=$context_offset
+                    |-WasmAtomNode symbol=i32.const
+                      |-FloatLiteralNode value=96
+                |-WasmAtomNode symbol=i64.xor
+                  |-WasmAtomNode symbol=i64.load
+                    |-WasmAtomNode symbol=i32.add
+                      |-WasmAtomNode symbol=get_local
+                        |-QNameNode
+                          |-NameIdentifierNode name=$context_offset
+                      |-WasmAtomNode symbol=i32.const
+                        |-FloatLiteralNode value=136
+                  |-WasmAtomNode symbol=i64.load
+                    |-WasmAtomNode symbol=i32.add
+                      |-WasmAtomNode symbol=get_local
+                        |-QNameNode
+                          |-NameIdentifierNode name=$context_offset
+                      |-WasmAtomNode symbol=i32.const
+                        |-FloatLiteralNode value=176
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$C3
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=24
+            |-WasmAtomNode symbol=i64.xor
+              |-WasmAtomNode symbol=i64.load
+                |-WasmAtomNode symbol=i32.add
+                  |-WasmAtomNode symbol=get_local
+                    |-QNameNode
+                      |-NameIdentifierNode name=$context_offset
+                  |-WasmAtomNode symbol=i32.const
+                    |-FloatLiteralNode value=64
+              |-WasmAtomNode symbol=i64.xor
+                |-WasmAtomNode symbol=i64.load
+                  |-WasmAtomNode symbol=i32.add
+                    |-WasmAtomNode symbol=get_local
+                      |-QNameNode
+                        |-NameIdentifierNode name=$context_offset
+                    |-WasmAtomNode symbol=i32.const
+                      |-FloatLiteralNode value=104
+                |-WasmAtomNode symbol=i64.xor
+                  |-WasmAtomNode symbol=i64.load
+                    |-WasmAtomNode symbol=i32.add
+                      |-WasmAtomNode symbol=get_local
+                        |-QNameNode
+                          |-NameIdentifierNode name=$context_offset
+                      |-WasmAtomNode symbol=i32.const
+                        |-FloatLiteralNode value=144
+                  |-WasmAtomNode symbol=i64.load
+                    |-WasmAtomNode symbol=i32.add
+                      |-WasmAtomNode symbol=get_local
+                        |-QNameNode
+                          |-NameIdentifierNode name=$context_offset
+                      |-WasmAtomNode symbol=i32.const
+                        |-FloatLiteralNode value=184
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$C4
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=32
+            |-WasmAtomNode symbol=i64.xor
+              |-WasmAtomNode symbol=i64.load
+                |-WasmAtomNode symbol=i32.add
+                  |-WasmAtomNode symbol=get_local
+                    |-QNameNode
+                      |-NameIdentifierNode name=$context_offset
+                  |-WasmAtomNode symbol=i32.const
+                    |-FloatLiteralNode value=72
+              |-WasmAtomNode symbol=i64.xor
+                |-WasmAtomNode symbol=i64.load
+                  |-WasmAtomNode symbol=i32.add
+                    |-WasmAtomNode symbol=get_local
+                      |-QNameNode
+                        |-NameIdentifierNode name=$context_offset
+                    |-WasmAtomNode symbol=i32.const
+                      |-FloatLiteralNode value=112
+                |-WasmAtomNode symbol=i64.xor
+                  |-WasmAtomNode symbol=i64.load
+                    |-WasmAtomNode symbol=i32.add
+                      |-WasmAtomNode symbol=get_local
+                        |-QNameNode
+                          |-NameIdentifierNode name=$context_offset
+                      |-WasmAtomNode symbol=i32.const
+                        |-FloatLiteralNode value=152
+                  |-WasmAtomNode symbol=i64.load
+                    |-WasmAtomNode symbol=i32.add
+                      |-WasmAtomNode symbol=get_local
+                        |-QNameNode
+                          |-NameIdentifierNode name=$context_offset
+                      |-WasmAtomNode symbol=i32.const
+                        |-FloatLiteralNode value=192
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$D0
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$C4
+            |-WasmAtomNode symbol=i64.rotl
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$C1
+              |-WasmAtomNode symbol=i64.const
+                |-FloatLiteralNode value=1
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$D1
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$C0
+            |-WasmAtomNode symbol=i64.rotl
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$C2
+              |-WasmAtomNode symbol=i64.const
+                |-FloatLiteralNode value=1
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$D2
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$C1
+            |-WasmAtomNode symbol=i64.rotl
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$C3
+              |-WasmAtomNode symbol=i64.const
+                |-FloatLiteralNode value=1
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$D3
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$C2
+            |-WasmAtomNode symbol=i64.rotl
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$C4
+              |-WasmAtomNode symbol=i64.const
+                |-FloatLiteralNode value=1
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$D4
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$C3
+            |-WasmAtomNode symbol=i64.rotl
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$C0
+              |-WasmAtomNode symbol=i64.const
+                |-FloatLiteralNode value=1
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=0
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=0
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D0
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=40
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=40
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D0
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=80
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=80
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D0
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=120
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=120
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D0
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=160
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=160
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D0
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=8
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=8
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D1
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=48
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=48
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D1
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=88
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=88
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D1
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=128
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=128
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D1
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=168
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=168
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D1
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=16
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=16
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D2
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=56
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=56
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D2
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=96
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=96
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D2
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=136
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=136
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D2
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=176
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=176
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D2
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=24
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=24
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D3
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=64
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=64
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D3
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=104
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=104
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D3
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=144
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=144
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D3
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=184
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=184
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D3
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=32
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=32
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D4
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=72
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=72
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D4
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=112
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=112
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D4
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=152
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=152
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D4
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=192
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=192
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$D4
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-PrivateModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=keccak_rho
+      |-ParameterNode
+        |-NameIdentifierNode name=context_offset
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ParameterNode
+        |-NameIdentifierNode name=rotation_consts
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-WasmExpressionNode
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$tmp
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$i
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$i
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=0
+        |-WasmAtomNode symbol=block
+          |-QNameNode
+            |-NameIdentifierNode name=$done
+          |-WasmAtomNode symbol=loop
+            |-QNameNode
+              |-NameIdentifierNode name=$loop
+            |-WasmAtomNode symbol=if
+              |-WasmAtomNode symbol=i32.ge_u
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$i
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=24
+              |-WasmAtomNode symbol=br
+                |-QNameNode
+                  |-NameIdentifierNode name=$done
+            |-WasmAtomNode symbol=set_local
+              |-QNameNode
+                |-NameIdentifierNode name=$tmp
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.mul
+                  |-WasmAtomNode symbol=i32.const
+                    |-FloatLiteralNode value=8
+                  |-WasmAtomNode symbol=i32.add
+                    |-WasmAtomNode symbol=i32.const
+                      |-FloatLiteralNode value=1
+                    |-WasmAtomNode symbol=get_local
+                      |-QNameNode
+                        |-NameIdentifierNode name=$i
+            |-WasmAtomNode symbol=i64.store
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$tmp
+              |-WasmAtomNode symbol=i64.rotl
+                |-WasmAtomNode symbol=i64.load
+                  |-WasmAtomNode symbol=get_local
+                    |-QNameNode
+                      |-NameIdentifierNode name=$tmp
+                |-WasmAtomNode symbol=i64.load8_u
+                  |-WasmAtomNode symbol=i32.add
+                    |-WasmAtomNode symbol=get_local
+                      |-QNameNode
+                        |-NameIdentifierNode name=$rotation_consts
+                    |-WasmAtomNode symbol=get_local
+                      |-QNameNode
+                        |-NameIdentifierNode name=$i
+            |-WasmAtomNode symbol=set_local
+              |-QNameNode
+                |-NameIdentifierNode name=$i
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$i
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=1
+            |-WasmAtomNode symbol=br
+              |-QNameNode
+                |-NameIdentifierNode name=$loop
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-PrivateModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=keccak_pi
+      |-ParameterNode
+        |-NameIdentifierNode name=context_offset
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-WasmExpressionNode
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$A1
+          |-QNameNode
+            |-NameIdentifierNode name=i64
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$A1
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=8
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=8
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=48
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=48
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=72
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=72
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=176
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=176
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=112
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=112
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=160
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=160
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=16
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=16
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=96
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=96
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=104
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=104
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=152
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=152
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=184
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=184
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=120
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=120
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=32
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=32
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=192
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=192
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=168
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=168
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=64
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=64
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=128
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=128
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=40
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=40
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=24
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=24
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=144
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=144
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=136
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=136
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=88
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=88
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=56
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=56
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=80
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=80
+          |-WasmAtomNode symbol=get_local
+            |-QNameNode
+              |-NameIdentifierNode name=$A1
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-PrivateModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=keccak_chi
+      |-ParameterNode
+        |-NameIdentifierNode name=context_offset
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-WasmExpressionNode
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$A0
+          |-QNameNode
+            |-NameIdentifierNode name=i64
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$A1
+          |-QNameNode
+            |-NameIdentifierNode name=i64
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$i
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$i
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=0
+        |-WasmAtomNode symbol=block
+          |-QNameNode
+            |-NameIdentifierNode name=$done
+          |-WasmAtomNode symbol=loop
+            |-QNameNode
+              |-NameIdentifierNode name=$loop
+            |-WasmAtomNode symbol=if
+              |-WasmAtomNode symbol=i32.ge_u
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$i
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=25
+              |-WasmAtomNode symbol=br
+                |-QNameNode
+                  |-NameIdentifierNode name=$done
+            |-WasmAtomNode symbol=set_local
+              |-QNameNode
+                |-NameIdentifierNode name=$A0
+              |-WasmAtomNode symbol=i64.load
+                |-WasmAtomNode symbol=i32.add
+                  |-WasmAtomNode symbol=get_local
+                    |-QNameNode
+                      |-NameIdentifierNode name=$context_offset
+                  |-WasmAtomNode symbol=i32.mul
+                    |-WasmAtomNode symbol=i32.const
+                      |-FloatLiteralNode value=8
+                    |-WasmAtomNode symbol=get_local
+                      |-QNameNode
+                        |-NameIdentifierNode name=$i
+            |-WasmAtomNode symbol=set_local
+              |-QNameNode
+                |-NameIdentifierNode name=$A1
+              |-WasmAtomNode symbol=i64.load
+                |-WasmAtomNode symbol=i32.add
+                  |-WasmAtomNode symbol=get_local
+                    |-QNameNode
+                      |-NameIdentifierNode name=$context_offset
+                  |-WasmAtomNode symbol=i32.mul
+                    |-WasmAtomNode symbol=i32.const
+                      |-FloatLiteralNode value=8
+                    |-WasmAtomNode symbol=i32.add
+                      |-WasmAtomNode symbol=get_local
+                        |-QNameNode
+                          |-NameIdentifierNode name=$i
+                      |-WasmAtomNode symbol=i32.const
+                        |-FloatLiteralNode value=1
+            |-WasmAtomNode symbol=i64.store
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.mul
+                  |-WasmAtomNode symbol=i32.const
+                    |-FloatLiteralNode value=8
+                  |-WasmAtomNode symbol=get_local
+                    |-QNameNode
+                      |-NameIdentifierNode name=$i
+              |-WasmAtomNode symbol=i64.xor
+                |-WasmAtomNode symbol=i64.load
+                  |-WasmAtomNode symbol=i32.add
+                    |-WasmAtomNode symbol=get_local
+                      |-QNameNode
+                        |-NameIdentifierNode name=$context_offset
+                    |-WasmAtomNode symbol=i32.mul
+                      |-WasmAtomNode symbol=i32.const
+                        |-FloatLiteralNode value=8
+                      |-WasmAtomNode symbol=get_local
+                        |-QNameNode
+                          |-NameIdentifierNode name=$i
+                |-WasmAtomNode symbol=i64.and
+                  |-WasmAtomNode symbol=i64.xor
+                    |-WasmAtomNode symbol=get_local
+                      |-QNameNode
+                        |-NameIdentifierNode name=$A1
+                    |-WasmAtomNode symbol=i64.const
+                      |-FloatLiteralNode value=0xFFFFFFFFFFFFFFFF
+                  |-WasmAtomNode symbol=i64.load
+                    |-WasmAtomNode symbol=i32.add
+                      |-WasmAtomNode symbol=get_local
+                        |-QNameNode
+                          |-NameIdentifierNode name=$context_offset
+                      |-WasmAtomNode symbol=i32.mul
+                        |-WasmAtomNode symbol=i32.const
+                          |-FloatLiteralNode value=8
+                        |-WasmAtomNode symbol=i32.add
+                          |-WasmAtomNode symbol=get_local
+                            |-QNameNode
+                              |-NameIdentifierNode name=$i
+                          |-WasmAtomNode symbol=i32.const
+                            |-FloatLiteralNode value=2
+            |-WasmAtomNode symbol=i64.store
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.mul
+                  |-WasmAtomNode symbol=i32.const
+                    |-FloatLiteralNode value=8
+                  |-WasmAtomNode symbol=i32.add
+                    |-WasmAtomNode symbol=get_local
+                      |-QNameNode
+                        |-NameIdentifierNode name=$i
+                    |-WasmAtomNode symbol=i32.const
+                      |-FloatLiteralNode value=1
+              |-WasmAtomNode symbol=i64.xor
+                |-WasmAtomNode symbol=i64.load
+                  |-WasmAtomNode symbol=i32.add
+                    |-WasmAtomNode symbol=get_local
+                      |-QNameNode
+                        |-NameIdentifierNode name=$context_offset
+                    |-WasmAtomNode symbol=i32.mul
+                      |-WasmAtomNode symbol=i32.const
+                        |-FloatLiteralNode value=8
+                      |-WasmAtomNode symbol=i32.add
+                        |-WasmAtomNode symbol=get_local
+                          |-QNameNode
+                            |-NameIdentifierNode name=$i
+                        |-WasmAtomNode symbol=i32.const
+                          |-FloatLiteralNode value=1
+                |-WasmAtomNode symbol=i64.and
+                  |-WasmAtomNode symbol=i64.xor
+                    |-WasmAtomNode symbol=i64.load
+                      |-WasmAtomNode symbol=i32.add
+                        |-WasmAtomNode symbol=get_local
+                          |-QNameNode
+                            |-NameIdentifierNode name=$context_offset
+                        |-WasmAtomNode symbol=i32.mul
+                          |-WasmAtomNode symbol=i32.const
+                            |-FloatLiteralNode value=8
+                          |-WasmAtomNode symbol=i32.add
+                            |-WasmAtomNode symbol=get_local
+                              |-QNameNode
+                                |-NameIdentifierNode name=$i
+                            |-WasmAtomNode symbol=i32.const
+                              |-FloatLiteralNode value=2
+                    |-WasmAtomNode symbol=i64.const
+                      |-FloatLiteralNode value=0xFFFFFFFFFFFFFFFF
+                  |-WasmAtomNode symbol=i64.load
+                    |-WasmAtomNode symbol=i32.add
+                      |-WasmAtomNode symbol=get_local
+                        |-QNameNode
+                          |-NameIdentifierNode name=$context_offset
+                      |-WasmAtomNode symbol=i32.mul
+                        |-WasmAtomNode symbol=i32.const
+                          |-FloatLiteralNode value=8
+                        |-WasmAtomNode symbol=i32.add
+                          |-WasmAtomNode symbol=get_local
+                            |-QNameNode
+                              |-NameIdentifierNode name=$i
+                          |-WasmAtomNode symbol=i32.const
+                            |-FloatLiteralNode value=3
+            |-WasmAtomNode symbol=i64.store
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.mul
+                  |-WasmAtomNode symbol=i32.const
+                    |-FloatLiteralNode value=8
+                  |-WasmAtomNode symbol=i32.add
+                    |-WasmAtomNode symbol=get_local
+                      |-QNameNode
+                        |-NameIdentifierNode name=$i
+                    |-WasmAtomNode symbol=i32.const
+                      |-FloatLiteralNode value=2
+              |-WasmAtomNode symbol=i64.xor
+                |-WasmAtomNode symbol=i64.load
+                  |-WasmAtomNode symbol=i32.add
+                    |-WasmAtomNode symbol=get_local
+                      |-QNameNode
+                        |-NameIdentifierNode name=$context_offset
+                    |-WasmAtomNode symbol=i32.mul
+                      |-WasmAtomNode symbol=i32.const
+                        |-FloatLiteralNode value=8
+                      |-WasmAtomNode symbol=i32.add
+                        |-WasmAtomNode symbol=get_local
+                          |-QNameNode
+                            |-NameIdentifierNode name=$i
+                        |-WasmAtomNode symbol=i32.const
+                          |-FloatLiteralNode value=2
+                |-WasmAtomNode symbol=i64.and
+                  |-WasmAtomNode symbol=i64.xor
+                    |-WasmAtomNode symbol=i64.load
+                      |-WasmAtomNode symbol=i32.add
+                        |-WasmAtomNode symbol=get_local
+                          |-QNameNode
+                            |-NameIdentifierNode name=$context_offset
+                        |-WasmAtomNode symbol=i32.mul
+                          |-WasmAtomNode symbol=i32.const
+                            |-FloatLiteralNode value=8
+                          |-WasmAtomNode symbol=i32.add
+                            |-WasmAtomNode symbol=get_local
+                              |-QNameNode
+                                |-NameIdentifierNode name=$i
+                            |-WasmAtomNode symbol=i32.const
+                              |-FloatLiteralNode value=3
+                    |-WasmAtomNode symbol=i64.const
+                      |-FloatLiteralNode value=0xFFFFFFFFFFFFFFFF
+                  |-WasmAtomNode symbol=i64.load
+                    |-WasmAtomNode symbol=i32.add
+                      |-WasmAtomNode symbol=get_local
+                        |-QNameNode
+                          |-NameIdentifierNode name=$context_offset
+                      |-WasmAtomNode symbol=i32.mul
+                        |-WasmAtomNode symbol=i32.const
+                          |-FloatLiteralNode value=8
+                        |-WasmAtomNode symbol=i32.add
+                          |-WasmAtomNode symbol=get_local
+                            |-QNameNode
+                              |-NameIdentifierNode name=$i
+                          |-WasmAtomNode symbol=i32.const
+                            |-FloatLiteralNode value=4
+            |-WasmAtomNode symbol=i64.store
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.mul
+                  |-WasmAtomNode symbol=i32.const
+                    |-FloatLiteralNode value=8
+                  |-WasmAtomNode symbol=i32.add
+                    |-WasmAtomNode symbol=get_local
+                      |-QNameNode
+                        |-NameIdentifierNode name=$i
+                    |-WasmAtomNode symbol=i32.const
+                      |-FloatLiteralNode value=3
+              |-WasmAtomNode symbol=i64.xor
+                |-WasmAtomNode symbol=i64.load
+                  |-WasmAtomNode symbol=i32.add
+                    |-WasmAtomNode symbol=get_local
+                      |-QNameNode
+                        |-NameIdentifierNode name=$context_offset
+                    |-WasmAtomNode symbol=i32.mul
+                      |-WasmAtomNode symbol=i32.const
+                        |-FloatLiteralNode value=8
+                      |-WasmAtomNode symbol=i32.add
+                        |-WasmAtomNode symbol=get_local
+                          |-QNameNode
+                            |-NameIdentifierNode name=$i
+                        |-WasmAtomNode symbol=i32.const
+                          |-FloatLiteralNode value=3
+                |-WasmAtomNode symbol=i64.and
+                  |-WasmAtomNode symbol=i64.xor
+                    |-WasmAtomNode symbol=i64.load
+                      |-WasmAtomNode symbol=i32.add
+                        |-WasmAtomNode symbol=get_local
+                          |-QNameNode
+                            |-NameIdentifierNode name=$context_offset
+                        |-WasmAtomNode symbol=i32.mul
+                          |-WasmAtomNode symbol=i32.const
+                            |-FloatLiteralNode value=8
+                          |-WasmAtomNode symbol=i32.add
+                            |-WasmAtomNode symbol=get_local
+                              |-QNameNode
+                                |-NameIdentifierNode name=$i
+                            |-WasmAtomNode symbol=i32.const
+                              |-FloatLiteralNode value=4
+                    |-WasmAtomNode symbol=i64.const
+                      |-FloatLiteralNode value=0xFFFFFFFFFFFFFFFF
+                  |-WasmAtomNode symbol=get_local
+                    |-QNameNode
+                      |-NameIdentifierNode name=$A0
+            |-WasmAtomNode symbol=i64.store
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.mul
+                  |-WasmAtomNode symbol=i32.const
+                    |-FloatLiteralNode value=8
+                  |-WasmAtomNode symbol=i32.add
+                    |-WasmAtomNode symbol=get_local
+                      |-QNameNode
+                        |-NameIdentifierNode name=$i
+                    |-WasmAtomNode symbol=i32.const
+                      |-FloatLiteralNode value=4
+              |-WasmAtomNode symbol=i64.xor
+                |-WasmAtomNode symbol=i64.load
+                  |-WasmAtomNode symbol=i32.add
+                    |-WasmAtomNode symbol=get_local
+                      |-QNameNode
+                        |-NameIdentifierNode name=$context_offset
+                    |-WasmAtomNode symbol=i32.mul
+                      |-WasmAtomNode symbol=i32.const
+                        |-FloatLiteralNode value=8
+                      |-WasmAtomNode symbol=i32.add
+                        |-WasmAtomNode symbol=get_local
+                          |-QNameNode
+                            |-NameIdentifierNode name=$i
+                        |-WasmAtomNode symbol=i32.const
+                          |-FloatLiteralNode value=4
+                |-WasmAtomNode symbol=i64.and
+                  |-WasmAtomNode symbol=i64.xor
+                    |-WasmAtomNode symbol=get_local
+                      |-QNameNode
+                        |-NameIdentifierNode name=$A0
+                    |-WasmAtomNode symbol=i64.const
+                      |-FloatLiteralNode value=0xFFFFFFFFFFFFFFFF
+                  |-WasmAtomNode symbol=get_local
+                    |-QNameNode
+                      |-NameIdentifierNode name=$A1
+            |-WasmAtomNode symbol=set_local
+              |-QNameNode
+                |-NameIdentifierNode name=$i
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$i
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=5
+            |-WasmAtomNode symbol=br
+              |-QNameNode
+                |-NameIdentifierNode name=$loop
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-PrivateModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=keccak_permute
+      |-ParameterNode
+        |-NameIdentifierNode name=context_offset
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-WasmExpressionNode
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$rotation_consts
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$round_consts
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$round
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$round_consts
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=400
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$rotation_consts
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=592
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$round
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=0
+        |-WasmAtomNode symbol=block
+          |-QNameNode
+            |-NameIdentifierNode name=$done
+          |-WasmAtomNode symbol=loop
+            |-QNameNode
+              |-NameIdentifierNode name=$loop
+            |-WasmAtomNode symbol=if
+              |-WasmAtomNode symbol=i32.ge_u
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$round
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=24
+              |-WasmAtomNode symbol=br
+                |-QNameNode
+                  |-NameIdentifierNode name=$done
+            |-WasmAtomNode symbol=call
+              |-QNameNode
+                |-NameIdentifierNode name=$keccak_theta
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=call
+              |-QNameNode
+                |-NameIdentifierNode name=$keccak_rho
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=call
+              |-QNameNode
+                |-NameIdentifierNode name=$keccak_pi
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=call
+              |-QNameNode
+                |-NameIdentifierNode name=$keccak_chi
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i64.store
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i64.xor
+                |-WasmAtomNode symbol=i64.load
+                  |-WasmAtomNode symbol=get_local
+                    |-QNameNode
+                      |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i64.load
+                  |-WasmAtomNode symbol=i32.add
+                    |-WasmAtomNode symbol=get_local
+                      |-QNameNode
+                        |-NameIdentifierNode name=$round_consts
+                    |-WasmAtomNode symbol=i32.mul
+                      |-WasmAtomNode symbol=i32.const
+                        |-FloatLiteralNode value=8
+                      |-WasmAtomNode symbol=get_local
+                        |-QNameNode
+                          |-NameIdentifierNode name=$round
+            |-WasmAtomNode symbol=set_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$round
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=1
+            |-WasmAtomNode symbol=br
+              |-QNameNode
+                |-NameIdentifierNode name=$loop
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-PrivateModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=keccak_block
+      |-ParameterNode
+        |-NameIdentifierNode name=input_offset
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ParameterNode
+        |-NameIdentifierNode name=input_length
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ParameterNode
+        |-NameIdentifierNode name=context_offset
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-WasmExpressionNode
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=0
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=0
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=0
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=8
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=8
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=8
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=16
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=16
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=16
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=24
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=24
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=24
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=32
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=32
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=32
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=40
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=40
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=40
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=48
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=48
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=48
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=56
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=56
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=56
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=64
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=64
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=64
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=72
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=72
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=72
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=80
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=80
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=80
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=88
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=88
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=88
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=96
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=96
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=96
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=104
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=104
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=104
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=112
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=112
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=112
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=120
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=120
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=120
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=128
+          |-WasmAtomNode symbol=i64.xor
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=128
+            |-WasmAtomNode symbol=i64.load
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=128
+        |-WasmAtomNode symbol=call
+          |-QNameNode
+            |-NameIdentifierNode name=$keccak_permute
+          |-WasmAtomNode symbol=get_local
+            |-QNameNode
+              |-NameIdentifierNode name=$context_offset
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-PrivateModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=keccak_init
+      |-ParameterNode
+        |-NameIdentifierNode name=context_offset
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-WasmExpressionNode
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$round_consts
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$rotation_consts
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+        |-WasmAtomNode symbol=call
+          |-QNameNode
+            |-NameIdentifierNode name=$keccak_reset
+          |-WasmAtomNode symbol=get_local
+            |-QNameNode
+              |-NameIdentifierNode name=$context_offset
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$round_consts
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=400
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=0
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x0000000000000001
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=8
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x0000000000008082
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=16
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x800000000000808A
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=24
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x8000000080008000
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=32
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x000000000000808B
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=40
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x0000000080000001
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=48
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x8000000080008081
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=56
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x8000000000008009
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=64
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x000000000000008A
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=72
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x0000000000000088
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=80
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x0000000080008009
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=88
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x000000008000000A
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=96
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x000000008000808B
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=104
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x800000000000008B
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=112
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x8000000000008089
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=120
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x8000000000008003
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=128
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x8000000000008002
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=136
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x8000000000000080
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=144
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x000000000000800A
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=152
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x800000008000000A
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=160
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x8000000080008081
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=168
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x8000000000008080
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=176
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x0000000080000001
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$round_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=184
+          |-WasmAtomNode symbol=i64.const
+            |-FloatLiteralNode value=0x8000000080008008
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$rotation_consts
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=592
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=0
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=1
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=1
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=62
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=2
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=28
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=3
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=27
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=4
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=36
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=5
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=44
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=6
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=6
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=7
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=55
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=8
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=20
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=9
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=3
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=10
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=10
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=11
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=43
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=12
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=25
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=13
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=39
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=14
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=41
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=15
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=45
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=16
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=15
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=17
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=21
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=18
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=8
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=19
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=18
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=20
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=2
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=21
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=61
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=22
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=56
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$rotation_consts
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=23
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=14
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-PrivateModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=keccak_reset
+      |-ParameterNode
+        |-NameIdentifierNode name=context_offset
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=memset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=context_offset
+          |-FloatLiteralNode value=0
+          |-FloatLiteralNode value=400
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-PrivateModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=keccak_update
+      |-ParameterNode
+        |-NameIdentifierNode name=context_offset
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ParameterNode
+        |-NameIdentifierNode name=input_offset
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ParameterNode
+        |-NameIdentifierNode name=input_length
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-WasmExpressionNode
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$residue_offset
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$residue_buffer
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$residue_index
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$tmp
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$residue_offset
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=200
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$residue_buffer
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=208
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$residue_index
+          |-WasmAtomNode symbol=i32.load
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$residue_offset
+        |-WasmAtomNode symbol=if
+          |-WasmAtomNode symbol=i32.ne
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$residue_index
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=0
+          |-WasmAtomNode symbol=then
+            |-WasmAtomNode symbol=set_local
+              |-QNameNode
+                |-NameIdentifierNode name=$tmp
+              |-WasmAtomNode symbol=i32.sub
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=136
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$residue_index
+            |-WasmAtomNode symbol=if
+              |-WasmAtomNode symbol=i32.lt_u
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_length
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$tmp
+              |-WasmAtomNode symbol=set_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$tmp
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_length
+            |-WasmAtomNode symbol=call
+              |-QNameNode
+                |-NameIdentifierNode name=$memcpy
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$residue_buffer
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$residue_index
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$input_offset
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$tmp
+            |-WasmAtomNode symbol=set_local
+              |-QNameNode
+                |-NameIdentifierNode name=$residue_index
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$residue_index
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$tmp
+            |-WasmAtomNode symbol=if
+              |-WasmAtomNode symbol=i32.eq
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$residue_index
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=136
+              |-WasmAtomNode symbol=call
+                |-QNameNode
+                  |-NameIdentifierNode name=$keccak_block
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=136
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=set_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$residue_index
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=0
+            |-WasmAtomNode symbol=i32.store
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$residue_offset
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$residue_index
+            |-WasmAtomNode symbol=set_local
+              |-QNameNode
+                |-NameIdentifierNode name=$input_length
+              |-WasmAtomNode symbol=i32.sub
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_length
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$tmp
+        |-WasmAtomNode symbol=block
+          |-QNameNode
+            |-NameIdentifierNode name=$done
+          |-WasmAtomNode symbol=loop
+            |-QNameNode
+              |-NameIdentifierNode name=$loop
+            |-WasmAtomNode symbol=if
+              |-WasmAtomNode symbol=i32.lt_u
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_length
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=136
+              |-WasmAtomNode symbol=br
+                |-QNameNode
+                  |-NameIdentifierNode name=$done
+            |-WasmAtomNode symbol=call
+              |-QNameNode
+                |-NameIdentifierNode name=$keccak_block
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$input_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=136
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=set_local
+              |-QNameNode
+                |-NameIdentifierNode name=$input_offset
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_offset
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=136
+            |-WasmAtomNode symbol=set_local
+              |-QNameNode
+                |-NameIdentifierNode name=$input_length
+              |-WasmAtomNode symbol=i32.sub
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_length
+                |-WasmAtomNode symbol=i32.const
+                  |-FloatLiteralNode value=136
+            |-WasmAtomNode symbol=br
+              |-QNameNode
+                |-NameIdentifierNode name=$loop
+        |-WasmAtomNode symbol=if
+          |-WasmAtomNode symbol=i32.gt_u
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$input_length
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=0
+          |-WasmAtomNode symbol=then
+            |-WasmAtomNode symbol=call
+              |-QNameNode
+                |-NameIdentifierNode name=$memcpy
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$residue_buffer
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$residue_index
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$input_offset
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$input_length
+            |-WasmAtomNode symbol=set_local
+              |-QNameNode
+                |-NameIdentifierNode name=$residue_index
+              |-WasmAtomNode symbol=i32.add
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$residue_index
+                |-WasmAtomNode symbol=get_local
+                  |-QNameNode
+                    |-NameIdentifierNode name=$input_length
+            |-WasmAtomNode symbol=i32.store
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$residue_offset
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$residue_index
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-PrivateModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=keccak_finish
+      |-ParameterNode
+        |-NameIdentifierNode name=context_offset
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ParameterNode
+        |-NameIdentifierNode name=output_offset
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-WasmExpressionNode
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$residue_offset
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$residue_buffer
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$residue_index
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+        |-WasmAtomNode symbol=local
+          |-QNameNode
+            |-NameIdentifierNode name=$tmp
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$residue_offset
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=200
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$residue_buffer
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=208
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$residue_index
+          |-WasmAtomNode symbol=i32.load
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$residue_offset
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$tmp
+          |-WasmAtomNode symbol=get_local
+            |-QNameNode
+              |-NameIdentifierNode name=$residue_index
+        |-WasmAtomNode symbol=call
+          |-QNameNode
+            |-NameIdentifierNode name=$memset
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$residue_buffer
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$tmp
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=0
+          |-WasmAtomNode symbol=i32.sub
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=136
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$tmp
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$tmp
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$residue_buffer
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$residue_index
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=get_local
+            |-QNameNode
+              |-NameIdentifierNode name=$tmp
+          |-WasmAtomNode symbol=i32.or
+            |-WasmAtomNode symbol=i32.load8_u
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$tmp
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=0x01
+        |-WasmAtomNode symbol=set_local
+          |-QNameNode
+            |-NameIdentifierNode name=$tmp
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$residue_buffer
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=135
+        |-WasmAtomNode symbol=i32.store8
+          |-WasmAtomNode symbol=get_local
+            |-QNameNode
+              |-NameIdentifierNode name=$tmp
+          |-WasmAtomNode symbol=i32.or
+            |-WasmAtomNode symbol=i32.load8_u
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$tmp
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=0x80
+        |-WasmAtomNode symbol=call
+          |-QNameNode
+            |-NameIdentifierNode name=$keccak_block
+          |-WasmAtomNode symbol=get_local
+            |-QNameNode
+              |-NameIdentifierNode name=$residue_buffer
+          |-WasmAtomNode symbol=i32.const
+            |-FloatLiteralNode value=136
+          |-WasmAtomNode symbol=get_local
+            |-QNameNode
+              |-NameIdentifierNode name=$context_offset
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=get_local
+            |-QNameNode
+              |-NameIdentifierNode name=$output_offset
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$context_offset
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$output_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=8
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=8
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$output_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=16
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=16
+        |-WasmAtomNode symbol=i64.store
+          |-WasmAtomNode symbol=i32.add
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$output_offset
+            |-WasmAtomNode symbol=i32.const
+              |-FloatLiteralNode value=24
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=get_local
+                |-QNameNode
+                  |-NameIdentifierNode name=$context_offset
+              |-WasmAtomNode symbol=i32.const
+                |-FloatLiteralNode value=24
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=keccak
+      |-ParameterNode
+        |-NameIdentifierNode name=context_offset
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ParameterNode
+        |-NameIdentifierNode name=input_offset
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ParameterNode
+        |-NameIdentifierNode name=input_length
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ParameterNode
+        |-NameIdentifierNode name=output_offset
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-BlockNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=keccak_init
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=context_offset
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=keccak_update
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=context_offset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=input_offset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=input_length
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=keccak_finish
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=context_offset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=output_offset
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=output_offset

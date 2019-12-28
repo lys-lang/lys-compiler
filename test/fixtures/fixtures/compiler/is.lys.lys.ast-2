@@ -1,0 +1,165 @@
+|-Document
+  |-EnumDirectiveNode
+    |-NameIdentifierNode name=Enum
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=A
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=B
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=C
+      |-EmptyNode
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=value1
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Enum
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=A
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=value2
+      |-UnionTypeNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=A
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=B
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=A
+  |-VarDirectiveNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=value3
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=A
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=A
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=identity
+      |-ParameterNode
+        |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=ref
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=ref
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=a
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=test
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=x1
+          |-EmptyNode
+          |-IsExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=value1
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=A
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=y1
+          |-EmptyNode
+          |-IsExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=value1
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Enum
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=z1
+          |-EmptyNode
+          |-IsExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=value1
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=B
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=x2
+          |-EmptyNode
+          |-IsExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=value2
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=A
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=y2
+          |-EmptyNode
+          |-IsExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=value2
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Enum
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=z2
+          |-EmptyNode
+          |-IsExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=value2
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=B
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=x3
+          |-EmptyNode
+          |-IsExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=value3
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=A
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=y3
+          |-EmptyNode
+          |-IsExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=value3
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Enum
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=z3
+          |-EmptyNode
+          |-IsExpressionNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=identity
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=value3
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=B

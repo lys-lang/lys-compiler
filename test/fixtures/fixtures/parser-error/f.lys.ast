@@ -1,0 +1,31 @@
+|-Document(0,34)
+  |-FunctionDirective(0,34)
+    |-Decorators(0,0)
+      <Rule0>
+    |-PrivateModifier(0,8)
+      <Rule0>
+    |-FunDeclaration(8,34)
+      |-FunctionName(12,16)
+        |-NameIdentifier(12,16)
+          |-Identifier=test
+      |-TypeParameters(16,16)
+        <Rule0>
+      |-FunctionParamsList(16,30)
+        |-(List)(17,29)
+          |-Parameter(17,20)
+            |-NameIdentifier(17,18)
+              |-Identifier=a
+            |-<SyntaxError>=A type or effect was expected
+          |-Parameter(21,29)
+            |-NameIdentifier(21,22)
+              |-Identifier=b
+            |-Type(24,29)
+              |-Reference(24,29)
+                |-QName(24,29)
+                  |-NameIdentifier(24,29)
+                    |-Identifier=AType
+      |-ReturnType(31,31)
+        <Rule0>
+      |-FunctionBody(31,34)
+        |-NumberLiteral=2
+  |-EndOfFile=

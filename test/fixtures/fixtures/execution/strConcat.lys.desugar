@@ -1,0 +1,49 @@
+import support::test
+
+#[export]
+fun main(): void = {
+  START("Test byte concatenation")
+  {
+    val a = "abc"
+    val b = "1234"
+    val c = string.concat(a, b)
+    mustEqual(a.length, 3 as u32, "a.length == 3")
+    mustEqual(b.length, 4 as u32, "b.length == 4")
+    mustEqual(c.length, 7 as u32, "c.length == 7")
+    mustEqual(c, "abc1234", "c == 'abc1234' (1)")
+    val D = string.concat(c, c)
+    mustEqual(c, "abc1234", "c == 'abc1234' (2)")
+    mustEqual(D.length, 14 as u32, "d.length == 28")
+    mustEqual(D, "abc1234abc1234", D)
+  }
+  END()
+  START("Test string operations")
+  {
+    val str = "asd❮𝐑"
+    mustEqual(str.length, 6 as u32, "str.length == 6")
+    mustEqual(str [] 0 as u32, 97 as u16, "char at 0")
+    mustEqual(str [] 1 as u32, 115 as u16, "char at 1")
+    mustEqual(str [] 2 as u32, 100 as u16, "char at 2")
+    mustEqual(str [] 3 as u32, 10094 as u16, "char at 3")
+    mustEqual(str [] 4 as u32, 55349 as u16, "char at 4")
+    mustEqual(str [] 5 as u32, 56337 as u16, "char at 5")
+  }
+  END()
+  START("String concatenation")
+  {
+    val x = "ds" ++ "sa"
+    mustEqual(x.length, 4 as u32, "String.length must be 4")
+  }
+  END()
+  START("String concatenation UTF16")
+  {
+    val x = "ab" ++ "µ⚜︎"
+    mustEqual(x.length, 5 as u32, "String.length must be 5")
+    mustEqual(x [] 0 as u32, 0x0061, "a assertion failed")
+    mustEqual(x [] 1 as u32, 0x0062, "b assertion failed")
+    mustEqual(x [] 2 as u32, 0x00B5, "µ assertion failed")
+    mustEqual(x [] 3 as u32, 0x269C, "0x269C assertion failed")
+    mustEqual(x [] 4 as u32, 0xFE0E, "0xFE0E assertion failed")
+  }
+  END()
+}

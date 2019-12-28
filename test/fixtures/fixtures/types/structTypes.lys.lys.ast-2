@@ -1,0 +1,133 @@
+|-Document
+  |-StructDirectiveNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Infinity
+      |-EmptyNode
+  |-StructDirectiveNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=NDet
+      |-EmptyNode
+  |-StructDirectiveNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Real
+      |-ParameterNode
+        |-NameIdentifierNode name=number
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=f32
+  |-StructDirectiveNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Natural
+      |-ParameterNode
+        |-NameIdentifierNode name=number
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+  |-StructDirectiveNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Complex
+      |-ParameterNode
+        |-NameIdentifierNode name=real
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=f32
+      |-ParameterNode
+        |-NameIdentifierNode name=imaginary
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=f32
+  |-TypeDirectiveNode
+    |-NameIdentifierNode name=Number
+    |-UnionTypeNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Infinity
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=NDet
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Real
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Natural
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Complex
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=isComplex
+      |-ParameterNode
+        |-NameIdentifierNode name=number
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Number
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=boolean
+      |-PatternMatcherNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=number
+        |-MatchCaseIsNode
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Real
+          |-EmptyNode
+          |-EmptyNode
+        |-MatchCaseIsNode
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Natural
+          |-EmptyNode
+          |-EmptyNode
+        |-MatchDefaultNode
+          |-EmptyNode
+          |-EmptyNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=main
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=isComplex
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Infinity
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=isComplex
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Real
+            |-FloatLiteralNode value=0.0
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=isComplex
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Natural
+            |-FloatLiteralNode value=123
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=isComplex
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Complex
+            |-FloatLiteralNode value=0.0
+            |-FloatLiteralNode value=99.1

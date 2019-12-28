@@ -1,0 +1,5 @@
+fun isComplex(number: ref): boolean =
+  match number {
+    case x is Real(_) -> false
+    else -> false
+  }

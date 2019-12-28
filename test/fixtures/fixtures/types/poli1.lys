@@ -1,0 +1,15 @@
+struct True()
+struct False()
+type Boolean = True | False
+
+fun gt0(x: i32): Boolean =
+  if (x > 0)
+    True()
+  else
+    False()
+
+fun isTrue(a: Boolean): boolean =
+  match a {
+    case is True() -> true
+    else -> false
+  }

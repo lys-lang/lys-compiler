@@ -1,0 +1,137 @@
+|-Document
+  |-EnumDirectiveNode
+    |-NameIdentifierNode name=Color
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Red
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Green
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Blue
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Custom
+      |-ParameterNode
+        |-NameIdentifierNode name=r
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ParameterNode
+        |-NameIdentifierNode name=g
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ParameterNode
+        |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=isRed
+      |-ParameterNode
+        |-NameIdentifierNode name=color
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Color
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=boolean
+      |-BlockNode
+        |-PatternMatcherNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=color
+          |-MatchCaseIsNode
+            |-EmptyNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Red
+            |-EmptyNode
+            |-EmptyNode
+          |-MatchDefaultNode
+            |-EmptyNode
+            |-EmptyNode
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=testColors
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=support
+              |-NameIdentifierNode name=test
+              |-NameIdentifierNode name=assert
+          |-BinaryExpressionNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=isRed
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Red
+            |-NameIdentifierNode name===
+            |-EmptyNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=support
+              |-NameIdentifierNode name=test
+              |-NameIdentifierNode name=assert
+          |-BinaryExpressionNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=isRed
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Green
+            |-NameIdentifierNode name===
+            |-EmptyNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=support
+              |-NameIdentifierNode name=test
+              |-NameIdentifierNode name=assert
+          |-BinaryExpressionNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=isRed
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Blue
+            |-NameIdentifierNode name===
+            |-EmptyNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=support
+              |-NameIdentifierNode name=test
+              |-NameIdentifierNode name=assert
+          |-BinaryExpressionNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=isRed
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=Custom
+                |-FloatLiteralNode value=5
+                |-FloatLiteralNode value=5
+                |-FloatLiteralNode value=5
+            |-NameIdentifierNode name===
+            |-EmptyNode

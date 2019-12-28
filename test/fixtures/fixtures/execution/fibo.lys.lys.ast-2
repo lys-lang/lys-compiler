@@ -1,0 +1,264 @@
+|-Document
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=support
+      |-NameIdentifierNode name=test
+    |-EmptyNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-PrivateModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=fibo
+      |-ParameterNode
+        |-NameIdentifierNode name=n
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ParameterNode
+        |-NameIdentifierNode name=x1
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ParameterNode
+        |-NameIdentifierNode name=x2
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-BlockNode
+        |-IfNode
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=n
+            |-NameIdentifierNode name=>
+            |-FloatLiteralNode value=0
+          |-BlockNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=fibo
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=n
+                |-NameIdentifierNode name=-
+                |-FloatLiteralNode value=1
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=x2
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=x1
+                |-NameIdentifierNode name=+
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=x2
+          |-BlockNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=x1
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-PrivateModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=fiboPatternMatching
+      |-ParameterNode
+        |-NameIdentifierNode name=n
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ParameterNode
+        |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ParameterNode
+        |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-PatternMatcherNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=n
+        |-MatchLiteralNode
+          |-FloatLiteralNode value=0
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=a
+        |-MatchLiteralNode
+          |-FloatLiteralNode value=1
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+        |-MatchDefaultNode
+          |-EmptyNode
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=fibo
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=n
+              |-NameIdentifierNode name=-
+              |-FloatLiteralNode value=1
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=b
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name=+
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=b
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=fib
+      |-ParameterNode
+        |-NameIdentifierNode name=n
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-FunctionCallNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=fibo
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=n
+        |-FloatLiteralNode value=0
+        |-FloatLiteralNode value=1
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=fibPatternMatching
+      |-ParameterNode
+        |-NameIdentifierNode name=n
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-FunctionCallNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=fiboPatternMatching
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=n
+        |-FloatLiteralNode value=0
+        |-FloatLiteralNode value=1
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=factorial
+      |-ParameterNode
+        |-NameIdentifierNode name=n
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-IfNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=n
+          |-NameIdentifierNode name=>=
+          |-FloatLiteralNode value=1
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=n
+          |-NameIdentifierNode name=*
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=factorial
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=n
+              |-NameIdentifierNode name=-
+              |-FloatLiteralNode value=1
+        |-FloatLiteralNode value=1
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=main
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=START
+          |-StringLiteralNode value="fibonacci"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=mustEqual
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=fib
+            |-FloatLiteralNode value=46
+          |-FloatLiteralNode value=1836311903
+          |-StringLiteralNode value="fib(46) must be 1836311903"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=mustEqual
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=fibPatternMatching
+            |-FloatLiteralNode value=46
+          |-FloatLiteralNode value=1836311903
+          |-StringLiteralNode value="fibPatternMatching(46) must be 1836311903"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=END
+          |-EmptyNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=START
+          |-StringLiteralNode value="factorial"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=mustEqual
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=factorial
+            |-FloatLiteralNode value=10
+          |-FloatLiteralNode value=3628800
+          |-StringLiteralNode value="factorial(10) must be 3628800"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=END
+          |-EmptyNode

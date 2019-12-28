@@ -25,13 +25,17 @@ private var grammar: Nil | Grammar = Nil
 fun n(name: string): ParserRule = NonTerminal(name)
 
 // t == Identifier
-fun t(name: string): ParserRule = StrictTerminal(Identifier, name)
+fun t(name: string): ParserRule = Discard(StrictTerminal(Identifier, name))
 
 // K == Keyword
-fun K(name: string): ParserRule = StrictTerminal(Keyword, name)
+fun K(name: string): ParserRule = Discard(StrictTerminal(Keyword, name))
+
+// Kk == Keyword keep
+fun KK(name: string): ParserRule = StrictTerminal(Keyword, name)
 
 // op == Operator
-fun op(name: string): ParserRule = StrictTerminal(Operator, name)
+fun op(name: string): ParserRule = Discard(StrictTerminal(Operator, name))
+fun opk(name: string): ParserRule = StrictTerminal(Operator, name)
 
 fun Wrap(start: TokenType, middle: ParserRule, end: TokenType): ParserRule =
   WrapWith(Terminal(start), middle, Terminal(end))
@@ -175,7 +179,7 @@ fun getGrammar(): Grammar = {
         )) ++
         Nominal("Decorators", Push("Decorators", ZeroOrMore(n("Decorator")))) ++
         Nominal("Decorator", Push("Decorator", Cons(Wrap(MacroDecoration, Cons(WS, n("NameIdentifier"), ZeroOrMore(Cons(WSS, n("Literal"))), WS), VectorClose), WS))) ++
-        Nominal("LoopExpression", Push("LoopExpression", Rune(Discard(K("loop")), Cons(WS, n("Expression")), "An expression was expected"))) ++
+        Nominal("LoopExpression", Push("LoopExpression", Rune(K("loop"), Cons(WS, n("Expression")), "An expression was expected"))) ++
         Nominal("ContinueStatement", Push("ContinueStatement", K("continue"))) ++
         Nominal("BreakStatement", Push("BreakStatement", K("break"))) ++
         Nominal("ValDeclaration", Push("ValDeclaration",
@@ -193,12 +197,12 @@ fun getGrammar(): Grammar = {
         Nominal("FunDeclaration", Push("FunDeclaration", Cons(
           Rune(n("FUN_KEYWORD"), n("FunctionName"), "A function name was expected"),
           WS,
-          Optional(n("TypeParameters")),
+          Push("TypeParameters", Optional(n("TypeParameters"))),
           n("FunctionParamsList"),
           WS,
-          Optional(n("OfType")),
+          Push("ReturnType", Optional(n("OfType"))),
           WS,
-          Optional(n("FunAssignExpression"))
+          Push("FunctionBody", Optional(n("FunAssignExpression")))
         ))) ++
         Nominal("MatchExpression", Push("MatchExpression",
           Rune(
@@ -214,12 +218,31 @@ fun getGrammar(): Grammar = {
             "A match body was expected"
           )
         )) ++
-        Nominal("CaseCondition", Push("CaseCondition", Cons(Discard(K("case")), WS, n("NameIdentifier"), WSS, Cut(K("if"), WS, n("Expression"), WS, op("->")), WS, n("Expression")))) ++
-        Nominal("CaseLiteral", Push("CaseLiteral", Cons(Discard(K("case")), WS, Cut(n("Literal"), WS, op("->"), WS, n("Expression"))))) ++
-        Nominal("CaseIs", Push("CaseIs", Cons(Discard(K("case")), WS, Optional(Cons(n("NameIdentifier"), WSS)), Cut(K("is"), WSS, n("Reference")), WS, Optional(n("DeconstructStruct")), op("->"), WS, n("Expression")))) ++
-        Nominal("CaseElse", Push("CaseElse", Cons(Cut(Discard(K("else")), WS), Optional(Cut(n("NameIdentifier"), WSS)), op("->"), WS, n("Expression")))) ++
-        Nominal("IfExpression", Push("IfExpression", Cons(Rune(Cut(Discard(K("if")), WS), n("IfBody"), "A condition was expected"), WS, n("Expression"), Optional(Cons(WS, n("ElseExpression")))))) ++
-        Nominal("ElseExpression", Rune(Cons(Discard(K("else")), WS), n("Expression"), "An expression was expected")) ++
+        Nominal("CaseCondition", Push("CaseCondition", Cons(
+          K("case"), WS,
+          Push("DeclaredName", Optional(Cons(n("NameIdentifier"), WS))),
+          Rune(Cons(K("if"), WS), n("Expression"), "A condition was expected"), WS,
+          Rune(Cons(op("->"), WS), n("Expression"), "An expression was expected"))
+        )) ++
+        Nominal("CaseLiteral", Push("CaseLiteral", Cons(
+          K("case"), WS,
+          Push("Literal", Or(n("Literal"), Fail("A literal was expected"))), WS,
+          Rune(Cons(op("->"), WS), n("Expression"), "An expression was expected")
+        ))) ++
+        Nominal("CaseIs", Push("CaseIs", Cons(
+          K("case"), WS,
+          Push("DeclaredName", Optional(Cons(n("NameIdentifier"), WS))),
+          Push("ReferencedType", Rune(K("is"), Cons(WSS, n("Reference")), "A type reference was expected")), WS,
+          Push("Destructure", Optional(n("DestructureStruct"))),
+          Rune(Cons(op("->"), WS), n("Expression"), "An expression was expected"))
+        )) ++
+        Nominal("CaseElse", Push("CaseElse", Cons(
+          Cons(K("else"), WS),
+          Push("DeclaredName", Optional(Cut(n("NameIdentifier"), WS))),
+          Rune(Cons(op("->"), WS), n("Expression"), "An expression was expected"))
+        )) ++
+        Nominal("IfExpression", Push("IfExpression", Cons(Rune(Cut(K("if"), WS), n("Condition"), "A condition was expected"), WS, n("Expression"), Optional(Cons(WS, n("ElseExpression")))))) ++
+        Nominal("ElseExpression", Rune(Cons(K("else"), WS), n("Expression"), "An expression was expected")) ++
         Nominal("WasmExpression", Push("WasmExpression",
           Rune(
             Cons(op("%"), t("wasm")),
@@ -241,49 +264,49 @@ fun getGrammar(): Grammar = {
           )
         )) ++
 
-        Nominal("IfBody", Push("IfBody", Wrap(ParenthesesOpen, Cons(WS, n("Expression"), WS), ParenthesesClose))) ++
+        Nominal("Condition", Push("Condition", Wrap(ParenthesesOpen, Cons(WS, n("Expression"), WS), ParenthesesClose))) ++
         Nominal("MatchElements", Cut(Or(n("CaseCondition"), n("CaseIs"), n("CaseLiteral"), n("CaseElse")), WS)) ++
 
         Nominal("UnknownExpression", Push("UnknownExpression", t("???"))) ++
-        Nominal("ValueType", Push("ValueType",
+        Nominal("ValueType",
           Rune(
             Cons(op("="), WS),
             Or(
-              Cons(LookAhead(op("%")), Or(n("InjectedLiteral"), n("StructLiteral"), n("StackLiteral"))),
+              Push("Type", Cons(LookAhead(op("%")), Or(n("InjectedLiteral"), n("StructLiteral"), n("StackLiteral")))),
               n("Type")
             ),
             "A type value was expected"
           )
-        )) ++
+        ) ++
 
         Nominal("TypeVariableList", Push("TypeVariableList", Cons(n("TypeVariable"), ZeroOrMore(Cut(Terminal(Comma), WS, n("TypeVariable") , WS)), WS))) ++
         Nominal("TypeVariable", Push("TypeVariable", n("NameIdentifier"))) ++
-        Nominal("TypeParameters", Push("TypeParameters", Cons(WrapWith(op("<"), Cons(WS, Optional(n("TypeVariableList"))), op(">")), WS))) ++
+        Nominal("TypeParameters", Cons(WrapWith(op("<"), Cons(WS, Optional(n("TypeVariableList"))), op(">")), WS)) ++
 
         Nominal("Assign", Rune(Cons(op("="), WS), Or(n("Expression"), n("UnknownExpression")), "A value was expected.")) ++
-        Nominal("FunAssignExpression", Push("FunAssignExpression",
+        Nominal("FunAssignExpression",
           Rune(
             op("="),
             Cons(WS, Or(n("Expression"), n("WasmExpression"), n("UnknownExpression"))),
             "An expression was expected"
           )
-        )) ++
-        Nominal("OfType", Push("OfType",
+        ) ++
+        Nominal("OfType",
           Rune(
             op(":"),
             Cons(WS, Optional(Cons(n("FunctionEffect"), WS)), n("Type"), WS),
             "A type or effect was expected"
           )
-        )) ++
-        Nominal("StructParamsList", Push("StructParamsList", Wrap(CurlyBracesOpen, Cons(WS, n("ParameterList"), WS), CurlyBracesClose))) ++
+        ) ++
+        Nominal("StructParamsList", Wrap(CurlyBracesOpen, Cons(WS, n("ParameterList"), WS), CurlyBracesClose)) ++
         Nominal("FunctionParamsList", Push("FunctionParamsList", Wrap(ParenthesesOpen, Cons(WS, n("ParameterList"), WS), ParenthesesClose))) ++
-        Nominal("ParameterList", Push("ParameterList", Optional(OneOrMoreComma(n("Parameter"))))) ++
+        Nominal("ParameterList", Push("(List)", Optional(OneOrMoreComma(n("Parameter"))))) ++
         Nominal("Parameter", Push("Parameter", Cons(n("NameIdentifier"), WS, Optional(n("OfType")), WS))) ++
 
         Nominal("StructDeclaration", Push("StructDeclaration", Cons(n("NameIdentifier"), Optional(n("FunctionParamsList"))))) ++
         Nominal("EffectMemberDeclaration", Push("EffectMemberDeclaration", Cons(n("NameIdentifier"), WS, n("FunctionParamsList"), n("OfType")))) ++
         Nominal("TraitDeclElements", Push("TraitDeclElements", OneOrMore(Cons(WS, n("FunctionDirective"))))) ++
-        Nominal("TypeDeclElements", Push("TypeDeclElements", OneOrMore(Cons(WS, n("StructDeclaration"))))) ++
+        Nominal("TypeDeclElements", OneOrMore(Cons(WS, n("StructDeclaration")))) ++
         Nominal("EffectElements", Push("EffectElements", OneOrMore(Cons(WS, n("EffectMemberDeclaration"))))) ++
 
         Nominal("FunctionName", Push("FunctionName", Or(n("NameIdentifier"), n("FunOperator")))) ++
@@ -293,16 +316,16 @@ fun getGrammar(): Grammar = {
             NegativeLookAhead(op(":")),
             Or(
               Terminal(Operator),
-              K("is"),
-              K("as"),
+              KK("is"),
+              KK("as"),
               Cons(Terminal(VectorOpen), Terminal(VectorClose))
             )
         ))) ++
 
-        Nominal("NamespaceElementList", Push("NamespaceElementList",
+        Nominal("NamespaceElementList", Push("(List)",
           Wrap(CurlyBracesOpen, Cons(WS, ZeroOrMore(Cons(n("ImplInnerDirective"), WS))), CurlyBracesClose))
         ) ++
-        Nominal("EffectDeclaration", Push("EffectDeclaration", Cons(n("NameIdentifier"), WS, Optional(n("TypeParameters")), n("EffectElementList")))) ++
+        Nominal("EffectDeclaration", Push("EffectDeclaration", Cons(n("NameIdentifier"), WS, Push("TypeParameters", Optional(n("TypeParameters"))), n("EffectElementList")))) ++
         Nominal("EffectElementList", Push("EffectElementList", Wrap(CurlyBracesOpen, Cons(WS, Optional(n("EffectElements")), WS), CurlyBracesClose))) ++
         Nominal("FunctionEffect", Push("FunctionEffect",
           WrapWith(
@@ -318,7 +341,7 @@ fun getGrammar(): Grammar = {
         Nominal("AtomType", Or(n("TypeParen"), n("FunctionTypeLiteral"), n("Reference"))) ++
         Nominal("TypeParen", Push("TypeParen", Wrap(ParenthesesOpen, Cons(WS, Or(n("Type"), Fail("A type was expected here")), WS), ParenthesesClose))) ++
 
-        Nominal("FunctionTypeLiteral", Push("FunctionTypeLiteral", Cons(Cons(K("fun"), WS), Cons(Optional(n("TypeParameters")), n("FunctionTypeParameters"), WS, op("->"), WS, n("Type"))))) ++
+        Nominal("FunctionTypeLiteral", Push("FunctionTypeLiteral", Cons(Cons(K("fun"), WS), Cons(Push("TypeParameters", Optional(n("TypeParameters"))), n("FunctionTypeParameters"), WS, op("->"), WS, n("Type"))))) ++
         Nominal("FunctionTypeParameters", Push("FunctionTypeParameters", Wrap(ParenthesesOpen, Optional(OneOrMoreComma(n("FunctionTypeParameter"))), ParenthesesClose))) ++ // {pin=1,recoverUntil=PAREN_RECOVERY}
         Nominal("FunctionTypeParameter", Push("FunctionTypeParameter", Cons(Optional(Cons(n("NameIdentifier"), WS, op(":"))), WS, n("Type")))) ++
 
@@ -333,17 +356,17 @@ fun getGrammar(): Grammar = {
                                 n("FunDeclaration"),
                                 n("Expression"))) ++
 
-        Nominal("AssignExpression", PushIfManyChildren("AssignExpression", Cons(n("OrExpression"), ZeroOrMore(Cons(WS, n("AssignmentKeyword"), WS, n("OrExpression")))))) ++
-        Nominal("OrExpression", PushIfManyChildren("OrExpression", Cons(n("AndExpression"), ZeroOrMore(Cons(WS, n("OrKeyword"), WS, n("AndExpression")))))) ++
-        Nominal("AndExpression", PushIfManyChildren("AndExpression", Cons(n("BitOrExpression"), ZeroOrMore(Cons(WS, n("AndKeyword"), WS, n("BitOrExpression")))))) ++
-        Nominal("BitOrExpression", PushIfManyChildren("BitOrExpression", Cons(n("BitXorExpression"), ZeroOrMore(Cons(WS, n("BitOrOperator"), WS, n("BitXorExpression")))))) ++
-        Nominal("BitXorExpression", PushIfManyChildren("BitXorExpression", Cons(n("BitAndExpression"), ZeroOrMore(Cons(WS, n("BitXorOperator"), WS, n("BitAndExpression")))))) ++
-        Nominal("BitAndExpression", PushIfManyChildren("BitAndExpression", Cons(n("EqExpression"), ZeroOrMore(Cons(WS, n("BitAndOperator"), WS, n("EqExpression")))))) ++
-        Nominal("EqExpression", PushIfManyChildren("EqExpression", Cons(n("RelExpression"), ZeroOrMore(Cons(WS, n("EqOperator"), WS, n("RelExpression")))))) ++
-        Nominal("RelExpression", PushIfManyChildren("RelExpression", Cons(n("ShiftExpression"), ZeroOrMore(Cons(WS, n("RelOperator"), WS, n("ShiftExpression")))))) ++
-        Nominal("ShiftExpression", PushIfManyChildren("ShiftExpression", Cons(n("AddExpression"), ZeroOrMore(Cons(WS, n("ShiftOperator"), WS, n("AddExpression")))))) ++
-        Nominal("AddExpression", PushIfManyChildren("AddExpression", Cons(n("MulExpression"), ZeroOrMore(Cons(WS, n("AddOperator"), WS, n("MulExpression")))))) ++
-        Nominal("MulExpression", PushIfManyChildren("MulExpression", Cons(n("IsExpression"), ZeroOrMore(Cons(WS, n("MulOperator"), WS, n("IsExpression")))))) ++
+        Nominal("AssignExpression", PushIfManyChildren("BinaryOpExpression", Cons(n("OrExpression"), ZeroOrMore(Cons(WS, n("AssignmentKeyword"), WS, n("OrExpression")))))) ++
+        Nominal("OrExpression", PushIfManyChildren("BinaryOpExpression", Cons(n("AndExpression"), ZeroOrMore(Cons(WS, n("OrKeyword"), WS, n("AndExpression")))))) ++
+        Nominal("AndExpression", PushIfManyChildren("BinaryOpExpression", Cons(n("BitOrExpression"), ZeroOrMore(Cons(WS, n("AndKeyword"), WS, n("BitOrExpression")))))) ++
+        Nominal("BitOrExpression", PushIfManyChildren("BinaryOpExpression", Cons(n("BitXorExpression"), ZeroOrMore(Cons(WS, n("BitOrOperator"), WS, n("BitXorExpression")))))) ++
+        Nominal("BitXorExpression", PushIfManyChildren("BinaryOpExpression", Cons(n("BitAndExpression"), ZeroOrMore(Cons(WS, n("BitXorOperator"), WS, n("BitAndExpression")))))) ++
+        Nominal("BitAndExpression", PushIfManyChildren("BinaryOpExpression", Cons(n("EqExpression"), ZeroOrMore(Cons(WS, n("BitAndOperator"), WS, n("EqExpression")))))) ++
+        Nominal("EqExpression", PushIfManyChildren("BinaryOpExpression", Cons(n("RelExpression"), ZeroOrMore(Cons(WS, n("EqOperator"), WS, n("RelExpression")))))) ++
+        Nominal("RelExpression", PushIfManyChildren("BinaryOpExpression", Cons(n("ShiftExpression"), ZeroOrMore(Cons(WS, n("RelOperator"), WS, n("ShiftExpression")))))) ++
+        Nominal("ShiftExpression", PushIfManyChildren("BinaryOpExpression", Cons(n("AddExpression"), ZeroOrMore(Cons(WS, n("ShiftOperator"), WS, n("AddExpression")))))) ++
+        Nominal("AddExpression", PushIfManyChildren("BinaryOpExpression", Cons(n("MulExpression"), ZeroOrMore(Cons(WS, n("AddOperator"), WS, n("MulExpression")))))) ++
+        Nominal("MulExpression", PushIfManyChildren("BinaryOpExpression", Cons(n("IsExpression"), ZeroOrMore(Cons(WS, n("MulOperator"), WS, n("IsExpression")))))) ++
         Nominal("IsExpression", PushIfManyChildren("IsExpression", Cons(n("AsExpression"), ZeroOrMore(Cons(WS, n("IsKeyword"), WS, Or(n("Type"), Fail("A type was expected"))))))) ++
         Nominal("AsExpression", PushIfManyChildren("AsExpression", Cons(n("UnaryExpression"), ZeroOrMore(Cons(WS, n("AsKeyword"), WS, Or(n("Type"), Fail("A type was expected"))))))) ++
         Nominal("UnaryExpression", PushIfManyChildren("UnaryExpression", Or(
@@ -353,13 +376,13 @@ fun getGrammar(): Grammar = {
                                       n("AtomicExpression")))) ++
         Nominal("AtomicExpression", PushIfManyChildren("AtomicExpression", Cons(n("Value"), ZeroOrMore(Cons(WS, Or(n("MemberExpression"), n("CallArguments"), n("IndexExpression"))))))) ++
 
-        Nominal("BinMemberOperator", Push("BinMemberOperator",  Or(op(".^"), op(".")))) ++
+        Nominal("BinMemberOperator", Or(opk(".^"), opk("."))) ++
         Nominal("MemberExpression", Push("MemberExpression",  Rune(n("BinMemberOperator"), n("NameIdentifier"), "A name identifier was expected here"))) ++
         Nominal("IndexExpression", Push("IndexExpression",  Wrap(VectorOpen, Cons(WS, Or(n("Expression"), Fail("Missing index expression")), WS), VectorClose))) ++
 
-        Nominal("NegExpression", Push("NegExpression", Rune(op("!"), n("AtomicExpression"), "Missing expression"))) ++
-        Nominal("BinNegExpression", Push("BinNegExpression", Rune(op("~"), n("AtomicExpression"), "Missing expression"))) ++
-        Nominal("UnaryMinus", Push("UnaryMinus", Rune(op("-"), n("AtomicExpression"), "Missing expression"))) ++
+        Nominal("NegExpression", Push("UnaryExpression", Rune(opk("!"), n("AtomicExpression"), "Missing expression"))) ++
+        Nominal("BinNegExpression", Push("UnaryExpression", Rune(opk("~"), n("AtomicExpression"), "Missing expression"))) ++
+        Nominal("UnaryMinus", Push("UnaryExpression", Rune(opk("-"), n("AtomicExpression"), "Missing expression"))) ++
 
         Nominal("Value", Or(n("Literal"),
                             n("Reference"),
@@ -380,7 +403,7 @@ fun getGrammar(): Grammar = {
         // Pattern matching
         Nominal("MatchBody", Push("MatchBody", Wrap(CurlyBracesOpen, Cons(WS, ZeroOrMore(n("MatchElements"))), CurlyBracesClose))) ++
 
-        Nominal("DeconstructStruct", Push("DeconstructStruct", Cons(Wrap(ParenthesesOpen, Optional(OneOrMoreComma(n("NameIdentifier"))), ParenthesesClose), WS))) ++
+        Nominal("DestructureStruct", Push("DestructureStruct", Cons(Wrap(ParenthesesOpen, Optional(OneOrMoreComma(n("NameIdentifier"))), ParenthesesClose), WS))) ++
 
         // Function call
         Nominal("CallArguments", Push("CallArguments",  Wrap(ParenthesesOpen, Optional(OneOrMoreComma(n("Expression"))), ParenthesesClose))) ++
@@ -389,7 +412,7 @@ fun getGrammar(): Grammar = {
 
         Nominal("BooleanLiteral", Push("BooleanLiteral", Or(K("true"), K("false")))) ++
         Nominal("PostfixNumber", PushIfManyChildren("PostfixNumber", Cons(Terminal(NumberLiteral), Optional(n("Reference"))))) ++
-        Nominal("NegNumberLiteral", Push("NegNumberLiteral", Cons(Optional(op("-")), Terminal(NumberLiteral)))) ++
+        Nominal("NegNumberLiteral", Push("NegNumberLiteral", Cons(Optional(opk("-")), Terminal(NumberLiteral)))) ++
 
         Nominal("Literal", Or(Terminal(StringLiteral), n("PostfixNumber"), n("BooleanLiteral"))) ++
 
@@ -403,7 +426,7 @@ fun getGrammar(): Grammar = {
                                  n("SExpression"),
                                  n("NegNumberLiteral")), WS)) ++
 
-        Nominal("SSymbol", Push("SSymbol", Cons(Or(Terminal(Identifier), Terminal(Keyword)), ZeroOrMore(Or(Terminal(Identifier), Terminal(Keyword), op("/"), op(".")))))) ++
+        Nominal("SSymbol", Push("SSymbol", Cons(Or(Terminal(Identifier), Terminal(Keyword)), ZeroOrMore(Or(Terminal(Identifier), Terminal(Keyword), opk("/"), opk(".")))))) ++
 
         // Keywords
 
@@ -442,22 +465,22 @@ fun getGrammar(): Grammar = {
 
         // OPERATORSORDERED BY PRECEDENCE https://introcs.cs.princeton.edu/java/11precedence/ z
 
-        Nominal("AssignmentKeyword", Push("AssignmentKeyword", op("="))) ++
-        Nominal("NotPreOperator", Push("NotPreOperator", op("!"))) ++
-        Nominal("BitNotPreOperator", Push("BitNotPreOperator", op("~"))) ++
-        Nominal("MinusPreOperator", Push("MinusPreOperator", op("-"))) ++
-        Nominal("AsKeyword", Push("AsKeyword", Cons(K("as"), WS))) ++
-        Nominal("IsKeyword", Push("IsKeyword", Cons(K("is"), WS))) ++
-        Nominal("MulOperator", Push("MulOperator", Or(op("**"), op("*"), op("/"), op("%")))) ++
-        Nominal("AddOperator", Push("AddOperator", Or(op("++"), op("+"), op("-")))) ++
-        Nominal("ShiftOperator", Push("ShiftOperator", Or(op(">>>"), op(">>"), op("<<")))) ++
-        Nominal("RelOperator", Push("RelOperator", Or(op(">="), op("<="), op(">"), op("<")))) ++
-        Nominal("EqOperator", Push("EqOperator", Or(op("==="), op("!=="), op("~="), op("=="), op("!=")))) ++
-        Nominal("BitAndOperator", Push("BitAndOperator", op("&"))) ++
-        Nominal("BitXorOperator", Push("BitXorOperator", op("^"))) ++
-        Nominal("BitOrOperator", Push("BitOrOperator", op("|"))) ++
-        Nominal("AndKeyword", Push("AndKeyword", op("&&"))) ++
-        Nominal("OrKeyword", Push("OrKeyword", op("||")))
+        Nominal("AssignmentKeyword", opk("=")) ++
+        Nominal("NotPreOperator", opk("!")) ++
+        Nominal("BitNotPreOperator", opk("~")) ++
+        Nominal("MinusPreOperator", opk("-")) ++
+        Nominal("AsKeyword", Cons(K("as"), WS)) ++
+        Nominal("IsKeyword", Cons(K("is"), WS)) ++
+        Nominal("MulOperator", Or(opk("**"), opk("*"), opk("/"), opk("%"))) ++
+        Nominal("AddOperator", Or(opk("++"), opk("+"), opk("-"))) ++
+        Nominal("ShiftOperator", Or(opk(">>>"), opk(">>"), opk("<<"))) ++
+        Nominal("RelOperator", Or(opk(">="), opk("<="), opk(">"), opk("<"))) ++
+        Nominal("EqOperator", Or(opk("==="), opk("!=="), opk("~="), opk("=="), opk("!="))) ++
+        Nominal("BitAndOperator", opk("&")) ++
+        Nominal("BitXorOperator", opk("^")) ++
+        Nominal("BitOrOperator", opk("|")) ++
+        Nominal("AndKeyword", opk("&&")) ++
+        Nominal("OrKeyword", opk("||"))
         grammar = g
         g
     }

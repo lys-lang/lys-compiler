@@ -1,0 +1,53 @@
+|-Document
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=support
+      |-NameIdentifierNode name=env
+    |-EmptyNode
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=support
+      |-NameIdentifierNode name=test
+    |-EmptyNode
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=test
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=START
+          |-StringLiteralNode value="This is a test suite"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=printf
+          |-StringLiteralNode value="    Hello world %X"
+          |-FloatLiteralNode value=0xDEADFACE
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=mustEqual
+          |-AsExpressionNode
+            |-FloatLiteralNode value=3
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u8
+          |-AsExpressionNode
+            |-FloatLiteralNode value=3
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u16
+          |-StringLiteralNode value="assertion name"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=END
+          |-EmptyNode

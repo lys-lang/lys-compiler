@@ -1,0 +1,63 @@
+|-Document
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=test
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=x
+          |-EmptyNode
+          |-FloatLiteralNode value=1
+        |-LoopNode
+          |-BlockNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=x
+              |-NameIdentifierNode name==
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=x
+                |-NameIdentifierNode name=+
+                |-FloatLiteralNode value=1
+            |-IfNode
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=x
+                |-NameIdentifierNode name=>
+                |-FloatLiteralNode value=10
+              |-ContinueNode
+              |-EmptyNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=test
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=x
+          |-EmptyNode
+          |-FloatLiteralNode value=1
+        |-LoopNode
+          |-BlockNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=x
+              |-NameIdentifierNode name==
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=x
+                |-NameIdentifierNode name=+
+                |-FloatLiteralNode value=1
+            |-ContinueNode

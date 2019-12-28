@@ -1,0 +1,23 @@
+enum Color {
+  Red
+  Green
+  Blue
+  Custom(r: i32, g: i32, b: i32)
+}
+
+#[export]
+fun isRed(color: Color): boolean = {
+  match color {
+    case is Red -> true
+    // case Custom(r,g,b) -> r == 255 && g == 0 && b == 0
+    else -> false
+  }
+}
+
+#[export]
+fun testColors(): void = {
+  support::test::assert(isRed(Red) == true)
+  support::test::assert(isRed(Green) == false)
+  support::test::assert(isRed(Blue) == false)
+  support::test::assert(isRed(Custom(5,5,5)) == false)
+}

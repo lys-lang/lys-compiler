@@ -1,0 +1,556 @@
+|-Document
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=support
+      |-NameIdentifierNode name=test
+    |-EmptyNode
+  |-EnumDirectiveNode
+    |-NameIdentifierNode name=Color
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=None
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Red
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Green
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Blue
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Custom
+      |-ParameterNode
+        |-NameIdentifierNode name=hex
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+  |-StructDirectiveNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=CatBag
+      |-ParameterNode
+        |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ParameterNode
+        |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+      |-ParameterNode
+        |-NameIdentifierNode name=c
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=f32
+      |-ParameterNode
+        |-NameIdentifierNode name=d
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i64
+      |-ParameterNode
+        |-NameIdentifierNode name=e
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=f64
+      |-ParameterNode
+        |-NameIdentifierNode name=f
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Color
+      |-ParameterNode
+        |-NameIdentifierNode name=g
+        |-UnionTypeNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Red
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=None
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=main
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=START
+          |-StringLiteralNode value="struct values extended"
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=a
+          |-EmptyNode
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=CatBag
+            |-FloatLiteralNode value=1
+            |-EmptyNode
+            |-FloatLiteralNode value=3.0
+            |-AsExpressionNode
+              |-FloatLiteralNode value=0x8
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=i64
+            |-AsExpressionNode
+              |-FloatLiteralNode value=0.4
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=f64
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Red
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Red
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-IsExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=a
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=CatBag
+          |-StringLiteralNode value="A"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-BinaryExpressionNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name=a
+            |-NameIdentifierNode name===
+            |-FloatLiteralNode value=1
+          |-StringLiteralNode value="B"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-BinaryExpressionNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name=b
+            |-NameIdentifierNode name===
+            |-EmptyNode
+          |-StringLiteralNode value="C"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-BinaryExpressionNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name=c
+            |-NameIdentifierNode name===
+            |-FloatLiteralNode value=3.0
+          |-StringLiteralNode value="D"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-BinaryExpressionNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name=d
+            |-NameIdentifierNode name===
+            |-FloatLiteralNode value=0x8
+          |-StringLiteralNode value="E"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-BinaryExpressionNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name=e
+            |-NameIdentifierNode name===
+            |-AsExpressionNode
+              |-FloatLiteralNode value=0.4
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=f64
+          |-StringLiteralNode value="F"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-IsExpressionNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name=f
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Red
+          |-StringLiteralNode value="G"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-IsExpressionNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name=g
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Red
+          |-StringLiteralNode value="H"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-IsExpressionNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name=f
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Color
+          |-StringLiteralNode value="I"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-IsExpressionNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name=g
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Color
+          |-StringLiteralNode value="J"
+        |-BinaryExpressionNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=a
+            |-NameIdentifierNode name=a
+          |-NameIdentifierNode name==
+          |-FloatLiteralNode value=5
+        |-BinaryExpressionNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=a
+            |-NameIdentifierNode name=b
+          |-NameIdentifierNode name==
+          |-EmptyNode
+        |-BinaryExpressionNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=a
+            |-NameIdentifierNode name=c
+          |-NameIdentifierNode name==
+          |-UnaryExpressionNode
+            |-NameIdentifierNode name=-
+            |-FloatLiteralNode value=999.0
+        |-BinaryExpressionNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=a
+            |-NameIdentifierNode name=d
+          |-NameIdentifierNode name==
+          |-AsExpressionNode
+            |-FloatLiteralNode value=0xdeadbeef
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=i64
+        |-BinaryExpressionNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=a
+            |-NameIdentifierNode name=e
+          |-NameIdentifierNode name==
+          |-AsExpressionNode
+            |-FloatLiteralNode value=6.08e23
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=f64
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=printNumber
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=a
+            |-NameIdentifierNode name=c
+        |-BinaryExpressionNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=a
+            |-NameIdentifierNode name=f
+          |-NameIdentifierNode name==
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Custom
+            |-FloatLiteralNode value=333
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=printNumber
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=a
+            |-NameIdentifierNode name=c
+        |-BinaryExpressionNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=a
+            |-NameIdentifierNode name=g
+          |-NameIdentifierNode name==
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=None
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=printNumber
+          |-FloatLiteralNode value=0
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=printNumber
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=a
+            |-NameIdentifierNode name=a
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-BinaryExpressionNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name=a
+            |-NameIdentifierNode name===
+            |-FloatLiteralNode value=5
+          |-StringLiteralNode value="K"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=printNumber
+          |-IfNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name=b
+            |-FloatLiteralNode value=1
+            |-FloatLiteralNode value=0
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-BinaryExpressionNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name=b
+            |-NameIdentifierNode name===
+            |-EmptyNode
+          |-StringLiteralNode value="L"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=printNumber
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=a
+            |-NameIdentifierNode name=c
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-BinaryExpressionNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name=c
+            |-NameIdentifierNode name===
+            |-UnaryExpressionNode
+              |-NameIdentifierNode name=-
+              |-FloatLiteralNode value=999.0
+          |-StringLiteralNode value="M"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-BinaryExpressionNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name=d
+            |-NameIdentifierNode name===
+            |-AsExpressionNode
+              |-FloatLiteralNode value=0xdeadbeef
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=i64
+          |-StringLiteralNode value="N"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-BinaryExpressionNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name=e
+            |-NameIdentifierNode name===
+            |-AsExpressionNode
+              |-FloatLiteralNode value=6.08e23
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=f64
+          |-StringLiteralNode value="Ñ"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-IsExpressionNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name=f
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Custom
+          |-StringLiteralNode value="O"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-IsExpressionNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name=g
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=None
+          |-StringLiteralNode value="P"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-IsExpressionNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name=f
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Color
+          |-StringLiteralNode value="Q"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-IsExpressionNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name=g
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Color
+          |-StringLiteralNode value="V"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-IsExpressionNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name=f
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Custom
+          |-StringLiteralNode value="W"
+        |-PatternMatcherNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=a
+            |-NameIdentifierNode name=f
+          |-MatchCaseIsNode
+            |-NameIdentifierNode name=x
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Custom
+            |-EmptyNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=verify
+              |-BinaryExpressionNode
+                |-MemberNode operator=.
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=x
+                  |-NameIdentifierNode name=hex
+                |-NameIdentifierNode name===
+                |-FloatLiteralNode value=333
+              |-StringLiteralNode value="X"
+          |-MatchDefaultNode
+            |-EmptyNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=verify
+              |-EmptyNode
+              |-StringLiteralNode value="Y"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=END
+          |-EmptyNode

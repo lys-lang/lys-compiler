@@ -1,0 +1,301 @@
+import support::test
+
+type Color = (Red | Green | Blue | Custom)
+
+impl Reference for Color {
+  #[inline]
+  fun is(self: (Color | ref)): boolean = {
+    self is Red || self is Green || self is Blue || self is Custom
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(self: Color): ref = %wasm {
+    (local.get $self)
+  }
+}
+
+impl Color {
+  fun ==(lhs: ref, rhs: ref): boolean = lhs == rhs
+
+  fun !=(lhs: ref, rhs: ref): boolean = lhs != rhs
+
+  fun store(lhs: ref, rhs: Color, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Color = %wasm {
+    (i64.load (i32.add (local.get $offset) (call addressFromRef (local.get $lhs))))
+  }
+}
+
+impl Red {
+  fun as(lhs: Red): Color = %wasm {
+    (local.get $lhs)
+  }
+}
+
+impl Green {
+  fun as(lhs: Green): Color = %wasm {
+    (local.get $lhs)
+  }
+}
+
+impl Blue {
+  fun as(lhs: Blue): Color = %wasm {
+    (local.get $lhs)
+  }
+}
+
+impl Custom {
+  fun as(lhs: Custom): Color = %wasm {
+    (local.get $lhs)
+  }
+}
+
+type Red = %struct {  }
+
+type Green = %struct {  }
+
+type Blue = %struct {  }
+
+type Custom = %struct { r: i32, g: i32, b: i32 }
+
+impl Reference for Red {
+  #[inline]
+  fun is(a: (Self | ref)): boolean = {
+    val discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+}
+
+impl Red {
+  #[inline]
+  private fun Red$discriminant(): i64 = {
+    val discriminant: u32 = Red.^discriminant
+    discriminant as i64 << 32
+  }
+
+  #[inline]
+  fun apply(): Red = %wasm {
+    (call Red$discriminant)
+  }
+
+  fun ==(a: Red, b: ref): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: Red, b: ref): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  fun store(lhs: ref, rhs: Red, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Red = %wasm {
+    (i64.load (i32.add (local.get $offset) (call addressFromRef (local.get $lhs))))
+  }
+}
+
+impl Reference for Green {
+  #[inline]
+  fun is(a: (Self | ref)): boolean = {
+    val discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+}
+
+impl Green {
+  #[inline]
+  private fun Green$discriminant(): i64 = {
+    val discriminant: u32 = Green.^discriminant
+    discriminant as i64 << 32
+  }
+
+  #[inline]
+  fun apply(): Green = %wasm {
+    (call Green$discriminant)
+  }
+
+  fun ==(a: Green, b: ref): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: Green, b: ref): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  fun store(lhs: ref, rhs: Green, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Green = %wasm {
+    (i64.load (i32.add (local.get $offset) (call addressFromRef (local.get $lhs))))
+  }
+}
+
+impl Reference for Blue {
+  #[inline]
+  fun is(a: (Self | ref)): boolean = {
+    val discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+}
+
+impl Blue {
+  #[inline]
+  private fun Blue$discriminant(): i64 = {
+    val discriminant: u32 = Blue.^discriminant
+    discriminant as i64 << 32
+  }
+
+  #[inline]
+  fun apply(): Blue = %wasm {
+    (call Blue$discriminant)
+  }
+
+  fun ==(a: Blue, b: ref): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: Blue, b: ref): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  fun store(lhs: ref, rhs: Blue, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Blue = %wasm {
+    (i64.load (i32.add (local.get $offset) (call addressFromRef (local.get $lhs))))
+  }
+}
+
+impl Reference for Custom {
+  #[inline]
+  fun is(a: (Self | ref)): boolean = {
+    val discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+}
+
+impl Custom {
+  #[inline]
+  private fun Custom$discriminant(): u64 = {
+    val discriminant: u32 = Custom.^discriminant
+    discriminant as u64 << 32
+  }
+
+  #[inline]
+  fun apply(r: i32, g: i32, b: i32): Custom = {
+    var $ref = fromPointer(system::core::memory::calloc(1 as u32, Custom.^allocationSize))
+    property$0($ref, r)
+    property$1($ref, g)
+    property$2($ref, b)
+    $ref
+  }
+
+  fun as(self: Custom): UnsafeCPointer = %wasm {
+    (call addressFromRef (get_local $self))
+  }
+
+  private fun fromPointer(ptr: u32): Custom = %wasm {
+    (i64.or (call Custom$discriminant) (i64.extend_u/i32 (local.get $ptr)))
+  }
+
+  fun ==(a: Custom, b: Custom): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: Custom, b: Custom): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  #[getter]
+  fun r(self: Custom): i32 = property$0(self)
+  #[setter]
+  fun r(self: Custom, value: i32): void = property$0(self, value)
+
+  #[inline]
+  private fun property$0(self: Custom): i32 = i32.load(self, Custom.^property$0_offset)
+  #[inline]
+  private fun property$0(self: Custom, value: i32): void = i32.store(self, value, Custom.^property$0_offset)
+
+  #[getter]
+  fun g(self: Custom): i32 = property$1(self)
+  #[setter]
+  fun g(self: Custom, value: i32): void = property$1(self, value)
+
+  #[inline]
+  private fun property$1(self: Custom): i32 = i32.load(self, Custom.^property$1_offset)
+  #[inline]
+  private fun property$1(self: Custom, value: i32): void = i32.store(self, value, Custom.^property$1_offset)
+
+  #[getter]
+  fun b(self: Custom): i32 = property$2(self)
+  #[setter]
+  fun b(self: Custom, value: i32): void = property$2(self, value)
+
+  #[inline]
+  private fun property$2(self: Custom): i32 = i32.load(self, Custom.^property$2_offset)
+  #[inline]
+  private fun property$2(self: Custom, value: i32): void = i32.store(self, value, Custom.^property$2_offset)
+
+  fun store(lhs: ref, rhs: Custom, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Custom = %wasm {
+    (i64.load (i32.add (local.get $offset) (call addressFromRef (local.get $lhs))))
+  }
+}
+
+fun isRed(color: Color): boolean = {
+  match color {
+    case is Red -> true
+    case is Custom -> {
+      val r = $.r
+      val g = $.g
+      val b = $.b
+      r == 255 && g == 0 && b == 0
+    }
+    else -> false
+  }
+}
+
+#[export]
+fun main(): void = {
+  support::test::START("pattern matching with deconstruct")
+  mustEqual(isRed(Red), true, "isRed(Red)")
+  mustEqual(isRed(Green), false, "isRed(Green)")
+  mustEqual(isRed(Blue), false, "isRed(Blue)")
+  mustEqual(isRed(Custom(255, 0, 0)), true, "isRed(Custom(255,0,0))")
+  mustEqual(isRed(Custom(0, 1, 3)), false, "isRed(Custom(0,1,3))")
+  mustEqual(isRed(Custom(255, 1, 3)), false, "isRed(Custom(255,1,3))")
+  support::test::END()
+}

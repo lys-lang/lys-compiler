@@ -1,0 +1,108 @@
+|-Document
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=factorial
+      |-ParameterNode
+        |-NameIdentifierNode name=n
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-IfNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=n
+          |-NameIdentifierNode name=>=
+          |-FloatLiteralNode value=1
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=n
+          |-NameIdentifierNode name=*
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=factorial
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=n
+              |-NameIdentifierNode name=-
+              |-FloatLiteralNode value=1
+        |-FloatLiteralNode value=1
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=gcd
+      |-ParameterNode
+        |-NameIdentifierNode name=x
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ParameterNode
+        |-NameIdentifierNode name=y
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-IfNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=x
+          |-NameIdentifierNode name=>
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=y
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=gcd
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=x
+            |-NameIdentifierNode name=-
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=y
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=y
+        |-IfNode
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=x
+            |-NameIdentifierNode name=<
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=y
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=gcd
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=x
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=y
+              |-NameIdentifierNode name=-
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=x
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=factorial
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=x

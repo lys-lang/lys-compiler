@@ -1,0 +1,92 @@
+|-Document
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=gcd
+      |-ParameterNode
+        |-NameIdentifierNode name=x
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ParameterNode
+        |-NameIdentifierNode name=y
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-BlockNode
+        |-IfNode
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=x
+            |-NameIdentifierNode name=>
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=y
+          |-BlockNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=gcd
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=x
+                |-NameIdentifierNode name=-
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=y
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=y
+          |-IfNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=x
+              |-NameIdentifierNode name=<
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=y
+            |-BlockNode
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=gcd
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=x
+                |-BinaryExpressionNode
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=y
+                  |-NameIdentifierNode name=-
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=x
+            |-BlockNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=x
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=test
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-BlockNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=gcd
+          |-FloatLiteralNode value=119
+          |-FloatLiteralNode value=7

@@ -1,0 +1,5 @@
+#[export] fun main(): void = {}
+
+#[export] fun returningValueFn(): void = {
+  1 // this value should be dropped
+}

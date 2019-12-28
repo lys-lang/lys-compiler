@@ -1,0 +1,49 @@
+|-Document
+  |-StructDirectiveNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Color
+      |-ParameterNode
+        |-NameIdentifierNode name=r
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=u32
+      |-ParameterNode
+        |-NameIdentifierNode name=g
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=u32
+      |-ParameterNode
+        |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=u32
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=main
+      |-ParameterNode
+        |-NameIdentifierNode name=color
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Color
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=u32
+      |-BinaryExpressionNode
+        |-BinaryExpressionNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=color
+            |-NameIdentifierNode name=r
+          |-NameIdentifierNode name=*
+          |-FloatLiteralNode value=0x10000
+        |-ErrorNode
+        |-NameIdentifierNode name=|
+        |-MemberNode operator=.
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=color
+          |-NameIdentifierNode name=b
