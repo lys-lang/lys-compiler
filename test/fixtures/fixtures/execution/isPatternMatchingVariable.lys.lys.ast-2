@@ -84,9 +84,44 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=col
-        |-ErrorNode
-        |-ErrorNode
-        |-ErrorNode
+        |-MatchCaseIsNode
+          |-NameIdentifierNode name=x
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Red
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=x
+        |-MatchCaseIsNode
+          |-NameIdentifierNode name=x
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Enum
+          |-EmptyNode
+          |-PatternMatcherNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=x
+            |-MatchCaseIsNode
+              |-EmptyNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=A
+              |-EmptyNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Red
+            |-MatchDefaultNode
+              |-EmptyNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Green
+        |-MatchDefaultNode
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Red
   |-FunDirectiveNode
     |-DecoratorNode
       |-NameIdentifierNode name=export

@@ -48,18 +48,22 @@
                 |-Identifier=n
           |-MatchBody(50,123)
             |-CaseLiteral(56,67)
-              |-NumberLiteral=0
+              |-Literal(61,62)
+                |-NumberLiteral=0
               |-Reference(66,67)
                 |-QName(66,67)
                   |-NameIdentifier(66,67)
                     |-Identifier=a
             |-CaseLiteral(72,83)
-              |-NumberLiteral=1
+              |-Literal(77,78)
+                |-NumberLiteral=1
               |-Reference(82,83)
                 |-QName(82,83)
                   |-NameIdentifier(82,83)
                     |-Identifier=b
             |-CaseElse(88,119)
+              |-DeclaredName(95,95)
+                <Rule0>
               |-AtomicExpression(98,119)
                 |-Reference(98,102)
                   |-QName(98,102)

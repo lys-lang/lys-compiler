@@ -53,10 +53,13 @@
                 |-Identifier=a
           |-MatchBody(90,132)
             |-CaseLiteral(96,110)
-              |-NumberLiteral=1
+              |-Literal(101,102)
+                |-NumberLiteral=1
               |-BooleanLiteral(106,110)
                 <Rule0>
             |-CaseElse(115,128)
+              |-DeclaredName(120,120)
+                <Rule0>
               |-BooleanLiteral(123,128)
                 <Rule0>
   |-FunctionDirective(134,351)
@@ -94,33 +97,44 @@
                 |-Identifier=a
           |-MatchBody(179,351)
             |-CaseLiteral(185,197)
-              |-NumberLiteral=10
+              |-Literal(190,192)
+                |-NumberLiteral=10
               |-NumberLiteral=1
             |-CaseLiteral(202,214)
-              |-NumberLiteral=20
+              |-Literal(207,209)
+                |-NumberLiteral=20
               |-NumberLiteral=2
             |-CaseLiteral(219,231)
-              |-NumberLiteral=30
+              |-Literal(224,226)
+                |-NumberLiteral=30
               |-NumberLiteral=3
             |-CaseLiteral(236,248)
-              |-NumberLiteral=40
+              |-Literal(241,243)
+                |-NumberLiteral=40
               |-NumberLiteral=4
             |-CaseLiteral(253,265)
-              |-NumberLiteral=50
+              |-Literal(258,260)
+                |-NumberLiteral=50
               |-NumberLiteral=5
             |-CaseLiteral(270,282)
-              |-NumberLiteral=60
+              |-Literal(275,277)
+                |-NumberLiteral=60
               |-NumberLiteral=6
             |-CaseLiteral(287,299)
-              |-NumberLiteral=70
+              |-Literal(292,294)
+                |-NumberLiteral=70
               |-NumberLiteral=7
             |-CaseLiteral(304,316)
-              |-NumberLiteral=80
+              |-Literal(309,311)
+                |-NumberLiteral=80
               |-NumberLiteral=8
             |-CaseLiteral(321,333)
-              |-NumberLiteral=90
+              |-Literal(326,328)
+                |-NumberLiteral=90
               |-NumberLiteral=9
             |-CaseElse(338,347)
+              |-DeclaredName(343,343)
+                <Rule0>
               |-NumberLiteral=0
   |-FunctionDirective(353,460)
     |-Decorators(353,363)
@@ -157,17 +171,27 @@
                 |-Identifier=a
           |-MatchBody(404,460)
             |-CaseIs(410,430)
-              |-Reference(418,422)
-                |-QName(418,422)
-                  |-NameIdentifier(418,422)
-                    |-Identifier=Some
+              |-DeclaredName(415,415)
+                <Rule0>
+              |-ReferencedType(415,422)
+                |-Reference(418,422)
+                  |-QName(418,422)
+                    |-NameIdentifier(418,422)
+                      |-Identifier=Some
+              |-Destructure(423,423)
+                <Rule0>
               |-BooleanLiteral(426,430)
                 <Rule0>
             |-CaseIs(435,456)
-              |-Reference(443,447)
-                |-QName(443,447)
-                  |-NameIdentifier(443,447)
-                    |-Identifier=None
+              |-DeclaredName(440,440)
+                <Rule0>
+              |-ReferencedType(440,447)
+                |-Reference(443,447)
+                  |-QName(443,447)
+                    |-NameIdentifier(443,447)
+                      |-Identifier=None
+              |-Destructure(448,448)
+                <Rule0>
               |-BooleanLiteral(451,456)
                 <Rule0>
   |-FunctionDirective(463,568)
@@ -205,21 +229,30 @@
                 |-Identifier=a
           |-MatchBody(511,568)
             |-CaseIs(517,536)
-              |-NameIdentifier(522,523)
-                |-Identifier=x
-              |-Reference(527,531)
-                |-QName(527,531)
-                  |-NameIdentifier(527,531)
-                    |-Identifier=Some
+              |-DeclaredName(522,524)
+                |-NameIdentifier(522,523)
+                  |-Identifier=x
+              |-ReferencedType(524,531)
+                |-Reference(527,531)
+                  |-QName(527,531)
+                    |-NameIdentifier(527,531)
+                      |-Identifier=Some
+              |-Destructure(532,532)
+                <Rule0>
               |-Reference(535,536)
                 |-QName(535,536)
                   |-NameIdentifier(535,536)
                     |-Identifier=x
             |-CaseIs(541,564)
-              |-Reference(549,553)
-                |-QName(549,553)
-                  |-NameIdentifier(549,553)
-                    |-Identifier=None
+              |-DeclaredName(546,546)
+                <Rule0>
+              |-ReferencedType(546,553)
+                |-Reference(549,553)
+                  |-QName(549,553)
+                    |-NameIdentifier(549,553)
+                      |-Identifier=None
+              |-Destructure(554,554)
+                <Rule0>
               |-AtomicExpression(557,564)
                 |-Reference(557,561)
                   |-QName(557,561)

@@ -43,5 +43,17 @@
           |-ReferenceNode
             |-QNameNode
               |-NameIdentifierNode name=x
-          |-ErrorNode
-          |-ErrorNode
+          |-MatchLiteralNode
+            |-FloatLiteralNode value=1
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=assert
+              |-EmptyNode
+          |-MatchDefaultNode
+            |-EmptyNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=panic
+              |-EmptyNode

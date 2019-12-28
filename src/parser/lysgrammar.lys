@@ -218,10 +218,29 @@ fun getGrammar(): Grammar = {
             "A match body was expected"
           )
         )) ++
-        Nominal("CaseCondition", Push("CaseCondition", Cons(K("case"), WS, n("NameIdentifier"), WSS, Cut(K("if"), WS, n("Expression"), WS, op("->")), WS, n("Expression")))) ++
-        Nominal("CaseLiteral", Push("CaseLiteral", Cons(K("case"), WS, Cut(n("Literal"), WS, op("->"), WS, n("Expression"))))) ++
-        Nominal("CaseIs", Push("CaseIs", Cons(K("case"), WS, Optional(Cons(n("NameIdentifier"), WSS)), Cut(K("is"), WSS, n("Reference")), WS, Optional(n("DeconstructStruct")), op("->"), WS, n("Expression")))) ++
-        Nominal("CaseElse", Push("CaseElse", Cons(Cut(K("else"), WS), Optional(Cut(n("NameIdentifier"), WSS)), op("->"), WS, n("Expression")))) ++
+        Nominal("CaseCondition", Push("CaseCondition", Cons(
+          K("case"), WS,
+          Push("DeclaredName", Optional(Cons(n("NameIdentifier"), WS))),
+          Rune(Cons(K("if"), WS), n("Expression"), "A condition was expected"), WS,
+          Rune(Cons(op("->"), WS), n("Expression"), "An expression was expected"))
+        )) ++
+        Nominal("CaseLiteral", Push("CaseLiteral", Cons(
+          K("case"), WS,
+          Push("Literal", Or(n("Literal"), Fail("A literal was expected"))), WS,
+          Rune(Cons(op("->"), WS), n("Expression"), "An expression was expected")
+        ))) ++
+        Nominal("CaseIs", Push("CaseIs", Cons(
+          K("case"), WS,
+          Push("DeclaredName", Optional(Cons(n("NameIdentifier"), WS))),
+          Push("ReferencedType", Rune(K("is"), Cons(WSS, n("Reference")), "A type reference was expected")), WS,
+          Push("Destructure", Optional(n("DestructureStruct"))),
+          Rune(Cons(op("->"), WS), n("Expression"), "An expression was expected"))
+        )) ++
+        Nominal("CaseElse", Push("CaseElse", Cons(
+          Cons(K("else"), WS),
+          Push("DeclaredName", Optional(Cut(n("NameIdentifier"), WS))),
+          Rune(Cons(op("->"), WS), n("Expression"), "An expression was expected"))
+        )) ++
         Nominal("IfExpression", Push("IfExpression", Cons(Rune(Cut(K("if"), WS), n("Condition"), "A condition was expected"), WS, n("Expression"), Optional(Cons(WS, n("ElseExpression")))))) ++
         Nominal("ElseExpression", Rune(Cons(K("else"), WS), n("Expression"), "An expression was expected")) ++
         Nominal("WasmExpression", Push("WasmExpression",
@@ -384,7 +403,7 @@ fun getGrammar(): Grammar = {
         // Pattern matching
         Nominal("MatchBody", Push("MatchBody", Wrap(CurlyBracesOpen, Cons(WS, ZeroOrMore(n("MatchElements"))), CurlyBracesClose))) ++
 
-        Nominal("DeconstructStruct", Push("DeconstructStruct", Cons(Wrap(ParenthesesOpen, Optional(OneOrMoreComma(n("NameIdentifier"))), ParenthesesClose), WS))) ++
+        Nominal("DestructureStruct", Push("DestructureStruct", Cons(Wrap(ParenthesesOpen, Optional(OneOrMoreComma(n("NameIdentifier"))), ParenthesesClose), WS))) ++
 
         // Function call
         Nominal("CallArguments", Push("CallArguments",  Wrap(ParenthesesOpen, Optional(OneOrMoreComma(n("Expression"))), ParenthesesClose))) ++

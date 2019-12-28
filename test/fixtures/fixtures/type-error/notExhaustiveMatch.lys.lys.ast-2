@@ -26,8 +26,24 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=x
-        |-ErrorNode
-        |-ErrorNode
+        |-MatchCaseIsNode
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Red
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Red
+        |-MatchCaseIsNode
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Green
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Green
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -44,9 +60,33 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=x
-        |-ErrorNode
-        |-ErrorNode
-        |-ErrorNode
+        |-MatchCaseIsNode
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Red
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Red
+        |-MatchCaseIsNode
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Green
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Green
+        |-MatchCaseIsNode
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Blue
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Blue
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -63,5 +103,17 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=x
-        |-ErrorNode
-        |-ErrorNode
+        |-MatchCaseIsNode
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Red
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Red
+        |-MatchDefaultNode
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Blue

@@ -522,8 +522,33 @@
               |-QNameNode
                 |-NameIdentifierNode name=a
             |-NameIdentifierNode name=f
-          |-ErrorNode
-          |-ErrorNode
+          |-MatchCaseIsNode
+            |-NameIdentifierNode name=x
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Custom
+            |-EmptyNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=verify
+              |-BinaryExpressionNode
+                |-MemberNode operator=.
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=x
+                  |-NameIdentifierNode name=hex
+                |-NameIdentifierNode name===
+                |-FloatLiteralNode value=333
+              |-StringLiteralNode value="X"
+          |-MatchDefaultNode
+            |-EmptyNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=verify
+              |-EmptyNode
+              |-StringLiteralNode value="Y"
         |-FunctionCallNode
           |-ReferenceNode
             |-QNameNode

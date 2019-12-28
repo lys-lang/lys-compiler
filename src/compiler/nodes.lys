@@ -72,10 +72,10 @@ enum CodeNode {
   EffectDeclarationNode(astNode: AstNode, name: NameIdentifierNode)
 
   PatternMatcherNode(astNode: AstNode, lhs: CodeNode, headMatcher: CodeNode)
-  MatchConditionNode(astNode: AstNode, declaredName: NameIdentifierNode, condition: CodeNode, body: CodeNode)
-  MatchCaseIsNode(astNode: AstNode, declaredName: NameIdentifierNode, typeReference: CodeNode, headDeconstruct: CodeNode, body: CodeNode)
+  MatchConditionNode(astNode: AstNode, declaredName: NameIdentifierNode | EmptyNode, condition: CodeNode, body: CodeNode)
+  MatchCaseIsNode(astNode: AstNode, declaredName: NameIdentifierNode | EmptyNode, typeReference: CodeNode, headDeconstruct: CodeNode, body: CodeNode)
   MatchLiteralNode(astNode: AstNode, literal: CodeNode, body: CodeNode)
-  MatchDefaultNode(astNode: AstNode, declaredName: NameIdentifierNode, body: CodeNode)
+  MatchDefaultNode(astNode: AstNode, declaredName: NameIdentifierNode | EmptyNode, body: CodeNode)
 
   LoopNode(astNode: AstNode, expression: CodeNode)
   ContinueNode(astNode: AstNode)

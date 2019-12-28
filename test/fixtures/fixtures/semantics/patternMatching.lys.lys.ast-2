@@ -15,8 +15,12 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=a
-        |-ErrorNode
-        |-ErrorNode
+        |-MatchLiteralNode
+          |-FloatLiteralNode value=1
+          |-EmptyNode
+        |-MatchDefaultNode
+          |-EmptyNode
+          |-EmptyNode
   |-EnumDirectiveNode
     |-NameIdentifierNode name=Number
     |-StructDeclarationNode
@@ -67,9 +71,53 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=number
-        |-ErrorNode
-        |-ErrorNode
-        |-ErrorNode
-        |-ErrorNode
-        |-ErrorNode
-        |-ErrorNode
+        |-MatchCaseIsNode
+          |-NameIdentifierNode name=x
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Real
+          |-EmptyNode
+          |-EmptyNode
+        |-MatchCaseIsNode
+          |-NameIdentifierNode name=x
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Infinity
+          |-EmptyNode
+          |-EmptyNode
+        |-MatchCaseIsNode
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Infinity
+          |-EmptyNode
+          |-EmptyNode
+        |-MatchCaseIsNode
+          |-NameIdentifierNode name=aNaturalNumber
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Natural
+          |-NameIdentifierNode name=x
+          |-BlockNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=x
+              |-NameIdentifierNode name===
+              |-FloatLiteralNode value=0
+        |-MatchCaseIsNode
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Complex
+          |-NameIdentifierNode name=_
+          |-NameIdentifierNode name=imaginary
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=imaginary
+            |-NameIdentifierNode name=!=
+            |-FloatLiteralNode value=0.0
+        |-MatchDefaultNode
+          |-EmptyNode
+          |-EmptyNode

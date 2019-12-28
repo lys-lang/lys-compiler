@@ -20,8 +20,12 @@
               |-NameIdentifierNode name=a
           |-NameIdentifierNode name=+
           |-FloatLiteralNode value=1
-        |-ErrorNode
-        |-ErrorNode
+        |-MatchLiteralNode
+          |-FloatLiteralNode value=1
+          |-FloatLiteralNode value=0
+        |-MatchDefaultNode
+          |-EmptyNode
+          |-FloatLiteralNode value=1
   |-FunDirectiveNode
     |-DecoratorNode
       |-NameIdentifierNode name=export

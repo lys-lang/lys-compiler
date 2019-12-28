@@ -68,23 +68,32 @@
                   |-Identifier=arg
             |-MatchBody(147,246)
               |-CaseIs(153,171)
-                |-Reference(161,166)
-                  |-QName(161,166)
-                    |-NameIdentifier(161,166)
-                      |-Identifier=Empty
+                |-DeclaredName(158,158)
+                  <Rule0>
+                |-ReferencedType(158,166)
+                  |-Reference(161,166)
+                    |-QName(161,166)
+                      |-NameIdentifier(161,166)
+                        |-Identifier=Empty
+                |-Destructure(167,167)
+                  <Rule0>
                 |-NumberLiteral=0
               |-CaseIs(176,242)
-                |-Reference(184,188)
-                  |-QName(184,188)
-                    |-NameIdentifier(184,188)
-                      |-Identifier=Node
-                |-DeconstructStruct(188,209)
-                  |-NameIdentifier(189,194)
-                    |-Identifier=value
-                  |-NameIdentifier(196,200)
-                    |-Identifier=left
-                  |-NameIdentifier(202,207)
-                    |-Identifier=right
+                |-DeclaredName(181,181)
+                  <Rule0>
+                |-ReferencedType(181,188)
+                  |-Reference(184,188)
+                    |-QName(184,188)
+                      |-NameIdentifier(184,188)
+                        |-Identifier=Node
+                |-Destructure(188,209)
+                  |-DestructureStruct(188,209)
+                    |-NameIdentifier(189,194)
+                      |-Identifier=value
+                    |-NameIdentifier(196,200)
+                      |-Identifier=left
+                    |-NameIdentifier(202,207)
+                      |-Identifier=right
                 |-BinaryOpExpression(212,242)
                   |-Reference(212,217)
                     |-QName(212,217)

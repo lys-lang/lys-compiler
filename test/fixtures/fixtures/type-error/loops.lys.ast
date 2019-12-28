@@ -287,7 +287,8 @@
                           |-Identifier=e
                     |-MatchBody(503,804)
                       |-CaseLiteral(513,771)
-                        |-NumberLiteral=1
+                        |-Literal(518,519)
+                          |-NumberLiteral=1
                         |-CodeBlock(523,771)
                           |-IfExpression(535,761)
                             |-Condition(538,546)
@@ -306,17 +307,22 @@
                                       |-Identifier=x
                                 |-MatchBody(569,749)
                                   |-CaseLiteral(585,655)
-                                    |-NumberLiteral=1
+                                    |-Literal(590,591)
+                                      |-NumberLiteral=1
                                     |-CodeBlock(595,655)
                                       |-ContinueStatement(613,621)
                                         <Rule0>
                                       |-NumberLiteral=4
                                   |-CaseElse(670,735)
+                                    |-DeclaredName(675,675)
+                                      <Rule0>
                                     |-CodeBlock(678,735)
                                       |-BreakStatement(696,701)
                                         <Rule0>
                                       |-NumberLiteral=3
                       |-CaseElse(780,796)
+                        |-DeclaredName(785,785)
+                          <Rule0>
                         |-ContinueStatement(788,796)
                           <Rule0>
                   |-BinaryOpExpression(811,816)

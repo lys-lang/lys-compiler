@@ -2346,15 +2346,21 @@
                 |-Identifier=a
           |-MatchBody(4839,4889)
             |-CaseIs(4845,4867)
-              |-Reference(4853,4857)
-                |-QName(4853,4857)
-                  |-NameIdentifier(4853,4857)
-                    |-Identifier=True
-              |-DeconstructStruct(4857,4860)
+              |-DeclaredName(4850,4850)
                 <Rule0>
+              |-ReferencedType(4850,4857)
+                |-Reference(4853,4857)
+                  |-QName(4853,4857)
+                    |-NameIdentifier(4853,4857)
+                      |-Identifier=True
+              |-Destructure(4857,4860)
+                |-DestructureStruct(4857,4860)
+                  <Rule0>
               |-BooleanLiteral(4863,4867)
                 <Rule0>
             |-CaseElse(4872,4885)
+              |-DeclaredName(4877,4877)
+                <Rule0>
               |-BooleanLiteral(4880,4885)
                 <Rule0>
   |-FunctionDirective(4891,4937)
@@ -2674,13 +2680,17 @@
                           |-Identifier=$iter$
                 |-MatchBody(5579,5697)
                   |-CaseIs(5587,5663)
-                    |-Reference(5595,5599)
-                      |-QName(5595,5599)
-                        |-NameIdentifier(5595,5599)
-                          |-Identifier=Some
-                    |-DeconstructStruct(5599,5607)
-                      |-NameIdentifier(5600,5605)
-                        |-Identifier=value
+                    |-DeclaredName(5592,5592)
+                      <Rule0>
+                    |-ReferencedType(5592,5599)
+                      |-Reference(5595,5599)
+                        |-QName(5595,5599)
+                          |-NameIdentifier(5595,5599)
+                            |-Identifier=Some
+                    |-Destructure(5599,5607)
+                      |-DestructureStruct(5599,5607)
+                        |-NameIdentifier(5600,5605)
+                          |-Identifier=value
                     |-CodeBlock(5610,5663)
                       |-BinaryOpExpression(5620,5637)
                         |-Reference(5620,5623)
@@ -2701,10 +2711,15 @@
                       |-ContinueStatement(5647,5655)
                         <Rule0>
                   |-CaseIs(5670,5691)
-                    |-Reference(5678,5682)
-                      |-QName(5678,5682)
-                        |-NameIdentifier(5678,5682)
-                          |-Identifier=None
+                    |-DeclaredName(5675,5675)
+                      <Rule0>
+                    |-ReferencedType(5675,5682)
+                      |-Reference(5678,5682)
+                        |-QName(5678,5682)
+                          |-NameIdentifier(5678,5682)
+                            |-Identifier=None
+                    |-Destructure(5683,5683)
+                      <Rule0>
                     |-BreakStatement(5686,5691)
                       <Rule0>
           |-Reference(5705,5708)

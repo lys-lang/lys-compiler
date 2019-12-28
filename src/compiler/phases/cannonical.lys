@@ -96,7 +96,12 @@ fun processNode(astNode: AstNode): CodeNode = match astNode {
     case "Condition" -> processNode(child)
     case "FunctionName" -> processNode(child)
     case "FunOperator" -> processNode(child)
+    case "Destructure" -> processNode(child)
+    case "ReferencedType" -> processNode(child)
+    case "DeclaredName" -> processNode(child)
     case "Decorators" -> processNode(child)
+    case "DestructureStruct" -> processNode(child)
+    case "Literal" -> processNode(child)
     case "MatchBody" -> processNode(child)
     case "ContinueStatement" -> ContinueNode(astNode)
     case "BreakStatement" -> ContinueNode(astNode)
@@ -185,6 +190,39 @@ fun processNode(astNode: AstNode): CodeNode = match astNode {
     case "BooleanLiteral" -> processNode(child)
     case "ParenExpression" -> processNode(child)
     case "AsExpression" -> AsExpressionNode(astNode, processNode(first(child)), processNode(rest(child)))
+    case "CaseCondition" -> {
+      var resto = child
+      val name = nameOrEmpty(first(resto))
+      resto = rest(resto)
+      val condition = processNode(first(resto))
+      resto = rest(resto)
+      val body = processNode(resto)
+      MatchConditionNode(astNode, name, condition, body)
+    }
+    case "CaseLiteral" -> {
+      val literal = processNode(first(child))
+      val body = processNode(rest(child))
+      MatchLiteralNode(astNode, literal, body)
+    }
+    case "CaseIs" -> {
+      var resto = child
+      val name = nameOrEmpty(first(resto))
+      resto = rest(resto)
+      val typeReference = processNode(first(resto))
+      resto = rest(resto)
+      val destructure = processNode(first(resto))
+      resto = rest(resto)
+      val body = processNode(resto)
+      MatchCaseIsNode(astNode, name, typeReference, destructure, body)
+    }
+    case "CaseElse" -> {
+      val name = nameOrEmpty(first(child))
+      val body = processNode(rest(child))
+      MatchDefaultNode(astNode, name, body)
+    }
+    case "AsExpression" -> AsExpressionNode(astNode, processNode(first(child)), processNode(rest(child)))
+    case "AsExpression" -> AsExpressionNode(astNode, processNode(first(child)), processNode(rest(child)))
+    case "AsExpression" -> AsExpressionNode(astNode, processNode(first(child)), processNode(rest(child)))
     case "IsExpression" -> IsExpressionNode(astNode, processNode(first(child)), processNode(rest(child)))
     case "BinaryOpExpression" -> {
       val r = rest(child)
@@ -266,7 +304,7 @@ fun processNode(astNode: AstNode, node: Token, value: string): CodeNode = match 
   case is Keyword -> match value {
     case "true" -> BooleanLiteralNode(astNode, true)
     case "false" -> BooleanLiteralNode(astNode, false)
-    else -> EmptyNode
+    else -> NameIdentifierNode(astNode, value)
   }
   else -> EmptyNode
 }

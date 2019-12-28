@@ -156,8 +156,35 @@
                   |-ReferenceNode
                     |-QNameNode
                       |-NameIdentifierNode name=e
-                  |-ErrorNode
-                  |-ErrorNode
+                  |-MatchLiteralNode
+                    |-FloatLiteralNode value=1
+                    |-BlockNode
+                      |-IfNode
+                        |-BinaryExpressionNode
+                          |-ReferenceNode
+                            |-QNameNode
+                              |-NameIdentifierNode name=x
+                          |-NameIdentifierNode name=>=
+                          |-FloatLiteralNode value=1
+                        |-BlockNode
+                          |-PatternMatcherNode
+                            |-ReferenceNode
+                              |-QNameNode
+                                |-NameIdentifierNode name=x
+                            |-MatchLiteralNode
+                              |-FloatLiteralNode value=1
+                              |-BlockNode
+                                |-ContinueNode
+                                |-FloatLiteralNode value=4
+                            |-MatchDefaultNode
+                              |-EmptyNode
+                              |-BlockNode
+                                |-ContinueNode
+                                |-FloatLiteralNode value=3
+                        |-EmptyNode
+                  |-MatchDefaultNode
+                    |-EmptyNode
+                    |-ContinueNode
                 |-BinaryExpressionNode
                   |-ReferenceNode
                     |-QNameNode

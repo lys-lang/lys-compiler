@@ -29,9 +29,21 @@
             |-ReferenceNode
               |-QNameNode
                 |-NameIdentifierNode name=a
-            |-ErrorNode
-            |-ErrorNode
-            |-ErrorNode
+            |-MatchLiteralNode
+              |-FloatLiteralNode value=1
+              |-FloatLiteralNode value=1
+            |-MatchLiteralNode
+              |-FloatLiteralNode value=2
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=y
+                |-EmptyNode
+            |-MatchDefaultNode
+              |-NameIdentifierNode name=x
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=x
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=z

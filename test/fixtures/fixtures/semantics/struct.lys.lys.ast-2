@@ -49,10 +49,36 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=number
-        |-ErrorNode
-        |-ErrorNode
-        |-ErrorNode
-        |-ErrorNode
+        |-MatchCaseIsNode
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Real
+          |-NameIdentifierNode name=_
+          |-EmptyNode
+        |-MatchCaseIsNode
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Natural
+          |-NameIdentifierNode name=_
+          |-EmptyNode
+        |-MatchCaseIsNode
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Complex
+          |-NameIdentifierNode name=_
+          |-NameIdentifierNode name=imaginary
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=imaginary
+            |-NameIdentifierNode name=!=
+            |-FloatLiteralNode value=0.0
+        |-MatchDefaultNode
+          |-EmptyNode
+          |-EmptyNode
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode

@@ -88,35 +88,47 @@
                 |-Identifier=number
           |-MatchBody(232,370)
             |-CaseIs(238,262)
-              |-Reference(246,250)
-                |-QName(246,250)
-                  |-NameIdentifier(246,250)
-                    |-Identifier=Real
-              |-DeconstructStruct(250,254)
-                |-NameIdentifier(251,252)
-                  |-Identifier=_
+              |-DeclaredName(243,243)
+                <Rule0>
+              |-ReferencedType(243,250)
+                |-Reference(246,250)
+                  |-QName(246,250)
+                    |-NameIdentifier(246,250)
+                      |-Identifier=Real
+              |-Destructure(250,254)
+                |-DestructureStruct(250,254)
+                  |-NameIdentifier(251,252)
+                    |-Identifier=_
               |-BooleanLiteral(257,262)
                 <Rule0>
             |-CaseIs(267,294)
-              |-Reference(275,282)
-                |-QName(275,282)
-                  |-NameIdentifier(275,282)
-                    |-Identifier=Natural
-              |-DeconstructStruct(282,286)
-                |-NameIdentifier(283,284)
-                  |-Identifier=_
+              |-DeclaredName(272,272)
+                <Rule0>
+              |-ReferencedType(272,282)
+                |-Reference(275,282)
+                  |-QName(275,282)
+                    |-NameIdentifier(275,282)
+                      |-Identifier=Natural
+              |-Destructure(282,286)
+                |-DestructureStruct(282,286)
+                  |-NameIdentifier(283,284)
+                    |-Identifier=_
               |-BooleanLiteral(289,294)
                 <Rule0>
             |-CaseIs(299,348)
-              |-Reference(307,314)
-                |-QName(307,314)
-                  |-NameIdentifier(307,314)
-                    |-Identifier=Complex
-              |-DeconstructStruct(314,329)
-                |-NameIdentifier(315,316)
-                  |-Identifier=_
-                |-NameIdentifier(318,327)
-                  |-Identifier=imaginary
+              |-DeclaredName(304,304)
+                <Rule0>
+              |-ReferencedType(304,314)
+                |-Reference(307,314)
+                  |-QName(307,314)
+                    |-NameIdentifier(307,314)
+                      |-Identifier=Complex
+              |-Destructure(314,329)
+                |-DestructureStruct(314,329)
+                  |-NameIdentifier(315,316)
+                    |-Identifier=_
+                  |-NameIdentifier(318,327)
+                    |-Identifier=imaginary
               |-BinaryOpExpression(332,348)
                 |-Reference(332,341)
                   |-QName(332,341)
@@ -125,6 +137,8 @@
                 |-Operator=!=
                 |-NumberLiteral=0.0
             |-CaseElse(353,366)
+              |-DeclaredName(358,358)
+                <Rule0>
               |-BooleanLiteral(361,366)
                 <Rule0>
   |-FunctionDirective(372,497)

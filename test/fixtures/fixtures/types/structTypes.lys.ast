@@ -115,20 +115,32 @@
                 |-Identifier=number
           |-MatchBody(238,398)
             |-CaseIs(244,265)
-              |-Reference(252,256)
-                |-QName(252,256)
-                  |-NameIdentifier(252,256)
-                    |-Identifier=Real
+              |-DeclaredName(249,249)
+                <Rule0>
+              |-ReferencedType(249,256)
+                |-Reference(252,256)
+                  |-QName(252,256)
+                    |-NameIdentifier(252,256)
+                      |-Identifier=Real
+              |-Destructure(257,257)
+                <Rule0>
               |-BooleanLiteral(260,265)
                 <Rule0>
             |-CaseIs(270,294)
-              |-Reference(278,285)
-                |-QName(278,285)
-                  |-NameIdentifier(278,285)
-                    |-Identifier=Natural
+              |-DeclaredName(275,275)
+                <Rule0>
+              |-ReferencedType(275,285)
+                |-Reference(278,285)
+                  |-QName(278,285)
+                    |-NameIdentifier(278,285)
+                      |-Identifier=Natural
+              |-Destructure(286,286)
+                <Rule0>
               |-BooleanLiteral(289,294)
                 <Rule0>
             |-CaseElse(381,394)
+              |-DeclaredName(386,386)
+                <Rule0>
               |-BooleanLiteral(389,394)
                 <Rule0>
   |-FunctionDirective(400,525)

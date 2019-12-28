@@ -32,10 +32,13 @@
                 |-Identifier=a
           |-MatchBody(36,72)
             |-CaseLiteral(40,54)
-              |-NumberLiteral=1
+              |-Literal(45,46)
+                |-NumberLiteral=1
               |-BooleanLiteral(50,54)
                 <Rule0>
             |-CaseElse(57,70)
+              |-DeclaredName(62,62)
+                <Rule0>
               |-BooleanLiteral(65,70)
                 <Rule0>
   |-EnumDirective(74,187)
@@ -127,40 +130,56 @@
                 |-Identifier=number
           |-MatchBody(245,474)
             |-CaseIs(251,274)
-              |-NameIdentifier(256,257)
-                |-Identifier=x
-              |-Reference(261,265)
-                |-QName(261,265)
-                  |-NameIdentifier(261,265)
-                    |-Identifier=Real
+              |-DeclaredName(256,258)
+                |-NameIdentifier(256,257)
+                  |-Identifier=x
+              |-ReferencedType(258,265)
+                |-Reference(261,265)
+                  |-QName(261,265)
+                    |-NameIdentifier(261,265)
+                      |-Identifier=Real
+              |-Destructure(266,266)
+                <Rule0>
               |-BooleanLiteral(269,274)
                 <Rule0>
             |-CaseIs(279,306)
-              |-NameIdentifier(284,285)
-                |-Identifier=x
-              |-Reference(289,297)
-                |-QName(289,297)
-                  |-NameIdentifier(289,297)
-                    |-Identifier=Infinity
+              |-DeclaredName(284,286)
+                |-NameIdentifier(284,285)
+                  |-Identifier=x
+              |-ReferencedType(286,297)
+                |-Reference(289,297)
+                  |-QName(289,297)
+                    |-NameIdentifier(289,297)
+                      |-Identifier=Infinity
+              |-Destructure(298,298)
+                <Rule0>
               |-BooleanLiteral(301,306)
                 <Rule0>
             |-CaseIs(311,336)
-              |-Reference(319,327)
-                |-QName(319,327)
-                  |-NameIdentifier(319,327)
-                    |-Identifier=Infinity
+              |-DeclaredName(316,316)
+                <Rule0>
+              |-ReferencedType(316,327)
+                |-Reference(319,327)
+                  |-QName(319,327)
+                    |-NameIdentifier(319,327)
+                      |-Identifier=Infinity
+              |-Destructure(328,328)
+                <Rule0>
               |-BooleanLiteral(331,336)
                 <Rule0>
             |-CaseIs(341,398)
-              |-NameIdentifier(346,360)
-                |-Identifier=aNaturalNumber
-              |-Reference(364,371)
-                |-QName(364,371)
-                  |-NameIdentifier(364,371)
-                    |-Identifier=Natural
-              |-DeconstructStruct(371,375)
-                |-NameIdentifier(372,373)
-                  |-Identifier=x
+              |-DeclaredName(346,361)
+                |-NameIdentifier(346,360)
+                  |-Identifier=aNaturalNumber
+              |-ReferencedType(361,371)
+                |-Reference(364,371)
+                  |-QName(364,371)
+                    |-NameIdentifier(364,371)
+                      |-Identifier=Natural
+              |-Destructure(371,375)
+                |-DestructureStruct(371,375)
+                  |-NameIdentifier(372,373)
+                    |-Identifier=x
               |-CodeBlock(378,398)
                 |-BinaryOpExpression(386,392)
                   |-Reference(386,387)
@@ -170,15 +189,19 @@
                   |-Operator===
                   |-NumberLiteral=0
             |-CaseIs(403,452)
-              |-Reference(411,418)
-                |-QName(411,418)
-                  |-NameIdentifier(411,418)
-                    |-Identifier=Complex
-              |-DeconstructStruct(418,433)
-                |-NameIdentifier(419,420)
-                  |-Identifier=_
-                |-NameIdentifier(422,431)
-                  |-Identifier=imaginary
+              |-DeclaredName(408,408)
+                <Rule0>
+              |-ReferencedType(408,418)
+                |-Reference(411,418)
+                  |-QName(411,418)
+                    |-NameIdentifier(411,418)
+                      |-Identifier=Complex
+              |-Destructure(418,433)
+                |-DestructureStruct(418,433)
+                  |-NameIdentifier(419,420)
+                    |-Identifier=_
+                  |-NameIdentifier(422,431)
+                    |-Identifier=imaginary
               |-BinaryOpExpression(436,452)
                 |-Reference(436,445)
                   |-QName(436,445)
@@ -187,6 +210,8 @@
                 |-Operator=!=
                 |-NumberLiteral=0.0
             |-CaseElse(457,470)
+              |-DeclaredName(462,462)
+                <Rule0>
               |-BooleanLiteral(465,470)
                 <Rule0>
   |-EndOfFile=

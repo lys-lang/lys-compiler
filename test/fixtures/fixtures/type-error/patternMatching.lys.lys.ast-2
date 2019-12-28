@@ -15,5 +15,9 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=x
-        |-ErrorNode
-        |-ErrorNode
+        |-MatchLiteralNode
+          |-FloatLiteralNode value=1.5
+          |-FloatLiteralNode value=1
+        |-MatchDefaultNode
+          |-EmptyNode
+          |-FloatLiteralNode value=2

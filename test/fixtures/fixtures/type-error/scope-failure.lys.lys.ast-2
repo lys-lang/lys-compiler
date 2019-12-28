@@ -15,5 +15,13 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=number
-        |-ErrorNode
-        |-ErrorNode
+        |-MatchCaseIsNode
+          |-NameIdentifierNode name=x
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Real
+          |-NameIdentifierNode name=_
+          |-EmptyNode
+        |-MatchDefaultNode
+          |-EmptyNode
+          |-EmptyNode

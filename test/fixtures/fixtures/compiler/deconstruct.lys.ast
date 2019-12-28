@@ -60,20 +60,29 @@
                   |-Identifier=x
             |-MatchBody(107,193)
               |-CaseIs(113,132)
-                |-Reference(121,124)
-                  |-QName(121,124)
-                    |-NameIdentifier(121,124)
-                      |-Identifier=Red
+                |-DeclaredName(118,118)
+                  <Rule0>
+                |-ReferencedType(118,124)
+                  |-Reference(121,124)
+                    |-QName(121,124)
+                      |-NameIdentifier(121,124)
+                        |-Identifier=Red
+                |-Destructure(125,125)
+                  <Rule0>
                 |-BooleanLiteral(128,132)
                   <Rule0>
               |-CaseIs(137,171)
-                |-Reference(145,151)
-                  |-QName(145,151)
-                    |-NameIdentifier(145,151)
-                      |-Identifier=Custom
-                |-DeconstructStruct(151,155)
-                  |-NameIdentifier(152,153)
-                    |-Identifier=a
+                |-DeclaredName(142,142)
+                  <Rule0>
+                |-ReferencedType(142,151)
+                  |-Reference(145,151)
+                    |-QName(145,151)
+                      |-NameIdentifier(145,151)
+                        |-Identifier=Custom
+                |-Destructure(151,155)
+                  |-DestructureStruct(151,155)
+                    |-NameIdentifier(152,153)
+                      |-Identifier=a
                 |-BinaryOpExpression(158,171)
                   |-Reference(158,159)
                     |-QName(158,159)
@@ -82,6 +91,8 @@
                   |-Operator===
                   |-NumberLiteral=0xFF0000
               |-CaseElse(176,189)
+                |-DeclaredName(181,181)
+                  <Rule0>
                 |-BooleanLiteral(184,189)
                   <Rule0>
   |-EndOfFile=

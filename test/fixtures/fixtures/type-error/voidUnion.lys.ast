@@ -57,10 +57,12 @@
                     |-Identifier=a
               |-MatchBody(72,125)
                 |-CaseLiteral(78,89)
-                  |-NumberLiteral=1
+                  |-Literal(83,84)
+                    |-NumberLiteral=1
                   |-NumberLiteral=1
                 |-CaseLiteral(94,107)
-                  |-NumberLiteral=2
+                  |-Literal(99,100)
+                    |-NumberLiteral=2
                   |-AtomicExpression(104,107)
                     |-Reference(104,105)
                       |-QName(104,105)
@@ -69,6 +71,8 @@
                     |-CallArguments(105,107)
                       <Rule0>
                 |-CaseElse(112,121)
+                  |-DeclaredName(117,117)
+                    <Rule0>
                   |-NumberLiteral=3
           |-Reference(128,129)
             |-QName(128,129)

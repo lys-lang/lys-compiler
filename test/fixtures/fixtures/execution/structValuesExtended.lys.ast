@@ -797,12 +797,16 @@
                   |-Identifier=f
             |-MatchBody(1179,1269)
               |-CaseIs(1185,1232)
-                |-NameIdentifier(1190,1191)
-                  |-Identifier=x
-                |-Reference(1195,1201)
-                  |-QName(1195,1201)
-                    |-NameIdentifier(1195,1201)
-                      |-Identifier=Custom
+                |-DeclaredName(1190,1192)
+                  |-NameIdentifier(1190,1191)
+                    |-Identifier=x
+                |-ReferencedType(1192,1201)
+                  |-Reference(1195,1201)
+                    |-QName(1195,1201)
+                      |-NameIdentifier(1195,1201)
+                        |-Identifier=Custom
+                |-Destructure(1202,1202)
+                  <Rule0>
                 |-AtomicExpression(1205,1232)
                   |-Reference(1205,1211)
                     |-QName(1205,1211)
@@ -823,6 +827,8 @@
                       |-NumberLiteral=333
                     |-StringLiteral="X"
               |-CaseElse(1237,1265)
+                |-DeclaredName(1242,1242)
+                  <Rule0>
                 |-AtomicExpression(1245,1265)
                   |-Reference(1245,1251)
                     |-QName(1245,1251)

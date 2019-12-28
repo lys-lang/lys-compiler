@@ -1125,12 +1125,16 @@
                   |-Identifier=lastErrorMessage
             |-MatchBody(2513,2589)
               |-CaseIs(2519,2564)
-                |-NameIdentifier(2524,2525)
-                  |-Identifier=m
-                |-Reference(2529,2536)
-                  |-QName(2529,2536)
-                    |-NameIdentifier(2529,2536)
-                      |-Identifier=Message
+                |-DeclaredName(2524,2526)
+                  |-NameIdentifier(2524,2525)
+                    |-Identifier=m
+                |-ReferencedType(2526,2536)
+                  |-Reference(2529,2536)
+                    |-QName(2529,2536)
+                      |-NameIdentifier(2529,2536)
+                        |-Identifier=Message
+                |-Destructure(2537,2537)
+                  <Rule0>
                 |-BinaryOpExpression(2540,2564)
                   |-AtomicExpression(2540,2553)
                     |-Reference(2540,2541)
@@ -1154,6 +1158,8 @@
                           |-NameIdentifier(2561,2564)
                             |-Identifier=u32
               |-CaseElse(2569,2585)
+                |-DeclaredName(2574,2574)
+                  <Rule0>
                 |-AsExpression(2577,2585)
                   |-NumberLiteral=0
                   |-Type(2582,2585)

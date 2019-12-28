@@ -1358,8 +1358,16 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=a
-        |-ErrorNode
-        |-ErrorNode
+        |-MatchCaseIsNode
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=True
+          |-EmptyNode
+          |-EmptyNode
+        |-MatchDefaultNode
+          |-EmptyNode
+          |-EmptyNode
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -1546,8 +1554,34 @@
                 |-ReferenceNode
                   |-QNameNode
                     |-NameIdentifierNode name=$iter$
-              |-ErrorNode
-              |-ErrorNode
+              |-MatchCaseIsNode
+                |-EmptyNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=Some
+                |-NameIdentifierNode name=value
+                |-BlockNode
+                  |-BinaryExpressionNode
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=ret
+                    |-NameIdentifierNode name==
+                    |-BinaryExpressionNode
+                      |-ReferenceNode
+                        |-QNameNode
+                          |-NameIdentifierNode name=ret
+                      |-NameIdentifierNode name=+
+                      |-ReferenceNode
+                        |-QNameNode
+                          |-NameIdentifierNode name=value
+                  |-ContinueNode
+              |-MatchCaseIsNode
+                |-EmptyNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=None
+                |-EmptyNode
+                |-ContinueNode
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=ret

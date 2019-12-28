@@ -108,15 +108,21 @@
                 |-Identifier=a
           |-MatchBody(173,223)
             |-CaseIs(179,201)
-              |-Reference(187,191)
-                |-QName(187,191)
-                  |-NameIdentifier(187,191)
-                    |-Identifier=True
-              |-DeconstructStruct(191,194)
+              |-DeclaredName(184,184)
                 <Rule0>
+              |-ReferencedType(184,191)
+                |-Reference(187,191)
+                  |-QName(187,191)
+                    |-NameIdentifier(187,191)
+                      |-Identifier=True
+              |-Destructure(191,194)
+                |-DestructureStruct(191,194)
+                  <Rule0>
               |-BooleanLiteral(197,201)
                 <Rule0>
             |-CaseElse(206,219)
+              |-DeclaredName(211,211)
+                <Rule0>
               |-BooleanLiteral(214,219)
                 <Rule0>
   |-EndOfFile=

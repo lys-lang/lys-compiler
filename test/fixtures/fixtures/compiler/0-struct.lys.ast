@@ -76,13 +76,20 @@
                   |-Identifier=color
             |-MatchBody(131,236)
               |-CaseIs(137,156)
-                |-Reference(145,148)
-                  |-QName(145,148)
-                    |-NameIdentifier(145,148)
-                      |-Identifier=Red
+                |-DeclaredName(142,142)
+                  <Rule0>
+                |-ReferencedType(142,148)
+                  |-Reference(145,148)
+                    |-QName(145,148)
+                      |-NameIdentifier(145,148)
+                        |-Identifier=Red
+                |-Destructure(149,149)
+                  <Rule0>
                 |-BooleanLiteral(152,156)
                   <Rule0>
               |-CaseElse(219,232)
+                |-DeclaredName(224,224)
+                  <Rule0>
                 |-BooleanLiteral(227,232)
                   <Rule0>
   |-FunctionDirective(240,470)

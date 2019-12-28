@@ -126,23 +126,31 @@
                 |-Identifier=col
           |-MatchBody(222,359)
             |-CaseIs(228,246)
-              |-NameIdentifier(233,234)
-                |-Identifier=x
-              |-Reference(238,241)
-                |-QName(238,241)
-                  |-NameIdentifier(238,241)
-                    |-Identifier=Red
+              |-DeclaredName(233,235)
+                |-NameIdentifier(233,234)
+                  |-Identifier=x
+              |-ReferencedType(235,241)
+                |-Reference(238,241)
+                  |-QName(238,241)
+                    |-NameIdentifier(238,241)
+                      |-Identifier=Red
+              |-Destructure(242,242)
+                <Rule0>
               |-Reference(245,246)
                 |-QName(245,246)
                   |-NameIdentifier(245,246)
                     |-Identifier=x
             |-CaseIs(251,339)
-              |-NameIdentifier(256,257)
-                |-Identifier=x
-              |-Reference(261,265)
-                |-QName(261,265)
-                  |-NameIdentifier(261,265)
-                    |-Identifier=Enum
+              |-DeclaredName(256,258)
+                |-NameIdentifier(256,257)
+                  |-Identifier=x
+              |-ReferencedType(258,265)
+                |-Reference(261,265)
+                  |-QName(261,265)
+                    |-NameIdentifier(261,265)
+                      |-Identifier=Enum
+              |-Destructure(266,266)
+                <Rule0>
               |-MatchExpression(275,339)
                 |-Reference(281,282)
                   |-QName(281,282)
@@ -150,20 +158,29 @@
                       |-Identifier=x
                 |-MatchBody(283,339)
                   |-CaseIs(293,309)
-                    |-Reference(301,302)
-                      |-QName(301,302)
-                        |-NameIdentifier(301,302)
-                          |-Identifier=A
+                    |-DeclaredName(298,298)
+                      <Rule0>
+                    |-ReferencedType(298,302)
+                      |-Reference(301,302)
+                        |-QName(301,302)
+                          |-NameIdentifier(301,302)
+                            |-Identifier=A
+                    |-Destructure(303,303)
+                      <Rule0>
                     |-Reference(306,309)
                       |-QName(306,309)
                         |-NameIdentifier(306,309)
                           |-Identifier=Red
                   |-CaseElse(318,331)
+                    |-DeclaredName(323,323)
+                      <Rule0>
                     |-Reference(326,331)
                       |-QName(326,331)
                         |-NameIdentifier(326,331)
                           |-Identifier=Green
             |-CaseElse(344,355)
+              |-DeclaredName(349,349)
+                <Rule0>
               |-Reference(352,355)
                 |-QName(352,355)
                   |-NameIdentifier(352,355)

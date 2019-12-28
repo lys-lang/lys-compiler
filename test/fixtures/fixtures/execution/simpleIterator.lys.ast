@@ -227,13 +227,17 @@
                           |-Identifier=$iter$
                 |-MatchBody(601,719)
                   |-CaseIs(609,685)
-                    |-Reference(617,621)
-                      |-QName(617,621)
-                        |-NameIdentifier(617,621)
-                          |-Identifier=Some
-                    |-DeconstructStruct(621,629)
-                      |-NameIdentifier(622,627)
-                        |-Identifier=value
+                    |-DeclaredName(614,614)
+                      <Rule0>
+                    |-ReferencedType(614,621)
+                      |-Reference(617,621)
+                        |-QName(617,621)
+                          |-NameIdentifier(617,621)
+                            |-Identifier=Some
+                    |-Destructure(621,629)
+                      |-DestructureStruct(621,629)
+                        |-NameIdentifier(622,627)
+                          |-Identifier=value
                     |-CodeBlock(632,685)
                       |-BinaryOpExpression(642,659)
                         |-Reference(642,645)
@@ -254,10 +258,15 @@
                       |-ContinueStatement(669,677)
                         <Rule0>
                   |-CaseIs(692,713)
-                    |-Reference(700,704)
-                      |-QName(700,704)
-                        |-NameIdentifier(700,704)
-                          |-Identifier=None
+                    |-DeclaredName(697,697)
+                      <Rule0>
+                    |-ReferencedType(697,704)
+                      |-Reference(700,704)
+                        |-QName(700,704)
+                          |-NameIdentifier(700,704)
+                            |-Identifier=None
+                    |-Destructure(705,705)
+                      <Rule0>
                     |-BreakStatement(708,713)
                       <Rule0>
           |-Reference(727,730)

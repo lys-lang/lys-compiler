@@ -80,24 +80,33 @@
                   |-Identifier=color
             |-MatchBody(143,250)
               |-CaseIs(149,168)
-                |-Reference(157,160)
-                  |-QName(157,160)
-                    |-NameIdentifier(157,160)
-                      |-Identifier=Red
+                |-DeclaredName(154,154)
+                  <Rule0>
+                |-ReferencedType(154,160)
+                  |-Reference(157,160)
+                    |-QName(157,160)
+                      |-NameIdentifier(157,160)
+                        |-Identifier=Red
+                |-Destructure(161,161)
+                  <Rule0>
                 |-BooleanLiteral(164,168)
                   <Rule0>
               |-CaseIs(173,228)
-                |-Reference(181,187)
-                  |-QName(181,187)
-                    |-NameIdentifier(181,187)
-                      |-Identifier=Custom
-                |-DeconstructStruct(187,197)
-                  |-NameIdentifier(188,189)
-                    |-Identifier=r
-                  |-NameIdentifier(191,192)
-                    |-Identifier=g
-                  |-NameIdentifier(194,195)
-                    |-Identifier=b
+                |-DeclaredName(178,178)
+                  <Rule0>
+                |-ReferencedType(178,187)
+                  |-Reference(181,187)
+                    |-QName(181,187)
+                      |-NameIdentifier(181,187)
+                        |-Identifier=Custom
+                |-Destructure(187,197)
+                  |-DestructureStruct(187,197)
+                    |-NameIdentifier(188,189)
+                      |-Identifier=r
+                    |-NameIdentifier(191,192)
+                      |-Identifier=g
+                    |-NameIdentifier(194,195)
+                      |-Identifier=b
                 |-BinaryOpExpression(200,228)
                   |-BinaryOpExpression(200,208)
                     |-Reference(200,201)
@@ -123,6 +132,8 @@
                     |-Operator===
                     |-NumberLiteral=0
               |-CaseElse(233,246)
+                |-DeclaredName(238,238)
+                  <Rule0>
                 |-BooleanLiteral(241,246)
                   <Rule0>
   |-FunctionDirective(254,714)

@@ -36,6 +36,25 @@
           |-ReferenceNode
             |-QNameNode
               |-NameIdentifierNode name=x
-          |-ErrorNode
-          |-ErrorNode
-          |-ErrorNode
+          |-MatchCaseIsNode
+            |-EmptyNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Red
+            |-EmptyNode
+            |-EmptyNode
+          |-MatchCaseIsNode
+            |-EmptyNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Custom
+            |-NameIdentifierNode name=a
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name===
+              |-FloatLiteralNode value=0xFF0000
+          |-MatchDefaultNode
+            |-EmptyNode
+            |-EmptyNode

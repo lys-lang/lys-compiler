@@ -78,7 +78,8 @@
                   |-Identifier=x
             |-MatchBody(109,161)
               |-CaseLiteral(115,137)
-                |-NumberLiteral=1
+                |-Literal(120,121)
+                  |-NumberLiteral=1
                 |-AtomicExpression(125,137)
                   |-Reference(125,131)
                     |-QName(125,131)
@@ -88,6 +89,8 @@
                     |-BooleanLiteral(132,136)
                       <Rule0>
               |-CaseElse(142,157)
+                |-DeclaredName(147,147)
+                  <Rule0>
                 |-AtomicExpression(150,157)
                   |-Reference(150,155)
                     |-QName(150,155)

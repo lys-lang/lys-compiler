@@ -32,18 +32,23 @@
                 |-Identifier=number
           |-MatchBody(53,107)
             |-CaseIs(59,85)
-              |-NameIdentifier(64,65)
-                |-Identifier=x
-              |-Reference(69,73)
-                |-QName(69,73)
-                  |-NameIdentifier(69,73)
-                    |-Identifier=Real
-              |-DeconstructStruct(73,77)
-                |-NameIdentifier(74,75)
-                  |-Identifier=_
+              |-DeclaredName(64,66)
+                |-NameIdentifier(64,65)
+                  |-Identifier=x
+              |-ReferencedType(66,73)
+                |-Reference(69,73)
+                  |-QName(69,73)
+                    |-NameIdentifier(69,73)
+                      |-Identifier=Real
+              |-Destructure(73,77)
+                |-DestructureStruct(73,77)
+                  |-NameIdentifier(74,75)
+                    |-Identifier=_
               |-BooleanLiteral(80,85)
                 <Rule0>
             |-CaseElse(90,103)
+              |-DeclaredName(95,95)
+                <Rule0>
               |-BooleanLiteral(98,103)
                 <Rule0>
   |-EndOfFile=

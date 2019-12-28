@@ -828,8 +828,45 @@
                 |-QNameNode
                   |-NameIdentifierNode name=a
               |-NameIdentifierNode name=f
-            |-ErrorNode
-            |-ErrorNode
+            |-MatchCaseIsNode
+              |-NameIdentifierNode name=x
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Custom
+              |-NameIdentifierNode name=hex
+              |-BlockNode
+                |-FunctionCallNode
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=verify
+                  |-BinaryExpressionNode
+                    |-MemberNode operator=.
+                      |-ReferenceNode
+                        |-QNameNode
+                          |-NameIdentifierNode name=x
+                      |-NameIdentifierNode name=hex
+                    |-NameIdentifierNode name===
+                    |-FloatLiteralNode value=0xAABBCCDD
+                  |-StringLiteralNode value="x.hex == 0xAABBCCDD"
+                |-FunctionCallNode
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=verify
+                  |-BinaryExpressionNode
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=hex
+                    |-NameIdentifierNode name===
+                    |-FloatLiteralNode value=0xAABBCCDD
+                  |-StringLiteralNode value="hex == 0xAABBCCDD"
+            |-MatchDefaultNode
+              |-EmptyNode
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=verify
+                |-EmptyNode
+                |-StringLiteralNode value="a.f is not Custom in pattern matching"
           |-FunctionCallNode
             |-ReferenceNode
               |-QNameNode

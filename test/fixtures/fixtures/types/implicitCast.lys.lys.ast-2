@@ -55,8 +55,12 @@
           |-ReferenceNode
             |-QNameNode
               |-NameIdentifierNode name=input
-          |-ErrorNode
-          |-ErrorNode
+          |-MatchLiteralNode
+            |-FloatLiteralNode value=1
+            |-EmptyNode
+          |-MatchDefaultNode
+            |-EmptyNode
+            |-EmptyNode
   |-FunDirectiveNode
     |-DecoratorNode
       |-NameIdentifierNode name=export

@@ -61,5 +61,13 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=a
-        |-ErrorNode
-        |-ErrorNode
+        |-MatchCaseIsNode
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=True
+          |-EmptyNode
+          |-EmptyNode
+        |-MatchDefaultNode
+          |-EmptyNode
+          |-EmptyNode

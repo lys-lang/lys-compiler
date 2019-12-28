@@ -46,8 +46,16 @@
           |-ReferenceNode
             |-QNameNode
               |-NameIdentifierNode name=color
-          |-ErrorNode
-          |-ErrorNode
+          |-MatchCaseIsNode
+            |-EmptyNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Red
+            |-EmptyNode
+            |-EmptyNode
+          |-MatchDefaultNode
+            |-EmptyNode
+            |-EmptyNode
   |-FunDirectiveNode
     |-DecoratorNode
       |-NameIdentifierNode name=export
