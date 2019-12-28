@@ -29,7 +29,7 @@
               |-NameIdentifierNode name=calloc
             |-WasmAtomNode symbol=i32.add
               |-WasmAtomNode symbol=i32.const
-                |-ErrorNode
+                |-FloatLiteralNode value=16
               |-WasmAtomNode symbol=get_local
                 |-QNameNode
                   |-NameIdentifierNode name=$size

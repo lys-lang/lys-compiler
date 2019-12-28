@@ -16,7 +16,18 @@
         |-QNameNode
           |-NameIdentifierNode name=void
       |-BlockNode
-        |-ErrorNode
+        |-IfNode
+          |-UnaryExpressionNode
+            |-NameIdentifierNode name=!
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=x
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=panic
+            |-EmptyNode
+          |-EmptyNode
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -35,7 +46,18 @@
         |-QNameNode
           |-NameIdentifierNode name=void
       |-BlockNode
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=assert
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=x
+            |-NameIdentifierNode name===
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=y
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -54,7 +76,18 @@
         |-QNameNode
           |-NameIdentifierNode name=void
       |-BlockNode
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=assert
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=x
+            |-NameIdentifierNode name===
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=y
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -73,7 +106,18 @@
         |-QNameNode
           |-NameIdentifierNode name=void
       |-BlockNode
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=assert
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=x
+            |-NameIdentifierNode name===
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=y
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -92,7 +136,18 @@
         |-QNameNode
           |-NameIdentifierNode name=void
       |-BlockNode
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=assert
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=x
+            |-NameIdentifierNode name===
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=y
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -111,7 +166,18 @@
         |-QNameNode
           |-NameIdentifierNode name=void
       |-BlockNode
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=assert
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=x
+            |-NameIdentifierNode name===
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=y
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -130,4 +196,15 @@
         |-QNameNode
           |-NameIdentifierNode name=void
       |-BlockNode
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=assert
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=x
+            |-NameIdentifierNode name===
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=y

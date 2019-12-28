@@ -14,7 +14,11 @@
           |-ReferenceNode
             |-QNameNode
               |-NameIdentifierNode name=u32
-          |-ErrorNode
+          |-MemberNode operator=.^
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=string
+            |-NameIdentifierNode name=discriminant
         |-BinaryExpressionNode
           |-AsExpressionNode
             |-ReferenceNode
@@ -42,7 +46,22 @@
           |-NameIdentifierNode name=UnsafeCPointer
       |-BlockNode
         |-AsExpressionNode
-          |-ErrorNode
+          |-FunctionCallNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=string
+              |-NameIdentifierNode name=fromBytes
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=bytes
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=sizeInChars
+                |-NameIdentifierNode name=<<
+                |-FloatLiteralNode value=1
           |-ReferenceNode
             |-QNameNode
               |-NameIdentifierNode name=UnsafeCPointer
@@ -75,14 +94,14 @@
                 |-NameIdentifierNode name=$stringDiscriminant
             |-WasmAtomNode symbol=i64.and
               |-WasmAtomNode symbol=i64.const
-                |-ErrorNode
+                |-FloatLiteralNode value=0xFFFFFFFF
               |-WasmAtomNode symbol=i64.extend_u/i32
                 |-WasmAtomNode symbol=i32.sub
                   |-WasmAtomNode symbol=get_local
                     |-QNameNode
                       |-NameIdentifierNode name=$bytesPointer
                   |-WasmAtomNode symbol=i32.const
-                    |-ErrorNode
+                    |-FloatLiteralNode value=4
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode

@@ -136,7 +136,7 @@
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i32.and
             |-WasmAtomNode symbol=i32.const
-              |-ErrorNode
+              |-FloatLiteralNode value=0xFF
             |-WasmAtomNode symbol=i32.wrap_i64
               |-WasmAtomNode symbol=get_local
                 |-QNameNode
@@ -158,7 +158,7 @@
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i32.and
             |-WasmAtomNode symbol=i32.const
-              |-ErrorNode
+              |-FloatLiteralNode value=0xFFFF
             |-WasmAtomNode symbol=i32.wrap_i64
               |-WasmAtomNode symbol=get_local
                 |-QNameNode
@@ -481,7 +481,7 @@
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i64.xor
             |-WasmAtomNode symbol=i64.const
-              |-ErrorNode
+              |-FloatLiteralNode value=0xFFFFFFFFFFFFFFFF
             |-WasmAtomNode symbol=get_local
               |-QNameNode
                 |-NameIdentifierNode name=$rhs

@@ -216,7 +216,7 @@
                 |-Identifier=i32
       |-FunctionBody(630,651)
         |-IfExpression(632,651)
-          |-IfBody(635,642)
+          |-Condition(635,642)
             |-BinaryOpExpression(636,641)
               |-Reference(636,637)
                 |-QName(636,637)
@@ -458,7 +458,7 @@
       |-FunctionBody(1152,1703)
         |-CodeBlock(1154,1703)
           |-IfExpression(1158,1701)
-            |-IfBody(1161,1171)
+            |-Condition(1161,1171)
               |-BinaryOpExpression(1162,1170)
                 |-Reference(1162,1166)
                   |-QName(1162,1166)
@@ -468,7 +468,7 @@
                 |-NumberLiteral=0
             |-CodeBlock(1172,1684)
               |-IfExpression(1178,1223)
-                |-IfBody(1181,1201)
+                |-Condition(1181,1201)
                   |-BinaryOpExpression(1182,1200)
                     |-Reference(1182,1186)
                       |-QName(1182,1186)
@@ -532,7 +532,7 @@
                   |-CallArguments(1331,1333)
                     <Rule0>
               |-IfExpression(1338,1652)
-                |-IfBody(1341,1369)
+                |-Condition(1341,1369)
                   |-BinaryOpExpression(1342,1368)
                     |-Reference(1342,1348)
                       |-QName(1342,1348)
@@ -590,7 +590,7 @@
                             |-NameIdentifier(1480,1491)
                               |-Identifier=pagesNeeded
                   |-IfExpression(1516,1646)
-                    |-IfBody(1519,1548)
+                    |-Condition(1519,1548)
                       |-BinaryOpExpression(1520,1547)
                         |-AtomicExpression(1520,1543)
                           |-Reference(1520,1530)
@@ -606,7 +606,7 @@
                         |-NumberLiteral=0
                     |-CodeBlock(1549,1646)
                       |-IfExpression(1559,1638)
-                        |-IfBody(1562,1591)
+                        |-Condition(1562,1591)
                           |-BinaryOpExpression(1563,1590)
                             |-AtomicExpression(1563,1586)
                               |-Reference(1563,1573)

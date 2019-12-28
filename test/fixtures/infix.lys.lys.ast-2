@@ -3,7 +3,9 @@
     |-VarDeclarationNode
       |-NameIdentifierNode name=x
       |-EmptyNode
-      |-ErrorNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=a
   |-VarDirectiveNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=y

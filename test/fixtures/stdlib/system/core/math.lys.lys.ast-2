@@ -58,7 +58,21 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=i32
-      |-ErrorNode
+      |-IfNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=a
+          |-NameIdentifierNode name=>
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -76,7 +90,21 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=i32
-      |-ErrorNode
+      |-IfNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=a
+          |-NameIdentifierNode name=>
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=b
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -94,7 +122,21 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=u32
-      |-ErrorNode
+      |-IfNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=a
+          |-NameIdentifierNode name=>
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -112,7 +154,21 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=u32
-      |-ErrorNode
+      |-IfNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=a
+          |-NameIdentifierNode name=>
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=b
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -130,7 +186,21 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=i64
-      |-ErrorNode
+      |-IfNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=a
+          |-NameIdentifierNode name=>
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -148,7 +218,21 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=i64
-      |-ErrorNode
+      |-IfNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=a
+          |-NameIdentifierNode name=>
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=b
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -166,7 +250,21 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=u64
-      |-ErrorNode
+      |-IfNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=a
+          |-NameIdentifierNode name=>
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -184,7 +282,21 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=u64
-      |-ErrorNode
+      |-IfNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=a
+          |-NameIdentifierNode name=>
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=b
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -202,7 +314,21 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=f32
-      |-ErrorNode
+      |-IfNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=a
+          |-NameIdentifierNode name=>
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -220,7 +346,21 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=f32
-      |-ErrorNode
+      |-IfNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=a
+          |-NameIdentifierNode name=>
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=b
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -238,7 +378,21 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=f64
-      |-ErrorNode
+      |-IfNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=a
+          |-NameIdentifierNode name=>
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -256,4 +410,18 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=f64
-      |-ErrorNode
+      |-IfNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=a
+          |-NameIdentifierNode name=>
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=b

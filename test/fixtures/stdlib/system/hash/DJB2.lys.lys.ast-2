@@ -32,13 +32,29 @@
           |-NameIdentifierNode name=$ref
           |-EmptyNode
           |-AsExpressionNode
-            |-ErrorNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=input
+              |-NameIdentifierNode name=ptr
             |-ReferenceNode
               |-QNameNode
                 |-NameIdentifierNode name=ref
         |-LoopNode
           |-BlockNode
-            |-ErrorNode
+            |-IfNode
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=i
+                |-NameIdentifierNode name=>=
+                |-MemberNode operator=.
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=input
+                  |-NameIdentifierNode name=length
+              |-ContinueNode
+              |-EmptyNode
             |-BinaryExpressionNode
               |-ReferenceNode
                 |-QNameNode
@@ -57,7 +73,18 @@
                     |-QNameNode
                       |-NameIdentifierNode name=hash
                 |-NameIdentifierNode name=+
-                |-ErrorNode
+                |-FunctionCallNode
+                  |-MemberNode operator=.
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=u64
+                    |-NameIdentifierNode name=load8_u
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=$ref
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=i
             |-BinaryExpressionNode
               |-ReferenceNode
                 |-QNameNode
@@ -73,7 +100,7 @@
                   |-ReferenceNode
                     |-QNameNode
                       |-NameIdentifierNode name=u32
-            |-ErrorNode
+            |-ContinueNode
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=hash

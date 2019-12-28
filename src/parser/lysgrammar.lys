@@ -222,7 +222,7 @@ fun getGrammar(): Grammar = {
         Nominal("CaseLiteral", Push("CaseLiteral", Cons(K("case"), WS, Cut(n("Literal"), WS, op("->"), WS, n("Expression"))))) ++
         Nominal("CaseIs", Push("CaseIs", Cons(K("case"), WS, Optional(Cons(n("NameIdentifier"), WSS)), Cut(K("is"), WSS, n("Reference")), WS, Optional(n("DeconstructStruct")), op("->"), WS, n("Expression")))) ++
         Nominal("CaseElse", Push("CaseElse", Cons(Cut(K("else"), WS), Optional(Cut(n("NameIdentifier"), WSS)), op("->"), WS, n("Expression")))) ++
-        Nominal("IfExpression", Push("IfExpression", Cons(Rune(Cut(K("if"), WS), n("IfBody"), "A condition was expected"), WS, n("Expression"), Optional(Cons(WS, n("ElseExpression")))))) ++
+        Nominal("IfExpression", Push("IfExpression", Cons(Rune(Cut(K("if"), WS), n("Condition"), "A condition was expected"), WS, n("Expression"), Optional(Cons(WS, n("ElseExpression")))))) ++
         Nominal("ElseExpression", Rune(Cons(K("else"), WS), n("Expression"), "An expression was expected")) ++
         Nominal("WasmExpression", Push("WasmExpression",
           Rune(
@@ -245,7 +245,7 @@ fun getGrammar(): Grammar = {
           )
         )) ++
 
-        Nominal("IfBody", Push("IfBody", Wrap(ParenthesesOpen, Cons(WS, n("Expression"), WS), ParenthesesClose))) ++
+        Nominal("Condition", Push("Condition", Wrap(ParenthesesOpen, Cons(WS, n("Expression"), WS), ParenthesesClose))) ++
         Nominal("MatchElements", Cut(Or(n("CaseCondition"), n("CaseIs"), n("CaseLiteral"), n("CaseElse")), WS)) ++
 
         Nominal("UnknownExpression", Push("UnknownExpression", t("???"))) ++
@@ -393,7 +393,7 @@ fun getGrammar(): Grammar = {
 
         Nominal("BooleanLiteral", Push("BooleanLiteral", Or(K("true"), K("false")))) ++
         Nominal("PostfixNumber", PushIfManyChildren("PostfixNumber", Cons(Terminal(NumberLiteral), Optional(n("Reference"))))) ++
-        Nominal("NegNumberLiteral", Push("NegNumberLiteral", Cons(Optional(op("-")), Terminal(NumberLiteral)))) ++
+        Nominal("NegNumberLiteral", Push("NegNumberLiteral", Cons(Optional(opk("-")), Terminal(NumberLiteral)))) ++
 
         Nominal("Literal", Or(Terminal(StringLiteral), n("PostfixNumber"), n("BooleanLiteral"))) ++
 

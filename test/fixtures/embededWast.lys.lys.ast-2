@@ -132,7 +132,7 @@
                   |-QNameNode
                     |-NameIdentifierNode name=b
               |-WasmAtomNode symbol=i32.const
-                |-ErrorNode
+                |-FloatLiteralNode value=1
           |-WasmAtomNode symbol=set_local
             |-QNameNode
               |-NameIdentifierNode name=$newStr
@@ -144,7 +144,7 @@
                   |-QNameNode
                     |-NameIdentifierNode name=$sum
                 |-WasmAtomNode symbol=i32.const
-                  |-ErrorNode
+                  |-FloatLiteralNode value=1
           |-WasmAtomNode symbol=i32.store8
             |-WasmAtomNode symbol=get_local
               |-QNameNode
@@ -176,7 +176,7 @@
                   |-QNameNode
                     |-NameIdentifierNode name=$aSize
               |-WasmAtomNode symbol=i32.const
-                |-ErrorNode
+                |-FloatLiteralNode value=1
           |-WasmAtomNode symbol=get_local
             |-QNameNode
               |-NameIdentifierNode name=$newStr

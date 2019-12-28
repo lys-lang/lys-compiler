@@ -27,7 +27,13 @@
           |-QNameNode
             |-NameIdentifierNode name=i32
         |-BinaryExpressionNode
-          |-ErrorNode
+          |-MemberNode operator=.
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=str
+              |-NameIdentifierNode name=data
+            |-NameIdentifierNode name=length
           |-NameIdentifierNode name=/
           |-FloatLiteralNode value=2
     |-FunDirectiveNode
@@ -51,26 +57,104 @@
           |-VarDeclarationNode
             |-NameIdentifierNode name=lhsData
             |-EmptyNode
-            |-ErrorNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=lhs
+              |-NameIdentifierNode name=data
           |-VarDeclarationNode
             |-NameIdentifierNode name=rhsData
             |-EmptyNode
-            |-ErrorNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=rhs
+              |-NameIdentifierNode name=data
           |-VarDeclarationNode
             |-NameIdentifierNode name=lhsLen
             |-EmptyNode
-            |-ErrorNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=lhsData
+              |-NameIdentifierNode name=length
           |-VarDeclarationNode
             |-NameIdentifierNode name=rhsLen
             |-EmptyNode
-            |-ErrorNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=rhsData
+              |-NameIdentifierNode name=length
           |-VarDeclarationNode
             |-NameIdentifierNode name=newData
             |-EmptyNode
-            |-ErrorNode
-          |-ErrorNode
-          |-ErrorNode
-          |-ErrorNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=bytes
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=lhsLen
+                |-NameIdentifierNode name=+
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=rhsLen
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=system
+                |-NameIdentifierNode name=core
+                |-NameIdentifierNode name=memory
+                |-NameIdentifierNode name=memcpy
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=newData
+              |-NameIdentifierNode name=ptr
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=lhsData
+              |-NameIdentifierNode name=ptr
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=lhsLen
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=system
+                |-NameIdentifierNode name=core
+                |-NameIdentifierNode name=memory
+                |-NameIdentifierNode name=memcpy
+            |-BinaryExpressionNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=newData
+                |-NameIdentifierNode name=ptr
+              |-NameIdentifierNode name=+
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=lhsLen
+            |-MemberNode operator=.
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=rhs
+                |-NameIdentifierNode name=data
+              |-NameIdentifierNode name=ptr
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=rhsLen
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=String
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=newData
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -89,5 +173,44 @@
           |-QNameNode
             |-NameIdentifierNode name=u16
         |-BlockNode
-          |-ErrorNode
-          |-ErrorNode
+          |-IfNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=at
+              |-NameIdentifierNode name=>
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=str
+                |-NameIdentifierNode name=length
+            |-BlockNode
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=panic
+                |-EmptyNode
+            |-EmptyNode
+          |-FunctionCallNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=u16
+              |-NameIdentifierNode name=load
+            |-AsExpressionNode
+              |-MemberNode operator=.
+                |-MemberNode operator=.
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=str
+                  |-NameIdentifierNode name=data
+                |-NameIdentifierNode name=ptr
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ref
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=at
+              |-NameIdentifierNode name=*
+              |-FloatLiteralNode value=2

@@ -86,7 +86,19 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=void
-      |-ErrorNode
+      |-IfNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=x
+          |-NameIdentifierNode name===
+          |-EmptyNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=panic
+          |-EmptyNode
+        |-EmptyNode
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -130,7 +142,7 @@
             |-NameIdentifierNode name=u32
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i32.const
-            |-ErrorNode
+            |-FloatLiteralNode value=1
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -139,7 +151,11 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=u32
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=sizeOf
+          |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -476,7 +492,7 @@
             |-NameIdentifierNode name=u32
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i32.const
-            |-ErrorNode
+            |-FloatLiteralNode value=2
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -485,7 +501,11 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=u32
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=sizeOf
+          |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -732,7 +752,7 @@
             |-NameIdentifierNode name=u32
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i32.const
-            |-ErrorNode
+            |-FloatLiteralNode value=2
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -741,7 +761,11 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=u32
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=sizeOf
+          |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -1046,7 +1070,7 @@
             |-NameIdentifierNode name=u32
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i32.const
-            |-ErrorNode
+            |-FloatLiteralNode value=4
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -1055,7 +1079,11 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=u32
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=sizeOf
+          |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -1397,7 +1425,7 @@
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i32.xor
             |-WasmAtomNode symbol=i32.const
-              |-ErrorNode
+              |-FloatLiteralNode value=0xFFFFFFFF
             |-WasmAtomNode symbol=get_local
               |-QNameNode
                 |-NameIdentifierNode name=$rhs
@@ -1416,7 +1444,7 @@
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i32.sub
             |-WasmAtomNode symbol=i32.const
-              |-ErrorNode
+              |-FloatLiteralNode value=0
             |-WasmAtomNode symbol=get_local
               |-QNameNode
                 |-NameIdentifierNode name=$rhs
@@ -1783,7 +1811,7 @@
             |-NameIdentifierNode name=u32
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i32.const
-            |-ErrorNode
+            |-FloatLiteralNode value=4
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -1792,7 +1820,11 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=u32
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=sizeOf
+          |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -2076,7 +2108,7 @@
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i32.xor
             |-WasmAtomNode symbol=i32.const
-              |-ErrorNode
+              |-FloatLiteralNode value=0xFFFFFFFF
             |-WasmAtomNode symbol=get_local
               |-QNameNode
                 |-NameIdentifierNode name=$rhs
@@ -2409,7 +2441,7 @@
             |-NameIdentifierNode name=u32
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i32.const
-            |-ErrorNode
+            |-FloatLiteralNode value=8
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -2418,7 +2450,11 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=u32
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=sizeOf
+          |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -2670,7 +2706,7 @@
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i64.xor
             |-WasmAtomNode symbol=i64.const
-              |-ErrorNode
+              |-FloatLiteralNode value=0xFFFFFFFFFFFFFFFF
             |-WasmAtomNode symbol=get_local
               |-QNameNode
                 |-NameIdentifierNode name=$rhs
@@ -3037,7 +3073,7 @@
             |-NameIdentifierNode name=u32
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i32.const
-            |-ErrorNode
+            |-FloatLiteralNode value=8
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -3046,7 +3082,11 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=u32
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=sizeOf
+          |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -3324,7 +3364,7 @@
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i64.xor
             |-WasmAtomNode symbol=i64.const
-              |-ErrorNode
+              |-FloatLiteralNode value=0xFFFFFFFFFFFFFFFF
             |-WasmAtomNode symbol=get_local
               |-QNameNode
                 |-NameIdentifierNode name=$rhs
@@ -3691,7 +3731,7 @@
             |-NameIdentifierNode name=u32
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i32.const
-            |-ErrorNode
+            |-FloatLiteralNode value=4
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -3700,7 +3740,11 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=u32
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=sizeOf
+          |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -4165,7 +4209,7 @@
             |-NameIdentifierNode name=u32
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i32.const
-            |-ErrorNode
+            |-FloatLiteralNode value=8
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -4174,7 +4218,11 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=u32
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=sizeOf
+          |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -4639,7 +4687,7 @@
             |-NameIdentifierNode name=u32
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i32.const
-            |-ErrorNode
+            |-FloatLiteralNode value=4
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -4648,7 +4696,11 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=u32
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=sizeOf
+          |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -4673,13 +4725,13 @@
                 |-QNameNode
                   |-NameIdentifierNode name=$lhs
               |-WasmAtomNode symbol=i32.const
-                |-ErrorNode
+                |-FloatLiteralNode value=0
             |-WasmAtomNode symbol=i32.ne
               |-WasmAtomNode symbol=get_local
                 |-QNameNode
                   |-NameIdentifierNode name=$rhs
               |-WasmAtomNode symbol=i32.const
-                |-ErrorNode
+                |-FloatLiteralNode value=0
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -4731,13 +4783,13 @@
                 |-QNameNode
                   |-NameIdentifierNode name=$lhs
               |-WasmAtomNode symbol=i32.const
-                |-ErrorNode
+                |-FloatLiteralNode value=0
             |-WasmAtomNode symbol=i32.ne
               |-WasmAtomNode symbol=get_local
                 |-QNameNode
                   |-NameIdentifierNode name=$rhs
               |-WasmAtomNode symbol=i32.const
-                |-ErrorNode
+                |-FloatLiteralNode value=0
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -4750,7 +4802,12 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=boolean
-        |-ErrorNode
+        |-IfNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=rhs
+          |-EmptyNode
+          |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -4880,7 +4937,7 @@
             |-NameIdentifierNode name=u32
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i32.const
-            |-ErrorNode
+            |-FloatLiteralNode value=8
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -4889,7 +4946,11 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=u32
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=sizeOf
+          |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -5120,7 +5181,19 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=i32
-        |-ErrorNode
+        |-FunctionCallNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=i32
+            |-NameIdentifierNode name=load
+          |-AsExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=self
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=ref
     |-FunDirectiveNode
       |-DecoratorNode
         |-NameIdentifierNode name=getter
@@ -5138,7 +5211,13 @@
         |-BlockNode
           |-BinaryExpressionNode
             |-AsExpressionNode
-              |-ErrorNode
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=toAddr
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=self
               |-ReferenceNode
                 |-QNameNode
                   |-NameIdentifierNode name=i32

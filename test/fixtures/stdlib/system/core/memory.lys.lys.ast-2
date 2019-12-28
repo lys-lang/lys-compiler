@@ -227,8 +227,28 @@
         |-VarDeclarationNode
           |-NameIdentifierNode name=$ret
           |-EmptyNode
-          |-ErrorNode
-        |-ErrorNode
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=malloc
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=size
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=memset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=$ret
+          |-AsExpressionNode
+            |-FloatLiteralNode value=0
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u8
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=size
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=$ret
@@ -245,8 +265,38 @@
         |-QNameNode
           |-NameIdentifierNode name=u32
       |-BlockNode
-        |-ErrorNode
-        |-ErrorNode
+        |-IfNode
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=size
+            |-NameIdentifierNode name===
+            |-AsExpressionNode
+              |-FloatLiteralNode value=0
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=u32
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=panic
+            |-EmptyNode
+          |-EmptyNode
+        |-IfNode
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=size
+            |-NameIdentifierNode name=>
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=MAX_SIZE_32
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=panic
+            |-EmptyNode
+          |-EmptyNode
         |-VarDeclarationNode
           |-NameIdentifierNode name=ptr
           |-EmptyNode
@@ -275,8 +325,95 @@
         |-VarDeclarationNode
           |-NameIdentifierNode name=pagesBefore
           |-EmptyNode
-          |-ErrorNode
-        |-ErrorNode
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=currentMemory
+            |-EmptyNode
+        |-IfNode
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=newPtr
+            |-NameIdentifierNode name=>
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=pagesBefore
+              |-NameIdentifierNode name=<<
+              |-FloatLiteralNode value=16
+          |-BlockNode
+            |-VarDeclarationNode
+              |-NameIdentifierNode name=pagesNeeded
+              |-EmptyNode
+              |-BinaryExpressionNode
+                |-BinaryExpressionNode
+                  |-BinaryExpressionNode
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=newPtr
+                    |-ErrorNode
+                    |-NameIdentifierNode name=+
+                    |-FloatLiteralNode value=0xffff
+                  |-NameIdentifierNode name=&
+                  |-UnaryExpressionNode
+                    |-NameIdentifierNode name=~
+                    |-FloatLiteralNode value=0xffff
+                |-NameIdentifierNode name=>>
+                |-FloatLiteralNode value=16
+            |-VarDeclarationNode
+              |-NameIdentifierNode name=pagesWanted
+              |-EmptyNode
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=max
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=pagesBefore
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=pagesNeeded
+            |-IfNode
+              |-BinaryExpressionNode
+                |-FunctionCallNode
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=growMemory
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=pagesWanted
+                |-NameIdentifierNode name=<
+                |-AsExpressionNode
+                  |-FloatLiteralNode value=0
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=u32
+              |-BlockNode
+                |-IfNode
+                  |-BinaryExpressionNode
+                    |-FunctionCallNode
+                      |-ReferenceNode
+                        |-QNameNode
+                          |-NameIdentifierNode name=growMemory
+                      |-ReferenceNode
+                        |-QNameNode
+                          |-NameIdentifierNode name=pagesNeeded
+                    |-NameIdentifierNode name=<
+                    |-AsExpressionNode
+                      |-FloatLiteralNode value=0
+                      |-ReferenceNode
+                        |-QNameNode
+                          |-NameIdentifierNode name=u32
+                  |-BlockNode
+                    |-FunctionCallNode
+                      |-ReferenceNode
+                        |-QNameNode
+                          |-NameIdentifierNode name=panic
+                      |-EmptyNode
+                  |-EmptyNode
+              |-EmptyNode
+          |-EmptyNode
         |-BinaryExpressionNode
           |-ReferenceNode
             |-QNameNode
@@ -364,8 +501,42 @@
                 |-NameIdentifierNode name=ref
         |-LoopNode
           |-BlockNode
-            |-ErrorNode
-            |-ErrorNode
+            |-IfNode
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=i
+                |-NameIdentifierNode name=>=
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=length
+              |-BlockNode
+                |-ContinueNode
+              |-EmptyNode
+            |-FunctionCallNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=u8
+                |-NameIdentifierNode name=store
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=DST
+              |-FunctionCallNode
+                |-MemberNode operator=.
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=u8
+                  |-NameIdentifierNode name=load
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=SRC
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=i
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=i
             |-BinaryExpressionNode
               |-ReferenceNode
                 |-QNameNode
@@ -381,7 +552,7 @@
                   |-ReferenceNode
                     |-QNameNode
                       |-NameIdentifierNode name=u32
-            |-ErrorNode
+            |-ContinueNode
         |-BinaryExpressionNode
           |-ReferenceNode
             |-QNameNode
@@ -460,7 +631,7 @@
                   |-QNameNode
                     |-NameIdentifierNode name=$ptr
                 |-WasmAtomNode symbol=i32.const
-                  |-ErrorNode
+                  |-FloatLiteralNode value=1
             |-WasmAtomNode symbol=br
               |-QNameNode
                 |-NameIdentifierNode name=$cont

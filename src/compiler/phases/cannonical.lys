@@ -77,15 +77,62 @@ fun processNode(astNode: AstNode): CodeNode = match astNode {
     case "Reference" -> ReferenceNode(astNode, fqnOrEmpty(child))
     case "FunctionParamsList" -> processNode(child)
     case "Decorators" -> processNode(child)
+    case "NegNumberLiteral" -> FloatLiteralNode(astNode, textOf(astNode))
+    case "IfExpression" -> {
+      var condition = processNode(first(child))
+      var truePart = processNode(second(child))
+      var falsePart = processNode(third(child))
+      IfNode(astNode, condition, truePart, falsePart)
+    }
 
     case "TypeParameters" -> processNode(child)
     case "ReturnType" -> processNode(child)
     case "FunctionBody" -> processNode(child)
+    case "Condition" -> processNode(child)
     case "FunctionName" -> processNode(child)
     case "FunOperator" -> processNode(child)
     case "Decorators" -> processNode(child)
+    case "ContinueStatement" -> ContinueNode(astNode)
+    case "BreakStatement" -> ContinueNode(astNode)
     case "LoopExpression" -> LoopNode(astNode, processNode(child))
     case "Decorator" -> DecoratorNode(astNode, nameOrError(child), processNode(rest(child)))
+
+    case "AtomicExpression" -> {
+      var resto = child
+      var ret = processNode(first(resto))
+      resto = rest(resto)
+
+      loop {
+        val head = first(resto)
+        resto = rest(resto)
+
+        match head {
+          case is Node(name, child) -> {
+            match name {
+              case "CallArguments" -> {
+                ret = FunctionCallNode(child, ret, processNode(child), EmptyNode)
+              }
+              case "MemberExpression" -> {
+                ret = MemberNode(child, ret, textOf(first(child)), processNode(rest(child)))
+              }
+              case "IndexExpression" -> {
+                ret = BinaryExpressionNode(astNode, ret, NameIdentifierNode(child, "[]"), processNode(child))
+              }
+              else -> {
+                /* noop */
+                support::env::printf("No handler for " ++ name)
+              }
+            }
+            continue
+          }
+          else -> {
+            /* noop */
+          }
+        }
+      }
+
+      ret
+    }
 
     case "WasmExpression" -> WasmExpressionNode(astNode, processNode(child))
     case "SExpression" -> WasmAtomNode(astNode, textOf(first(child)), processNode(rest(child)))

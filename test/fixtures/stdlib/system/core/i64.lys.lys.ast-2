@@ -320,7 +320,7 @@
               |-QNameNode
                 |-NameIdentifierNode name=$lhs
             |-WasmAtomNode symbol=i64.const
-              |-ErrorNode
+              |-FloatLiteralNode value=-1
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -411,7 +411,7 @@
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i64.xor
             |-WasmAtomNode symbol=i64.const
-              |-ErrorNode
+              |-FloatLiteralNode value=0xFFFFFFFFFFFFFFFF
             |-WasmAtomNode symbol=get_local
               |-QNameNode
                 |-NameIdentifierNode name=$rhs

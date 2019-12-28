@@ -107,8 +107,52 @@
         |-QNameNode
           |-NameIdentifierNode name=void
       |-BlockNode
-        |-ErrorNode
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=given
+            |-NameIdentifierNode name===
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=expected
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=message
+        |-IfNode
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=given
+            |-NameIdentifierNode name=!=
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=expected
+          |-BlockNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=support
+                  |-NameIdentifierNode name=env
+                  |-NameIdentifierNode name=printf
+              |-StringLiteralNode value="  given: %d"
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=given
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=support
+                  |-NameIdentifierNode name=env
+                  |-NameIdentifierNode name=printf
+              |-StringLiteralNode value="  expected: %d"
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=expected
+          |-EmptyNode
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -132,8 +176,52 @@
         |-QNameNode
           |-NameIdentifierNode name=void
       |-BlockNode
-        |-ErrorNode
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=given
+            |-NameIdentifierNode name===
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=expected
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=message
+        |-IfNode
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=given
+            |-NameIdentifierNode name=!=
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=expected
+          |-BlockNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=support
+                  |-NameIdentifierNode name=env
+                  |-NameIdentifierNode name=printf
+              |-StringLiteralNode value="  given: %d"
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=given
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=support
+                  |-NameIdentifierNode name=env
+                  |-NameIdentifierNode name=printf
+              |-StringLiteralNode value="  expected: %d"
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=expected
+          |-EmptyNode
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -157,8 +245,92 @@
         |-QNameNode
           |-NameIdentifierNode name=void
       |-BlockNode
-        |-ErrorNode
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=given
+            |-NameIdentifierNode name===
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=expected
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=message
+        |-IfNode
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=given
+            |-NameIdentifierNode name=!=
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=expected
+          |-BlockNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=support
+                  |-NameIdentifierNode name=env
+                  |-NameIdentifierNode name=printf
+              |-StringLiteralNode value="  given LSB: %X"
+              |-AsExpressionNode
+                |-BinaryExpressionNode
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=given
+                  |-NameIdentifierNode name=>>
+                  |-FloatLiteralNode value=32
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=u32
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=support
+                  |-NameIdentifierNode name=env
+                  |-NameIdentifierNode name=printf
+              |-StringLiteralNode value="  expected LSB: %X"
+              |-AsExpressionNode
+                |-BinaryExpressionNode
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=expected
+                  |-NameIdentifierNode name=>>
+                  |-FloatLiteralNode value=32
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=u32
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=support
+                  |-NameIdentifierNode name=env
+                  |-NameIdentifierNode name=printf
+              |-StringLiteralNode value="  given MSB: %X"
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=given
+                |-NameIdentifierNode name=&
+                |-FloatLiteralNode value=0xFFFFFFFF
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=support
+                  |-NameIdentifierNode name=env
+                  |-NameIdentifierNode name=printf
+              |-StringLiteralNode value="  expected MSB: %X"
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=expected
+                |-NameIdentifierNode name=&
+                |-FloatLiteralNode value=0xFFFFFFFF
+          |-EmptyNode
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -182,8 +354,100 @@
         |-QNameNode
           |-NameIdentifierNode name=void
       |-BlockNode
-        |-ErrorNode
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=given
+            |-NameIdentifierNode name===
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=expected
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=message
+        |-IfNode
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=given
+            |-NameIdentifierNode name=!=
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=expected
+          |-BlockNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=support
+                  |-NameIdentifierNode name=env
+                  |-NameIdentifierNode name=printf
+              |-StringLiteralNode value="  given LSB: %X"
+              |-AsExpressionNode
+                |-BinaryExpressionNode
+                  |-AsExpressionNode
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=given
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=u64
+                  |-NameIdentifierNode name=>>
+                  |-FloatLiteralNode value=32
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=u32
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=support
+                  |-NameIdentifierNode name=env
+                  |-NameIdentifierNode name=printf
+              |-StringLiteralNode value="  expected LSB: %X"
+              |-AsExpressionNode
+                |-BinaryExpressionNode
+                  |-AsExpressionNode
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=expected
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=u64
+                  |-NameIdentifierNode name=>>
+                  |-FloatLiteralNode value=32
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=u32
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=support
+                  |-NameIdentifierNode name=env
+                  |-NameIdentifierNode name=printf
+              |-StringLiteralNode value="  given MSB: %X"
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=given
+                |-NameIdentifierNode name=&
+                |-FloatLiteralNode value=0xFFFFFFFF
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=support
+                  |-NameIdentifierNode name=env
+                  |-NameIdentifierNode name=printf
+              |-StringLiteralNode value="  expected MSB: %X"
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=expected
+                |-NameIdentifierNode name=&
+                |-FloatLiteralNode value=0xFFFFFFFF
+          |-EmptyNode
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -207,8 +471,52 @@
         |-QNameNode
           |-NameIdentifierNode name=void
       |-BlockNode
-        |-ErrorNode
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=given
+            |-NameIdentifierNode name===
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=expected
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=message
+        |-IfNode
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=given
+            |-NameIdentifierNode name=!=
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=expected
+          |-BlockNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=support
+                  |-NameIdentifierNode name=env
+                  |-NameIdentifierNode name=printf
+              |-StringLiteralNode value="  given: %X"
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=given
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=support
+                  |-NameIdentifierNode name=env
+                  |-NameIdentifierNode name=printf
+              |-StringLiteralNode value="  expected: %X"
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=expected
+          |-EmptyNode
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -232,8 +540,52 @@
         |-QNameNode
           |-NameIdentifierNode name=void
       |-BlockNode
-        |-ErrorNode
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=given
+            |-NameIdentifierNode name===
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=expected
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=message
+        |-IfNode
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=given
+            |-NameIdentifierNode name=!=
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=expected
+          |-BlockNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=support
+                  |-NameIdentifierNode name=env
+                  |-NameIdentifierNode name=printf
+              |-StringLiteralNode value="  given: %d"
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=given
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=support
+                  |-NameIdentifierNode name=env
+                  |-NameIdentifierNode name=printf
+              |-StringLiteralNode value="  expected: %d"
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=expected
+          |-EmptyNode
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -257,7 +609,21 @@
         |-QNameNode
           |-NameIdentifierNode name=void
       |-BlockNode
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=given
+            |-NameIdentifierNode name===
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=expected
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=message
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -281,8 +647,56 @@
         |-QNameNode
           |-NameIdentifierNode name=void
       |-BlockNode
-        |-ErrorNode
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=given
+            |-NameIdentifierNode name===
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=expected
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=message
+        |-IfNode
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=given
+            |-NameIdentifierNode name=!=
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=expected
+          |-BlockNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=support
+                  |-NameIdentifierNode name=env
+                  |-NameIdentifierNode name=printf
+              |-BinaryExpressionNode
+                |-StringLiteralNode value="  given: "
+                |-NameIdentifierNode name=++
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=given
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=support
+                  |-NameIdentifierNode name=env
+                  |-NameIdentifierNode name=printf
+              |-BinaryExpressionNode
+                |-StringLiteralNode value="  expected: "
+                |-NameIdentifierNode name=++
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=expected
+          |-EmptyNode
   |-FunDirectiveNode
     |-DecoratorNode
       |-ErrorNode
@@ -310,7 +724,11 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=void
-      |-ErrorNode
+      |-FunctionCallNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=panic
+        |-EmptyNode
   |-FunDirectiveNode
     |-DecoratorNode
       |-ErrorNode
@@ -326,7 +744,11 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=void
-      |-ErrorNode
+      |-FunctionCallNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=panic
+        |-EmptyNode
   |-FunDirectiveNode
     |-DecoratorNode
       |-ErrorNode
@@ -342,7 +764,11 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=void
-      |-ErrorNode
+      |-FunctionCallNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=panic
+        |-EmptyNode
   |-FunDirectiveNode
     |-DecoratorNode
       |-ErrorNode
@@ -358,7 +784,11 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=void
-      |-ErrorNode
+      |-FunctionCallNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=panic
+        |-EmptyNode
   |-FunDirectiveNode
     |-DecoratorNode
       |-ErrorNode
@@ -374,7 +804,11 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=void
-      |-ErrorNode
+      |-FunctionCallNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=panic
+        |-EmptyNode
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -387,7 +821,22 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=void
-      |-ErrorNode
+      |-FunctionCallNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=printString
+        |-BinaryExpressionNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=str
+            |-NameIdentifierNode name=ptr
+          |-NameIdentifierNode name=-
+          |-AsExpressionNode
+            |-FloatLiteralNode value=4
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u32
   |-FunDirectiveNode
     |-DecoratorNode
       |-ErrorNode
@@ -408,7 +857,11 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=void
-      |-ErrorNode
+      |-FunctionCallNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=panic
+        |-EmptyNode
   |-FunDirectiveNode
     |-DecoratorNode
       |-ErrorNode
@@ -429,7 +882,11 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=void
-      |-ErrorNode
+      |-FunctionCallNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=panic
+        |-EmptyNode
   |-FunDirectiveNode
     |-DecoratorNode
       |-ErrorNode
@@ -445,7 +902,11 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=void
-      |-ErrorNode
+      |-FunctionCallNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=panic
+        |-EmptyNode
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -458,7 +919,22 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=void
-      |-ErrorNode
+      |-FunctionCallNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=START
+        |-BinaryExpressionNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=title
+            |-NameIdentifierNode name=ptr
+          |-NameIdentifierNode name=-
+          |-AsExpressionNode
+            |-FloatLiteralNode value=4
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u32
   |-FunDirectiveNode
     |-DecoratorNode
       |-ErrorNode
@@ -479,7 +955,11 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=void
-      |-ErrorNode
+      |-FunctionCallNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=panic
+        |-EmptyNode
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -497,7 +977,25 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=void
-      |-ErrorNode
+      |-FunctionCallNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=verify
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=passed
+        |-BinaryExpressionNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=title
+            |-NameIdentifierNode name=ptr
+          |-NameIdentifierNode name=-
+          |-AsExpressionNode
+            |-FloatLiteralNode value=4
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u32
   |-FunDirectiveNode
     |-DecoratorNode
       |-ErrorNode
@@ -509,7 +1007,11 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=void
-      |-ErrorNode
+      |-FunctionCallNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=panic
+        |-EmptyNode
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -522,7 +1024,14 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=void
-      |-ErrorNode
+      |-FunctionCallNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=assert
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=condition
+        |-StringLiteralNode value="assert(false)"
   |-FunDirectiveNode
     |-EmptyNode
     |-FunctionNode
@@ -541,5 +1050,39 @@
         |-QNameNode
           |-NameIdentifierNode name=void
       |-BlockNode
-        |-ErrorNode
-        |-ErrorNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=verify
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=condition
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=message
+        |-IfNode
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=condition
+            |-NameIdentifierNode name===
+            |-EmptyNode
+          |-BlockNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=lastErrorMessage
+              |-NameIdentifierNode name==
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=Message
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=message
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=panic
+              |-EmptyNode
+          |-EmptyNode

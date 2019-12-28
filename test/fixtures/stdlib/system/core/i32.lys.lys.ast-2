@@ -228,7 +228,7 @@
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i32.and
             |-WasmAtomNode symbol=i32.const
-              |-ErrorNode
+              |-FloatLiteralNode value=0xFF
             |-WasmAtomNode symbol=get_local
               |-QNameNode
                 |-NameIdentifierNode name=$lhs
@@ -249,7 +249,7 @@
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i32.and
             |-WasmAtomNode symbol=i32.const
-              |-ErrorNode
+              |-FloatLiteralNode value=0xFFFF
             |-WasmAtomNode symbol=get_local
               |-QNameNode
                 |-NameIdentifierNode name=$lhs
@@ -274,9 +274,9 @@
                 |-QNameNode
                   |-NameIdentifierNode name=$lhs
               |-WasmAtomNode symbol=i32.const
-                |-ErrorNode
+                |-FloatLiteralNode value=16
             |-WasmAtomNode symbol=i32.const
-              |-ErrorNode
+              |-FloatLiteralNode value=16
     |-FunDirectiveNode
       |-EmptyNode
       |-FunctionNode
@@ -567,7 +567,7 @@
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i32.xor
             |-WasmAtomNode symbol=i32.const
-              |-ErrorNode
+              |-FloatLiteralNode value=0xFFFFFFFF
             |-WasmAtomNode symbol=get_local
               |-QNameNode
                 |-NameIdentifierNode name=$rhs
@@ -586,7 +586,7 @@
         |-WasmExpressionNode
           |-WasmAtomNode symbol=i32.sub
             |-WasmAtomNode symbol=i32.const
-              |-ErrorNode
+              |-FloatLiteralNode value=0
             |-WasmAtomNode symbol=get_local
               |-QNameNode
                 |-NameIdentifierNode name=$rhs
