@@ -1,0 +1,50 @@
+|-Document
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=test
+      |-ParameterNode
+        |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-PatternMatcherNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=a
+          |-NameIdentifierNode name=+
+          |-FloatLiteralNode value=1
+        |-ErrorNode
+        |-ErrorNode
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=test2
+      |-ParameterNode
+        |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-IfNode
+        |-BinaryExpressionNode
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=a
+            |-NameIdentifierNode name=+
+            |-FloatLiteralNode value=1
+          |-NameIdentifierNode name===
+          |-FloatLiteralNode value=1
+        |-FloatLiteralNode value=0
+        |-FloatLiteralNode value=1

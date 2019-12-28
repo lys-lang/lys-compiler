@@ -1,0 +1,10 @@
+fun assert(x: boolean): void =
+  if (x == false)
+    panic()
+
+#[export] fun test(x: i32): void = {
+  match x {
+    case 1 -> assert(true)
+    else -> panic()
+  }
+}

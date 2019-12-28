@@ -1,0 +1,5 @@
+
+private fun x(): i32 = 1
+private fun x(a: ref): i32 = 1
+
+fun test(): i32 = x(1.0)

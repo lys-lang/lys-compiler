@@ -1,0 +1,24 @@
+fun test(a: i32): boolean = match a {
+  case 1 -> true
+  else -> false
+}
+
+enum Number {
+  Infinity
+  NDet
+  Real(number: f32)
+  Natural(number: i32)
+  Complex(real: f32, imaginary: f32)
+}
+
+fun isComplex(number: Number): boolean =
+  match number {
+    case x is Real -> false
+    case x is Infinity -> false
+    case is Infinity -> false
+    case aNaturalNumber is Natural(x) -> {
+      x == 0
+    }
+    case is Complex(_, imaginary) -> imaginary != 0.0
+    else -> false
+  }

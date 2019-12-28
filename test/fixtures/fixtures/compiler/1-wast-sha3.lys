@@ -1,0 +1,13 @@
+import system::hash::keccak
+
+//
+// Calculate the hash. Helper method incorporating the above three.
+//
+val k = Keccak()
+
+#[export "keccak"]
+fun keccak(input: bytes): bytes = {
+  Keccak.reset(k)
+  Keccak.update(k, input)
+  Keccak.digest(k)
+}

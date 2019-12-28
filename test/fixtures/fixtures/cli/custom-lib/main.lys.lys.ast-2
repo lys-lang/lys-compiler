@@ -1,0 +1,73 @@
+|-Document
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=support
+      |-NameIdentifierNode name=env
+    |-EmptyNode
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=support
+      |-NameIdentifierNode name=test
+    |-EmptyNode
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-ErrorNode
+      |-StringLiteralNode value="myLib"
+      |-StringLiteralNode value="getNumber"
+    |-FunctionNode
+      |-NameIdentifierNode name=getNumber
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-FunctionCallNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=panic
+        |-EmptyNode
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=test
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=START
+          |-StringLiteralNode value="Testing custom lib"
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=num
+          |-EmptyNode
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=getNumber
+            |-EmptyNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=printf
+          |-StringLiteralNode value="    myLib.getNumber() = %d"
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=num
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=mustEqual
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=num
+          |-FloatLiteralNode value=1337
+          |-StringLiteralNode value="1337 assertion name"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=END
+          |-EmptyNode

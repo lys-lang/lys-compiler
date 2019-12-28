@@ -32,7 +32,7 @@ enum CodeNode {
   OverloadedFunDirectiveNode(astNode: AstNode, functionName: NameIdentifierNode, headFun: CodeNode)
   VarDirectiveNode(astNode: AstNode, decl: VarDeclarationNode | EmptyNode)
   TypeDirectiveNode(astNode: AstNode, name: NameIdentifierNode | ErrorNode, declType: CodeNode)
-  TraitDirectiveNode(astNode: AstNode, name: NameIdentifierNode, headDirective: CodeNode)
+  TraitDirectiveNode(astNode: AstNode, name: NameIdentifierNode | ErrorNode, headDirective: CodeNode)
   EnumDirectiveNode(astNode: AstNode, name: NameIdentifierNode | ErrorNode, headDeclaration: CodeNode)
   StructDirectiveNode(astNode: AstNode, decl: StructDeclarationNode | ErrorNode)
 

@@ -1,0 +1,166 @@
+|-Document
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=a
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-ContinueNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=b
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-ContinueNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=c
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-LoopNode
+          |-BlockNode
+            |-ContinueNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=d
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-LoopNode
+          |-BlockNode
+            |-ContinueNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=e
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-LoopNode
+          |-BlockNode
+            |-ContinueNode
+            |-ContinueNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=f
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-LoopNode
+          |-BlockNode
+            |-ContinueNode
+            |-ContinueNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=g
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-LoopNode
+          |-ContinueNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=h
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-LoopNode
+          |-ContinueNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=i
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=x
+          |-EmptyNode
+          |-FloatLiteralNode value=1
+        |-LoopNode
+          |-BlockNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=x
+              |-NameIdentifierNode name==
+              |-BlockNode
+                |-IfNode
+                  |-BinaryExpressionNode
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=x
+                    |-NameIdentifierNode name===
+                    |-FloatLiteralNode value=1
+                  |-ContinueNode
+                  |-EmptyNode
+                |-BinaryExpressionNode
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=x
+                  |-NameIdentifierNode name=+
+                  |-FloatLiteralNode value=1
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=j
+      |-ParameterNode
+        |-NameIdentifierNode name=e
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=x
+          |-EmptyNode
+          |-FloatLiteralNode value=1
+        |-LoopNode
+          |-BlockNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=x
+              |-NameIdentifierNode name==
+              |-BlockNode
+                |-PatternMatcherNode
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=e
+                  |-ErrorNode
+                  |-ErrorNode
+                |-BinaryExpressionNode
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=x
+                  |-NameIdentifierNode name=+
+                  |-FloatLiteralNode value=1

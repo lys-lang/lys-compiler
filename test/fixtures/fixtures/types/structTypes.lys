@@ -1,0 +1,23 @@
+struct Infinity
+struct NDet
+struct Real(number: f32)
+struct Natural(number: i32)
+struct Complex(real: f32, imaginary: f32)
+
+type Number = Infinity | NDet | Real | Natural | Complex
+
+fun isComplex(number: Number): boolean =
+  match number {
+    case is Real -> false
+    case is Natural -> false
+    // TODO: deconstruct
+    // case is Complex(_, imaginary) -> imaginary != 0.0
+    else -> false
+  }
+
+fun main(): void = {
+  isComplex(Infinity)
+  isComplex(Real(0.0))
+  isComplex(Natural(123))
+  isComplex(Complex(0.0, 99.1))
+}

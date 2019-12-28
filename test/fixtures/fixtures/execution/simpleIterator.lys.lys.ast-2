@@ -1,0 +1,182 @@
+|-Document
+  |-ImportDirectiveNode
+    |-QNameNode
+      |-NameIdentifierNode name=support
+      |-NameIdentifierNode name=test
+    |-EmptyNode
+  |-StructDirectiveNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Iterator
+      |-ParameterNode
+        |-NameIdentifierNode name=current
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ParameterNode
+        |-NameIdentifierNode name=target
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+  |-EnumDirectiveNode
+    |-NameIdentifierNode name=Maybe
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=None
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Some
+      |-ParameterNode
+        |-NameIdentifierNode name=value
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+  |-ImplDirectiveNode
+    |-EmptyNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Iterator
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=next
+        |-ParameterNode
+          |-NameIdentifierNode name=iter
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Iterator
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Maybe
+        |-BlockNode
+          |-IfNode
+            |-BinaryExpressionNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=iter
+                |-NameIdentifierNode name=current
+              |-NameIdentifierNode name=<=
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=iter
+                |-NameIdentifierNode name=target
+            |-BlockNode
+              |-VarDeclarationNode
+                |-NameIdentifierNode name=r
+                |-EmptyNode
+                |-FunctionCallNode
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=Some
+                  |-MemberNode operator=.
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=iter
+                    |-NameIdentifierNode name=current
+              |-BinaryExpressionNode
+                |-MemberNode operator=.
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=iter
+                  |-NameIdentifierNode name=current
+                |-NameIdentifierNode name==
+                |-BinaryExpressionNode
+                  |-MemberNode operator=.
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=iter
+                    |-NameIdentifierNode name=current
+                  |-NameIdentifierNode name=+
+                  |-FloatLiteralNode value=1
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=r
+            |-BlockNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=None
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=test
+      |-ParameterNode
+        |-NameIdentifierNode name=from
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ParameterNode
+        |-NameIdentifierNode name=to
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-BlockNode
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=ret
+          |-EmptyNode
+          |-FloatLiteralNode value=0
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=$iter$
+          |-EmptyNode
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Iterator
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=from
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=to
+        |-LoopNode
+          |-BlockNode
+            |-PatternMatcherNode
+              |-FunctionCallNode
+                |-MemberNode operator=.
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=Iterator
+                  |-NameIdentifierNode name=next
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=$iter$
+              |-ErrorNode
+              |-ErrorNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=ret
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=main
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=START
+          |-StringLiteralNode value="Iterator test"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=mustEqual
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=test
+            |-FloatLiteralNode value=1
+            |-FloatLiteralNode value=10
+          |-FloatLiteralNode value=55
+          |-StringLiteralNode value="spec test 1"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=END
+          |-EmptyNode

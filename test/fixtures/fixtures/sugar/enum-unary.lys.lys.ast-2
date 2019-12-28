@@ -1,0 +1,28 @@
+|-Document
+  |-EnumDirectiveNode
+    |-NameIdentifierNode name=Option
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Some
+      |-ParameterNode
+        |-NameIdentifierNode name=value
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=ref
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=None
+      |-EmptyNode
+  |-TypeDirectiveNode
+    |-NameIdentifierNode name=None
+    |-EmptyNode
+  |-TypeDirectiveNode
+    |-NameIdentifierNode name=Some
+    |-EmptyNode
+  |-TypeDirectiveNode
+    |-NameIdentifierNode name=Option
+    |-UnionTypeNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Some
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=None

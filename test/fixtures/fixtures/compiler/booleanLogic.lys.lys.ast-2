@@ -1,0 +1,28 @@
+|-Document
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=test
+      |-ParameterNode
+        |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+      |-ParameterNode
+        |-NameIdentifierNode name=b
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=boolean
+      |-BinaryExpressionNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
+        |-NameIdentifierNode name=&&
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=b

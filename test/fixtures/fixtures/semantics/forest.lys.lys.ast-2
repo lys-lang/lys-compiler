@@ -1,0 +1,188 @@
+|-Document
+  |-EnumDirectiveNode
+    |-NameIdentifierNode name=Tree
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Empty
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Node
+      |-ParameterNode
+        |-NameIdentifierNode name=a
+        |-UnionTypeNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Tree
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Forest
+  |-EnumDirectiveNode
+    |-NameIdentifierNode name=Forest
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Nil
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Cons
+      |-ParameterNode
+        |-NameIdentifierNode name=tree
+        |-UnionTypeNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Tree
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Forest
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=testPassing
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=a
+          |-EmptyNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Nil
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=b
+          |-EmptyNode
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Cons
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Empty
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=c
+          |-EmptyNode
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Cons
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Nil
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=d
+          |-EmptyNode
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Cons
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Node
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Empty
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=e
+          |-EmptyNode
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Node
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Nil
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=support
+              |-NameIdentifierNode name=test
+              |-NameIdentifierNode name=assert
+          |-BinaryExpressionNode
+            |-IsExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Nil
+            |-NameIdentifierNode name===
+            |-EmptyNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=support
+              |-NameIdentifierNode name=test
+              |-NameIdentifierNode name=assert
+          |-BinaryExpressionNode
+            |-IsExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Forest
+            |-NameIdentifierNode name===
+            |-EmptyNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=support
+              |-NameIdentifierNode name=test
+              |-NameIdentifierNode name=assert
+          |-BinaryExpressionNode
+            |-IsExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=b
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Forest
+            |-NameIdentifierNode name===
+            |-EmptyNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=support
+              |-NameIdentifierNode name=test
+              |-NameIdentifierNode name=assert
+          |-BinaryExpressionNode
+            |-IsExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=c
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Cons
+            |-NameIdentifierNode name===
+            |-EmptyNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=support
+              |-NameIdentifierNode name=test
+              |-NameIdentifierNode name=assert
+          |-BinaryExpressionNode
+            |-IsExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=e
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Node
+            |-NameIdentifierNode name===
+            |-EmptyNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=support
+              |-NameIdentifierNode name=test
+              |-NameIdentifierNode name=assert
+          |-BinaryExpressionNode
+            |-IsExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=e
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Tree
+            |-NameIdentifierNode name===
+            |-EmptyNode

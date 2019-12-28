@@ -708,7 +708,12 @@
         |-QNameNode
           |-NameIdentifierNode name=u32
       |-BlockNode
-        |-ErrorNode
+        |-PatternMatcherNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=lastErrorMessage
+          |-ErrorNode
+          |-ErrorNode
   |-FunDirectiveNode
     |-DecoratorNode
       |-ErrorNode

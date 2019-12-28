@@ -91,7 +91,34 @@
         |-WasmExpressionNode
           |-WasmAtomNode symbol=unreachable
             |-EmptyNode
-  |-ErrorNode
+  |-TraitDirectiveNode
+    |-NameIdentifierNode name=Reference
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-ErrorNode
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-EmptyNode
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-ErrorNode
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=ref
+        |-EmptyNode
   |-ImplDirectiveNode
     |-ReferenceNode
       |-QNameNode

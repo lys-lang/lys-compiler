@@ -1,0 +1,67 @@
+|-Document
+  |-EnumDirectiveNode
+    |-NameIdentifierNode name=color
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Red
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Green
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Blue
+      |-EmptyNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=test
+      |-ParameterNode
+        |-NameIdentifierNode name=x
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=color
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=color
+      |-PatternMatcherNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=x
+        |-ErrorNode
+        |-ErrorNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=test1
+      |-ParameterNode
+        |-NameIdentifierNode name=x
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=color
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=color
+      |-PatternMatcherNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=x
+        |-ErrorNode
+        |-ErrorNode
+        |-ErrorNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=test3
+      |-ParameterNode
+        |-NameIdentifierNode name=x
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=color
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=color
+      |-PatternMatcherNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=x
+        |-ErrorNode
+        |-ErrorNode

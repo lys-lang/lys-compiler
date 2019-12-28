@@ -1,0 +1,34 @@
+|-Document
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=gte
+      |-ParameterNode
+        |-NameIdentifierNode name=x
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-BlockNode
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=ttt
+          |-EmptyNode
+          |-FloatLiteralNode value=0
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ttt
+          |-NameIdentifierNode name==
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=ttt
+            |-NameIdentifierNode name=+
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=x
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=ttt

@@ -77,6 +77,11 @@ fun processNode(astNode: AstNode): CodeNode = match astNode {
     case "Reference" -> ReferenceNode(astNode, fqnOrEmpty(child))
     case "FunctionParamsList" -> processNode(child)
     case "Decorators" -> processNode(child)
+    case "TraitDeclElements" -> processNode(child)
+    case "MatchExpression" -> PatternMatcherNode(astNode, processNode(first(child)), processNode(rest(child)))
+    case "TraitDirective" -> {
+      TraitDirectiveNode(astNode, nameOrError(first(child)), processNode(second(child)))
+    }
     case "NegNumberLiteral" -> FloatLiteralNode(astNode, textOf(astNode))
     case "IfExpression" -> {
       var condition = processNode(first(child))
@@ -92,6 +97,7 @@ fun processNode(astNode: AstNode): CodeNode = match astNode {
     case "FunctionName" -> processNode(child)
     case "FunOperator" -> processNode(child)
     case "Decorators" -> processNode(child)
+    case "MatchBody" -> processNode(child)
     case "ContinueStatement" -> ContinueNode(astNode)
     case "BreakStatement" -> ContinueNode(astNode)
     case "LoopExpression" -> LoopNode(astNode, processNode(child))

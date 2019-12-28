@@ -1,0 +1,30 @@
+|-Document
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=malloc
+      |-ParameterNode
+        |-NameIdentifierNode name=size
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-WasmExpressionNode
+        |-WasmAtomNode symbol=get_local
+          |-QNameNode
+            |-NameIdentifierNode name=$size
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=main
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-FunctionCallNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=malloc
+        |-FloatLiteralNode value=1

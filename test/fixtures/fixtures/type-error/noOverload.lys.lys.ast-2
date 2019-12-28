@@ -1,0 +1,44 @@
+|-Document
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-PrivateModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=x
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-FloatLiteralNode value=1
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-PrivateModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=x
+      |-ParameterNode
+        |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-FloatLiteralNode value=1
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=test
+      |-ParameterNode
+        |-NameIdentifierNode name=a
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=f32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-FunctionCallNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=x
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a

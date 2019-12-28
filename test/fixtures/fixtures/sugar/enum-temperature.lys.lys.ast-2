@@ -1,0 +1,429 @@
+|-Document
+  |-EnumDirectiveNode
+    |-NameIdentifierNode name=Temp
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Celcius
+      |-ParameterNode
+        |-NameIdentifierNode name=mut
+        |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Kelvin
+      |-ParameterNode
+        |-NameIdentifierNode name=temperature
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=f32
+  |-TypeDirectiveNode
+    |-NameIdentifierNode name=Temp
+    |-UnionTypeNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Celcius
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Kelvin
+  |-TypeDirectiveNode
+    |-NameIdentifierNode name=Celcius
+    |-StructTypeNode
+      |-EmptyNode
+  |-TypeDirectiveNode
+    |-NameIdentifierNode name=Kelvin
+    |-StructTypeNode
+      |-EmptyNode
+  |-ImplDirectiveNode
+    |-EmptyNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Temp
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-ErrorNode
+        |-ParameterNode
+          |-NameIdentifierNode name=x
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-EmptyNode
+        |-BlockNode
+          |-BinaryExpressionNode
+            |-IsExpressionNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=Celcius
+                |-EmptyNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=x
+            |-NameIdentifierNode name=||
+            |-IsExpressionNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=Kelvin
+                |-EmptyNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=x
+  |-ImplDirectiveNode
+    |-EmptyNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Celcius
+    |-VarDirectiveNode
+      |-VarDeclarationNode
+        |-NameIdentifierNode name=determinant
+        |-EmptyNode
+        |-FloatLiteralNode value=1
+    |-VarDirectiveNode
+      |-VarDeclarationNode
+        |-NameIdentifierNode name=memorySize
+        |-EmptyNode
+        |-BinaryExpressionNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=ref
+            |-NameIdentifierNode name=memorySize
+          |-NameIdentifierNode name=+
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=f32
+            |-NameIdentifierNode name=memorySize
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-ErrorNode
+        |-ParameterNode
+          |-NameIdentifierNode name=x
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-EmptyNode
+        |-BinaryExpressionNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=x
+            |-NameIdentifierNode name=determinant
+          |-NameIdentifierNode name===
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=determinant
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=apply
+        |-ParameterNode
+          |-NameIdentifierNode name=temperature
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=f32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Celcius
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=ptr
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Celcius
+            |-BinaryExpressionNode
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=determinant
+                |-NameIdentifierNode name=<<
+                |-FloatLiteralNode value=32
+              |-NameIdentifierNode name=|
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=core
+                    |-NameIdentifierNode name=memory
+                    |-NameIdentifierNode name=malloc
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=memorySize
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=set_temperature
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=ptr
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=temperature
+          |-AsExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=ref
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Celcius
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=get_temperature
+        |-ParameterNode
+          |-NameIdentifierNode name=ptr
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Celcius
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=f32
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=base
+            |-EmptyNode
+            |-FunctionCallNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=ref
+                |-NameIdentifierNode name=base
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ptr
+          |-FunctionCallNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=f32
+              |-NameIdentifierNode name=read
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=base
+              |-NameIdentifierNode name=+
+              |-FloatLiteralNode value=0
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=set_temperature
+        |-ParameterNode
+          |-NameIdentifierNode name=ptr
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Celcius
+        |-ParameterNode
+          |-NameIdentifierNode name=newValue
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=f32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=base
+            |-EmptyNode
+            |-FunctionCallNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=ref
+                |-NameIdentifierNode name=base
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ptr
+          |-FunctionCallNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=f32
+              |-NameIdentifierNode name=store
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=base
+              |-NameIdentifierNode name=+
+              |-FloatLiteralNode value=0
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=newValue
+  |-ImplDirectiveNode
+    |-EmptyNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Kelvin
+    |-VarDirectiveNode
+      |-VarDeclarationNode
+        |-NameIdentifierNode name=determinant
+        |-EmptyNode
+        |-FloatLiteralNode value=2
+    |-VarDirectiveNode
+      |-VarDeclarationNode
+        |-NameIdentifierNode name=memorySize
+        |-EmptyNode
+        |-BinaryExpressionNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=ref
+            |-NameIdentifierNode name=memorySize
+          |-NameIdentifierNode name=+
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=f32
+            |-NameIdentifierNode name=memorySize
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-ErrorNode
+        |-ParameterNode
+          |-NameIdentifierNode name=x
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-EmptyNode
+        |-BinaryExpressionNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=x
+            |-NameIdentifierNode name=determinant
+          |-NameIdentifierNode name===
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=determinant
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=apply
+        |-ParameterNode
+          |-NameIdentifierNode name=n
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=f32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Kelvin
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=ptr
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Kelvin
+            |-BinaryExpressionNode
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=determinant
+                |-NameIdentifierNode name=<<
+                |-FloatLiteralNode value=32
+              |-NameIdentifierNode name=|
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=core
+                    |-NameIdentifierNode name=memory
+                    |-NameIdentifierNode name=malloc
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=memorySize
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=set_temperature
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=ptr
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=n
+          |-AsExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=ref
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Kelvin
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-FunctionNode
+        |-NameIdentifierNode name=get_temperature
+        |-ParameterNode
+          |-NameIdentifierNode name=ptr
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Kelvin
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=f32
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=base
+            |-EmptyNode
+            |-FunctionCallNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=ref
+                |-NameIdentifierNode name=base
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ptr
+          |-FunctionCallNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=f32
+              |-NameIdentifierNode name=read
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=base
+              |-NameIdentifierNode name=+
+              |-FloatLiteralNode value=0
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=set_temperature
+        |-ParameterNode
+          |-NameIdentifierNode name=ptr
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Kelvin
+        |-ParameterNode
+          |-NameIdentifierNode name=newValue
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=f32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=base
+            |-EmptyNode
+            |-FunctionCallNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=ref
+                |-NameIdentifierNode name=base
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ptr
+          |-FunctionCallNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=f32
+              |-NameIdentifierNode name=store
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=base
+              |-NameIdentifierNode name=+
+              |-FloatLiteralNode value=0
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=newValue

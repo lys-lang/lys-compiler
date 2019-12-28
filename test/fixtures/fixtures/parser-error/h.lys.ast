@@ -1,0 +1,24 @@
+|-Document(0,26)
+  |-FunctionDirective(0,26)
+    |-Decorators(0,0)
+      <Rule0>
+    |-PrivateModifier(0,8)
+      <Rule0>
+    |-FunDeclaration(8,26)
+      |-FunctionName(12,16)
+        |-NameIdentifier(12,16)
+          |-Identifier=test
+      |-TypeParameters(16,16)
+        <Rule0>
+      |-FunctionParamsList(16,22)
+        |-(List)(17,20)
+          |-Parameter(17,20)
+            |-NameIdentifier(17,18)
+              |-Identifier=a
+            |-<SyntaxError>=A type or effect was expected
+        |-<UNEXPECTED TOKEN>=1
+      |-ReturnType(23,23)
+        <Rule0>
+      |-FunctionBody(23,26)
+        |-NumberLiteral=2
+  |-EndOfFile=

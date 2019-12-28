@@ -1,0 +1,104 @@
+|-Document
+  |-EnumDirectiveNode
+    |-NameIdentifierNode name=Tree
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Node
+      |-ParameterNode
+        |-NameIdentifierNode name=value
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ParameterNode
+        |-NameIdentifierNode name=left
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Tree
+      |-ParameterNode
+        |-NameIdentifierNode name=right
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Tree
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Empty
+      |-EmptyNode
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=sum
+      |-ParameterNode
+        |-NameIdentifierNode name=arg
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Tree
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-BlockNode
+        |-PatternMatcherNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=arg
+          |-ErrorNode
+          |-ErrorNode
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=main
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=void
+      |-BlockNode
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=support
+              |-NameIdentifierNode name=test
+              |-NameIdentifierNode name=START
+          |-StringLiteralNode value="Traverse tree"
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=tree
+          |-EmptyNode
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Node
+            |-FloatLiteralNode value=42
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Node
+              |-FloatLiteralNode value=3
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Empty
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Empty
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Empty
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=support
+              |-NameIdentifierNode name=test
+              |-NameIdentifierNode name=mustEqual
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=sum
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=tree
+          |-FloatLiteralNode value=45
+          |-StringLiteralNode value="sum(tree) returns 45"
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=support
+              |-NameIdentifierNode name=test
+              |-NameIdentifierNode name=END
+          |-EmptyNode

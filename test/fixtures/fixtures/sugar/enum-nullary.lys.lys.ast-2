@@ -1,0 +1,33 @@
+|-Document
+  |-EnumDirectiveNode
+    |-NameIdentifierNode name=Color
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Red
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Green
+      |-EmptyNode
+    |-StructDeclarationNode
+      |-NameIdentifierNode name=Blue
+      |-EmptyNode
+  |-TypeDirectiveNode
+    |-NameIdentifierNode name=Red
+    |-EmptyNode
+  |-TypeDirectiveNode
+    |-NameIdentifierNode name=Green
+    |-EmptyNode
+  |-TypeDirectiveNode
+    |-NameIdentifierNode name=Blue
+    |-EmptyNode
+  |-TypeDirectiveNode
+    |-NameIdentifierNode name=Color
+    |-UnionTypeNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Red
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Green
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Blue

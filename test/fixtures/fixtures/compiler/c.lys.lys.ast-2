@@ -1,0 +1,48 @@
+|-Document
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-PrivateModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=x
+      |-ParameterNode
+        |-NameIdentifierNode name=x
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=x
+  |-FunDirectiveNode
+    |-EmptyNode
+    |-PrivateModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=x
+      |-ParameterNode
+        |-NameIdentifierNode name=x
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=f32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=f32
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=x
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-FunctionNode
+      |-NameIdentifierNode name=outer
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=i32
+      |-FunctionCallNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=x
+        |-FloatLiteralNode value=1
