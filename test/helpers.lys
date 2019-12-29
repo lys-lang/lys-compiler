@@ -6,6 +6,7 @@ import src::lexer::tokens
 import src::parser::grammar
 import src::parser::parser
 import src::parser::lysgrammar
+import src::compiler::linemapper
 
 fun testHelpers(): void = {
   START("Helpers")
@@ -13,6 +14,7 @@ fun testHelpers(): void = {
   messageCollector()
   testContextWithErrors()
   testContextWithNoErrors()
+  lineMapper()
   END()
 }
 
@@ -98,4 +100,61 @@ fun testContextWithErrors(): void = {
 
     END()
   }
+}
+
+fun testLine(lm: LineData, position: i32, expectedLine: i32): void = {
+  match lm.getLine(position as u32) {
+    case is Line(line) -> mustEqual(line, expectedLine as u32, "Line " ++ string.stringify(expectedLine))
+    else -> verify(false, "Line " ++ string.stringify(expectedLine) ++ " doesn't exist")
+  }
+}
+
+fun lineMapper(): void = {
+  START("Line data")
+  val sb = src::stringbuilder::StringBuilder()
+  val lm = LineMapper.initializeData(
+    "aaaa\nbb\n\r\nc\nddd\naaaa\nbb\n\r\nc\nddd\n\n"
+  )
+
+  testLine(lm, 0, 0)
+  testLine(lm, 1, 0)
+  testLine(lm, 2, 0)
+  testLine(lm, 3, 0)
+  testLine(lm, 4, 0)
+  testLine(lm, 12, 4)
+  testLine(lm, 28, 9)
+  testLine(lm, 120, 11)
+
+  lm.printTo(sb, 0)
+  val res = sb.toString()
+
+  mustEqual(res,
+    "LineCons\n" ++
+    " ├LineCons\n" ++
+    " │ ├LineCons\n" ++
+    " │ │ ├LineCons\n" ++
+    " │ │ │ ├LineCons\n" ++
+    " │ │ │ │ ├LineCons\n" ++
+    " │ │ │ │ │ ├LineCons\n" ++
+    " │ │ │ │ │ │ ├LineCons\n" ++
+    " │ │ │ │ │ │ │ ├LineCons\n" ++
+    " │ │ │ │ │ │ │ │ ├LineCons\n" ++
+    " │ │ │ │ │ │ │ │ │ ├LineCons\n" ++
+    " │ │ │ │ │ │ │ │ │ │ ├Line(0,0,5)\n" ++
+    " │ │ │ │ │ │ │ │ │ │ └Line(1,5,8)\n" ++
+    " │ │ │ │ │ │ │ │ │ └Line(2,8,10)\n" ++
+    " │ │ │ │ │ │ │ │ └Line(3,10,12)\n" ++
+    " │ │ │ │ │ │ │ └Line(4,12,16)\n" ++
+    " │ │ │ │ │ │ └Line(5,16,21)\n" ++
+    " │ │ │ │ │ └Line(6,21,24)\n" ++
+    " │ │ │ │ └Line(7,24,26)\n" ++
+    " │ │ │ └Line(8,26,28)\n" ++
+    " │ │ └Line(9,28,32)\n" ++
+    " │ └Line(10,32,33)\n" ++
+    " └Line(11,33,33)\n", "Unbalanced tree")
+
+  support::env::printf(res)
+
+
+  END()
 }
