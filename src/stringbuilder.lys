@@ -12,9 +12,16 @@ impl StringBuilder {
 
   #[method]
   fun append(self: StringBuilder, str: string): StringBuilder = {
-    self.mutableHead = StringBuilderCons(str, self.mutableHead)
+    if (str.length > 0x0) {
+      self.mutableHead = StringBuilderCons(str, self.mutableHead)
+    }
     self
   }
+
+  #[method]
+  fun isEmpty(self: StringBuilder): boolean =
+    self.mutableHead is StringBuilderEmpty
+
 
   // Calculates the length of the string to build
   private fun calculateLength(self: StringBuilderLinkedList): u32 = {

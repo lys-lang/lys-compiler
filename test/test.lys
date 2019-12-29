@@ -33,6 +33,8 @@ fun test(): void = {
   errorRecovery()
   lysGrammar()
   END()
+
+  test::helpers::testHelpers()
 }
 
 fun case1(): void = {

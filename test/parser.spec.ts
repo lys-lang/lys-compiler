@@ -1,4 +1,4 @@
-import { folderBasedTest, WRITE_TO_FILE } from "./fbt";
+import { folderBasedTest } from "./fbt";
 import { resolve } from "path";
 import tokenizer from "../dist";
 
@@ -26,4 +26,16 @@ folderBasedTest(
     return result;
   },
   ".lys.ast-2"
+);
+
+
+folderBasedTest(
+  resolve(__dirname, "./fixtures/") + "/**/*.lys",
+  async (source, fileName) => {
+    const instance = await tokenizer();
+    const result = instance.parseAndEmitErrors(fileName, fileName, source);
+
+    return result || null;
+  },
+  ".syntax-error"
 );

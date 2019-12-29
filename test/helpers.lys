@@ -1,0 +1,101 @@
+import support::env
+import support::test
+import src::helpers
+import src::lexer::lexer
+import src::lexer::tokens
+import src::parser::grammar
+import src::parser::parser
+import src::parser::lysgrammar
+
+fun testHelpers(): void = {
+  START("Helpers")
+  stringBuilder()
+  messageCollector()
+  testContextWithErrors()
+  testContextWithNoErrors()
+  END()
+}
+
+fun stringBuilder(): void = {
+  START("String builder")
+
+  val sb = src::stringbuilder::StringBuilder()
+
+  mustEqual(sb.toString(), "", "Empty string builder must yield an empty string")
+
+  mustEqual(sb.isEmpty(), true, "StringBuilder should start empty")
+
+  sb.append("")
+
+  mustEqual(sb.isEmpty(), true, "Empty string builder isEmpty")
+
+  mustEqual(sb.toString(), "", "Empty string builder with empty string must yield an empty string")
+  sb.append("a").append(" ").append("").append("\nvv")
+
+  mustEqual(sb.toString(), "a \nvv", "Test with chained appends")
+
+  END()
+}
+
+
+fun messageCollector(): void = {
+  START("Message collector")
+
+  val sb = src::stringbuilder::StringBuilder()
+
+  val mc = src::compiler::messagecollector::MessageCollector()
+
+  mustEqual(sb.toString(), "", "Print no errors")
+
+  mc.append("Hello", src::compiler::messagecollector::SourcePosition("testModule", 0x0, 0x1))
+
+  END()
+}
+
+
+fun testContextWithNoErrors(): void = {
+  START("CompilerContext with no errors")
+
+  val sb = src::stringbuilder::StringBuilder()
+
+  val cc = src::compiler::context::CompilerContext()
+
+  cc.getModuleByContent("module.lys", "test::module", "fun test(): i32 = 1")
+  cc.printErrors(sb)
+  mustEqual(sb.toString(), "", "NO ERROR")
+
+  END()
+}
+
+fun testContextWithErrors(): void = {
+  {
+    START("CompilerContext with one error")
+    val sb = src::stringbuilder::StringBuilder()
+
+    val cc = src::compiler::context::CompilerContext()
+
+    cc.getModuleByContent("module.lys", "test::module", "fun test(): = 1")
+
+    mustEqual(cc.printErrors(sb), 1, "An error must be registered")
+    support::env::printf("Given errors:")
+    support::env::printf(sb.toString())
+
+    END()
+  }
+  {
+    START("CompilerContext with three errors in two files")
+    val sb = src::stringbuilder::StringBuilder()
+
+    val cc = src::compiler::context::CompilerContext()
+
+    cc.getModuleByContent("moduleOk.lys", "test::moduleOk", "fun test(): i32 = 1")
+    cc.getModuleByContent("module.lys", "test::module", "fun test(): = ")
+    cc.getModuleByContent("module2.lys", "test::module2", "fun test(asd: ): void = {}")
+
+    mustEqual(cc.printErrors(sb), 3, "Three errors must be registered")
+    support::env::printf("Given errors:")
+    support::env::printf(sb.toString())
+
+    END()
+  }
+}

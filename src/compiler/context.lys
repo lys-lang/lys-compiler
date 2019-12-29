@@ -1,1 +1,129 @@
-struct CompilerContext()
+import src::compiler::messagecollector
+import src::compiler::nodes
+import src::parser::parser
+import src::helpers
+import src::stringbuilder
+
+enum ModuleMap {
+  EmptyModule
+  Module(
+    moduleName: string,
+    path: string,
+    source: string,
+    document: CodeNode,
+    phase: i32,
+    errors: i32
+  )
+  ModuleCons(head: Module, tail: ModuleMap)
+}
+
+struct CompilerContext(
+  messageCollector: MessageCollector,
+  modules: ModuleMap
+)
+
+impl ModuleMap {
+  #[method]
+  fun findModule(self: ModuleMap, moduleNameToFind: string): Module | EmptyModule = {
+    match self {
+      case x is EmptyModule -> x
+      case x is Module(moduleName) -> if (moduleName == moduleNameToFind) x else EmptyModule
+      case is ModuleCons(head, tail) ->
+        if (head.moduleName == moduleNameToFind)
+          head
+        else
+          tail.findModule(moduleNameToFind)
+    }
+  }
+}
+
+impl CompilerContext {
+  fun apply(): CompilerContext = CompilerContext(MessageCollector(), EmptyModule)
+
+  #[method]
+  fun getModuleByContent(self: CompilerContext, path: string, moduleName: string, source: string): Module = {
+    val ast = parse(source, "Document", src::parser::lysgrammar::getGrammar())
+
+    val module = match ast {
+      case is Nil -> {
+        self.messageCollector.append("Error parsing file: " ++ path, SourcePosition(path, 0x0, 0x1))
+        Module(moduleName, path, source, EmptyNode, 0, 1)
+      }
+      case ast is AstNode -> {
+        val errors = collectErrors(ast, self.messageCollector, path)
+        val code = src::compiler::phases::cannonical::processNode(ast)
+        Module(moduleName, path, source, code, 0, errors)
+      }
+    }
+
+    match self.modules {
+      case is EmptyModule -> self.modules = module
+      else -> self.modules = ModuleCons(module, self.modules)
+    }
+
+    module
+  }
+
+  #[method]
+  fun findModule(self: CompilerContext, moduleName: string): Module | EmptyModule =
+    self.modules.findModule(moduleName)
+
+  fun printErrors(head: Message, sb: StringBuilder, fileName: string, counter: i32): i32 = match head {
+    case is PositionCapableMessage(message, position) -> {
+      if (position.moduleName == fileName) {
+        sb.append(string.stringify(counter + 1))
+          .append(") ")
+          .append(message)
+          .append(" at ")
+          .append(position.moduleName)
+          .append("\n")
+
+        counter + 1
+      } else {
+        counter
+      }
+    }
+    case is MessageCons(head, tail) -> {
+      // Print the first error, return the current number
+      val newNumber = printErrors(head, sb, fileName, counter)
+      // Print the rest of the errors
+      printErrors(tail, sb, fileName, newNumber)
+    }
+    else -> counter
+  }
+
+  #[method]
+  fun printErrors(self: CompilerContext, sb: StringBuilder): i32 = {
+    var errors = 0
+    var current = self.modules
+
+    loop {
+      match current {
+        case is ModuleCons(head, tail) -> {
+          val nsb = StringBuilder()
+          errors = printErrors(self.messageCollector.headMessage, nsb, head.path, errors)
+
+          if (!nsb.isEmpty()) {
+            sb.append(head.path).append("\n").append(nsb.toString())
+          }
+
+          current = tail
+          continue
+        }
+        case head is Module -> {
+          val nsb = StringBuilder()
+          errors = printErrors(self.messageCollector.headMessage, sb, head.path, errors)
+
+          if (!nsb.isEmpty()) {
+            sb.append(head.path).append("\n").append(nsb.toString())
+          }
+
+          break
+        }
+        case is EmptyModule -> break
+      }
+    }
+
+    errors
+  }
+}

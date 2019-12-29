@@ -25,30 +25,30 @@ fun nameOrEmpty(astNode: AstNode): NameIdentifierNode | EmptyNode =
 fun nameOrError(astNode: AstNode): NameIdentifierNode | ErrorNode =
   match processNode(astNode) {
     case name is NameIdentifierNode -> name
-    else -> ErrorNode
+    else -> ErrorNode(astNode)
   }
 
 fun structOrError(astNode: AstNode): StructDeclarationNode | ErrorNode =
   match processNode(astNode) {
     case name is StructDeclarationNode -> name
-    else -> ErrorNode
+    else -> ErrorNode(astNode)
   }
 fun referenceOrError(astNode: AstNode): ReferenceNode | ErrorNode =
   match processNode(astNode) {
     case name is ReferenceNode -> name
-    else -> ErrorNode
+    else -> ErrorNode(astNode)
   }
 
 fun funOrError(astNode: AstNode): FunctionNode | ErrorNode =
   match processNode(astNode) {
     case name is FunctionNode -> name
-    else -> ErrorNode
+    else -> ErrorNode(astNode)
   }
 
 fun fqnOrEmpty(astNode: AstNode): QNameNode | ErrorNode =
   match processNode(astNode) {
     case name is QNameNode -> name
-    else -> ErrorNode
+    else -> ErrorNode(astNode)
   }
 
 fun textOf(astNode: AstNode): string = match astNode {
@@ -189,7 +189,6 @@ fun processNode(astNode: AstNode): CodeNode = match astNode {
     case "StructDeclaration" -> StructDeclarationNode(astNode, nameOrError(first(child)), processNode(rest(child)))
     case "BooleanLiteral" -> processNode(child)
     case "ParenExpression" -> processNode(child)
-    case "AsExpression" -> AsExpressionNode(astNode, processNode(first(child)), processNode(rest(child)))
     case "CaseCondition" -> {
       var resto = child
       val name = nameOrEmpty(first(resto))
@@ -220,8 +219,6 @@ fun processNode(astNode: AstNode): CodeNode = match astNode {
       val body = processNode(rest(child))
       MatchDefaultNode(astNode, name, body)
     }
-    case "AsExpression" -> AsExpressionNode(astNode, processNode(first(child)), processNode(rest(child)))
-    case "AsExpression" -> AsExpressionNode(astNode, processNode(first(child)), processNode(rest(child)))
     case "AsExpression" -> AsExpressionNode(astNode, processNode(first(child)), processNode(rest(child)))
     case "IsExpression" -> IsExpressionNode(astNode, processNode(first(child)), processNode(rest(child)))
     case "BinaryOpExpression" -> {
@@ -290,7 +287,7 @@ fun processNode(astNode: AstNode): CodeNode = match astNode {
     }
     else -> {
       support::env::printf("No handler for " ++ name)
-      ErrorNode
+      ErrorNode(astNode)
     }
   }
 }

@@ -3,7 +3,7 @@ import src::stringbuilder
 
 enum CodeNode {
   EmptyNode()
-  ErrorNode()
+  ErrorNode(astNode: AstNode)
   CodeNodeCons(head: CodeNode, tail: CodeNode)
 
   Document(astNode: AstNode, headDirective: CodeNode)
@@ -472,7 +472,6 @@ impl CodeNode {
           .append("|-")
           .append(CodeNode.nodeName(self))
 
-        // support::env::printf(ind ++ CodeNode.nodeName(self))
 
         match self {
           case is NameIdentifierNode(astNode, name) -> sb.append(" name=").append(name)
@@ -499,11 +498,9 @@ impl CodeNode {
             printAst(tail, sb, indentation)
           }
           case is Document(astNode, headDirective) -> {
-            // support::env::printf("> Document")
             printAst(headDirective, sb, indentation + 1)
           }
           case is FunctionTypeNode(astNode, parameters, returnType, effect) -> {
-            // support::env::printf("> FunctionTypeNode")
             printAst(parameters, sb, indentation + 1)
             printAst(returnType, sb, indentation + 1)
             printAst(effect, sb, indentation + 1)
@@ -512,30 +509,24 @@ impl CodeNode {
             printAst(names, sb, indentation + 1)
           }
           case is ReferenceNode(astNode, variable) -> {
-            // support::env::printf("> ReferenceNode")
             printAst(variable, sb, indentation + 1)
           }
           case is BlockNode(astNode, headStatement) -> {
-            // support::env::printf("> BlockNode")
             printAst(headStatement, sb, indentation + 1)
           }
           case is MemberNode(astNode, lhs, operator, rhs) -> {
-            // support::env::printf("> MemberNode")
             printAst(lhs, sb, indentation + 1)
             printAst(rhs, sb, indentation + 1)
           }
           case is DecoratorNode(astNode, decoratorName, headArgument) -> {
-            // support::env::printf("> DecoratorNode")
             printAst(decoratorName, sb, indentation + 1)
             printAst(headArgument, sb, indentation + 1)
           }
           case is ParameterNode(astNode, parameterName, parameterType) -> {
-            // support::env::printf("> ParameterNode")
             printAst(parameterName, sb, indentation + 1)
             printAst(parameterType, sb, indentation + 1)
           }
           case is FunctionNode(astNode, functionName, headParameter, returnType, body) -> {
-            // support::env::printf("> FunctionNode")
             printAst(functionName, sb, indentation + 1)
             printAst(headParameter, sb, indentation + 1)
             printAst(returnType, sb, indentation + 1)
@@ -549,178 +540,143 @@ impl CodeNode {
             printAst(headNames, sb, indentation + 1)
           }
           case is VarDeclarationNode(astNode, isMutable, name, typeDecl, value) -> {
-            // support::env::printf("> VarDeclarationNode")
             printAst(name, sb, indentation + 1)
             printAst(typeDecl, sb, indentation + 1)
             printAst(value, sb, indentation + 1)
           }
           case is AssignmentNode(astNode, lhs, rhs) -> {
-            // support::env::printf("> AssignmentNode")
             printAst(lhs, sb, indentation + 1)
             printAst(rhs, sb, indentation + 1)
           }
           case is ImplDirectiveNode(astNode, baseImpl, targetImpl, headDirective) -> {
-            // support::env::printf("> ImplDirectiveNode")
             printAst(baseImpl, sb, indentation + 1)
             printAst(targetImpl, sb, indentation + 1)
             printAst(headDirective, sb, indentation + 1)
           }
           case is ImportDirectiveNode(astNode, module, alias) -> {
-            // support::env::printf("> ImportDirectiveNode")
             printAst(module, sb, indentation + 1)
             printAst(alias, sb, indentation + 1)
           }
           case is StructDirectiveNode(astNode, decl) -> {
-            // support::env::printf("> StructDirectiveNode")
             printAst(decl, sb, indentation + 1)
           }
           case is FunDirectiveNode(astNode, headDecorator, function) -> {
-            // support::env::printf("> FunDirectiveNode")
             printAst(headDecorator, sb, indentation + 1)
             printAst(function, sb, indentation + 1)
           }
           case is EffectDirectiveNode(astNode, effectDecl) -> {
-            // support::env::printf("> EffectDirectiveNode")
             printAst(effectDecl, sb, indentation + 1)
           }
           case is OverloadedFunDirectiveNode(astNode, functionName, headFun) -> {
-            // support::env::printf("> OverloadedFunDirectiveNode")
             printAst(functionName, sb, indentation + 1)
             printAst(headFun, sb, indentation + 1)
           }
           case is VarDirectiveNode(astNode, decl) -> {
-            // support::env::printf("> VarDirectiveNode")
             printAst(decl, sb, indentation + 1)
           }
           case is TypeDirectiveNode(astNode, name, declType) -> {
-            // support::env::printf("> TypeDirectiveNode")
             printAst(name, sb, indentation + 1)
             printAst(declType, sb, indentation + 1)
           }
           case is TraitDirectiveNode(astNode, name, headDirective) -> {
-            // support::env::printf("> TraitDirectiveNode")
             printAst(name, sb, indentation + 1)
             printAst(headDirective, sb, indentation + 1)
           }
           case is EnumDirectiveNode(astNode, name, headDeclaration) -> {
-            // support::env::printf("> EnumDirectiveNode")
             printAst(name, sb, indentation + 1)
             printAst(headDeclaration, sb, indentation + 1)
           }
 
           case is StackTypeNode(astNode, headMeta) -> {
-            // support::env::printf("> StackTypeNode")
             printAst(headMeta, sb, indentation + 1)
           }
           case is StructTypeNode(astNode, headParameter) -> {
-            // support::env::printf("> StructTypeNode")
             printAst(headParameter, sb, indentation + 1)
           }
 
           case is AbstractFunctionCallNode(astNode, headArgument, resolvedFunction) -> {
-            // support::env::printf("> AbstractFunctionCallNode")
             printAst(headArgument, sb, indentation + 1)
           }
           case is InjectedFunctionCallNode(astNode, headArgument, resolvedFunction) -> {
-            // support::env::printf("> InjectedFunctionCallNode")
             printAst(headArgument, sb, indentation + 1)
           }
 
           case is FunctionCallNode(astNode, functionNode, headArgument, resolvedFunction) -> {
-            // support::env::printf("> FunctionCallNode")
             printAst(functionNode, sb, indentation + 1)
             printAst(headArgument, sb, indentation + 1)
           }
 
           case is ParenExpressionNode(astNode, expression) -> {
-            // support::env::printf("> ParenExpressionNode")
             printAst(expression, sb, indentation + 1)
           }
 
           case is BinaryExpressionNode(astNode, lhs, operator, rhs) -> {
-            // support::env::printf("> BinaryExpressionNode")
             printAst(lhs, sb, indentation + 1)
             printAst(operator, sb, indentation + 1)
             printAst(rhs, sb, indentation + 1)
           }
           case is AsExpressionNode(astNode, lhs, rhs) -> {
-            // support::env::printf("> AsExpressionNode")
             printAst(lhs, sb, indentation + 1)
             printAst(rhs, sb, indentation + 1)
           }
           case is IsExpressionNode(astNode, lhs, rhs) -> {
-            // support::env::printf("> IsExpressionNode")
             printAst(lhs, sb, indentation + 1)
             printAst(rhs, sb, indentation + 1)
           }
           case is UnaryExpressionNode(astNode, operator, rhs) -> {
-            // support::env::printf("> UnaryExpressionNode")
             printAst(operator, sb, indentation + 1)
             printAst(rhs, sb, indentation + 1)
           }
           case is WasmAtomNode(astNode, symbol, headArgument) -> {
-            // support::env::printf("> WasmAtomNode")
             printAst(headArgument, sb, indentation + 1)
           }
           case is WasmExpressionNode(astNode, headAtom) -> {
-            // support::env::printf("> WasmExpressionNode")
             printAst(headAtom, sb, indentation + 1)
           }
           case is IfNode(astNode, condition, truePart, falsePart) -> {
-            // support::env::printf("> IfNode")
             printAst(condition, sb, indentation + 1)
             printAst(truePart, sb, indentation + 1)
             printAst(falsePart, sb, indentation + 1)
           }
           case is UnionTypeNode(astNode, lhs, rhs) -> {
-            // support::env::printf("> UnionTypeNode")
             printAst(lhs, sb, indentation + 1)
             printAst(rhs, sb, indentation + 1)
           }
           case is IntersectionTypeNode(astNode, lhs, rhs) -> {
-            // support::env::printf("> IntersectionTypeNode")
             printAst(lhs, sb, indentation + 1)
             printAst(rhs, sb, indentation + 1)
           }
           case is StructDeclarationNode(astNode, name, headParameter) -> {
-            // support::env::printf("> StructDeclarationNode")
             printAst(name, sb, indentation + 1)
             printAst(headParameter, sb, indentation + 1)
           }
           case is EffectDeclarationNode(astNode, name) -> {
-            // support::env::printf("> EffectDeclarationNode")
             printAst(name, sb, indentation + 1)
           }
           case is PatternMatcherNode(astNode, lhs, headMatcher) -> {
-            // support::env::printf("> PatternMatcherNode")
             printAst(lhs, sb, indentation + 1)
             printAst(headMatcher, sb, indentation + 1)
           }
           case is MatchConditionNode(astNode, declaredName, condition, body) -> {
-            // support::env::printf("> MatchConditionNode")
             printAst(declaredName, sb, indentation + 1)
             printAst(condition, sb, indentation + 1)
             printAst(body, sb, indentation + 1)
           }
           case is MatchCaseIsNode(astNode, declaredName, typeReference, headDeconstruct, body) -> {
-            // support::env::printf("> MatchCaseIsNode")
             printAst(declaredName, sb, indentation + 1)
             printAst(typeReference, sb, indentation + 1)
             printAst(headDeconstruct, sb, indentation + 1)
             printAst(body, sb, indentation + 1)
           }
           case is MatchLiteralNode(astNode, literal, body) -> {
-            // support::env::printf("> MatchLiteralNode")
             printAst(literal, sb, indentation + 1)
             printAst(body, sb, indentation + 1)
           }
           case is MatchDefaultNode(astNode, declaredName, body) -> {
-            // support::env::printf("> MatchDefaultNode")
             printAst(declaredName, sb, indentation + 1)
             printAst(body, sb, indentation + 1)
           }
           case is LoopNode(astNode, expression) -> {
-            // support::env::printf("> LoopNode")
             printAst(expression, sb, indentation + 1)
           }
           else -> { /* noop */ }
