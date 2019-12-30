@@ -47,6 +47,13 @@ struct LineMapper(source: string, lineData: LineData | Nil)
 impl LineData {
 
   #[getter]
+  fun line(self: LineData): u32 = match self {
+    case is LineCons(left) -> left.line
+    case is Line(line) -> line
+    case is NoLine -> 0x0
+  }
+
+  #[getter]
   fun start(self: LineData): u32 = match self {
     case is LineCons(left, right) -> left.start
     case is Line(line, start) -> start
@@ -68,6 +75,16 @@ impl LineData {
       else
         right.getLine(position)
     case x is Line -> x
+    case is NoLine -> NoLine
+  }
+
+  #[method]
+  fun getLinePosition(self: LineData, line: u32): Line | NoLine = match self {
+    case x is LineCons(left, right) -> match left.getLinePosition(line) {
+      case x is NoLine -> right.getLinePosition(line)
+      case x is Line -> x
+    }
+    case x is Line -> if(x.line == line) x else NoLine
     case is NoLine -> NoLine
   }
 
@@ -153,7 +170,12 @@ impl LineMapper {
   }
 
   #[method]
-  fun getLine(self: LineMapper, position: u32): Line | NoLine = {
+  fun getLine(self: LineMapper, position: u32): LineData = {
     self.ensureLineData().getLine(position)
+  }
+
+  #[method]
+  fun getLinePosition(self: LineMapper, line: u32): LineData = {
+    self.ensureLineData().getLinePosition(line)
   }
 }

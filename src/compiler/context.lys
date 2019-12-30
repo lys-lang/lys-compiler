@@ -3,6 +3,7 @@ import src::compiler::nodes
 import src::parser::parser
 import src::helpers
 import src::stringbuilder
+import src::compiler::linemapper
 
 enum ModuleMap {
   EmptyModule
@@ -12,7 +13,8 @@ enum ModuleMap {
     source: string,
     document: CodeNode,
     phase: i32,
-    errors: i32
+    errors: i32,
+    lineMapper: LineMapper
   )
   ModuleCons(head: Module, tail: ModuleMap)
 }
@@ -24,15 +26,36 @@ struct CompilerContext(
 
 impl ModuleMap {
   #[method]
-  fun findModule(self: ModuleMap, moduleNameToFind: string): Module | EmptyModule = {
+  fun findModuleByPath(self: ModuleMap, path: string): Module | EmptyModule = {
     match self {
       case x is EmptyModule -> x
-      case x is Module(moduleName) -> if (moduleName == moduleNameToFind) x else EmptyModule
+      case theModule is Module ->
+        if (theModule.path == path)
+          theModule
+        else
+          EmptyModule
       case is ModuleCons(head, tail) ->
-        if (head.moduleName == moduleNameToFind)
+        if (head.path == path)
           head
         else
-          tail.findModule(moduleNameToFind)
+          tail.findModuleByPath(path)
+    }
+  }
+
+  #[method]
+  fun findModule(self: ModuleMap, moduleName: string): Module | EmptyModule = {
+    match self {
+      case x is EmptyModule -> x
+      case theModule is Module ->
+        if (theModule.moduleName == moduleName)
+          theModule
+        else
+          EmptyModule
+      case is ModuleCons(head, tail) ->
+        if (head.moduleName == moduleName)
+          head
+        else
+          tail.findModule(moduleName)
     }
   }
 }
@@ -47,12 +70,12 @@ impl CompilerContext {
     val module = match ast {
       case is Nil -> {
         self.messageCollector.append("Error parsing file: " ++ path, SourcePosition(path, 0x0, 0x1))
-        Module(moduleName, path, source, EmptyNode, 0, 1)
+        Module(moduleName, path, source, EmptyNode, 0, 1, LineMapper(source))
       }
       case ast is AstNode -> {
         val errors = collectErrors(ast, self.messageCollector, path)
         val code = src::compiler::phases::cannonical::processNode(ast)
-        Module(moduleName, path, source, code, 0, errors)
+        Module(moduleName, path, source, code, 0, errors, LineMapper(source))
       }
     }
 
@@ -68,15 +91,79 @@ impl CompilerContext {
   fun findModule(self: CompilerContext, moduleName: string): Module | EmptyModule =
     self.modules.findModule(moduleName)
 
-  fun printErrors(head: Message, sb: StringBuilder, fileName: string, counter: i32): i32 = match head {
+  #[method]
+  fun findModuleByPath(self: CompilerContext, path: string): Module | EmptyModule =
+    self.modules.findModuleByPath(path)
+
+  #[method]
+  fun printErrors(self: CompilerContext, head: Message, sb: StringBuilder, path: string, counter: i32): i32 = match head {
     case is PositionCapableMessage(message, position) -> {
-      if (position.moduleName == fileName) {
-        sb.append(string.stringify(counter + 1))
-          .append(") ")
-          .append(message)
-          .append(" at ")
-          .append(position.moduleName)
-          .append("\n")
+      if (position.path == path) {
+        var module = self.findModuleByPath(path)
+
+        match module {
+          case module is Module -> {
+            val start = module.lineMapper.getLine(position.start)
+            val end = module.lineMapper.getLine(position.end)
+
+            sb.append("  ")
+              .append(string.stringify(counter + 1))
+              .append(") ")
+              .append(message)
+              .append(" at ")
+              .append(position.path)
+              .append(":")
+              .append(string.stringify(start.line + 0x1))
+              .append(":")
+              .append(string.stringify(position.start - start.start))
+              .append("\n")
+
+            if (start.line == end.line) {
+
+              sb
+                .append("\u001b[36m") // Gutter start
+                .append("     │")
+                .append("\u001b[0m\n") // reset
+
+                .append("\u001b[36m") // Gutter start
+
+              val loc = (start.line + 0x1) as i32
+
+              if (loc < 10000) { sb.append(" ") }
+              if (loc < 1000) { sb.append(" ") }
+              if (loc < 100) { sb.append(" ") }
+              if (loc < 10) { sb.append(" ") }
+
+              sb.append(string.stringify(loc))
+                .append("│ ")
+                .append("\u001b[0m") // reset
+                .append(module.source.substring(start.start as i32, start.end as i32))
+                .append("\n")
+
+              // TODO: trim trailing newline in the line source
+
+              sb.append("\u001b[36m") // Gutter start
+                .append("     │ ")
+                .append("\u001b[0m") // reset
+                .append(repeat(" ", (position.start - start.start) as i32))
+                .append("\u001b[91m") // red color
+                .append(repeat("^", (position.end - position.start) as i32))
+                .append("\u001b[0m") // reset
+                .append("\n")
+            }
+
+            sb.append("\n")
+
+          }
+          else -> {
+            sb.append(string.stringify(counter + 1))
+              .append(") ")
+              .append(message)
+              .append(" at ")
+              .append(position.path)
+              .append("\n")
+          }
+        }
 
         counter + 1
       } else {
@@ -85,9 +172,9 @@ impl CompilerContext {
     }
     case is MessageCons(head, tail) -> {
       // Print the first error, return the current number
-      val newNumber = printErrors(head, sb, fileName, counter)
+      val newNumber = printErrors(self, head, sb, path, counter)
       // Print the rest of the errors
-      printErrors(tail, sb, fileName, newNumber)
+      printErrors(self, tail, sb, path, newNumber)
     }
     else -> counter
   }
@@ -101,7 +188,7 @@ impl CompilerContext {
       match current {
         case is ModuleCons(head, tail) -> {
           val nsb = StringBuilder()
-          errors = printErrors(self.messageCollector.headMessage, nsb, head.path, errors)
+          errors = printErrors(self, self.messageCollector.headMessage, nsb, head.path, errors)
 
           if (!nsb.isEmpty()) {
             sb.append(head.path).append("\n").append(nsb.toString())
@@ -112,7 +199,7 @@ impl CompilerContext {
         }
         case head is Module -> {
           val nsb = StringBuilder()
-          errors = printErrors(self.messageCollector.headMessage, sb, head.path, errors)
+          errors = printErrors(self, self.messageCollector.headMessage, sb, head.path, errors)
 
           if (!nsb.isEmpty()) {
             sb.append(head.path).append("\n").append(nsb.toString())

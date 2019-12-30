@@ -1,4 +1,17 @@
-1) Unexpected token `)` at test/fixtures/syntaxerrors/wasm.lys
-2) Unexpected token `(` at test/fixtures/syntaxerrors/wasm.lys
-3) A block of symbolic expressions was expected at test/fixtures/syntaxerrors/wasm.lys
-4) A block of symbolic expressions was expected at test/fixtures/syntaxerrors/wasm.lys
+  1) Unexpected token ")" at test/fixtures/syntaxerrors/wasm.lys:7:23
+     │
+    7│ fun x(): void = %wasm ()
+     │                        ^
+
+  2) Unexpected token "(" at test/fixtures/syntaxerrors/wasm.lys:7:22
+     │
+    7│ fun x(): void = %wasm ()
+     │                       ^
+
+  3) A block of symbolic expressions was expected at test/fixtures/syntaxerrors/wasm.lys:7:21
+     │
+    7│ fun x(): void = %wasm ()
+     │                      ^
+
+  4) A block of symbolic expressions was expected at test/fixtures/syntaxerrors/wasm.lys:3:21
+

@@ -1,7 +1,7 @@
 import src::stringbuilder
 import src::parser::parser
 
-struct SourcePosition(moduleName: string, start: u32, end: u32)
+struct SourcePosition(path: string, start: u32, end: u32)
 
 enum Message {
   HeadMessage
@@ -27,16 +27,16 @@ impl MessageCollector {
     }
 }
 
-fun collectErrors(node: AstNode, messageCollector: MessageCollector, moduleName: string): i32 = match node {
+fun collectErrors(node: AstNode, messageCollector: MessageCollector, path: string): i32 = match node {
   case is SyntaxError(token, message) -> {
-    messageCollector.append(message, SourcePosition(moduleName, token.start, token.end))
+    messageCollector.append(message, SourcePosition(path, token.start, token.end))
     1
   }
   case is UnexpectedToken(token, value) -> {
-    messageCollector.append("Unexpected token \"" ++ value ++ "\"", SourcePosition(moduleName, token.start, token.end))
+    messageCollector.append("Unexpected token \"" ++ value ++ "\"", SourcePosition(path, token.start, token.end))
     1
   }
-  case is Node(name, child) -> collectErrors(child, messageCollector, moduleName)
-  case is AstCons(head, tail) -> collectErrors(head, messageCollector, moduleName) + collectErrors(tail, messageCollector, moduleName)
+  case is Node(name, child) -> collectErrors(child, messageCollector, path)
+  case is AstCons(head, tail) -> collectErrors(head, messageCollector, path) + collectErrors(tail, messageCollector, path)
   else -> 0
 }

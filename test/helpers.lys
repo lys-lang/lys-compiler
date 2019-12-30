@@ -12,9 +12,9 @@ fun testHelpers(): void = {
   START("Helpers")
   stringBuilder()
   messageCollector()
-  testContextWithErrors()
-  testContextWithNoErrors()
   lineMapper()
+  testContextWithNoErrors()
+  testContextWithErrors()
   END()
 }
 
@@ -91,10 +91,10 @@ fun testContextWithErrors(): void = {
     val cc = src::compiler::context::CompilerContext()
 
     cc.getModuleByContent("moduleOk.lys", "test::moduleOk", "fun test(): i32 = 1")
-    cc.getModuleByContent("module.lys", "test::module", "fun test(): = ")
+    cc.getModuleByContent("module.lys", "test::module", "val x = \nfun x(): i32 = 1\nfun test(): = ")
     cc.getModuleByContent("module2.lys", "test::module2", "fun test(asd: ): void = {}")
 
-    mustEqual(cc.printErrors(sb), 3, "Three errors must be registered")
+    mustEqual(cc.printErrors(sb), 4, "Three errors must be registered")
     support::env::printf("Given errors:")
     support::env::printf(sb.toString())
 
@@ -124,6 +124,25 @@ fun lineMapper(): void = {
   testLine(lm, 12, 4)
   testLine(lm, 28, 9)
   testLine(lm, 120, 11)
+
+  match lm.getLinePosition(7 as u32) {
+    case is Line(line, start, end) -> {
+      mustEqual(line, 7 as u32, "Line")
+      mustEqual(start, 24 as u32, "Start")
+      mustEqual(end, 26 as u32, "End")
+    }
+    else -> verify(false, "Line position doesn't work")
+  }
+
+  match lm.getLinePosition(0 as u32) {
+    case is Line(line, start, end) -> {
+      mustEqual(line, 0 as u32, "Line")
+      mustEqual(start, 0 as u32, "Start")
+      mustEqual(end, 5 as u32, "End")
+    }
+    else -> verify(false, "Line position doesn't work")
+  }
+
 
   lm.printTo(sb, 0)
   val res = sb.toString()
