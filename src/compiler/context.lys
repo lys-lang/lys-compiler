@@ -171,10 +171,10 @@ impl CompilerContext {
       }
     }
     case is MessageCons(head, tail) -> {
-      // Print the first error, return the current number
-      val newNumber = printErrors(self, head, sb, path, counter)
+      // Print the first errors, return the current number
+      val newNumber = printErrors(self, tail, sb, path, counter)
       // Print the rest of the errors
-      printErrors(self, tail, sb, path, newNumber)
+      printErrors(self, head, sb, path, newNumber)
     }
     else -> counter
   }
