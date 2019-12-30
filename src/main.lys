@@ -45,3 +45,12 @@ fun parseAndEmitAst(strAddress: UnsafeCPointer): UnsafeCPointer = {
     else -> "" as UnsafeCPointer
   }
 }
+
+#[export "parseAndEmitErrors"]
+fun parseAndEmitErrors(moduleName: UnsafeCPointer, path: UnsafeCPointer, strAddress: UnsafeCPointer): UnsafeCPointer = {
+  val ctx = src::compiler::context::CompilerContext()
+  val sb = StringBuilder()
+  ctx.getModuleByContent(UCS2.fromPtr(path), UCS2.fromPtr(moduleName), UCS2.fromPtr(strAddress))
+  ctx.printErrors(sb)
+  sb.toString() as UnsafeCPointer
+}

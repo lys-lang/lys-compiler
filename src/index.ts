@@ -1,6 +1,9 @@
 declare var require: any;
 const wasmModule = require("../build/main");
-import { readStringFromHeap, writeStringToHeap } from "lys/dist/utils/execution";
+import {
+  readStringFromHeap,
+  writeStringToHeap
+} from "lys/dist/utils/execution";
 
 export async function tokenizer() {
   const instance = await wasmModule.default();
@@ -10,15 +13,39 @@ export async function tokenizer() {
   }
 
   function parseAst(source: string): string {
-    return readStringFromHeap(instance, instance.exports.parseAst(writeStringToHeap(instance, source)));
+    return readStringFromHeap(
+      instance,
+      instance.exports.parseAst(writeStringToHeap(instance, source))
+    );
   }
 
   function parseAndEmit(source: string): string {
-    return readStringFromHeap(instance, instance.exports.parseAndEmit(writeStringToHeap(instance, source)));
+    return readStringFromHeap(
+      instance,
+      instance.exports.parseAndEmit(writeStringToHeap(instance, source))
+    );
   }
 
   function parseAndEmitAst(source: string): string {
-    return readStringFromHeap(instance, instance.exports.parseAndEmitAst(writeStringToHeap(instance, source)));
+    return readStringFromHeap(
+      instance,
+      instance.exports.parseAndEmitAst(writeStringToHeap(instance, source))
+    );
+  }
+
+  function parseAndEmitErrors(
+    moduleName: string,
+    path: string,
+    source: string
+  ): string {
+    return readStringFromHeap(
+      instance,
+      instance.exports.parseAndEmitErrors(
+        writeStringToHeap(instance, moduleName),
+        writeStringToHeap(instance, path),
+        writeStringToHeap(instance, source)
+      )
+    );
   }
 
   function startLexer(data: string) {
@@ -29,6 +56,7 @@ export async function tokenizer() {
     startLexer,
     parseAndEmit,
     parseAndEmitAst,
+    parseAndEmitErrors,
     parseAst,
     eat
   };

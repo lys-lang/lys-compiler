@@ -1,6 +1,14 @@
-import { folderBasedTest, WRITE_TO_FILE } from "./fbt";
+import { folderBasedTest } from "./fbt";
 import { resolve } from "path";
 import tokenizer from "../dist";
+
+const ansiRegex = new RegExp(
+  [
+    "[\\u001B\\u009B][[\\]()#;?]*(?:(?:(?:[a-zA-Z\\d]*(?:;[a-zA-Z\\d]*)*)?\\u0007)",
+    "(?:(?:\\d{1,4}(?:;\\d{0,4})*)?[\\dA-PRZcf-ntqry=><~]))"
+  ].join("|"),
+  "g"
+);
 
 folderBasedTest(
   resolve(__dirname, "./fixtures/") + "/**/*.lys",
@@ -26,4 +34,17 @@ folderBasedTest(
     return result;
   },
   ".lys.ast-2"
+);
+
+folderBasedTest(
+  resolve(__dirname, "./fixtures/") + "/**/*.lys",
+  async (source, fileName) => {
+    const instance = await tokenizer();
+    const result = instance.parseAndEmitErrors(fileName, fileName, source);
+
+    if (result) console.log(result);
+
+    return result.replace(ansiRegex, "") || null;
+  },
+  ".syntax-error"
 );

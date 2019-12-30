@@ -1,0 +1,53 @@
+  1) A value was expected. at test/fixtures/syntaxerrors/var.lys:2:0
+     │
+    2│ var y = 1
+
+     │ ^^^
+
+  2) Unexpected token "var" at test/fixtures/syntaxerrors/var.lys:4:0
+     │
+    4│ var var
+
+     │ ^^^
+
+  3) Unexpected token " " at test/fixtures/syntaxerrors/var.lys:4:3
+     │
+    4│ var var
+
+     │    ^
+
+  4) Unexpected token "var" at test/fixtures/syntaxerrors/var.lys:4:4
+     │
+    4│ var var
+
+     │     ^^^
+
+  5) Unexpected token "
+
+" at test/fixtures/syntaxerrors/var.lys:4:7
+
+  6) Unexpected token "var" at test/fixtures/syntaxerrors/var.lys:6:0
+     │
+    6│ var = 1
+     │ ^^^
+
+  7) Unexpected token " " at test/fixtures/syntaxerrors/var.lys:6:3
+     │
+    6│ var = 1
+     │    ^
+
+  8) Unexpected token "=" at test/fixtures/syntaxerrors/var.lys:6:4
+     │
+    6│ var = 1
+     │     ^
+
+  9) Unexpected token " " at test/fixtures/syntaxerrors/var.lys:6:5
+     │
+    6│ var = 1
+     │      ^
+
+  10) Unexpected token "1" at test/fixtures/syntaxerrors/var.lys:6:6
+     │
+    6│ var = 1
+     │       ^
+

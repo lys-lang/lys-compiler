@@ -1,0 +1,179 @@
+import support::env
+import support::test
+import src::helpers
+import src::lexer::lexer
+import src::lexer::tokens
+import src::parser::grammar
+import src::parser::parser
+import src::parser::lysgrammar
+import src::compiler::linemapper
+
+fun testHelpers(): void = {
+  START("Helpers")
+  stringBuilder()
+  messageCollector()
+  lineMapper()
+  testContextWithNoErrors()
+  testContextWithErrors()
+  END()
+}
+
+fun stringBuilder(): void = {
+  START("String builder")
+
+  val sb = src::stringbuilder::StringBuilder()
+
+  mustEqual(sb.toString(), "", "Empty string builder must yield an empty string")
+
+  mustEqual(sb.isEmpty(), true, "StringBuilder should start empty")
+
+  sb.append("")
+
+  mustEqual(sb.isEmpty(), true, "Empty string builder isEmpty")
+
+  mustEqual(sb.toString(), "", "Empty string builder with empty string must yield an empty string")
+  sb.append("a").append(" ").append("").append("\nvv")
+
+  mustEqual(sb.toString(), "a \nvv", "Test with chained appends")
+
+  END()
+}
+
+
+fun messageCollector(): void = {
+  START("Message collector")
+
+  val sb = src::stringbuilder::StringBuilder()
+
+  val mc = src::compiler::messagecollector::MessageCollector()
+
+  mustEqual(sb.toString(), "", "Print no errors")
+
+  mc.append("Hello", src::compiler::messagecollector::SourcePosition("testModule", 0x0, 0x1))
+
+  END()
+}
+
+
+fun testContextWithNoErrors(): void = {
+  START("CompilerContext with no errors")
+
+  val sb = src::stringbuilder::StringBuilder()
+
+  val cc = src::compiler::context::CompilerContext()
+
+  cc.getModuleByContent("module.lys", "test::module", "fun test(): i32 = 1")
+  cc.printErrors(sb)
+  mustEqual(sb.toString(), "", "NO ERROR")
+
+  END()
+}
+
+fun testContextWithErrors(): void = {
+  {
+    START("CompilerContext with one error")
+    val sb = src::stringbuilder::StringBuilder()
+
+    val cc = src::compiler::context::CompilerContext()
+
+    cc.getModuleByContent("module.lys", "test::module", "fun test(): = 1")
+
+    mustEqual(cc.printErrors(sb), 1, "An error must be registered")
+    support::env::printf("Given errors:")
+    support::env::printf(sb.toString())
+
+    END()
+  }
+  {
+    START("CompilerContext with three errors in two files")
+    val sb = src::stringbuilder::StringBuilder()
+
+    val cc = src::compiler::context::CompilerContext()
+
+    cc.getModuleByContent("moduleOk.lys", "test::moduleOk", "fun test(): i32 = 1")
+    cc.getModuleByContent("module.lys", "test::module", "val x = \nfun x(): i32 = 1\nfun test(): = ")
+    cc.getModuleByContent("module2.lys", "test::module2", "fun test(asd: ): void = {}")
+
+    mustEqual(cc.printErrors(sb), 4, "Three errors must be registered")
+    support::env::printf("Given errors:")
+    support::env::printf(sb.toString())
+
+    END()
+  }
+}
+
+fun testLine(lm: LineData, position: i32, expectedLine: i32): void = {
+  match lm.getLine(position as u32) {
+    case is Line(line) -> mustEqual(line, expectedLine as u32, "Line " ++ string.stringify(expectedLine))
+    else -> verify(false, "Line " ++ string.stringify(expectedLine) ++ " doesn't exist")
+  }
+}
+
+fun lineMapper(): void = {
+  START("Line data")
+  val sb = src::stringbuilder::StringBuilder()
+  val lm = LineMapper.initializeData(
+    "aaaa\nbb\n\r\nc\nddd\naaaa\nbb\n\r\nc\nddd\n\n"
+  )
+
+  testLine(lm, 0, 0)
+  testLine(lm, 1, 0)
+  testLine(lm, 2, 0)
+  testLine(lm, 3, 0)
+  testLine(lm, 4, 0)
+  testLine(lm, 12, 4)
+  testLine(lm, 28, 9)
+  testLine(lm, 120, 11)
+
+  match lm.getLinePosition(7 as u32) {
+    case is Line(line, start, end) -> {
+      mustEqual(line, 7 as u32, "Line")
+      mustEqual(start, 24 as u32, "Start")
+      mustEqual(end, 26 as u32, "End")
+    }
+    else -> verify(false, "Line position doesn't work")
+  }
+
+  match lm.getLinePosition(0 as u32) {
+    case is Line(line, start, end) -> {
+      mustEqual(line, 0 as u32, "Line")
+      mustEqual(start, 0 as u32, "Start")
+      mustEqual(end, 5 as u32, "End")
+    }
+    else -> verify(false, "Line position doesn't work")
+  }
+
+
+  lm.printTo(sb, 0)
+  val res = sb.toString()
+
+  mustEqual(res,
+    "LineCons\n" ++
+    " ├LineCons\n" ++
+    " │ ├LineCons\n" ++
+    " │ │ ├LineCons\n" ++
+    " │ │ │ ├LineCons\n" ++
+    " │ │ │ │ ├LineCons\n" ++
+    " │ │ │ │ │ ├LineCons\n" ++
+    " │ │ │ │ │ │ ├LineCons\n" ++
+    " │ │ │ │ │ │ │ ├LineCons\n" ++
+    " │ │ │ │ │ │ │ │ ├LineCons\n" ++
+    " │ │ │ │ │ │ │ │ │ ├LineCons\n" ++
+    " │ │ │ │ │ │ │ │ │ │ ├Line(0,0,5)\n" ++
+    " │ │ │ │ │ │ │ │ │ │ └Line(1,5,8)\n" ++
+    " │ │ │ │ │ │ │ │ │ └Line(2,8,10)\n" ++
+    " │ │ │ │ │ │ │ │ └Line(3,10,12)\n" ++
+    " │ │ │ │ │ │ │ └Line(4,12,16)\n" ++
+    " │ │ │ │ │ │ └Line(5,16,21)\n" ++
+    " │ │ │ │ │ └Line(6,21,24)\n" ++
+    " │ │ │ │ └Line(7,24,26)\n" ++
+    " │ │ │ └Line(8,26,28)\n" ++
+    " │ │ └Line(9,28,32)\n" ++
+    " │ └Line(10,32,33)\n" ++
+    " └Line(11,33,33)\n", "Unbalanced tree")
+
+  support::env::printf(res)
+
+
+  END()
+}

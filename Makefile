@@ -11,6 +11,9 @@ only-test:
 	@cd src; ../node_modules/.bin/ncc build index.ts -o ../dist
 	@./node_modules/.bin/mocha -r ts-node/register test/\*\*/\*.spec.ts
 
+watch-tests:
+	./node_modules/.bin/lys test/test.lys --test --wast --lib node_modules/lys/dist/utils/libs/env.js --desugar --watch
+
 only-snapshot: export UPDATE_AST=true
 only-snapshot: only-test
 

@@ -1,0 +1,42 @@
+import src::stringbuilder
+import src::parser::parser
+
+struct SourcePosition(path: string, start: u32, end: u32)
+
+enum Message {
+  HeadMessage
+  PositionCapableMessage(message: string, position: SourcePosition)
+  MessageCons(head: Message, tail: Message)
+}
+
+struct MessageCollector(headMessage: Message)
+
+impl MessageCollector {
+  fun apply(): MessageCollector = MessageCollector(HeadMessage)
+
+  #[method]
+  fun append(self: MessageCollector, message: string, position: SourcePosition): void = {
+    self.append(PositionCapableMessage(message, position))
+  }
+
+  #[method]
+  fun append(self: MessageCollector, message: PositionCapableMessage): void =
+    match self.headMessage {
+      case is HeadMessage -> self.headMessage = message
+      else -> self.headMessage = MessageCons(message, self.headMessage)
+    }
+}
+
+fun collectErrors(node: AstNode, messageCollector: MessageCollector, path: string): i32 = match node {
+  case is SyntaxError(token, message) -> {
+    messageCollector.append(message, SourcePosition(path, token.start, token.end))
+    1
+  }
+  case is UnexpectedToken(token, value) -> {
+    messageCollector.append("Unexpected token \"" ++ value ++ "\"", SourcePosition(path, token.start, token.end))
+    1
+  }
+  case is Node(name, child) -> collectErrors(child, messageCollector, path)
+  case is AstCons(head, tail) -> collectErrors(head, messageCollector, path) + collectErrors(tail, messageCollector, path)
+  else -> 0
+}

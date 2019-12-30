@@ -1,0 +1,17 @@
+  1) A block of symbolic expressions was expected at test/fixtures/syntaxerrors/wasm.lys:3:21
+
+  2) A block of symbolic expressions was expected at test/fixtures/syntaxerrors/wasm.lys:7:21
+     │
+    7│ fun x(): void = %wasm ()
+     │                      ^
+
+  3) Unexpected token "(" at test/fixtures/syntaxerrors/wasm.lys:7:22
+     │
+    7│ fun x(): void = %wasm ()
+     │                       ^
+
+  4) Unexpected token ")" at test/fixtures/syntaxerrors/wasm.lys:7:23
+     │
+    7│ fun x(): void = %wasm ()
+     │                        ^
+

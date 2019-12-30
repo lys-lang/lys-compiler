@@ -1,0 +1,181 @@
+import src::helpers
+import src::stringbuilder
+
+/**
+ * LineMapper is an utility to get the line out of a position in a string.
+ * It splits the string in Lines and then it creates a tree to find the line using
+ * binary search.
+ *
+ * The current tree structure looks like a linked list,
+ *
+ * LineCons
+ * ├LineCons
+ * │ ├LineCons
+ * │ │ ├LineCons
+ * │ │ │ ├LineCons
+ * │ │ │ │ ├LineCons
+ * │ │ │ │ │ ├LineCons
+ * │ │ │ │ │ │ ├LineCons
+ * │ │ │ │ │ │ │ ├LineCons
+ * │ │ │ │ │ │ │ │ ├LineCons
+ * │ │ │ │ │ │ │ │ │ ├LineCons
+ * │ │ │ │ │ │ │ │ │ │ ├Line(0,0,5)
+ * │ │ │ │ │ │ │ │ │ │ └Line(1,5,8)
+ * │ │ │ │ │ │ │ │ │ └Line(2,8,10)
+ * │ │ │ │ │ │ │ │ └Line(3,10,12)
+ * │ │ │ │ │ │ │ └Line(4,12,16)
+ * │ │ │ │ │ │ └Line(5,16,21)
+ * │ │ │ │ │ └Line(6,21,24)
+ * │ │ │ │ └Line(7,24,26)
+ * │ │ │ └Line(8,26,28)
+ * │ │ └Line(9,28,32)
+ * │ └Line(10,32,33)
+ * └Line(11,33,33)
+ *
+ * With a little of code interview algorithmia, it can be turned to a balanced
+ * binary search tree, making the lookups way faster.
+ */
+
+enum LineData {
+  NoLine
+  Line(line: u32, start: u32, end: u32)
+  LineCons(left: LineData, right: LineData)
+}
+
+struct LineMapper(source: string, lineData: LineData | Nil)
+
+impl LineData {
+
+  #[getter]
+  fun line(self: LineData): u32 = match self {
+    case is LineCons(left) -> left.line
+    case is Line(line) -> line
+    case is NoLine -> 0x0
+  }
+
+  #[getter]
+  fun start(self: LineData): u32 = match self {
+    case is LineCons(left, right) -> left.start
+    case is Line(line, start) -> start
+    case is NoLine -> 0x7ffffff
+  }
+
+  #[getter]
+  fun end(self: LineData): u32 = match self {
+    case is LineCons(left, right) -> right.end
+    case is Line(line, start, end) -> end
+    case is NoLine -> 0x0
+  }
+
+  #[method]
+  fun getLine(self: LineData, position: u32): Line | NoLine = match self {
+    case x is LineCons(left, right) ->
+      if (left.start <= position && position < left.end)
+        left.getLine(position)
+      else
+        right.getLine(position)
+    case x is Line -> x
+    case is NoLine -> NoLine
+  }
+
+  #[method]
+  fun getLinePosition(self: LineData, line: u32): Line | NoLine = match self {
+    case x is LineCons(left, right) -> match left.getLinePosition(line) {
+      case x is NoLine -> right.getLinePosition(line)
+      case x is Line -> x
+    }
+    case x is Line -> if(x.line == line) x else NoLine
+    case is NoLine -> NoLine
+  }
+
+  #[method]
+  fun printTo(self: LineData, sb: StringBuilder, indentation: i32): void = {
+    match self {
+      case is NoLine -> sb.append("NULL")
+      case is Line(line, start, end) ->
+        sb
+          .append("Line(")
+          .append(string.stringify(line))
+          .append(",")
+          .append(string.stringify(start))
+          .append(",")
+          .append(string.stringify(end))
+          .append(")\n")
+      case is LineCons(left, right) -> {
+        val offset2 = repeat(" │", indentation)
+        sb.append("LineCons\n")
+        sb.append(offset2).append(" ├")
+        left.printTo(sb, indentation + 1)
+        sb.append(offset2).append(" └")
+        right.printTo(sb, indentation + 1)
+      }
+    }
+  }
+}
+
+impl LineMapper {
+  fun apply(source: string): LineMapper = LineMapper(source, Nil)
+
+  fun initializeData(source: string): LineData = {
+    var start = 0x0
+    var end = start
+    val len = source.length
+    var currentLine = 0x0
+    val defaultLine = Line(0x0, 0x0, 0x0)
+    var ret: LineData = defaultLine
+
+    loop if (end < len) {
+      val char = source[end]
+      end = end + 0x1
+
+      if (char == 0xD && (end + 0x1) < len) { // \r
+        if (source[end + 0x1] == 0xA) { // \n
+          end = end + 0x1
+
+          if (currentLine == 0x0) {
+            ret = Line(0x0, start, end)
+          } else {
+            ret = LineCons(ret, Line(currentLine, start, end))
+          }
+          currentLine = currentLine + 0x1
+          start = end
+        }
+      } else if (char == 0xA || char == 0x2028 || char == 0x2029) { // \n
+        if (currentLine == 0x0) {
+          ret = Line(0x0, start, end)
+        } else {
+          ret = LineCons(ret, Line(currentLine, start, end))
+        }
+        currentLine = currentLine + 0x1
+        start = end
+      }
+
+      continue
+    }
+    if (currentLine == 0x0) {
+      ret = Line(0x0, start, end)
+    } else {
+      ret = LineCons(ret, Line(currentLine, start, end))
+    }
+    ret
+  }
+
+  #[method]
+  private fun ensureLineData(self: LineMapper): LineData = match self.lineData {
+    case is Nil -> {
+      self.lineData = initializeData(self.source)
+      self.ensureLineData()
+    }
+    case x is LineData -> x
+  }
+
+  #[method]
+  fun getLine(self: LineMapper, position: u32): LineData = {
+    self.ensureLineData().getLine(position)
+  }
+
+  #[method]
+  fun getLinePosition(self: LineMapper, line: u32): LineData = {
+    self.ensureLineData().getLinePosition(line)
+  }
+}
