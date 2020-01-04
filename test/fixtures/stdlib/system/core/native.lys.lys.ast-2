@@ -24,6 +24,7 @@
       |-NameIdentifierNode name=u64
     |-EmptyNode
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=void
     |-StackLiteralNode
       |-NameLiteralPairNode
@@ -33,12 +34,15 @@
         |-NameIdentifierNode name=byteSize
         |-FloatLiteralNode value=0
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=ref
     |-InjectedLiteralNode
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=never
     |-InjectedLiteralNode
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=UnsafeCPointer
     |-StackLiteralNode
       |-NameLiteralPairNode
@@ -49,6 +53,7 @@
         |-FloatLiteralNode value=4
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=addressFromRef
       |-ParameterNode
@@ -66,6 +71,7 @@
               |-NameIdentifierNode name=$pointer
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=panic
       |-EmptyNode
@@ -82,6 +88,7 @@
         |-NameIdentifierNode name=never
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=apply
         |-EmptyNode
@@ -92,9 +99,11 @@
           |-WasmAtomNode symbol=unreachable
             |-EmptyNode
   |-TraitDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=Reference
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=is
         |-ParameterNode
@@ -108,6 +117,7 @@
         |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -128,6 +138,7 @@
         |-NameIdentifierNode name=Reference
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=is
         |-ParameterNode
@@ -138,9 +149,10 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=boolean
-        |-EmptyNode
+        |-BooleanLiteralNode value=false
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -161,6 +173,7 @@
         |-NameIdentifierNode name=ref
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -186,6 +199,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=!=
         |-ParameterNode
@@ -211,6 +225,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -232,6 +247,7 @@
       |-DecoratorNode
         |-NameIdentifierNode name=inline
         |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=getDiscriminant
         |-ParameterNode
@@ -252,6 +268,7 @@
                 |-FloatLiteralNode value=32
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -280,6 +297,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -317,6 +335,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -337,6 +356,7 @@
                   |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode

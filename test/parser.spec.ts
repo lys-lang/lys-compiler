@@ -10,6 +10,9 @@ const ansiRegex = new RegExp(
   "g"
 );
 
+const filesWithErrors = new Set<string>()
+const filesWithSyntaxErrors = new Set<string>()
+
 folderBasedTest(
   resolve(__dirname, "./fixtures/") + "/**/*.lys",
   async source => {
@@ -38,9 +41,26 @@ folderBasedTest(
 
 folderBasedTest(
   resolve(__dirname, "./fixtures/") + "/**/*.lys",
-  async source => {
+  async (source, fileName) => {
     const instance = await tokenizer();
-    const result = instance.parseAndEmitAst(source);
+    const result = instance.parseAndEmitDesugar(fileName, fileName, source);
+
+    if (result == "<EMPTY>") throw new Error("Parsing error");
+
+    if (!fileName.includes("/syntaxerrors/") && result && result.includes("/* ERROR: ")) {
+      filesWithErrors.add(fileName)
+    }
+
+    return result;
+  },
+  ".ast.desugar-lys"
+);
+
+folderBasedTest(
+  resolve(__dirname, "./fixtures/") + "/**/*.lys",
+  async (source, fileName) => {
+    const instance = await tokenizer();
+    const result = instance.parseAndEmitAst(fileName, fileName, source);
 
     if (result == "") throw new Error("Parsing error");
 
@@ -57,7 +77,25 @@ folderBasedTest(
 
     if (result) console.log(result);
 
+    if (result && !fileName.includes("/syntaxerrors/")) {
+      filesWithSyntaxErrors.add(fileName)
+    }
+
     return result.replace(ansiRegex, "") || null;
   },
   ".syntax-error"
 );
+
+describe("Files with errors", () => {
+  it("Files outside /syntaxerrors/ must no have any CodeNode error", async() => {
+    if (filesWithErrors.size) {
+      throw new Error("The following files have errors:\n" + Array.from(filesWithErrors).map($ => '    - ' + $).join('\n'))
+    }
+  })
+
+  it("Files outside /syntaxerrors/ must no have any syntax error", async() => {
+    if (filesWithSyntaxErrors.size) {
+      throw new Error("The following files have parsing syntax errors:\n" + Array.from(filesWithSyntaxErrors).map($ => '    - ' + $).join('\n'))
+    }
+  })
+})

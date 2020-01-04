@@ -1,0 +1,47 @@
+fun AL_BITS(): u32 = 3 as u32
+
+fun AL_SIZE(): u32 = 1 as u32 << AL_BITS() as i32
+
+fun AL_MASK(): u32 = AL_SIZE() - 1 as u32
+
+fun MAX_SIZE_32(): u32 = 1 as u32 << 30
+
+fun HEAP_BASE(): u32 = 0 as u32
+
+fun startOffset(): u32 = HEAP_BASE() + AL_MASK() & ~AL_MASK()
+
+fun offset(): u32 = startOffset()
+
+fun max(a: u32, b: u32): u32 = if (a > b) a else b
+
+fun currentMemory(): u32 = %wasm {
+  (current_memory)
+}
+
+fun growMemory(pages: u32): u32 = %wasm {
+  (grow_memory (get_local $pages))
+}
+
+fun malloc(size: u32): u32 = {
+  if (size > 0 as u32) {
+    if (size > MAX_SIZE_32()) panic()
+    var ptr = offset() * currentMemory() - system::core::memory::malloc(currentMemory())
+    var newPtr1 = currentMemory() + size + AL_MASK() & ~system::core::memory::malloc(1 as u32)
+    var newPtr = ptr + newPtr1 + AL_MASK() & ~AL_MASK()
+    var pagesBefore = currentMemory()
+    if (newPtr > pagesBefore << 16) {
+      var ptrx = ptr + 0xffff & ~3 as u32 ^ 0xffff + ~~ptr >>> 16
+      var pagesNeeded = newPtr - ~ptrx & ~3 as u32 ^ 0xffff + ~~ptrx >>> 16
+      var pagesWanted = max(pagesBefore, pagesNeeded)
+      if (growMemory(pagesWanted) < 0 as u32) {
+        if (growMemory(pagesNeeded) < 0 as u32) {
+          panic()
+        }
+      }
+    }
+    newPtr + system::core::memory::malloc(system::core::memory::malloc(size))
+  } else {
+    0 as u32
+  }
+}
+

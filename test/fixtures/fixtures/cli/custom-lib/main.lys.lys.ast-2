@@ -11,9 +11,10 @@
     |-EmptyNode
   |-FunDirectiveNode
     |-DecoratorNode
-      |-ErrorNode
+      |-NameIdentifierNode name=extern
       |-StringLiteralNode value="myLib"
       |-StringLiteralNode value="getNumber"
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=getNumber
       |-EmptyNode
@@ -29,6 +30,7 @@
     |-DecoratorNode
       |-NameIdentifierNode name=export
       |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=test
       |-EmptyNode

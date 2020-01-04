@@ -1,0 +1,603 @@
+type Option = Some | None
+
+type Some = %struct {value: ref}
+
+
+impl Some for Reference {
+  #[inline]
+  fun is(a: Self | ref): boolean = {
+    var discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+
+}
+impl Some {
+  #[inline]
+  private fun Some$discriminant(): u64 = {
+    var discriminant: u32 = Some.^discriminant
+    discriminant as u64 << 32
+  }
+
+  #[inline]
+  fun apply(value: ref): Some = {
+    var $ref = fromPointer(system::core::memory::calloc(1 as u32, Some.^allocationSize))
+    property$0($ref, value)
+    $ref
+  }
+
+  fun as(self: Some): UnsafeCPointer = %wasm {
+    (call $addressFromRef (get_local $self))
+  }
+
+  private fun fromPointer(ptr: u32): Some = %wasm {
+    (i64.or (call $Some$discriminant) (i64.extend_u/i32 (local.get $ptr)))
+  }
+
+  fun ==(a: Some, b: Some): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: Some, b: Some): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  #[getter]
+  fun value(self: Some): ref = property$0(self)
+
+  #[setter]
+  fun value(self: Some, value: ref): void = property$0(self, value)
+
+  #[inline]
+  private fun property$0(self: Some): ref = ref.load(self, Some.^property$0_offset)
+
+  #[inline]
+  private fun property$0(self: Some, value: ref): void = ref.store(self, value, Some.^property$0_offset)
+
+  fun store(lhs: ref, rhs: Some, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Some = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+
+type None = %struct {}
+
+
+impl None for Reference {
+  #[inline]
+  fun is(a: Self | ref): boolean = {
+    var discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+
+}
+impl None {
+  #[inline]
+  private fun None$discriminant(): u64 = {
+    var discriminant: u32 = None.^discriminant
+    discriminant as u64 << 32
+  }
+
+  #[inline]
+  fun apply(): None = {
+    var $ref = fromPointer(system::core::memory::calloc(1 as u32, None.^allocationSize))
+    $ref
+  }
+
+  fun as(self: None): UnsafeCPointer = %wasm {
+    (call $addressFromRef (get_local $self))
+  }
+
+  private fun fromPointer(ptr: u32): None = %wasm {
+    (i64.or (call $None$discriminant) (i64.extend_u/i32 (local.get $ptr)))
+  }
+
+  fun ==(a: None, b: None): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: None, b: None): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  fun store(lhs: ref, rhs: None, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): None = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+
+type None
+
+type Some
+
+type Option = Some | None
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

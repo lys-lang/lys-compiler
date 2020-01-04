@@ -1,0 +1,65 @@
+
+type Entity = %struct {}
+
+
+impl Entity for Reference {
+  #[inline]
+  fun is(a: Self | ref): boolean = {
+    var discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+
+}
+impl Entity {
+  #[inline]
+  private fun Entity$discriminant(): u64 = {
+    var discriminant: u32 = Entity.^discriminant
+    discriminant as u64 << 32
+  }
+
+  #[inline]
+  fun apply(): Entity = {
+    var $ref = fromPointer(system::core::memory::calloc(1 as u32, Entity.^allocationSize))
+    $ref
+  }
+
+  fun as(self: Entity): UnsafeCPointer = %wasm {
+    (call $addressFromRef (get_local $self))
+  }
+
+  private fun fromPointer(ptr: u32): Entity = %wasm {
+    (i64.or (call $Entity$discriminant) (i64.extend_u/i32 (local.get $ptr)))
+  }
+
+  fun ==(a: Entity, b: Entity): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: Entity, b: Entity): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  fun store(lhs: ref, rhs: Entity, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Entity = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+
+
+
+
+
+
+
+
+

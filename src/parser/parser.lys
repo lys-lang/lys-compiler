@@ -15,7 +15,6 @@ enum AstNode {
   AstCons(head: AstNode, tail: AstNode)
 }
 
-
 fun first(astNode: AstNode): AstNode = match astNode {
   case is AstCons(head, tail) -> head
   else -> astNode
@@ -91,9 +90,11 @@ fun printAst(ast: AstNode | Nil, level: i32, sb: StringBuilder): void = match as
       .append(value)
   }
   case is AstCons(head, tail) -> {
-    printAst(head, level, sb)
+    sb.append(repeat("  ", level))
+      .append("|-(AstCons)\n")
+    printAst(head, level + 1, sb)
     sb.append("\n")
-    printAst(tail, level, sb)
+    printAst(tail, level + 1, sb)
   }
 }
 
@@ -122,6 +123,7 @@ fun parse(ruleName: string, parser: Parser, level: i32): AstNode | Nil = {
     }
   }
 }
+
 fun eatUnexpectedToken(lexer: Lexer): AstNode = {
   val token = lexer.eat()
   val tokenValue = token.textIn(lexer.source)

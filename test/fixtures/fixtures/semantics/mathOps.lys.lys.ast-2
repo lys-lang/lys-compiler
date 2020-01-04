@@ -1,5 +1,6 @@
 |-Document
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=test
     |-StructTypeNode
       |-EmptyNode
@@ -10,6 +11,7 @@
         |-NameIdentifierNode name=test
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=x
         |-EmptyNode
@@ -19,6 +21,7 @@
         |-FloatLiteralNode value=1
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=x
       |-ParameterNode
@@ -30,6 +33,7 @@
       |-FloatLiteralNode value=1
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=x1
       |-EmptyNode
@@ -37,14 +41,23 @@
         |-QNameNode
           |-NameIdentifierNode name=i32
       |-BinaryExpressionNode
-        |-FloatLiteralNode value=1
-        |-ErrorNode
+        |-BinaryExpressionNode
+          |-FloatLiteralNode value=1
+          |-NameIdentifierNode name=+
+          |-BinaryExpressionNode
+            |-BinaryExpressionNode
+              |-FloatLiteralNode value=2
+              |-NameIdentifierNode name=/
+              |-FloatLiteralNode value=3
+            |-NameIdentifierNode name=*
+            |-FloatLiteralNode value=4
         |-NameIdentifierNode name=-
         |-UnaryExpressionNode
           |-NameIdentifierNode name=-
           |-FloatLiteralNode value=5
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=x2
       |-ParameterNode
@@ -60,6 +73,7 @@
             |-NameIdentifierNode name=x
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=x3
       |-ParameterNode
@@ -75,6 +89,7 @@
             |-NameIdentifierNode name=x
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=x4
       |-EmptyNode
@@ -86,6 +101,7 @@
         |-FloatLiteralNode value=99
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=x5
       |-EmptyNode
@@ -103,6 +119,7 @@
           |-EmptyNode
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=x6
       |-EmptyNode
@@ -111,4 +128,4 @@
           |-NameIdentifierNode name=boolean
       |-UnaryExpressionNode
         |-NameIdentifierNode name=!
-        |-EmptyNode
+        |-BooleanLiteralNode value=false

@@ -26,17 +26,18 @@ export async function tokenizer() {
     );
   }
 
-  function parseAndEmit(source: string): string {
+  function parseAndEmitAst(
+    moduleName: string,
+    path: string,
+    source: string
+  ): string {
     return readStringFromHeap(
       instance,
-      instance.exports.parseAndEmit(writeStringToHeap(instance, source))
-    );
-  }
-
-  function parseAndEmitAst(source: string): string {
-    return readStringFromHeap(
-      instance,
-      instance.exports.parseAndEmitAst(writeStringToHeap(instance, source))
+      instance.exports.parseAndEmitAst(
+        writeStringToHeap(instance, moduleName),
+        writeStringToHeap(instance, path),
+        writeStringToHeap(instance, source)
+      )
     );
   }
 
@@ -55,15 +56,30 @@ export async function tokenizer() {
     );
   }
 
+  function parseAndEmitDesugar(
+    moduleName: string,
+    path: string,
+    source: string
+  ): string {
+    return readStringFromHeap(
+      instance,
+      instance.exports.parseAndEmitDesugar(
+        writeStringToHeap(instance, moduleName),
+        writeStringToHeap(instance, path),
+        writeStringToHeap(instance, source)
+      )
+    );
+  }
+
   function startLexer(data: string) {
     instance.exports.startLexer(writeStringToHeap(instance, data));
   }
 
   return {
     startLexer,
-    parseAndEmit,
     parseAndEmitAst,
     parseAndEmitErrors,
+    parseAndEmitDesugar,
     parseAst,
     parseAstDesugar,
     eat

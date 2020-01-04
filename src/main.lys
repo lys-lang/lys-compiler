@@ -32,39 +32,29 @@ fun parseAstDesugar(strAddress: UnsafeCPointer): UnsafeCPointer = {
   }
 }
 
-#[export "parseAndEmit"]
-fun parseAndEmit(strAddress: UnsafeCPointer): UnsafeCPointer = {
-  val ast = parse(UCS2.fromPtr(strAddress), "Document", getGrammar())
-  match ast {
-    case ast is AstNode -> {
-      val sb = StringBuilder()
-      val parseTree = src::compiler::phases::cannonical::processNode(ast)
-      CodeNode.printNode(parseTree, sb, 0)
-      sb.toString() as UnsafeCPointer
-    }
-    else -> "" as UnsafeCPointer
-  }
-}
-
-#[export "parseAndEmitAst"]
-fun parseAndEmitAst(strAddress: UnsafeCPointer): UnsafeCPointer = {
-  val ast = parse(UCS2.fromPtr(strAddress), "Document", getGrammar())
-  match ast {
-    case ast is AstNode -> {
-      val sb = StringBuilder()
-      val parseTree = src::compiler::phases::cannonical::processNode(ast)
-      CodeNode.printAst(parseTree, sb, 0)
-      sb.toString() as UnsafeCPointer
-    }
-    else -> "" as UnsafeCPointer
-  }
-}
-
 #[export "parseAndEmitErrors"]
 fun parseAndEmitErrors(moduleName: UnsafeCPointer, path: UnsafeCPointer, strAddress: UnsafeCPointer): UnsafeCPointer = {
   val ctx = src::compiler::context::CompilerContext()
   val sb = StringBuilder()
   ctx.getModuleByContent(UCS2.fromPtr(path), UCS2.fromPtr(moduleName), UCS2.fromPtr(strAddress))
   ctx.printErrors(sb)
+  sb.toString() as UnsafeCPointer
+}
+
+#[export "parseAndEmitAst"]
+fun parseAndEmitAst(moduleName: UnsafeCPointer, path: UnsafeCPointer, strAddress: UnsafeCPointer): UnsafeCPointer = {
+  val ctx = src::compiler::context::CompilerContext()
+  val sb = StringBuilder()
+  val module = ctx.getModuleByContent(UCS2.fromPtr(path), UCS2.fromPtr(moduleName), UCS2.fromPtr(strAddress))
+  CodeNode.printAst(module.document, sb, 0)
+  sb.toString() as UnsafeCPointer
+}
+
+#[export "parseAndEmitDesugar"]
+fun parseAndEmitDesugar(moduleName: UnsafeCPointer, path: UnsafeCPointer, strAddress: UnsafeCPointer): UnsafeCPointer = {
+  val ctx = src::compiler::context::CompilerContext()
+  val sb = StringBuilder()
+  val module = ctx.getModuleByContent(UCS2.fromPtr(path), UCS2.fromPtr(moduleName), UCS2.fromPtr(strAddress))
+  CodeNode.printNode(module.document, sb, 0)
   sb.toString() as UnsafeCPointer
 }

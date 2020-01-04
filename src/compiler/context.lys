@@ -78,9 +78,9 @@ impl CompilerContext {
       }
       case ast is AstNode -> {
         val errors = collectErrors(ast, self.messageCollector, path)
-        val transformed = src::compiler::phases::transformation::desugar(path, moduleName, ast, self)
-        val code = src::compiler::phases::cannonical::processNode(transformed)
-        Module(moduleName, path, source, ast, code, 0, errors, LineMapper(source))
+        val newAst = src::compiler::phases::transformation::desugar(path, moduleName, ast, self)
+        val code = src::compiler::phases::cannonical::processNode(newAst)
+        Module(moduleName, path, source, newAst, code, 0, errors, LineMapper(source))
       }
     }
 
@@ -196,7 +196,7 @@ impl CompilerContext {
           errors = printErrors(self, self.messageCollector.headMessage, nsb, head.path, errors)
 
           if (!nsb.isEmpty()) {
-            sb.append(head.path).append("\n").append(nsb.toString())
+            sb.appendln(head.path).append(nsb)
           }
 
           current = tail
@@ -207,7 +207,7 @@ impl CompilerContext {
           errors = printErrors(self, self.messageCollector.headMessage, sb, head.path, errors)
 
           if (!nsb.isEmpty()) {
-            sb.append(head.path).append("\n").append(nsb.toString())
+            sb.appendln(head.path).append(nsb)
           }
 
           break

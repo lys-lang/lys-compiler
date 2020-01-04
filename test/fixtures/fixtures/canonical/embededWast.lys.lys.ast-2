@@ -39,12 +39,14 @@
       |-WasmExpressionNode
         |-EmptyNode
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=freeblock
       |-EmptyNode
       |-FloatLiteralNode value=0
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=malloc
       |-ParameterNode
@@ -82,6 +84,7 @@
             |-NameIdentifierNode name=$address
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=strAdd
       |-ParameterNode

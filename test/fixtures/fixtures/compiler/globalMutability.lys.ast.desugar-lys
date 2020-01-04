@@ -1,0 +1,10 @@
+var x = 2
+var bc = 1
+var a: i32 = {
+  bc - x
+}
+#[export]
+fun main(): i32 = {
+  x = x + 1 - a
+}
+

@@ -1,5 +1,6 @@
 |-Document
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=x
       |-EmptyNode
@@ -7,26 +8,540 @@
         |-QNameNode
           |-NameIdentifierNode name=a
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=y
       |-EmptyNode
       |-BinaryExpressionNode
-        |-FloatLiteralNode value=1
-        |-ErrorNode
+        |-BinaryExpressionNode
+          |-FloatLiteralNode value=1
+          |-NameIdentifierNode name=+
+          |-BinaryExpressionNode
+            |-BinaryExpressionNode
+              |-FloatLiteralNode value=2
+              |-NameIdentifierNode name=*
+              |-FloatLiteralNode value=3
+            |-NameIdentifierNode name=/
+            |-FloatLiteralNode value=4
         |-NameIdentifierNode name=-
         |-BinaryExpressionNode
           |-FloatLiteralNode value=5
           |-NameIdentifierNode name=%
           |-FloatLiteralNode value=6
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=z
       |-EmptyNode
       |-BinaryExpressionNode
         |-BinaryExpressionNode
-          |-FloatLiteralNode value=1
-          |-NameIdentifierNode name=+
-          |-FloatLiteralNode value=2
-        |-ErrorNode
+          |-BinaryExpressionNode
+            |-BinaryExpressionNode
+              |-FloatLiteralNode value=1
+              |-NameIdentifierNode name=+
+              |-FloatLiteralNode value=2
+            |-NameIdentifierNode name=*
+            |-FloatLiteralNode value=3
+          |-NameIdentifierNode name=/
+          |-BinaryExpressionNode
+            |-FloatLiteralNode value=4
+            |-NameIdentifierNode name=-
+            |-FloatLiteralNode value=5
         |-NameIdentifierNode name=%
         |-FloatLiteralNode value=6
+  |-VarDirectiveNode
+    |-NoModifierNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=x0
+      |-EmptyNode
+      |-BlockNode
+        |-VarDeclarationNode
+          |-NameIdentifierNode name=y
+          |-EmptyNode
+          |-FloatLiteralNode value=1
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=y
+          |-NameIdentifierNode name==
+          |-BinaryExpressionNode
+            |-FloatLiteralNode value=2
+            |-NameIdentifierNode name=+
+            |-BinaryExpressionNode
+              |-AsExpressionNode
+                |-FloatLiteralNode value=5
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=i32
+              |-NameIdentifierNode name=*
+              |-BinaryExpressionNode
+                |-BinaryExpressionNode
+                  |-FloatLiteralNode value=23
+                  |-NameIdentifierNode name=-
+                  |-UnaryExpressionNode
+                    |-NameIdentifierNode name=-
+                    |-FloatLiteralNode value=1
+                |-NameIdentifierNode name=-
+                |-FloatLiteralNode value=3
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=y
+  |-VarDirectiveNode
+    |-NoModifierNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=n
+      |-EmptyNode
+      |-BinaryExpressionNode
+        |-BinaryExpressionNode
+          |-BinaryExpressionNode
+            |-BinaryExpressionNode
+              |-BinaryExpressionNode
+                |-BinaryExpressionNode
+                  |-BinaryExpressionNode
+                    |-BinaryExpressionNode
+                      |-BinaryExpressionNode
+                        |-FloatLiteralNode value=1
+                        |-NameIdentifierNode name=+
+                        |-FloatLiteralNode value=2
+                      |-NameIdentifierNode name=+
+                      |-FloatLiteralNode value=3
+                    |-NameIdentifierNode name=+
+                    |-FloatLiteralNode value=4
+                  |-NameIdentifierNode name=+
+                  |-FloatLiteralNode value=5
+                |-NameIdentifierNode name=+
+                |-FloatLiteralNode value=6
+              |-NameIdentifierNode name=+
+              |-FloatLiteralNode value=7
+            |-NameIdentifierNode name=+
+            |-FloatLiteralNode value=8
+          |-NameIdentifierNode name=+
+          |-FloatLiteralNode value=9
+        |-NameIdentifierNode name=+
+        |-FloatLiteralNode value=0
+  |-VarDirectiveNode
+    |-NoModifierNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=m
+      |-EmptyNode
+      |-BinaryExpressionNode
+        |-BinaryExpressionNode
+          |-BinaryExpressionNode
+            |-BinaryExpressionNode
+              |-FloatLiteralNode value=1
+              |-NameIdentifierNode name=+
+              |-FloatLiteralNode value=2
+            |-NameIdentifierNode name=+
+            |-FloatLiteralNode value=3
+          |-NameIdentifierNode name=+
+          |-FloatLiteralNode value=4
+        |-NameIdentifierNode name=+
+        |-BinaryExpressionNode
+          |-BinaryExpressionNode
+            |-BinaryExpressionNode
+              |-BinaryExpressionNode
+                |-BinaryExpressionNode
+                  |-FloatLiteralNode value=5
+                  |-NameIdentifierNode name=+
+                  |-FloatLiteralNode value=6
+                |-NameIdentifierNode name=+
+                |-FloatLiteralNode value=7
+              |-NameIdentifierNode name=+
+              |-FloatLiteralNode value=8
+            |-NameIdentifierNode name=+
+            |-FloatLiteralNode value=9
+          |-NameIdentifierNode name=+
+          |-FloatLiteralNode value=0
+  |-VarDirectiveNode
+    |-NoModifierNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=o
+      |-EmptyNode
+      |-BinaryExpressionNode
+        |-BinaryExpressionNode
+          |-BinaryExpressionNode
+            |-BinaryExpressionNode
+              |-FloatLiteralNode value=1
+              |-NameIdentifierNode name=<<
+              |-FloatLiteralNode value=2
+            |-NameIdentifierNode name=>>
+            |-BinaryExpressionNode
+              |-FloatLiteralNode value=3
+              |-NameIdentifierNode name=+
+              |-FloatLiteralNode value=4
+          |-NameIdentifierNode name=|
+          |-BinaryExpressionNode
+            |-BinaryExpressionNode
+              |-BinaryExpressionNode
+                |-BinaryExpressionNode
+                  |-FloatLiteralNode value=5
+                  |-NameIdentifierNode name=*
+                  |-FloatLiteralNode value=6
+                |-NameIdentifierNode name=+
+                |-FloatLiteralNode value=7
+              |-NameIdentifierNode name=+
+              |-BinaryExpressionNode
+                |-FloatLiteralNode value=8
+                |-NameIdentifierNode name=/
+                |-FloatLiteralNode value=9
+            |-NameIdentifierNode name=&
+            |-FloatLiteralNode value=0
+        |-NameIdentifierNode name=<<
+        |-FloatLiteralNode value=10
+  |-VarDirectiveNode
+    |-NoModifierNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=p
+      |-EmptyNode
+      |-BinaryExpressionNode
+        |-BinaryExpressionNode
+          |-BinaryExpressionNode
+            |-UnaryExpressionNode
+              |-NameIdentifierNode name=-
+              |-FloatLiteralNode value=1
+            |-NameIdentifierNode name=<<
+            |-FloatLiteralNode value=2
+          |-NameIdentifierNode name=>>
+          |-BinaryExpressionNode
+            |-BinaryExpressionNode
+              |-BinaryExpressionNode
+                |-FloatLiteralNode value=3
+                |-NameIdentifierNode name=+
+                |-BinaryExpressionNode
+                  |-BinaryExpressionNode
+                    |-FloatLiteralNode value=4
+                    |-NameIdentifierNode name=|
+                    |-FloatLiteralNode value=5
+                  |-NameIdentifierNode name=*
+                  |-FloatLiteralNode value=6
+              |-NameIdentifierNode name=+
+              |-FloatLiteralNode value=7
+            |-NameIdentifierNode name=++
+            |-BinaryExpressionNode
+              |-FloatLiteralNode value=8
+              |-NameIdentifierNode name=/
+              |-FloatLiteralNode value=9
+        |-NameIdentifierNode name=&
+        |-BinaryExpressionNode
+          |-FloatLiteralNode value=0
+          |-NameIdentifierNode name=<<
+          |-FloatLiteralNode value=10
+  |-VarDirectiveNode
+    |-NoModifierNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=r
+      |-EmptyNode
+      |-BinaryExpressionNode
+        |-BinaryExpressionNode
+          |-BinaryExpressionNode
+            |-BinaryExpressionNode
+              |-UnaryExpressionNode
+                |-NameIdentifierNode name=-
+                |-FloatLiteralNode value=1
+              |-NameIdentifierNode name=<<
+              |-FloatLiteralNode value=2
+            |-NameIdentifierNode name=>>
+            |-BinaryExpressionNode
+              |-FloatLiteralNode value=3
+              |-NameIdentifierNode name=%
+              |-FloatLiteralNode value=4
+          |-NameIdentifierNode name=|
+          |-BinaryExpressionNode
+            |-BinaryExpressionNode
+              |-FloatLiteralNode value=5
+              |-NameIdentifierNode name=*
+              |-FloatLiteralNode value=6
+            |-NameIdentifierNode name=^
+            |-BinaryExpressionNode
+              |-FloatLiteralNode value=7
+              |-NameIdentifierNode name=+
+              |-FloatLiteralNode value=8
+        |-NameIdentifierNode name=&&
+        |-BinaryExpressionNode
+          |-BinaryExpressionNode
+            |-FloatLiteralNode value=3
+            |-NameIdentifierNode name=/
+            |-FloatLiteralNode value=9
+          |-NameIdentifierNode name=&
+          |-BinaryExpressionNode
+            |-FloatLiteralNode value=0
+            |-NameIdentifierNode name=<<
+            |-FloatLiteralNode value=10
+  |-VarDirectiveNode
+    |-NoModifierNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=u
+      |-EmptyNode
+      |-BinaryExpressionNode
+        |-BinaryExpressionNode
+          |-BinaryExpressionNode
+            |-BinaryExpressionNode
+              |-UnaryExpressionNode
+                |-NameIdentifierNode name=-
+                |-FloatLiteralNode value=1
+              |-NameIdentifierNode name=<<
+              |-FloatLiteralNode value=2
+            |-NameIdentifierNode name=>>
+            |-BinaryExpressionNode
+              |-FloatLiteralNode value=3
+              |-NameIdentifierNode name=%
+              |-FloatLiteralNode value=4
+          |-NameIdentifierNode name=|
+          |-BinaryExpressionNode
+            |-FloatLiteralNode value=5
+            |-NameIdentifierNode name=>=
+            |-BinaryExpressionNode
+              |-BinaryExpressionNode
+                |-FloatLiteralNode value=6
+                |-NameIdentifierNode name=^
+                |-FloatLiteralNode value=7
+              |-NameIdentifierNode name=+
+              |-AsExpressionNode
+                |-FloatLiteralNode value=8
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=u32
+        |-NameIdentifierNode name=&&
+        |-BinaryExpressionNode
+          |-BinaryExpressionNode
+            |-FloatLiteralNode value=3
+            |-NameIdentifierNode name=/
+            |-FloatLiteralNode value=9
+          |-NameIdentifierNode name=~=
+          |-BinaryExpressionNode
+            |-FloatLiteralNode value=0
+            |-NameIdentifierNode name=<<
+            |-FloatLiteralNode value=10
+  |-VarDirectiveNode
+    |-NoModifierNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=x
+      |-EmptyNode
+      |-BinaryExpressionNode
+        |-BinaryExpressionNode
+          |-BinaryExpressionNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name=|
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=b
+                |-NameIdentifierNode name=^
+                |-BinaryExpressionNode
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=c
+                  |-NameIdentifierNode name=&
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=d
+            |-NameIdentifierNode name=|
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=e
+          |-NameIdentifierNode name=||
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=f
+            |-NameIdentifierNode name=&&
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=g
+        |-NameIdentifierNode name=||
+        |-BinaryExpressionNode
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=h
+            |-NameIdentifierNode name=&&
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=y
+          |-NameIdentifierNode name=&&
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=j
+            |-NameIdentifierNode name=&
+            |-FloatLiteralNode value=5
+  |-VarDirectiveNode
+    |-NoModifierNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=x1
+      |-EmptyNode
+      |-BinaryExpressionNode
+        |-BinaryExpressionNode
+          |-BinaryExpressionNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+              |-NameIdentifierNode name=|
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=b
+                |-NameIdentifierNode name=^
+                |-BinaryExpressionNode
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=c
+                  |-NameIdentifierNode name=&
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=d
+            |-NameIdentifierNode name=|
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=e
+          |-NameIdentifierNode name=||
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=f
+            |-NameIdentifierNode name=&&
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=g
+        |-NameIdentifierNode name=||
+        |-BinaryExpressionNode
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=h
+            |-NameIdentifierNode name=&&
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=y
+          |-NameIdentifierNode name=&&
+          |-BinaryExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=j
+            |-NameIdentifierNode name=&
+            |-FloatLiteralNode value=5
+  |-VarDirectiveNode
+    |-NoModifierNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=z
+      |-EmptyNode
+      |-BinaryExpressionNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=HEAP_BASE
+          |-NameIdentifierNode name=+
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=AL_MASK
+        |-NameIdentifierNode name=&
+        |-UnaryExpressionNode
+          |-NameIdentifierNode name=~
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=AL_MASK
+  |-VarDirectiveNode
+    |-NoModifierNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=z1
+      |-EmptyNode
+      |-BinaryExpressionNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=HEAP_BASE
+          |-NameIdentifierNode name=+
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=AL_MASK
+        |-NameIdentifierNode name=&
+        |-UnaryExpressionNode
+          |-NameIdentifierNode name=~
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=AL_MASK
+  |-VarDirectiveNode
+    |-NoModifierNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=x2
+      |-EmptyNode
+      |-BinaryExpressionNode
+        |-FunctionCallNode
+          |-MemberNode operator=.
+            |-FunctionCallNode
+              |-MemberNode operator=.
+                |-MemberNode operator=.
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=a
+                  |-NameIdentifierNode name=b
+                |-NameIdentifierNode name=c
+              |-EmptyNode
+            |-NameIdentifierNode name=d
+          |-EmptyNode
+        |-NameIdentifierNode name=[]
+        |-UnaryExpressionNode
+          |-NameIdentifierNode name=-
+          |-FloatLiteralNode value=1
+  |-VarDirectiveNode
+    |-NoModifierNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=x3
+      |-EmptyNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=a
+  |-VarDirectiveNode
+    |-NoModifierNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=x4
+      |-EmptyNode
+      |-BinaryExpressionNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=a
+        |-NameIdentifierNode name=+
+        |-BinaryExpressionNode
+          |-FloatLiteralNode value=1
+          |-NameIdentifierNode name=*
+          |-FloatLiteralNode value=3
+  |-VarDirectiveNode
+    |-NoModifierNode
+    |-VarDeclarationNode
+      |-NameIdentifierNode name=x5
+      |-EmptyNode
+      |-BinaryExpressionNode
+        |-BinaryExpressionNode
+          |-BinaryExpressionNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=color
+              |-NameIdentifierNode name=r
+            |-NameIdentifierNode name=*
+            |-BinaryExpressionNode
+              |-FloatLiteralNode value=2
+              |-NameIdentifierNode name=^
+              |-FloatLiteralNode value=16
+          |-NameIdentifierNode name=|
+          |-BinaryExpressionNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=color
+              |-NameIdentifierNode name=g
+            |-NameIdentifierNode name=*
+            |-BinaryExpressionNode
+              |-FloatLiteralNode value=2
+              |-NameIdentifierNode name=^
+              |-FloatLiteralNode value=8
+        |-NameIdentifierNode name=|
+        |-MemberNode operator=.
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=color
+          |-NameIdentifierNode name=b

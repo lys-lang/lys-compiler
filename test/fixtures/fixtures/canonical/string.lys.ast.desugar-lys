@@ -1,0 +1,93 @@
+
+type String = %struct {data: bytes}
+
+
+impl String for Reference {
+  #[inline]
+  fun is(a: Self | ref): boolean = {
+    var discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+
+}
+impl String {
+  #[inline]
+  private fun String$discriminant(): u64 = {
+    var discriminant: u32 = String.^discriminant
+    discriminant as u64 << 32
+  }
+
+  #[inline]
+  fun apply(data: bytes): String = {
+    var $ref = fromPointer(system::core::memory::calloc(1 as u32, String.^allocationSize))
+    property$0($ref, data)
+    $ref
+  }
+
+  fun as(self: String): UnsafeCPointer = %wasm {
+    (call $addressFromRef (get_local $self))
+  }
+
+  private fun fromPointer(ptr: u32): String = %wasm {
+    (i64.or (call $String$discriminant) (i64.extend_u/i32 (local.get $ptr)))
+  }
+
+  fun ==(a: String, b: String): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: String, b: String): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  #[getter]
+  fun data(self: String): bytes = property$0(self)
+
+  #[setter]
+  fun data(self: String, value: bytes): void = property$0(self, value)
+
+  #[inline]
+  private fun property$0(self: String): bytes = bytes.load(self, String.^property$0_offset)
+
+  #[inline]
+  private fun property$0(self: String, value: bytes): void = bytes.store(self, value, String.^property$0_offset)
+
+  fun store(lhs: ref, rhs: String, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): String = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+
+impl String {
+  #[getter]
+  fun length(str: String): i32 = str.data.length / 2
+
+  fun +(lhs: String, rhs: String): String = {
+    var lhsData = lhs.data
+    var rhsData = rhs.data
+    var lhsLen = lhsData.length
+    var rhsLen = rhsData.length
+    var newData = bytes(lhsLen + rhsLen)
+    system::core::memory::memcpy(newData.ptr, lhsData.ptr, lhsLen)
+    system::core::memory::memcpy(newData.ptr + lhsLen, rhs.data.ptr, rhsLen)
+    String(newData)
+  }
+
+  fun charAt(str: String, at: i32): u16 = {
+    if (at > str.length) {
+      panic()
+    }
+    u16.load(str.data.ptr as ref, at * 2)
+  }
+
+}

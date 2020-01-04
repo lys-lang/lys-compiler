@@ -1,7 +1,12 @@
 |-Document(0,11)
-  |-VarDirective(0,11)
-    |-VarDeclaration(0,11)
-      |-NameIdentifier(4,7)
-        |-Identifier=i32
-      |-NumberLiteral=1
-  |-EndOfFile=
+  |-(AstCons)
+    |-VarDirective(0,11)
+      |-(AstCons)
+        |-NoModifier(0,0)
+          <Rule0>
+        |-VarDeclaration(0,11)
+          |-(AstCons)
+            |-NameIdentifier(4,7)
+              |-Identifier=i32
+            |-NumberLiteral=1
+    |-EndOfFile=

@@ -1,0 +1,311 @@
+
+type TestStruct = %struct {}
+
+
+impl TestStruct for Reference {
+  #[inline]
+  fun is(a: Self | ref): boolean = {
+    var discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+
+}
+impl TestStruct {
+  #[inline]
+  private fun TestStruct$discriminant(): u64 = {
+    var discriminant: u32 = TestStruct.^discriminant
+    discriminant as u64 << 32
+  }
+
+  #[inline]
+  fun apply(): TestStruct = {
+    var $ref = fromPointer(system::core::memory::calloc(1 as u32, TestStruct.^allocationSize))
+    $ref
+  }
+
+  fun as(self: TestStruct): UnsafeCPointer = %wasm {
+    (call $addressFromRef (get_local $self))
+  }
+
+  private fun fromPointer(ptr: u32): TestStruct = %wasm {
+    (i64.or (call $TestStruct$discriminant) (i64.extend_u/i32 (local.get $ptr)))
+  }
+
+  fun ==(a: TestStruct, b: TestStruct): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: TestStruct, b: TestStruct): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  fun store(lhs: ref, rhs: TestStruct, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): TestStruct = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+
+fun identity(x: i32): i32 = x
+
+fun identity(x: f32): f32 = x
+
+fun identity(x: f64): f64 = x
+
+fun identity(x: f32): f32 = x
+
+type ErrorMessage = EmptyMessage | Message
+
+type EmptyMessage = %struct {}
+
+
+impl EmptyMessage for Reference {
+  #[inline]
+  fun is(a: Self | ref): boolean = {
+    var discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+
+}
+impl EmptyMessage {
+  #[inline]
+  private fun EmptyMessage$discriminant(): u64 = {
+    var discriminant: u32 = EmptyMessage.^discriminant
+    discriminant as u64 << 32
+  }
+
+  #[inline]
+  fun apply(): EmptyMessage = {
+    var $ref = fromPointer(system::core::memory::calloc(1 as u32, EmptyMessage.^allocationSize))
+    $ref
+  }
+
+  fun as(self: EmptyMessage): UnsafeCPointer = %wasm {
+    (call $addressFromRef (get_local $self))
+  }
+
+  private fun fromPointer(ptr: u32): EmptyMessage = %wasm {
+    (i64.or (call $EmptyMessage$discriminant) (i64.extend_u/i32 (local.get $ptr)))
+  }
+
+  fun ==(a: EmptyMessage, b: EmptyMessage): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: EmptyMessage, b: EmptyMessage): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  fun store(lhs: ref, rhs: EmptyMessage, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): EmptyMessage = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+
+type Message = %struct {message: string}
+
+
+impl Message for Reference {
+  #[inline]
+  fun is(a: Self | ref): boolean = {
+    var discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+
+}
+impl Message {
+  #[inline]
+  private fun Message$discriminant(): u64 = {
+    var discriminant: u32 = Message.^discriminant
+    discriminant as u64 << 32
+  }
+
+  #[inline]
+  fun apply(message: string): Message = {
+    var $ref = fromPointer(system::core::memory::calloc(1 as u32, Message.^allocationSize))
+    property$0($ref, message)
+    $ref
+  }
+
+  fun as(self: Message): UnsafeCPointer = %wasm {
+    (call $addressFromRef (get_local $self))
+  }
+
+  private fun fromPointer(ptr: u32): Message = %wasm {
+    (i64.or (call $Message$discriminant) (i64.extend_u/i32 (local.get $ptr)))
+  }
+
+  fun ==(a: Message, b: Message): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: Message, b: Message): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  #[getter]
+  fun message(self: Message): string = property$0(self)
+
+  #[setter]
+  fun message(self: Message, value: string): void = property$0(self, value)
+
+  #[inline]
+  private fun property$0(self: Message): string = string.load(self, Message.^property$0_offset)
+
+  #[inline]
+  private fun property$0(self: Message, value: string): void = string.store(self, value, Message.^property$0_offset)
+
+  fun store(lhs: ref, rhs: Message, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Message = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+
+var lastErrorMessage: ErrorMessage = EmptyMessage
+fun mustEqual(given: f64, expected: f64, message: string): void = {
+  verify(given == expected, message)
+  if (given != expected) {
+    support::env::printf("  given: %d", given)
+    support::env::printf("  expected: %d", expected)
+  }
+}
+
+fun mustEqual(given: f32, expected: f32, message: string): void = {
+  verify(given == expected, message)
+  if (given != expected) {
+    support::env::printf("  given: %d", given)
+    support::env::printf("  expected: %d", expected)
+  }
+}
+
+fun mustEqual(given: u64, expected: u64, message: string): void = {
+  verify(given == expected, message)
+  if (given != expected) {
+    support::env::printf("  given LSB: %X", given >> 32 as u32)
+    support::env::printf("  expected LSB: %X", expected >> 32 as u32)
+    support::env::printf("  given MSB: %X", given & 0xFFFFFFFF)
+    support::env::printf("  expected MSB: %X", expected & 0xFFFFFFFF)
+  }
+}
+
+fun mustEqual(given: i64, expected: i64, message: string): void = {
+  verify(given == expected, message)
+  if (given != expected) {
+    support::env::printf("  given LSB: %X", given as u64 >> 32 as u32)
+    support::env::printf("  expected LSB: %X", expected as u64 >> 32 as u32)
+    support::env::printf("  given MSB: %X", given & 0xFFFFFFFF)
+    support::env::printf("  expected MSB: %X", expected & 0xFFFFFFFF)
+  }
+}
+
+fun mustEqual(given: u32, expected: u32, message: string): void = {
+  verify(given == expected, message)
+  if (given != expected) {
+    support::env::printf("  given: %X", given)
+    support::env::printf("  expected: %X", expected)
+  }
+}
+
+fun mustEqual(given: i32, expected: i32, message: string): void = {
+  verify(given == expected, message)
+  if (given != expected) {
+    support::env::printf("  given: %d", given)
+    support::env::printf("  expected: %d", expected)
+  }
+}
+
+fun mustEqual(given: boolean, expected: boolean, message: string): void = {
+  verify(given == expected, message)
+}
+
+fun mustEqual(given: string, expected: string, message: string): void = {
+  verify(given == expected, message)
+  if (given != expected) {
+    support::env::printf("  given: " ++ given)
+    support::env::printf("  expected: " ++ expected)
+  }
+}
+
+#[export "test_getLastErrorMessage"]
+fun getLastErrorMessage(): u32 = {
+  match lastErrorMessage {
+    case m is Message -> m.message.ptr - 4 as u32
+    else -> 0 as u32
+  }
+}
+
+#[extern "test" "printNumber"]
+fun printNumber(number: f32): void = panic()
+
+#[extern "test" "printNumber"]
+fun printNumber(number: f64): void = panic()
+
+#[extern "test" "printNumber"]
+fun printNumber(number: u32): void = panic()
+
+#[extern "test" "printNumber"]
+fun printNumber(number: i32): void = panic()
+
+#[extern "test" "printString"]
+fun printString(number: u32): void = panic()
+
+fun printString(str: string): void = printString(str.ptr - 4 as u32)
+
+#[extern "test" "printMemory"]
+fun printMemory(start: u32, length: i32): void = panic()
+
+#[extern "test" "printMemory"]
+fun printMemory(start: u32, length: u32): void = panic()
+
+#[extern "test" "pushTest"]
+fun START(title: u32): void = panic()
+
+fun START(title: string): void = START(title.ptr - 4 as u32)
+
+#[extern "test" "registerAssertion"]
+fun verify(passed: boolean, title: u32): void = panic()
+
+fun verify(passed: boolean, title: string): void = verify(passed, title.ptr - 4 as u32)
+
+#[extern "test" "popTest"]
+fun END(): void = panic()
+
+fun assert(condition: boolean): void = assert(condition, "assert(false)")
+
+fun assert(condition: boolean, message: string): void = {
+  verify(condition, message)
+  if (condition == false) {
+    lastErrorMessage = Message(message)
+    panic()
+  }
+}
+

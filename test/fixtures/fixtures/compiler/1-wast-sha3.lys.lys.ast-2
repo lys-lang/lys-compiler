@@ -6,6 +6,7 @@
       |-NameIdentifierNode name=keccak
     |-EmptyNode
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=k
       |-EmptyNode
@@ -16,8 +17,9 @@
         |-EmptyNode
   |-FunDirectiveNode
     |-DecoratorNode
-      |-ErrorNode
+      |-NameIdentifierNode name=export
       |-StringLiteralNode value="keccak"
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=keccak
       |-ParameterNode

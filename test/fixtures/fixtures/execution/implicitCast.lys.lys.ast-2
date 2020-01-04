@@ -6,6 +6,7 @@
     |-EmptyNode
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=testMatchWithDifferentTypes
       |-ParameterNode
@@ -23,14 +24,15 @@
               |-NameIdentifierNode name=input
           |-MatchLiteralNode
             |-FloatLiteralNode value=1
-            |-EmptyNode
+            |-BooleanLiteralNode value=false
           |-MatchDefaultNode
             |-EmptyNode
-            |-EmptyNode
+            |-BooleanLiteralNode value=false
   |-FunDirectiveNode
     |-DecoratorNode
       |-NameIdentifierNode name=export
       |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=main
       |-EmptyNode
@@ -89,7 +91,7 @@
                 |-QNameNode
                   |-NameIdentifierNode name=x
             |-NameIdentifierNode name===
-            |-EmptyNode
+            |-BooleanLiteralNode value=false
           |-StringLiteralNode value="match 0"
         |-VarDeclarationNode
           |-NameIdentifierNode name=y
@@ -112,7 +114,7 @@
                 |-QNameNode
                   |-NameIdentifierNode name=y
             |-NameIdentifierNode name===
-            |-EmptyNode
+            |-BooleanLiteralNode value=false
           |-StringLiteralNode value="match 1"
         |-FunctionCallNode
           |-ReferenceNode

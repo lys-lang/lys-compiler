@@ -1,0 +1,4 @@
+fun factorial(n: i32): i32 = if (n >= 1) n * factorial(n - 1) else 1
+
+fun gcd(x: i32, y: i32): i32 = if (x > y) gcd(x - y, y) else if (x < y) gcd(x, y - x) else factorial(x)
+

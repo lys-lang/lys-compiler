@@ -1,53 +1,92 @@
 |-Document(0,74)
-  |-ValDirective(0,22)
-    |-ValDeclaration(0,22)
-      |-NameIdentifier(4,5)
-        |-Identifier=x
-      |-CodeBlock(8,22)
-        |-IsExpression(12,19)
-          |-Reference(12,13)
-            |-QName(12,13)
-              |-NameIdentifier(12,13)
-                |-Identifier=a
-          |-<SyntaxError>=A type was expected
-        |-<UNEXPECTED TOKEN>=1
-        |-<UNEXPECTED TOKEN>=
+  |-(AstCons)
+    |-(AstCons)
+      |-(AstCons)
+        |-(AstCons)
+          |-(AstCons)
+            |-(AstCons)
+              |-(AstCons)
+                |-(AstCons)
+                  |-(AstCons)
+                    |-(AstCons)
+                      |-(AstCons)
+                        |-(AstCons)
+                          |-(AstCons)
+                            |-(AstCons)
+                              |-(AstCons)
+                                |-(AstCons)
+                                  |-(AstCons)
+                                    |-(AstCons)
+                                      |-(AstCons)
+                                        |-(AstCons)
+                                          |-(AstCons)
+                                            |-(AstCons)
+                                              |-(AstCons)
+                                                |-(AstCons)
+                                                  |-ValDirective(0,22)
+                                                    |-(AstCons)
+                                                      |-NoModifier(0,0)
+                                                        <Rule0>
+                                                      |-ValDeclaration(0,22)
+                                                        |-(AstCons)
+                                                          |-NameIdentifier(4,5)
+                                                            |-Identifier=x
+                                                          |-CodeBlock(8,22)
+                                                            |-(AstCons)
+                                                              |-(AstCons)
+                                                                |-IsExpression(12,19)
+                                                                  |-(AstCons)
+                                                                    |-Reference(12,13)
+                                                                      |-QName(12,13)
+                                                                        |-NameIdentifier(12,13)
+                                                                          |-Identifier=a
+                                                                    |-Is(13,19)
+                                                                      |-<SyntaxError>=A type was expected
+                                                                |-<UNEXPECTED TOKEN>=1
+                                                              |-<UNEXPECTED TOKEN>=
 
-  |-ValDirective(23,42)
-    |-ValDeclaration(23,42)
-      |-NameIdentifier(27,28)
-        |-Identifier=x
-      |-CodeBlock(31,42)
-        |-AsExpression(35,40)
-          |-Reference(35,36)
-            |-QName(35,36)
-              |-NameIdentifier(35,36)
-                |-Identifier=a
-          |-<SyntaxError>=A type was expected
-        |-<UNEXPECTED TOKEN>={
-  |-<UNEXPECTED TOKEN>=}
-  |-<UNEXPECTED TOKEN>=
+                                                  |-ValDirective(23,42)
+                                                    |-(AstCons)
+                                                      |-NoModifier(23,23)
+                                                        <Rule0>
+                                                      |-ValDeclaration(23,42)
+                                                        |-(AstCons)
+                                                          |-NameIdentifier(27,28)
+                                                            |-Identifier=x
+                                                          |-CodeBlock(31,42)
+                                                            |-(AstCons)
+                                                              |-AsExpression(35,40)
+                                                                |-(AstCons)
+                                                                  |-Reference(35,36)
+                                                                    |-QName(35,36)
+                                                                      |-NameIdentifier(35,36)
+                                                                        |-Identifier=a
+                                                                  |-As(36,40)
+                                                                    |-<SyntaxError>=A type was expected
+                                                              |-<UNEXPECTED TOKEN>={
+                                                |-<UNEXPECTED TOKEN>=}
+                                              |-<UNEXPECTED TOKEN>=
 
 
 
-  |-<UNEXPECTED TOKEN>=type
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=b
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=a
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=|
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=type
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=b
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=a
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=&
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=.
+                                            |-<UNEXPECTED TOKEN>=type
+                                          |-<UNEXPECTED TOKEN>= 
+                                        |-<UNEXPECTED TOKEN>=b
+                                      |-<UNEXPECTED TOKEN>= 
+                                    |-<UNEXPECTED TOKEN>==
+                                  |-<UNEXPECTED TOKEN>= 
+                                |-<UNEXPECTED TOKEN>=a
+                              |-<UNEXPECTED TOKEN>= 
+                            |-<UNEXPECTED TOKEN>=|
+                          |-<UNEXPECTED TOKEN>= 
+                        |-<UNEXPECTED TOKEN>=type
+                      |-<UNEXPECTED TOKEN>= 
+                    |-<UNEXPECTED TOKEN>=b
+                  |-<UNEXPECTED TOKEN>= 
+                |-<UNEXPECTED TOKEN>==
+              |-<UNEXPECTED TOKEN>= 
+            |-<UNEXPECTED TOKEN>=a
+          |-<UNEXPECTED TOKEN>= 
+        |-<UNEXPECTED TOKEN>=&
+      |-<UNEXPECTED TOKEN>= 
+    |-<UNEXPECTED TOKEN>=.

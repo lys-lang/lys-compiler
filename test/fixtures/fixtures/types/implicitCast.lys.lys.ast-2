@@ -6,6 +6,7 @@
     |-EmptyNode
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=test1
       |-ParameterNode
@@ -21,6 +22,7 @@
           |-NameIdentifierNode name=x
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=main2
       |-ParameterNode
@@ -40,6 +42,7 @@
             |-NameIdentifierNode name=x
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=testMatchWithDifferentTypes
       |-ParameterNode
@@ -57,14 +60,15 @@
               |-NameIdentifierNode name=input
           |-MatchLiteralNode
             |-FloatLiteralNode value=1
-            |-EmptyNode
+            |-BooleanLiteralNode value=false
           |-MatchDefaultNode
             |-EmptyNode
-            |-EmptyNode
+            |-BooleanLiteralNode value=false
   |-FunDirectiveNode
     |-DecoratorNode
       |-NameIdentifierNode name=export
       |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=main
       |-EmptyNode
@@ -107,7 +111,7 @@
                   |-NameIdentifierNode name=testMatchWithDifferentTypes
               |-FloatLiteralNode value=0
             |-NameIdentifierNode name===
-            |-EmptyNode
+            |-BooleanLiteralNode value=false
           |-StringLiteralNode value="match 0"
         |-FunctionCallNode
           |-ReferenceNode
@@ -120,7 +124,7 @@
                   |-NameIdentifierNode name=testMatchWithDifferentTypes
               |-FloatLiteralNode value=1
             |-NameIdentifierNode name===
-            |-EmptyNode
+            |-BooleanLiteralNode value=false
           |-StringLiteralNode value="match 1"
         |-VarDeclarationNode
           |-NameIdentifierNode name=u8_1
@@ -143,7 +147,7 @@
                 |-QNameNode
                   |-NameIdentifierNode name=u8_1
             |-NameIdentifierNode name===
-            |-EmptyNode
+            |-BooleanLiteralNode value=false
           |-StringLiteralNode value="match 1.1"
         |-FunctionCallNode
           |-ReferenceNode

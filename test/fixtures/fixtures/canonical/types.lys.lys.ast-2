@@ -1,22 +1,974 @@
 |-Document
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=bool
     |-StackLiteralNode
       |-NameLiteralPairNode
         |-NameIdentifierNode name=lowLevelType
         |-StringLiteralNode value="i32"
-  |-EnumDirectiveNode
-    |-NameIdentifierNode name=Color
-    |-StructDeclarationNode
-      |-NameIdentifierNode name=Red
-      |-EmptyNode
-    |-StructDeclarationNode
-      |-NameIdentifierNode name=Green
-      |-EmptyNode
-    |-StructDeclarationNode
-      |-NameIdentifierNode name=Blue
-      |-EmptyNode
   |-TypeDirectiveNode
+    |-NoModifierNode
+    |-NameIdentifierNode name=Color
+    |-UnionTypeNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Red
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Green
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Blue
+  |-TypeDirectiveNode
+    |-NoModifierNode
+    |-NameIdentifierNode name=Red
+    |-StructTypeNode
+      |-EmptyNode
+  |-ImplDirectiveNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Red
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Reference
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=is
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-UnionTypeNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Self
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=ref
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=discriminant
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u32
+            |-MemberNode operator=.^
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Self
+              |-NameIdentifierNode name=discriminant
+          |-BinaryExpressionNode
+            |-FunctionCallNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=ref
+                |-NameIdentifierNode name=getDiscriminant
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+            |-NameIdentifierNode name===
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=discriminant
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=explicit
+        |-EmptyNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=as
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Self
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=ref
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=local.get
+            |-QNameNode
+              |-NameIdentifierNode name=$lhs
+  |-ImplDirectiveNode
+    |-EmptyNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Red
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=Red$discriminant
+        |-EmptyNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=u64
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=discriminant
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u32
+            |-MemberNode operator=.^
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Red
+              |-NameIdentifierNode name=discriminant
+          |-BinaryExpressionNode
+            |-AsExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=discriminant
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=u64
+            |-NameIdentifierNode name=<<
+            |-FloatLiteralNode value=32
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=apply
+        |-EmptyNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Red
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=$ref
+            |-EmptyNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=fromPointer
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=system
+                    |-NameIdentifierNode name=core
+                    |-NameIdentifierNode name=memory
+                    |-NameIdentifierNode name=calloc
+                |-AsExpressionNode
+                  |-FloatLiteralNode value=1
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=u32
+                |-MemberNode operator=.^
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=Red
+                  |-NameIdentifierNode name=allocationSize
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=$ref
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=as
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Red
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=UnsafeCPointer
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=call
+            |-QNameNode
+              |-NameIdentifierNode name=$addressFromRef
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$self
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=fromPointer
+        |-ParameterNode
+          |-NameIdentifierNode name=ptr
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Red
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.or
+            |-WasmAtomNode symbol=call
+              |-QNameNode
+                |-NameIdentifierNode name=$Red$discriminant
+            |-WasmAtomNode symbol=i64.extend_u/i32
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$ptr
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name===
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Red
+        |-ParameterNode
+          |-NameIdentifierNode name=b
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Red
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.eq
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$a
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$b
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=!=
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Red
+        |-ParameterNode
+          |-NameIdentifierNode name=b
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Red
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.ne
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$a
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$b
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=store
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ParameterNode
+          |-NameIdentifierNode name=rhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Red
+        |-ParameterNode
+          |-NameIdentifierNode name=offset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.store
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$offset
+              |-WasmAtomNode symbol=call
+                |-QNameNode
+                  |-NameIdentifierNode name=$addressFromRef
+                |-WasmAtomNode symbol=local.get
+                  |-QNameNode
+                    |-NameIdentifierNode name=$lhs
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$rhs
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=load
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ParameterNode
+          |-NameIdentifierNode name=offset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Red
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$offset
+              |-WasmAtomNode symbol=call
+                |-QNameNode
+                  |-NameIdentifierNode name=$addressFromRef
+                |-WasmAtomNode symbol=local.get
+                  |-QNameNode
+                    |-NameIdentifierNode name=$lhs
+  |-TypeDirectiveNode
+    |-NoModifierNode
+    |-NameIdentifierNode name=Green
+    |-StructTypeNode
+      |-EmptyNode
+  |-ImplDirectiveNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Green
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Reference
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=is
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-UnionTypeNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Self
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=ref
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=discriminant
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u32
+            |-MemberNode operator=.^
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Self
+              |-NameIdentifierNode name=discriminant
+          |-BinaryExpressionNode
+            |-FunctionCallNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=ref
+                |-NameIdentifierNode name=getDiscriminant
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+            |-NameIdentifierNode name===
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=discriminant
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=explicit
+        |-EmptyNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=as
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Self
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=ref
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=local.get
+            |-QNameNode
+              |-NameIdentifierNode name=$lhs
+  |-ImplDirectiveNode
+    |-EmptyNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Green
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=Green$discriminant
+        |-EmptyNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=u64
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=discriminant
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u32
+            |-MemberNode operator=.^
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Green
+              |-NameIdentifierNode name=discriminant
+          |-BinaryExpressionNode
+            |-AsExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=discriminant
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=u64
+            |-NameIdentifierNode name=<<
+            |-FloatLiteralNode value=32
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=apply
+        |-EmptyNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Green
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=$ref
+            |-EmptyNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=fromPointer
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=system
+                    |-NameIdentifierNode name=core
+                    |-NameIdentifierNode name=memory
+                    |-NameIdentifierNode name=calloc
+                |-AsExpressionNode
+                  |-FloatLiteralNode value=1
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=u32
+                |-MemberNode operator=.^
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=Green
+                  |-NameIdentifierNode name=allocationSize
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=$ref
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=as
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Green
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=UnsafeCPointer
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=call
+            |-QNameNode
+              |-NameIdentifierNode name=$addressFromRef
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$self
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=fromPointer
+        |-ParameterNode
+          |-NameIdentifierNode name=ptr
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Green
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.or
+            |-WasmAtomNode symbol=call
+              |-QNameNode
+                |-NameIdentifierNode name=$Green$discriminant
+            |-WasmAtomNode symbol=i64.extend_u/i32
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$ptr
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name===
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Green
+        |-ParameterNode
+          |-NameIdentifierNode name=b
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Green
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.eq
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$a
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$b
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=!=
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Green
+        |-ParameterNode
+          |-NameIdentifierNode name=b
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Green
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.ne
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$a
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$b
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=store
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ParameterNode
+          |-NameIdentifierNode name=rhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Green
+        |-ParameterNode
+          |-NameIdentifierNode name=offset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.store
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$offset
+              |-WasmAtomNode symbol=call
+                |-QNameNode
+                  |-NameIdentifierNode name=$addressFromRef
+                |-WasmAtomNode symbol=local.get
+                  |-QNameNode
+                    |-NameIdentifierNode name=$lhs
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$rhs
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=load
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ParameterNode
+          |-NameIdentifierNode name=offset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Green
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$offset
+              |-WasmAtomNode symbol=call
+                |-QNameNode
+                  |-NameIdentifierNode name=$addressFromRef
+                |-WasmAtomNode symbol=local.get
+                  |-QNameNode
+                    |-NameIdentifierNode name=$lhs
+  |-TypeDirectiveNode
+    |-NoModifierNode
+    |-NameIdentifierNode name=Blue
+    |-StructTypeNode
+      |-EmptyNode
+  |-ImplDirectiveNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Blue
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Reference
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=is
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-UnionTypeNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Self
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=ref
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=discriminant
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u32
+            |-MemberNode operator=.^
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Self
+              |-NameIdentifierNode name=discriminant
+          |-BinaryExpressionNode
+            |-FunctionCallNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=ref
+                |-NameIdentifierNode name=getDiscriminant
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+            |-NameIdentifierNode name===
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=discriminant
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=explicit
+        |-EmptyNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=as
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Self
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=ref
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=local.get
+            |-QNameNode
+              |-NameIdentifierNode name=$lhs
+  |-ImplDirectiveNode
+    |-EmptyNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Blue
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=Blue$discriminant
+        |-EmptyNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=u64
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=discriminant
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u32
+            |-MemberNode operator=.^
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Blue
+              |-NameIdentifierNode name=discriminant
+          |-BinaryExpressionNode
+            |-AsExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=discriminant
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=u64
+            |-NameIdentifierNode name=<<
+            |-FloatLiteralNode value=32
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=apply
+        |-EmptyNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Blue
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=$ref
+            |-EmptyNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=fromPointer
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=system
+                    |-NameIdentifierNode name=core
+                    |-NameIdentifierNode name=memory
+                    |-NameIdentifierNode name=calloc
+                |-AsExpressionNode
+                  |-FloatLiteralNode value=1
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=u32
+                |-MemberNode operator=.^
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=Blue
+                  |-NameIdentifierNode name=allocationSize
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=$ref
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=as
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Blue
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=UnsafeCPointer
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=call
+            |-QNameNode
+              |-NameIdentifierNode name=$addressFromRef
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$self
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=fromPointer
+        |-ParameterNode
+          |-NameIdentifierNode name=ptr
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Blue
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.or
+            |-WasmAtomNode symbol=call
+              |-QNameNode
+                |-NameIdentifierNode name=$Blue$discriminant
+            |-WasmAtomNode symbol=i64.extend_u/i32
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$ptr
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name===
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Blue
+        |-ParameterNode
+          |-NameIdentifierNode name=b
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Blue
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.eq
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$a
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$b
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=!=
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Blue
+        |-ParameterNode
+          |-NameIdentifierNode name=b
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Blue
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.ne
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$a
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$b
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=store
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ParameterNode
+          |-NameIdentifierNode name=rhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Blue
+        |-ParameterNode
+          |-NameIdentifierNode name=offset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.store
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$offset
+              |-WasmAtomNode symbol=call
+                |-QNameNode
+                  |-NameIdentifierNode name=$addressFromRef
+                |-WasmAtomNode symbol=local.get
+                  |-QNameNode
+                    |-NameIdentifierNode name=$lhs
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$rhs
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=load
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ParameterNode
+          |-NameIdentifierNode name=offset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Blue
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$offset
+              |-WasmAtomNode symbol=call
+                |-QNameNode
+                  |-NameIdentifierNode name=$addressFromRef
+                |-WasmAtomNode symbol=local.get
+                  |-QNameNode
+                    |-NameIdentifierNode name=$lhs
+  |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=theFn1
     |-UnionTypeNode
       |-ReferenceNode
@@ -29,23 +981,29 @@
         |-QNameNode
           |-NameIdentifierNode name=C
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=theFn1
-    |-ErrorNode
+    |-ErrorNode desc=No handler for FunctionTypeLiteral
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=theFn2
-    |-ErrorNode
+    |-ErrorNode desc=No handler for FunctionTypeLiteral
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=theFn3
-    |-ErrorNode
+    |-ErrorNode desc=No handler for FunctionTypeLiteral
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=theFn4
-    |-ErrorNode
+    |-ErrorNode desc=No handler for FunctionTypeLiteral
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=theFn5
-    |-ErrorNode
+    |-ErrorNode desc=No handler for FunctionTypeLiteral
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=theFn6
-    |-ErrorNode
+    |-ErrorNode desc=No handler for FunctionTypeLiteral
   |-FunDirectiveNode
     |-EmptyNode
     |-PrivateModifierNode
@@ -75,6 +1033,7 @@
               |-NameIdentifierNode name=b
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=main
       |-EmptyNode
@@ -92,11 +1051,13 @@
           |-QNameNode
             |-NameIdentifierNode name=Green
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=test
-      |-ErrorNode
+      |-ErrorNode desc=No handler for FunctionTypeLiteral
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=test
       |-UnionTypeNode
@@ -119,6 +1080,7 @@
               |-NameIdentifierNode name=b
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=test
       |-UnionTypeNode
@@ -130,16 +1092,19 @@
             |-NameIdentifierNode name=_
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=test
-      |-ErrorNode
+      |-ErrorNode desc=No handler for FunctionTypeLiteral
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=test
-      |-ErrorNode
+      |-ErrorNode desc=No handler for FunctionTypeLiteral
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=test
       |-UnionTypeNode
@@ -162,6 +1127,7 @@
               |-NameIdentifierNode name=b
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=test
       |-UnionTypeNode
@@ -184,44 +1150,1582 @@
               |-NameIdentifierNode name=b
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=test
-      |-ErrorNode
+      |-ErrorNode desc=No handler for FunctionTypeLiteral
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=test
-      |-ErrorNode
+      |-ErrorNode desc=No handler for FunctionTypeLiteral
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=test
-      |-ErrorNode
+      |-ErrorNode desc=No handler for FunctionTypeLiteral
       |-FloatLiteralNode value=1
-  |-EnumDirectiveNode
+  |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=Number
-    |-StructDeclarationNode
-      |-NameIdentifierNode name=Infinity
+    |-UnionTypeNode
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Infinity
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=NDet
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Real
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Natural
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=Complex
+  |-TypeDirectiveNode
+    |-NoModifierNode
+    |-NameIdentifierNode name=Infinity
+    |-StructTypeNode
       |-EmptyNode
-    |-StructDeclarationNode
-      |-NameIdentifierNode name=NDet
+  |-ImplDirectiveNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Infinity
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Reference
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=is
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-UnionTypeNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Self
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=ref
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=discriminant
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u32
+            |-MemberNode operator=.^
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Self
+              |-NameIdentifierNode name=discriminant
+          |-BinaryExpressionNode
+            |-FunctionCallNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=ref
+                |-NameIdentifierNode name=getDiscriminant
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+            |-NameIdentifierNode name===
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=discriminant
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=explicit
+        |-EmptyNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=as
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Self
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=ref
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=local.get
+            |-QNameNode
+              |-NameIdentifierNode name=$lhs
+  |-ImplDirectiveNode
+    |-EmptyNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Infinity
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=Infinity$discriminant
+        |-EmptyNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=u64
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=discriminant
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u32
+            |-MemberNode operator=.^
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Infinity
+              |-NameIdentifierNode name=discriminant
+          |-BinaryExpressionNode
+            |-AsExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=discriminant
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=u64
+            |-NameIdentifierNode name=<<
+            |-FloatLiteralNode value=32
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=apply
+        |-EmptyNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Infinity
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=$ref
+            |-EmptyNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=fromPointer
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=system
+                    |-NameIdentifierNode name=core
+                    |-NameIdentifierNode name=memory
+                    |-NameIdentifierNode name=calloc
+                |-AsExpressionNode
+                  |-FloatLiteralNode value=1
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=u32
+                |-MemberNode operator=.^
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=Infinity
+                  |-NameIdentifierNode name=allocationSize
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=$ref
+    |-FunDirectiveNode
       |-EmptyNode
-    |-StructDeclarationNode
-      |-NameIdentifierNode name=Real
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=as
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Infinity
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=UnsafeCPointer
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=call
+            |-QNameNode
+              |-NameIdentifierNode name=$addressFromRef
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$self
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=fromPointer
+        |-ParameterNode
+          |-NameIdentifierNode name=ptr
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Infinity
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.or
+            |-WasmAtomNode symbol=call
+              |-QNameNode
+                |-NameIdentifierNode name=$Infinity$discriminant
+            |-WasmAtomNode symbol=i64.extend_u/i32
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$ptr
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name===
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Infinity
+        |-ParameterNode
+          |-NameIdentifierNode name=b
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Infinity
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.eq
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$a
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$b
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=!=
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Infinity
+        |-ParameterNode
+          |-NameIdentifierNode name=b
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Infinity
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.ne
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$a
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$b
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=store
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ParameterNode
+          |-NameIdentifierNode name=rhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Infinity
+        |-ParameterNode
+          |-NameIdentifierNode name=offset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.store
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$offset
+              |-WasmAtomNode symbol=call
+                |-QNameNode
+                  |-NameIdentifierNode name=$addressFromRef
+                |-WasmAtomNode symbol=local.get
+                  |-QNameNode
+                    |-NameIdentifierNode name=$lhs
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$rhs
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=load
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ParameterNode
+          |-NameIdentifierNode name=offset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Infinity
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$offset
+              |-WasmAtomNode symbol=call
+                |-QNameNode
+                  |-NameIdentifierNode name=$addressFromRef
+                |-WasmAtomNode symbol=local.get
+                  |-QNameNode
+                    |-NameIdentifierNode name=$lhs
+  |-TypeDirectiveNode
+    |-NoModifierNode
+    |-NameIdentifierNode name=NDet
+    |-StructTypeNode
+      |-EmptyNode
+  |-ImplDirectiveNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=NDet
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Reference
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=is
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-UnionTypeNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Self
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=ref
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=discriminant
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u32
+            |-MemberNode operator=.^
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Self
+              |-NameIdentifierNode name=discriminant
+          |-BinaryExpressionNode
+            |-FunctionCallNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=ref
+                |-NameIdentifierNode name=getDiscriminant
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+            |-NameIdentifierNode name===
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=discriminant
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=explicit
+        |-EmptyNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=as
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Self
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=ref
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=local.get
+            |-QNameNode
+              |-NameIdentifierNode name=$lhs
+  |-ImplDirectiveNode
+    |-EmptyNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=NDet
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=NDet$discriminant
+        |-EmptyNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=u64
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=discriminant
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u32
+            |-MemberNode operator=.^
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=NDet
+              |-NameIdentifierNode name=discriminant
+          |-BinaryExpressionNode
+            |-AsExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=discriminant
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=u64
+            |-NameIdentifierNode name=<<
+            |-FloatLiteralNode value=32
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=apply
+        |-EmptyNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=NDet
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=$ref
+            |-EmptyNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=fromPointer
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=system
+                    |-NameIdentifierNode name=core
+                    |-NameIdentifierNode name=memory
+                    |-NameIdentifierNode name=calloc
+                |-AsExpressionNode
+                  |-FloatLiteralNode value=1
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=u32
+                |-MemberNode operator=.^
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=NDet
+                  |-NameIdentifierNode name=allocationSize
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=$ref
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=as
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=NDet
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=UnsafeCPointer
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=call
+            |-QNameNode
+              |-NameIdentifierNode name=$addressFromRef
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$self
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=fromPointer
+        |-ParameterNode
+          |-NameIdentifierNode name=ptr
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=NDet
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.or
+            |-WasmAtomNode symbol=call
+              |-QNameNode
+                |-NameIdentifierNode name=$NDet$discriminant
+            |-WasmAtomNode symbol=i64.extend_u/i32
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$ptr
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name===
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=NDet
+        |-ParameterNode
+          |-NameIdentifierNode name=b
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=NDet
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.eq
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$a
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$b
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=!=
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=NDet
+        |-ParameterNode
+          |-NameIdentifierNode name=b
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=NDet
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.ne
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$a
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$b
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=store
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ParameterNode
+          |-NameIdentifierNode name=rhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=NDet
+        |-ParameterNode
+          |-NameIdentifierNode name=offset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.store
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$offset
+              |-WasmAtomNode symbol=call
+                |-QNameNode
+                  |-NameIdentifierNode name=$addressFromRef
+                |-WasmAtomNode symbol=local.get
+                  |-QNameNode
+                    |-NameIdentifierNode name=$lhs
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$rhs
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=load
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ParameterNode
+          |-NameIdentifierNode name=offset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=NDet
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$offset
+              |-WasmAtomNode symbol=call
+                |-QNameNode
+                  |-NameIdentifierNode name=$addressFromRef
+                |-WasmAtomNode symbol=local.get
+                  |-QNameNode
+                    |-NameIdentifierNode name=$lhs
+  |-TypeDirectiveNode
+    |-NoModifierNode
+    |-NameIdentifierNode name=Real
+    |-StructTypeNode
       |-ParameterNode
         |-NameIdentifierNode name=number
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=f32
-    |-StructDeclarationNode
-      |-NameIdentifierNode name=Natural
+  |-ImplDirectiveNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Real
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Reference
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=is
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-UnionTypeNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Self
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=ref
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=discriminant
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u32
+            |-MemberNode operator=.^
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Self
+              |-NameIdentifierNode name=discriminant
+          |-BinaryExpressionNode
+            |-FunctionCallNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=ref
+                |-NameIdentifierNode name=getDiscriminant
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+            |-NameIdentifierNode name===
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=discriminant
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=explicit
+        |-EmptyNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=as
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Self
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=ref
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=local.get
+            |-QNameNode
+              |-NameIdentifierNode name=$lhs
+  |-ImplDirectiveNode
+    |-EmptyNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Real
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=Real$discriminant
+        |-EmptyNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=u64
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=discriminant
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u32
+            |-MemberNode operator=.^
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Real
+              |-NameIdentifierNode name=discriminant
+          |-BinaryExpressionNode
+            |-AsExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=discriminant
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=u64
+            |-NameIdentifierNode name=<<
+            |-FloatLiteralNode value=32
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=apply
+        |-ParameterNode
+          |-NameIdentifierNode name=number
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=f32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Real
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=$ref
+            |-EmptyNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=fromPointer
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=system
+                    |-NameIdentifierNode name=core
+                    |-NameIdentifierNode name=memory
+                    |-NameIdentifierNode name=calloc
+                |-AsExpressionNode
+                  |-FloatLiteralNode value=1
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=u32
+                |-MemberNode operator=.^
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=Real
+                  |-NameIdentifierNode name=allocationSize
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=property$0
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=$ref
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=number
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=$ref
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=as
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Real
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=UnsafeCPointer
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=call
+            |-QNameNode
+              |-NameIdentifierNode name=$addressFromRef
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$self
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=fromPointer
+        |-ParameterNode
+          |-NameIdentifierNode name=ptr
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Real
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.or
+            |-WasmAtomNode symbol=call
+              |-QNameNode
+                |-NameIdentifierNode name=$Real$discriminant
+            |-WasmAtomNode symbol=i64.extend_u/i32
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$ptr
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name===
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Real
+        |-ParameterNode
+          |-NameIdentifierNode name=b
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Real
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.eq
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$a
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$b
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=!=
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Real
+        |-ParameterNode
+          |-NameIdentifierNode name=b
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Real
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.ne
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$a
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$b
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=getter
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=number
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Real
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=f32
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=property$0
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=self
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=setter
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=number
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Real
+        |-ParameterNode
+          |-NameIdentifierNode name=value
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=f32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=property$0
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=value
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=property$0
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Real
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=f32
+        |-FunctionCallNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=f32
+            |-NameIdentifierNode name=load
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=self
+          |-MemberNode operator=.^
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Real
+            |-NameIdentifierNode name=property$0_offset
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=property$0
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Real
+        |-ParameterNode
+          |-NameIdentifierNode name=value
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=f32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-FunctionCallNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=f32
+            |-NameIdentifierNode name=store
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=value
+          |-MemberNode operator=.^
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Real
+            |-NameIdentifierNode name=property$0_offset
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=store
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ParameterNode
+          |-NameIdentifierNode name=rhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Real
+        |-ParameterNode
+          |-NameIdentifierNode name=offset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.store
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$offset
+              |-WasmAtomNode symbol=call
+                |-QNameNode
+                  |-NameIdentifierNode name=$addressFromRef
+                |-WasmAtomNode symbol=local.get
+                  |-QNameNode
+                    |-NameIdentifierNode name=$lhs
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$rhs
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=load
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ParameterNode
+          |-NameIdentifierNode name=offset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Real
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$offset
+              |-WasmAtomNode symbol=call
+                |-QNameNode
+                  |-NameIdentifierNode name=$addressFromRef
+                |-WasmAtomNode symbol=local.get
+                  |-QNameNode
+                    |-NameIdentifierNode name=$lhs
+  |-TypeDirectiveNode
+    |-NoModifierNode
+    |-NameIdentifierNode name=Natural
+    |-StructTypeNode
       |-ParameterNode
         |-NameIdentifierNode name=number
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=i32
-    |-StructDeclarationNode
-      |-NameIdentifierNode name=Complex
+  |-ImplDirectiveNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Natural
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Reference
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=is
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-UnionTypeNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Self
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=ref
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=discriminant
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u32
+            |-MemberNode operator=.^
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Self
+              |-NameIdentifierNode name=discriminant
+          |-BinaryExpressionNode
+            |-FunctionCallNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=ref
+                |-NameIdentifierNode name=getDiscriminant
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+            |-NameIdentifierNode name===
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=discriminant
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=explicit
+        |-EmptyNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=as
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Self
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=ref
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=local.get
+            |-QNameNode
+              |-NameIdentifierNode name=$lhs
+  |-ImplDirectiveNode
+    |-EmptyNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Natural
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=Natural$discriminant
+        |-EmptyNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=u64
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=discriminant
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u32
+            |-MemberNode operator=.^
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Natural
+              |-NameIdentifierNode name=discriminant
+          |-BinaryExpressionNode
+            |-AsExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=discriminant
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=u64
+            |-NameIdentifierNode name=<<
+            |-FloatLiteralNode value=32
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=apply
+        |-ParameterNode
+          |-NameIdentifierNode name=number
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=i32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Natural
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=$ref
+            |-EmptyNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=fromPointer
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=system
+                    |-NameIdentifierNode name=core
+                    |-NameIdentifierNode name=memory
+                    |-NameIdentifierNode name=calloc
+                |-AsExpressionNode
+                  |-FloatLiteralNode value=1
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=u32
+                |-MemberNode operator=.^
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=Natural
+                  |-NameIdentifierNode name=allocationSize
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=property$0
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=$ref
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=number
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=$ref
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=as
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Natural
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=UnsafeCPointer
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=call
+            |-QNameNode
+              |-NameIdentifierNode name=$addressFromRef
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$self
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=fromPointer
+        |-ParameterNode
+          |-NameIdentifierNode name=ptr
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Natural
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.or
+            |-WasmAtomNode symbol=call
+              |-QNameNode
+                |-NameIdentifierNode name=$Natural$discriminant
+            |-WasmAtomNode symbol=i64.extend_u/i32
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$ptr
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name===
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Natural
+        |-ParameterNode
+          |-NameIdentifierNode name=b
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Natural
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.eq
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$a
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$b
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=!=
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Natural
+        |-ParameterNode
+          |-NameIdentifierNode name=b
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Natural
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.ne
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$a
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$b
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=getter
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=number
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Natural
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=property$0
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=self
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=setter
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=number
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Natural
+        |-ParameterNode
+          |-NameIdentifierNode name=value
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=i32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=property$0
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=value
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=property$0
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Natural
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=i32
+        |-FunctionCallNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=i32
+            |-NameIdentifierNode name=load
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=self
+          |-MemberNode operator=.^
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Natural
+            |-NameIdentifierNode name=property$0_offset
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=property$0
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Natural
+        |-ParameterNode
+          |-NameIdentifierNode name=value
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=i32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-FunctionCallNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=i32
+            |-NameIdentifierNode name=store
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=value
+          |-MemberNode operator=.^
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Natural
+            |-NameIdentifierNode name=property$0_offset
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=store
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ParameterNode
+          |-NameIdentifierNode name=rhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Natural
+        |-ParameterNode
+          |-NameIdentifierNode name=offset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.store
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$offset
+              |-WasmAtomNode symbol=call
+                |-QNameNode
+                  |-NameIdentifierNode name=$addressFromRef
+                |-WasmAtomNode symbol=local.get
+                  |-QNameNode
+                    |-NameIdentifierNode name=$lhs
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$rhs
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=load
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ParameterNode
+          |-NameIdentifierNode name=offset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Natural
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$offset
+              |-WasmAtomNode symbol=call
+                |-QNameNode
+                  |-NameIdentifierNode name=$addressFromRef
+                |-WasmAtomNode symbol=local.get
+                  |-QNameNode
+                    |-NameIdentifierNode name=$lhs
+  |-TypeDirectiveNode
+    |-NoModifierNode
+    |-NameIdentifierNode name=Complex
+    |-StructTypeNode
       |-ParameterNode
         |-NameIdentifierNode name=real
         |-ReferenceNode
@@ -232,3 +2736,579 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=f32
+  |-ImplDirectiveNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Complex
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Reference
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=is
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-UnionTypeNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Self
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=ref
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=discriminant
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u32
+            |-MemberNode operator=.^
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Self
+              |-NameIdentifierNode name=discriminant
+          |-BinaryExpressionNode
+            |-FunctionCallNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=ref
+                |-NameIdentifierNode name=getDiscriminant
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=a
+            |-NameIdentifierNode name===
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=discriminant
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=explicit
+        |-EmptyNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=as
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Self
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=ref
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=local.get
+            |-QNameNode
+              |-NameIdentifierNode name=$lhs
+  |-ImplDirectiveNode
+    |-EmptyNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Complex
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=Complex$discriminant
+        |-EmptyNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=u64
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=discriminant
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=u32
+            |-MemberNode operator=.^
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Complex
+              |-NameIdentifierNode name=discriminant
+          |-BinaryExpressionNode
+            |-AsExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=discriminant
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=u64
+            |-NameIdentifierNode name=<<
+            |-FloatLiteralNode value=32
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=apply
+        |-ParameterNode
+          |-NameIdentifierNode name=real
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=f32
+        |-ParameterNode
+          |-NameIdentifierNode name=imaginary
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=f32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Complex
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=$ref
+            |-EmptyNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=fromPointer
+              |-FunctionCallNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=system
+                    |-NameIdentifierNode name=core
+                    |-NameIdentifierNode name=memory
+                    |-NameIdentifierNode name=calloc
+                |-AsExpressionNode
+                  |-FloatLiteralNode value=1
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=u32
+                |-MemberNode operator=.^
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=Complex
+                  |-NameIdentifierNode name=allocationSize
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=property$0
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=$ref
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=real
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=property$1
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=$ref
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=imaginary
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=$ref
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=as
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Complex
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=UnsafeCPointer
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=call
+            |-QNameNode
+              |-NameIdentifierNode name=$addressFromRef
+            |-WasmAtomNode symbol=get_local
+              |-QNameNode
+                |-NameIdentifierNode name=$self
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=fromPointer
+        |-ParameterNode
+          |-NameIdentifierNode name=ptr
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Complex
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.or
+            |-WasmAtomNode symbol=call
+              |-QNameNode
+                |-NameIdentifierNode name=$Complex$discriminant
+            |-WasmAtomNode symbol=i64.extend_u/i32
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$ptr
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name===
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Complex
+        |-ParameterNode
+          |-NameIdentifierNode name=b
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Complex
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.eq
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$a
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$b
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=!=
+        |-ParameterNode
+          |-NameIdentifierNode name=a
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Complex
+        |-ParameterNode
+          |-NameIdentifierNode name=b
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Complex
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.ne
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$a
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$b
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=getter
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=real
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Complex
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=f32
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=property$0
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=self
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=setter
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=real
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Complex
+        |-ParameterNode
+          |-NameIdentifierNode name=value
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=f32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=property$0
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=value
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=property$0
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Complex
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=f32
+        |-FunctionCallNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=f32
+            |-NameIdentifierNode name=load
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=self
+          |-MemberNode operator=.^
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Complex
+            |-NameIdentifierNode name=property$0_offset
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=property$0
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Complex
+        |-ParameterNode
+          |-NameIdentifierNode name=value
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=f32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-FunctionCallNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=f32
+            |-NameIdentifierNode name=store
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=value
+          |-MemberNode operator=.^
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Complex
+            |-NameIdentifierNode name=property$0_offset
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=getter
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=imaginary
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Complex
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=f32
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=property$1
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=self
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=setter
+        |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=imaginary
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Complex
+        |-ParameterNode
+          |-NameIdentifierNode name=value
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=f32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-FunctionCallNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=property$1
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=value
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=property$1
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Complex
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=f32
+        |-FunctionCallNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=f32
+            |-NameIdentifierNode name=load
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=self
+          |-MemberNode operator=.^
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Complex
+            |-NameIdentifierNode name=property$1_offset
+    |-FunDirectiveNode
+      |-DecoratorNode
+        |-NameIdentifierNode name=inline
+        |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=property$1
+        |-ParameterNode
+          |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Complex
+        |-ParameterNode
+          |-NameIdentifierNode name=value
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=f32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-FunctionCallNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=f32
+            |-NameIdentifierNode name=store
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=self
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=value
+          |-MemberNode operator=.^
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Complex
+            |-NameIdentifierNode name=property$1_offset
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=store
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ParameterNode
+          |-NameIdentifierNode name=rhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Complex
+        |-ParameterNode
+          |-NameIdentifierNode name=offset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.store
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$offset
+              |-WasmAtomNode symbol=call
+                |-QNameNode
+                  |-NameIdentifierNode name=$addressFromRef
+                |-WasmAtomNode symbol=local.get
+                  |-QNameNode
+                    |-NameIdentifierNode name=$lhs
+            |-WasmAtomNode symbol=local.get
+              |-QNameNode
+                |-NameIdentifierNode name=$rhs
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=load
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ParameterNode
+          |-NameIdentifierNode name=offset
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=u32
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Complex
+        |-WasmExpressionNode
+          |-WasmAtomNode symbol=i64.load
+            |-WasmAtomNode symbol=i32.add
+              |-WasmAtomNode symbol=local.get
+                |-QNameNode
+                  |-NameIdentifierNode name=$offset
+              |-WasmAtomNode symbol=call
+                |-QNameNode
+                  |-NameIdentifierNode name=$addressFromRef
+                |-WasmAtomNode symbol=local.get
+                  |-QNameNode
+                    |-NameIdentifierNode name=$lhs

@@ -1,10 +1,12 @@
 |-Document
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=a
       |-EmptyNode
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=b
       |-EmptyNode
@@ -12,11 +14,13 @@
         |-QNameNode
           |-NameIdentifierNode name=a
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=c
       |-EmptyNode
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=d
       |-EmptyNode
@@ -25,6 +29,7 @@
           |-NameIdentifierNode name=c
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=x1
       |-EmptyNode
@@ -46,6 +51,7 @@
           |-EmptyNode
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=x2
       |-EmptyNode

@@ -3,12 +3,13 @@ import src::stringbuilder
 
 enum CodeNode {
   EmptyNode()
-  ErrorNode(astNode: AstNode)
+  ErrorNode(astNode: AstNode, desc: string)
   CodeNodeCons(head: CodeNode, tail: CodeNode)
 
   Document(astNode: AstNode, headDirective: CodeNode)
 
   PrivateModifierNode(astNode: AstNode)
+  NoModifierNode(astNode: AstNode)
 
   NameIdentifierNode(astNode: AstNode, name: string)
   QNameNode(astNode: AstNode, names: CodeNode)
@@ -27,14 +28,14 @@ enum CodeNode {
 
   ImplDirectiveNode(astNode: AstNode, baseImpl: ReferenceNode | EmptyNode, targetImpl: ReferenceNode | ErrorNode, headDirective: CodeNode)
   ImportDirectiveNode(astNode: AstNode, module: QNameNode | ErrorNode, alias: NameIdentifierNode | EmptyNode)
-  FunDirectiveNode(astNode: AstNode, headDecorator: CodeNode, function: FunctionNode | ErrorNode)
+  FunDirectiveNode(astNode: AstNode, headDecorator: CodeNode, modifier: CodeNode, function: FunctionNode | ErrorNode)
   EffectDirectiveNode(astNode: AstNode, effectDecl: EffectDeclarationNode)
   OverloadedFunDirectiveNode(astNode: AstNode, functionName: NameIdentifierNode, headFun: CodeNode)
-  VarDirectiveNode(astNode: AstNode, decl: VarDeclarationNode | EmptyNode)
-  TypeDirectiveNode(astNode: AstNode, name: NameIdentifierNode | ErrorNode, declType: CodeNode)
-  TraitDirectiveNode(astNode: AstNode, name: NameIdentifierNode | ErrorNode, headDirective: CodeNode)
-  EnumDirectiveNode(astNode: AstNode, name: NameIdentifierNode | ErrorNode, headDeclaration: CodeNode)
-  StructDirectiveNode(astNode: AstNode, decl: StructDeclarationNode | ErrorNode)
+  VarDirectiveNode(astNode: AstNode, modifier: CodeNode, decl: VarDeclarationNode | EmptyNode)
+  TypeDirectiveNode(astNode: AstNode, modifier: CodeNode, name: NameIdentifierNode | ErrorNode, declType: CodeNode)
+  TraitDirectiveNode(astNode: AstNode, modifier: CodeNode, name: NameIdentifierNode | ErrorNode, headDirective: CodeNode)
+  EnumDirectiveNode(astNode: AstNode, modifier: CodeNode, name: NameIdentifierNode | ErrorNode, headDeclaration: CodeNode)
+  StructDirectiveNode(astNode: AstNode, modifier: CodeNode, decl: StructDeclarationNode | ErrorNode)
 
   FloatLiteralNode(astNode: AstNode, value: string)
   IntegerLiteralNode(astNode: AstNode, value: string)
@@ -91,6 +92,7 @@ impl CodeNode {
     case is CodeNodeCons -> "CodeNodeCons"
     case is Document -> "Document"
     case is PrivateModifierNode -> "PrivateModifierNode"
+    case is NoModifierNode -> "NoModifierNode"
     case is NameIdentifierNode -> "NameIdentifierNode"
     case is QNameNode -> "QNameNode"
     case is FunctionTypeNode -> "FunctionTypeNode"
@@ -149,310 +151,374 @@ impl CodeNode {
     case is NameLiteralPairNode -> "NameLiteralPairNode"
   }
 
-  fun printWithSeparator(self: CodeNode, sb: StringBuilder, indentation: i32, separator: string): void = {
-    var current = self
-
-    loop {
-      match current {
-        case is CodeNodeCons(head, tail) -> {
-          printWithSeparator(head, sb, indentation, separator)
-          sb.append(separator)
-          printWithSeparator(tail, sb, indentation, separator)
-          current = tail
-          continue
-        }
-        else -> printNode(current, sb, indentation)
-      }
-    }
+  fun printWithSeparator(self: CodeNode, sb: StringBuilder, indentation: i32, separator: string): i32 = {
+    printWithSeparator(self, sb, indentation, separator, 0)
   }
 
-  fun printNode(self: CodeNode, sb: StringBuilder, indentation: i32): void = match self {
-    case is EmptyNode() -> { /* noop */ }
-    case is ErrorNode -> sb.append("/* ERROR */")
-    case is CodeNodeCons(head, tail) -> {
-      sb.append(" ? ")
-      printNode(head, sb, indentation)
-      printNode(tail, sb, indentation)
-    }
-    case is Document(astNode, headDirective) -> {
-      printWithSeparator(headDirective, sb, indentation, "\n")
-    }
-    case is NameIdentifierNode(astNode, name) -> sb.append(name)
-    case is QNameNode(astNode, names) -> {
-      printWithSeparator(names, sb, indentation, "::")
-    }
-    case is FunctionTypeNode(astNode, parameters, returnType, effect) -> "FunctionTypeNode"
-    case is EffectMemberDeclarationNode(astNode) -> "EffectMemberDeclarationNode"
-    case is ReferenceNode(astNode, variable) -> printNode(variable, sb, indentation)
-    case is BlockNode(astNode, headStatement) -> {
-      sb.append("{\n")
-      printWithSeparator(headStatement, sb, indentation + 1, "\n")
-      sb.append("}")
-    }
-    case is MemberNode(astNode, lhs, operator, rhs) -> {
-      printNode(lhs, sb, indentation)
-      sb.append(operator)
-      printNode(rhs, sb, indentation)
-    }
-    case is DecoratorNode(astNode, decoratorName, headArgument) -> {
-      sb.append("#[")
-      printNode(decoratorName, sb, indentation)
-      printWithSeparator(headArgument, sb, indentation, " ")
-      sb.append("]\n")
-    }
-    case is ParameterNode(astNode, parameterName, parameterType) -> {
-      printNode(parameterName, sb, indentation)
-      if (!(parameterType is EmptyNode)) {
-        sb.append(": ")
-        printNode(parameterType, sb, indentation)
+
+  fun printWithSeparator(self: CodeNode, sb: StringBuilder, indentation: i32, separator: string, counter: i32): i32 = {
+    var current = self
+    var ct = counter
+
+    match current {
+      case is CodeNodeCons(head, tail) -> {
+        ct = printWithSeparator(head, sb, indentation, separator, ct)
+        ct = printWithSeparator(tail, sb, indentation, separator, ct)
+        current = tail
+      }
+      else -> {
+        if (ct > 0) {
+          sb.append(separator)
+
+          if (separator == "\n") {
+            sb.append(src::helpers::repeat("  ", indentation))
+          }
+        }
+
+        printNode(current, sb, indentation)
+        ct = ct + 1
       }
     }
-    case is FunctionNode(astNode, functionName, headParameter, returnType, body) -> {
-      sb.append("fun ")
-      printNode(functionName, sb, indentation)
-      sb.append("(")
-      printWithSeparator(headParameter, sb, indentation, ", ")
-      sb.append(")")
-      if (!(returnType is EmptyNode)) {
-        sb.append(": ")
-        printNode(returnType, sb, indentation)
+
+    ct
+  }
+
+  fun printCurlyBlock(head: CodeNode, sb: StringBuilder, indentation: i32): void = {
+    val ind = src::helpers::repeat("  ", indentation)
+
+    sb.append("{\n").append(ind).append("  ")
+    printWithSeparator(head, sb, indentation + 1, "\n" ++ ind ++ "  ")
+    sb.append("\n").append(ind).append("}")
+  }
+
+  fun printNode(self: CodeNode, sb: StringBuilder, indentation: i32): void = {
+    val ind = src::helpers::repeat("  ", indentation)
+
+    match self {
+      case is EmptyNode() -> { /* noop */ }
+      case is ErrorNode(_, desc) -> sb.append("/* ERROR: ").append(desc).append(" */")
+      case is CodeNodeCons(head, tail) -> {
+        printNode(head, sb, indentation)
+        printNode(tail, sb, indentation)
       }
-      if (!(body is EmptyNode)) {
+      case is Document(astNode, headDirective) -> {
+        printWithSeparator(headDirective, sb, indentation, "\n" ++ ind)
+      }
+      case is NameIdentifierNode(astNode, name) -> sb.append(name)
+      case is PrivateModifierNode -> sb.append("private ")
+      case is NoModifierNode -> {/*noop*/}
+      case is InjectedLiteralNode -> sb.append("%injected")
+      case is QNameNode(astNode, names) -> {
+        printWithSeparator(names, sb, indentation, "::")
+      }
+      case is FunctionTypeNode(astNode, parameters, returnType, effect) -> "FunctionTypeNode"
+      case is EffectMemberDeclarationNode(astNode) -> "EffectMemberDeclarationNode"
+      case is ReferenceNode(astNode, variable) -> printNode(variable, sb, indentation)
+      case is BlockNode(astNode, headStatement) -> {
+        printCurlyBlock(headStatement, sb, indentation)
+      }
+      case is MemberNode(astNode, lhs, operator, rhs) -> {
+        printNode(lhs, sb, indentation)
+        sb.append(operator)
+        printNode(rhs, sb, indentation)
+      }
+      case is DecoratorNode(astNode, decoratorName, headArgument) -> {
+        sb.append("#[")
+        printNode(decoratorName, sb, indentation)
+        if (!(headArgument is EmptyNode)) {
+          sb.append(" ")
+        }
+        printWithSeparator(headArgument, sb, indentation, " ")
+        sb.append("]")
+      }
+      case is ParameterNode(astNode, parameterName, parameterType) -> {
+        printNode(parameterName, sb, indentation)
+        if (!(parameterType is EmptyNode)) {
+          sb.append(": ")
+          printNode(parameterType, sb, indentation)
+        }
+      }
+      case is FunctionNode(astNode, functionName, headParameter, returnType, body) -> {
+        sb.append("fun ")
+        printNode(functionName, sb, indentation)
+        sb.append("(")
+        printWithSeparator(headParameter, sb, indentation, ", ")
+        sb.append(")")
+        if (!(returnType is EmptyNode)) {
+          sb.append(": ")
+          printNode(returnType, sb, indentation)
+        }
+        if (!(body is EmptyNode)) {
+          sb.append(" = ")
+          match body {
+            case is BlockNode -> printNode(body, sb, indentation)
+            case is WasmExpressionNode -> printNode(body, sb, indentation)
+            else -> printNode(body, sb, indentation + 1)
+          }
+        }
+      }
+      case is VarDeclarationNode(astNode, isMutable, name, typeDecl, value) -> {
+        sb.append("var ")
+        printNode(name, sb, indentation)
+        if (!(typeDecl is EmptyNode)) {
+          sb.append(": ")
+          printNode(typeDecl, sb, indentation)
+        }
+        if (!(value is EmptyNode)) {
+          sb.append(" = ")
+          printNode(value, sb, indentation)
+        }
+      }
+      case is AssignmentNode(astNode, lhs, rhs) -> {
+        printNode(lhs, sb, indentation)
         sb.append(" = ")
-        printNode(body, sb, indentation)
+        printNode(rhs, sb, indentation)
       }
-    }
-    case is VarDeclarationNode(astNode, isMutable, name, typeDecl, value) -> {
-      sb.append("var ")
-      printNode(name, sb, indentation)
-      if (!(typeDecl is EmptyNode)) {
-        sb.append(": ")
-        printNode(typeDecl, sb, indentation)
+      case is StructDirectiveNode(astNode, modifier, decl) -> {
+        printNode(modifier, sb, indentation)
+        sb.append("struct ")
+        printNode(decl, sb, indentation)
       }
-      if (!(value is EmptyNode)) {
-        sb.append(" = ")
-        printNode(value, sb, indentation)
+      case is ImplDirectiveNode(astNode, baseImpl, targetImpl, headDirective) -> {
+        sb.append("impl ")
+        if (!(baseImpl is EmptyNode)) {
+          printNode(baseImpl, sb, indentation)
+          sb.append(" for ")
+        }
+        printNode(targetImpl, sb, indentation)
+        sb.append(" ")
+        printCurlyBlock(headDirective, sb, indentation)
       }
-    }
-    case is AssignmentNode(astNode, lhs, rhs) -> {
-      printNode(lhs, sb, indentation)
-      sb.append(" = ")
-      printNode(rhs, sb, indentation)
-    }
-    case is ImplDirectiveNode(astNode, baseImpl, targetImpl, headDirective) -> {
-      sb.append("impl ")
-      if (!(baseImpl is EmptyNode)) {
-        printNode(baseImpl, sb, indentation)
-        sb.append(" for ")
-      }
-      printNode(targetImpl, sb, indentation)
-      sb.append("{\n")
-      printWithSeparator(headDirective, sb, indentation + 1, "\n")
-      sb.append("}\n")
-    }
-    case is ImportDirectiveNode(astNode, module, alias) -> {
-      sb.append("import ")
-      printNode(module, sb, indentation)
-      if (!(alias is EmptyNode)) {
-        sb.append(" as ")
-        printNode(alias, sb, indentation)
-      }
-    }
-    case is FunDirectiveNode(astNode, headDecorator, function) -> {
-      if(!(headDecorator is EmptyNode)){
-        printWithSeparator(headDecorator, sb, indentation, "\n")
+      case is ImportDirectiveNode(astNode, module, alias) -> {
+        sb.append("import ")
+        printNode(module, sb, indentation)
+        if (!(alias is EmptyNode)) {
+          sb.append(" as ")
+          printNode(alias, sb, indentation)
+        }
         sb.append("\n")
       }
-      printNode(function, sb, indentation)
-    }
-    case is EffectDirectiveNode(astNode, effectDecl) -> {
-      printNode(effectDecl, sb, indentation)
-    }
-    case is OverloadedFunDirectiveNode(astNode, functionName, headFun) -> {
-      printWithSeparator(headFun, sb, indentation, "\n")
-    }
-    case is VarDirectiveNode(astNode, decl) -> printNode(decl, sb, indentation)
-    case is TypeDirectiveNode(astNode, name, declType) -> {
-      sb.append("type ")
-      printNode(name, sb, indentation)
-      if (!(declType is EmptyNode)) {
-        sb.append(" = ")
-        printNode(declType, sb, indentation)
+      case is FunDirectiveNode(astNode, headDecorator, modifier, function) -> {
+        if(!(headDecorator is EmptyNode)){
+          printWithSeparator(headDecorator, sb, indentation, "\n" ++ ind)
+          sb.append("\n").append(ind)
+        }
+        printNode(modifier, sb, indentation)
+        printNode(function, sb, indentation)
+        sb.append("\n")
       }
-    }
-    case is TraitDirectiveNode(astNode, name, headDirective) -> {
-      sb.append("trait ")
-      printNode(name, sb, indentation)
-      sb.append(" {\n")
-      printWithSeparator(headDirective, sb, indentation + 1, "\n")
-      sb.append("}\n")
-    }
-    case is EnumDirectiveNode(astNode, name, headDeclaration) -> {
-      sb.append("enum ")
-      printNode(name, sb, indentation)
-      sb.append(" {\n")
-      printWithSeparator(headDeclaration, sb, indentation + 1, "\n")
-      sb.append("}\n")
-    }
-
-    case is FloatLiteralNode(astNode, value) -> sb.append(value)
-    case is IntegerLiteralNode(astNode, value) -> sb.append(value)
-    case is HexLiteralNode(astNode, value) -> sb.append(value)
-    case is BooleanLiteralNode(astNode, value) -> sb.append(
-      if(value) "true" else "false"
-    )
-    case is StringLiteralNode(astNode, value) -> sb.append(value)
-
-    case is UnknownExpressionNode(astNode) -> sb.append("???")
-
-    case is StackTypeNode(astNode, headMeta) -> {
-      sb.append("%stack {")
-      printWithSeparator(headMeta, sb, indentation, " ")
-      sb.append("}")
-    }
-    case is StructTypeNode(astNode, headParameter) -> {
-      sb.append("%struct {")
-      printWithSeparator(headParameter, sb, indentation, ", ")
-      sb.append("}")
-    }
-
-    case is AbstractFunctionCallNode(astNode, headArgument, resolvedFunction) -> sb.append("%ABSTRACT FN CALL%")
-    case is InjectedFunctionCallNode(astNode, headArgument, resolvedFunction) -> sb.append("%INJECTED FN CALL%")
-
-    case is FunctionCallNode(astNode, functionNode, headArgument, resolvedFunction) -> {
-      printNode(functionNode, sb, indentation)
-      sb.append("(")
-      printWithSeparator(headArgument, sb, indentation, ", ")
-      sb.append(")")
-    }
-
-    case is ParenExpressionNode(astNode, expression) -> {
-      sb.append("(")
-      printNode(expression, sb, indentation)
-      sb.append(")")
-    }
-
-    case is BinaryExpressionNode(astNode, lhs, operator, rhs) -> {
-      printNode(lhs, sb, indentation)
-      sb.append(" ")
-      printNode(operator, sb, indentation)
-      sb.append(" ")
-      printNode(rhs, sb, indentation)
-    }
-    case is AsExpressionNode(astNode, lhs, rhs) -> {
-      printNode(lhs, sb, indentation)
-      sb.append(" as ")
-      printNode(rhs, sb, indentation)
-    }
-    case is IsExpressionNode(astNode, lhs, rhs) -> {
-      printNode(lhs, sb, indentation)
-      sb.append(" is ")
-      printNode(rhs, sb, indentation)
-    }
-    case is UnaryExpressionNode(astNode, operator, rhs) -> {
-      printNode(operator, sb, indentation)
-      printNode(rhs, sb, indentation)
-    }
-    case is WasmAtomNode(astNode, symbol, headArgument) -> {
-      sb.append("(").append(symbol)
-      printWithSeparator(headArgument, sb, indentation + 1, " ")
-      sb.append(")")
-    }
-    case is WasmExpressionNode(astNode, headAtom) -> {
-      sb.append("%wasm {\n")
-      printWithSeparator(headAtom, sb, indentation + 1, "\n")
-      sb.append("\n}")
-    }
-    case is IfNode(astNode, condition, truePart, falsePart) -> {
-      sb.append("if (")
-      printNode(condition, sb, indentation)
-      sb.append(") ")
-      printNode(truePart, sb, indentation)
-
-      if (!(falsePart is EmptyNode)){
-        sb.append(" else ")
-        printNode(falsePart, sb, indentation)
+      case is EffectDirectiveNode(astNode, effectDecl) -> {
+        printNode(effectDecl, sb, indentation)
       }
-    }
-
-    case is UnionTypeNode(astNode, lhs, rhs) -> {
-      printNode(lhs, sb, indentation)
-      sb.append(" | ")
-      printNode(rhs, sb, indentation)
-    }
-
-    case is IntersectionTypeNode(astNode, lhs, rhs) -> {
-      printNode(lhs, sb, indentation)
-      sb.append(" & ")
-      printNode(rhs, sb, indentation)
-    }
-
-    case is StructDeclarationNode(astNode, name, headParameter) -> {
-      printNode(name, sb, indentation)
-      sb.append("(")
-      printWithSeparator(headParameter, sb, indentation + 1, ", ")
-      sb.append(")")
-    }
-    case is EffectDeclarationNode(astNode, name) -> {
-      printNode(name, sb, indentation)
-    }
-
-    case is PatternMatcherNode(astNode, lhs, headMatcher) -> {
-      sb.append("match ")
-      printNode(lhs, sb, indentation)
-      sb.append(" {\n")
-      printWithSeparator(headMatcher, sb, indentation + 1, "\n")
-      sb.append("\n}")
-    }
-    case is MatchConditionNode(astNode, declaredName, condition, body) -> {
-      sb.append("case")
-      if (!(declaredName is EmptyNode)) {
+      case is OverloadedFunDirectiveNode(astNode, functionName, headFun) -> {
+        printWithSeparator(headFun, sb, indentation, "\n" ++ ind)
+      }
+      case is VarDirectiveNode(astNode, modifier, decl) -> {
+        printNode(modifier, sb, indentation)
+        printNode(decl, sb, indentation)
+      }
+      case is TypeDirectiveNode(astNode, modifier, name, declType) -> {
+        printNode(modifier, sb, indentation)
+        sb.append("type ")
+        printNode(name, sb, indentation)
+        if (!(declType is EmptyNode)) {
+          sb.append(" = ")
+          printNode(declType, sb, indentation)
+        }
+        sb.append("\n")
+      }
+      case is TraitDirectiveNode(astNode, modifier, name, headDirective) -> {
+        printNode(modifier, sb, indentation)
+        sb.append("trait ")
+        printNode(name, sb, indentation)
         sb.append(" ")
-        printNode(declaredName, sb, indentation)
-      }
-      sb.append(" if ")
-      printNode(condition, sb, indentation)
-      sb.append(" -> ")
-      printNode(body, sb, indentation + 1)
-    }
-    case is MatchCaseIsNode(astNode, declaredName, typeReference, headDeconstruct, body) -> {
-      sb.append("case")
-      if (!(declaredName is EmptyNode)) {
+        printCurlyBlock(headDirective, sb, indentation)
+        }
+      case is EnumDirectiveNode(astNode, modifier, name, headDeclaration) -> {
+        printNode(modifier, sb, indentation)
+        sb.append("enum ")
+        printNode(name, sb, indentation)
         sb.append(" ")
-        printNode(declaredName, sb, indentation)
+        printCurlyBlock(headDeclaration, sb, indentation) 
       }
-      sb.append(" is ")
-      printNode(typeReference, sb, indentation)
-      if (!(headDeconstruct is EmptyNode)) {
+      case is NameLiteralPairNode(astNode, name, value) -> {
+        printNode(name, sb, indentation)
+        sb.append("=")
+        printNode(value, sb, indentation)
+      }
+
+      case is FloatLiteralNode(astNode, value) -> sb.append(value)
+      case is IntegerLiteralNode(astNode, value) -> sb.append(value)
+      case is HexLiteralNode(astNode, value) -> sb.append(value)
+      case is BooleanLiteralNode(astNode, value) -> {
+        if (value == true) {
+          sb.append("true")
+        } else {
+          sb.append("false")
+        }
+      }
+      case is StringLiteralNode(astNode, value) -> sb.append(value)
+
+      case is UnknownExpressionNode(astNode) -> sb.append("???")
+
+      case is StackLiteralNode(astNode, headNames) -> {
+        sb.append("%stack {")
+        printWithSeparator(headNames, sb, indentation, " ")
+        sb.append("}\n")
+      }
+      case is StructTypeNode(astNode, headParameter) -> {
+        sb.append("%struct {")
+        printWithSeparator(headParameter, sb, indentation, ", ")
+        sb.append("}\n")
+      }
+
+      case is AbstractFunctionCallNode(astNode, headArgument, resolvedFunction) -> sb.append("%ABSTRACT FN CALL%")
+      case is InjectedFunctionCallNode(astNode, headArgument, resolvedFunction) -> sb.append("%INJECTED FN CALL%")
+
+      case is FunctionCallNode(astNode, functionNode, headArgument, resolvedFunction) -> {
+        printNode(functionNode, sb, indentation)
         sb.append("(")
-        printWithSeparator(headDeconstruct, sb, indentation, ", ")
+        printWithSeparator(headArgument, sb, indentation, ", ")
         sb.append(")")
       }
-      sb.append(" -> ")
-      printNode(body, sb, indentation + 1)
-    }
-    case is MatchLiteralNode(astNode, literal, body) -> {
-      sb.append("case")
-      printNode(literal, sb, indentation)
-      sb.append(" -> ")
-      printNode(body, sb, indentation + 1)
-    }
-    case is MatchDefaultNode(astNode, declaredName, body) -> {
-      sb.append("else")
-      if (!(declaredName is EmptyNode)) {
-        sb.append(" ")
-        printNode(declaredName, sb, indentation)
-      }
-      sb.append(" -> ")
-      printNode(body, sb, indentation + 1)
-    }
 
-    case is LoopNode(astNode, expression) -> {
-      sb.append("loop ")
-      printNode(expression, sb, indentation)
+      case is ParenExpressionNode(astNode, expression) -> {
+        sb.append("(")
+        printNode(expression, sb, indentation)
+        sb.append(")")
+      }
+
+      case is BinaryExpressionNode(astNode, lhs, operator, rhs) -> {
+        printNode(lhs, sb, indentation)
+        sb.append(" ")
+        printNode(operator, sb, indentation)
+        sb.append(" ")
+        printNode(rhs, sb, indentation)
+      }
+      case is AsExpressionNode(astNode, lhs, rhs) -> {
+        printNode(lhs, sb, indentation)
+        sb.append(" as ")
+        printNode(rhs, sb, indentation)
+      }
+      case is IsExpressionNode(astNode, lhs, rhs) -> {
+        printNode(lhs, sb, indentation)
+        sb.append(" is ")
+        printNode(rhs, sb, indentation)
+      }
+      case is UnaryExpressionNode(astNode, operator, rhs) -> {
+        printNode(operator, sb, indentation)
+        printNode(rhs, sb, indentation)
+      }
+      case is WasmAtomNode(astNode, symbol, headArgument) -> {
+        sb.append("(").append(symbol)
+        if (!(headArgument is EmptyNode)) {
+          sb.append(" ")
+        }
+        printWithSeparator(headArgument, sb, indentation + 1, " ")
+        sb.append(")")
+      }
+      case is WasmExpressionNode(astNode, headAtom) -> {
+        sb.append("%wasm ")
+        printCurlyBlock(headAtom, sb, indentation)
+      }
+      case is IfNode(astNode, condition, truePart, falsePart) -> {
+        sb.append("if (")
+        printNode(condition, sb, indentation)
+        sb.append(") ")
+        match truePart {
+          case is BlockNode -> printNode(truePart, sb, indentation)
+          else -> printNode(truePart, sb, indentation + 1)
+        }
+
+        if (!(falsePart is EmptyNode)){
+          sb.append(" else ")
+          match falsePart {
+            case is IfNode -> printNode(falsePart, sb, indentation)
+            case is BlockNode -> printNode(falsePart, sb, indentation)
+            else -> printNode(falsePart, sb, indentation + 1)
+          }
+        }
+      }
+
+      case is UnionTypeNode(astNode, lhs, rhs) -> {
+        printNode(lhs, sb, indentation)
+        sb.append(" | ")
+        printNode(rhs, sb, indentation)
+      }
+
+      case is IntersectionTypeNode(astNode, lhs, rhs) -> {
+        printNode(lhs, sb, indentation)
+        sb.append(" & ")
+        printNode(rhs, sb, indentation)
+      }
+
+      case is StructDeclarationNode(astNode, name, headParameter) -> {
+        printNode(name, sb, indentation)
+        sb.append("(")
+        printWithSeparator(headParameter, sb, indentation + 1, ", ")
+        sb.append(")")
+      }
+      case is EffectDeclarationNode(astNode, name) -> {
+        printNode(name, sb, indentation)
+      }
+
+      case is PatternMatcherNode(astNode, lhs, headMatcher) -> {
+        sb.append("match ")
+        printNode(lhs, sb, indentation)
+        sb.append(" ")
+        printCurlyBlock(headMatcher, sb, indentation)
+      }
+      case is MatchConditionNode(astNode, declaredName, condition, body) -> {
+        sb.append("case")
+        if (!(declaredName is EmptyNode)) {
+          sb.append(" ")
+          printNode(declaredName, sb, indentation)
+        }
+        sb.append(" if ")
+        printNode(condition, sb, indentation)
+        sb.append(" -> ")
+        printNode(body, sb, indentation + 1)
+      }
+      case is MatchCaseIsNode(astNode, declaredName, typeReference, headDeconstruct, body) -> {
+        sb.append("case")
+        if (!(declaredName is EmptyNode)) {
+          sb.append(" ")
+          printNode(declaredName, sb, indentation)
+        }
+        sb.append(" is ")
+        printNode(typeReference, sb, indentation)
+        if (!(headDeconstruct is EmptyNode)) {
+          sb.append("(")
+          printWithSeparator(headDeconstruct, sb, indentation, ", ")
+          sb.append(")")
+        }
+        sb.append(" -> ")
+        printNode(body, sb, indentation + 1)
+      }
+      case is MatchLiteralNode(astNode, literal, body) -> {
+        sb.append("case")
+        printNode(literal, sb, indentation)
+        sb.append(" -> ")
+        printNode(body, sb, indentation + 1)
+      }
+      case is MatchDefaultNode(astNode, declaredName, body) -> {
+        sb.append("else")
+        if (!(declaredName is EmptyNode)) {
+          sb.append(" ")
+          printNode(declaredName, sb, indentation)
+        }
+        sb.append(" -> ")
+        printNode(body, sb, indentation + 1)
+      }
+
+      case is LoopNode(astNode, expression) -> {
+        sb.append("loop ")
+        printNode(expression, sb, indentation)
+      }
+      case is ContinueNode(astNode) -> sb.append("continue")
+      case is BreakNode(astNode) -> sb.append("break")
+      else -> support::env::printf("Dont know how to print " ++ self.nodeName())
     }
-    case is ContinueNode(astNode) -> sb.append("continue")
-    case is BreakNode(astNode) -> sb.append("break")
   }
 
 
@@ -476,6 +542,7 @@ impl CodeNode {
         match self {
           case is NameIdentifierNode(astNode, name) -> sb.append(" name=").append(name)
           case is MemberNode(astNode, lhs, operator, rhs) -> sb.append(" operator=").append(operator)
+          case is ErrorNode(astNode, desc) -> sb.append(" desc=").append(desc)
           case is FloatLiteralNode(astNode, value) -> sb.append(" value=").append(value)
           case is IntegerLiteralNode(astNode, value) -> sb.append(" value=").append(value)
           case is HexLiteralNode(astNode, value) -> sb.append(" value=").append(value)
@@ -557,11 +624,13 @@ impl CodeNode {
             printAst(module, sb, indentation + 1)
             printAst(alias, sb, indentation + 1)
           }
-          case is StructDirectiveNode(astNode, decl) -> {
+          case is StructDirectiveNode(astNode, modifier, decl) -> {
+            printAst(modifier, sb, indentation + 1)
             printAst(decl, sb, indentation + 1)
           }
-          case is FunDirectiveNode(astNode, headDecorator, function) -> {
+          case is FunDirectiveNode(astNode, headDecorator, modifier, function) -> {
             printAst(headDecorator, sb, indentation + 1)
+            printAst(modifier, sb, indentation + 1)
             printAst(function, sb, indentation + 1)
           }
           case is EffectDirectiveNode(astNode, effectDecl) -> {
@@ -571,25 +640,26 @@ impl CodeNode {
             printAst(functionName, sb, indentation + 1)
             printAst(headFun, sb, indentation + 1)
           }
-          case is VarDirectiveNode(astNode, decl) -> {
+          case is VarDirectiveNode(astNode, modifier, decl) -> {
+            printAst(modifier, sb, indentation + 1)
             printAst(decl, sb, indentation + 1)
           }
-          case is TypeDirectiveNode(astNode, name, declType) -> {
+          case is TypeDirectiveNode(astNode, modifier, name, declType) -> {
+            printAst(modifier, sb, indentation + 1)
             printAst(name, sb, indentation + 1)
             printAst(declType, sb, indentation + 1)
           }
-          case is TraitDirectiveNode(astNode, name, headDirective) -> {
+          case is TraitDirectiveNode(astNode, modifier, name, headDirective) -> {
+            printAst(modifier, sb, indentation + 1)
             printAst(name, sb, indentation + 1)
             printAst(headDirective, sb, indentation + 1)
           }
-          case is EnumDirectiveNode(astNode, name, headDeclaration) -> {
+          case is EnumDirectiveNode(astNode, modifier, name, headDeclaration) -> {
+            printAst(modifier, sb, indentation + 1)
             printAst(name, sb, indentation + 1)
             printAst(headDeclaration, sb, indentation + 1)
           }
 
-          case is StackTypeNode(astNode, headMeta) -> {
-            printAst(headMeta, sb, indentation + 1)
-          }
           case is StructTypeNode(astNode, headParameter) -> {
             printAst(headParameter, sb, indentation + 1)
           }

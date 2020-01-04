@@ -102,12 +102,19 @@
             |-IfNode
               |-BinaryExpressionNode
                 |-BinaryExpressionNode
-                  |-ReferenceNode
-                    |-QNameNode
-                      |-NameIdentifierNode name=c
-                  |-NameIdentifierNode name=>=
-                  |-FloatLiteralNode value=0xd800
-                |-ErrorNode
+                  |-BinaryExpressionNode
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=c
+                    |-NameIdentifierNode name=>=
+                    |-FloatLiteralNode value=0xd800
+                  |-NameIdentifierNode name=&&
+                  |-BinaryExpressionNode
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=c
+                    |-NameIdentifierNode name=<=
+                    |-FloatLiteralNode value=0xdbff
                 |-NameIdentifierNode name=&&
                 |-BinaryExpressionNode
                   |-BinaryExpressionNode
@@ -249,6 +256,7 @@
             |-NameIdentifierNode name=len
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=toUtf8
       |-ParameterNode
@@ -319,12 +327,19 @@
             |-IfNode
               |-BinaryExpressionNode
                 |-BinaryExpressionNode
-                  |-ReferenceNode
-                    |-QNameNode
-                      |-NameIdentifierNode name=c
-                  |-NameIdentifierNode name=>=
-                  |-FloatLiteralNode value=0xd800
-                |-ErrorNode
+                  |-BinaryExpressionNode
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=c
+                    |-NameIdentifierNode name=>=
+                    |-FloatLiteralNode value=0xd800
+                  |-NameIdentifierNode name=&&
+                  |-BinaryExpressionNode
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=c
+                    |-NameIdentifierNode name=<=
+                    |-FloatLiteralNode value=0xdbff
                 |-NameIdentifierNode name=&&
                 |-BinaryExpressionNode
                   |-BinaryExpressionNode
@@ -380,14 +395,21 @@
                       |-BinaryExpressionNode
                         |-BinaryExpressionNode
                           |-BinaryExpressionNode
+                            |-BinaryExpressionNode
+                              |-BinaryExpressionNode
+                                |-ReferenceNode
+                                  |-QNameNode
+                                    |-NameIdentifierNode name=c
+                                |-NameIdentifierNode name=-
+                                |-FloatLiteralNode value=0xd800
+                              |-NameIdentifierNode name=*
+                              |-FloatLiteralNode value=0x400
+                            |-NameIdentifierNode name=+
                             |-ReferenceNode
                               |-QNameNode
-                                |-NameIdentifierNode name=c
-                            |-NameIdentifierNode name=-
-                            |-FloatLiteralNode value=0xd800
-                          |-NameIdentifierNode name=*
-                          |-FloatLiteralNode value=0x400
-                        |-ErrorNode
+                                |-NameIdentifierNode name=cn
+                          |-NameIdentifierNode name=-
+                          |-FloatLiteralNode value=0xdc00
                         |-NameIdentifierNode name=+
                         |-FloatLiteralNode value=0x10000
                     |-BinaryExpressionNode
@@ -409,10 +431,15 @@
                           |-FloatLiteralNode value=0xf0
                           |-NameIdentifierNode name=+
                           |-BinaryExpressionNode
-                            |-ReferenceNode
-                              |-QNameNode
-                                |-NameIdentifierNode name=pt
-                            |-ErrorNode
+                            |-BinaryExpressionNode
+                              |-BinaryExpressionNode
+                                |-ReferenceNode
+                                  |-QNameNode
+                                    |-NameIdentifierNode name=pt
+                                |-NameIdentifierNode name=/
+                                |-FloatLiteralNode value=0x40
+                              |-NameIdentifierNode name=/
+                              |-FloatLiteralNode value=0x40
                             |-NameIdentifierNode name=/
                             |-FloatLiteralNode value=0x40
                     |-BinaryExpressionNode
@@ -435,10 +462,12 @@
                           |-NameIdentifierNode name=+
                           |-BinaryExpressionNode
                             |-BinaryExpressionNode
-                              |-ReferenceNode
-                                |-QNameNode
-                                  |-NameIdentifierNode name=pt
-                              |-ErrorNode
+                              |-BinaryExpressionNode
+                                |-ReferenceNode
+                                  |-QNameNode
+                                    |-NameIdentifierNode name=pt
+                                |-NameIdentifierNode name=/
+                                |-FloatLiteralNode value=0x40
                               |-NameIdentifierNode name=/
                               |-FloatLiteralNode value=0x40
                             |-NameIdentifierNode name=%
@@ -535,10 +564,12 @@
                       |-FloatLiteralNode value=0xe0
                       |-NameIdentifierNode name=+
                       |-BinaryExpressionNode
-                        |-ReferenceNode
-                          |-QNameNode
-                            |-NameIdentifierNode name=c
-                        |-ErrorNode
+                        |-BinaryExpressionNode
+                          |-ReferenceNode
+                            |-QNameNode
+                              |-NameIdentifierNode name=c
+                          |-NameIdentifierNode name=/
+                          |-FloatLiteralNode value=0x40
                         |-NameIdentifierNode name=/
                         |-FloatLiteralNode value=0x40
                 |-BinaryExpressionNode

@@ -1,0 +1,32 @@
+|-Document(0,26)
+  |-(AstCons)
+    |-FunctionDirective(0,26)
+      |-(AstCons)
+        |-Decorators(0,0)
+          <Rule0>
+        |-(AstCons)
+          |-PrivateModifier(0,8)
+            <Rule0>
+          |-FunDeclaration(8,26)
+            |-(AstCons)
+              |-NameIdentifier(12,16)
+                |-Identifier=test
+              |-(AstCons)
+                |-TypeParameters(16,16)
+                  <Rule0>
+                |-(AstCons)
+                  |-FunctionParamsList(16,22)
+                    |-(AstCons)
+                      |-(List)(17,20)
+                        |-Parameter(17,20)
+                          |-(AstCons)
+                            |-NameIdentifier(17,18)
+                              |-Identifier=a
+                            |-<SyntaxError>=A type or effect was expected
+                      |-<UNEXPECTED TOKEN>=1
+                  |-(AstCons)
+                    |-ReturnType(23,23)
+                      <Rule0>
+                    |-FunctionBody(23,26)
+                      |-NumberLiteral=2
+    |-EndOfFile=

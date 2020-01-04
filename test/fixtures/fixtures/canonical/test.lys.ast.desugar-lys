@@ -1,0 +1,13 @@
+fun y(): void = {
+  
+}
+
+fun x(a: i32): i32 = {
+  var z = match a {
+    case1 -> 1
+    case2 -> y()
+    else x -> x
+  }
+  z
+}
+

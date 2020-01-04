@@ -1,11 +1,13 @@
 |-Document
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=x
       |-EmptyNode
       |-FloatLiteralNode value=1
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=addOne
       |-EmptyNode
@@ -40,6 +42,7 @@
               |-NameIdentifierNode name=y
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=addOneNoReturn
       |-EmptyNode

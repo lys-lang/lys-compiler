@@ -19,9 +19,9 @@ fun desugar(currentPath: string, currentModule: string, astNode: AstNode, ctx: C
       AstCons(nhead, ntail)
   }
   case node is Node(name, child, start, end) -> match name {
-    case "StructDeclaration" -> {
-      processStruct(currentPath, currentModule, child, ctx)
-    }
+    case "EnumDirective" -> processEnum(currentPath, currentModule, child, ctx)
+    case "StructDeclaration" -> processStruct(currentPath, currentModule, child, ctx)
+    case "StructDirective" -> desugar(currentPath, currentModule, child, ctx)
     else -> {
       val nchild = desugar(currentPath, currentModule, child, ctx)
 
@@ -31,6 +31,51 @@ fun desugar(currentPath: string, currentModule: string, astNode: AstNode, ctx: C
         Node(name, desugar(currentPath, currentModule, child, ctx), start, end)
     }
   }
+}
+
+fun extractStructNames(node: AstNode): AstNode = match node {
+  case node is Node(name, child) ->
+    if ("StructDeclaration" == name)
+      Node("Reference", Node("QName", first(child), 0x0, 0x0), 0x0, 0x0)
+    else
+      Rule0
+  case is AstCons(head, tail) -> list(extractStructNames(head), extractStructNames(tail))
+  else -> Rule0
+}
+
+fun extractStructs(currentPath: string, currentModule: string, node: AstNode, ctx: CompilerContext): AstNode = match node {
+  case node is Node(name, child) ->
+    if ("StructDeclaration" == name)
+      processStruct(currentPath, currentModule, child, ctx)
+    else
+      Rule0
+  case is AstCons(head, tail) -> list(
+    extractStructs(currentPath, currentModule, head, ctx),
+    extractStructs(currentPath, currentModule, tail, ctx)
+  )
+  else -> Rule0
+}
+
+fun processEnum(currentPath: string, currentModule: string, child: AstNode, ctx: CompilerContext): AstNode = {
+  val modifier = first(child)
+  var resto = rest(child)
+  val nameNode = first(resto)
+  val enumMembers = rest(resto)
+
+  val typeName = textOf(nameNode)
+
+  val structTypeNode = Node("UnionType", extractStructNames(enumMembers), 0x0, 0x0)
+
+  val typeDirective = Node("TypeDirective", 
+    AstCons(
+      modifier,
+      AstCons(nameNode, structTypeNode)
+    ),
+    0x0,
+    0x0
+  )
+
+  AstCons(typeDirective, extractStructs(currentPath, currentModule, enumMembers, ctx))
 }
 
 
@@ -137,8 +182,15 @@ fun processStruct(currentPath: string, currentModule: string, child: AstNode, ct
 
   val structTypeNode = Node("StructLiteral", parameters, 0x0, 0x0)
 
-  // TODO: Make typeDirective private if original struct is private
-  val typeDirective = Node("TypeDirective", AstCons(nameNode, structTypeNode), 0x0, 0x0)
+  val typeDirective = Node("TypeDirective",
+    AstCons(
+      // TODO: Make typeDirective private if original struct is private
+      Node("NoModifier", Rule0, 0x0, 0x0),
+      AstCons(nameNode, structTypeNode)
+    ),
+    0x0,
+    0x0
+  )
 
   val sb = StringBuilder()
 

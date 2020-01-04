@@ -1,0 +1,178 @@
+type Color = RedGreen | Blue
+
+type Red = %struct {}
+
+
+impl Red for Reference {
+  #[inline]
+  fun is(a: Self | ref): boolean = {
+    var discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+
+}
+impl Red {
+  #[inline]
+  private fun Red$discriminant(): u64 = {
+    var discriminant: u32 = Red.^discriminant
+    discriminant as u64 << 32
+  }
+
+  #[inline]
+  fun apply(): Red = {
+    var $ref = fromPointer(system::core::memory::calloc(1 as u32, Red.^allocationSize))
+    $ref
+  }
+
+  fun as(self: Red): UnsafeCPointer = %wasm {
+    (call $addressFromRef (get_local $self))
+  }
+
+  private fun fromPointer(ptr: u32): Red = %wasm {
+    (i64.or (call $Red$discriminant) (i64.extend_u/i32 (local.get $ptr)))
+  }
+
+  fun ==(a: Red, b: Red): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: Red, b: Red): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  fun store(lhs: ref, rhs: Red, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Red = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+
+type Green = %struct {}
+
+
+impl Green for Reference {
+  #[inline]
+  fun is(a: Self | ref): boolean = {
+    var discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+
+}
+impl Green {
+  #[inline]
+  private fun Green$discriminant(): u64 = {
+    var discriminant: u32 = Green.^discriminant
+    discriminant as u64 << 32
+  }
+
+  #[inline]
+  fun apply(): Green = {
+    var $ref = fromPointer(system::core::memory::calloc(1 as u32, Green.^allocationSize))
+    $ref
+  }
+
+  fun as(self: Green): UnsafeCPointer = %wasm {
+    (call $addressFromRef (get_local $self))
+  }
+
+  private fun fromPointer(ptr: u32): Green = %wasm {
+    (i64.or (call $Green$discriminant) (i64.extend_u/i32 (local.get $ptr)))
+  }
+
+  fun ==(a: Green, b: Green): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: Green, b: Green): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  fun store(lhs: ref, rhs: Green, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Green = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+
+type Blue = %struct {}
+
+
+impl Blue for Reference {
+  #[inline]
+  fun is(a: Self | ref): boolean = {
+    var discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+
+}
+impl Blue {
+  #[inline]
+  private fun Blue$discriminant(): u64 = {
+    var discriminant: u32 = Blue.^discriminant
+    discriminant as u64 << 32
+  }
+
+  #[inline]
+  fun apply(): Blue = {
+    var $ref = fromPointer(system::core::memory::calloc(1 as u32, Blue.^allocationSize))
+    $ref
+  }
+
+  fun as(self: Blue): UnsafeCPointer = %wasm {
+    (call $addressFromRef (get_local $self))
+  }
+
+  private fun fromPointer(ptr: u32): Blue = %wasm {
+    (i64.or (call $Blue$discriminant) (i64.extend_u/i32 (local.get $ptr)))
+  }
+
+  fun ==(a: Blue, b: Blue): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: Blue, b: Blue): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  fun store(lhs: ref, rhs: Blue, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Blue = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+
+type Red
+
+type Green
+
+type Blue
+
+type Color = Red | GreenBlue
+
