@@ -5,9 +5,8 @@
     |-PrivateModifier(0,8)
       <Rule0>
     |-FunDeclaration(8,108)
-      |-FunctionName(12,16)
-        |-NameIdentifier(12,16)
-          |-Identifier=push
+      |-NameIdentifier(12,16)
+        |-Identifier=push
       |-TypeParameters(16,16)
         <Rule0>
       |-FunctionParamsList(16,54)
@@ -74,9 +73,8 @@
     |-PrivateModifier(168,176)
       <Rule0>
     |-FunDeclaration(176,718)
-      |-FunctionName(180,187)
-        |-NameIdentifier(180,187)
-          |-Identifier=utf8Len
+      |-NameIdentifier(180,187)
+        |-Identifier=utf8Len
       |-TypeParameters(187,187)
         <Rule0>
       |-FunctionParamsList(187,200)
@@ -106,22 +104,21 @@
           |-LoopExpression(243,709)
             |-CodeBlock(248,709)
               |-IfExpression(254,294)
-                |-Condition(257,274)
-                  |-BinaryOpExpression(258,273)
-                    |-Reference(258,259)
-                      |-QName(258,259)
-                        |-NameIdentifier(258,259)
-                          |-Identifier=i
-                    |-Operator=>=
-                    |-AtomicExpression(263,273)
-                      |-Reference(263,266)
-                        |-QName(263,266)
-                          |-NameIdentifier(263,266)
-                            |-Identifier=str
-                      |-MemberExpression(266,273)
-                        |-Operator=.
-                        |-NameIdentifier(267,273)
-                          |-Identifier=length
+                |-BinaryOpExpression(258,273)
+                  |-Reference(258,259)
+                    |-QName(258,259)
+                      |-NameIdentifier(258,259)
+                        |-Identifier=i
+                  |-Operator=>=
+                  |-AtomicExpression(263,273)
+                    |-Reference(263,266)
+                      |-QName(263,266)
+                        |-NameIdentifier(263,266)
+                          |-Identifier=str
+                    |-MemberExpression(266,273)
+                      |-Operator=.
+                      |-NameIdentifier(267,273)
+                        |-Identifier=length
                 |-CodeBlock(275,294)
                   |-BreakStatement(283,288)
                     <Rule0>
@@ -144,43 +141,42 @@
                       |-NameIdentifier(318,321)
                         |-Identifier=u32
               |-IfExpression(327,539)
-                |-Condition(330,384)
-                  |-BinaryOpExpression(331,383)
-                    |-BinaryOpExpression(331,342)
-                      |-Reference(331,332)
-                        |-QName(331,332)
-                          |-NameIdentifier(331,332)
-                            |-Identifier=c
-                      |-Operator=>=
-                      |-NumberLiteral=0xd800
-                    |-Operator=&&
-                    |-BinaryOpExpression(346,357)
-                      |-Reference(346,347)
-                        |-QName(346,347)
-                          |-NameIdentifier(346,347)
-                            |-Identifier=c
-                      |-Operator=<=
-                      |-NumberLiteral=0xdbff
-                    |-Operator=&&
-                    |-BinaryOpExpression(361,383)
-                      |-ParenExpression(361,370)
-                        |-BinaryOpExpression(362,369)
-                          |-Reference(362,363)
-                            |-QName(362,363)
-                              |-NameIdentifier(362,363)
-                                |-Identifier=i
-                          |-Operator=+
-                          |-NumberLiteral=0x1
-                      |-Operator=<
-                      |-AtomicExpression(373,383)
-                        |-Reference(373,376)
-                          |-QName(373,376)
-                            |-NameIdentifier(373,376)
-                              |-Identifier=str
-                        |-MemberExpression(376,383)
-                          |-Operator=.
-                          |-NameIdentifier(377,383)
-                            |-Identifier=length
+                |-BinaryOpExpression(331,383)
+                  |-BinaryOpExpression(331,342)
+                    |-Reference(331,332)
+                      |-QName(331,332)
+                        |-NameIdentifier(331,332)
+                          |-Identifier=c
+                    |-Operator=>=
+                    |-NumberLiteral=0xd800
+                  |-Operator=&&
+                  |-BinaryOpExpression(346,357)
+                    |-Reference(346,347)
+                      |-QName(346,347)
+                        |-NameIdentifier(346,347)
+                          |-Identifier=c
+                    |-Operator=<=
+                    |-NumberLiteral=0xdbff
+                  |-Operator=&&
+                  |-BinaryOpExpression(361,383)
+                    |-ParenExpression(361,370)
+                      |-BinaryOpExpression(362,369)
+                        |-Reference(362,363)
+                          |-QName(362,363)
+                            |-NameIdentifier(362,363)
+                              |-Identifier=i
+                        |-Operator=+
+                        |-NumberLiteral=0x1
+                    |-Operator=<
+                    |-AtomicExpression(373,383)
+                      |-Reference(373,376)
+                        |-QName(373,376)
+                          |-NameIdentifier(373,376)
+                            |-Identifier=str
+                      |-MemberExpression(376,383)
+                        |-Operator=.
+                        |-NameIdentifier(377,383)
+                          |-Identifier=length
                 |-CodeBlock(385,539)
                   |-VarDeclaration(393,421)
                     |-NameIdentifier(397,399)
@@ -204,23 +200,22 @@
                           |-NameIdentifier(418,421)
                             |-Identifier=u32
                   |-IfExpression(429,533)
-                    |-Condition(432,462)
-                      |-BinaryOpExpression(433,461)
-                        |-BinaryOpExpression(433,445)
-                          |-Reference(433,435)
-                            |-QName(433,435)
-                              |-NameIdentifier(433,435)
-                                |-Identifier=cn
-                          |-Operator=>=
-                          |-NumberLiteral=0xdc00
-                        |-Operator=&&
-                        |-BinaryOpExpression(449,461)
-                          |-Reference(449,451)
-                            |-QName(449,451)
-                              |-NameIdentifier(449,451)
-                                |-Identifier=cn
-                          |-Operator=<=
-                          |-NumberLiteral=0xdfff
+                    |-BinaryOpExpression(433,461)
+                      |-BinaryOpExpression(433,445)
+                        |-Reference(433,435)
+                          |-QName(433,435)
+                            |-NameIdentifier(433,435)
+                              |-Identifier=cn
+                        |-Operator=>=
+                        |-NumberLiteral=0xdc00
+                      |-Operator=&&
+                      |-BinaryOpExpression(449,461)
+                        |-Reference(449,451)
+                          |-QName(449,451)
+                            |-NameIdentifier(449,451)
+                              |-Identifier=cn
+                        |-Operator=<=
+                        |-NumberLiteral=0xdfff
                     |-CodeBlock(463,533)
                       |-BinaryOpExpression(473,488)
                         |-Reference(473,476)
@@ -251,14 +246,13 @@
                       |-ContinueStatement(517,525)
                         <Rule0>
               |-IfExpression(545,675)
-                |-Condition(548,560)
-                  |-BinaryOpExpression(549,559)
-                    |-Reference(549,550)
-                      |-QName(549,550)
-                        |-NameIdentifier(549,550)
-                          |-Identifier=c
-                    |-Operator=>=
-                    |-NumberLiteral=0x800
+                |-BinaryOpExpression(549,559)
+                  |-Reference(549,550)
+                    |-QName(549,550)
+                      |-NameIdentifier(549,550)
+                        |-Identifier=c
+                  |-Operator=>=
+                  |-NumberLiteral=0x800
                 |-CodeBlock(561,590)
                   |-BinaryOpExpression(569,584)
                     |-Reference(569,572)
@@ -274,14 +268,13 @@
                       |-Operator=+
                       |-NumberLiteral=0x3
                 |-IfExpression(596,675)
-                  |-Condition(599,610)
-                    |-BinaryOpExpression(600,609)
-                      |-Reference(600,601)
-                        |-QName(600,601)
-                          |-NameIdentifier(600,601)
-                            |-Identifier=c
-                      |-Operator=>=
-                      |-NumberLiteral=0x80
+                  |-BinaryOpExpression(600,609)
+                    |-Reference(600,601)
+                      |-QName(600,601)
+                        |-NameIdentifier(600,601)
+                          |-Identifier=c
+                    |-Operator=>=
+                    |-NumberLiteral=0x80
                   |-CodeBlock(611,640)
                     |-BinaryOpExpression(619,634)
                       |-Reference(619,622)
@@ -333,9 +326,8 @@
     |-Decorators(779,779)
       <Rule0>
     |-FunDeclaration(779,1854)
-      |-FunctionName(783,789)
-        |-NameIdentifier(783,789)
-          |-Identifier=toUtf8
+      |-NameIdentifier(783,789)
+        |-Identifier=toUtf8
       |-TypeParameters(789,789)
         <Rule0>
       |-FunctionParamsList(789,802)
@@ -387,22 +379,21 @@
           |-LoopExpression(884,1782)
             |-CodeBlock(889,1782)
               |-IfExpression(895,935)
-                |-Condition(898,915)
-                  |-BinaryOpExpression(899,914)
-                    |-Reference(899,900)
-                      |-QName(899,900)
-                        |-NameIdentifier(899,900)
-                          |-Identifier=i
-                    |-Operator=>=
-                    |-AtomicExpression(904,914)
-                      |-Reference(904,907)
-                        |-QName(904,907)
-                          |-NameIdentifier(904,907)
-                            |-Identifier=str
-                      |-MemberExpression(907,914)
-                        |-Operator=.
-                        |-NameIdentifier(908,914)
-                          |-Identifier=length
+                |-BinaryOpExpression(899,914)
+                  |-Reference(899,900)
+                    |-QName(899,900)
+                      |-NameIdentifier(899,900)
+                        |-Identifier=i
+                  |-Operator=>=
+                  |-AtomicExpression(904,914)
+                    |-Reference(904,907)
+                      |-QName(904,907)
+                        |-NameIdentifier(904,907)
+                          |-Identifier=str
+                    |-MemberExpression(907,914)
+                      |-Operator=.
+                      |-NameIdentifier(908,914)
+                        |-Identifier=length
                 |-CodeBlock(916,935)
                   |-BreakStatement(924,929)
                     <Rule0>
@@ -425,43 +416,42 @@
                       |-NameIdentifier(959,962)
                         |-Identifier=u32
               |-IfExpression(968,1433)
-                |-Condition(971,1025)
-                  |-BinaryOpExpression(972,1024)
-                    |-BinaryOpExpression(972,983)
-                      |-Reference(972,973)
-                        |-QName(972,973)
-                          |-NameIdentifier(972,973)
-                            |-Identifier=c
-                      |-Operator=>=
-                      |-NumberLiteral=0xd800
-                    |-Operator=&&
-                    |-BinaryOpExpression(987,998)
-                      |-Reference(987,988)
-                        |-QName(987,988)
-                          |-NameIdentifier(987,988)
-                            |-Identifier=c
-                      |-Operator=<=
-                      |-NumberLiteral=0xdbff
-                    |-Operator=&&
-                    |-BinaryOpExpression(1002,1024)
-                      |-ParenExpression(1002,1011)
-                        |-BinaryOpExpression(1003,1010)
-                          |-Reference(1003,1004)
-                            |-QName(1003,1004)
-                              |-NameIdentifier(1003,1004)
-                                |-Identifier=i
-                          |-Operator=+
-                          |-NumberLiteral=0x1
-                      |-Operator=<
-                      |-AtomicExpression(1014,1024)
-                        |-Reference(1014,1017)
-                          |-QName(1014,1017)
-                            |-NameIdentifier(1014,1017)
-                              |-Identifier=str
-                        |-MemberExpression(1017,1024)
-                          |-Operator=.
-                          |-NameIdentifier(1018,1024)
-                            |-Identifier=length
+                |-BinaryOpExpression(972,1024)
+                  |-BinaryOpExpression(972,983)
+                    |-Reference(972,973)
+                      |-QName(972,973)
+                        |-NameIdentifier(972,973)
+                          |-Identifier=c
+                    |-Operator=>=
+                    |-NumberLiteral=0xd800
+                  |-Operator=&&
+                  |-BinaryOpExpression(987,998)
+                    |-Reference(987,988)
+                      |-QName(987,988)
+                        |-NameIdentifier(987,988)
+                          |-Identifier=c
+                    |-Operator=<=
+                    |-NumberLiteral=0xdbff
+                  |-Operator=&&
+                  |-BinaryOpExpression(1002,1024)
+                    |-ParenExpression(1002,1011)
+                      |-BinaryOpExpression(1003,1010)
+                        |-Reference(1003,1004)
+                          |-QName(1003,1004)
+                            |-NameIdentifier(1003,1004)
+                              |-Identifier=i
+                        |-Operator=+
+                        |-NumberLiteral=0x1
+                    |-Operator=<
+                    |-AtomicExpression(1014,1024)
+                      |-Reference(1014,1017)
+                        |-QName(1014,1017)
+                          |-NameIdentifier(1014,1017)
+                            |-Identifier=str
+                      |-MemberExpression(1017,1024)
+                        |-Operator=.
+                        |-NameIdentifier(1018,1024)
+                          |-Identifier=length
                 |-CodeBlock(1026,1433)
                   |-VarDeclaration(1034,1062)
                     |-NameIdentifier(1038,1040)
@@ -485,23 +475,22 @@
                           |-NameIdentifier(1059,1062)
                             |-Identifier=u32
                   |-IfExpression(1070,1427)
-                    |-Condition(1073,1103)
-                      |-BinaryOpExpression(1074,1102)
-                        |-BinaryOpExpression(1074,1086)
-                          |-Reference(1074,1076)
-                            |-QName(1074,1076)
-                              |-NameIdentifier(1074,1076)
-                                |-Identifier=cn
-                          |-Operator=>=
-                          |-NumberLiteral=0xdc00
-                        |-Operator=&&
-                        |-BinaryOpExpression(1090,1102)
-                          |-Reference(1090,1092)
-                            |-QName(1090,1092)
-                              |-NameIdentifier(1090,1092)
-                                |-Identifier=cn
-                          |-Operator=<=
-                          |-NumberLiteral=0xdfff
+                    |-BinaryOpExpression(1074,1102)
+                      |-BinaryOpExpression(1074,1086)
+                        |-Reference(1074,1076)
+                          |-QName(1074,1076)
+                            |-NameIdentifier(1074,1076)
+                              |-Identifier=cn
+                        |-Operator=>=
+                        |-NumberLiteral=0xdc00
+                      |-Operator=&&
+                      |-BinaryOpExpression(1090,1102)
+                        |-Reference(1090,1092)
+                          |-QName(1090,1092)
+                            |-NameIdentifier(1090,1092)
+                              |-Identifier=cn
+                        |-Operator=<=
+                        |-NumberLiteral=0xdfff
                     |-CodeBlock(1104,1427)
                       |-VarDeclaration(1114,1167)
                         |-NameIdentifier(1118,1120)
@@ -678,14 +667,13 @@
                       |-ContinueStatement(1411,1419)
                         <Rule0>
               |-IfExpression(1439,1747)
-                |-Condition(1442,1454)
-                  |-BinaryOpExpression(1443,1453)
-                    |-Reference(1443,1444)
-                      |-QName(1443,1444)
-                        |-NameIdentifier(1443,1444)
-                          |-Identifier=c
-                    |-Operator=>=
-                    |-NumberLiteral=0x800
+                |-BinaryOpExpression(1443,1453)
+                  |-Reference(1443,1444)
+                    |-QName(1443,1444)
+                      |-NameIdentifier(1443,1444)
+                        |-Identifier=c
+                  |-Operator=>=
+                  |-NumberLiteral=0x800
                 |-CodeBlock(1455,1600)
                   |-BinaryOpExpression(1463,1505)
                     |-Reference(1463,1464)
@@ -785,14 +773,13 @@
                             |-Operator=%
                             |-NumberLiteral=0x40
                 |-IfExpression(1606,1747)
-                  |-Condition(1609,1620)
-                    |-BinaryOpExpression(1610,1619)
-                      |-Reference(1610,1611)
-                        |-QName(1610,1611)
-                          |-NameIdentifier(1610,1611)
-                            |-Identifier=c
-                      |-Operator=>=
-                      |-NumberLiteral=0x80
+                  |-BinaryOpExpression(1610,1619)
+                    |-Reference(1610,1611)
+                      |-QName(1610,1611)
+                        |-NameIdentifier(1610,1611)
+                          |-Identifier=c
+                    |-Operator=>=
+                    |-NumberLiteral=0x80
                   |-CodeBlock(1621,1708)
                     |-BinaryOpExpression(1629,1662)
                       |-Reference(1629,1630)

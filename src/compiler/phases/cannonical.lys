@@ -44,18 +44,14 @@ fun processNode(astNode: AstNode): CodeNode = match astNode {
   case is Leaf(token, value) -> processNode(astNode, token, value)
   case is AstCons(head, tail) -> CodeNodeCons(processNode(head), processNode(tail))
   case is Node(name, child) -> match name {
+    case "NameIdentifier" -> processNode(child)
     case "Document" -> Document(astNode, processNode(child))
     case "PrivateModifier" -> PrivateModifierNode(astNode)
     case "ImportDirective" -> ImportDirectiveNode(astNode, fqnOrEmpty(first(child)), nameOrEmpty(second(child)))
-    case "NameIdentifier" -> processNode(child)
     case "QName" -> QNameNode(astNode, processNode(child))
     case "UnionType" -> UnionTypeNode(astNode, processNode(first(child)), processNode(rest(child)))
     case "IntersectionType" -> IntersectionTypeNode(astNode, processNode(first(child)), processNode(rest(child)))
-    case "Type" -> processNode(child)
     case "Reference" -> ReferenceNode(astNode, fqnOrEmpty(child))
-    case "FunctionParamsList" -> processNode(child)
-    case "Decorators" -> processNode(child)
-    case "TraitDeclElements" -> processNode(child)
     case "MatchExpression" -> PatternMatcherNode(astNode, processNode(first(child)), processNode(rest(child)))
     case "TraitDirective" -> {
       TraitDirectiveNode(astNode, nameOrError(first(child)), processNode(second(child)))
@@ -68,11 +64,14 @@ fun processNode(astNode: AstNode): CodeNode = match astNode {
       IfNode(astNode, condition, truePart, falsePart)
     }
 
+    
+    case "Type" -> processNode(child)
+    case "FunctionParamsList" -> processNode(child)
+    case "Decorators" -> processNode(child)
+    case "TraitDeclElements" -> processNode(child)
     case "TypeParameters" -> processNode(child)
     case "ReturnType" -> processNode(child)
     case "FunctionBody" -> processNode(child)
-    case "Condition" -> processNode(child)
-    case "FunctionName" -> processNode(child)
     case "FunOperator" -> processNode(child)
     case "Destructure" -> processNode(child)
     case "ReferencedType" -> processNode(child)

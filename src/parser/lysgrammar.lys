@@ -264,7 +264,7 @@ fun getGrammar(): Grammar = {
           )
         )) ++
 
-        Nominal("Condition", Push("Condition", Wrap(ParenthesesOpen, Cons(WS, n("Expression"), WS), ParenthesesClose))) ++
+        Nominal("Condition", Wrap(ParenthesesOpen, Cons(WS, n("Expression"), WS), ParenthesesClose)) ++
         Nominal("MatchElements", Cut(Or(n("CaseCondition"), n("CaseIs"), n("CaseLiteral"), n("CaseElse")), WS)) ++
 
         Nominal("UnknownExpression", Push("UnknownExpression", t("???"))) ++
@@ -309,7 +309,7 @@ fun getGrammar(): Grammar = {
         Nominal("TypeDeclElements", OneOrMore(Cons(WS, n("StructDeclaration")))) ++
         Nominal("EffectElements", Push("EffectElements", OneOrMore(Cons(WS, n("EffectMemberDeclaration"))))) ++
 
-        Nominal("FunctionName", Push("FunctionName", Or(n("NameIdentifier"), n("FunOperator")))) ++
+        Nominal("FunctionName", Or(n("NameIdentifier"), n("FunOperator"))) ++
 
         Nominal("FunOperator", Push("FunOperator",
           Cons(

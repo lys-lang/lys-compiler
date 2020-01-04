@@ -5,9 +5,8 @@
         |-NameIdentifier(2,8)
           |-Identifier=export
     |-FunDeclaration(10,120)
-      |-FunctionName(14,17)
-        |-NameIdentifier(14,17)
-          |-Identifier=gcd
+      |-NameIdentifier(14,17)
+        |-Identifier=gcd
       |-TypeParameters(17,17)
         <Rule0>
       |-FunctionParamsList(17,33)
@@ -33,17 +32,16 @@
               |-Identifier=i32
       |-FunctionBody(39,120)
         |-IfExpression(43,120)
-          |-Condition(46,53)
-            |-BinaryOpExpression(47,52)
-              |-Reference(47,48)
-                |-QName(47,48)
-                  |-NameIdentifier(47,48)
-                    |-Identifier=x
-              |-Operator=>
-              |-Reference(51,52)
-                |-QName(51,52)
-                  |-NameIdentifier(51,52)
-                    |-Identifier=y
+          |-BinaryOpExpression(47,52)
+            |-Reference(47,48)
+              |-QName(47,48)
+                |-NameIdentifier(47,48)
+                  |-Identifier=x
+            |-Operator=>
+            |-Reference(51,52)
+              |-QName(51,52)
+                |-NameIdentifier(51,52)
+                  |-Identifier=y
           |-AtomicExpression(58,71)
             |-Reference(58,61)
               |-QName(58,61)
@@ -65,17 +63,16 @@
                   |-NameIdentifier(69,70)
                     |-Identifier=y
           |-IfExpression(79,120)
-            |-Condition(82,89)
-              |-BinaryOpExpression(83,88)
-                |-Reference(83,84)
-                  |-QName(83,84)
-                    |-NameIdentifier(83,84)
-                      |-Identifier=x
-                |-Operator=<
-                |-Reference(87,88)
-                  |-QName(87,88)
-                    |-NameIdentifier(87,88)
-                      |-Identifier=y
+            |-BinaryOpExpression(83,88)
+              |-Reference(83,84)
+                |-QName(83,84)
+                  |-NameIdentifier(83,84)
+                    |-Identifier=x
+              |-Operator=<
+              |-Reference(87,88)
+                |-QName(87,88)
+                  |-NameIdentifier(87,88)
+                    |-Identifier=y
             |-AtomicExpression(94,107)
               |-Reference(94,97)
                 |-QName(94,97)
@@ -106,9 +103,8 @@
         |-NameIdentifier(124,130)
           |-Identifier=export
     |-FunDeclaration(132,160)
-      |-FunctionName(136,140)
-        |-NameIdentifier(136,140)
-          |-Identifier=test
+      |-NameIdentifier(136,140)
+        |-Identifier=test
       |-TypeParameters(140,140)
         <Rule0>
       |-FunctionParamsList(140,142)
@@ -134,9 +130,8 @@
         |-NameIdentifier(182,188)
           |-Identifier=export
     |-FunDeclaration(190,279)
-      |-FunctionName(194,207)
-        |-NameIdentifier(194,207)
-          |-Identifier=ifWithoutElse
+      |-NameIdentifier(194,207)
+        |-Identifier=ifWithoutElse
       |-TypeParameters(207,207)
         <Rule0>
       |-FunctionParamsList(207,215)
@@ -164,14 +159,13 @@
                   |-Identifier=i32
             |-NumberLiteral=1
           |-IfExpression(245,272)
-            |-Condition(248,256)
-              |-BinaryOpExpression(249,255)
-                |-Reference(249,250)
-                  |-QName(249,250)
-                    |-NameIdentifier(249,250)
-                      |-Identifier=x
-                |-Operator===
-                |-NumberLiteral=1
+            |-BinaryOpExpression(249,255)
+              |-Reference(249,250)
+                |-QName(249,250)
+                  |-NameIdentifier(249,250)
+                    |-Identifier=x
+              |-Operator===
+              |-NumberLiteral=1
             |-CodeBlock(257,272)
               |-BinaryOpExpression(263,268)
                 |-Reference(263,264)

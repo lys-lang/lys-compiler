@@ -122,9 +122,8 @@
     |-PrivateModifier(454,462)
       <Rule0>
     |-FunDeclaration(462,542)
-      |-FunctionName(466,476)
-        |-NameIdentifier(466,476)
-          |-Identifier=growMemory
+      |-NameIdentifier(466,476)
+        |-Identifier=growMemory
       |-TypeParameters(476,476)
         <Rule0>
       |-FunctionParamsList(476,488)
@@ -158,9 +157,8 @@
     |-PrivateModifier(542,550)
       <Rule0>
     |-FunDeclaration(550,607)
-      |-FunctionName(554,567)
-        |-NameIdentifier(554,567)
-          |-Identifier=currentMemory
+      |-NameIdentifier(554,567)
+        |-Identifier=currentMemory
       |-TypeParameters(567,567)
         <Rule0>
       |-FunctionParamsList(567,569)
@@ -182,9 +180,8 @@
     |-PrivateModifier(607,615)
       <Rule0>
     |-FunDeclaration(615,665)
-      |-FunctionName(619,622)
-        |-NameIdentifier(619,622)
-          |-Identifier=max
+      |-NameIdentifier(619,622)
+        |-Identifier=max
       |-TypeParameters(622,622)
         <Rule0>
       |-FunctionParamsList(622,638)
@@ -210,17 +207,16 @@
               |-Identifier=i32
       |-FunctionBody(644,665)
         |-IfExpression(646,665)
-          |-Condition(649,656)
-            |-BinaryOpExpression(650,655)
-              |-Reference(650,651)
-                |-QName(650,651)
-                  |-NameIdentifier(650,651)
-                    |-Identifier=a
-              |-Operator=>
-              |-Reference(654,655)
-                |-QName(654,655)
-                  |-NameIdentifier(654,655)
-                    |-Identifier=b
+          |-BinaryOpExpression(650,655)
+            |-Reference(650,651)
+              |-QName(650,651)
+                |-NameIdentifier(650,651)
+                  |-Identifier=a
+            |-Operator=>
+            |-Reference(654,655)
+              |-QName(654,655)
+                |-NameIdentifier(654,655)
+                  |-Identifier=b
           |-Reference(657,658)
             |-QName(657,658)
               |-NameIdentifier(657,658)
@@ -235,9 +231,8 @@
         |-NameIdentifier(669,675)
           |-Identifier=inline
     |-FunDeclaration(677,1004)
-      |-FunctionName(681,691)
-        |-NameIdentifier(681,691)
-          |-Identifier=allocBytes
+      |-NameIdentifier(681,691)
+        |-Identifier=allocBytes
       |-TypeParameters(691,691)
         <Rule0>
       |-FunctionParamsList(691,702)
@@ -357,9 +352,8 @@
         |-NameIdentifier(1035,1043)
           |-Identifier=explicit
     |-FunDeclaration(1045,1188)
-      |-FunctionName(1049,1055)
-        |-NameIdentifier(1049,1055)
-          |-Identifier=calloc
+      |-NameIdentifier(1049,1055)
+        |-Identifier=calloc
       |-TypeParameters(1055,1055)
         <Rule0>
       |-FunctionParamsList(1055,1086)
@@ -434,9 +428,8 @@
     |-Decorators(1190,1190)
       <Rule0>
     |-FunDeclaration(1190,1768)
-      |-FunctionName(1194,1200)
-        |-NameIdentifier(1194,1200)
-          |-Identifier=malloc
+      |-NameIdentifier(1194,1200)
+        |-Identifier=malloc
       |-TypeParameters(1200,1200)
         <Rule0>
       |-FunctionParamsList(1200,1211)
@@ -456,27 +449,25 @@
       |-FunctionBody(1217,1768)
         |-CodeBlock(1219,1768)
           |-IfExpression(1223,1766)
-            |-Condition(1226,1236)
-              |-BinaryOpExpression(1227,1235)
-                |-Reference(1227,1231)
-                  |-QName(1227,1231)
-                    |-NameIdentifier(1227,1231)
-                      |-Identifier=size
-                |-Operator=>
-                |-NumberLiteral=0
+            |-BinaryOpExpression(1227,1235)
+              |-Reference(1227,1231)
+                |-QName(1227,1231)
+                  |-NameIdentifier(1227,1231)
+                    |-Identifier=size
+              |-Operator=>
+              |-NumberLiteral=0
             |-CodeBlock(1237,1749)
               |-IfExpression(1243,1288)
-                |-Condition(1246,1266)
-                  |-BinaryOpExpression(1247,1265)
-                    |-Reference(1247,1251)
-                      |-QName(1247,1251)
-                        |-NameIdentifier(1247,1251)
-                          |-Identifier=size
-                    |-Operator=>
-                    |-Reference(1254,1265)
-                      |-QName(1254,1265)
-                        |-NameIdentifier(1254,1265)
-                          |-Identifier=MAX_SIZE_32
+                |-BinaryOpExpression(1247,1265)
+                  |-Reference(1247,1251)
+                    |-QName(1247,1251)
+                      |-NameIdentifier(1247,1251)
+                        |-Identifier=size
+                  |-Operator=>
+                  |-Reference(1254,1265)
+                    |-QName(1254,1265)
+                      |-NameIdentifier(1254,1265)
+                        |-Identifier=MAX_SIZE_32
                 |-CodeBlock(1267,1288)
                   |-AtomicExpression(1275,1282)
                     |-Reference(1275,1280)
@@ -530,20 +521,19 @@
                   |-CallArguments(1396,1398)
                     <Rule0>
               |-IfExpression(1403,1717)
-                |-Condition(1406,1434)
-                  |-BinaryOpExpression(1407,1433)
-                    |-Reference(1407,1413)
-                      |-QName(1407,1413)
-                        |-NameIdentifier(1407,1413)
-                          |-Identifier=newPtr
-                    |-Operator=>
-                    |-BinaryOpExpression(1416,1433)
-                      |-Reference(1416,1427)
-                        |-QName(1416,1427)
-                          |-NameIdentifier(1416,1427)
-                            |-Identifier=pagesBefore
-                      |-Operator=<<
-                      |-NumberLiteral=16
+                |-BinaryOpExpression(1407,1433)
+                  |-Reference(1407,1413)
+                    |-QName(1407,1413)
+                      |-NameIdentifier(1407,1413)
+                        |-Identifier=newPtr
+                  |-Operator=>
+                  |-BinaryOpExpression(1416,1433)
+                    |-Reference(1416,1427)
+                      |-QName(1416,1427)
+                        |-NameIdentifier(1416,1427)
+                          |-Identifier=pagesBefore
+                    |-Operator=<<
+                    |-NumberLiteral=16
                 |-CodeBlock(1435,1717)
                   |-ValDeclaration(1443,1503)
                     |-NameIdentifier(1447,1458)
@@ -588,36 +578,34 @@
                             |-NameIdentifier(1545,1556)
                               |-Identifier=pagesNeeded
                   |-IfExpression(1581,1711)
-                    |-Condition(1584,1613)
-                      |-BinaryOpExpression(1585,1612)
-                        |-AtomicExpression(1585,1608)
-                          |-Reference(1585,1595)
-                            |-QName(1585,1595)
-                              |-NameIdentifier(1585,1595)
-                                |-Identifier=growMemory
-                          |-CallArguments(1595,1608)
-                            |-Reference(1596,1607)
-                              |-QName(1596,1607)
-                                |-NameIdentifier(1596,1607)
-                                  |-Identifier=pagesWanted
-                        |-Operator=<
-                        |-NumberLiteral=0
+                    |-BinaryOpExpression(1585,1612)
+                      |-AtomicExpression(1585,1608)
+                        |-Reference(1585,1595)
+                          |-QName(1585,1595)
+                            |-NameIdentifier(1585,1595)
+                              |-Identifier=growMemory
+                        |-CallArguments(1595,1608)
+                          |-Reference(1596,1607)
+                            |-QName(1596,1607)
+                              |-NameIdentifier(1596,1607)
+                                |-Identifier=pagesWanted
+                      |-Operator=<
+                      |-NumberLiteral=0
                     |-CodeBlock(1614,1711)
                       |-IfExpression(1624,1703)
-                        |-Condition(1627,1656)
-                          |-BinaryOpExpression(1628,1655)
-                            |-AtomicExpression(1628,1651)
-                              |-Reference(1628,1638)
-                                |-QName(1628,1638)
-                                  |-NameIdentifier(1628,1638)
-                                    |-Identifier=growMemory
-                              |-CallArguments(1638,1651)
-                                |-Reference(1639,1650)
-                                  |-QName(1639,1650)
-                                    |-NameIdentifier(1639,1650)
-                                      |-Identifier=pagesNeeded
-                            |-Operator=<
-                            |-NumberLiteral=0
+                        |-BinaryOpExpression(1628,1655)
+                          |-AtomicExpression(1628,1651)
+                            |-Reference(1628,1638)
+                              |-QName(1628,1638)
+                                |-NameIdentifier(1628,1638)
+                                  |-Identifier=growMemory
+                            |-CallArguments(1638,1651)
+                              |-Reference(1639,1650)
+                                |-QName(1639,1650)
+                                  |-NameIdentifier(1639,1650)
+                                    |-Identifier=pagesNeeded
+                          |-Operator=<
+                          |-NumberLiteral=0
                         |-CodeBlock(1657,1703)
                           |-AtomicExpression(1669,1676)
                             |-Reference(1669,1674)
@@ -646,9 +634,8 @@
     |-Decorators(1770,1770)
       <Rule0>
     |-FunDeclaration(1770,1810)
-      |-FunctionName(1774,1778)
-        |-NameIdentifier(1774,1778)
-          |-Identifier=free
+      |-NameIdentifier(1774,1778)
+        |-Identifier=free
       |-TypeParameters(1778,1778)
         <Rule0>
       |-FunctionParamsList(1778,1788)
@@ -672,9 +659,8 @@
     |-Decorators(1812,1812)
       <Rule0>
     |-FunDeclaration(1812,1924)
-      |-FunctionName(1816,1828)
-        |-NameIdentifier(1816,1828)
-          |-Identifier=discriminant
+      |-NameIdentifier(1816,1828)
+        |-Identifier=discriminant
       |-TypeParameters(1828,1828)
         <Rule0>
       |-FunctionParamsList(1828,1836)
@@ -715,9 +701,8 @@
     |-Decorators(1924,1924)
       <Rule0>
     |-FunDeclaration(1924,2384)
-      |-FunctionName(1928,1934)
-        |-NameIdentifier(1928,1934)
-          |-Identifier=memcpy
+      |-NameIdentifier(1928,1934)
+        |-Identifier=memcpy
       |-TypeParameters(1934,1934)
         <Rule0>
       |-FunctionParamsList(1934,1964)
@@ -897,9 +882,8 @@
     |-Decorators(2384,2384)
       <Rule0>
     |-FunDeclaration(2384,2787)
-      |-FunctionName(2388,2394)
-        |-NameIdentifier(2388,2394)
-          |-Identifier=memset
+      |-NameIdentifier(2388,2394)
+        |-Identifier=memset
       |-TypeParameters(2394,2394)
         <Rule0>
       |-FunctionParamsList(2394,2428)
@@ -1076,9 +1060,8 @@
             |-NameIdentifier(2833,2839)
               |-Identifier=getter
         |-FunDeclaration(2843,2893)
-          |-FunctionName(2847,2853)
-            |-NameIdentifier(2847,2853)
-              |-Identifier=length
+          |-NameIdentifier(2847,2853)
+            |-Identifier=length
           |-TypeParameters(2853,2853)
             <Rule0>
           |-FunctionParamsList(2853,2866)
@@ -1118,9 +1101,8 @@
             |-NameIdentifier(2899,2905)
               |-Identifier=setter
         |-FunDeclaration(2909,2967)
-          |-FunctionName(2913,2919)
-            |-NameIdentifier(2913,2919)
-              |-Identifier=length
+          |-NameIdentifier(2913,2919)
+            |-Identifier=length
           |-TypeParameters(2919,2919)
             <Rule0>
           |-FunctionParamsList(2919,2940)
@@ -1165,9 +1147,8 @@
         |-Decorators(2971,2971)
           <Rule0>
         |-FunDeclaration(2971,3345)
-          |-FunctionName(2975,2976)
-            |-FunOperator(2975,2976)
-              |-Operator=+
+          |-FunOperator(2975,2976)
+            |-Operator=+
           |-TypeParameters(2976,2976)
             <Rule0>
           |-FunctionParamsList(2976,3002)
@@ -1352,9 +1333,8 @@
         |-Decorators(3349,3349)
           <Rule0>
         |-FunDeclaration(3349,3483)
-          |-FunctionName(3353,3359)
-            |-NameIdentifier(3353,3359)
-              |-Identifier=charAt
+          |-NameIdentifier(3353,3359)
+            |-Identifier=charAt
           |-TypeParameters(3359,3359)
             <Rule0>
           |-FunctionParamsList(3359,3381)
@@ -1381,22 +1361,21 @@
           |-FunctionBody(3387,3483)
             |-CodeBlock(3389,3483)
               |-IfExpression(3395,3437)
-                |-Condition(3398,3415)
-                  |-BinaryOpExpression(3399,3414)
-                    |-Reference(3399,3401)
-                      |-QName(3399,3401)
-                        |-NameIdentifier(3399,3401)
-                          |-Identifier=at
-                    |-Operator=>
-                    |-AtomicExpression(3404,3414)
-                      |-Reference(3404,3407)
-                        |-QName(3404,3407)
-                          |-NameIdentifier(3404,3407)
-                            |-Identifier=str
-                      |-MemberExpression(3407,3414)
-                        |-Operator=.
-                        |-NameIdentifier(3408,3414)
-                          |-Identifier=length
+                |-BinaryOpExpression(3399,3414)
+                  |-Reference(3399,3401)
+                    |-QName(3399,3401)
+                      |-NameIdentifier(3399,3401)
+                        |-Identifier=at
+                  |-Operator=>
+                  |-AtomicExpression(3404,3414)
+                    |-Reference(3404,3407)
+                      |-QName(3404,3407)
+                        |-NameIdentifier(3404,3407)
+                          |-Identifier=str
+                    |-MemberExpression(3407,3414)
+                      |-Operator=.
+                      |-NameIdentifier(3408,3414)
+                        |-Identifier=length
                 |-CodeBlock(3416,3437)
                   |-AtomicExpression(3424,3431)
                     |-Reference(3424,3429)
@@ -1463,9 +1442,8 @@
         |-Decorators(3530,3530)
           <Rule0>
         |-FunDeclaration(3530,3546)
-          |-FunctionName(3534,3535)
-            |-NameIdentifier(3534,3535)
-              |-Identifier=a
+          |-NameIdentifier(3534,3535)
+            |-Identifier=a
           |-TypeParameters(3535,3535)
             <Rule0>
           |-FunctionParamsList(3535,3537)
@@ -1482,9 +1460,8 @@
     |-Decorators(3550,3550)
       <Rule0>
     |-FunDeclaration(3550,3574)
-      |-FunctionName(3554,3558)
-        |-NameIdentifier(3554,3558)
-          |-Identifier=main
+      |-NameIdentifier(3554,3558)
+        |-Identifier=main
       |-TypeParameters(3558,3558)
         <Rule0>
       |-FunctionParamsList(3558,3560)
@@ -1523,9 +1500,8 @@
         |-Decorators(3612,3612)
           <Rule0>
         |-FunDeclaration(3612,3628)
-          |-FunctionName(3616,3617)
-            |-NameIdentifier(3616,3617)
-              |-Identifier=x
+          |-NameIdentifier(3616,3617)
+            |-Identifier=x
           |-TypeParameters(3617,3617)
             <Rule0>
           |-FunctionParamsList(3617,3619)
@@ -1542,9 +1518,8 @@
     |-Decorators(3632,3632)
       <Rule0>
     |-FunDeclaration(3632,3649)
-      |-FunctionName(3636,3637)
-        |-NameIdentifier(3636,3637)
-          |-Identifier=x
+      |-NameIdentifier(3636,3637)
+        |-Identifier=x
       |-TypeParameters(3637,3637)
         <Rule0>
       |-FunctionParamsList(3637,3640)
@@ -1563,9 +1538,8 @@
     |-Decorators(3650,3650)
       <Rule0>
     |-FunDeclaration(3650,3684)
-      |-FunctionName(3654,3656)
-        |-NameIdentifier(3654,3656)
-          |-Identifier=x1
+      |-NameIdentifier(3654,3656)
+        |-Identifier=x1
       |-TypeParameters(3656,3656)
         <Rule0>
       |-FunctionParamsList(3656,3658)
@@ -1594,9 +1568,8 @@
     |-Decorators(3685,3685)
       <Rule0>
     |-FunDeclaration(3685,3704)
-      |-FunctionName(3689,3691)
-        |-NameIdentifier(3689,3691)
-          |-Identifier=x2
+      |-NameIdentifier(3689,3691)
+        |-Identifier=x2
       |-TypeParameters(3691,3691)
         <Rule0>
       |-FunctionParamsList(3691,3694)
@@ -1620,9 +1593,8 @@
     |-Decorators(3705,3705)
       <Rule0>
     |-FunDeclaration(3705,3724)
-      |-FunctionName(3709,3711)
-        |-NameIdentifier(3709,3711)
-          |-Identifier=x3
+      |-NameIdentifier(3709,3711)
+        |-Identifier=x3
       |-TypeParameters(3711,3711)
         <Rule0>
       |-FunctionParamsList(3711,3714)
@@ -1646,9 +1618,8 @@
     |-Decorators(3725,3725)
       <Rule0>
     |-FunDeclaration(3725,3744)
-      |-FunctionName(3729,3731)
-        |-NameIdentifier(3729,3731)
-          |-Identifier=x4
+      |-NameIdentifier(3729,3731)
+        |-Identifier=x4
       |-TypeParameters(3731,3731)
         <Rule0>
       |-FunctionParamsList(3731,3733)
@@ -1667,9 +1638,8 @@
     |-Decorators(3745,3745)
       <Rule0>
     |-FunDeclaration(3745,3770)
-      |-FunctionName(3749,3751)
-        |-NameIdentifier(3749,3751)
-          |-Identifier=x5
+      |-NameIdentifier(3749,3751)
+        |-Identifier=x5
       |-TypeParameters(3751,3751)
         <Rule0>
       |-FunctionParamsList(3751,3753)
@@ -1698,9 +1668,8 @@
     |-Decorators(3771,3771)
       <Rule0>
     |-FunDeclaration(3771,3796)
-      |-FunctionName(3775,3777)
-        |-NameIdentifier(3775,3777)
-          |-Identifier=x6
+      |-NameIdentifier(3775,3777)
+        |-Identifier=x6
       |-TypeParameters(3777,3777)
         <Rule0>
       |-FunctionParamsList(3777,3779)
@@ -1766,9 +1735,8 @@
     |-Decorators(3898,3898)
       <Rule0>
     |-FunDeclaration(3898,4362)
-      |-FunctionName(3902,3913)
-        |-NameIdentifier(3902,3913)
-          |-Identifier=testPassing
+      |-NameIdentifier(3902,3913)
+        |-Identifier=testPassing
       |-TypeParameters(3913,3913)
         <Rule0>
       |-FunctionParamsList(3913,3915)
@@ -1988,9 +1956,8 @@
     |-Decorators(4366,4366)
       <Rule0>
     |-FunDeclaration(4366,4457)
-      |-FunctionName(4370,4376)
-        |-NameIdentifier(4370,4376)
-          |-Identifier=testFn
+      |-NameIdentifier(4370,4376)
+        |-Identifier=testFn
       |-TypeParameters(4376,4376)
         <Rule0>
       |-FunctionParamsList(4376,4378)
@@ -2023,23 +1990,21 @@
                   |-Operator=+
                   |-NumberLiteral=1
               |-IfExpression(4428,4451)
-                |-Condition(4431,4439)
-                  |-BinaryOpExpression(4432,4438)
-                    |-Reference(4432,4433)
-                      |-QName(4432,4433)
-                        |-NameIdentifier(4432,4433)
-                          |-Identifier=x
-                    |-Operator=>
-                    |-NumberLiteral=10
+                |-BinaryOpExpression(4432,4438)
+                  |-Reference(4432,4433)
+                    |-QName(4432,4433)
+                      |-NameIdentifier(4432,4433)
+                        |-Identifier=x
+                  |-Operator=>
+                  |-NumberLiteral=10
                 |-BreakStatement(4446,4451)
                   <Rule0>
   |-FunctionDirective(4459,4536)
     |-Decorators(4459,4459)
       <Rule0>
     |-FunDeclaration(4459,4536)
-      |-FunctionName(4463,4470)
-        |-NameIdentifier(4463,4470)
-          |-Identifier=testFn2
+      |-NameIdentifier(4463,4470)
+        |-Identifier=testFn2
       |-TypeParameters(4470,4470)
         <Rule0>
       |-FunctionParamsList(4470,4472)
@@ -2104,9 +2069,8 @@
     |-Decorators(4576,4576)
       <Rule0>
     |-FunDeclaration(4576,4664)
-      |-FunctionName(4580,4584)
-        |-NameIdentifier(4580,4584)
-          |-Identifier=main
+      |-NameIdentifier(4580,4584)
+        |-Identifier=main
       |-TypeParameters(4584,4584)
         <Rule0>
       |-FunctionParamsList(4584,4598)
@@ -2195,9 +2159,8 @@
     |-Decorators(4724,4724)
       <Rule0>
     |-FunDeclaration(4724,4793)
-      |-FunctionName(4728,4731)
-        |-NameIdentifier(4728,4731)
-          |-Identifier=gt0
+      |-NameIdentifier(4728,4731)
+        |-Identifier=gt0
       |-TypeParameters(4731,4731)
         <Rule0>
       |-FunctionParamsList(4731,4739)
@@ -2216,14 +2179,13 @@
               |-Identifier=Boolean
       |-FunctionBody(4749,4793)
         |-IfExpression(4753,4793)
-          |-Condition(4756,4763)
-            |-BinaryOpExpression(4757,4762)
-              |-Reference(4757,4758)
-                |-QName(4757,4758)
-                  |-NameIdentifier(4757,4758)
-                    |-Identifier=x
-              |-Operator=>
-              |-NumberLiteral=0
+          |-BinaryOpExpression(4757,4762)
+            |-Reference(4757,4758)
+              |-QName(4757,4758)
+                |-NameIdentifier(4757,4758)
+                  |-Identifier=x
+            |-Operator=>
+            |-NumberLiteral=0
           |-AtomicExpression(4768,4774)
             |-Reference(4768,4772)
               |-QName(4768,4772)
@@ -2242,9 +2204,8 @@
     |-Decorators(4795,4795)
       <Rule0>
     |-FunDeclaration(4795,4889)
-      |-FunctionName(4799,4805)
-        |-NameIdentifier(4799,4805)
-          |-Identifier=isTrue
+      |-NameIdentifier(4799,4805)
+        |-Identifier=isTrue
       |-TypeParameters(4805,4805)
         <Rule0>
       |-FunctionParamsList(4805,4817)
@@ -2290,9 +2251,8 @@
     |-Decorators(4891,4891)
       <Rule0>
     |-FunDeclaration(4891,4937)
-      |-FunctionName(4895,4897)
-        |-NameIdentifier(4895,4897)
-          |-Identifier=x1
+      |-NameIdentifier(4895,4897)
+        |-Identifier=x1
       |-TypeParameters(4897,4897)
         <Rule0>
       |-FunctionParamsList(4897,4899)
@@ -2306,9 +2266,8 @@
       |-FunctionBody(4905,4937)
         |-CodeBlock(4907,4937)
           |-FunDeclaration(4911,4929)
-            |-FunctionName(4915,4916)
-              |-NameIdentifier(4915,4916)
-                |-Identifier=Y
+            |-NameIdentifier(4915,4916)
+              |-Identifier=Y
             |-TypeParameters(4916,4916)
               <Rule0>
             |-FunctionParamsList(4916,4918)
@@ -2332,9 +2291,8 @@
     |-Decorators(4939,4939)
       <Rule0>
     |-FunDeclaration(4939,4995)
-      |-FunctionName(4943,4945)
-        |-NameIdentifier(4943,4945)
-          |-Identifier=x2
+      |-NameIdentifier(4943,4945)
+        |-Identifier=x2
       |-TypeParameters(4945,4945)
         <Rule0>
       |-FunctionParamsList(4945,4947)
@@ -2352,9 +2310,8 @@
               |-Identifier=n
             |-NumberLiteral=1
           |-FunDeclaration(4971,4987)
-            |-FunctionName(4975,4976)
-              |-NameIdentifier(4975,4976)
-                |-Identifier=Y
+            |-NameIdentifier(4975,4976)
+              |-Identifier=Y
             |-TypeParameters(4976,4976)
               <Rule0>
             |-FunctionParamsList(4976,4978)
@@ -2425,9 +2382,8 @@
         |-Decorators(5101,5101)
           <Rule0>
         |-FunDeclaration(5101,5288)
-          |-FunctionName(5105,5109)
-            |-NameIdentifier(5105,5109)
-              |-Identifier=next
+          |-NameIdentifier(5105,5109)
+            |-Identifier=next
           |-TypeParameters(5109,5109)
             <Rule0>
           |-FunctionParamsList(5109,5125)
@@ -2447,27 +2403,26 @@
           |-FunctionBody(5133,5288)
             |-CodeBlock(5135,5288)
               |-IfExpression(5141,5284)
-                |-Condition(5144,5173)
-                  |-BinaryOpExpression(5145,5172)
-                    |-AtomicExpression(5145,5157)
-                      |-Reference(5145,5149)
-                        |-QName(5145,5149)
-                          |-NameIdentifier(5145,5149)
-                            |-Identifier=iter
-                      |-MemberExpression(5149,5157)
-                        |-Operator=.
-                        |-NameIdentifier(5150,5157)
-                          |-Identifier=current
-                    |-Operator=<=
-                    |-AtomicExpression(5161,5172)
-                      |-Reference(5161,5165)
-                        |-QName(5161,5165)
-                          |-NameIdentifier(5161,5165)
-                            |-Identifier=iter
-                      |-MemberExpression(5165,5172)
-                        |-Operator=.
-                        |-NameIdentifier(5166,5172)
-                          |-Identifier=target
+                |-BinaryOpExpression(5145,5172)
+                  |-AtomicExpression(5145,5157)
+                    |-Reference(5145,5149)
+                      |-QName(5145,5149)
+                        |-NameIdentifier(5145,5149)
+                          |-Identifier=iter
+                    |-MemberExpression(5149,5157)
+                      |-Operator=.
+                      |-NameIdentifier(5150,5157)
+                        |-Identifier=current
+                  |-Operator=<=
+                  |-AtomicExpression(5161,5172)
+                    |-Reference(5161,5165)
+                      |-QName(5161,5165)
+                        |-NameIdentifier(5161,5165)
+                          |-Identifier=iter
+                    |-MemberExpression(5165,5172)
+                      |-Operator=.
+                      |-NameIdentifier(5166,5172)
+                        |-Identifier=target
                 |-CodeBlock(5174,5260)
                   |-VarDeclaration(5182,5208)
                     |-NameIdentifier(5186,5187)
@@ -2523,9 +2478,8 @@
     |-Decorators(5292,5292)
       <Rule0>
     |-FunDeclaration(5292,5710)
-      |-FunctionName(5296,5303)
-        |-NameIdentifier(5296,5303)
-          |-Identifier=testFn3
+      |-NameIdentifier(5296,5303)
+        |-Identifier=testFn3
       |-TypeParameters(5303,5303)
         <Rule0>
       |-FunctionParamsList(5303,5323)

@@ -3,9 +3,8 @@
     |-Decorators(1,1)
       <Rule0>
     |-FunDeclaration(1,49)
-      |-FunctionName(5,9)
-        |-NameIdentifier(5,9)
-          |-Identifier=test
+      |-NameIdentifier(5,9)
+        |-Identifier=test
       |-TypeParameters(9,9)
         <Rule0>
       |-FunctionParamsList(9,17)
@@ -24,14 +23,13 @@
               |-Identifier=i32
       |-FunctionBody(23,49)
         |-IfExpression(27,49)
-          |-Condition(30,37)
-            |-BinaryOpExpression(31,36)
-              |-Reference(31,32)
-                |-QName(31,32)
-                  |-NameIdentifier(31,32)
-                    |-Identifier=x
-              |-Operator=>
-              |-NumberLiteral=0
+          |-BinaryOpExpression(31,36)
+            |-Reference(31,32)
+              |-QName(31,32)
+                |-NameIdentifier(31,32)
+                  |-Identifier=x
+            |-Operator=>
+            |-NumberLiteral=0
           |-CodeBlock(38,49)
             |-NumberLiteral=1
   |-EndOfFile=

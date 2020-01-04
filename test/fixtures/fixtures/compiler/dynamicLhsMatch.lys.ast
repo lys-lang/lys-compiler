@@ -5,9 +5,8 @@
         |-NameIdentifier(2,8)
           |-Identifier=export
     |-FunDeclaration(10,85)
-      |-FunctionName(14,18)
-        |-NameIdentifier(14,18)
-          |-Identifier=test
+      |-NameIdentifier(14,18)
+        |-Identifier=test
       |-TypeParameters(18,18)
         <Rule0>
       |-FunctionParamsList(18,26)
@@ -49,9 +48,8 @@
         |-NameIdentifier(89,95)
           |-Identifier=export
     |-FunDeclaration(97,158)
-      |-FunctionName(101,106)
-        |-NameIdentifier(101,106)
-          |-Identifier=test2
+      |-NameIdentifier(101,106)
+        |-Identifier=test2
       |-TypeParameters(106,106)
         <Rule0>
       |-FunctionParamsList(106,114)
@@ -70,17 +68,16 @@
               |-Identifier=i32
       |-FunctionBody(120,158)
         |-IfExpression(124,158)
-          |-Condition(127,139)
-            |-BinaryOpExpression(128,138)
-              |-BinaryOpExpression(128,133)
-                |-Reference(128,129)
-                  |-QName(128,129)
-                    |-NameIdentifier(128,129)
-                      |-Identifier=a
-                |-Operator=+
-                |-NumberLiteral=1
-              |-Operator===
+          |-BinaryOpExpression(128,138)
+            |-BinaryOpExpression(128,133)
+              |-Reference(128,129)
+                |-QName(128,129)
+                  |-NameIdentifier(128,129)
+                    |-Identifier=a
+              |-Operator=+
               |-NumberLiteral=1
+            |-Operator===
+            |-NumberLiteral=1
           |-NumberLiteral=0
           |-NumberLiteral=1
   |-EndOfFile=

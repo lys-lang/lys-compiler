@@ -3,9 +3,8 @@
     |-Decorators(0,0)
       <Rule0>
     |-FunDeclaration(0,29)
-      |-FunctionName(4,11)
-        |-NameIdentifier(4,11)
-          |-Identifier=AL_BITS
+      |-NameIdentifier(4,11)
+        |-Identifier=AL_BITS
       |-TypeParameters(11,11)
         <Rule0>
       |-FunctionParamsList(11,13)
@@ -27,9 +26,8 @@
     |-Decorators(30,30)
       <Rule0>
     |-FunDeclaration(30,79)
-      |-FunctionName(34,41)
-        |-NameIdentifier(34,41)
-          |-Identifier=AL_SIZE
+      |-NameIdentifier(34,41)
+        |-Identifier=AL_SIZE
       |-TypeParameters(41,41)
         <Rule0>
       |-FunctionParamsList(41,43)
@@ -65,9 +63,8 @@
     |-Decorators(80,80)
       <Rule0>
     |-FunDeclaration(80,121)
-      |-FunctionName(84,91)
-        |-NameIdentifier(84,91)
-          |-Identifier=AL_MASK
+      |-NameIdentifier(84,91)
+        |-Identifier=AL_MASK
       |-TypeParameters(91,91)
         <Rule0>
       |-FunctionParamsList(91,93)
@@ -98,9 +95,8 @@
     |-Decorators(122,122)
       <Rule0>
     |-FunDeclaration(122,161)
-      |-FunctionName(126,137)
-        |-NameIdentifier(126,137)
-          |-Identifier=MAX_SIZE_32
+      |-NameIdentifier(126,137)
+        |-Identifier=MAX_SIZE_32
       |-TypeParameters(137,137)
         <Rule0>
       |-FunctionParamsList(137,139)
@@ -125,9 +121,8 @@
     |-Decorators(168,168)
       <Rule0>
     |-FunDeclaration(168,199)
-      |-FunctionName(172,181)
-        |-NameIdentifier(172,181)
-          |-Identifier=HEAP_BASE
+      |-NameIdentifier(172,181)
+        |-Identifier=HEAP_BASE
       |-TypeParameters(181,181)
         <Rule0>
       |-FunctionParamsList(181,183)
@@ -149,9 +144,8 @@
     |-Decorators(200,200)
       <Rule0>
     |-FunDeclaration(200,265)
-      |-FunctionName(204,215)
-        |-NameIdentifier(204,215)
-          |-Identifier=startOffset
+      |-NameIdentifier(204,215)
+        |-Identifier=startOffset
       |-TypeParameters(215,215)
         <Rule0>
       |-FunctionParamsList(215,217)
@@ -196,9 +190,8 @@
     |-Decorators(266,266)
       <Rule0>
     |-FunDeclaration(266,299)
-      |-FunctionName(270,276)
-        |-NameIdentifier(270,276)
-          |-Identifier=offset
+      |-NameIdentifier(270,276)
+        |-Identifier=offset
       |-TypeParameters(276,276)
         <Rule0>
       |-FunctionParamsList(276,278)
@@ -221,9 +214,8 @@
     |-Decorators(300,300)
       <Rule0>
     |-FunDeclaration(300,348)
-      |-FunctionName(304,307)
-        |-NameIdentifier(304,307)
-          |-Identifier=max
+      |-NameIdentifier(304,307)
+        |-Identifier=max
       |-TypeParameters(307,307)
         <Rule0>
       |-FunctionParamsList(307,323)
@@ -249,17 +241,16 @@
               |-Identifier=u32
       |-FunctionBody(329,348)
         |-IfExpression(331,348)
-          |-Condition(334,339)
-            |-BinaryOpExpression(335,338)
-              |-Reference(335,336)
-                |-QName(335,336)
-                  |-NameIdentifier(335,336)
-                    |-Identifier=a
-              |-Operator=>
-              |-Reference(337,338)
-                |-QName(337,338)
-                  |-NameIdentifier(337,338)
-                    |-Identifier=b
+          |-BinaryOpExpression(335,338)
+            |-Reference(335,336)
+              |-QName(335,336)
+                |-NameIdentifier(335,336)
+                  |-Identifier=a
+            |-Operator=>
+            |-Reference(337,338)
+              |-QName(337,338)
+                |-NameIdentifier(337,338)
+                  |-Identifier=b
           |-Reference(340,341)
             |-QName(340,341)
               |-NameIdentifier(340,341)
@@ -272,9 +263,8 @@
     |-Decorators(349,349)
       <Rule0>
     |-FunDeclaration(349,402)
-      |-FunctionName(353,366)
-        |-NameIdentifier(353,366)
-          |-Identifier=currentMemory
+      |-NameIdentifier(353,366)
+        |-Identifier=currentMemory
       |-TypeParameters(366,366)
         <Rule0>
       |-FunctionParamsList(366,368)
@@ -294,9 +284,8 @@
     |-Decorators(402,402)
       <Rule0>
     |-FunDeclaration(402,482)
-      |-FunctionName(406,416)
-        |-NameIdentifier(406,416)
-          |-Identifier=growMemory
+      |-NameIdentifier(406,416)
+        |-Identifier=growMemory
       |-TypeParameters(416,416)
         <Rule0>
       |-FunctionParamsList(416,428)
@@ -328,9 +317,8 @@
     |-Decorators(482,482)
       <Rule0>
     |-FunDeclaration(482,1385)
-      |-FunctionName(486,492)
-        |-NameIdentifier(486,492)
-          |-Identifier=malloc
+      |-NameIdentifier(486,492)
+        |-Identifier=malloc
       |-TypeParameters(492,492)
         <Rule0>
       |-FunctionParamsList(492,503)
@@ -350,35 +338,33 @@
       |-FunctionBody(509,1385)
         |-CodeBlock(511,1385)
           |-IfExpression(515,1383)
-            |-Condition(518,535)
-              |-BinaryOpExpression(519,534)
-                |-Reference(519,523)
-                  |-QName(519,523)
-                    |-NameIdentifier(519,523)
-                      |-Identifier=size
-                |-Operator=>
-                |-AsExpression(526,534)
-                  |-NumberLiteral=0
-                  |-Reference(531,534)
-                    |-QName(531,534)
-                      |-NameIdentifier(531,534)
-                        |-Identifier=u32
+            |-BinaryOpExpression(519,534)
+              |-Reference(519,523)
+                |-QName(519,523)
+                  |-NameIdentifier(519,523)
+                    |-Identifier=size
+              |-Operator=>
+              |-AsExpression(526,534)
+                |-NumberLiteral=0
+                |-Reference(531,534)
+                  |-QName(531,534)
+                    |-NameIdentifier(531,534)
+                      |-Identifier=u32
             |-CodeBlock(536,1359)
               |-IfExpression(542,575)
-                |-Condition(545,567)
-                  |-BinaryOpExpression(546,566)
-                    |-Reference(546,550)
-                      |-QName(546,550)
-                        |-NameIdentifier(546,550)
-                          |-Identifier=size
-                    |-Operator=>
-                    |-AtomicExpression(553,566)
-                      |-Reference(553,564)
-                        |-QName(553,564)
-                          |-NameIdentifier(553,564)
-                            |-Identifier=MAX_SIZE_32
-                      |-CallArguments(564,566)
-                        <Rule0>
+                |-BinaryOpExpression(546,566)
+                  |-Reference(546,550)
+                    |-QName(546,550)
+                      |-NameIdentifier(546,550)
+                        |-Identifier=size
+                  |-Operator=>
+                  |-AtomicExpression(553,566)
+                    |-Reference(553,564)
+                      |-QName(553,564)
+                        |-NameIdentifier(553,564)
+                          |-Identifier=MAX_SIZE_32
+                    |-CallArguments(564,566)
+                      <Rule0>
                 |-AtomicExpression(568,575)
                   |-Reference(568,573)
                     |-QName(568,573)
@@ -517,20 +503,19 @@
                   |-CallArguments(855,857)
                     <Rule0>
               |-IfExpression(862,1277)
-                |-Condition(865,893)
-                  |-BinaryOpExpression(866,892)
-                    |-Reference(866,872)
-                      |-QName(866,872)
-                        |-NameIdentifier(866,872)
-                          |-Identifier=newPtr
-                    |-Operator=>
-                    |-BinaryOpExpression(875,892)
-                      |-Reference(875,886)
-                        |-QName(875,886)
-                          |-NameIdentifier(875,886)
-                            |-Identifier=pagesBefore
-                      |-Operator=<<
-                      |-NumberLiteral=16
+                |-BinaryOpExpression(866,892)
+                  |-Reference(866,872)
+                    |-QName(866,872)
+                      |-NameIdentifier(866,872)
+                        |-Identifier=newPtr
+                  |-Operator=>
+                  |-BinaryOpExpression(875,892)
+                    |-Reference(875,886)
+                      |-QName(875,886)
+                        |-NameIdentifier(875,886)
+                          |-Identifier=pagesBefore
+                    |-Operator=<<
+                    |-NumberLiteral=16
                 |-CodeBlock(894,1277)
                   |-ValDeclaration(902,965)
                     |-NameIdentifier(906,910)
@@ -633,46 +618,44 @@
                             |-NameIdentifier(1091,1102)
                               |-Identifier=pagesNeeded
                   |-IfExpression(1127,1271)
-                    |-Condition(1130,1166)
-                      |-BinaryOpExpression(1131,1165)
-                        |-AtomicExpression(1131,1154)
-                          |-Reference(1131,1141)
-                            |-QName(1131,1141)
-                              |-NameIdentifier(1131,1141)
-                                |-Identifier=growMemory
-                          |-CallArguments(1141,1154)
-                            |-Reference(1142,1153)
-                              |-QName(1142,1153)
-                                |-NameIdentifier(1142,1153)
-                                  |-Identifier=pagesWanted
-                        |-Operator=<
-                        |-AsExpression(1157,1165)
-                          |-NumberLiteral=0
-                          |-Reference(1162,1165)
-                            |-QName(1162,1165)
-                              |-NameIdentifier(1162,1165)
-                                |-Identifier=u32
+                    |-BinaryOpExpression(1131,1165)
+                      |-AtomicExpression(1131,1154)
+                        |-Reference(1131,1141)
+                          |-QName(1131,1141)
+                            |-NameIdentifier(1131,1141)
+                              |-Identifier=growMemory
+                        |-CallArguments(1141,1154)
+                          |-Reference(1142,1153)
+                            |-QName(1142,1153)
+                              |-NameIdentifier(1142,1153)
+                                |-Identifier=pagesWanted
+                      |-Operator=<
+                      |-AsExpression(1157,1165)
+                        |-NumberLiteral=0
+                        |-Reference(1162,1165)
+                          |-QName(1162,1165)
+                            |-NameIdentifier(1162,1165)
+                              |-Identifier=u32
                     |-CodeBlock(1167,1271)
                       |-IfExpression(1177,1263)
-                        |-Condition(1180,1216)
-                          |-BinaryOpExpression(1181,1215)
-                            |-AtomicExpression(1181,1204)
-                              |-Reference(1181,1191)
-                                |-QName(1181,1191)
-                                  |-NameIdentifier(1181,1191)
-                                    |-Identifier=growMemory
-                              |-CallArguments(1191,1204)
-                                |-Reference(1192,1203)
-                                  |-QName(1192,1203)
-                                    |-NameIdentifier(1192,1203)
-                                      |-Identifier=pagesNeeded
-                            |-Operator=<
-                            |-AsExpression(1207,1215)
-                              |-NumberLiteral=0
-                              |-Reference(1212,1215)
-                                |-QName(1212,1215)
-                                  |-NameIdentifier(1212,1215)
-                                    |-Identifier=u32
+                        |-BinaryOpExpression(1181,1215)
+                          |-AtomicExpression(1181,1204)
+                            |-Reference(1181,1191)
+                              |-QName(1181,1191)
+                                |-NameIdentifier(1181,1191)
+                                  |-Identifier=growMemory
+                            |-CallArguments(1191,1204)
+                              |-Reference(1192,1203)
+                                |-QName(1192,1203)
+                                  |-NameIdentifier(1192,1203)
+                                    |-Identifier=pagesNeeded
+                          |-Operator=<
+                          |-AsExpression(1207,1215)
+                            |-NumberLiteral=0
+                            |-Reference(1212,1215)
+                              |-QName(1212,1215)
+                                |-NameIdentifier(1212,1215)
+                                  |-Identifier=u32
                         |-CodeBlock(1217,1263)
                           |-AtomicExpression(1229,1236)
                             |-Reference(1229,1234)

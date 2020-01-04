@@ -3,9 +3,8 @@
     |-Decorators(0,0)
       <Rule0>
     |-FunDeclaration(0,80)
-      |-FunctionName(4,13)
-        |-NameIdentifier(4,13)
-          |-Identifier=factorial
+      |-NameIdentifier(4,13)
+        |-Identifier=factorial
       |-TypeParameters(13,13)
         <Rule0>
       |-FunctionParamsList(13,21)
@@ -24,14 +23,13 @@
               |-Identifier=i32
       |-FunctionBody(27,80)
         |-IfExpression(31,80)
-          |-Condition(34,42)
-            |-BinaryOpExpression(35,41)
-              |-Reference(35,36)
-                |-QName(35,36)
-                  |-NameIdentifier(35,36)
-                    |-Identifier=n
-              |-Operator=>=
-              |-NumberLiteral=1
+          |-BinaryOpExpression(35,41)
+            |-Reference(35,36)
+              |-QName(35,36)
+                |-NameIdentifier(35,36)
+                  |-Identifier=n
+            |-Operator=>=
+            |-NumberLiteral=1
           |-BinaryOpExpression(47,67)
             |-Reference(47,48)
               |-QName(47,48)
@@ -56,9 +54,8 @@
     |-Decorators(82,82)
       <Rule0>
     |-FunDeclaration(82,203)
-      |-FunctionName(86,89)
-        |-NameIdentifier(86,89)
-          |-Identifier=gcd
+      |-NameIdentifier(86,89)
+        |-Identifier=gcd
       |-TypeParameters(89,89)
         <Rule0>
       |-FunctionParamsList(89,105)
@@ -84,17 +81,16 @@
               |-Identifier=i32
       |-FunctionBody(111,203)
         |-IfExpression(115,203)
-          |-Condition(118,125)
-            |-BinaryOpExpression(119,124)
-              |-Reference(119,120)
-                |-QName(119,120)
-                  |-NameIdentifier(119,120)
-                    |-Identifier=x
-              |-Operator=>
-              |-Reference(123,124)
-                |-QName(123,124)
-                  |-NameIdentifier(123,124)
-                    |-Identifier=y
+          |-BinaryOpExpression(119,124)
+            |-Reference(119,120)
+              |-QName(119,120)
+                |-NameIdentifier(119,120)
+                  |-Identifier=x
+            |-Operator=>
+            |-Reference(123,124)
+              |-QName(123,124)
+                |-NameIdentifier(123,124)
+                  |-Identifier=y
           |-AtomicExpression(130,143)
             |-Reference(130,133)
               |-QName(130,133)
@@ -116,17 +112,16 @@
                   |-NameIdentifier(141,142)
                     |-Identifier=y
           |-IfExpression(151,203)
-            |-Condition(154,161)
-              |-BinaryOpExpression(155,160)
-                |-Reference(155,156)
-                  |-QName(155,156)
-                    |-NameIdentifier(155,156)
-                      |-Identifier=x
-                |-Operator=<
-                |-Reference(159,160)
-                  |-QName(159,160)
-                    |-NameIdentifier(159,160)
-                      |-Identifier=y
+            |-BinaryOpExpression(155,160)
+              |-Reference(155,156)
+                |-QName(155,156)
+                  |-NameIdentifier(155,156)
+                    |-Identifier=x
+              |-Operator=<
+              |-Reference(159,160)
+                |-QName(159,160)
+                  |-NameIdentifier(159,160)
+                    |-Identifier=y
             |-AtomicExpression(166,179)
               |-Reference(166,169)
                 |-QName(166,169)

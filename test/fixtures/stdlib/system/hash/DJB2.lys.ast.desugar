@@ -3,9 +3,8 @@
     |-Decorators(384,384)
       <Rule0>
     |-FunDeclaration(384,637)
-      |-FunctionName(388,392)
-        |-NameIdentifier(388,392)
-          |-Identifier=DJB2
+      |-NameIdentifier(388,392)
+        |-Identifier=DJB2
       |-TypeParameters(392,392)
         <Rule0>
       |-FunctionParamsList(392,406)
@@ -62,22 +61,21 @@
           |-LoopExpression(493,627)
             |-CodeBlock(498,627)
               |-IfExpression(504,532)
-                |-Condition(507,526)
-                  |-BinaryOpExpression(508,525)
-                    |-Reference(508,509)
-                      |-QName(508,509)
-                        |-NameIdentifier(508,509)
-                          |-Identifier=i
-                    |-Operator=>=
-                    |-AtomicExpression(513,525)
-                      |-Reference(513,518)
-                        |-QName(513,518)
-                          |-NameIdentifier(513,518)
-                            |-Identifier=input
-                      |-MemberExpression(518,525)
-                        |-Operator=.
-                        |-NameIdentifier(519,525)
-                          |-Identifier=length
+                |-BinaryOpExpression(508,525)
+                  |-Reference(508,509)
+                    |-QName(508,509)
+                      |-NameIdentifier(508,509)
+                        |-Identifier=i
+                  |-Operator=>=
+                  |-AtomicExpression(513,525)
+                    |-Reference(513,518)
+                      |-QName(513,518)
+                        |-NameIdentifier(513,518)
+                          |-Identifier=input
+                    |-MemberExpression(518,525)
+                      |-Operator=.
+                      |-NameIdentifier(519,525)
+                        |-Identifier=length
                 |-BreakStatement(527,532)
                   <Rule0>
               |-BinaryOpExpression(538,588)
