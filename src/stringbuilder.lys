@@ -19,6 +19,26 @@ impl StringBuilder {
   }
 
   #[method]
+  fun append(self: StringBuilder, str: StringBuilder): StringBuilder =
+    self.append(str.toString())
+
+  #[method]
+  fun appendln(self: StringBuilder, str: string): StringBuilder = {
+    if (str.length > 0x0) {
+      self.mutableHead = StringBuilderCons("\n", StringBuilderCons(str, self.mutableHead))
+    } else {
+      self.mutableHead = StringBuilderCons("\n", self.mutableHead)
+    }
+    self
+  }
+
+  #[method]
+  fun appendln(self: StringBuilder): StringBuilder = {
+    self.mutableHead = StringBuilderCons("\n", self.mutableHead)
+    self
+  }
+
+  #[method]
   fun isEmpty(self: StringBuilder): boolean =
     self.mutableHead is StringBuilderEmpty
 

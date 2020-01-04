@@ -28,11 +28,10 @@
           |-Parameter(72,80)
             |-NameIdentifier(72,75)
               |-Identifier=hex
-            |-Type(77,80)
-              |-Reference(77,80)
-                |-QName(77,80)
-                  |-NameIdentifier(77,80)
-                    |-Identifier=i32
+            |-Reference(77,80)
+              |-QName(77,80)
+                |-NameIdentifier(77,80)
+                  |-Identifier=i32
   |-StructDirective(85,167)
     |-StructDeclaration(92,167)
       |-NameIdentifier(92,98)
@@ -42,64 +41,57 @@
           |-Parameter(99,105)
             |-NameIdentifier(99,100)
               |-Identifier=a
-            |-Type(102,105)
-              |-Reference(102,105)
-                |-QName(102,105)
-                  |-NameIdentifier(102,105)
-                    |-Identifier=i32
+            |-Reference(102,105)
+              |-QName(102,105)
+                |-NameIdentifier(102,105)
+                  |-Identifier=i32
           |-Parameter(107,117)
             |-NameIdentifier(107,108)
               |-Identifier=b
-            |-Type(110,117)
-              |-Reference(110,117)
-                |-QName(110,117)
-                  |-NameIdentifier(110,117)
-                    |-Identifier=boolean
+            |-Reference(110,117)
+              |-QName(110,117)
+                |-NameIdentifier(110,117)
+                  |-Identifier=boolean
           |-Parameter(119,125)
             |-NameIdentifier(119,120)
               |-Identifier=c
-            |-Type(122,125)
-              |-Reference(122,125)
-                |-QName(122,125)
-                  |-NameIdentifier(122,125)
-                    |-Identifier=f32
+            |-Reference(122,125)
+              |-QName(122,125)
+                |-NameIdentifier(122,125)
+                  |-Identifier=f32
           |-Parameter(127,133)
             |-NameIdentifier(127,128)
               |-Identifier=d
-            |-Type(130,133)
-              |-Reference(130,133)
-                |-QName(130,133)
-                  |-NameIdentifier(130,133)
-                    |-Identifier=i64
+            |-Reference(130,133)
+              |-QName(130,133)
+                |-NameIdentifier(130,133)
+                  |-Identifier=i64
           |-Parameter(135,141)
             |-NameIdentifier(135,136)
               |-Identifier=e
-            |-Type(138,141)
-              |-Reference(138,141)
-                |-QName(138,141)
-                  |-NameIdentifier(138,141)
-                    |-Identifier=f64
+            |-Reference(138,141)
+              |-QName(138,141)
+                |-NameIdentifier(138,141)
+                  |-Identifier=f64
           |-Parameter(143,151)
             |-NameIdentifier(143,144)
               |-Identifier=f
-            |-Type(146,151)
-              |-Reference(146,151)
-                |-QName(146,151)
-                  |-NameIdentifier(146,151)
-                    |-Identifier=Color
+            |-Reference(146,151)
+              |-QName(146,151)
+                |-NameIdentifier(146,151)
+                  |-Identifier=Color
           |-Parameter(153,166)
             |-NameIdentifier(153,154)
               |-Identifier=g
-            |-Type(156,166)
-              |-UnionType(156,166)
-                |-Reference(156,159)
-                  |-QName(156,159)
-                    |-NameIdentifier(156,159)
-                      |-Identifier=Red
-                |-Reference(162,166)
-                  |-QName(162,166)
-                    |-NameIdentifier(162,166)
-                      |-Identifier=None
+            |-UnionType(156,166)
+              |-Reference(156,159)
+                |-QName(156,159)
+                  |-NameIdentifier(156,159)
+                    |-Identifier=Red
+              |-Reference(162,166)
+                |-QName(162,166)
+                  |-NameIdentifier(162,166)
+                    |-Identifier=None
   |-FunctionDirective(169,1280)
     |-Decorators(169,179)
       |-Decorator(169,179)
@@ -115,11 +107,10 @@
         |-(List)(188,188)
           <Rule0>
       |-ReturnType(189,196)
-        |-Type(191,195)
-          |-Reference(191,195)
-            |-QName(191,195)
-              |-NameIdentifier(191,195)
-                |-Identifier=void
+        |-Reference(191,195)
+          |-QName(191,195)
+            |-NameIdentifier(191,195)
+              |-Identifier=void
       |-FunctionBody(196,1280)
         |-CodeBlock(198,1280)
           |-AtomicExpression(202,233)
@@ -144,18 +135,16 @@
                 |-NumberLiteral=3.0
                 |-AsExpression(266,276)
                   |-NumberLiteral=0x8
-                  |-Type(273,276)
-                    |-Reference(273,276)
-                      |-QName(273,276)
-                        |-NameIdentifier(273,276)
-                          |-Identifier=i64
+                  |-Reference(273,276)
+                    |-QName(273,276)
+                      |-NameIdentifier(273,276)
+                        |-Identifier=i64
                 |-AsExpression(278,288)
                   |-NumberLiteral=0.4
-                  |-Type(285,288)
-                    |-Reference(285,288)
-                      |-QName(285,288)
-                        |-NameIdentifier(285,288)
-                          |-Identifier=f64
+                  |-Reference(285,288)
+                    |-QName(285,288)
+                      |-NameIdentifier(285,288)
+                        |-Identifier=f64
                 |-Reference(290,293)
                   |-QName(290,293)
                     |-NameIdentifier(290,293)
@@ -175,11 +164,10 @@
                   |-QName(311,312)
                     |-NameIdentifier(311,312)
                       |-Identifier=a
-                |-Type(318,324)
-                  |-Reference(318,324)
-                    |-QName(318,324)
-                      |-NameIdentifier(318,324)
-                        |-Identifier=CatBag
+                |-Reference(318,324)
+                  |-QName(318,324)
+                    |-NameIdentifier(318,324)
+                      |-Identifier=CatBag
               |-StringLiteral="A"
           |-AtomicExpression(334,357)
             |-Reference(334,340)
@@ -277,11 +265,10 @@
                 |-Operator===
                 |-AsExpression(460,470)
                   |-NumberLiteral=0.4
-                  |-Type(467,470)
-                    |-Reference(467,470)
-                      |-QName(467,470)
-                        |-NameIdentifier(467,470)
-                          |-Identifier=f64
+                  |-Reference(467,470)
+                    |-QName(467,470)
+                      |-NameIdentifier(467,470)
+                        |-Identifier=f64
               |-StringLiteral="F"
           |-AtomicExpression(480,505)
             |-Reference(480,486)
@@ -299,11 +286,10 @@
                     |-Operator=.
                     |-NameIdentifier(490,491)
                       |-Identifier=f
-                |-Type(495,498)
-                  |-Reference(495,498)
-                    |-QName(495,498)
-                      |-NameIdentifier(495,498)
-                        |-Identifier=Red
+                |-Reference(495,498)
+                  |-QName(495,498)
+                    |-NameIdentifier(495,498)
+                      |-Identifier=Red
               |-StringLiteral="G"
           |-AtomicExpression(508,533)
             |-Reference(508,514)
@@ -321,11 +307,10 @@
                     |-Operator=.
                     |-NameIdentifier(518,519)
                       |-Identifier=g
-                |-Type(523,526)
-                  |-Reference(523,526)
-                    |-QName(523,526)
-                      |-NameIdentifier(523,526)
-                        |-Identifier=Red
+                |-Reference(523,526)
+                  |-QName(523,526)
+                    |-NameIdentifier(523,526)
+                      |-Identifier=Red
               |-StringLiteral="H"
           |-AtomicExpression(536,563)
             |-Reference(536,542)
@@ -343,11 +328,10 @@
                     |-Operator=.
                     |-NameIdentifier(546,547)
                       |-Identifier=f
-                |-Type(551,556)
-                  |-Reference(551,556)
-                    |-QName(551,556)
-                      |-NameIdentifier(551,556)
-                        |-Identifier=Color
+                |-Reference(551,556)
+                  |-QName(551,556)
+                    |-NameIdentifier(551,556)
+                      |-Identifier=Color
               |-StringLiteral="I"
           |-AtomicExpression(566,593)
             |-Reference(566,572)
@@ -365,11 +349,10 @@
                     |-Operator=.
                     |-NameIdentifier(576,577)
                       |-Identifier=g
-                |-Type(581,586)
-                  |-Reference(581,586)
-                    |-QName(581,586)
-                      |-NameIdentifier(581,586)
-                        |-Identifier=Color
+                |-Reference(581,586)
+                  |-QName(581,586)
+                    |-NameIdentifier(581,586)
+                      |-Identifier=Color
               |-StringLiteral="J"
           |-BinaryOpExpression(597,604)
             |-AtomicExpression(597,600)
@@ -423,11 +406,10 @@
             |-Operator==
             |-AsExpression(642,659)
               |-NumberLiteral=0xdeadbeef
-              |-Type(656,659)
-                |-Reference(656,659)
-                  |-QName(656,659)
-                    |-NameIdentifier(656,659)
-                      |-Identifier=i64
+              |-Reference(656,659)
+                |-QName(656,659)
+                  |-NameIdentifier(656,659)
+                    |-Identifier=i64
           |-BinaryOpExpression(662,682)
             |-AtomicExpression(662,665)
               |-Reference(662,663)
@@ -441,11 +423,10 @@
             |-Operator==
             |-AsExpression(668,682)
               |-NumberLiteral=6.08e23
-              |-Type(679,682)
-                |-Reference(679,682)
-                  |-QName(679,682)
-                    |-NameIdentifier(679,682)
-                      |-Identifier=f64
+              |-Reference(679,682)
+                |-QName(679,682)
+                  |-NameIdentifier(679,682)
+                    |-Identifier=f64
           |-AtomicExpression(685,701)
             |-Reference(685,696)
               |-QName(685,696)
@@ -644,11 +625,10 @@
                 |-Operator===
                 |-AsExpression(950,967)
                   |-NumberLiteral=0xdeadbeef
-                  |-Type(964,967)
-                    |-Reference(964,967)
-                      |-QName(964,967)
-                        |-NameIdentifier(964,967)
-                          |-Identifier=i64
+                  |-Reference(964,967)
+                    |-QName(964,967)
+                      |-NameIdentifier(964,967)
+                        |-Identifier=i64
               |-StringLiteral="N"
           |-AtomicExpression(977,1013)
             |-Reference(977,983)
@@ -669,11 +649,10 @@
                 |-Operator===
                 |-AsExpression(992,1006)
                   |-NumberLiteral=6.08e23
-                  |-Type(1003,1006)
-                    |-Reference(1003,1006)
-                      |-QName(1003,1006)
-                        |-NameIdentifier(1003,1006)
-                          |-Identifier=f64
+                  |-Reference(1003,1006)
+                    |-QName(1003,1006)
+                      |-NameIdentifier(1003,1006)
+                        |-Identifier=f64
               |-StringLiteral="Ñ"
           |-AtomicExpression(1016,1044)
             |-Reference(1016,1022)
@@ -691,11 +670,10 @@
                     |-Operator=.
                     |-NameIdentifier(1026,1027)
                       |-Identifier=f
-                |-Type(1031,1037)
-                  |-Reference(1031,1037)
-                    |-QName(1031,1037)
-                      |-NameIdentifier(1031,1037)
-                        |-Identifier=Custom
+                |-Reference(1031,1037)
+                  |-QName(1031,1037)
+                    |-NameIdentifier(1031,1037)
+                      |-Identifier=Custom
               |-StringLiteral="O"
           |-AtomicExpression(1047,1073)
             |-Reference(1047,1053)
@@ -713,11 +691,10 @@
                     |-Operator=.
                     |-NameIdentifier(1057,1058)
                       |-Identifier=g
-                |-Type(1062,1066)
-                  |-Reference(1062,1066)
-                    |-QName(1062,1066)
-                      |-NameIdentifier(1062,1066)
-                        |-Identifier=None
+                |-Reference(1062,1066)
+                  |-QName(1062,1066)
+                    |-NameIdentifier(1062,1066)
+                      |-Identifier=None
               |-StringLiteral="P"
           |-AtomicExpression(1076,1103)
             |-Reference(1076,1082)
@@ -735,11 +712,10 @@
                     |-Operator=.
                     |-NameIdentifier(1086,1087)
                       |-Identifier=f
-                |-Type(1091,1096)
-                  |-Reference(1091,1096)
-                    |-QName(1091,1096)
-                      |-NameIdentifier(1091,1096)
-                        |-Identifier=Color
+                |-Reference(1091,1096)
+                  |-QName(1091,1096)
+                    |-NameIdentifier(1091,1096)
+                      |-Identifier=Color
               |-StringLiteral="Q"
           |-AtomicExpression(1106,1133)
             |-Reference(1106,1112)
@@ -757,11 +733,10 @@
                     |-Operator=.
                     |-NameIdentifier(1116,1117)
                       |-Identifier=g
-                |-Type(1121,1126)
-                  |-Reference(1121,1126)
-                    |-QName(1121,1126)
-                      |-NameIdentifier(1121,1126)
-                        |-Identifier=Color
+                |-Reference(1121,1126)
+                  |-QName(1121,1126)
+                    |-NameIdentifier(1121,1126)
+                      |-Identifier=Color
               |-StringLiteral="V"
           |-AtomicExpression(1137,1165)
             |-Reference(1137,1143)
@@ -779,11 +754,10 @@
                     |-Operator=.
                     |-NameIdentifier(1147,1148)
                       |-Identifier=f
-                |-Type(1152,1158)
-                  |-Reference(1152,1158)
-                    |-QName(1152,1158)
-                      |-NameIdentifier(1152,1158)
-                        |-Identifier=Custom
+                |-Reference(1152,1158)
+                  |-QName(1152,1158)
+                    |-NameIdentifier(1152,1158)
+                      |-Identifier=Custom
               |-StringLiteral="W"
           |-MatchExpression(1169,1269)
             |-AtomicExpression(1175,1178)

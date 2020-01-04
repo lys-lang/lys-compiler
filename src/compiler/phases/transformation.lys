@@ -1,0 +1,238 @@
+import src::lexer::tokens
+import src::parser::parser
+import src::compiler::nodes
+import src::compiler::context
+import src::stringbuilder
+
+fun desugar(currentPath: string, currentModule: string, astNode: AstNode, ctx: CompilerContext): AstNode = match astNode {
+  case x is Rule0 -> x
+  case x is UnexpectedToken -> x
+  case x is SyntaxError -> x
+  case x is Leaf(token, value) -> x
+  case old is AstCons(head, tail) -> {
+    val nhead = desugar(currentPath, currentModule, head, ctx)
+    val ntail = desugar(currentPath, currentModule, tail, ctx)
+
+    if (nhead == head && ntail == tail)
+      old
+    else
+      AstCons(nhead, ntail)
+  }
+  case node is Node(name, child, start, end) -> match name {
+    case "StructDeclaration" -> {
+      processStruct(currentPath, currentModule, child, ctx)
+    }
+    else -> {
+      val nchild = desugar(currentPath, currentModule, child, ctx)
+
+      if (nchild == child)
+        node
+      else
+        Node(name, desugar(currentPath, currentModule, child, ctx), start, end)
+    }
+  }
+}
+
+
+fun processParameters(node: AstNode, sb: StringBuilder, callRefs: StringBuilder, args: StringBuilder, typeName: string, index: i32): i32 = match node {
+  case x is Node(name, child) -> {
+    if (name == "Parameter") {
+      val nameNode = first(child)
+      val parameterName = textOf(nameNode)
+      val typeNode = rest(child)
+      val parameterType = textOf(typeNode)
+      val indexs = string.stringify(index)
+
+      callRefs
+        .append("property$")
+        .append(indexs)
+        .append("($ref, ")
+        .append(parameterName)
+        .appendln(")")
+
+      if (index != 0) {
+        args.append(", ")
+      }
+      args.append(parameterName).append(": ").append(parameterType)
+
+      if (getAstNodeName(typeNode) != "Reference") {
+        sb.appendln("  #[getter]")
+        sb.appendln("  fun " ++ parameterName ++ "(self: " ++ typeName ++ "): " ++ parameterType ++ " =")
+        sb.appendln("    property$" ++ indexs ++ "(self)")
+
+        sb.appendln("  #[setter]")
+        sb.appendln("  fun " ++ parameterName ++ "(self: " ++ typeName ++ ", value: " ++ parameterType ++ "): void =")
+        sb.appendln("    property$" ++ indexs ++ "(self, value)")
+
+        sb.appendln("  #[inline]")
+        sb.appendln("  private fun property$" ++ indexs ++ "(self: " ++ typeName ++ "): " ++ parameterType ++ " =")
+        sb.appendln("    loadPropertyWithOffset$" ++ indexs ++ "(")
+        sb.appendln("      self,")
+        sb.appendln("      " ++ typeName ++ ".^property$" ++ indexs ++ "_offset")
+        sb.appendln("    )")
+
+        sb.appendln("  #[inline]")
+        sb.appendln("  private fun property$" ++ indexs ++ "(self: " ++ typeName ++ ", value: " ++ parameterType ++ "): void =")
+        sb.appendln("    storePropertyWithOffset$" ++ indexs ++ "(")
+        sb.appendln("      self,")
+        sb.appendln("      value,")
+        sb.appendln("      " ++ typeName ++ ".^property$" ++ indexs ++ "_offset")
+        sb.appendln("    )")
+
+        sb.appendln("  #[inline]")
+        sb.appendln("  private fun loadPropertyWithOffset$" ++ indexs ++ "(self: " ++ typeName ++ ", offset: u32): " ++ parameterType ++ " = %wasm {")
+        sb.appendln("    (i64.load")
+        sb.appendln("      (i32.add")
+        sb.appendln("        (local.get $offset)")
+        sb.appendln("        (call $addressFromRef (local.get $self))")
+        sb.appendln("      )")
+        sb.appendln("    )")
+        sb.appendln("  }")
+
+        sb.appendln("  #[inline]")
+        sb.appendln("  private fun storePropertyWithOffset$" ++ indexs ++ "(self: " ++ typeName ++ ", value: " ++ parameterType ++ ", offset: u32): void = %wasm {")
+        sb.appendln("    (i64.store")
+        sb.appendln("      (i32.add")
+        sb.appendln("        (local.get $offset)")
+        sb.appendln("        (call $addressFromRef (local.get $self))")
+        sb.appendln("      )")
+        sb.appendln("      (local.get $value)")
+        sb.appendln("    )")
+        sb.appendln("  }")
+      } else {
+        sb.appendln("#[getter]")
+        sb.appendln("fun " ++ parameterName ++ "(self: " ++ typeName ++ "): " ++ parameterType ++ " =")
+        sb.appendln("  property$" ++ indexs ++ "(self)")
+
+        sb.appendln("#[setter]")
+        sb.appendln("fun " ++ parameterName ++ "(self: " ++ typeName ++ ", value: " ++ parameterType ++ "): void =")
+        sb.appendln("  property$" ++ indexs ++ "(self, value)")
+
+        sb.appendln("#[inline]")
+        sb.appendln("private fun property$" ++ indexs ++ "(self: " ++ typeName ++ "): " ++ parameterType ++ " =")
+        sb.appendln("  " ++ parameterType ++ ".load(self, " ++ typeName ++ ".^property$" ++ indexs ++ "_offset)")
+
+        sb.appendln("#[inline]")
+        sb.appendln("private fun property$" ++ indexs ++ "(self: " ++ typeName ++ ", value: " ++ parameterType ++ "): void =")
+        sb.appendln("  " ++ parameterType ++ ".store(self, value, " ++ typeName ++ ".^property$" ++ indexs ++ "_offset)")
+      }
+
+      index + 1
+    } else if (name == "(List)") {
+      processParameters(child, sb, callRefs, args, typeName, index)
+    } else index
+  }
+  case is AstCons(head, tail) -> {
+    val newIndex = processParameters(head, sb, callRefs, args, typeName, index)
+    processParameters(tail, sb, callRefs, args, typeName, newIndex)
+  }
+  else -> index
+}
+
+fun processStruct(currentPath: string, currentModule: string, child: AstNode, ctx: CompilerContext): AstNode = {
+  val nameNode = first(child)
+  val parameters = getChild(rest(child))
+
+  val typeName = textOf(nameNode)
+
+  val structTypeNode = Node("StructLiteral", parameters, 0x0, 0x0)
+
+  // TODO: Make typeDirective private if original struct is private
+  val typeDirective = Node("TypeDirective", AstCons(nameNode, structTypeNode), 0x0, 0x0)
+
+  val sb = StringBuilder()
+
+  val callRefs = StringBuilder()
+  val accessors = StringBuilder()
+  val args = StringBuilder()
+
+  processParameters(parameters, accessors, callRefs, args, typeName, 0)
+
+  sb.appendln("impl Reference for " ++ typeName ++ " {")
+  sb.appendln("  #[inline]")
+  sb.appendln("  fun is(a: Self | ref): boolean = {")
+  sb.appendln("    val discriminant: u32 = Self.^discriminant")
+  sb.appendln("    ref.getDiscriminant(a) == discriminant")
+  sb.appendln("  }")
+
+  sb.appendln("  #[explicit]")
+  sb.appendln("  #[inline]")
+  sb.appendln("  fun as(lhs: Self): ref  = %wasm { (local.get $lhs) }")
+  sb.appendln("}")
+
+  sb.appendln("impl " ++ typeName ++ " {")
+  sb.appendln("  #[inline]")
+  sb.appendln("  private fun " ++ typeName ++ "$discriminant(): u64 = {")
+  sb.appendln("    val discriminant: u32 = " ++ typeName ++ ".^discriminant")
+  sb.appendln("    discriminant as u64 << 32")
+  sb.appendln("  }")
+
+  sb.appendln("  #[inline]")
+  sb.append("  fun apply(").append(args).appendln("): " ++ typeName ++ " = {")
+  sb.appendln("    var $ref = fromPointer(")
+  sb.appendln("      system::core::memory::calloc(1 as u32, " ++ typeName ++ ".^allocationSize)")
+  sb.appendln("    )")
+
+  sb.append(callRefs)
+
+  sb.appendln("    $ref")
+  sb.appendln("  }")
+
+  sb.appendln("  /**")
+  sb.appendln("   * CPointer implicit coercion.")
+  sb.appendln("   */")
+  sb.appendln("  fun as(self: " ++ typeName ++ "): UnsafeCPointer = %wasm {")
+  sb.appendln("    (call $addressFromRef (get_local $self))")
+  sb.appendln("  }")
+
+  sb.appendln("  private fun fromPointer(ptr: u32): " ++ typeName ++ " = %wasm {")
+  sb.appendln("    (i64.or")
+  sb.appendln("      (call $" ++ typeName ++ "$discriminant)")
+  sb.appendln("      (i64.extend_u/i32 (local.get $ptr))")
+  sb.appendln("    )")
+  sb.appendln("  }")
+
+  sb.appendln("  fun ==(a: " ++ typeName ++ ", b: " ++ typeName ++ "): boolean = %wasm {")
+  sb.appendln("    (i64.eq")
+  sb.appendln("      (local.get $a)")
+  sb.appendln("      (local.get $b)")
+  sb.appendln("    )")
+  sb.appendln("  }")
+
+  sb.appendln("  fun !=(a: " ++ typeName ++ ", b: " ++ typeName ++ "): boolean = %wasm {")
+  sb.appendln("    (i64.ne")
+  sb.appendln("      (local.get $a)")
+  sb.appendln("      (local.get $b)")
+  sb.appendln("    )")
+  sb.appendln("  }")
+
+  sb.append(accessors)
+
+  sb.appendln("  fun store(lhs: ref, rhs: " ++ typeName ++ ", offset: u32): void = %wasm {")
+  sb.appendln("    (i64.store")
+  sb.appendln("      (i32.add")
+  sb.appendln("        (local.get $offset)")
+  sb.appendln("        (call $addressFromRef (local.get $lhs))")
+  sb.appendln("      )")
+  sb.appendln("      (local.get $rhs)")
+  sb.appendln("    )")
+  sb.appendln("  }")
+
+  sb.appendln("  fun load(lhs: ref, offset: u32): " ++ typeName ++ " = %wasm {")
+  sb.appendln("    (i64.load")
+  sb.appendln("      (i32.add")
+  sb.appendln("        (local.get $offset)")
+  sb.appendln("        (call $addressFromRef (local.get $lhs))")
+  sb.appendln("      )")
+  sb.appendln("    )")
+  sb.appendln("  }")
+  sb.appendln("}")
+
+  val mod = ctx.getModuleByContent(
+    currentPath ++ "#" ++ typeName,
+    currentModule ++ "#" ++ typeName,
+    sb.toString()
+  )
+
+  AstCons(typeDirective, getChild(mod.ast))
+}

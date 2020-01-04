@@ -18,6 +18,20 @@ fun parseAst(strAddress: UnsafeCPointer): UnsafeCPointer = {
   sb.toString() as UnsafeCPointer
 }
 
+#[export "parseAstDesugar"]
+fun parseAstDesugar(strAddress: UnsafeCPointer): UnsafeCPointer = {
+  val ctx = src::compiler::context::CompilerContext()
+
+  match parse(UCS2.fromPtr(strAddress), "Document", getGrammar()) {
+    case ast is AstNode -> {
+      val sb = StringBuilder()
+      printAst(src::compiler::phases::transformation::desugar("mod", "mod", ast, ctx), 0, sb)
+      sb.toString() as UnsafeCPointer
+    }
+    else -> "" as UnsafeCPointer
+  }
+}
+
 #[export "parseAndEmit"]
 fun parseAndEmit(strAddress: UnsafeCPointer): UnsafeCPointer = {
   val ast = parse(UCS2.fromPtr(strAddress), "Document", getGrammar())

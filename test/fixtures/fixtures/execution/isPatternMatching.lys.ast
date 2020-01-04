@@ -37,20 +37,18 @@
           |-Parameter(92,98)
             |-NameIdentifier(92,93)
               |-Identifier=a
-            |-Type(95,98)
-              |-Reference(95,98)
-                |-QName(95,98)
-                  |-NameIdentifier(95,98)
-                    |-Identifier=i32
+            |-Reference(95,98)
+              |-QName(95,98)
+                |-NameIdentifier(95,98)
+                  |-Identifier=i32
   |-VarDirective(103,123)
     |-VarDeclaration(103,123)
       |-NameIdentifier(107,113)
         |-Identifier=value1
-      |-Type(115,119)
-        |-Reference(115,119)
-          |-QName(115,119)
-            |-NameIdentifier(115,119)
-              |-Identifier=Enum
+      |-Reference(115,119)
+        |-QName(115,119)
+          |-NameIdentifier(115,119)
+            |-Identifier=Enum
       |-Reference(122,123)
         |-QName(122,123)
           |-NameIdentifier(122,123)
@@ -59,16 +57,15 @@
     |-VarDeclaration(124,145)
       |-NameIdentifier(128,134)
         |-Identifier=value2
-      |-Type(136,141)
-        |-UnionType(136,141)
-          |-Reference(136,137)
-            |-QName(136,137)
-              |-NameIdentifier(136,137)
-                |-Identifier=A
-          |-Reference(140,141)
-            |-QName(140,141)
-              |-NameIdentifier(140,141)
-                |-Identifier=B
+      |-UnionType(136,141)
+        |-Reference(136,137)
+          |-QName(136,137)
+            |-NameIdentifier(136,137)
+              |-Identifier=A
+        |-Reference(140,141)
+          |-QName(140,141)
+            |-NameIdentifier(140,141)
+              |-Identifier=B
       |-Reference(144,145)
         |-QName(144,145)
           |-NameIdentifier(144,145)
@@ -77,11 +74,10 @@
     |-VarDeclaration(146,163)
       |-NameIdentifier(150,156)
         |-Identifier=value3
-      |-Type(158,159)
-        |-Reference(158,159)
-          |-QName(158,159)
-            |-NameIdentifier(158,159)
-              |-Identifier=A
+      |-Reference(158,159)
+        |-QName(158,159)
+          |-NameIdentifier(158,159)
+            |-Identifier=A
       |-Reference(162,163)
         |-QName(162,163)
           |-NameIdentifier(162,163)
@@ -100,17 +96,15 @@
           |-Parameter(173,179)
             |-NameIdentifier(173,174)
               |-Identifier=x
-            |-Type(176,179)
-              |-Reference(176,179)
-                |-QName(176,179)
-                  |-NameIdentifier(176,179)
-                    |-Identifier=ref
+            |-Reference(176,179)
+              |-QName(176,179)
+                |-NameIdentifier(176,179)
+                  |-Identifier=ref
       |-ReturnType(180,190)
-        |-Type(182,189)
-          |-Reference(182,189)
-            |-QName(182,189)
-              |-NameIdentifier(182,189)
-                |-Identifier=boolean
+        |-Reference(182,189)
+          |-QName(182,189)
+            |-NameIdentifier(182,189)
+              |-Identifier=boolean
       |-FunctionBody(190,251)
         |-CodeBlock(192,251)
           |-MatchExpression(196,249)
@@ -150,17 +144,15 @@
           |-Parameter(261,267)
             |-NameIdentifier(261,262)
               |-Identifier=x
-            |-Type(264,267)
-              |-Reference(264,267)
-                |-QName(264,267)
-                  |-NameIdentifier(264,267)
-                    |-Identifier=ref
+            |-Reference(264,267)
+              |-QName(264,267)
+                |-NameIdentifier(264,267)
+                  |-Identifier=ref
       |-ReturnType(268,278)
-        |-Type(270,277)
-          |-Reference(270,277)
-            |-QName(270,277)
-              |-NameIdentifier(270,277)
-                |-Identifier=boolean
+        |-Reference(270,277)
+          |-QName(270,277)
+            |-NameIdentifier(270,277)
+              |-Identifier=boolean
       |-FunctionBody(278,339)
         |-CodeBlock(280,339)
           |-MatchExpression(284,337)
@@ -200,17 +192,15 @@
           |-Parameter(352,358)
             |-NameIdentifier(352,353)
               |-Identifier=x
-            |-Type(355,358)
-              |-Reference(355,358)
-                |-QName(355,358)
-                  |-NameIdentifier(355,358)
-                    |-Identifier=ref
+            |-Reference(355,358)
+              |-QName(355,358)
+                |-NameIdentifier(355,358)
+                  |-Identifier=ref
       |-ReturnType(359,369)
-        |-Type(361,368)
-          |-Reference(361,368)
-            |-QName(361,368)
-              |-NameIdentifier(361,368)
-                |-Identifier=boolean
+        |-Reference(361,368)
+          |-QName(361,368)
+            |-NameIdentifier(361,368)
+              |-Identifier=boolean
       |-FunctionBody(369,433)
         |-CodeBlock(371,433)
           |-MatchExpression(375,431)
@@ -250,17 +240,15 @@
           |-Parameter(445,451)
             |-NameIdentifier(445,446)
               |-Identifier=x
-            |-Type(448,451)
-              |-Reference(448,451)
-                |-QName(448,451)
-                  |-NameIdentifier(448,451)
-                    |-Identifier=ref
+            |-Reference(448,451)
+              |-QName(448,451)
+                |-NameIdentifier(448,451)
+                  |-Identifier=ref
       |-ReturnType(452,462)
-        |-Type(454,461)
-          |-Reference(454,461)
-            |-QName(454,461)
-              |-NameIdentifier(454,461)
-                |-Identifier=boolean
+        |-Reference(454,461)
+          |-QName(454,461)
+            |-NameIdentifier(454,461)
+              |-Identifier=boolean
       |-FunctionBody(462,525)
         |-CodeBlock(464,525)
           |-MatchExpression(468,523)
@@ -300,17 +288,15 @@
           |-Parameter(539,545)
             |-NameIdentifier(539,540)
               |-Identifier=x
-            |-Type(542,545)
-              |-Reference(542,545)
-                |-QName(542,545)
-                  |-NameIdentifier(542,545)
-                    |-Identifier=ref
+            |-Reference(542,545)
+              |-QName(542,545)
+                |-NameIdentifier(542,545)
+                  |-Identifier=ref
       |-ReturnType(546,556)
-        |-Type(548,555)
-          |-Reference(548,555)
-            |-QName(548,555)
-              |-NameIdentifier(548,555)
-                |-Identifier=boolean
+        |-Reference(548,555)
+          |-QName(548,555)
+            |-NameIdentifier(548,555)
+              |-Identifier=boolean
       |-FunctionBody(556,621)
         |-CodeBlock(558,621)
           |-MatchExpression(562,619)
@@ -350,17 +336,15 @@
           |-Parameter(636,642)
             |-NameIdentifier(636,637)
               |-Identifier=x
-            |-Type(639,642)
-              |-Reference(639,642)
-                |-QName(639,642)
-                  |-NameIdentifier(639,642)
-                    |-Identifier=ref
+            |-Reference(639,642)
+              |-QName(639,642)
+                |-NameIdentifier(639,642)
+                  |-Identifier=ref
       |-ReturnType(643,653)
-        |-Type(645,652)
-          |-Reference(645,652)
-            |-QName(645,652)
-              |-NameIdentifier(645,652)
-                |-Identifier=boolean
+        |-Reference(645,652)
+          |-QName(645,652)
+            |-NameIdentifier(645,652)
+              |-Identifier=boolean
       |-FunctionBody(653,719)
         |-CodeBlock(655,719)
           |-MatchExpression(659,717)
@@ -401,11 +385,10 @@
         |-(List)(740,740)
           <Rule0>
       |-ReturnType(741,748)
-        |-Type(743,747)
-          |-Reference(743,747)
-            |-QName(743,747)
-              |-NameIdentifier(743,747)
-                |-Identifier=void
+        |-Reference(743,747)
+          |-QName(743,747)
+            |-NameIdentifier(743,747)
+              |-Identifier=void
       |-FunctionBody(748,1784)
         |-CodeBlock(750,1784)
           |-AtomicExpression(754,786)

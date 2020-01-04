@@ -19,6 +19,13 @@ export async function tokenizer() {
     );
   }
 
+  function parseAstDesugar(source: string): string {
+    return readStringFromHeap(
+      instance,
+      instance.exports.parseAstDesugar(writeStringToHeap(instance, source))
+    );
+  }
+
   function parseAndEmit(source: string): string {
     return readStringFromHeap(
       instance,
@@ -58,6 +65,7 @@ export async function tokenizer() {
     parseAndEmitAst,
     parseAndEmitErrors,
     parseAst,
+    parseAstDesugar,
     eat
   };
 }

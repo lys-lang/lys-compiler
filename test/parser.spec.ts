@@ -27,6 +27,19 @@ folderBasedTest(
   resolve(__dirname, "./fixtures/") + "/**/*.lys",
   async source => {
     const instance = await tokenizer();
+    const result = instance.parseAstDesugar(source);
+
+    if (result == "<EMPTY>") throw new Error("Parsing error");
+
+    return result;
+  },
+  ".ast.desugar"
+);
+
+folderBasedTest(
+  resolve(__dirname, "./fixtures/") + "/**/*.lys",
+  async source => {
+    const instance = await tokenizer();
     const result = instance.parseAndEmitAst(source);
 
     if (result == "") throw new Error("Parsing error");

@@ -1,0 +1,1919 @@
+|-Document(0,1135)
+  |-EnumDirective(0,41)
+    |-NameIdentifier(5,11)
+      |-Identifier=Option
+    |-TypeDirective(0,0)
+      |-NameIdentifier(16,20)
+        |-Identifier=Some
+      |-StructLiteral(0,0)
+        |-(List)(21,31)
+          |-Parameter(21,31)
+            |-NameIdentifier(21,26)
+              |-Identifier=value
+            |-Reference(28,31)
+              |-QName(28,31)
+                |-NameIdentifier(28,31)
+                  |-Identifier=ref
+    |-ImplDirective(0,251)
+      |-Reference(5,14)
+        |-QName(5,14)
+          |-NameIdentifier(5,14)
+            |-Identifier=Reference
+      |-Reference(19,23)
+        |-QName(19,23)
+          |-NameIdentifier(19,23)
+            |-Identifier=Some
+      |-(List)(24,251)
+        |-FunctionDirective(28,168)
+          |-Decorators(28,40)
+            |-Decorator(28,40)
+              |-NameIdentifier(30,36)
+                |-Identifier=inline
+          |-FunDeclaration(40,168)
+            |-FunctionName(44,46)
+              |-FunOperator(44,46)
+                |-Keyword=is
+            |-TypeParameters(46,46)
+              <Rule0>
+            |-FunctionParamsList(46,61)
+              |-(List)(47,60)
+                |-Parameter(47,60)
+                  |-NameIdentifier(47,48)
+                    |-Identifier=a
+                  |-UnionType(50,60)
+                    |-Reference(50,54)
+                      |-QName(50,54)
+                        |-NameIdentifier(50,54)
+                          |-Identifier=Self
+                    |-Reference(57,60)
+                      |-QName(57,60)
+                        |-NameIdentifier(57,60)
+                          |-Identifier=ref
+            |-ReturnType(61,71)
+              |-Reference(63,70)
+                |-QName(63,70)
+                  |-NameIdentifier(63,70)
+                    |-Identifier=boolean
+            |-FunctionBody(71,168)
+              |-CodeBlock(73,168)
+                |-ValDeclaration(79,121)
+                  |-NameIdentifier(83,95)
+                    |-Identifier=discriminant
+                  |-Reference(97,100)
+                    |-QName(97,100)
+                      |-NameIdentifier(97,100)
+                        |-Identifier=u32
+                  |-AtomicExpression(103,121)
+                    |-Reference(103,107)
+                      |-QName(103,107)
+                        |-NameIdentifier(103,107)
+                          |-Identifier=Self
+                    |-MemberExpression(107,121)
+                      |-Operator=.^
+                      |-NameIdentifier(109,121)
+                        |-Identifier=discriminant
+                |-BinaryOpExpression(126,164)
+                  |-AtomicExpression(126,148)
+                    |-Reference(126,129)
+                      |-QName(126,129)
+                        |-NameIdentifier(126,129)
+                          |-Identifier=ref
+                    |-MemberExpression(129,145)
+                      |-Operator=.
+                      |-NameIdentifier(130,145)
+                        |-Identifier=getDiscriminant
+                    |-CallArguments(145,148)
+                      |-Reference(146,147)
+                        |-QName(146,147)
+                          |-NameIdentifier(146,147)
+                            |-Identifier=a
+                  |-Operator===
+                  |-Reference(152,164)
+                    |-QName(152,164)
+                      |-NameIdentifier(152,164)
+                        |-Identifier=discriminant
+        |-FunctionDirective(171,250)
+          |-Decorators(171,197)
+            |-Decorator(171,185)
+              |-NameIdentifier(173,181)
+                |-Identifier=explicit
+            |-Decorator(185,197)
+              |-NameIdentifier(187,193)
+                |-Identifier=inline
+          |-FunDeclaration(197,250)
+            |-FunctionName(201,203)
+              |-FunOperator(201,203)
+                |-Keyword=as
+            |-TypeParameters(203,203)
+              <Rule0>
+            |-FunctionParamsList(203,214)
+              |-(List)(204,213)
+                |-Parameter(204,213)
+                  |-NameIdentifier(204,207)
+                    |-Identifier=lhs
+                  |-Reference(209,213)
+                    |-QName(209,213)
+                      |-NameIdentifier(209,213)
+                        |-Identifier=Self
+            |-ReturnType(214,221)
+              |-Reference(216,219)
+                |-QName(216,219)
+                  |-NameIdentifier(216,219)
+                    |-Identifier=ref
+            |-FunctionBody(221,250)
+              |-WasmExpression(223,250)
+                |-SExpression(231,248)
+                  |-SSymbol(232,241)
+                    |-Identifier=local
+                    |-Operator=.
+                    |-Identifier=get
+                  |-QName(242,246)
+                    |-NameIdentifier(242,246)
+                      |-Identifier=$lhs
+    |-ImplDirective(252,1821)
+      |-Reference(257,261)
+        |-QName(257,261)
+          |-NameIdentifier(257,261)
+            |-Identifier=Some
+      |-(List)(262,1821)
+        |-FunctionDirective(266,399)
+          |-Decorators(266,278)
+            |-Decorator(266,278)
+              |-NameIdentifier(268,274)
+                |-Identifier=inline
+          |-PrivateModifier(278,286)
+            <Rule0>
+          |-FunDeclaration(286,399)
+            |-FunctionName(290,307)
+              |-NameIdentifier(290,307)
+                |-Identifier=Some$discriminant
+            |-TypeParameters(307,307)
+              <Rule0>
+            |-FunctionParamsList(307,309)
+              |-(List)(308,308)
+                <Rule0>
+            |-ReturnType(309,315)
+              |-Reference(311,314)
+                |-QName(311,314)
+                  |-NameIdentifier(311,314)
+                    |-Identifier=u64
+            |-FunctionBody(315,399)
+              |-CodeBlock(317,399)
+                |-ValDeclaration(323,365)
+                  |-NameIdentifier(327,339)
+                    |-Identifier=discriminant
+                  |-Reference(341,344)
+                    |-QName(341,344)
+                      |-NameIdentifier(341,344)
+                        |-Identifier=u32
+                  |-AtomicExpression(347,365)
+                    |-Reference(347,351)
+                      |-QName(347,351)
+                        |-NameIdentifier(347,351)
+                          |-Identifier=Some
+                    |-MemberExpression(351,365)
+                      |-Operator=.^
+                      |-NameIdentifier(353,365)
+                        |-Identifier=discriminant
+                |-BinaryOpExpression(370,395)
+                  |-AsExpression(370,389)
+                    |-Reference(370,382)
+                      |-QName(370,382)
+                        |-NameIdentifier(370,382)
+                          |-Identifier=discriminant
+                    |-Reference(386,389)
+                      |-QName(386,389)
+                        |-NameIdentifier(386,389)
+                          |-Identifier=u64
+                  |-Operator=<<
+                  |-NumberLiteral=32
+        |-FunctionDirective(402,583)
+          |-Decorators(402,414)
+            |-Decorator(402,414)
+              |-NameIdentifier(404,410)
+                |-Identifier=inline
+          |-FunDeclaration(414,583)
+            |-FunctionName(418,423)
+              |-NameIdentifier(418,423)
+                |-Identifier=apply
+            |-TypeParameters(423,423)
+              <Rule0>
+            |-FunctionParamsList(423,435)
+              |-(List)(424,434)
+                |-Parameter(424,434)
+                  |-NameIdentifier(424,429)
+                    |-Identifier=value
+                  |-Reference(431,434)
+                    |-QName(431,434)
+                      |-NameIdentifier(431,434)
+                        |-Identifier=ref
+            |-ReturnType(435,442)
+              |-Reference(437,441)
+                |-QName(437,441)
+                  |-NameIdentifier(437,441)
+                    |-Identifier=Some
+            |-FunctionBody(442,583)
+              |-CodeBlock(444,583)
+                |-VarDeclaration(450,546)
+                  |-NameIdentifier(454,458)
+                    |-Identifier=$ref
+                  |-AtomicExpression(461,546)
+                    |-Reference(461,472)
+                      |-QName(461,472)
+                        |-NameIdentifier(461,472)
+                          |-Identifier=fromPointer
+                    |-CallArguments(472,546)
+                      |-AtomicExpression(480,540)
+                        |-Reference(480,508)
+                          |-QName(480,508)
+                            |-NameIdentifier(480,486)
+                              |-Identifier=system
+                            |-NameIdentifier(488,492)
+                              |-Identifier=core
+                            |-NameIdentifier(494,500)
+                              |-Identifier=memory
+                            |-NameIdentifier(502,508)
+                              |-Identifier=calloc
+                        |-CallArguments(508,540)
+                          |-AsExpression(509,517)
+                            |-NumberLiteral=1
+                            |-Reference(514,517)
+                              |-QName(514,517)
+                                |-NameIdentifier(514,517)
+                                  |-Identifier=u32
+                          |-AtomicExpression(519,539)
+                            |-Reference(519,523)
+                              |-QName(519,523)
+                                |-NameIdentifier(519,523)
+                                  |-Identifier=Some
+                            |-MemberExpression(523,539)
+                              |-Operator=.^
+                              |-NameIdentifier(525,539)
+                                |-Identifier=allocationSize
+                |-AtomicExpression(547,570)
+                  |-Reference(547,557)
+                    |-QName(547,557)
+                      |-NameIdentifier(547,557)
+                        |-Identifier=property$0
+                  |-CallArguments(557,570)
+                    |-Reference(558,562)
+                      |-QName(558,562)
+                        |-NameIdentifier(558,562)
+                          |-Identifier=$ref
+                    |-Reference(564,569)
+                      |-QName(564,569)
+                        |-NameIdentifier(564,569)
+                          |-Identifier=value
+                |-Reference(575,579)
+                  |-QName(575,579)
+                    |-NameIdentifier(575,579)
+                      |-Identifier=$ref
+        |-FunctionDirective(631,727)
+          |-Decorators(631,631)
+            <Rule0>
+          |-FunDeclaration(631,727)
+            |-FunctionName(635,637)
+              |-FunOperator(635,637)
+                |-Keyword=as
+            |-TypeParameters(637,637)
+              <Rule0>
+            |-FunctionParamsList(637,649)
+              |-(List)(638,648)
+                |-Parameter(638,648)
+                  |-NameIdentifier(638,642)
+                    |-Identifier=self
+                  |-Reference(644,648)
+                    |-QName(644,648)
+                      |-NameIdentifier(644,648)
+                        |-Identifier=Some
+            |-ReturnType(649,666)
+              |-Reference(651,665)
+                |-QName(651,665)
+                  |-NameIdentifier(651,665)
+                    |-Identifier=UnsafeCPointer
+            |-FunctionBody(666,727)
+              |-WasmExpression(668,727)
+                |-SExpression(680,723)
+                  |-SSymbol(681,685)
+                    |-Identifier=call
+                  |-QName(686,701)
+                    |-NameIdentifier(686,701)
+                      |-Identifier=$addressFromRef
+                  |-SExpression(702,719)
+                    |-SSymbol(703,712)
+                      |-Identifier=get_local
+                    |-QName(713,718)
+                      |-NameIdentifier(713,718)
+                        |-Identifier=$self
+        |-FunctionDirective(727,875)
+          |-Decorators(727,727)
+            <Rule0>
+          |-PrivateModifier(727,735)
+            <Rule0>
+          |-FunDeclaration(735,875)
+            |-FunctionName(739,750)
+              |-NameIdentifier(739,750)
+                |-Identifier=fromPointer
+            |-TypeParameters(750,750)
+              <Rule0>
+            |-FunctionParamsList(750,760)
+              |-(List)(751,759)
+                |-Parameter(751,759)
+                  |-NameIdentifier(751,754)
+                    |-Identifier=ptr
+                  |-Reference(756,759)
+                    |-QName(756,759)
+                      |-NameIdentifier(756,759)
+                        |-Identifier=u32
+            |-ReturnType(760,767)
+              |-Reference(762,766)
+                |-QName(762,766)
+                  |-NameIdentifier(762,766)
+                    |-Identifier=Some
+            |-FunctionBody(767,875)
+              |-WasmExpression(769,875)
+                |-SExpression(781,871)
+                  |-SSymbol(782,788)
+                    |-Identifier=i64
+                    |-Operator=.
+                    |-Identifier=or
+                  |-SExpression(795,827)
+                    |-SSymbol(796,800)
+                      |-Identifier=call
+                    |-QName(801,819)
+                      |-NameIdentifier(801,819)
+                        |-Identifier=$Some$discriminant
+                  |-SExpression(827,867)
+                    |-SSymbol(828,844)
+                      |-Identifier=i64
+                      |-Operator=.
+                      |-Identifier=extend_u
+                      |-Operator=/
+                      |-Identifier=i32
+                    |-SExpression(845,861)
+                      |-SSymbol(846,855)
+                        |-Identifier=local
+                        |-Operator=.
+                        |-Identifier=get
+                      |-QName(856,860)
+                        |-NameIdentifier(856,860)
+                          |-Identifier=$ptr
+        |-FunctionDirective(875,985)
+          |-Decorators(875,875)
+            <Rule0>
+          |-FunDeclaration(875,985)
+            |-FunctionName(879,881)
+              |-FunOperator(879,881)
+                |-Operator===
+            |-TypeParameters(881,881)
+              <Rule0>
+            |-FunctionParamsList(881,899)
+              |-(List)(882,898)
+                |-Parameter(882,889)
+                  |-NameIdentifier(882,883)
+                    |-Identifier=a
+                  |-Reference(885,889)
+                    |-QName(885,889)
+                      |-NameIdentifier(885,889)
+                        |-Identifier=Some
+                |-Parameter(891,898)
+                  |-NameIdentifier(891,892)
+                    |-Identifier=b
+                  |-Reference(894,898)
+                    |-QName(894,898)
+                      |-NameIdentifier(894,898)
+                        |-Identifier=Some
+            |-ReturnType(899,909)
+              |-Reference(901,908)
+                |-QName(901,908)
+                  |-NameIdentifier(901,908)
+                    |-Identifier=boolean
+            |-FunctionBody(909,985)
+              |-WasmExpression(911,985)
+                |-SExpression(923,981)
+                  |-SSymbol(924,930)
+                    |-Identifier=i64
+                    |-Operator=.
+                    |-Identifier=eq
+                  |-SExpression(937,958)
+                    |-SSymbol(938,947)
+                      |-Identifier=local
+                      |-Operator=.
+                      |-Identifier=get
+                    |-QName(948,950)
+                      |-NameIdentifier(948,950)
+                        |-Identifier=$a
+                  |-SExpression(958,977)
+                    |-SSymbol(959,968)
+                      |-Identifier=local
+                      |-Operator=.
+                      |-Identifier=get
+                    |-QName(969,971)
+                      |-NameIdentifier(969,971)
+                        |-Identifier=$b
+        |-FunctionDirective(985,1093)
+          |-Decorators(985,985)
+            <Rule0>
+          |-FunDeclaration(985,1093)
+            |-FunctionName(989,991)
+              |-FunOperator(989,991)
+                |-Operator=!=
+            |-TypeParameters(991,991)
+              <Rule0>
+            |-FunctionParamsList(991,1009)
+              |-(List)(992,1008)
+                |-Parameter(992,999)
+                  |-NameIdentifier(992,993)
+                    |-Identifier=a
+                  |-Reference(995,999)
+                    |-QName(995,999)
+                      |-NameIdentifier(995,999)
+                        |-Identifier=Some
+                |-Parameter(1001,1008)
+                  |-NameIdentifier(1001,1002)
+                    |-Identifier=b
+                  |-Reference(1004,1008)
+                    |-QName(1004,1008)
+                      |-NameIdentifier(1004,1008)
+                        |-Identifier=Some
+            |-ReturnType(1009,1019)
+              |-Reference(1011,1018)
+                |-QName(1011,1018)
+                  |-NameIdentifier(1011,1018)
+                    |-Identifier=boolean
+            |-FunctionBody(1019,1093)
+              |-WasmExpression(1021,1093)
+                |-SExpression(1033,1091)
+                  |-SSymbol(1034,1040)
+                    |-Identifier=i64
+                    |-Operator=.
+                    |-Identifier=ne
+                  |-SExpression(1047,1068)
+                    |-SSymbol(1048,1057)
+                      |-Identifier=local
+                      |-Operator=.
+                      |-Identifier=get
+                    |-QName(1058,1060)
+                      |-NameIdentifier(1058,1060)
+                        |-Identifier=$a
+                  |-SExpression(1068,1087)
+                    |-SSymbol(1069,1078)
+                      |-Identifier=local
+                      |-Operator=.
+                      |-Identifier=get
+                    |-QName(1079,1081)
+                      |-NameIdentifier(1079,1081)
+                        |-Identifier=$b
+        |-FunctionDirective(1093,1150)
+          |-Decorators(1093,1103)
+            |-Decorator(1093,1103)
+              |-NameIdentifier(1095,1101)
+                |-Identifier=getter
+          |-FunDeclaration(1103,1150)
+            |-FunctionName(1107,1112)
+              |-NameIdentifier(1107,1112)
+                |-Identifier=value
+            |-TypeParameters(1112,1112)
+              <Rule0>
+            |-FunctionParamsList(1112,1124)
+              |-(List)(1113,1123)
+                |-Parameter(1113,1123)
+                  |-NameIdentifier(1113,1117)
+                    |-Identifier=self
+                  |-Reference(1119,1123)
+                    |-QName(1119,1123)
+                      |-NameIdentifier(1119,1123)
+                        |-Identifier=Some
+            |-ReturnType(1124,1130)
+              |-Reference(1126,1129)
+                |-QName(1126,1129)
+                  |-NameIdentifier(1126,1129)
+                    |-Identifier=ref
+            |-FunctionBody(1130,1150)
+              |-AtomicExpression(1134,1150)
+                |-Reference(1134,1144)
+                  |-QName(1134,1144)
+                    |-NameIdentifier(1134,1144)
+                      |-Identifier=property$0
+                |-CallArguments(1144,1150)
+                  |-Reference(1145,1149)
+                    |-QName(1145,1149)
+                      |-NameIdentifier(1145,1149)
+                        |-Identifier=self
+        |-FunctionDirective(1151,1228)
+          |-Decorators(1151,1161)
+            |-Decorator(1151,1161)
+              |-NameIdentifier(1153,1159)
+                |-Identifier=setter
+          |-FunDeclaration(1161,1228)
+            |-FunctionName(1165,1170)
+              |-NameIdentifier(1165,1170)
+                |-Identifier=value
+            |-TypeParameters(1170,1170)
+              <Rule0>
+            |-FunctionParamsList(1170,1194)
+              |-(List)(1171,1193)
+                |-Parameter(1171,1181)
+                  |-NameIdentifier(1171,1175)
+                    |-Identifier=self
+                  |-Reference(1177,1181)
+                    |-QName(1177,1181)
+                      |-NameIdentifier(1177,1181)
+                        |-Identifier=Some
+                |-Parameter(1183,1193)
+                  |-NameIdentifier(1183,1188)
+                    |-Identifier=value
+                  |-Reference(1190,1193)
+                    |-QName(1190,1193)
+                      |-NameIdentifier(1190,1193)
+                        |-Identifier=ref
+            |-ReturnType(1194,1201)
+              |-Reference(1196,1200)
+                |-QName(1196,1200)
+                  |-NameIdentifier(1196,1200)
+                    |-Identifier=void
+            |-FunctionBody(1201,1228)
+              |-AtomicExpression(1205,1228)
+                |-Reference(1205,1215)
+                  |-QName(1205,1215)
+                    |-NameIdentifier(1205,1215)
+                      |-Identifier=property$0
+                |-CallArguments(1215,1228)
+                  |-Reference(1216,1220)
+                    |-QName(1216,1220)
+                      |-NameIdentifier(1216,1220)
+                        |-Identifier=self
+                  |-Reference(1222,1227)
+                    |-QName(1222,1227)
+                      |-NameIdentifier(1222,1227)
+                        |-Identifier=value
+        |-FunctionDirective(1229,1322)
+          |-Decorators(1229,1239)
+            |-Decorator(1229,1239)
+              |-NameIdentifier(1231,1237)
+                |-Identifier=inline
+          |-PrivateModifier(1239,1247)
+            <Rule0>
+          |-FunDeclaration(1247,1322)
+            |-FunctionName(1251,1261)
+              |-NameIdentifier(1251,1261)
+                |-Identifier=property$0
+            |-TypeParameters(1261,1261)
+              <Rule0>
+            |-FunctionParamsList(1261,1273)
+              |-(List)(1262,1272)
+                |-Parameter(1262,1272)
+                  |-NameIdentifier(1262,1266)
+                    |-Identifier=self
+                  |-Reference(1268,1272)
+                    |-QName(1268,1272)
+                      |-NameIdentifier(1268,1272)
+                        |-Identifier=Some
+            |-ReturnType(1273,1279)
+              |-Reference(1275,1278)
+                |-QName(1275,1278)
+                  |-NameIdentifier(1275,1278)
+                    |-Identifier=ref
+            |-FunctionBody(1279,1322)
+              |-AtomicExpression(1283,1322)
+                |-Reference(1283,1286)
+                  |-QName(1283,1286)
+                    |-NameIdentifier(1283,1286)
+                      |-Identifier=ref
+                |-MemberExpression(1286,1291)
+                  |-Operator=.
+                  |-NameIdentifier(1287,1291)
+                    |-Identifier=load
+                |-CallArguments(1291,1322)
+                  |-Reference(1292,1296)
+                    |-QName(1292,1296)
+                      |-NameIdentifier(1292,1296)
+                        |-Identifier=self
+                  |-AtomicExpression(1298,1321)
+                    |-Reference(1298,1302)
+                      |-QName(1298,1302)
+                        |-NameIdentifier(1298,1302)
+                          |-Identifier=Some
+                    |-MemberExpression(1302,1321)
+                      |-Operator=.^
+                      |-NameIdentifier(1304,1321)
+                        |-Identifier=property$0_offset
+        |-FunctionDirective(1323,1437)
+          |-Decorators(1323,1333)
+            |-Decorator(1323,1333)
+              |-NameIdentifier(1325,1331)
+                |-Identifier=inline
+          |-PrivateModifier(1333,1341)
+            <Rule0>
+          |-FunDeclaration(1341,1437)
+            |-FunctionName(1345,1355)
+              |-NameIdentifier(1345,1355)
+                |-Identifier=property$0
+            |-TypeParameters(1355,1355)
+              <Rule0>
+            |-FunctionParamsList(1355,1379)
+              |-(List)(1356,1378)
+                |-Parameter(1356,1366)
+                  |-NameIdentifier(1356,1360)
+                    |-Identifier=self
+                  |-Reference(1362,1366)
+                    |-QName(1362,1366)
+                      |-NameIdentifier(1362,1366)
+                        |-Identifier=Some
+                |-Parameter(1368,1378)
+                  |-NameIdentifier(1368,1373)
+                    |-Identifier=value
+                  |-Reference(1375,1378)
+                    |-QName(1375,1378)
+                      |-NameIdentifier(1375,1378)
+                        |-Identifier=ref
+            |-ReturnType(1379,1386)
+              |-Reference(1381,1385)
+                |-QName(1381,1385)
+                  |-NameIdentifier(1381,1385)
+                    |-Identifier=void
+            |-FunctionBody(1386,1437)
+              |-AtomicExpression(1390,1437)
+                |-Reference(1390,1393)
+                  |-QName(1390,1393)
+                    |-NameIdentifier(1390,1393)
+                      |-Identifier=ref
+                |-MemberExpression(1393,1399)
+                  |-Operator=.
+                  |-NameIdentifier(1394,1399)
+                    |-Identifier=store
+                |-CallArguments(1399,1437)
+                  |-Reference(1400,1404)
+                    |-QName(1400,1404)
+                      |-NameIdentifier(1400,1404)
+                        |-Identifier=self
+                  |-Reference(1406,1411)
+                    |-QName(1406,1411)
+                      |-NameIdentifier(1406,1411)
+                        |-Identifier=value
+                  |-AtomicExpression(1413,1436)
+                    |-Reference(1413,1417)
+                      |-QName(1413,1417)
+                        |-NameIdentifier(1413,1417)
+                          |-Identifier=Some
+                    |-MemberExpression(1417,1436)
+                      |-Operator=.^
+                      |-NameIdentifier(1419,1436)
+                        |-Identifier=property$0_offset
+        |-FunctionDirective(1440,1649)
+          |-Decorators(1440,1440)
+            <Rule0>
+          |-FunDeclaration(1440,1649)
+            |-FunctionName(1444,1449)
+              |-NameIdentifier(1444,1449)
+                |-Identifier=store
+            |-TypeParameters(1449,1449)
+              <Rule0>
+            |-FunctionParamsList(1449,1483)
+              |-(List)(1450,1482)
+                |-Parameter(1450,1458)
+                  |-NameIdentifier(1450,1453)
+                    |-Identifier=lhs
+                  |-Reference(1455,1458)
+                    |-QName(1455,1458)
+                      |-NameIdentifier(1455,1458)
+                        |-Identifier=ref
+                |-Parameter(1460,1469)
+                  |-NameIdentifier(1460,1463)
+                    |-Identifier=rhs
+                  |-Reference(1465,1469)
+                    |-QName(1465,1469)
+                      |-NameIdentifier(1465,1469)
+                        |-Identifier=Some
+                |-Parameter(1471,1482)
+                  |-NameIdentifier(1471,1477)
+                    |-Identifier=offset
+                  |-Reference(1479,1482)
+                    |-QName(1479,1482)
+                      |-NameIdentifier(1479,1482)
+                        |-Identifier=u32
+            |-ReturnType(1483,1490)
+              |-Reference(1485,1489)
+                |-QName(1485,1489)
+                  |-NameIdentifier(1485,1489)
+                    |-Identifier=void
+            |-FunctionBody(1490,1649)
+              |-WasmExpression(1492,1649)
+                |-SExpression(1504,1645)
+                  |-SSymbol(1505,1514)
+                    |-Identifier=i64
+                    |-Operator=.
+                    |-Identifier=store
+                  |-SExpression(1521,1620)
+                    |-SSymbol(1522,1529)
+                      |-Identifier=i32
+                      |-Operator=.
+                      |-Identifier=add
+                    |-SExpression(1538,1566)
+                      |-SSymbol(1539,1548)
+                        |-Identifier=local
+                        |-Operator=.
+                        |-Identifier=get
+                      |-QName(1549,1556)
+                        |-NameIdentifier(1549,1556)
+                          |-Identifier=$offset
+                    |-SExpression(1566,1612)
+                      |-SSymbol(1567,1571)
+                        |-Identifier=call
+                      |-QName(1572,1587)
+                        |-NameIdentifier(1572,1587)
+                          |-Identifier=$addressFromRef
+                      |-SExpression(1588,1604)
+                        |-SSymbol(1589,1598)
+                          |-Identifier=local
+                          |-Operator=.
+                          |-Identifier=get
+                        |-QName(1599,1603)
+                          |-NameIdentifier(1599,1603)
+                            |-Identifier=$lhs
+                  |-SExpression(1620,1641)
+                    |-SSymbol(1621,1630)
+                      |-Identifier=local
+                      |-Operator=.
+                      |-Identifier=get
+                    |-QName(1631,1635)
+                      |-NameIdentifier(1631,1635)
+                        |-Identifier=$rhs
+        |-FunctionDirective(1649,1820)
+          |-Decorators(1649,1649)
+            <Rule0>
+          |-FunDeclaration(1649,1820)
+            |-FunctionName(1653,1657)
+              |-NameIdentifier(1653,1657)
+                |-Identifier=load
+            |-TypeParameters(1657,1657)
+              <Rule0>
+            |-FunctionParamsList(1657,1680)
+              |-(List)(1658,1679)
+                |-Parameter(1658,1666)
+                  |-NameIdentifier(1658,1661)
+                    |-Identifier=lhs
+                  |-Reference(1663,1666)
+                    |-QName(1663,1666)
+                      |-NameIdentifier(1663,1666)
+                        |-Identifier=ref
+                |-Parameter(1668,1679)
+                  |-NameIdentifier(1668,1674)
+                    |-Identifier=offset
+                  |-Reference(1676,1679)
+                    |-QName(1676,1679)
+                      |-NameIdentifier(1676,1679)
+                        |-Identifier=u32
+            |-ReturnType(1680,1687)
+              |-Reference(1682,1686)
+                |-QName(1682,1686)
+                  |-NameIdentifier(1682,1686)
+                    |-Identifier=Some
+            |-FunctionBody(1687,1820)
+              |-WasmExpression(1689,1820)
+                |-SExpression(1701,1818)
+                  |-SSymbol(1702,1710)
+                    |-Identifier=i64
+                    |-Operator=.
+                    |-Identifier=load
+                  |-SExpression(1717,1814)
+                    |-SSymbol(1718,1725)
+                      |-Identifier=i32
+                      |-Operator=.
+                      |-Identifier=add
+                    |-SExpression(1734,1762)
+                      |-SSymbol(1735,1744)
+                        |-Identifier=local
+                        |-Operator=.
+                        |-Identifier=get
+                      |-QName(1745,1752)
+                        |-NameIdentifier(1745,1752)
+                          |-Identifier=$offset
+                    |-SExpression(1762,1808)
+                      |-SSymbol(1763,1767)
+                        |-Identifier=call
+                      |-QName(1768,1783)
+                        |-NameIdentifier(1768,1783)
+                          |-Identifier=$addressFromRef
+                      |-SExpression(1784,1800)
+                        |-SSymbol(1785,1794)
+                          |-Identifier=local
+                          |-Operator=.
+                          |-Identifier=get
+                        |-QName(1795,1799)
+                          |-NameIdentifier(1795,1799)
+                            |-Identifier=$lhs
+    |-EndOfFile=
+    |-TypeDirective(0,0)
+      |-NameIdentifier(35,39)
+        |-Identifier=None
+      |-StructLiteral(0,0)
+        <Rule0>
+    |-ImplDirective(0,251)
+      |-Reference(5,14)
+        |-QName(5,14)
+          |-NameIdentifier(5,14)
+            |-Identifier=Reference
+      |-Reference(19,23)
+        |-QName(19,23)
+          |-NameIdentifier(19,23)
+            |-Identifier=None
+      |-(List)(24,251)
+        |-FunctionDirective(28,168)
+          |-Decorators(28,40)
+            |-Decorator(28,40)
+              |-NameIdentifier(30,36)
+                |-Identifier=inline
+          |-FunDeclaration(40,168)
+            |-FunctionName(44,46)
+              |-FunOperator(44,46)
+                |-Keyword=is
+            |-TypeParameters(46,46)
+              <Rule0>
+            |-FunctionParamsList(46,61)
+              |-(List)(47,60)
+                |-Parameter(47,60)
+                  |-NameIdentifier(47,48)
+                    |-Identifier=a
+                  |-UnionType(50,60)
+                    |-Reference(50,54)
+                      |-QName(50,54)
+                        |-NameIdentifier(50,54)
+                          |-Identifier=Self
+                    |-Reference(57,60)
+                      |-QName(57,60)
+                        |-NameIdentifier(57,60)
+                          |-Identifier=ref
+            |-ReturnType(61,71)
+              |-Reference(63,70)
+                |-QName(63,70)
+                  |-NameIdentifier(63,70)
+                    |-Identifier=boolean
+            |-FunctionBody(71,168)
+              |-CodeBlock(73,168)
+                |-ValDeclaration(79,121)
+                  |-NameIdentifier(83,95)
+                    |-Identifier=discriminant
+                  |-Reference(97,100)
+                    |-QName(97,100)
+                      |-NameIdentifier(97,100)
+                        |-Identifier=u32
+                  |-AtomicExpression(103,121)
+                    |-Reference(103,107)
+                      |-QName(103,107)
+                        |-NameIdentifier(103,107)
+                          |-Identifier=Self
+                    |-MemberExpression(107,121)
+                      |-Operator=.^
+                      |-NameIdentifier(109,121)
+                        |-Identifier=discriminant
+                |-BinaryOpExpression(126,164)
+                  |-AtomicExpression(126,148)
+                    |-Reference(126,129)
+                      |-QName(126,129)
+                        |-NameIdentifier(126,129)
+                          |-Identifier=ref
+                    |-MemberExpression(129,145)
+                      |-Operator=.
+                      |-NameIdentifier(130,145)
+                        |-Identifier=getDiscriminant
+                    |-CallArguments(145,148)
+                      |-Reference(146,147)
+                        |-QName(146,147)
+                          |-NameIdentifier(146,147)
+                            |-Identifier=a
+                  |-Operator===
+                  |-Reference(152,164)
+                    |-QName(152,164)
+                      |-NameIdentifier(152,164)
+                        |-Identifier=discriminant
+        |-FunctionDirective(171,250)
+          |-Decorators(171,197)
+            |-Decorator(171,185)
+              |-NameIdentifier(173,181)
+                |-Identifier=explicit
+            |-Decorator(185,197)
+              |-NameIdentifier(187,193)
+                |-Identifier=inline
+          |-FunDeclaration(197,250)
+            |-FunctionName(201,203)
+              |-FunOperator(201,203)
+                |-Keyword=as
+            |-TypeParameters(203,203)
+              <Rule0>
+            |-FunctionParamsList(203,214)
+              |-(List)(204,213)
+                |-Parameter(204,213)
+                  |-NameIdentifier(204,207)
+                    |-Identifier=lhs
+                  |-Reference(209,213)
+                    |-QName(209,213)
+                      |-NameIdentifier(209,213)
+                        |-Identifier=Self
+            |-ReturnType(214,221)
+              |-Reference(216,219)
+                |-QName(216,219)
+                  |-NameIdentifier(216,219)
+                    |-Identifier=ref
+            |-FunctionBody(221,250)
+              |-WasmExpression(223,250)
+                |-SExpression(231,248)
+                  |-SSymbol(232,241)
+                    |-Identifier=local
+                    |-Operator=.
+                    |-Identifier=get
+                  |-QName(242,246)
+                    |-NameIdentifier(242,246)
+                      |-Identifier=$lhs
+    |-ImplDirective(252,1442)
+      |-Reference(257,261)
+        |-QName(257,261)
+          |-NameIdentifier(257,261)
+            |-Identifier=None
+      |-(List)(262,1442)
+        |-FunctionDirective(266,399)
+          |-Decorators(266,278)
+            |-Decorator(266,278)
+              |-NameIdentifier(268,274)
+                |-Identifier=inline
+          |-PrivateModifier(278,286)
+            <Rule0>
+          |-FunDeclaration(286,399)
+            |-FunctionName(290,307)
+              |-NameIdentifier(290,307)
+                |-Identifier=None$discriminant
+            |-TypeParameters(307,307)
+              <Rule0>
+            |-FunctionParamsList(307,309)
+              |-(List)(308,308)
+                <Rule0>
+            |-ReturnType(309,315)
+              |-Reference(311,314)
+                |-QName(311,314)
+                  |-NameIdentifier(311,314)
+                    |-Identifier=u64
+            |-FunctionBody(315,399)
+              |-CodeBlock(317,399)
+                |-ValDeclaration(323,365)
+                  |-NameIdentifier(327,339)
+                    |-Identifier=discriminant
+                  |-Reference(341,344)
+                    |-QName(341,344)
+                      |-NameIdentifier(341,344)
+                        |-Identifier=u32
+                  |-AtomicExpression(347,365)
+                    |-Reference(347,351)
+                      |-QName(347,351)
+                        |-NameIdentifier(347,351)
+                          |-Identifier=None
+                    |-MemberExpression(351,365)
+                      |-Operator=.^
+                      |-NameIdentifier(353,365)
+                        |-Identifier=discriminant
+                |-BinaryOpExpression(370,395)
+                  |-AsExpression(370,389)
+                    |-Reference(370,382)
+                      |-QName(370,382)
+                        |-NameIdentifier(370,382)
+                          |-Identifier=discriminant
+                    |-Reference(386,389)
+                      |-QName(386,389)
+                        |-NameIdentifier(386,389)
+                          |-Identifier=u64
+                  |-Operator=<<
+                  |-NumberLiteral=32
+        |-FunctionDirective(402,549)
+          |-Decorators(402,414)
+            |-Decorator(402,414)
+              |-NameIdentifier(404,410)
+                |-Identifier=inline
+          |-FunDeclaration(414,549)
+            |-FunctionName(418,423)
+              |-NameIdentifier(418,423)
+                |-Identifier=apply
+            |-TypeParameters(423,423)
+              <Rule0>
+            |-FunctionParamsList(423,425)
+              |-(List)(424,424)
+                <Rule0>
+            |-ReturnType(425,432)
+              |-Reference(427,431)
+                |-QName(427,431)
+                  |-NameIdentifier(427,431)
+                    |-Identifier=None
+            |-FunctionBody(432,549)
+              |-CodeBlock(434,549)
+                |-VarDeclaration(440,536)
+                  |-NameIdentifier(444,448)
+                    |-Identifier=$ref
+                  |-AtomicExpression(451,536)
+                    |-Reference(451,462)
+                      |-QName(451,462)
+                        |-NameIdentifier(451,462)
+                          |-Identifier=fromPointer
+                    |-CallArguments(462,536)
+                      |-AtomicExpression(470,530)
+                        |-Reference(470,498)
+                          |-QName(470,498)
+                            |-NameIdentifier(470,476)
+                              |-Identifier=system
+                            |-NameIdentifier(478,482)
+                              |-Identifier=core
+                            |-NameIdentifier(484,490)
+                              |-Identifier=memory
+                            |-NameIdentifier(492,498)
+                              |-Identifier=calloc
+                        |-CallArguments(498,530)
+                          |-AsExpression(499,507)
+                            |-NumberLiteral=1
+                            |-Reference(504,507)
+                              |-QName(504,507)
+                                |-NameIdentifier(504,507)
+                                  |-Identifier=u32
+                          |-AtomicExpression(509,529)
+                            |-Reference(509,513)
+                              |-QName(509,513)
+                                |-NameIdentifier(509,513)
+                                  |-Identifier=None
+                            |-MemberExpression(513,529)
+                              |-Operator=.^
+                              |-NameIdentifier(515,529)
+                                |-Identifier=allocationSize
+                |-Reference(541,545)
+                  |-QName(541,545)
+                    |-NameIdentifier(541,545)
+                      |-Identifier=$ref
+        |-FunctionDirective(597,693)
+          |-Decorators(597,597)
+            <Rule0>
+          |-FunDeclaration(597,693)
+            |-FunctionName(601,603)
+              |-FunOperator(601,603)
+                |-Keyword=as
+            |-TypeParameters(603,603)
+              <Rule0>
+            |-FunctionParamsList(603,615)
+              |-(List)(604,614)
+                |-Parameter(604,614)
+                  |-NameIdentifier(604,608)
+                    |-Identifier=self
+                  |-Reference(610,614)
+                    |-QName(610,614)
+                      |-NameIdentifier(610,614)
+                        |-Identifier=None
+            |-ReturnType(615,632)
+              |-Reference(617,631)
+                |-QName(617,631)
+                  |-NameIdentifier(617,631)
+                    |-Identifier=UnsafeCPointer
+            |-FunctionBody(632,693)
+              |-WasmExpression(634,693)
+                |-SExpression(646,689)
+                  |-SSymbol(647,651)
+                    |-Identifier=call
+                  |-QName(652,667)
+                    |-NameIdentifier(652,667)
+                      |-Identifier=$addressFromRef
+                  |-SExpression(668,685)
+                    |-SSymbol(669,678)
+                      |-Identifier=get_local
+                    |-QName(679,684)
+                      |-NameIdentifier(679,684)
+                        |-Identifier=$self
+        |-FunctionDirective(693,841)
+          |-Decorators(693,693)
+            <Rule0>
+          |-PrivateModifier(693,701)
+            <Rule0>
+          |-FunDeclaration(701,841)
+            |-FunctionName(705,716)
+              |-NameIdentifier(705,716)
+                |-Identifier=fromPointer
+            |-TypeParameters(716,716)
+              <Rule0>
+            |-FunctionParamsList(716,726)
+              |-(List)(717,725)
+                |-Parameter(717,725)
+                  |-NameIdentifier(717,720)
+                    |-Identifier=ptr
+                  |-Reference(722,725)
+                    |-QName(722,725)
+                      |-NameIdentifier(722,725)
+                        |-Identifier=u32
+            |-ReturnType(726,733)
+              |-Reference(728,732)
+                |-QName(728,732)
+                  |-NameIdentifier(728,732)
+                    |-Identifier=None
+            |-FunctionBody(733,841)
+              |-WasmExpression(735,841)
+                |-SExpression(747,837)
+                  |-SSymbol(748,754)
+                    |-Identifier=i64
+                    |-Operator=.
+                    |-Identifier=or
+                  |-SExpression(761,793)
+                    |-SSymbol(762,766)
+                      |-Identifier=call
+                    |-QName(767,785)
+                      |-NameIdentifier(767,785)
+                        |-Identifier=$None$discriminant
+                  |-SExpression(793,833)
+                    |-SSymbol(794,810)
+                      |-Identifier=i64
+                      |-Operator=.
+                      |-Identifier=extend_u
+                      |-Operator=/
+                      |-Identifier=i32
+                    |-SExpression(811,827)
+                      |-SSymbol(812,821)
+                        |-Identifier=local
+                        |-Operator=.
+                        |-Identifier=get
+                      |-QName(822,826)
+                        |-NameIdentifier(822,826)
+                          |-Identifier=$ptr
+        |-FunctionDirective(841,951)
+          |-Decorators(841,841)
+            <Rule0>
+          |-FunDeclaration(841,951)
+            |-FunctionName(845,847)
+              |-FunOperator(845,847)
+                |-Operator===
+            |-TypeParameters(847,847)
+              <Rule0>
+            |-FunctionParamsList(847,865)
+              |-(List)(848,864)
+                |-Parameter(848,855)
+                  |-NameIdentifier(848,849)
+                    |-Identifier=a
+                  |-Reference(851,855)
+                    |-QName(851,855)
+                      |-NameIdentifier(851,855)
+                        |-Identifier=None
+                |-Parameter(857,864)
+                  |-NameIdentifier(857,858)
+                    |-Identifier=b
+                  |-Reference(860,864)
+                    |-QName(860,864)
+                      |-NameIdentifier(860,864)
+                        |-Identifier=None
+            |-ReturnType(865,875)
+              |-Reference(867,874)
+                |-QName(867,874)
+                  |-NameIdentifier(867,874)
+                    |-Identifier=boolean
+            |-FunctionBody(875,951)
+              |-WasmExpression(877,951)
+                |-SExpression(889,947)
+                  |-SSymbol(890,896)
+                    |-Identifier=i64
+                    |-Operator=.
+                    |-Identifier=eq
+                  |-SExpression(903,924)
+                    |-SSymbol(904,913)
+                      |-Identifier=local
+                      |-Operator=.
+                      |-Identifier=get
+                    |-QName(914,916)
+                      |-NameIdentifier(914,916)
+                        |-Identifier=$a
+                  |-SExpression(924,943)
+                    |-SSymbol(925,934)
+                      |-Identifier=local
+                      |-Operator=.
+                      |-Identifier=get
+                    |-QName(935,937)
+                      |-NameIdentifier(935,937)
+                        |-Identifier=$b
+        |-FunctionDirective(951,1061)
+          |-Decorators(951,951)
+            <Rule0>
+          |-FunDeclaration(951,1061)
+            |-FunctionName(955,957)
+              |-FunOperator(955,957)
+                |-Operator=!=
+            |-TypeParameters(957,957)
+              <Rule0>
+            |-FunctionParamsList(957,975)
+              |-(List)(958,974)
+                |-Parameter(958,965)
+                  |-NameIdentifier(958,959)
+                    |-Identifier=a
+                  |-Reference(961,965)
+                    |-QName(961,965)
+                      |-NameIdentifier(961,965)
+                        |-Identifier=None
+                |-Parameter(967,974)
+                  |-NameIdentifier(967,968)
+                    |-Identifier=b
+                  |-Reference(970,974)
+                    |-QName(970,974)
+                      |-NameIdentifier(970,974)
+                        |-Identifier=None
+            |-ReturnType(975,985)
+              |-Reference(977,984)
+                |-QName(977,984)
+                  |-NameIdentifier(977,984)
+                    |-Identifier=boolean
+            |-FunctionBody(985,1061)
+              |-WasmExpression(987,1061)
+                |-SExpression(999,1057)
+                  |-SSymbol(1000,1006)
+                    |-Identifier=i64
+                    |-Operator=.
+                    |-Identifier=ne
+                  |-SExpression(1013,1034)
+                    |-SSymbol(1014,1023)
+                      |-Identifier=local
+                      |-Operator=.
+                      |-Identifier=get
+                    |-QName(1024,1026)
+                      |-NameIdentifier(1024,1026)
+                        |-Identifier=$a
+                  |-SExpression(1034,1053)
+                    |-SSymbol(1035,1044)
+                      |-Identifier=local
+                      |-Operator=.
+                      |-Identifier=get
+                    |-QName(1045,1047)
+                      |-NameIdentifier(1045,1047)
+                        |-Identifier=$b
+        |-FunctionDirective(1061,1270)
+          |-Decorators(1061,1061)
+            <Rule0>
+          |-FunDeclaration(1061,1270)
+            |-FunctionName(1065,1070)
+              |-NameIdentifier(1065,1070)
+                |-Identifier=store
+            |-TypeParameters(1070,1070)
+              <Rule0>
+            |-FunctionParamsList(1070,1104)
+              |-(List)(1071,1103)
+                |-Parameter(1071,1079)
+                  |-NameIdentifier(1071,1074)
+                    |-Identifier=lhs
+                  |-Reference(1076,1079)
+                    |-QName(1076,1079)
+                      |-NameIdentifier(1076,1079)
+                        |-Identifier=ref
+                |-Parameter(1081,1090)
+                  |-NameIdentifier(1081,1084)
+                    |-Identifier=rhs
+                  |-Reference(1086,1090)
+                    |-QName(1086,1090)
+                      |-NameIdentifier(1086,1090)
+                        |-Identifier=None
+                |-Parameter(1092,1103)
+                  |-NameIdentifier(1092,1098)
+                    |-Identifier=offset
+                  |-Reference(1100,1103)
+                    |-QName(1100,1103)
+                      |-NameIdentifier(1100,1103)
+                        |-Identifier=u32
+            |-ReturnType(1104,1111)
+              |-Reference(1106,1110)
+                |-QName(1106,1110)
+                  |-NameIdentifier(1106,1110)
+                    |-Identifier=void
+            |-FunctionBody(1111,1270)
+              |-WasmExpression(1113,1270)
+                |-SExpression(1125,1266)
+                  |-SSymbol(1126,1135)
+                    |-Identifier=i64
+                    |-Operator=.
+                    |-Identifier=store
+                  |-SExpression(1142,1241)
+                    |-SSymbol(1143,1150)
+                      |-Identifier=i32
+                      |-Operator=.
+                      |-Identifier=add
+                    |-SExpression(1159,1187)
+                      |-SSymbol(1160,1169)
+                        |-Identifier=local
+                        |-Operator=.
+                        |-Identifier=get
+                      |-QName(1170,1177)
+                        |-NameIdentifier(1170,1177)
+                          |-Identifier=$offset
+                    |-SExpression(1187,1233)
+                      |-SSymbol(1188,1192)
+                        |-Identifier=call
+                      |-QName(1193,1208)
+                        |-NameIdentifier(1193,1208)
+                          |-Identifier=$addressFromRef
+                      |-SExpression(1209,1225)
+                        |-SSymbol(1210,1219)
+                          |-Identifier=local
+                          |-Operator=.
+                          |-Identifier=get
+                        |-QName(1220,1224)
+                          |-NameIdentifier(1220,1224)
+                            |-Identifier=$lhs
+                  |-SExpression(1241,1262)
+                    |-SSymbol(1242,1251)
+                      |-Identifier=local
+                      |-Operator=.
+                      |-Identifier=get
+                    |-QName(1252,1256)
+                      |-NameIdentifier(1252,1256)
+                        |-Identifier=$rhs
+        |-FunctionDirective(1270,1441)
+          |-Decorators(1270,1270)
+            <Rule0>
+          |-FunDeclaration(1270,1441)
+            |-FunctionName(1274,1278)
+              |-NameIdentifier(1274,1278)
+                |-Identifier=load
+            |-TypeParameters(1278,1278)
+              <Rule0>
+            |-FunctionParamsList(1278,1301)
+              |-(List)(1279,1300)
+                |-Parameter(1279,1287)
+                  |-NameIdentifier(1279,1282)
+                    |-Identifier=lhs
+                  |-Reference(1284,1287)
+                    |-QName(1284,1287)
+                      |-NameIdentifier(1284,1287)
+                        |-Identifier=ref
+                |-Parameter(1289,1300)
+                  |-NameIdentifier(1289,1295)
+                    |-Identifier=offset
+                  |-Reference(1297,1300)
+                    |-QName(1297,1300)
+                      |-NameIdentifier(1297,1300)
+                        |-Identifier=u32
+            |-ReturnType(1301,1308)
+              |-Reference(1303,1307)
+                |-QName(1303,1307)
+                  |-NameIdentifier(1303,1307)
+                    |-Identifier=None
+            |-FunctionBody(1308,1441)
+              |-WasmExpression(1310,1441)
+                |-SExpression(1322,1439)
+                  |-SSymbol(1323,1331)
+                    |-Identifier=i64
+                    |-Operator=.
+                    |-Identifier=load
+                  |-SExpression(1338,1435)
+                    |-SSymbol(1339,1346)
+                      |-Identifier=i32
+                      |-Operator=.
+                      |-Identifier=add
+                    |-SExpression(1355,1383)
+                      |-SSymbol(1356,1365)
+                        |-Identifier=local
+                        |-Operator=.
+                        |-Identifier=get
+                      |-QName(1366,1373)
+                        |-NameIdentifier(1366,1373)
+                          |-Identifier=$offset
+                    |-SExpression(1383,1429)
+                      |-SSymbol(1384,1388)
+                        |-Identifier=call
+                      |-QName(1389,1404)
+                        |-NameIdentifier(1389,1404)
+                          |-Identifier=$addressFromRef
+                      |-SExpression(1405,1421)
+                        |-SSymbol(1406,1415)
+                          |-Identifier=local
+                          |-Operator=.
+                          |-Identifier=get
+                        |-QName(1416,1420)
+                          |-NameIdentifier(1416,1420)
+                            |-Identifier=$lhs
+    |-EndOfFile=
+  |-TypeDirective(61,71)
+    |-NameIdentifier(66,70)
+      |-Identifier=None
+  |-TypeDirective(71,81)
+    |-NameIdentifier(76,80)
+      |-Identifier=Some
+  |-TypeDirective(81,106)
+    |-NameIdentifier(86,92)
+      |-Identifier=Option
+    |-UnionType(95,106)
+      |-Reference(95,99)
+        |-QName(95,99)
+          |-NameIdentifier(95,99)
+            |-Identifier=Some
+      |-Reference(102,106)
+        |-QName(102,106)
+          |-NameIdentifier(102,106)
+            |-Identifier=None
+  |-<UNEXPECTED TOKEN>=impl
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=Option
+  |-<UNEXPECTED TOKEN>=<
+  |-<UNEXPECTED TOKEN>=T
+  |-<UNEXPECTED TOKEN>=>
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>={
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=fun
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=is
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=x
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=ref
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>={
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=    
+  |-<UNEXPECTED TOKEN>=Some
+  |-<UNEXPECTED TOKEN>=.
+  |-<UNEXPECTED TOKEN>=is
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=x
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=||
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=None
+  |-<UNEXPECTED TOKEN>=.
+  |-<UNEXPECTED TOKEN>=is
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=x
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=}
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=}
+  |-<UNEXPECTED TOKEN>=
+
+
+  |-<UNEXPECTED TOKEN>=impl
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=Some
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>={
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=val
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=determinant
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=u32
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=1
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=val
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=memorySize
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=ref
+  |-<UNEXPECTED TOKEN>=.
+  |-<UNEXPECTED TOKEN>=memorySize
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=+
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=ref
+  |-<UNEXPECTED TOKEN>=.
+  |-<UNEXPECTED TOKEN>=memorySize
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=/* value: ref */
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=fun
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=is
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=x
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=ref
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=x
+  |-<UNEXPECTED TOKEN>=.
+  |-<UNEXPECTED TOKEN>=determinant
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>===
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=determinant
+  |-<UNEXPECTED TOKEN>=
+
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=fun
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=apply
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=value
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=ref
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=Some
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>={
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=    
+  |-<UNEXPECTED TOKEN>=val
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=ptr
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=Some
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=determinant
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=<<
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=32
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=|
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=core
+  |-<UNEXPECTED TOKEN>=::
+  |-<UNEXPECTED TOKEN>=memory
+  |-<UNEXPECTED TOKEN>=::
+  |-<UNEXPECTED TOKEN>=malloc
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=memorySize
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=as
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=Some
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=    
+  |-<UNEXPECTED TOKEN>=set_value
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=ptr
+  |-<UNEXPECTED TOKEN>=,
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=value
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=    
+  |-<UNEXPECTED TOKEN>=ref
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=as
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=Celcius
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=}
+  |-<UNEXPECTED TOKEN>=
+
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=fun
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=get_value
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=ptr
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=Some
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=f32
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>={
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=    
+  |-<UNEXPECTED TOKEN>=val
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=base
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=ref
+  |-<UNEXPECTED TOKEN>=.
+  |-<UNEXPECTED TOKEN>=base
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=ptr
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=    
+  |-<UNEXPECTED TOKEN>=ref
+  |-<UNEXPECTED TOKEN>=.
+  |-<UNEXPECTED TOKEN>=read
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=base
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=+
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=0
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=}
+  |-<UNEXPECTED TOKEN>=
+
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=private
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=fun
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=set_value
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=ptr
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=Some
+  |-<UNEXPECTED TOKEN>=,
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=newValue
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=ref
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=void
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>={
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=    
+  |-<UNEXPECTED TOKEN>=val
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=base
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=ref
+  |-<UNEXPECTED TOKEN>=.
+  |-<UNEXPECTED TOKEN>=base
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=ptr
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=    
+  |-<UNEXPECTED TOKEN>=ref
+  |-<UNEXPECTED TOKEN>=.
+  |-<UNEXPECTED TOKEN>=store
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=base
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=+
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=0
+  |-<UNEXPECTED TOKEN>=,
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=newValue
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=}
+  |-<UNEXPECTED TOKEN>=
+
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=fun
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>===
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=lhs
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=Some
+  |-<UNEXPECTED TOKEN>=,
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=rhs
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=Some
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=boolean
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>={
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=    
+  |-<UNEXPECTED TOKEN>=get_value
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=lhs
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>===
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=get_value
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=rhs
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=}
+  |-<UNEXPECTED TOKEN>=
+
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=fun
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=!=
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=lhs
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=Some
+  |-<UNEXPECTED TOKEN>=,
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=rhs
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=Some
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=boolean
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>={
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=    
+  |-<UNEXPECTED TOKEN>=!
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=lhs
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>===
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=rhs
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=}
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=}
+  |-<UNEXPECTED TOKEN>=
+
+
+  |-<UNEXPECTED TOKEN>=impl
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=None
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>={
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=val
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=determinant
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=u32
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=2
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=val
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=staticInstance
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=ref
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=determinant
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=fun
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=is
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=x
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=ref
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=x
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>===
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=staticInstance
+  |-<UNEXPECTED TOKEN>=
+
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=fun
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=apply
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=None
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=staticInstance
+  |-<UNEXPECTED TOKEN>=
+
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=fun
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>===
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=lhs
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=None
+  |-<UNEXPECTED TOKEN>=,
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=rhs
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=None
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=boolean
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=true
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=  
+  |-<UNEXPECTED TOKEN>=fun
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=!=
+  |-<UNEXPECTED TOKEN>=(
+  |-<UNEXPECTED TOKEN>=lhs
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=None
+  |-<UNEXPECTED TOKEN>=,
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=rhs
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=None
+  |-<UNEXPECTED TOKEN>=)
+  |-<UNEXPECTED TOKEN>=:
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=boolean
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>==
+  |-<UNEXPECTED TOKEN>= 
+  |-<UNEXPECTED TOKEN>=false
+  |-<UNEXPECTED TOKEN>=
+
+  |-<UNEXPECTED TOKEN>=}
+  |-<UNEXPECTED TOKEN>=

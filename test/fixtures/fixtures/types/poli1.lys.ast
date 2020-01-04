@@ -16,16 +16,15 @@
   |-TypeDirective(29,56)
     |-NameIdentifier(34,41)
       |-Identifier=Boolean
-    |-Type(44,56)
-      |-UnionType(44,56)
-        |-Reference(44,48)
-          |-QName(44,48)
-            |-NameIdentifier(44,48)
-              |-Identifier=True
-        |-Reference(51,56)
-          |-QName(51,56)
-            |-NameIdentifier(51,56)
-              |-Identifier=False
+    |-UnionType(44,56)
+      |-Reference(44,48)
+        |-QName(44,48)
+          |-NameIdentifier(44,48)
+            |-Identifier=True
+      |-Reference(51,56)
+        |-QName(51,56)
+          |-NameIdentifier(51,56)
+            |-Identifier=False
   |-FunctionDirective(58,127)
     |-Decorators(58,58)
       <Rule0>
@@ -40,17 +39,15 @@
           |-Parameter(66,72)
             |-NameIdentifier(66,67)
               |-Identifier=x
-            |-Type(69,72)
-              |-Reference(69,72)
-                |-QName(69,72)
-                  |-NameIdentifier(69,72)
-                    |-Identifier=i32
+            |-Reference(69,72)
+              |-QName(69,72)
+                |-NameIdentifier(69,72)
+                  |-Identifier=i32
       |-ReturnType(73,83)
-        |-Type(75,82)
-          |-Reference(75,82)
-            |-QName(75,82)
-              |-NameIdentifier(75,82)
-                |-Identifier=Boolean
+        |-Reference(75,82)
+          |-QName(75,82)
+            |-NameIdentifier(75,82)
+              |-Identifier=Boolean
       |-FunctionBody(83,127)
         |-IfExpression(87,127)
           |-Condition(90,97)
@@ -89,17 +86,15 @@
           |-Parameter(140,150)
             |-NameIdentifier(140,141)
               |-Identifier=a
-            |-Type(143,150)
-              |-Reference(143,150)
-                |-QName(143,150)
-                  |-NameIdentifier(143,150)
-                    |-Identifier=Boolean
+            |-Reference(143,150)
+              |-QName(143,150)
+                |-NameIdentifier(143,150)
+                  |-Identifier=Boolean
       |-ReturnType(151,161)
-        |-Type(153,160)
-          |-Reference(153,160)
-            |-QName(153,160)
-              |-NameIdentifier(153,160)
-                |-Identifier=boolean
+        |-Reference(153,160)
+          |-QName(153,160)
+            |-NameIdentifier(153,160)
+              |-Identifier=boolean
       |-FunctionBody(161,223)
         |-MatchExpression(165,223)
           |-Reference(171,172)

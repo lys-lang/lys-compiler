@@ -37,20 +37,18 @@
           |-Parameter(92,98)
             |-NameIdentifier(92,93)
               |-Identifier=a
-            |-Type(95,98)
-              |-Reference(95,98)
-                |-QName(95,98)
-                  |-NameIdentifier(95,98)
-                    |-Identifier=i32
+            |-Reference(95,98)
+              |-QName(95,98)
+                |-NameIdentifier(95,98)
+                  |-Identifier=i32
   |-VarDirective(103,123)
     |-VarDeclaration(103,123)
       |-NameIdentifier(107,113)
         |-Identifier=value1
-      |-Type(115,119)
-        |-Reference(115,119)
-          |-QName(115,119)
-            |-NameIdentifier(115,119)
-              |-Identifier=Enum
+      |-Reference(115,119)
+        |-QName(115,119)
+          |-NameIdentifier(115,119)
+            |-Identifier=Enum
       |-Reference(122,123)
         |-QName(122,123)
           |-NameIdentifier(122,123)
@@ -59,16 +57,15 @@
     |-VarDeclaration(124,145)
       |-NameIdentifier(128,134)
         |-Identifier=value2
-      |-Type(136,141)
-        |-UnionType(136,141)
-          |-Reference(136,137)
-            |-QName(136,137)
-              |-NameIdentifier(136,137)
-                |-Identifier=A
-          |-Reference(140,141)
-            |-QName(140,141)
-              |-NameIdentifier(140,141)
-                |-Identifier=B
+      |-UnionType(136,141)
+        |-Reference(136,137)
+          |-QName(136,137)
+            |-NameIdentifier(136,137)
+              |-Identifier=A
+        |-Reference(140,141)
+          |-QName(140,141)
+            |-NameIdentifier(140,141)
+              |-Identifier=B
       |-Reference(144,145)
         |-QName(144,145)
           |-NameIdentifier(144,145)
@@ -77,11 +74,10 @@
     |-VarDeclaration(146,163)
       |-NameIdentifier(150,156)
         |-Identifier=value3
-      |-Type(158,159)
-        |-Reference(158,159)
-          |-QName(158,159)
-            |-NameIdentifier(158,159)
-              |-Identifier=A
+      |-Reference(158,159)
+        |-QName(158,159)
+          |-NameIdentifier(158,159)
+            |-Identifier=A
       |-Reference(162,163)
         |-QName(162,163)
           |-NameIdentifier(162,163)
@@ -100,17 +96,15 @@
           |-Parameter(178,184)
             |-NameIdentifier(178,179)
               |-Identifier=a
-            |-Type(181,184)
-              |-Reference(181,184)
-                |-QName(181,184)
-                  |-NameIdentifier(181,184)
-                    |-Identifier=ref
+            |-Reference(181,184)
+              |-QName(181,184)
+                |-NameIdentifier(181,184)
+                  |-Identifier=ref
       |-ReturnType(185,191)
-        |-Type(187,190)
-          |-Reference(187,190)
-            |-QName(187,190)
-              |-NameIdentifier(187,190)
-                |-Identifier=ref
+        |-Reference(187,190)
+          |-QName(187,190)
+            |-NameIdentifier(187,190)
+              |-Identifier=ref
       |-FunctionBody(191,194)
         |-Reference(193,194)
           |-QName(193,194)
@@ -131,11 +125,10 @@
         |-(List)(215,215)
           <Rule0>
       |-ReturnType(216,223)
-        |-Type(218,222)
-          |-Reference(218,222)
-            |-QName(218,222)
-              |-NameIdentifier(218,222)
-                |-Identifier=void
+        |-Reference(218,222)
+          |-QName(218,222)
+            |-NameIdentifier(218,222)
+              |-Identifier=void
       |-FunctionBody(223,1492)
         |-CodeBlock(225,1492)
           |-AtomicExpression(229,254)
@@ -163,11 +156,10 @@
                         |-QName(275,276)
                           |-NameIdentifier(275,276)
                             |-Identifier=A
-                  |-Type(281,282)
-                    |-Reference(281,282)
-                      |-QName(281,282)
-                        |-NameIdentifier(281,282)
-                          |-Identifier=A
+                  |-Reference(281,282)
+                    |-QName(281,282)
+                      |-NameIdentifier(281,282)
+                        |-Identifier=A
                 |-Operator===
                 |-BooleanLiteral(299,303)
                   <Rule0>
@@ -189,11 +181,10 @@
                         |-QName(326,327)
                           |-NameIdentifier(326,327)
                             |-Identifier=A
-                  |-Type(332,336)
-                    |-Reference(332,336)
-                      |-QName(332,336)
-                        |-NameIdentifier(332,336)
-                          |-Identifier=Enum
+                  |-Reference(332,336)
+                    |-QName(332,336)
+                      |-NameIdentifier(332,336)
+                        |-Identifier=Enum
                 |-Operator===
                 |-BooleanLiteral(350,354)
                   <Rule0>
@@ -215,11 +206,10 @@
                         |-QName(377,378)
                           |-NameIdentifier(377,378)
                             |-Identifier=B
-                  |-Type(383,384)
-                    |-Reference(383,384)
-                      |-QName(383,384)
-                        |-NameIdentifier(383,384)
-                          |-Identifier=B
+                  |-Reference(383,384)
+                    |-QName(383,384)
+                      |-NameIdentifier(383,384)
+                        |-Identifier=B
                 |-Operator===
                 |-BooleanLiteral(401,405)
                   <Rule0>
@@ -241,11 +231,10 @@
                         |-QName(428,429)
                           |-NameIdentifier(428,429)
                             |-Identifier=B
-                  |-Type(434,435)
-                    |-Reference(434,435)
-                      |-QName(434,435)
-                        |-NameIdentifier(434,435)
-                          |-Identifier=A
+                  |-Reference(434,435)
+                    |-QName(434,435)
+                      |-NameIdentifier(434,435)
+                        |-Identifier=A
                 |-Operator===
                 |-BooleanLiteral(452,457)
                   <Rule0>
@@ -267,11 +256,10 @@
                         |-QName(479,480)
                           |-NameIdentifier(479,480)
                             |-Identifier=B
-                  |-Type(485,489)
-                    |-Reference(485,489)
-                      |-QName(485,489)
-                        |-NameIdentifier(485,489)
-                          |-Identifier=Enum
+                  |-Reference(485,489)
+                    |-QName(485,489)
+                      |-NameIdentifier(485,489)
+                        |-Identifier=Enum
                 |-Operator===
                 |-BooleanLiteral(503,507)
                   <Rule0>
@@ -293,11 +281,10 @@
                         |-QName(530,531)
                           |-NameIdentifier(530,531)
                             |-Identifier=B
-                  |-Type(536,537)
-                    |-Reference(536,537)
-                      |-QName(536,537)
-                        |-NameIdentifier(536,537)
-                          |-Identifier=B
+                  |-Reference(536,537)
+                    |-QName(536,537)
+                      |-NameIdentifier(536,537)
+                        |-Identifier=B
                 |-Operator===
                 |-BooleanLiteral(554,558)
                   <Rule0>
@@ -319,11 +306,10 @@
                         |-QName(581,582)
                           |-NameIdentifier(581,582)
                             |-Identifier=C
-                  |-Type(587,588)
-                    |-Reference(587,588)
-                      |-QName(587,588)
-                        |-NameIdentifier(587,588)
-                          |-Identifier=A
+                  |-Reference(587,588)
+                    |-QName(587,588)
+                      |-NameIdentifier(587,588)
+                        |-Identifier=A
                 |-Operator===
                 |-BooleanLiteral(605,610)
                   <Rule0>
@@ -345,11 +331,10 @@
                         |-QName(632,633)
                           |-NameIdentifier(632,633)
                             |-Identifier=C
-                  |-Type(638,642)
-                    |-Reference(638,642)
-                      |-QName(638,642)
-                        |-NameIdentifier(638,642)
-                          |-Identifier=Enum
+                  |-Reference(638,642)
+                    |-QName(638,642)
+                      |-NameIdentifier(638,642)
+                        |-Identifier=Enum
                 |-Operator===
                 |-BooleanLiteral(656,660)
                   <Rule0>
@@ -371,11 +356,10 @@
                         |-QName(683,684)
                           |-NameIdentifier(683,684)
                             |-Identifier=C
-                  |-Type(689,690)
-                    |-Reference(689,690)
-                      |-QName(689,690)
-                        |-NameIdentifier(689,690)
-                          |-Identifier=B
+                  |-Reference(689,690)
+                    |-QName(689,690)
+                      |-NameIdentifier(689,690)
+                        |-Identifier=B
                 |-Operator===
                 |-BooleanLiteral(707,712)
                   <Rule0>
@@ -397,11 +381,10 @@
                         |-QName(735,741)
                           |-NameIdentifier(735,741)
                             |-Identifier=value1
-                  |-Type(746,747)
-                    |-Reference(746,747)
-                      |-QName(746,747)
-                        |-NameIdentifier(746,747)
-                          |-Identifier=A
+                  |-Reference(746,747)
+                    |-QName(746,747)
+                      |-NameIdentifier(746,747)
+                        |-Identifier=A
                 |-Operator===
                 |-BooleanLiteral(759,763)
                   <Rule0>
@@ -423,11 +406,10 @@
                         |-QName(786,792)
                           |-NameIdentifier(786,792)
                             |-Identifier=value1
-                  |-Type(797,798)
-                    |-Reference(797,798)
-                      |-QName(797,798)
-                        |-NameIdentifier(797,798)
-                          |-Identifier=B
+                  |-Reference(797,798)
+                    |-QName(797,798)
+                      |-NameIdentifier(797,798)
+                        |-Identifier=B
                 |-Operator===
                 |-BooleanLiteral(810,815)
                   <Rule0>
@@ -449,11 +431,10 @@
                         |-QName(837,843)
                           |-NameIdentifier(837,843)
                             |-Identifier=value1
-                  |-Type(848,852)
-                    |-Reference(848,852)
-                      |-QName(848,852)
-                        |-NameIdentifier(848,852)
-                          |-Identifier=Enum
+                  |-Reference(848,852)
+                    |-QName(848,852)
+                      |-NameIdentifier(848,852)
+                        |-Identifier=Enum
                 |-Operator===
                 |-BooleanLiteral(861,865)
                   <Rule0>
@@ -475,11 +456,10 @@
                         |-QName(888,894)
                           |-NameIdentifier(888,894)
                             |-Identifier=value2
-                  |-Type(899,900)
-                    |-Reference(899,900)
-                      |-QName(899,900)
-                        |-NameIdentifier(899,900)
-                          |-Identifier=A
+                  |-Reference(899,900)
+                    |-QName(899,900)
+                      |-NameIdentifier(899,900)
+                        |-Identifier=A
                 |-Operator===
                 |-BooleanLiteral(912,916)
                   <Rule0>
@@ -501,11 +481,10 @@
                         |-QName(939,945)
                           |-NameIdentifier(939,945)
                             |-Identifier=value2
-                  |-Type(950,951)
-                    |-Reference(950,951)
-                      |-QName(950,951)
-                        |-NameIdentifier(950,951)
-                          |-Identifier=B
+                  |-Reference(950,951)
+                    |-QName(950,951)
+                      |-NameIdentifier(950,951)
+                        |-Identifier=B
                 |-Operator===
                 |-BooleanLiteral(963,968)
                   <Rule0>
@@ -527,11 +506,10 @@
                         |-QName(990,996)
                           |-NameIdentifier(990,996)
                             |-Identifier=value2
-                  |-Type(1001,1005)
-                    |-Reference(1001,1005)
-                      |-QName(1001,1005)
-                        |-NameIdentifier(1001,1005)
-                          |-Identifier=Enum
+                  |-Reference(1001,1005)
+                    |-QName(1001,1005)
+                      |-NameIdentifier(1001,1005)
+                        |-Identifier=Enum
                 |-Operator===
                 |-BooleanLiteral(1014,1018)
                   <Rule0>
@@ -553,11 +531,10 @@
                         |-QName(1041,1047)
                           |-NameIdentifier(1041,1047)
                             |-Identifier=value3
-                  |-Type(1052,1053)
-                    |-Reference(1052,1053)
-                      |-QName(1052,1053)
-                        |-NameIdentifier(1052,1053)
-                          |-Identifier=A
+                  |-Reference(1052,1053)
+                    |-QName(1052,1053)
+                      |-NameIdentifier(1052,1053)
+                        |-Identifier=A
                 |-Operator===
                 |-BooleanLiteral(1065,1069)
                   <Rule0>
@@ -579,11 +556,10 @@
                         |-QName(1092,1098)
                           |-NameIdentifier(1092,1098)
                             |-Identifier=value3
-                  |-Type(1103,1104)
-                    |-Reference(1103,1104)
-                      |-QName(1103,1104)
-                        |-NameIdentifier(1103,1104)
-                          |-Identifier=B
+                  |-Reference(1103,1104)
+                    |-QName(1103,1104)
+                      |-NameIdentifier(1103,1104)
+                        |-Identifier=B
                 |-Operator===
                 |-BooleanLiteral(1116,1121)
                   <Rule0>
@@ -605,11 +581,10 @@
                         |-QName(1143,1149)
                           |-NameIdentifier(1143,1149)
                             |-Identifier=value3
-                  |-Type(1154,1158)
-                    |-Reference(1154,1158)
-                      |-QName(1154,1158)
-                        |-NameIdentifier(1154,1158)
-                          |-Identifier=Enum
+                  |-Reference(1154,1158)
+                    |-QName(1154,1158)
+                      |-NameIdentifier(1154,1158)
+                        |-Identifier=Enum
                 |-Operator===
                 |-BooleanLiteral(1167,1171)
                   <Rule0>
@@ -631,11 +606,10 @@
                         |-QName(1195,1201)
                           |-NameIdentifier(1195,1201)
                             |-Identifier=value3
-                  |-Type(1206,1209)
-                    |-Reference(1206,1209)
-                      |-QName(1206,1209)
-                        |-NameIdentifier(1206,1209)
-                          |-Identifier=Red
+                  |-Reference(1206,1209)
+                    |-QName(1206,1209)
+                      |-NameIdentifier(1206,1209)
+                        |-Identifier=Red
                 |-Operator===
                 |-BooleanLiteral(1219,1224)
                   <Rule0>
@@ -657,11 +631,10 @@
                         |-QName(1246,1249)
                           |-NameIdentifier(1246,1249)
                             |-Identifier=Red
-                  |-Type(1254,1257)
-                    |-Reference(1254,1257)
-                      |-QName(1254,1257)
-                        |-NameIdentifier(1254,1257)
-                          |-Identifier=Red
+                  |-Reference(1254,1257)
+                    |-QName(1254,1257)
+                      |-NameIdentifier(1254,1257)
+                        |-Identifier=Red
                 |-Operator===
                 |-BooleanLiteral(1270,1274)
                   <Rule0>
@@ -686,11 +659,10 @@
                               |-Identifier=Custom
                         |-CallArguments(1303,1306)
                           |-NumberLiteral=1
-                  |-Type(1311,1316)
-                    |-Reference(1311,1316)
-                      |-QName(1311,1316)
-                        |-NameIdentifier(1311,1316)
-                          |-Identifier=Color
+                  |-Reference(1311,1316)
+                    |-QName(1311,1316)
+                      |-NameIdentifier(1311,1316)
+                        |-Identifier=Color
                 |-Operator===
                 |-BooleanLiteral(1321,1325)
                   <Rule0>
@@ -715,11 +687,10 @@
                               |-Identifier=Custom
                         |-CallArguments(1354,1357)
                           |-NumberLiteral=1
-                  |-Type(1362,1368)
-                    |-Reference(1362,1368)
-                      |-QName(1362,1368)
-                        |-NameIdentifier(1362,1368)
-                          |-Identifier=Custom
+                  |-Reference(1362,1368)
+                    |-QName(1362,1368)
+                      |-NameIdentifier(1362,1368)
+                        |-Identifier=Custom
                 |-Operator===
                 |-BooleanLiteral(1372,1376)
                   <Rule0>
@@ -744,11 +715,10 @@
                               |-Identifier=Custom
                         |-CallArguments(1405,1408)
                           |-NumberLiteral=1
-                  |-Type(1413,1416)
-                    |-Reference(1413,1416)
-                      |-QName(1413,1416)
-                        |-NameIdentifier(1413,1416)
-                          |-Identifier=Red
+                  |-Reference(1413,1416)
+                    |-QName(1413,1416)
+                      |-NameIdentifier(1413,1416)
+                        |-Identifier=Red
                 |-Operator===
                 |-BooleanLiteral(1423,1428)
                   <Rule0>
@@ -773,11 +743,10 @@
                               |-Identifier=Custom
                         |-CallArguments(1456,1459)
                           |-NumberLiteral=1
-                  |-Type(1464,1465)
-                    |-Reference(1464,1465)
-                      |-QName(1464,1465)
-                        |-NameIdentifier(1464,1465)
-                          |-Identifier=B
+                  |-Reference(1464,1465)
+                    |-QName(1464,1465)
+                      |-NameIdentifier(1464,1465)
+                        |-Identifier=B
                 |-Operator===
                 |-BooleanLiteral(1474,1479)
                   <Rule0>

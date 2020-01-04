@@ -272,7 +272,7 @@ fun getGrammar(): Grammar = {
           Rune(
             Cons(op("="), WS),
             Or(
-              Push("Type", Cons(LookAhead(op("%")), Or(n("InjectedLiteral"), n("StructLiteral"), n("StackLiteral")))),
+              Cons(LookAhead(op("%")), Or(n("InjectedLiteral"), n("StructLiteral"), n("StackLiteral"))),
               n("Type")
             ),
             "A type value was expected"
@@ -335,13 +335,13 @@ fun getGrammar(): Grammar = {
           )
         )) ++
 
-        Nominal("Type", Push("Type", n("UnionType"))) ++
+        Nominal("Type", n("UnionType")) ++
         Nominal("UnionType", PushIfManyChildren("UnionType", Cons(n("IntersectionType"), ZeroOrMore(Cons(WS, Rune(op("|"), Cons(WS, n("IntersectionType")), "A type was expected")))))) ++
         Nominal("IntersectionType", PushIfManyChildren("IntersectionType", Cons(n("AtomType"), ZeroOrMore(Cons(WS, Rune(op("&"), Cons(WS, n("AtomType")), "A type was expected")))))) ++
         Nominal("AtomType", Or(n("TypeParen"), n("FunctionTypeLiteral"), n("Reference"))) ++
         Nominal("TypeParen", Push("TypeParen", Wrap(ParenthesesOpen, Cons(WS, Or(n("Type"), Fail("A type was expected here")), WS), ParenthesesClose))) ++
 
-        Nominal("FunctionTypeLiteral", Push("FunctionTypeLiteral", Cons(Cons(K("fun"), WS), Cons(Push("TypeParameters", Optional(n("TypeParameters"))), n("FunctionTypeParameters"), WS, op("->"), WS, n("Type"))))) ++
+        Nominal("FunctionTypeLiteral", Push("FunctionTypeLiteral", Cons(Cons(K("fun"), WS), Cons(Push("TypeParameters", Optional(n("TypeParameters"))), n("FunctionTypeParameters"), WS, op("->"), WS, Or(n("Type"), Fail("A type was expected here")))))) ++
         Nominal("FunctionTypeParameters", Push("FunctionTypeParameters", Wrap(ParenthesesOpen, Optional(OneOrMoreComma(n("FunctionTypeParameter"))), ParenthesesClose))) ++ // {pin=1,recoverUntil=PAREN_RECOVERY}
         Nominal("FunctionTypeParameter", Push("FunctionTypeParameter", Cons(Optional(Cons(n("NameIdentifier"), WS, op(":"))), WS, n("Type")))) ++
 

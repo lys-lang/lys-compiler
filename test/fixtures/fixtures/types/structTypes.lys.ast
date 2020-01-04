@@ -16,11 +16,10 @@
           |-Parameter(40,51)
             |-NameIdentifier(40,46)
               |-Identifier=number
-            |-Type(48,51)
-              |-Reference(48,51)
-                |-QName(48,51)
-                  |-NameIdentifier(48,51)
-                    |-Identifier=f32
+            |-Reference(48,51)
+              |-QName(48,51)
+                |-NameIdentifier(48,51)
+                  |-Identifier=f32
   |-StructDirective(53,80)
     |-StructDeclaration(60,80)
       |-NameIdentifier(60,67)
@@ -30,11 +29,10 @@
           |-Parameter(68,79)
             |-NameIdentifier(68,74)
               |-Identifier=number
-            |-Type(76,79)
-              |-Reference(76,79)
-                |-QName(76,79)
-                  |-NameIdentifier(76,79)
-                    |-Identifier=i32
+            |-Reference(76,79)
+              |-QName(76,79)
+                |-NameIdentifier(76,79)
+                  |-Identifier=i32
   |-StructDirective(81,122)
     |-StructDeclaration(88,122)
       |-NameIdentifier(88,95)
@@ -44,44 +42,41 @@
           |-Parameter(96,105)
             |-NameIdentifier(96,100)
               |-Identifier=real
-            |-Type(102,105)
-              |-Reference(102,105)
-                |-QName(102,105)
-                  |-NameIdentifier(102,105)
-                    |-Identifier=f32
+            |-Reference(102,105)
+              |-QName(102,105)
+                |-NameIdentifier(102,105)
+                  |-Identifier=f32
           |-Parameter(107,121)
             |-NameIdentifier(107,116)
               |-Identifier=imaginary
-            |-Type(118,121)
-              |-Reference(118,121)
-                |-QName(118,121)
-                  |-NameIdentifier(118,121)
-                    |-Identifier=f32
+            |-Reference(118,121)
+              |-QName(118,121)
+                |-NameIdentifier(118,121)
+                  |-Identifier=f32
   |-TypeDirective(124,180)
     |-NameIdentifier(129,135)
       |-Identifier=Number
-    |-Type(138,180)
-      |-UnionType(138,180)
-        |-Reference(138,146)
-          |-QName(138,146)
-            |-NameIdentifier(138,146)
-              |-Identifier=Infinity
-        |-Reference(149,153)
-          |-QName(149,153)
-            |-NameIdentifier(149,153)
-              |-Identifier=NDet
-        |-Reference(156,160)
-          |-QName(156,160)
-            |-NameIdentifier(156,160)
-              |-Identifier=Real
-        |-Reference(163,170)
-          |-QName(163,170)
-            |-NameIdentifier(163,170)
-              |-Identifier=Natural
-        |-Reference(173,180)
-          |-QName(173,180)
-            |-NameIdentifier(173,180)
-              |-Identifier=Complex
+    |-UnionType(138,180)
+      |-Reference(138,146)
+        |-QName(138,146)
+          |-NameIdentifier(138,146)
+            |-Identifier=Infinity
+      |-Reference(149,153)
+        |-QName(149,153)
+          |-NameIdentifier(149,153)
+            |-Identifier=NDet
+      |-Reference(156,160)
+        |-QName(156,160)
+          |-NameIdentifier(156,160)
+            |-Identifier=Real
+      |-Reference(163,170)
+        |-QName(163,170)
+          |-NameIdentifier(163,170)
+            |-Identifier=Natural
+      |-Reference(173,180)
+        |-QName(173,180)
+          |-NameIdentifier(173,180)
+            |-Identifier=Complex
   |-FunctionDirective(182,398)
     |-Decorators(182,182)
       <Rule0>
@@ -96,17 +91,15 @@
           |-Parameter(196,210)
             |-NameIdentifier(196,202)
               |-Identifier=number
-            |-Type(204,210)
-              |-Reference(204,210)
-                |-QName(204,210)
-                  |-NameIdentifier(204,210)
-                    |-Identifier=Number
+            |-Reference(204,210)
+              |-QName(204,210)
+                |-NameIdentifier(204,210)
+                  |-Identifier=Number
       |-ReturnType(211,221)
-        |-Type(213,220)
-          |-Reference(213,220)
-            |-QName(213,220)
-              |-NameIdentifier(213,220)
-                |-Identifier=boolean
+        |-Reference(213,220)
+          |-QName(213,220)
+            |-NameIdentifier(213,220)
+              |-Identifier=boolean
       |-FunctionBody(221,398)
         |-MatchExpression(225,398)
           |-Reference(231,237)
@@ -156,11 +149,10 @@
         |-(List)(409,409)
           <Rule0>
       |-ReturnType(410,417)
-        |-Type(412,416)
-          |-Reference(412,416)
-            |-QName(412,416)
-              |-NameIdentifier(412,416)
-                |-Identifier=void
+        |-Reference(412,416)
+          |-QName(412,416)
+            |-NameIdentifier(412,416)
+              |-Identifier=void
       |-FunctionBody(417,525)
         |-CodeBlock(419,525)
           |-AtomicExpression(423,442)

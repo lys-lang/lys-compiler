@@ -10,11 +10,10 @@
           |-Parameter(21,31)
             |-NameIdentifier(21,26)
               |-Identifier=value
-            |-Type(28,31)
-              |-Reference(28,31)
-                |-QName(28,31)
-                  |-NameIdentifier(28,31)
-                    |-Identifier=ref
+            |-Reference(28,31)
+              |-QName(28,31)
+                |-NameIdentifier(28,31)
+                  |-Identifier=ref
     |-StructDeclaration(35,39)
       |-NameIdentifier(35,39)
         |-Identifier=None
@@ -27,16 +26,15 @@
   |-TypeDirective(81,106)
     |-NameIdentifier(86,92)
       |-Identifier=Option
-    |-Type(95,106)
-      |-UnionType(95,106)
-        |-Reference(95,99)
-          |-QName(95,99)
-            |-NameIdentifier(95,99)
-              |-Identifier=Some
-        |-Reference(102,106)
-          |-QName(102,106)
-            |-NameIdentifier(102,106)
-              |-Identifier=None
+    |-UnionType(95,106)
+      |-Reference(95,99)
+        |-QName(95,99)
+          |-NameIdentifier(95,99)
+            |-Identifier=Some
+      |-Reference(102,106)
+        |-QName(102,106)
+          |-NameIdentifier(102,106)
+            |-Identifier=None
   |-<UNEXPECTED TOKEN>=impl
   |-<UNEXPECTED TOKEN>= 
   |-<UNEXPECTED TOKEN>=Option
