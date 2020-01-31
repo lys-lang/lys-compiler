@@ -1,5 +1,6 @@
 |-Document
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=AL_BITS
       |-ReferenceNode
@@ -7,6 +8,7 @@
           |-NameIdentifierNode name=i32
       |-FloatLiteralNode value=3
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=AL_SIZE
       |-ReferenceNode
@@ -19,6 +21,7 @@
           |-QNameNode
             |-NameIdentifierNode name=AL_BITS
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=AL_MASK
       |-ReferenceNode
@@ -31,6 +34,7 @@
         |-NameIdentifierNode name=-
         |-FloatLiteralNode value=1
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=MAX_SIZE_32
       |-ReferenceNode
@@ -41,11 +45,13 @@
         |-NameIdentifierNode name=<<
         |-FloatLiteralNode value=30
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=HEAP_BASE
       |-EmptyNode
       |-FloatLiteralNode value=0
   |-VarDirectiveNode
+    |-PrivateModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=startOffset
       |-ReferenceNode
@@ -67,6 +73,7 @@
             |-QNameNode
               |-NameIdentifierNode name=AL_MASK
   |-VarDirectiveNode
+    |-PrivateModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=offset
       |-ReferenceNode
@@ -76,6 +83,7 @@
         |-QNameNode
           |-NameIdentifierNode name=startOffset
   |-VarDirectiveNode
+    |-PrivateModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=lastPtr
       |-ReferenceNode
@@ -147,6 +155,7 @@
             |-NameIdentifierNode name=b
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=allocBytes
       |-ParameterNode
@@ -192,6 +201,7 @@
               |-FloatLiteralNode value=32
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=calloc
       |-ParameterNode
@@ -245,6 +255,7 @@
             |-NameIdentifierNode name=$ret
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=malloc
       |-ParameterNode
@@ -291,10 +302,14 @@
               |-EmptyNode
               |-BinaryExpressionNode
                 |-BinaryExpressionNode
-                  |-ReferenceNode
-                    |-QNameNode
-                      |-NameIdentifierNode name=ptr
-                  |-ErrorNode
+                  |-BinaryExpressionNode
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=ptr
+                    |-NameIdentifierNode name=+
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=size
                   |-NameIdentifierNode name=+
                   |-ReferenceNode
                     |-QNameNode
@@ -332,10 +347,14 @@
                   |-BinaryExpressionNode
                     |-BinaryExpressionNode
                       |-BinaryExpressionNode
-                        |-ReferenceNode
-                          |-QNameNode
-                            |-NameIdentifierNode name=newPtr
-                        |-ErrorNode
+                        |-BinaryExpressionNode
+                          |-ReferenceNode
+                            |-QNameNode
+                              |-NameIdentifierNode name=newPtr
+                          |-NameIdentifierNode name=-
+                          |-ReferenceNode
+                            |-QNameNode
+                              |-NameIdentifierNode name=ptr
                         |-NameIdentifierNode name=+
                         |-FloatLiteralNode value=0xffff
                       |-NameIdentifierNode name=&
@@ -404,6 +423,7 @@
             |-FloatLiteralNode value=0
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=free
       |-ParameterNode
@@ -418,6 +438,7 @@
         |-EmptyNode
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=discriminant
       |-ParameterNode
@@ -437,6 +458,7 @@
               |-NameIdentifierNode name=$v
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=memcpy
       |-ParameterNode
@@ -520,6 +542,7 @@
                 |-NameIdentifierNode name=$cont
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=memset
       |-ParameterNode

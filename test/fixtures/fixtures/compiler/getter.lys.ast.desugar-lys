@@ -1,0 +1,99 @@
+
+type Color = %struct {r: u32, g: u32, b: u32}
+
+
+impl Color for Reference {
+  #[inline]
+  fun is(a: Self | ref): boolean = {
+    var discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+
+}
+impl Color {
+  #[inline]
+  private fun Color$discriminant(): u64 = {
+    var discriminant: u32 = Color.^discriminant
+    discriminant as u64 << 32
+  }
+
+  #[inline]
+  fun apply(r: u32, g: u32, b: u32): Color = {
+    var $ref = fromPointer(system::core::memory::calloc(1 as u32, Color.^allocationSize))
+    property$0($ref, r)
+    property$1($ref, g)
+    property$2($ref, b)
+    $ref
+  }
+
+  fun as(self: Color): UnsafeCPointer = %wasm {
+    (call $addressFromRef (get_local $self))
+  }
+
+  private fun fromPointer(ptr: u32): Color = %wasm {
+    (i64.or (call $Color$discriminant) (i64.extend_u/i32 (local.get $ptr)))
+  }
+
+  fun ==(a: Color, b: Color): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: Color, b: Color): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  #[getter]
+  fun r(self: Color): u32 = property$0(self)
+
+  #[setter]
+  fun r(self: Color, value: u32): void = property$0(self, value)
+
+  #[inline]
+  private fun property$0(self: Color): u32 = u32.load(self, Color.^property$0_offset)
+
+  #[inline]
+  private fun property$0(self: Color, value: u32): void = u32.store(self, value, Color.^property$0_offset)
+
+  #[getter]
+  fun g(self: Color): u32 = property$1(self)
+
+  #[setter]
+  fun g(self: Color, value: u32): void = property$1(self, value)
+
+  #[inline]
+  private fun property$1(self: Color): u32 = u32.load(self, Color.^property$1_offset)
+
+  #[inline]
+  private fun property$1(self: Color, value: u32): void = u32.store(self, value, Color.^property$1_offset)
+
+  #[getter]
+  fun b(self: Color): u32 = property$2(self)
+
+  #[setter]
+  fun b(self: Color, value: u32): void = property$2(self, value)
+
+  #[inline]
+  private fun property$2(self: Color): u32 = u32.load(self, Color.^property$2_offset)
+
+  #[inline]
+  private fun property$2(self: Color, value: u32): void = u32.store(self, value, Color.^property$2_offset)
+
+  fun store(lhs: ref, rhs: Color, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Color = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+
+#[export]
+fun main(color: Color): u32 = color.r * 0x10000 | color.g * 0x100 | color.b
+

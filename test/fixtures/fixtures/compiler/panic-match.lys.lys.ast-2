@@ -1,6 +1,7 @@
 |-Document
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=assert
       |-ParameterNode
@@ -17,7 +18,7 @@
             |-QNameNode
               |-NameIdentifierNode name=x
           |-NameIdentifierNode name===
-          |-EmptyNode
+          |-BooleanLiteralNode value=false
         |-FunctionCallNode
           |-ReferenceNode
             |-QNameNode
@@ -28,6 +29,7 @@
     |-DecoratorNode
       |-NameIdentifierNode name=export
       |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=test
       |-ParameterNode
@@ -49,7 +51,7 @@
               |-ReferenceNode
                 |-QNameNode
                   |-NameIdentifierNode name=assert
-              |-EmptyNode
+              |-BooleanLiteralNode value=false
           |-MatchDefaultNode
             |-EmptyNode
             |-FunctionCallNode

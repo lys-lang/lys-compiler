@@ -3,6 +3,7 @@
     |-DecoratorNode
       |-NameIdentifierNode name=inline
       |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=x
       |-EmptyNode
@@ -15,6 +16,7 @@
     |-DecoratorNode
       |-NameIdentifierNode name=asd
       |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=test
       |-EmptyNode
@@ -27,6 +29,7 @@
     |-DecoratorNode
       |-NameIdentifierNode name=export
       |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=main
       |-EmptyNode
@@ -37,8 +40,9 @@
         |-EmptyNode
   |-FunDirectiveNode
     |-DecoratorNode
-      |-ErrorNode
+      |-NameIdentifierNode name=export
       |-FloatLiteralNode value=123
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=test2
       |-EmptyNode
@@ -49,8 +53,9 @@
         |-EmptyNode
   |-FunDirectiveNode
     |-DecoratorNode
-      |-ErrorNode
+      |-NameIdentifierNode name=export
       |-StringLiteralNode value="test"
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=test3
       |-EmptyNode
@@ -61,8 +66,9 @@
         |-EmptyNode
   |-FunDirectiveNode
     |-DecoratorNode
-      |-ErrorNode
+      |-NameIdentifierNode name=export
       |-StringLiteralNode value=""
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=test4
       |-EmptyNode
@@ -73,9 +79,10 @@
         |-EmptyNode
   |-FunDirectiveNode
     |-DecoratorNode
-      |-ErrorNode
+      |-NameIdentifierNode name=extern
       |-StringLiteralNode value="asd"
       |-StringLiteralNode value="dsa"
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=imported
       |-EmptyNode
@@ -86,9 +93,10 @@
         |-EmptyNode
   |-FunDirectiveNode
     |-DecoratorNode
-      |-ErrorNode
-      |-EmptyNode
+      |-NameIdentifierNode name=extern
+      |-BooleanLiteralNode value=false
       |-FloatLiteralNode value=1
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=imported
       |-EmptyNode

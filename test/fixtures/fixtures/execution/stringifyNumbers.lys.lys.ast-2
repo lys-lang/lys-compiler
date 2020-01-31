@@ -6,6 +6,7 @@
     |-EmptyNode
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=assertNumber
       |-ParameterNode
@@ -39,6 +40,7 @@
             |-NameIdentifierNode name=expected
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=assertNumber
       |-ParameterNode
@@ -72,6 +74,7 @@
             |-NameIdentifierNode name=expected
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=assertNumber
       |-ParameterNode
@@ -103,6 +106,7 @@
             |-NameIdentifierNode name=expected
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=assertNumber
       |-ParameterNode
@@ -134,6 +138,7 @@
             |-NameIdentifierNode name=expected
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=assertNumberLength
       |-ParameterNode
@@ -233,6 +238,7 @@
           |-StringLiteralNode value="assertNumberLength"
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=assertEquals
       |-ParameterNode
@@ -253,8 +259,20 @@
           |-NameIdentifierNode name=msg
           |-EmptyNode
           |-BinaryExpressionNode
-            |-StringLiteralNode value="Given: '"
-            |-ErrorNode
+            |-BinaryExpressionNode
+              |-BinaryExpressionNode
+                |-BinaryExpressionNode
+                  |-StringLiteralNode value="Given: '"
+                  |-NameIdentifierNode name=++
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=given
+                |-NameIdentifierNode name=++
+                |-StringLiteralNode value="' Expected: '"
+              |-NameIdentifierNode name=++
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=expected
             |-NameIdentifierNode name=++
             |-StringLiteralNode value="'"
         |-VarDeclarationNode
@@ -322,6 +340,7 @@
     |-DecoratorNode
       |-NameIdentifierNode name=export
       |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=main
       |-EmptyNode
@@ -460,10 +479,11 @@
               |-QNameNode
                 |-NameIdentifierNode name=assertNumberLength
             |-AsExpressionNode
-              |-FloatLiteralNode value=123456789
-              |-ReferenceNode
-                |-QNameNode
-                  |-NameIdentifierNode name=u32
+              |-AsExpressionNode
+                |-FloatLiteralNode value=123456789
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=u32
               |-ReferenceNode
                 |-QNameNode
                   |-NameIdentifierNode name=i64

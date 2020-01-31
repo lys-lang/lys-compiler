@@ -1,0 +1,38 @@
+#[export]
+fun test(): void = {
+  loop {
+    continue
+  }
+}
+
+#[export]
+fun test1(): void = {
+  var x = 1
+  loop {
+    x = x + 1
+    if (x > 10) continue
+  }
+}
+
+#[export]
+fun test2(): void = {
+  var x = 1
+  loop {
+    x = x + 1
+    continue
+  }
+}
+
+#[export]
+fun test3(): void = {
+  var x = 1
+  loop {
+    loop {
+      x = x + 1
+      if (x == 10) continue
+    }
+    if (x > 100) continue
+    continue
+  }
+}
+

@@ -1,81 +1,96 @@
 |-Document
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=void
     |-InjectedLiteralNode
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=u8
     |-StackLiteralNode
       |-NameLiteralPairNode
         |-NameIdentifierNode name=lowLevelType
         |-StringLiteralNode value="i32"
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=i16
     |-StackLiteralNode
       |-NameLiteralPairNode
         |-NameIdentifierNode name=lowLevelType
         |-StringLiteralNode value="i32"
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=u16
     |-StackLiteralNode
       |-NameLiteralPairNode
         |-NameIdentifierNode name=lowLevelType
         |-StringLiteralNode value="i32"
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=i32
     |-StackLiteralNode
       |-NameLiteralPairNode
         |-NameIdentifierNode name=lowLevelType
         |-StringLiteralNode value="i32"
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=u32
     |-StackLiteralNode
       |-NameLiteralPairNode
         |-NameIdentifierNode name=lowLevelType
         |-StringLiteralNode value="i32"
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=i64
     |-StackLiteralNode
       |-NameLiteralPairNode
         |-NameIdentifierNode name=lowLevelType
         |-StringLiteralNode value="i64"
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=u64
     |-StackLiteralNode
       |-NameLiteralPairNode
         |-NameIdentifierNode name=lowLevelType
         |-StringLiteralNode value="i64"
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=f32
     |-StackLiteralNode
       |-NameLiteralPairNode
         |-NameIdentifierNode name=lowLevelType
         |-StringLiteralNode value="f32"
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=f64
     |-StackLiteralNode
       |-NameLiteralPairNode
         |-NameIdentifierNode name=lowLevelType
         |-StringLiteralNode value="f64"
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=bytes
     |-StackLiteralNode
       |-NameLiteralPairNode
         |-NameIdentifierNode name=lowLevelType
         |-StringLiteralNode value="i64"
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=boolean
     |-StackLiteralNode
       |-NameLiteralPairNode
         |-NameIdentifierNode name=lowLevelType
         |-StringLiteralNode value="i32"
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=ref
     |-InjectedLiteralNode
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=never
     |-InjectedLiteralNode
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=assert
       |-ParameterNode
@@ -92,7 +107,7 @@
             |-QNameNode
               |-NameIdentifierNode name=x
           |-NameIdentifierNode name===
-          |-EmptyNode
+          |-BooleanLiteralNode value=false
         |-FunctionCallNode
           |-ReferenceNode
             |-QNameNode
@@ -101,6 +116,7 @@
         |-EmptyNode
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=addressFromRef
       |-ParameterNode
@@ -118,6 +134,7 @@
               |-NameIdentifierNode name=$pointer
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=panic
       |-EmptyNode
@@ -134,6 +151,7 @@
         |-NameIdentifierNode name=u8
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=sizeOf
         |-EmptyNode
@@ -145,6 +163,7 @@
             |-FloatLiteralNode value=1
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=allocationSize
         |-EmptyNode
@@ -158,6 +177,7 @@
           |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -174,6 +194,7 @@
               |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -190,6 +211,7 @@
               |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -206,6 +228,7 @@
               |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -222,6 +245,7 @@
               |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -239,6 +263,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -256,6 +281,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -273,6 +299,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -290,6 +317,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -315,6 +343,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -340,6 +369,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -365,6 +395,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -393,6 +424,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -430,6 +462,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -450,6 +483,7 @@
                   |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -484,6 +518,7 @@
         |-NameIdentifierNode name=i16
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=sizeOf
         |-EmptyNode
@@ -495,6 +530,7 @@
             |-FloatLiteralNode value=2
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=allocationSize
         |-EmptyNode
@@ -508,6 +544,7 @@
           |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -524,6 +561,7 @@
               |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -541,6 +579,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -558,6 +597,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -575,6 +615,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -600,6 +641,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -625,6 +667,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -653,6 +696,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -690,6 +734,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -710,6 +755,7 @@
                   |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -744,6 +790,7 @@
         |-NameIdentifierNode name=u16
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=sizeOf
         |-EmptyNode
@@ -755,6 +802,7 @@
             |-FloatLiteralNode value=2
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=allocationSize
         |-EmptyNode
@@ -768,6 +816,7 @@
           |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -784,6 +833,7 @@
               |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -800,6 +850,7 @@
               |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -817,6 +868,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -834,6 +886,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -851,6 +904,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -868,6 +922,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -893,6 +948,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -918,6 +974,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -943,6 +1000,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -971,6 +1029,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -1008,6 +1067,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -1028,6 +1088,7 @@
                   |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -1062,6 +1123,7 @@
         |-NameIdentifierNode name=i32
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=sizeOf
         |-EmptyNode
@@ -1073,6 +1135,7 @@
             |-FloatLiteralNode value=4
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=allocationSize
         |-EmptyNode
@@ -1086,6 +1149,7 @@
           |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -1103,6 +1167,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -1120,6 +1185,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -1137,6 +1203,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -1162,6 +1229,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -1187,6 +1255,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -1212,6 +1281,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=!=
         |-ParameterNode
@@ -1237,6 +1307,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=&
         |-ParameterNode
@@ -1262,6 +1333,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=|
         |-ParameterNode
@@ -1287,6 +1359,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=^
         |-ParameterNode
@@ -1312,6 +1385,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=+
         |-ParameterNode
@@ -1337,6 +1411,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=-
         |-ParameterNode
@@ -1362,6 +1437,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=*
         |-ParameterNode
@@ -1387,6 +1463,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=/
         |-ParameterNode
@@ -1412,6 +1489,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=~
         |-ParameterNode
@@ -1431,6 +1509,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=-
         |-ParameterNode
@@ -1450,6 +1529,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=>>>
         |-ParameterNode
@@ -1475,6 +1555,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=>>
         |-ParameterNode
@@ -1500,6 +1581,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=<<
         |-ParameterNode
@@ -1525,6 +1607,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=^
         |-ParameterNode
@@ -1550,6 +1633,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=>=
         |-ParameterNode
@@ -1575,6 +1659,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=<=
         |-ParameterNode
@@ -1600,6 +1685,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=>
         |-ParameterNode
@@ -1625,6 +1711,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=<
         |-ParameterNode
@@ -1650,6 +1737,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -1667,6 +1755,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -1684,6 +1773,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -1712,6 +1802,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -1749,6 +1840,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -1769,6 +1861,7 @@
                   |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -1803,6 +1896,7 @@
         |-NameIdentifierNode name=u32
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=sizeOf
         |-EmptyNode
@@ -1814,6 +1908,7 @@
             |-FloatLiteralNode value=4
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=allocationSize
         |-EmptyNode
@@ -1827,6 +1922,7 @@
           |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -1844,6 +1940,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -1861,6 +1958,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -1878,6 +1976,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -1895,6 +1994,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -1920,6 +2020,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -1945,6 +2046,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -1970,6 +2072,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=!=
         |-ParameterNode
@@ -1995,6 +2098,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=+
         |-ParameterNode
@@ -2020,6 +2124,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=-
         |-ParameterNode
@@ -2045,6 +2150,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=*
         |-ParameterNode
@@ -2070,6 +2176,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=/
         |-ParameterNode
@@ -2095,6 +2202,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=~
         |-ParameterNode
@@ -2114,6 +2222,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=>>>
         |-ParameterNode
@@ -2139,6 +2248,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=>>
         |-ParameterNode
@@ -2164,6 +2274,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=<<
         |-ParameterNode
@@ -2189,6 +2300,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=^
         |-ParameterNode
@@ -2214,6 +2326,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=>=
         |-ParameterNode
@@ -2239,6 +2352,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=<=
         |-ParameterNode
@@ -2264,6 +2378,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=>
         |-ParameterNode
@@ -2289,6 +2404,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=<
         |-ParameterNode
@@ -2314,6 +2430,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -2342,6 +2459,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -2379,6 +2497,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -2399,6 +2518,7 @@
                   |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -2433,6 +2553,7 @@
         |-NameIdentifierNode name=i64
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=sizeOf
         |-EmptyNode
@@ -2444,6 +2565,7 @@
             |-FloatLiteralNode value=8
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=allocationSize
         |-EmptyNode
@@ -2457,6 +2579,7 @@
           |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -2474,6 +2597,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -2491,6 +2615,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -2516,6 +2641,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -2542,6 +2668,7 @@
                   |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -2568,6 +2695,7 @@
                   |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=!=
         |-ParameterNode
@@ -2593,6 +2721,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=+
         |-ParameterNode
@@ -2618,6 +2747,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=-
         |-ParameterNode
@@ -2643,6 +2773,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=*
         |-ParameterNode
@@ -2668,6 +2799,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=/
         |-ParameterNode
@@ -2693,6 +2825,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=~
         |-ParameterNode
@@ -2712,6 +2845,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=>>>
         |-ParameterNode
@@ -2737,6 +2871,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=>>
         |-ParameterNode
@@ -2762,6 +2897,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=<<
         |-ParameterNode
@@ -2787,6 +2923,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=^
         |-ParameterNode
@@ -2812,6 +2949,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=>=
         |-ParameterNode
@@ -2837,6 +2975,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=<=
         |-ParameterNode
@@ -2862,6 +3001,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=>
         |-ParameterNode
@@ -2887,6 +3027,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=<
         |-ParameterNode
@@ -2912,6 +3053,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -2929,6 +3071,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -2946,6 +3089,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -2974,6 +3118,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -3011,6 +3156,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -3031,6 +3177,7 @@
                   |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -3065,6 +3212,7 @@
         |-NameIdentifierNode name=u64
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=sizeOf
         |-EmptyNode
@@ -3076,6 +3224,7 @@
             |-FloatLiteralNode value=8
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=allocationSize
         |-EmptyNode
@@ -3089,6 +3238,7 @@
           |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -3106,6 +3256,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -3123,6 +3274,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -3148,6 +3300,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -3174,6 +3327,7 @@
                   |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -3200,6 +3354,7 @@
                   |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -3226,6 +3381,7 @@
                   |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=!=
         |-ParameterNode
@@ -3251,6 +3407,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=+
         |-ParameterNode
@@ -3276,6 +3433,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=-
         |-ParameterNode
@@ -3301,6 +3459,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=*
         |-ParameterNode
@@ -3326,6 +3485,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=/
         |-ParameterNode
@@ -3351,6 +3511,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=~
         |-ParameterNode
@@ -3370,6 +3531,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=>>>
         |-ParameterNode
@@ -3395,6 +3557,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=>>
         |-ParameterNode
@@ -3420,6 +3583,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=<<
         |-ParameterNode
@@ -3445,6 +3609,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=^
         |-ParameterNode
@@ -3470,6 +3635,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=>=
         |-ParameterNode
@@ -3495,6 +3661,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=<=
         |-ParameterNode
@@ -3520,6 +3687,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=>
         |-ParameterNode
@@ -3545,6 +3713,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=<
         |-ParameterNode
@@ -3570,6 +3739,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -3587,6 +3757,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -3604,6 +3775,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -3632,6 +3804,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -3669,6 +3842,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -3689,6 +3863,7 @@
                   |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -3723,6 +3898,7 @@
         |-NameIdentifierNode name=f32
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=sizeOf
         |-EmptyNode
@@ -3734,6 +3910,7 @@
             |-FloatLiteralNode value=4
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=allocationSize
         |-EmptyNode
@@ -3747,6 +3924,7 @@
           |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -3764,6 +3942,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=+
         |-ParameterNode
@@ -3789,6 +3968,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=-
         |-ParameterNode
@@ -3814,6 +3994,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=*
         |-ParameterNode
@@ -3839,6 +4020,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=/
         |-ParameterNode
@@ -3864,6 +4046,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -3889,6 +4072,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=>=
         |-ParameterNode
@@ -3914,6 +4098,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=<=
         |-ParameterNode
@@ -3939,6 +4124,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=>
         |-ParameterNode
@@ -3964,6 +4150,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=<
         |-ParameterNode
@@ -3989,6 +4176,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=!=
         |-ParameterNode
@@ -4014,6 +4202,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -4031,6 +4220,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -4048,6 +4238,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -4065,6 +4256,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -4082,6 +4274,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -4110,6 +4303,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -4147,6 +4341,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -4167,6 +4362,7 @@
                   |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -4201,6 +4397,7 @@
         |-NameIdentifierNode name=f64
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=sizeOf
         |-EmptyNode
@@ -4212,6 +4409,7 @@
             |-FloatLiteralNode value=8
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=allocationSize
         |-EmptyNode
@@ -4225,6 +4423,7 @@
           |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=+
         |-ParameterNode
@@ -4250,6 +4449,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=-
         |-ParameterNode
@@ -4275,6 +4475,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=*
         |-ParameterNode
@@ -4300,6 +4501,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=/
         |-ParameterNode
@@ -4325,6 +4527,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -4350,6 +4553,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=>=
         |-ParameterNode
@@ -4375,6 +4579,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=<=
         |-ParameterNode
@@ -4400,6 +4605,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=>
         |-ParameterNode
@@ -4425,6 +4631,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=<
         |-ParameterNode
@@ -4450,6 +4657,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=!=
         |-ParameterNode
@@ -4475,6 +4683,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -4492,6 +4701,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -4509,6 +4719,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -4526,6 +4737,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -4543,6 +4755,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -4560,6 +4773,7 @@
                 |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -4588,6 +4802,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -4625,6 +4840,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -4645,6 +4861,7 @@
                   |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -4679,6 +4896,7 @@
         |-NameIdentifierNode name=boolean
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=sizeOf
         |-EmptyNode
@@ -4690,6 +4908,7 @@
             |-FloatLiteralNode value=4
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=allocationSize
         |-EmptyNode
@@ -4703,6 +4922,7 @@
           |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=&&
         |-ParameterNode
@@ -4734,6 +4954,7 @@
                 |-FloatLiteralNode value=0
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -4761,6 +4982,7 @@
                   |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=||
         |-ParameterNode
@@ -4792,6 +5014,7 @@
                 |-FloatLiteralNode value=0
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=!
         |-ParameterNode
@@ -4806,10 +5029,11 @@
           |-ReferenceNode
             |-QNameNode
               |-NameIdentifierNode name=rhs
-          |-EmptyNode
-          |-EmptyNode
+          |-BooleanLiteralNode value=false
+          |-BooleanLiteralNode value=false
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -4838,6 +5062,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -4875,6 +5100,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -4895,6 +5121,7 @@
                   |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -4929,6 +5156,7 @@
         |-NameIdentifierNode name=ref
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=sizeOf
         |-EmptyNode
@@ -4940,6 +5168,7 @@
             |-FloatLiteralNode value=8
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=allocationSize
         |-EmptyNode
@@ -4953,6 +5182,7 @@
           |-EmptyNode
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=is
         |-ParameterNode
@@ -4963,9 +5193,10 @@
         |-ReferenceNode
           |-QNameNode
             |-NameIdentifierNode name=boolean
-        |-EmptyNode
+        |-BooleanLiteralNode value=false
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -4991,6 +5222,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=!=
         |-ParameterNode
@@ -5018,6 +5250,7 @@
                 |-NameIdentifierNode name=rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -5046,6 +5279,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -5083,6 +5317,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -5103,6 +5338,7 @@
                   |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -5137,6 +5373,7 @@
         |-NameIdentifierNode name=bytes
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=toAddr
         |-ParameterNode
@@ -5153,6 +5390,7 @@
               |-NameIdentifierNode name=$str
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -5171,6 +5409,7 @@
       |-DecoratorNode
         |-NameIdentifierNode name=getter
         |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=length
         |-ParameterNode
@@ -5198,6 +5437,7 @@
       |-DecoratorNode
         |-NameIdentifierNode name=getter
         |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=ptr
         |-ParameterNode
@@ -5225,6 +5465,7 @@
             |-FloatLiteralNode value=4
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -5253,6 +5494,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -5290,6 +5532,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -5310,6 +5553,7 @@
                   |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode

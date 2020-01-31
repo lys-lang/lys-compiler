@@ -1,9 +1,10 @@
 |-Document
   |-FunDirectiveNode
     |-DecoratorNode
-      |-ErrorNode
+      |-NameIdentifierNode name=extern
       |-StringLiteralNode value="env"
       |-StringLiteralNode value="printf"
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=printf
       |-ParameterNode
@@ -26,9 +27,10 @@
         |-EmptyNode
   |-FunDirectiveNode
     |-DecoratorNode
-      |-ErrorNode
+      |-NameIdentifierNode name=extern
       |-StringLiteralNode value="env"
       |-StringLiteralNode value="putchar"
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=putchar
       |-ParameterNode
@@ -48,6 +50,7 @@
     |-DecoratorNode
       |-NameIdentifierNode name=export
       |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=main
       |-EmptyNode

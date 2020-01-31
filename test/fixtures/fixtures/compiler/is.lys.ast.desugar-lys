@@ -1,0 +1,189 @@
+type Enum = AB | C
+
+type A = %struct {}
+
+
+impl A for Reference {
+  #[inline]
+  fun is(a: Self | ref): boolean = {
+    var discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+
+}
+impl A {
+  #[inline]
+  private fun A$discriminant(): u64 = {
+    var discriminant: u32 = A.^discriminant
+    discriminant as u64 << 32
+  }
+
+  #[inline]
+  fun apply(): A = {
+    var $ref = fromPointer(system::core::memory::calloc(1 as u32, A.^allocationSize))
+    $ref
+  }
+
+  fun as(self: A): UnsafeCPointer = %wasm {
+    (call $addressFromRef (get_local $self))
+  }
+
+  private fun fromPointer(ptr: u32): A = %wasm {
+    (i64.or (call $A$discriminant) (i64.extend_u/i32 (local.get $ptr)))
+  }
+
+  fun ==(a: A, b: A): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: A, b: A): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  fun store(lhs: ref, rhs: A, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): A = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+
+type B = %struct {}
+
+
+impl B for Reference {
+  #[inline]
+  fun is(a: Self | ref): boolean = {
+    var discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+
+}
+impl B {
+  #[inline]
+  private fun B$discriminant(): u64 = {
+    var discriminant: u32 = B.^discriminant
+    discriminant as u64 << 32
+  }
+
+  #[inline]
+  fun apply(): B = {
+    var $ref = fromPointer(system::core::memory::calloc(1 as u32, B.^allocationSize))
+    $ref
+  }
+
+  fun as(self: B): UnsafeCPointer = %wasm {
+    (call $addressFromRef (get_local $self))
+  }
+
+  private fun fromPointer(ptr: u32): B = %wasm {
+    (i64.or (call $B$discriminant) (i64.extend_u/i32 (local.get $ptr)))
+  }
+
+  fun ==(a: B, b: B): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: B, b: B): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  fun store(lhs: ref, rhs: B, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): B = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+
+type C = %struct {}
+
+
+impl C for Reference {
+  #[inline]
+  fun is(a: Self | ref): boolean = {
+    var discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+
+}
+impl C {
+  #[inline]
+  private fun C$discriminant(): u64 = {
+    var discriminant: u32 = C.^discriminant
+    discriminant as u64 << 32
+  }
+
+  #[inline]
+  fun apply(): C = {
+    var $ref = fromPointer(system::core::memory::calloc(1 as u32, C.^allocationSize))
+    $ref
+  }
+
+  fun as(self: C): UnsafeCPointer = %wasm {
+    (call $addressFromRef (get_local $self))
+  }
+
+  private fun fromPointer(ptr: u32): C = %wasm {
+    (i64.or (call $C$discriminant) (i64.extend_u/i32 (local.get $ptr)))
+  }
+
+  fun ==(a: C, b: C): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: C, b: C): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  fun store(lhs: ref, rhs: C, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): C = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+
+var value1: Enum = A
+var value2: A | B = A
+var value3: A = A
+#[export]
+fun identity(a: ref): ref = a
+
+#[export]
+fun test(): void = {
+  var x1 = value1 is A
+  var y1 = value1 is Enum
+  var z1 = value1 is B
+  var x2 = value2 is A
+  var y2 = value2 is Enum
+  var z2 = value2 is B
+  var x3 = value3 is A
+  var y3 = value3 is Enum
+  var z3 = identity(value3) is B
+}
+

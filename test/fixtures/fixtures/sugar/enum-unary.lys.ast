@@ -1,555 +1,848 @@
-|-Document(0,1135)
-  |-EnumDirective(0,41)
-    |-NameIdentifier(5,11)
-      |-Identifier=Option
-    |-StructDeclaration(16,32)
-      |-NameIdentifier(16,20)
-        |-Identifier=Some
-      |-FunctionParamsList(20,32)
-        |-(List)(21,31)
-          |-Parameter(21,31)
-            |-NameIdentifier(21,26)
-              |-Identifier=value
-            |-Type(28,31)
-              |-Reference(28,31)
-                |-QName(28,31)
-                  |-NameIdentifier(28,31)
-                    |-Identifier=ref
-    |-StructDeclaration(35,39)
-      |-NameIdentifier(35,39)
-        |-Identifier=None
-  |-TypeDirective(61,71)
-    |-NameIdentifier(66,70)
-      |-Identifier=None
-  |-TypeDirective(71,81)
-    |-NameIdentifier(76,80)
-      |-Identifier=Some
-  |-TypeDirective(81,106)
-    |-NameIdentifier(86,92)
-      |-Identifier=Option
-    |-Type(95,106)
-      |-UnionType(95,106)
-        |-Reference(95,99)
-          |-QName(95,99)
-            |-NameIdentifier(95,99)
-              |-Identifier=Some
-        |-Reference(102,106)
-          |-QName(102,106)
-            |-NameIdentifier(102,106)
-              |-Identifier=None
-  |-<UNEXPECTED TOKEN>=impl
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=Option
-  |-<UNEXPECTED TOKEN>=<
-  |-<UNEXPECTED TOKEN>=T
-  |-<UNEXPECTED TOKEN>=>
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>={
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=fun
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=is
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=x
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=ref
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>={
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=Some
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=is
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=x
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=||
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=None
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=is
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=x
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=}
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=}
-  |-<UNEXPECTED TOKEN>=
-
-
-  |-<UNEXPECTED TOKEN>=impl
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=Some
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>={
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=val
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=determinant
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=u32
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=1
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=val
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=memorySize
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=ref
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=memorySize
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=+
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=ref
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=memorySize
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=/* value: ref */
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=fun
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=is
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=x
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=ref
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=x
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=determinant
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>===
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=determinant
-  |-<UNEXPECTED TOKEN>=
-
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=fun
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=apply
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=value
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=ref
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=Some
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>={
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=val
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=ptr
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=Some
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=determinant
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=<<
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=32
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=|
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=core
-  |-<UNEXPECTED TOKEN>=::
-  |-<UNEXPECTED TOKEN>=memory
-  |-<UNEXPECTED TOKEN>=::
-  |-<UNEXPECTED TOKEN>=malloc
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=memorySize
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=as
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=Some
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=set_value
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=ptr
-  |-<UNEXPECTED TOKEN>=,
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=value
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=ref
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=as
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=Celcius
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=}
-  |-<UNEXPECTED TOKEN>=
-
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=fun
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=get_value
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=ptr
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=Some
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=f32
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>={
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=val
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=base
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=ref
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=base
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=ptr
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=ref
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=read
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=base
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=+
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=0
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=}
-  |-<UNEXPECTED TOKEN>=
-
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=private
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=fun
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=set_value
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=ptr
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=Some
-  |-<UNEXPECTED TOKEN>=,
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=newValue
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=ref
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=void
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>={
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=val
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=base
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=ref
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=base
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=ptr
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=ref
-  |-<UNEXPECTED TOKEN>=.
-  |-<UNEXPECTED TOKEN>=store
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=base
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=+
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=0
-  |-<UNEXPECTED TOKEN>=,
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=newValue
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=}
-  |-<UNEXPECTED TOKEN>=
-
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=fun
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>===
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=lhs
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=Some
-  |-<UNEXPECTED TOKEN>=,
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=rhs
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=Some
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=boolean
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>={
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=get_value
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=lhs
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>===
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=get_value
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=rhs
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=}
-  |-<UNEXPECTED TOKEN>=
-
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=fun
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=!=
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=lhs
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=Some
-  |-<UNEXPECTED TOKEN>=,
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=rhs
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=Some
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=boolean
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>={
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=    
-  |-<UNEXPECTED TOKEN>=!
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=lhs
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>===
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=rhs
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=}
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=}
-  |-<UNEXPECTED TOKEN>=
-
-
-  |-<UNEXPECTED TOKEN>=impl
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=None
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>={
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=val
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=determinant
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=u32
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=2
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=val
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=staticInstance
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=ref
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=determinant
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=fun
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=is
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=x
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=ref
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=x
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>===
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=staticInstance
-  |-<UNEXPECTED TOKEN>=
-
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=fun
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=apply
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=None
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=staticInstance
-  |-<UNEXPECTED TOKEN>=
-
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=fun
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>===
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=lhs
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=None
-  |-<UNEXPECTED TOKEN>=,
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=rhs
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=None
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=boolean
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=true
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=  
-  |-<UNEXPECTED TOKEN>=fun
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=!=
-  |-<UNEXPECTED TOKEN>=(
-  |-<UNEXPECTED TOKEN>=lhs
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=None
-  |-<UNEXPECTED TOKEN>=,
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=rhs
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=None
-  |-<UNEXPECTED TOKEN>=)
-  |-<UNEXPECTED TOKEN>=:
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=boolean
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>==
-  |-<UNEXPECTED TOKEN>= 
-  |-<UNEXPECTED TOKEN>=false
-  |-<UNEXPECTED TOKEN>=
-
-  |-<UNEXPECTED TOKEN>=}
-  |-<UNEXPECTED TOKEN>=
+|-Document(0,1130)
+  |-(AstCons)
+    |-(AstCons)
+      |-(AstCons)
+        |-(AstCons)
+          |-(AstCons)
+            |-(AstCons)
+              |-(AstCons)
+                |-EnumDirective(0,41)
+                  |-(AstCons)
+                    |-NoModifier(0,0)
+                      <Rule0>
+                    |-(AstCons)
+                      |-NameIdentifier(5,11)
+                        |-Identifier=Option
+                      |-(AstCons)
+                        |-StructDeclaration(16,32)
+                          |-(AstCons)
+                            |-NameIdentifier(16,20)
+                              |-Identifier=Some
+                            |-FunctionParamsList(20,32)
+                              |-(List)(21,31)
+                                |-Parameter(21,31)
+                                  |-(AstCons)
+                                    |-NameIdentifier(21,26)
+                                      |-Identifier=value
+                                    |-Reference(28,31)
+                                      |-QName(28,31)
+                                        |-NameIdentifier(28,31)
+                                          |-Identifier=ref
+                        |-StructDeclaration(35,39)
+                          |-NameIdentifier(35,39)
+                            |-Identifier=None
+                |-TypeDirective(61,71)
+                  |-(AstCons)
+                    |-NoModifier(61,61)
+                      <Rule0>
+                    |-NameIdentifier(66,70)
+                      |-Identifier=None
+              |-TypeDirective(71,81)
+                |-(AstCons)
+                  |-NoModifier(71,71)
+                    <Rule0>
+                  |-NameIdentifier(76,80)
+                    |-Identifier=Some
+            |-TypeDirective(81,106)
+              |-(AstCons)
+                |-NoModifier(81,81)
+                  <Rule0>
+                |-(AstCons)
+                  |-NameIdentifier(86,92)
+                    |-Identifier=Option
+                  |-UnionType(95,106)
+                    |-(AstCons)
+                      |-Reference(95,99)
+                        |-QName(95,99)
+                          |-NameIdentifier(95,99)
+                            |-Identifier=Some
+                      |-Reference(102,106)
+                        |-QName(102,106)
+                          |-NameIdentifier(102,106)
+                            |-Identifier=None
+          |-ImplDirective(108,175)
+            |-(AstCons)
+              |-Reference(113,119)
+                |-QName(113,119)
+                  |-NameIdentifier(113,119)
+                    |-Identifier=Option
+              |-(List)(120,175)
+                |-FunctionDirective(124,173)
+                  |-(AstCons)
+                    |-Decorators(124,124)
+                      <Rule0>
+                    |-(AstCons)
+                      |-NoModifier(124,124)
+                        <Rule0>
+                      |-FunDeclaration(124,173)
+                        |-(AstCons)
+                          |-FunOperator(128,130)
+                            |-Keyword=is
+                          |-(AstCons)
+                            |-TypeParameters(130,130)
+                              <Rule0>
+                            |-(AstCons)
+                              |-FunctionParamsList(130,138)
+                                |-(List)(131,137)
+                                  |-Parameter(131,137)
+                                    |-(AstCons)
+                                      |-NameIdentifier(131,132)
+                                        |-Identifier=x
+                                      |-Reference(134,137)
+                                        |-QName(134,137)
+                                          |-NameIdentifier(134,137)
+                                            |-Identifier=ref
+                              |-(AstCons)
+                                |-ReturnType(139,139)
+                                  <Rule0>
+                                |-FunctionBody(139,173)
+                                  |-CodeBlock(141,173)
+                                    |-BinaryOpExpression(147,169)
+                                      |-(AstCons)
+                                        |-IsExpression(147,156)
+                                          |-(AstCons)
+                                            |-Reference(147,148)
+                                              |-QName(147,148)
+                                                |-NameIdentifier(147,148)
+                                                  |-Identifier=x
+                                            |-Is(148,156)
+                                              |-Reference(152,156)
+                                                |-QName(152,156)
+                                                  |-NameIdentifier(152,156)
+                                                    |-Identifier=Some
+                                        |-Op(156,169)
+                                          |-(AstCons)
+                                            |-Operator=||
+                                            |-IsExpression(160,169)
+                                              |-(AstCons)
+                                                |-Reference(160,161)
+                                                  |-QName(160,161)
+                                                    |-NameIdentifier(160,161)
+                                                      |-Identifier=x
+                                                |-Is(161,169)
+                                                  |-Reference(165,169)
+                                                    |-QName(165,169)
+                                                      |-NameIdentifier(165,169)
+                                                        |-Identifier=None
+        |-ImplDirective(177,874)
+          |-(AstCons)
+            |-Reference(182,186)
+              |-QName(182,186)
+                |-NameIdentifier(182,186)
+                  |-Identifier=Some
+            |-(List)(187,874)
+              |-(AstCons)
+                |-(AstCons)
+                  |-(AstCons)
+                    |-(AstCons)
+                      |-(AstCons)
+                        |-(AstCons)
+                          |-(AstCons)
+                            |-ValDirective(191,215)
+                              |-(AstCons)
+                                |-NoModifier(191,191)
+                                  <Rule0>
+                                |-ValDeclaration(191,215)
+                                  |-(AstCons)
+                                    |-NameIdentifier(195,206)
+                                      |-Identifier=determinant
+                                    |-(AstCons)
+                                      |-Reference(208,211)
+                                        |-QName(208,211)
+                                          |-NameIdentifier(208,211)
+                                            |-Identifier=u32
+                                      |-NumberLiteral=1
+                            |-ValDirective(218,266)
+                              |-(AstCons)
+                                |-NoModifier(218,218)
+                                  <Rule0>
+                                |-ValDeclaration(218,266)
+                                  |-(AstCons)
+                                    |-NameIdentifier(222,232)
+                                      |-Identifier=memorySize
+                                    |-BinaryOpExpression(235,266)
+                                      |-(AstCons)
+                                        |-AtomicExpression(235,249)
+                                          |-(AstCons)
+                                            |-Reference(235,238)
+                                              |-QName(235,238)
+                                                |-NameIdentifier(235,238)
+                                                  |-Identifier=ref
+                                            |-MemberExpression(238,249)
+                                              |-(AstCons)
+                                                |-Operator=.
+                                                |-NameIdentifier(239,249)
+                                                  |-Identifier=memorySize
+                                        |-Op(249,266)
+                                          |-(AstCons)
+                                            |-Operator=+
+                                            |-AtomicExpression(252,266)
+                                              |-(AstCons)
+                                                |-Reference(252,255)
+                                                  |-QName(252,255)
+                                                    |-NameIdentifier(252,255)
+                                                      |-Identifier=ref
+                                                |-MemberExpression(255,266)
+                                                  |-(AstCons)
+                                                    |-Operator=.
+                                                    |-NameIdentifier(256,266)
+                                                      |-Identifier=memorySize
+                          |-FunctionDirective(286,331)
+                            |-(AstCons)
+                              |-Decorators(286,286)
+                                <Rule0>
+                              |-(AstCons)
+                                |-NoModifier(286,286)
+                                  <Rule0>
+                                |-FunDeclaration(286,331)
+                                  |-(AstCons)
+                                    |-FunOperator(290,292)
+                                      |-Keyword=is
+                                    |-(AstCons)
+                                      |-TypeParameters(292,292)
+                                        <Rule0>
+                                      |-(AstCons)
+                                        |-FunctionParamsList(292,300)
+                                          |-(List)(293,299)
+                                            |-Parameter(293,299)
+                                              |-(AstCons)
+                                                |-NameIdentifier(293,294)
+                                                  |-Identifier=x
+                                                |-Reference(296,299)
+                                                  |-QName(296,299)
+                                                    |-NameIdentifier(296,299)
+                                                      |-Identifier=ref
+                                        |-(AstCons)
+                                          |-ReturnType(301,301)
+                                            <Rule0>
+                                          |-FunctionBody(301,331)
+                                            |-BinaryOpExpression(303,331)
+                                              |-(AstCons)
+                                                |-AtomicExpression(303,316)
+                                                  |-(AstCons)
+                                                    |-Reference(303,304)
+                                                      |-QName(303,304)
+                                                        |-NameIdentifier(303,304)
+                                                          |-Identifier=x
+                                                    |-MemberExpression(304,316)
+                                                      |-(AstCons)
+                                                        |-Operator=.
+                                                        |-NameIdentifier(305,316)
+                                                          |-Identifier=determinant
+                                                |-Op(316,331)
+                                                  |-(AstCons)
+                                                    |-Operator===
+                                                    |-Reference(320,331)
+                                                      |-QName(320,331)
+                                                        |-NameIdentifier(320,331)
+                                                          |-Identifier=determinant
+                        |-FunctionDirective(335,498)
+                          |-(AstCons)
+                            |-Decorators(335,335)
+                              <Rule0>
+                            |-(AstCons)
+                              |-NoModifier(335,335)
+                                <Rule0>
+                              |-FunDeclaration(335,498)
+                                |-(AstCons)
+                                  |-NameIdentifier(339,344)
+                                    |-Identifier=apply
+                                  |-(AstCons)
+                                    |-TypeParameters(344,344)
+                                      <Rule0>
+                                    |-(AstCons)
+                                      |-FunctionParamsList(344,356)
+                                        |-(List)(345,355)
+                                          |-Parameter(345,355)
+                                            |-(AstCons)
+                                              |-NameIdentifier(345,350)
+                                                |-Identifier=value
+                                              |-Reference(352,355)
+                                                |-QName(352,355)
+                                                  |-NameIdentifier(352,355)
+                                                    |-Identifier=ref
+                                      |-(AstCons)
+                                        |-ReturnType(356,363)
+                                          |-Reference(358,362)
+                                            |-QName(358,362)
+                                              |-NameIdentifier(358,362)
+                                                |-Identifier=Some
+                                        |-FunctionBody(363,498)
+                                          |-CodeBlock(365,498)
+                                            |-(AstCons)
+                                              |-ValDeclaration(371,449)
+                                                |-(AstCons)
+                                                  |-NameIdentifier(375,378)
+                                                    |-Identifier=ptr
+                                                  |-(AstCons)
+                                                    |-Reference(380,384)
+                                                      |-QName(380,384)
+                                                        |-NameIdentifier(380,384)
+                                                          |-Identifier=Some
+                                                    |-AsExpression(387,449)
+                                                      |-(AstCons)
+                                                        |-ParenExpression(387,441)
+                                                          |-BinaryOpExpression(388,440)
+                                                            |-(AstCons)
+                                                              |-BinaryOpExpression(388,405)
+                                                                |-(AstCons)
+                                                                  |-Reference(388,399)
+                                                                    |-QName(388,399)
+                                                                      |-NameIdentifier(388,399)
+                                                                        |-Identifier=determinant
+                                                                  |-Op(399,405)
+                                                                    |-(AstCons)
+                                                                      |-Operator=<<
+                                                                      |-NumberLiteral=32
+                                                              |-Op(405,440)
+                                                                |-(AstCons)
+                                                                  |-Operator=|
+                                                                  |-AtomicExpression(408,440)
+                                                                    |-(AstCons)
+                                                                      |-Reference(408,428)
+                                                                        |-QName(408,428)
+                                                                          |-(AstCons)
+                                                                            |-NameIdentifier(408,412)
+                                                                              |-Identifier=core
+                                                                            |-(AstCons)
+                                                                              |-NameIdentifier(414,420)
+                                                                                |-Identifier=memory
+                                                                              |-NameIdentifier(422,428)
+                                                                                |-Identifier=malloc
+                                                                      |-CallArguments(428,440)
+                                                                        |-Reference(429,439)
+                                                                          |-QName(429,439)
+                                                                            |-NameIdentifier(429,439)
+                                                                              |-Identifier=memorySize
+                                                        |-As(441,449)
+                                                          |-Reference(445,449)
+                                                            |-QName(445,449)
+                                                              |-NameIdentifier(445,449)
+                                                                |-Identifier=Some
+                                              |-(AstCons)
+                                                |-AtomicExpression(454,475)
+                                                  |-(AstCons)
+                                                    |-Reference(454,463)
+                                                      |-QName(454,463)
+                                                        |-NameIdentifier(454,463)
+                                                          |-Identifier=set_value
+                                                    |-CallArguments(463,475)
+                                                      |-(AstCons)
+                                                        |-Reference(464,467)
+                                                          |-QName(464,467)
+                                                            |-NameIdentifier(464,467)
+                                                              |-Identifier=ptr
+                                                        |-Reference(469,474)
+                                                          |-QName(469,474)
+                                                            |-NameIdentifier(469,474)
+                                                              |-Identifier=value
+                                                |-AsExpression(480,494)
+                                                  |-(AstCons)
+                                                    |-Reference(480,483)
+                                                      |-QName(480,483)
+                                                        |-NameIdentifier(480,483)
+                                                          |-Identifier=ref
+                                                    |-As(483,494)
+                                                      |-Reference(487,494)
+                                                        |-QName(487,494)
+                                                          |-NameIdentifier(487,494)
+                                                            |-Identifier=Celcius
+                      |-FunctionDirective(502,591)
+                        |-(AstCons)
+                          |-Decorators(502,502)
+                            <Rule0>
+                          |-(AstCons)
+                            |-NoModifier(502,502)
+                              <Rule0>
+                            |-FunDeclaration(502,591)
+                              |-(AstCons)
+                                |-NameIdentifier(506,515)
+                                  |-Identifier=get_value
+                                |-(AstCons)
+                                  |-TypeParameters(515,515)
+                                    <Rule0>
+                                  |-(AstCons)
+                                    |-FunctionParamsList(515,526)
+                                      |-(List)(516,525)
+                                        |-Parameter(516,525)
+                                          |-(AstCons)
+                                            |-NameIdentifier(516,519)
+                                              |-Identifier=ptr
+                                            |-Reference(521,525)
+                                              |-QName(521,525)
+                                                |-NameIdentifier(521,525)
+                                                  |-Identifier=Some
+                                    |-(AstCons)
+                                      |-ReturnType(526,532)
+                                        |-Reference(528,531)
+                                          |-QName(528,531)
+                                            |-NameIdentifier(528,531)
+                                              |-Identifier=f32
+                                      |-FunctionBody(532,591)
+                                        |-CodeBlock(534,591)
+                                          |-(AstCons)
+                                            |-ValDeclaration(540,564)
+                                              |-(AstCons)
+                                                |-NameIdentifier(544,548)
+                                                  |-Identifier=base
+                                                |-AtomicExpression(551,564)
+                                                  |-(AstCons)
+                                                    |-Reference(551,554)
+                                                      |-QName(551,554)
+                                                        |-NameIdentifier(551,554)
+                                                          |-Identifier=ref
+                                                    |-(AstCons)
+                                                      |-MemberExpression(554,559)
+                                                        |-(AstCons)
+                                                          |-Operator=.
+                                                          |-NameIdentifier(555,559)
+                                                            |-Identifier=base
+                                                      |-CallArguments(559,564)
+                                                        |-Reference(560,563)
+                                                          |-QName(560,563)
+                                                            |-NameIdentifier(560,563)
+                                                              |-Identifier=ptr
+                                            |-AtomicExpression(569,587)
+                                              |-(AstCons)
+                                                |-Reference(569,572)
+                                                  |-QName(569,572)
+                                                    |-NameIdentifier(569,572)
+                                                      |-Identifier=ref
+                                                |-(AstCons)
+                                                  |-MemberExpression(572,577)
+                                                    |-(AstCons)
+                                                      |-Operator=.
+                                                      |-NameIdentifier(573,577)
+                                                        |-Identifier=read
+                                                  |-CallArguments(577,587)
+                                                    |-BinaryOpExpression(578,586)
+                                                      |-(AstCons)
+                                                        |-Reference(578,582)
+                                                          |-QName(578,582)
+                                                            |-NameIdentifier(578,582)
+                                                              |-Identifier=base
+                                                        |-Op(582,586)
+                                                          |-(AstCons)
+                                                            |-Operator=+
+                                                            |-NumberLiteral=0
+                    |-FunctionDirective(595,719)
+                      |-(AstCons)
+                        |-Decorators(595,595)
+                          <Rule0>
+                        |-(AstCons)
+                          |-PrivateModifier(595,603)
+                            <Rule0>
+                          |-FunDeclaration(603,719)
+                            |-(AstCons)
+                              |-NameIdentifier(607,616)
+                                |-Identifier=set_value
+                              |-(AstCons)
+                                |-TypeParameters(616,616)
+                                  <Rule0>
+                                |-(AstCons)
+                                  |-FunctionParamsList(616,642)
+                                    |-(List)(617,641)
+                                      |-(AstCons)
+                                        |-Parameter(617,626)
+                                          |-(AstCons)
+                                            |-NameIdentifier(617,620)
+                                              |-Identifier=ptr
+                                            |-Reference(622,626)
+                                              |-QName(622,626)
+                                                |-NameIdentifier(622,626)
+                                                  |-Identifier=Some
+                                        |-Parameter(628,641)
+                                          |-(AstCons)
+                                            |-NameIdentifier(628,636)
+                                              |-Identifier=newValue
+                                            |-Reference(638,641)
+                                              |-QName(638,641)
+                                                |-NameIdentifier(638,641)
+                                                  |-Identifier=ref
+                                  |-(AstCons)
+                                    |-ReturnType(642,649)
+                                      |-Reference(644,648)
+                                        |-QName(644,648)
+                                          |-NameIdentifier(644,648)
+                                            |-Identifier=void
+                                    |-FunctionBody(649,719)
+                                      |-CodeBlock(651,719)
+                                        |-(AstCons)
+                                          |-ValDeclaration(657,681)
+                                            |-(AstCons)
+                                              |-NameIdentifier(661,665)
+                                                |-Identifier=base
+                                              |-AtomicExpression(668,681)
+                                                |-(AstCons)
+                                                  |-Reference(668,671)
+                                                    |-QName(668,671)
+                                                      |-NameIdentifier(668,671)
+                                                        |-Identifier=ref
+                                                  |-(AstCons)
+                                                    |-MemberExpression(671,676)
+                                                      |-(AstCons)
+                                                        |-Operator=.
+                                                        |-NameIdentifier(672,676)
+                                                          |-Identifier=base
+                                                    |-CallArguments(676,681)
+                                                      |-Reference(677,680)
+                                                        |-QName(677,680)
+                                                          |-NameIdentifier(677,680)
+                                                            |-Identifier=ptr
+                                          |-AtomicExpression(686,715)
+                                            |-(AstCons)
+                                              |-Reference(686,689)
+                                                |-QName(686,689)
+                                                  |-NameIdentifier(686,689)
+                                                    |-Identifier=ref
+                                              |-(AstCons)
+                                                |-MemberExpression(689,695)
+                                                  |-(AstCons)
+                                                    |-Operator=.
+                                                    |-NameIdentifier(690,695)
+                                                      |-Identifier=store
+                                                |-CallArguments(695,715)
+                                                  |-(AstCons)
+                                                    |-BinaryOpExpression(696,704)
+                                                      |-(AstCons)
+                                                        |-Reference(696,700)
+                                                          |-QName(696,700)
+                                                            |-NameIdentifier(696,700)
+                                                              |-Identifier=base
+                                                        |-Op(700,704)
+                                                          |-(AstCons)
+                                                            |-Operator=+
+                                                            |-NumberLiteral=0
+                                                    |-Reference(706,714)
+                                                      |-QName(706,714)
+                                                        |-NameIdentifier(706,714)
+                                                          |-Identifier=newValue
+                  |-FunctionDirective(723,805)
+                    |-(AstCons)
+                      |-Decorators(723,723)
+                        <Rule0>
+                      |-(AstCons)
+                        |-NoModifier(723,723)
+                          <Rule0>
+                        |-FunDeclaration(723,805)
+                          |-(AstCons)
+                            |-FunOperator(727,729)
+                              |-Operator===
+                            |-(AstCons)
+                              |-TypeParameters(729,729)
+                                <Rule0>
+                              |-(AstCons)
+                                |-FunctionParamsList(729,751)
+                                  |-(List)(730,750)
+                                    |-(AstCons)
+                                      |-Parameter(730,739)
+                                        |-(AstCons)
+                                          |-NameIdentifier(730,733)
+                                            |-Identifier=lhs
+                                          |-Reference(735,739)
+                                            |-QName(735,739)
+                                              |-NameIdentifier(735,739)
+                                                |-Identifier=Some
+                                      |-Parameter(741,750)
+                                        |-(AstCons)
+                                          |-NameIdentifier(741,744)
+                                            |-Identifier=rhs
+                                          |-Reference(746,750)
+                                            |-QName(746,750)
+                                              |-NameIdentifier(746,750)
+                                                |-Identifier=Some
+                                |-(AstCons)
+                                  |-ReturnType(751,761)
+                                    |-Reference(753,760)
+                                      |-QName(753,760)
+                                        |-NameIdentifier(753,760)
+                                          |-Identifier=boolean
+                                  |-FunctionBody(761,805)
+                                    |-CodeBlock(763,805)
+                                      |-BinaryOpExpression(769,801)
+                                        |-(AstCons)
+                                          |-AtomicExpression(769,783)
+                                            |-(AstCons)
+                                              |-Reference(769,778)
+                                                |-QName(769,778)
+                                                  |-NameIdentifier(769,778)
+                                                    |-Identifier=get_value
+                                              |-CallArguments(778,783)
+                                                |-Reference(779,782)
+                                                  |-QName(779,782)
+                                                    |-NameIdentifier(779,782)
+                                                      |-Identifier=lhs
+                                          |-Op(783,801)
+                                            |-(AstCons)
+                                              |-Operator===
+                                              |-AtomicExpression(787,801)
+                                                |-(AstCons)
+                                                  |-Reference(787,796)
+                                                    |-QName(787,796)
+                                                      |-NameIdentifier(787,796)
+                                                        |-Identifier=get_value
+                                                  |-CallArguments(796,801)
+                                                    |-Reference(797,800)
+                                                      |-QName(797,800)
+                                                        |-NameIdentifier(797,800)
+                                                          |-Identifier=rhs
+                |-FunctionDirective(809,872)
+                  |-(AstCons)
+                    |-Decorators(809,809)
+                      <Rule0>
+                    |-(AstCons)
+                      |-NoModifier(809,809)
+                        <Rule0>
+                      |-FunDeclaration(809,872)
+                        |-(AstCons)
+                          |-FunOperator(813,815)
+                            |-Operator=!=
+                          |-(AstCons)
+                            |-TypeParameters(815,815)
+                              <Rule0>
+                            |-(AstCons)
+                              |-FunctionParamsList(815,837)
+                                |-(List)(816,836)
+                                  |-(AstCons)
+                                    |-Parameter(816,825)
+                                      |-(AstCons)
+                                        |-NameIdentifier(816,819)
+                                          |-Identifier=lhs
+                                        |-Reference(821,825)
+                                          |-QName(821,825)
+                                            |-NameIdentifier(821,825)
+                                              |-Identifier=Some
+                                    |-Parameter(827,836)
+                                      |-(AstCons)
+                                        |-NameIdentifier(827,830)
+                                          |-Identifier=rhs
+                                        |-Reference(832,836)
+                                          |-QName(832,836)
+                                            |-NameIdentifier(832,836)
+                                              |-Identifier=Some
+                              |-(AstCons)
+                                |-ReturnType(837,847)
+                                  |-Reference(839,846)
+                                    |-QName(839,846)
+                                      |-NameIdentifier(839,846)
+                                        |-Identifier=boolean
+                                |-FunctionBody(847,872)
+                                  |-CodeBlock(849,872)
+                                    |-UnaryExpression(855,868)
+                                      |-(AstCons)
+                                        |-Operator=!
+                                        |-ParenExpression(856,868)
+                                          |-BinaryOpExpression(857,867)
+                                            |-(AstCons)
+                                              |-Reference(857,860)
+                                                |-QName(857,860)
+                                                  |-NameIdentifier(857,860)
+                                                    |-Identifier=lhs
+                                              |-Op(860,867)
+                                                |-(AstCons)
+                                                  |-Operator===
+                                                  |-Reference(864,867)
+                                                    |-QName(864,867)
+                                                      |-NameIdentifier(864,867)
+                                                        |-Identifier=rhs
+      |-ImplDirective(876,1129)
+        |-(AstCons)
+          |-Reference(881,885)
+            |-QName(881,885)
+              |-NameIdentifier(881,885)
+                |-Identifier=None
+          |-(List)(886,1129)
+            |-(AstCons)
+              |-(AstCons)
+                |-(AstCons)
+                  |-(AstCons)
+                    |-(AstCons)
+                      |-ValDirective(890,914)
+                        |-(AstCons)
+                          |-NoModifier(890,890)
+                            <Rule0>
+                          |-ValDeclaration(890,914)
+                            |-(AstCons)
+                              |-NameIdentifier(894,905)
+                                |-Identifier=determinant
+                              |-(AstCons)
+                                |-Reference(907,910)
+                                  |-QName(907,910)
+                                    |-NameIdentifier(907,910)
+                                      |-Identifier=u32
+                                |-NumberLiteral=2
+                      |-ValDirective(917,954)
+                        |-(AstCons)
+                          |-NoModifier(917,917)
+                            <Rule0>
+                          |-ValDeclaration(917,954)
+                            |-(AstCons)
+                              |-NameIdentifier(921,935)
+                                |-Identifier=staticInstance
+                              |-(AstCons)
+                                |-Reference(937,940)
+                                  |-QName(937,940)
+                                    |-NameIdentifier(937,940)
+                                      |-Identifier=ref
+                                |-Reference(943,954)
+                                  |-QName(943,954)
+                                    |-NameIdentifier(943,954)
+                                      |-Identifier=determinant
+                    |-FunctionDirective(957,993)
+                      |-(AstCons)
+                        |-Decorators(957,957)
+                          <Rule0>
+                        |-(AstCons)
+                          |-NoModifier(957,957)
+                            <Rule0>
+                          |-FunDeclaration(957,993)
+                            |-(AstCons)
+                              |-FunOperator(961,963)
+                                |-Keyword=is
+                              |-(AstCons)
+                                |-TypeParameters(963,963)
+                                  <Rule0>
+                                |-(AstCons)
+                                  |-FunctionParamsList(963,971)
+                                    |-(List)(964,970)
+                                      |-Parameter(964,970)
+                                        |-(AstCons)
+                                          |-NameIdentifier(964,965)
+                                            |-Identifier=x
+                                          |-Reference(967,970)
+                                            |-QName(967,970)
+                                              |-NameIdentifier(967,970)
+                                                |-Identifier=ref
+                                  |-(AstCons)
+                                    |-ReturnType(972,972)
+                                      <Rule0>
+                                    |-FunctionBody(972,993)
+                                      |-BinaryOpExpression(974,993)
+                                        |-(AstCons)
+                                          |-Reference(974,975)
+                                            |-QName(974,975)
+                                              |-NameIdentifier(974,975)
+                                                |-Identifier=x
+                                          |-Op(975,993)
+                                            |-(AstCons)
+                                              |-Operator===
+                                              |-Reference(979,993)
+                                                |-QName(979,993)
+                                                  |-NameIdentifier(979,993)
+                                                    |-Identifier=staticInstance
+                  |-FunctionDirective(997,1031)
+                    |-(AstCons)
+                      |-Decorators(997,997)
+                        <Rule0>
+                      |-(AstCons)
+                        |-NoModifier(997,997)
+                          <Rule0>
+                        |-FunDeclaration(997,1031)
+                          |-(AstCons)
+                            |-NameIdentifier(1001,1006)
+                              |-Identifier=apply
+                            |-(AstCons)
+                              |-TypeParameters(1006,1006)
+                                <Rule0>
+                              |-(AstCons)
+                                |-FunctionParamsList(1006,1008)
+                                  |-(List)(1007,1007)
+                                    <Rule0>
+                                |-(AstCons)
+                                  |-ReturnType(1008,1015)
+                                    |-Reference(1010,1014)
+                                      |-QName(1010,1014)
+                                        |-NameIdentifier(1010,1014)
+                                          |-Identifier=None
+                                  |-FunctionBody(1015,1031)
+                                    |-Reference(1017,1031)
+                                      |-QName(1017,1031)
+                                        |-NameIdentifier(1017,1031)
+                                          |-Identifier=staticInstance
+                |-FunctionDirective(1035,1079)
+                  |-(AstCons)
+                    |-Decorators(1035,1035)
+                      <Rule0>
+                    |-(AstCons)
+                      |-NoModifier(1035,1035)
+                        <Rule0>
+                      |-FunDeclaration(1035,1079)
+                        |-(AstCons)
+                          |-FunOperator(1039,1041)
+                            |-Operator===
+                          |-(AstCons)
+                            |-TypeParameters(1041,1041)
+                              <Rule0>
+                            |-(AstCons)
+                              |-FunctionParamsList(1041,1063)
+                                |-(List)(1042,1062)
+                                  |-(AstCons)
+                                    |-Parameter(1042,1051)
+                                      |-(AstCons)
+                                        |-NameIdentifier(1042,1045)
+                                          |-Identifier=lhs
+                                        |-Reference(1047,1051)
+                                          |-QName(1047,1051)
+                                            |-NameIdentifier(1047,1051)
+                                              |-Identifier=None
+                                    |-Parameter(1053,1062)
+                                      |-(AstCons)
+                                        |-NameIdentifier(1053,1056)
+                                          |-Identifier=rhs
+                                        |-Reference(1058,1062)
+                                          |-QName(1058,1062)
+                                            |-NameIdentifier(1058,1062)
+                                              |-Identifier=None
+                              |-(AstCons)
+                                |-ReturnType(1063,1073)
+                                  |-Reference(1065,1072)
+                                    |-QName(1065,1072)
+                                      |-NameIdentifier(1065,1072)
+                                        |-Identifier=boolean
+                                |-FunctionBody(1073,1079)
+                                  |-BooleanLiteral(1075,1079)
+                                    <Rule0>
+              |-FunctionDirective(1082,1127)
+                |-(AstCons)
+                  |-Decorators(1082,1082)
+                    <Rule0>
+                  |-(AstCons)
+                    |-NoModifier(1082,1082)
+                      <Rule0>
+                    |-FunDeclaration(1082,1127)
+                      |-(AstCons)
+                        |-FunOperator(1086,1088)
+                          |-Operator=!=
+                        |-(AstCons)
+                          |-TypeParameters(1088,1088)
+                            <Rule0>
+                          |-(AstCons)
+                            |-FunctionParamsList(1088,1110)
+                              |-(List)(1089,1109)
+                                |-(AstCons)
+                                  |-Parameter(1089,1098)
+                                    |-(AstCons)
+                                      |-NameIdentifier(1089,1092)
+                                        |-Identifier=lhs
+                                      |-Reference(1094,1098)
+                                        |-QName(1094,1098)
+                                          |-NameIdentifier(1094,1098)
+                                            |-Identifier=None
+                                  |-Parameter(1100,1109)
+                                    |-(AstCons)
+                                      |-NameIdentifier(1100,1103)
+                                        |-Identifier=rhs
+                                      |-Reference(1105,1109)
+                                        |-QName(1105,1109)
+                                          |-NameIdentifier(1105,1109)
+                                            |-Identifier=None
+                            |-(AstCons)
+                              |-ReturnType(1110,1120)
+                                |-Reference(1112,1119)
+                                  |-QName(1112,1119)
+                                    |-NameIdentifier(1112,1119)
+                                      |-Identifier=boolean
+                              |-FunctionBody(1120,1127)
+                                |-BooleanLiteral(1122,1127)
+                                  <Rule0>
+    |-EndOfFile=

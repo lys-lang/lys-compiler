@@ -72,6 +72,7 @@
       |-NameIdentifierNode name=u8
     |-EmptyNode
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=bytes
     |-StackLiteralNode
       |-NameLiteralPairNode
@@ -117,6 +118,7 @@
             |-FloatLiteralNode value=32
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=apply
         |-ParameterNode
@@ -212,6 +214,7 @@
       |-DecoratorNode
         |-NameIdentifierNode name=explicit
         |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -230,6 +233,7 @@
       |-DecoratorNode
         |-NameIdentifierNode name=getter
         |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=length
         |-ParameterNode
@@ -257,6 +261,7 @@
       |-DecoratorNode
         |-NameIdentifierNode name=getter
         |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=ptr
         |-ParameterNode
@@ -284,6 +289,7 @@
                   |-NameIdentifierNode name=u32
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=as
         |-ParameterNode
@@ -306,8 +312,9 @@
                   |-NameIdentifierNode name=$self
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
-        |-ErrorNode
+        |-NameIdentifierNode name=[]
         |-ParameterNode
           |-NameIdentifierNode name=data
           |-ReferenceNode
@@ -378,8 +385,9 @@
                 |-NameIdentifierNode name=at
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
-        |-ErrorNode
+        |-NameIdentifierNode name=[]
         |-ParameterNode
           |-NameIdentifierNode name=data
           |-ReferenceNode
@@ -458,6 +466,7 @@
                 |-NameIdentifierNode name=at
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=fromString
         |-ParameterNode
@@ -474,6 +483,7 @@
               |-NameIdentifierNode name=$str
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=get
         |-ParameterNode
@@ -528,6 +538,7 @@
                 |-NameIdentifierNode name=at
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=set
         |-ParameterNode
@@ -597,6 +608,7 @@
                 |-NameIdentifierNode name=at
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=set
         |-ParameterNode
@@ -659,6 +671,7 @@
                 |-NameIdentifierNode name=at
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -687,6 +700,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -724,6 +738,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -744,6 +759,7 @@
                   |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -773,6 +789,7 @@
                     |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=!=
         |-ParameterNode
@@ -800,6 +817,7 @@
                 |-NameIdentifierNode name=rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -844,7 +862,7 @@
                         |-NameIdentifierNode name=rhs
                     |-NameIdentifierNode name=ptr
                 |-BlockNode
-                  |-EmptyNode
+                  |-BooleanLiteralNode value=false
                 |-BlockNode
                   |-VarDeclarationNode
                     |-NameIdentifierNode name=len
@@ -857,7 +875,7 @@
                   |-VarDeclarationNode
                     |-NameIdentifierNode name=equals
                     |-EmptyNode
-                    |-EmptyNode
+                    |-BooleanLiteralNode value=false
                   |-LoopNode
                     |-BlockNode
                       |-BinaryExpressionNode
@@ -908,7 +926,7 @@
                               |-QNameNode
                                 |-NameIdentifierNode name=equals
                             |-NameIdentifierNode name==
-                            |-EmptyNode
+                            |-BooleanLiteralNode value=false
                           |-ContinueNode
                         |-EmptyNode
                       |-IfNode
@@ -928,4 +946,4 @@
                     |-QNameNode
                       |-NameIdentifierNode name=equals
             |-BlockNode
-              |-EmptyNode
+              |-BooleanLiteralNode value=false

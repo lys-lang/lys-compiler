@@ -1,6 +1,7 @@
 |-Document
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=test
       |-EmptyNode
@@ -11,7 +12,7 @@
         |-VarDeclarationNode
           |-NameIdentifierNode name=test
           |-EmptyNode
-          |-EmptyNode
+          |-BooleanLiteralNode value=false
         |-BinaryExpressionNode
           |-ReferenceNode
             |-QNameNode

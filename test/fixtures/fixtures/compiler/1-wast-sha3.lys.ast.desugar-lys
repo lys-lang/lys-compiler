@@ -1,0 +1,10 @@
+import system::hash::keccak
+
+var k = Keccak()
+#[export "keccak"]
+fun keccak(input: bytes): bytes = {
+  Keccak.reset(k)
+  Keccak.update(k, input)
+  Keccak.digest(k)
+}
+

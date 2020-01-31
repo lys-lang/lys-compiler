@@ -6,6 +6,7 @@
     |-EmptyNode
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=maxI64
       |-EmptyNode
@@ -17,6 +18,7 @@
           |-FloatLiteralNode value=0xFFFFFFFFFFFF
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=maxI16inI64
       |-EmptyNode
@@ -28,6 +30,7 @@
           |-FloatLiteralNode value=0xFFFF
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=i32_one
       |-EmptyNode
@@ -39,6 +42,7 @@
           |-FloatLiteralNode value=1
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=u32_one
       |-EmptyNode
@@ -50,6 +54,7 @@
           |-FloatLiteralNode value=1
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=i32const_u32
       |-ParameterNode
@@ -66,6 +71,7 @@
             |-NameIdentifierNode name=$x
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=i32const_i32
       |-ParameterNode
@@ -84,6 +90,7 @@
     |-DecoratorNode
       |-NameIdentifierNode name=export
       |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=main
       |-EmptyNode
@@ -150,14 +157,15 @@
               |-NameIdentifierNode name=verify
           |-BinaryExpressionNode
             |-AsExpressionNode
-              |-FunctionCallNode
+              |-AsExpressionNode
+                |-FunctionCallNode
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=maxI16inI64
+                  |-EmptyNode
                 |-ReferenceNode
                   |-QNameNode
-                    |-NameIdentifierNode name=maxI16inI64
-                |-EmptyNode
-              |-ReferenceNode
-                |-QNameNode
-                  |-NameIdentifierNode name=i32
+                    |-NameIdentifierNode name=i32
               |-ReferenceNode
                 |-QNameNode
                   |-NameIdentifierNode name=i16
@@ -174,13 +182,15 @@
               |-NameIdentifierNode name=verify
           |-BinaryExpressionNode
             |-AsExpressionNode
-              |-FloatLiteralNode value=0xFFFF
-              |-ReferenceNode
-                |-QNameNode
-                  |-NameIdentifierNode name=i16
-              |-ReferenceNode
-                |-QNameNode
-                  |-NameIdentifierNode name=i32
+              |-AsExpressionNode
+                |-AsExpressionNode
+                  |-FloatLiteralNode value=0xFFFF
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=i16
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=i32
               |-ReferenceNode
                 |-QNameNode
                   |-NameIdentifierNode name=u32
@@ -197,10 +207,11 @@
               |-NameIdentifierNode name=verify
           |-BinaryExpressionNode
             |-AsExpressionNode
-              |-FloatLiteralNode value=0xFFFF
-              |-ReferenceNode
-                |-QNameNode
-                  |-NameIdentifierNode name=i16
+              |-AsExpressionNode
+                |-FloatLiteralNode value=0xFFFF
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=i16
               |-ReferenceNode
                 |-QNameNode
                   |-NameIdentifierNode name=i32
@@ -217,10 +228,11 @@
               |-NameIdentifierNode name=verify
           |-BinaryExpressionNode
             |-AsExpressionNode
-              |-FloatLiteralNode value=0x8000
-              |-ReferenceNode
-                |-QNameNode
-                  |-NameIdentifierNode name=i16
+              |-AsExpressionNode
+                |-FloatLiteralNode value=0x8000
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=i16
               |-ReferenceNode
                 |-QNameNode
                   |-NameIdentifierNode name=i32

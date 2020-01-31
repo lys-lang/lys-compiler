@@ -1,6 +1,7 @@
 |-Document
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=isComplex
       |-ParameterNode
@@ -21,7 +22,7 @@
             |-QNameNode
               |-NameIdentifierNode name=Real
           |-NameIdentifierNode name=_
-          |-EmptyNode
+          |-BooleanLiteralNode value=false
         |-MatchDefaultNode
           |-EmptyNode
-          |-EmptyNode
+          |-BooleanLiteralNode value=false

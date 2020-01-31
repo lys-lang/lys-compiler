@@ -4,6 +4,7 @@ import src::parser::parser
 import src::helpers
 import src::stringbuilder
 import src::compiler::linemapper
+import src::compiler::stringlist
 
 enum ModuleMap {
   EmptyModule
@@ -11,6 +12,7 @@ enum ModuleMap {
     moduleName: string,
     path: string,
     source: string,
+    ast: AstNode,
     document: CodeNode,
     phase: i32,
     errors: i32,
@@ -21,7 +23,9 @@ enum ModuleMap {
 
 struct CompilerContext(
   messageCollector: MessageCollector,
-  modules: ModuleMap
+  modules: ModuleMap,
+  workingDirectory: string,
+  paths: StringLinkedList
 )
 
 impl ModuleMap {
@@ -61,7 +65,7 @@ impl ModuleMap {
 }
 
 impl CompilerContext {
-  fun apply(): CompilerContext = CompilerContext(MessageCollector(), EmptyModule)
+  fun apply(): CompilerContext = CompilerContext(MessageCollector(), EmptyModule, "/", None)
 
   #[method]
   fun getModuleByContent(self: CompilerContext, path: string, moduleName: string, source: string): Module = {
@@ -70,12 +74,13 @@ impl CompilerContext {
     val module = match ast {
       case is Nil -> {
         self.messageCollector.append("Error parsing file: " ++ path, SourcePosition(path, 0x0, 0x1))
-        Module(moduleName, path, source, EmptyNode, 0, 1, LineMapper(source))
+        Module(moduleName, path, source, Rule0, EmptyNode, 0, 1, LineMapper(source))
       }
       case ast is AstNode -> {
         val errors = collectErrors(ast, self.messageCollector, path)
-        val code = src::compiler::phases::cannonical::processNode(ast)
-        Module(moduleName, path, source, code, 0, errors, LineMapper(source))
+        val newAst = src::compiler::phases::transformation::desugar(path, moduleName, ast, self)
+        val code = src::compiler::phases::cannonical::processNode(newAst)
+        Module(moduleName, path, source, newAst, code, 0, errors, LineMapper(source))
       }
     }
 
@@ -191,7 +196,7 @@ impl CompilerContext {
           errors = printErrors(self, self.messageCollector.headMessage, nsb, head.path, errors)
 
           if (!nsb.isEmpty()) {
-            sb.append(head.path).append("\n").append(nsb.toString())
+            sb.appendln(head.path).append(nsb)
           }
 
           current = tail
@@ -202,7 +207,7 @@ impl CompilerContext {
           errors = printErrors(self, self.messageCollector.headMessage, sb, head.path, errors)
 
           if (!nsb.isEmpty()) {
-            sb.append(head.path).append("\n").append(nsb.toString())
+            sb.appendln(head.path).append(nsb)
           }
 
           break

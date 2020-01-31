@@ -1,0 +1,13 @@
+fun DJB2(input: bytes): u64 = {
+  var hash = 5381 as u64
+  var i = 0 as u32
+  var $ref = input.ptr as ref
+  loop {
+    if (i >= input.length) continue
+    hash = hash << 5 + hash + u64.load8_u($ref, i)
+    i = i + 1 as u32
+    continue
+  }
+  hash
+}
+

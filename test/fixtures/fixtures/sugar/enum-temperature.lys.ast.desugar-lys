@@ -1,0 +1,198 @@
+type Temp = Celcius | Kelvin
+
+type Celcius = %struct {temperature: f32}
+
+
+impl Celcius for Reference {
+  #[inline]
+  fun is(a: Self | ref): boolean = {
+    var discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+
+}
+impl Celcius {
+  #[inline]
+  private fun Celcius$discriminant(): u64 = {
+    var discriminant: u32 = Celcius.^discriminant
+    discriminant as u64 << 32
+  }
+
+  #[inline]
+  fun apply(temperature: f32): Celcius = {
+    var $ref = fromPointer(system::core::memory::calloc(1 as u32, Celcius.^allocationSize))
+    property$0($ref, temperature)
+    $ref
+  }
+
+  fun as(self: Celcius): UnsafeCPointer = %wasm {
+    (call $addressFromRef (get_local $self))
+  }
+
+  private fun fromPointer(ptr: u32): Celcius = %wasm {
+    (i64.or (call $Celcius$discriminant) (i64.extend_u/i32 (local.get $ptr)))
+  }
+
+  fun ==(a: Celcius, b: Celcius): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: Celcius, b: Celcius): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  #[getter]
+  fun temperature(self: Celcius): f32 = property$0(self)
+
+  #[setter]
+  fun temperature(self: Celcius, value: f32): void = property$0(self, value)
+
+  #[inline]
+  private fun property$0(self: Celcius): f32 = f32.load(self, Celcius.^property$0_offset)
+
+  #[inline]
+  private fun property$0(self: Celcius, value: f32): void = f32.store(self, value, Celcius.^property$0_offset)
+
+  fun store(lhs: ref, rhs: Celcius, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Celcius = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+
+type Kelvin = %struct {temperature: f32}
+
+
+impl Kelvin for Reference {
+  #[inline]
+  fun is(a: Self | ref): boolean = {
+    var discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+
+}
+impl Kelvin {
+  #[inline]
+  private fun Kelvin$discriminant(): u64 = {
+    var discriminant: u32 = Kelvin.^discriminant
+    discriminant as u64 << 32
+  }
+
+  #[inline]
+  fun apply(temperature: f32): Kelvin = {
+    var $ref = fromPointer(system::core::memory::calloc(1 as u32, Kelvin.^allocationSize))
+    property$0($ref, temperature)
+    $ref
+  }
+
+  fun as(self: Kelvin): UnsafeCPointer = %wasm {
+    (call $addressFromRef (get_local $self))
+  }
+
+  private fun fromPointer(ptr: u32): Kelvin = %wasm {
+    (i64.or (call $Kelvin$discriminant) (i64.extend_u/i32 (local.get $ptr)))
+  }
+
+  fun ==(a: Kelvin, b: Kelvin): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: Kelvin, b: Kelvin): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  #[getter]
+  fun temperature(self: Kelvin): f32 = property$0(self)
+
+  #[setter]
+  fun temperature(self: Kelvin, value: f32): void = property$0(self, value)
+
+  #[inline]
+  private fun property$0(self: Kelvin): f32 = f32.load(self, Kelvin.^property$0_offset)
+
+  #[inline]
+  private fun property$0(self: Kelvin, value: f32): void = f32.store(self, value, Kelvin.^property$0_offset)
+
+  fun store(lhs: ref, rhs: Kelvin, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Kelvin = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+
+type Temp = Celcius | Kelvin
+
+type Celcius = %struct {}
+
+
+type Kelvin = %struct {}
+
+
+impl Temp {
+  fun is(x: ref) = {
+    x is Celcius || x is Kelvin
+  }
+
+}
+impl Celcius {
+  var determinant = 1
+  var memorySize = ref.memorySize + f32.memorySize
+  fun is(x: ref) = x.determinant == determinant
+
+  fun apply(temperature: f32): Celcius = {
+    var ptr: Celcius = determinant << 32 | core::memory::malloc(memorySize)
+    set_temperature(ptr, temperature)
+    ref as Celcius
+  }
+
+  fun get_temperature(ptr: Celcius): f32 = {
+    var base = ref.base(ptr)
+    f32.read(base + 0)
+  }
+
+  fun set_temperature(ptr: Celcius, newValue: f32): void = {
+    var base = ref.base(ptr)
+    f32.store(base + 0, newValue)
+  }
+
+}
+impl Kelvin {
+  var determinant = 2
+  var memorySize = ref.memorySize + f32.memorySize
+  fun is(x: ref) = x.determinant == determinant
+
+  fun apply(n: f32): Kelvin = {
+    var ptr: Kelvin = determinant << 32 | core::memory::malloc(memorySize)
+    set_temperature(ptr, n)
+    ref as Kelvin
+  }
+
+  fun get_temperature(ptr: Kelvin): f32 = {
+    var base = ref.base(ptr)
+    f32.read(base + 0)
+  }
+
+  private fun set_temperature(ptr: Kelvin, newValue: f32): void = {
+    var base = ref.base(ptr)
+    f32.store(base + 0, newValue)
+  }
+
+}

@@ -1,6 +1,7 @@
 |-Document
   |-FunDirectiveNode
     |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=test
       |-ParameterNode
@@ -17,7 +18,7 @@
             |-NameIdentifierNode name=a
         |-MatchLiteralNode
           |-FloatLiteralNode value=1
-          |-EmptyNode
+          |-BooleanLiteralNode value=false
         |-MatchDefaultNode
           |-EmptyNode
-          |-EmptyNode
+          |-BooleanLiteralNode value=false

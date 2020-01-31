@@ -1,0 +1,25 @@
+  1) Unexpected token "else" at test/fixtures/syntaxerrors/k.lys:1:18
+     │
+    1│ var a = match x { else } map 1
+     │                   ^^^^
+
+  2) Unexpected token " " at test/fixtures/syntaxerrors/k.lys:1:22
+     │
+    1│ var a = match x { else } map 1
+     │                       ^
+
+  3) Unexpected token "map" at test/fixtures/syntaxerrors/k.lys:1:25
+     │
+    1│ var a = match x { else } map 1
+     │                          ^^^
+
+  4) Unexpected token " " at test/fixtures/syntaxerrors/k.lys:1:28
+     │
+    1│ var a = match x { else } map 1
+     │                             ^
+
+  5) Unexpected token "1" at test/fixtures/syntaxerrors/k.lys:1:29
+     │
+    1│ var a = match x { else } map 1
+     │                              ^
+

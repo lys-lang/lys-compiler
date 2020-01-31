@@ -1,15 +1,18 @@
 |-Document
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=x
       |-EmptyNode
       |-FloatLiteralNode value=2
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=bc
       |-EmptyNode
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
+    |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=a
       |-ReferenceNode
@@ -28,6 +31,7 @@
     |-DecoratorNode
       |-NameIdentifierNode name=export
       |-EmptyNode
+    |-NoModifierNode
     |-FunctionNode
       |-NameIdentifierNode name=main
       |-EmptyNode
@@ -41,10 +45,12 @@
               |-NameIdentifierNode name=x
           |-NameIdentifierNode name==
           |-BinaryExpressionNode
-            |-ReferenceNode
-              |-QNameNode
-                |-NameIdentifierNode name=x
-            |-ErrorNode
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=x
+              |-NameIdentifierNode name=+
+              |-FloatLiteralNode value=1
             |-NameIdentifierNode name=-
             |-ReferenceNode
               |-QNameNode

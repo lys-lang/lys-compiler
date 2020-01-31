@@ -1,0 +1,147 @@
+type x = Nila | Custom
+
+type Nila = %struct {}
+
+
+impl Nila for Reference {
+  #[inline]
+  fun is(a: Self | ref): boolean = {
+    var discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+
+}
+impl Nila {
+  #[inline]
+  private fun Nila$discriminant(): u64 = {
+    var discriminant: u32 = Nila.^discriminant
+    discriminant as u64 << 32
+  }
+
+  #[inline]
+  fun apply(): Nila = {
+    var $ref = fromPointer(system::core::memory::calloc(1 as u32, Nila.^allocationSize))
+    $ref
+  }
+
+  fun as(self: Nila): UnsafeCPointer = %wasm {
+    (call $addressFromRef (get_local $self))
+  }
+
+  private fun fromPointer(ptr: u32): Nila = %wasm {
+    (i64.or (call $Nila$discriminant) (i64.extend_u/i32 (local.get $ptr)))
+  }
+
+  fun ==(a: Nila, b: Nila): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: Nila, b: Nila): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  fun store(lhs: ref, rhs: Nila, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Nila = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+
+type Custom = %struct {r: i32}
+
+
+impl Custom for Reference {
+  #[inline]
+  fun is(a: Self | ref): boolean = {
+    var discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+
+}
+impl Custom {
+  #[inline]
+  private fun Custom$discriminant(): u64 = {
+    var discriminant: u32 = Custom.^discriminant
+    discriminant as u64 << 32
+  }
+
+  #[inline]
+  fun apply(r: i32): Custom = {
+    var $ref = fromPointer(system::core::memory::calloc(1 as u32, Custom.^allocationSize))
+    property$0($ref, r)
+    $ref
+  }
+
+  fun as(self: Custom): UnsafeCPointer = %wasm {
+    (call $addressFromRef (get_local $self))
+  }
+
+  private fun fromPointer(ptr: u32): Custom = %wasm {
+    (i64.or (call $Custom$discriminant) (i64.extend_u/i32 (local.get $ptr)))
+  }
+
+  fun ==(a: Custom, b: Custom): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: Custom, b: Custom): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  #[getter]
+  fun r(self: Custom): i32 = property$0(self)
+
+  #[setter]
+  fun r(self: Custom, value: i32): void = property$0(self, value)
+
+  #[inline]
+  private fun property$0(self: Custom): i32 = i32.load(self, Custom.^property$0_offset)
+
+  #[inline]
+  private fun property$0(self: Custom, value: i32): void = i32.store(self, value, Custom.^property$0_offset)
+
+  fun store(lhs: ref, rhs: Custom, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Custom = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+
+fun qq(x: ref): void = ???
+
+fun qq(x: x): f32 = ???
+
+fun qq(x: Custom): i32 = ???
+
+fun a(): void = x(Custom(1))
+
+fun b(t: Custom): void = x(t)
+
+fun c(t: x): void = x(t)
+
+fun d(i: i32): void = x(Custom(i))
+
+fun d(t: Nila): void = x(t)
+
+fun d(): void = x(Nila)
+
+fun e(): void = x()
+

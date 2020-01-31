@@ -1,0 +1,85 @@
+
+type TestingContext = %struct {}
+
+
+impl TestingContext for Reference {
+  #[inline]
+  fun is(a: Self | ref): boolean = {
+    var discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+
+}
+impl TestingContext {
+  #[inline]
+  private fun TestingContext$discriminant(): u64 = {
+    var discriminant: u32 = TestingContext.^discriminant
+    discriminant as u64 << 32
+  }
+
+  #[inline]
+  fun apply(): TestingContext = {
+    var $ref = fromPointer(system::core::memory::calloc(1 as u32, TestingContext.^allocationSize))
+    $ref
+  }
+
+  fun as(self: TestingContext): UnsafeCPointer = %wasm {
+    (call $addressFromRef (get_local $self))
+  }
+
+  private fun fromPointer(ptr: u32): TestingContext = %wasm {
+    (i64.or (call $TestingContext$discriminant) (i64.extend_u/i32 (local.get $ptr)))
+  }
+
+  fun ==(a: TestingContext, b: TestingContext): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: TestingContext, b: TestingContext): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  fun store(lhs: ref, rhs: TestingContext, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): TestingContext = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+
+fun assert(x: boolean): void = {
+  if (!x) panic()
+}
+
+fun assertEqual(x: boolean, y: boolean): void = {
+  assert(x == y)
+}
+
+fun assertEqual(x: i32, y: i32): void = {
+  assert(x == y)
+}
+
+fun assertEqual(x: u32, y: u32): void = {
+  assert(x == y)
+}
+
+fun assertEqual(x: f32, y: f32): void = {
+  assert(x == y)
+}
+
+fun assertEqual(x: f64, y: f64): void = {
+  assert(x == y)
+}
+
+fun assertEqual(x: i64, y: i64): void = {
+  assert(x == y)
+}
+

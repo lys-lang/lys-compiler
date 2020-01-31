@@ -1,0 +1,121 @@
+type AA = BB | 
+
+type BB = %struct {}
+
+
+impl BB for Reference {
+  #[inline]
+  fun is(a: Self | ref): boolean = {
+    var discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+
+}
+impl BB {
+  #[inline]
+  private fun BB$discriminant(): u64 = {
+    var discriminant: u32 = BB.^discriminant
+    discriminant as u64 << 32
+  }
+
+  #[inline]
+  fun apply(): BB = {
+    var $ref = fromPointer(system::core::memory::calloc(1 as u32, BB.^allocationSize))
+    $ref
+  }
+
+  fun as(self: BB): UnsafeCPointer = %wasm {
+    (call $addressFromRef (get_local $self))
+  }
+
+  private fun fromPointer(ptr: u32): BB = %wasm {
+    (i64.or (call $BB$discriminant) (i64.extend_u/i32 (local.get $ptr)))
+  }
+
+  fun ==(a: BB, b: BB): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: BB, b: BB): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  fun store(lhs: ref, rhs: BB, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): BB = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+
+
+type TT = %struct {}
+
+
+impl TT for Reference {
+  #[inline]
+  fun is(a: Self | ref): boolean = {
+    var discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+
+}
+impl TT {
+  #[inline]
+  private fun TT$discriminant(): u64 = {
+    var discriminant: u32 = TT.^discriminant
+    discriminant as u64 << 32
+  }
+
+  #[inline]
+  fun apply(): TT = {
+    var $ref = fromPointer(system::core::memory::calloc(1 as u32, TT.^allocationSize))
+    $ref
+  }
+
+  fun as(self: TT): UnsafeCPointer = %wasm {
+    (call $addressFromRef (get_local $self))
+  }
+
+  private fun fromPointer(ptr: u32): TT = %wasm {
+    (i64.or (call $TT$discriminant) (i64.extend_u/i32 (local.get $ptr)))
+  }
+
+  fun ==(a: TT, b: TT): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: TT, b: TT): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  fun store(lhs: ref, rhs: TT, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): TT = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+
+impl BB {
+  fun a(): i32 = 1
+
+}
+fun main(): i32 = BB.a()
+

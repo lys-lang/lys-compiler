@@ -1,0 +1,82 @@
+
+type DataView = %struct {buffer: bytes}
+
+
+impl DataView for Reference {
+  #[inline]
+  fun is(a: Self | ref): boolean = {
+    var discriminant: u32 = Self.^discriminant
+    ref.getDiscriminant(a) == discriminant
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(lhs: Self): ref = %wasm {
+    (local.get $lhs)
+  }
+
+}
+impl DataView {
+  #[inline]
+  private fun DataView$discriminant(): u64 = {
+    var discriminant: u32 = DataView.^discriminant
+    discriminant as u64 << 32
+  }
+
+  #[inline]
+  fun apply(buffer: bytes): DataView = {
+    var $ref = fromPointer(system::core::memory::calloc(1 as u32, DataView.^allocationSize))
+    property$0($ref, buffer)
+    $ref
+  }
+
+  fun as(self: DataView): UnsafeCPointer = %wasm {
+    (call $addressFromRef (get_local $self))
+  }
+
+  private fun fromPointer(ptr: u32): DataView = %wasm {
+    (i64.or (call $DataView$discriminant) (i64.extend_u/i32 (local.get $ptr)))
+  }
+
+  fun ==(a: DataView, b: DataView): boolean = %wasm {
+    (i64.eq (local.get $a) (local.get $b))
+  }
+
+  fun !=(a: DataView, b: DataView): boolean = %wasm {
+    (i64.ne (local.get $a) (local.get $b))
+  }
+
+  #[getter]
+  fun buffer(self: DataView): bytes = property$0(self)
+
+  #[setter]
+  fun buffer(self: DataView, value: bytes): void = property$0(self, value)
+
+  #[inline]
+  private fun property$0(self: DataView): bytes = bytes.load(self, DataView.^property$0_offset)
+
+  #[inline]
+  private fun property$0(self: DataView, value: bytes): void = bytes.store(self, value, DataView.^property$0_offset)
+
+  fun store(lhs: ref, rhs: DataView, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): DataView = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+
+impl DataView {
+  fun [](self: DataView, at: u32): u8 = {
+    if (at > self.buffer.length) {
+      panic()
+    }
+    if (at < 0 as u32) {
+      panic()
+    }
+    u8.load(self.buffer.ptr as ref, at)
+  }
+
+}

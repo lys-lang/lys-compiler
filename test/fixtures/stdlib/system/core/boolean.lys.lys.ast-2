@@ -18,6 +18,7 @@
       |-NameIdentifierNode name=i32
     |-EmptyNode
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=boolean
     |-StackLiteralNode
       |-NameLiteralPairNode
@@ -33,6 +34,7 @@
         |-NameIdentifierNode name=boolean
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=&&
         |-ParameterNode
@@ -64,6 +66,7 @@
                 |-FloatLiteralNode value=0
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name===
         |-ParameterNode
@@ -91,6 +94,7 @@
                   |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=||
         |-ParameterNode
@@ -122,6 +126,7 @@
                 |-FloatLiteralNode value=0
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=!
         |-ParameterNode
@@ -136,10 +141,11 @@
           |-ReferenceNode
             |-QNameNode
               |-NameIdentifierNode name=rhs
-          |-EmptyNode
-          |-EmptyNode
+          |-BooleanLiteralNode value=false
+          |-BooleanLiteralNode value=false
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -168,6 +174,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=store
         |-ParameterNode
@@ -205,6 +212,7 @@
                 |-NameIdentifierNode name=$rhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode
@@ -225,6 +233,7 @@
                   |-NameIdentifierNode name=$lhs
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=load
         |-ParameterNode

@@ -31,7 +31,7 @@
           |-FloatLiteralNode value=32
   |-FunDirectiveNode
     |-DecoratorNode
-      |-ErrorNode
+      |-NameIdentifierNode name=export
       |-StringLiteralNode value="ffi_allocateString"
     |-PrivateModifierNode
     |-FunctionNode
@@ -66,6 +66,7 @@
             |-QNameNode
               |-NameIdentifierNode name=UnsafeCPointer
   |-TypeDirectiveNode
+    |-NoModifierNode
     |-NameIdentifierNode name=UCS2
     |-ReferenceNode
       |-QNameNode
@@ -77,6 +78,7 @@
         |-NameIdentifierNode name=UCS2
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=fromPtr
         |-ParameterNode
@@ -104,6 +106,7 @@
                     |-FloatLiteralNode value=4
     |-FunDirectiveNode
       |-EmptyNode
+      |-NoModifierNode
       |-FunctionNode
         |-NameIdentifierNode name=toPtr
         |-ParameterNode

@@ -1,0 +1,27 @@
+|-Document(0,33)
+  |-(AstCons)
+    |-(AstCons)
+      |-(AstCons)
+        |-VarDirective(0,27)
+          |-(AstCons)
+            |-NoModifier(0,0)
+              <Rule0>
+            |-VarDeclaration(0,27)
+              |-(AstCons)
+                |-NameIdentifier(4,5)
+                  |-Identifier=a
+                |-MatchExpression(8,27)
+                  |-(AstCons)
+                    |-Reference(14,15)
+                      |-QName(14,15)
+                        |-NameIdentifier(14,15)
+                          |-Identifier=x
+                    |-MatchBody(16,27)
+                      |-CaseElse(18,26)
+                        |-(AstCons)
+                          |-DeclaredName(23,23)
+                            <Rule0>
+                          |-<SyntaxError>=An expression was expected
+        |-<UNEXPECTED TOKEN>=map
+      |-<UNEXPECTED TOKEN>= 
+    |-<UNEXPECTED TOKEN>=1
