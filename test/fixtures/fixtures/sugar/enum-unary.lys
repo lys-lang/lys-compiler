@@ -9,9 +9,9 @@ type None
 type Some
 type Option = Some | None
 
-impl Option<T> {
+impl Option {
   fun is(x: ref) = {
-    Some.is(x) || None.is(x)
+    x is Some || x is None
   }
 }
 

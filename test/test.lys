@@ -6,6 +6,7 @@ import src::lexer::tokens
 import src::parser::grammar
 import src::parser::parser
 import src::parser::lysgrammar
+import src::stringbuilder
 
 #[export]
 fun test(): void = {
@@ -387,10 +388,22 @@ fun verifyParsing(source: string, rule: string, grammar: Grammar): AstNode | Nil
   val parser = Parser(lexer, grammar)
   val result = parse(rule, parser, 0)
   verify(result is AstNode, "Must parse into a valid result")
-  support::env::printf(printAst(result))
+  // support::env::printf(printAst(result))
   verify(lexer.hasNext() == false, "Lexer should have finished scanning")
 
   END()
+
+  result
+}
+
+fun verifyParsing(source: string, rule: string, grammar: Grammar, against: string): AstNode | Nil = {
+  val lexer = Lexer(source)
+  val parser = Parser(lexer, grammar)
+  val result = parse(rule, parser, 0)
+  verify(result is AstNode, "Must parse into a valid result")
+  verify(lexer.hasNext() == false, "Lexer should have finished scanning")
+  val r = printAst(result)
+  mustEqual(r, against, "Emited sources must match")
 
   result
 }
@@ -855,6 +868,51 @@ fun lysGrammar(): void = {
   val grammar = getGrammar()
 
   support::env::printf(grammar.toString())
+
+  types(grammar)
+
+  END()
+}
+
+fun parseLys(text: string, grammar: Grammar): void = {
+  START(text)
+  val result = verifyParsing(text, "Document", grammar)
+
+  match result {
+    case is Nil -> mustEqual(true, false, "Result must not be nil")
+    case r is AstNode -> {
+      val cannonical = src::compiler::phases::cannonical::processNode(r)
+      val sb = StringBuilder()
+
+      src::compiler::nodes::CodeNode.printNode(cannonical, sb, 0)
+      val emitedSource = sb.toString()
+      val newResult = verifyParsing(emitedSource, "Document", grammar)
+
+      match result {
+        case is Nil -> mustEqual(true, false, "Result of the generated code parsing must not be nil")
+        case r2 is AstNode -> {
+          val cannonical2 = src::compiler::phases::cannonical::processNode(r2)
+          val sb2 = StringBuilder()
+          src::compiler::nodes::CodeNode.printNode(cannonical2, sb2, 0)
+          mustEqual(sb2.toString(), emitedSource, "Both emited sources must match")
+        }
+      }
+
+      END()
+    }
+  }
+
+  END()
+}
+
+fun types(grammar: Grammar): void = {
+  START("Parse types")
+  parseLys("enum X { Some(value: ref) None }", grammar)
+  parseLys("type None type Some type Option = Some | None", grammar)
+  parseLys("type Celcius", grammar)
+  parseLys("type Celcius = %struct {}", grammar)
+  parseLys("impl Option {}", grammar)
+  parseLys("var c = a.is(b)", grammar)
 
   END()
 }

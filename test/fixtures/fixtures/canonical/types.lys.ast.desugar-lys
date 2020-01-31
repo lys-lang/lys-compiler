@@ -173,34 +173,16 @@ impl Blue {
 
 type theFn1 = A | BC
 
-type theFn1 = /* ERROR: No handler for FunctionTypeLiteral */
-
-type theFn2 = /* ERROR: No handler for FunctionTypeLiteral */
-
-type theFn3 = /* ERROR: No handler for FunctionTypeLiteral */
-
-type theFn4 = /* ERROR: No handler for FunctionTypeLiteral */
-
-type theFn5 = /* ERROR: No handler for FunctionTypeLiteral */
-
-type theFn6 = /* ERROR: No handler for FunctionTypeLiteral */
-
 private fun compare(a: Color, b: Color): bool = {
   a == b
 }
 
 fun main(): i32 = compare(Red, Green)
 
-var test: /* ERROR: No handler for FunctionTypeLiteral */ = 1
 var test: a | b & cd & b = 1
 var test: _ | _ = 1
-var test: /* ERROR: No handler for FunctionTypeLiteral */ = 1
-var test: /* ERROR: No handler for FunctionTypeLiteral */ = 1
 var test: a | b & cd & b = 1
 var test: a | b & cd & b = 1
-var test: /* ERROR: No handler for FunctionTypeLiteral */ = 1
-var test: /* ERROR: No handler for FunctionTypeLiteral */ = 1
-var test: /* ERROR: No handler for FunctionTypeLiteral */ = 1
 type Number = InfinityNDetRealNatural | Complex
 
 type Infinity = %struct {}

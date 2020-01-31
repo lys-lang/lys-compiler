@@ -795,3 +795,384 @@
       |-ReferenceNode
         |-QNameNode
           |-NameIdentifierNode name=None
+  |-ImplDirectiveNode
+    |-EmptyNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Option
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=is
+        |-ParameterNode
+          |-NameIdentifierNode name=x
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-EmptyNode
+        |-BlockNode
+          |-BinaryExpressionNode
+            |-IsExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=x
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Some
+            |-NameIdentifierNode name=||
+            |-IsExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=x
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=None
+  |-ImplDirectiveNode
+    |-EmptyNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=Some
+    |-VarDirectiveNode
+      |-NoModifierNode
+      |-VarDeclarationNode
+        |-NameIdentifierNode name=determinant
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=u32
+        |-FloatLiteralNode value=1
+    |-VarDirectiveNode
+      |-NoModifierNode
+      |-VarDeclarationNode
+        |-NameIdentifierNode name=memorySize
+        |-EmptyNode
+        |-BinaryExpressionNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=ref
+            |-NameIdentifierNode name=memorySize
+          |-NameIdentifierNode name=+
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=ref
+            |-NameIdentifierNode name=memorySize
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=is
+        |-ParameterNode
+          |-NameIdentifierNode name=x
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-EmptyNode
+        |-BinaryExpressionNode
+          |-MemberNode operator=.
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=x
+            |-NameIdentifierNode name=determinant
+          |-NameIdentifierNode name===
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=determinant
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=apply
+        |-ParameterNode
+          |-NameIdentifierNode name=value
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Some
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=ptr
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Some
+            |-AsExpressionNode
+              |-BinaryExpressionNode
+                |-BinaryExpressionNode
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=determinant
+                  |-NameIdentifierNode name=<<
+                  |-FloatLiteralNode value=32
+                |-NameIdentifierNode name=|
+                |-FunctionCallNode
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=core
+                      |-NameIdentifierNode name=memory
+                      |-NameIdentifierNode name=malloc
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=memorySize
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Some
+          |-FunctionCallNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=set_value
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=ptr
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=value
+          |-AsExpressionNode
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=ref
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Celcius
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=get_value
+        |-ParameterNode
+          |-NameIdentifierNode name=ptr
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Some
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=f32
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=base
+            |-EmptyNode
+            |-FunctionCallNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=ref
+                |-NameIdentifierNode name=base
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ptr
+          |-FunctionCallNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ref
+              |-NameIdentifierNode name=read
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=base
+              |-NameIdentifierNode name=+
+              |-FloatLiteralNode value=0
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-PrivateModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=set_value
+        |-ParameterNode
+          |-NameIdentifierNode name=ptr
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Some
+        |-ParameterNode
+          |-NameIdentifierNode name=newValue
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=void
+        |-BlockNode
+          |-VarDeclarationNode
+            |-NameIdentifierNode name=base
+            |-EmptyNode
+            |-FunctionCallNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=ref
+                |-NameIdentifierNode name=base
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ptr
+          |-FunctionCallNode
+            |-MemberNode operator=.
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=ref
+              |-NameIdentifierNode name=store
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=base
+              |-NameIdentifierNode name=+
+              |-FloatLiteralNode value=0
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=newValue
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name===
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Some
+        |-ParameterNode
+          |-NameIdentifierNode name=rhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Some
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-BlockNode
+          |-BinaryExpressionNode
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=get_value
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=lhs
+            |-NameIdentifierNode name===
+            |-FunctionCallNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=get_value
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=rhs
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=!=
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Some
+        |-ParameterNode
+          |-NameIdentifierNode name=rhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=Some
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-BlockNode
+          |-UnaryExpressionNode
+            |-NameIdentifierNode name=!
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=lhs
+              |-NameIdentifierNode name===
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=rhs
+  |-ImplDirectiveNode
+    |-EmptyNode
+    |-ReferenceNode
+      |-QNameNode
+        |-NameIdentifierNode name=None
+    |-VarDirectiveNode
+      |-NoModifierNode
+      |-VarDeclarationNode
+        |-NameIdentifierNode name=determinant
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=u32
+        |-FloatLiteralNode value=2
+    |-VarDirectiveNode
+      |-NoModifierNode
+      |-VarDeclarationNode
+        |-NameIdentifierNode name=staticInstance
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=ref
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=determinant
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=is
+        |-ParameterNode
+          |-NameIdentifierNode name=x
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=ref
+        |-EmptyNode
+        |-BinaryExpressionNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=x
+          |-NameIdentifierNode name===
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=staticInstance
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=apply
+        |-EmptyNode
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=None
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=staticInstance
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name===
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=None
+        |-ParameterNode
+          |-NameIdentifierNode name=rhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=None
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-BooleanLiteralNode value=false
+    |-FunDirectiveNode
+      |-EmptyNode
+      |-NoModifierNode
+      |-FunctionNode
+        |-NameIdentifierNode name=!=
+        |-ParameterNode
+          |-NameIdentifierNode name=lhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=None
+        |-ParameterNode
+          |-NameIdentifierNode name=rhs
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=None
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=boolean
+        |-BooleanLiteralNode value=false

@@ -952,24 +952,20 @@
         |-BlockNode
           |-BinaryExpressionNode
             |-IsExpressionNode
-              |-MemberNode operator=.
-                |-ReferenceNode
-                  |-QNameNode
-                    |-NameIdentifierNode name=Celcius
-                |-EmptyNode
               |-ReferenceNode
                 |-QNameNode
                   |-NameIdentifierNode name=x
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Celcius
             |-NameIdentifierNode name=||
             |-IsExpressionNode
-              |-MemberNode operator=.
-                |-ReferenceNode
-                  |-QNameNode
-                    |-NameIdentifierNode name=Kelvin
-                |-EmptyNode
               |-ReferenceNode
                 |-QNameNode
                   |-NameIdentifierNode name=x
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=Kelvin
   |-ImplDirectiveNode
     |-EmptyNode
     |-ReferenceNode

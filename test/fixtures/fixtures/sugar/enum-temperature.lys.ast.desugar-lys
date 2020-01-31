@@ -148,7 +148,7 @@ type Kelvin = %struct {}
 
 impl Temp {
   fun is(x: ref) = {
-    Celcius. is x || Kelvin. is x
+    x is Celcius || x is Kelvin
   }
 
 }
