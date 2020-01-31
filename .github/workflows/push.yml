@@ -3,17 +3,21 @@ on:
 #    branches:
 #      - master
 
-name: Test
+name: Full build
 jobs:
   install:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: Use Node.js 12.x
+      - name: Use Node.js 13.x
         uses: actions/setup-node@v1
         with:
-          node-version: 12.x
-      - name: npm install, build, and test
-        run: |
-          npm install
-          make build
+          node-version: 13.x
+      - name: clean install
+        run: make clean
+      - name: lys-test
+        run: make lys-test
+      - name: lys-build
+        run: make lys-build
+      - name: test golden files
+        run: make only-test
