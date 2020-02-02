@@ -21,12 +21,12 @@ fun main(): void = {
   {
     var str = "asd❮𝐑"
     mustEqual(str.length, 6 as u32, "str.length == 6")
-    mustEqual(str [] 0 as u32, 97 as u16, "char at 0")
-    mustEqual(str [] 1 as u32, 115 as u16, "char at 1")
-    mustEqual(str [] 2 as u32, 100 as u16, "char at 2")
-    mustEqual(str [] 3 as u32, 10094 as u16, "char at 3")
-    mustEqual(str [] 4 as u32, 55349 as u16, "char at 4")
-    mustEqual(str [] 5 as u32, 56337 as u16, "char at 5")
+    mustEqual(str[0 as u32], 97 as u16, "char at 0")
+    mustEqual(str[1 as u32], 115 as u16, "char at 1")
+    mustEqual(str[2 as u32], 100 as u16, "char at 2")
+    mustEqual(str[3 as u32], 10094 as u16, "char at 3")
+    mustEqual(str[4 as u32], 55349 as u16, "char at 4")
+    mustEqual(str[5 as u32], 56337 as u16, "char at 5")
   }
   END()
   START("String concatenation")
@@ -39,11 +39,11 @@ fun main(): void = {
   {
     var x = "ab" ++ "µ⚜︎"
     mustEqual(x.length, 5 as u32, "String.length must be 5")
-    mustEqual(x [] 0 as u32, 0x0061, "a assertion failed")
-    mustEqual(x [] 1 as u32, 0x0062, "b assertion failed")
-    mustEqual(x [] 2 as u32, 0x00B5, "µ assertion failed")
-    mustEqual(x [] 3 as u32, 0x269C, "0x269C assertion failed")
-    mustEqual(x [] 4 as u32, 0xFE0E, "0xFE0E assertion failed")
+    mustEqual(x[0 as u32], 0x0061, "a assertion failed")
+    mustEqual(x[1 as u32], 0x0062, "b assertion failed")
+    mustEqual(x[2 as u32], 0x00B5, "µ assertion failed")
+    mustEqual(x[3 as u32], 0x269C, "0x269C assertion failed")
+    mustEqual(x[4 as u32], 0xFE0E, "0xFE0E assertion failed")
   }
   END()
 }

@@ -131,7 +131,7 @@ impl string {
         loop {
           if (len <= 0 as u32) continue
           len = len - 1 as u32
-          if (lhs [] len != rhs [] len) {
+          if (lhs[len] != rhs[len]) {
             equals = false
             continue
           }

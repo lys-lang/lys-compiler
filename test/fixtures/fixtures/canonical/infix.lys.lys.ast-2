@@ -4,9 +4,27 @@
     |-VarDeclarationNode
       |-NameIdentifierNode name=x
       |-EmptyNode
-      |-ReferenceNode
-        |-QNameNode
-          |-NameIdentifierNode name=a
+      |-FunctionCallNode
+        |-MemberNode operator=.
+          |-FunctionCallNode
+            |-MemberNode operator=.
+              |-FunctionCallNode
+                |-MemberNode operator=.
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=a
+                  |-NameIdentifierNode name=map
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=b
+              |-NameIdentifierNode name=map
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=c
+          |-NameIdentifierNode name=map
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=d
   |-VarDirectiveNode
     |-NoModifierNode
     |-VarDeclarationNode
@@ -492,18 +510,41 @@
     |-VarDeclarationNode
       |-NameIdentifierNode name=x3
       |-EmptyNode
-      |-ReferenceNode
-        |-QNameNode
-          |-NameIdentifierNode name=a
+      |-BinaryExpressionNode
+        |-FunctionCallNode
+          |-MemberNode operator=.
+            |-FunctionCallNode
+              |-MemberNode operator=.
+                |-MemberNode operator=.
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=a
+                  |-NameIdentifierNode name=b
+                |-NameIdentifierNode name=c
+              |-EmptyNode
+            |-NameIdentifierNode name=d
+          |-EmptyNode
+        |-NameIdentifierNode name=[]
+        |-UnaryExpressionNode
+          |-NameIdentifierNode name=-
+          |-FloatLiteralNode value=1
   |-VarDirectiveNode
     |-NoModifierNode
     |-VarDeclarationNode
       |-NameIdentifierNode name=x4
       |-EmptyNode
       |-BinaryExpressionNode
-        |-ReferenceNode
-          |-QNameNode
-            |-NameIdentifierNode name=a
+        |-MemberNode operator=.
+          |-MemberNode operator=.
+            |-MemberNode operator=.
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=a
+                |-NameIdentifierNode name=b
+              |-NameIdentifierNode name=c
+            |-NameIdentifierNode name=d
+          |-NameIdentifierNode name=e
         |-NameIdentifierNode name=+
         |-BinaryExpressionNode
           |-FloatLiteralNode value=1

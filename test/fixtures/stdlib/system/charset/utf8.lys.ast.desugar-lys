@@ -1,5 +1,5 @@
 private fun push(index: u32, array: bytes, value: u32): u32 = {
-  array [] index = value as u8
+  array[index] = value as u8
   index + 0x1
 }
 
@@ -10,9 +10,9 @@ private fun utf8Len(str: string): u32 = {
     if (i >= str.length) {
       continue
     }
-    var c = str [] i as u32
+    var c = str[i] as u32
     if (c >= 0xd800 && c <= 0xdbff && i + 0x1 < str.length) {
-      var cn = str [] i + 0x1 as u32
+      var cn = str[i + 0x1] as u32
       if (cn >= 0xdc00 && cn <= 0xdfff) {
         len = len + 0x4
         i = i + 0x2
@@ -40,9 +40,9 @@ fun toUtf8(str: string): bytes = {
     if (i >= str.length) {
       continue
     }
-    var c = str [] i as u32
+    var c = str[i] as u32
     if (c >= 0xd800 && c <= 0xdbff && i + 0x1 < str.length) {
-      var cn = str [] i + 0x1 as u32
+      var cn = str[i + 0x1] as u32
       if (cn >= 0xdc00 && cn <= 0xdfff) {
         var pt = c - 0xd800 * 0x400 + cn - 0xdc00 + 0x10000
         j = push(j, out, 0xf0 + pt / 0x40 / 0x40 / 0x40)
