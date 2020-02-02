@@ -1,5 +1,45 @@
 type Temp = Celcius | Kelvin
 
+impl Temp for Reference {
+  #[inline]
+  fun is(self: Temp | ref): boolean = {
+    self is Celcius || self is Kelvin
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(self: Temp): ref = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Temp {
+  fun ==(lhs: ref, rhs: ref): boolean = lhs == rhs
+
+  fun !=(lhs: ref, rhs: ref): boolean = lhs != rhs
+
+  fun store(lhs: ref, rhs: Temp, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Temp = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+impl Celcius {
+  fun as(self: Celcius): Temp = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Kelvin {
+  fun as(self: Kelvin): Temp = %wasm {
+    (local.get $self)
+  }
+
+}
+
 type Celcius = %struct {temperature: f32}
 
 
@@ -139,6 +179,46 @@ impl Kelvin {
 }
 
 type Temp = Celcius | Kelvin
+
+impl Temp for Reference {
+  #[inline]
+  fun is(self: Temp | ref): boolean = {
+    self is Celcius || self is Kelvin
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(self: Temp): ref = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Temp {
+  fun ==(lhs: ref, rhs: ref): boolean = lhs == rhs
+
+  fun !=(lhs: ref, rhs: ref): boolean = lhs != rhs
+
+  fun store(lhs: ref, rhs: Temp, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Temp = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+impl Celcius {
+  fun as(self: Celcius): Temp = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Kelvin {
+  fun as(self: Kelvin): Temp = %wasm {
+    (local.get $self)
+  }
+
+}
 
 type Celcius = %struct {}
 

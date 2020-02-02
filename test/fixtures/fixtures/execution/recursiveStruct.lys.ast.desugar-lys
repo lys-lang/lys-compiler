@@ -2,6 +2,46 @@ import support::test
 
 type Tree = Empty | Node
 
+impl Tree for Reference {
+  #[inline]
+  fun is(self: Tree | ref): boolean = {
+    self is Empty || self is Node
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(self: Tree): ref = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Tree {
+  fun ==(lhs: ref, rhs: ref): boolean = lhs == rhs
+
+  fun !=(lhs: ref, rhs: ref): boolean = lhs != rhs
+
+  fun store(lhs: ref, rhs: Tree, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Tree = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+impl Empty {
+  fun as(self: Empty): Tree = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Node {
+  fun as(self: Node): Tree = %wasm {
+    (local.get $self)
+  }
+
+}
+
 type Empty = %struct {}
 
 
@@ -138,6 +178,46 @@ impl Node {
 }
 
 type Forest = Nil | Cons
+
+impl Forest for Reference {
+  #[inline]
+  fun is(self: Forest | ref): boolean = {
+    self is Nil || self is Cons
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(self: Forest): ref = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Forest {
+  fun ==(lhs: ref, rhs: ref): boolean = lhs == rhs
+
+  fun !=(lhs: ref, rhs: ref): boolean = lhs != rhs
+
+  fun store(lhs: ref, rhs: Forest, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Forest = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+impl Nil {
+  fun as(self: Nil): Forest = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Cons {
+  fun as(self: Cons): Forest = %wasm {
+    (local.get $self)
+  }
+
+}
 
 type Nil = %struct {}
 

@@ -335,7 +335,65 @@ impl Complex {
 
 }
 
-type Number = Infinity | NDetRealNaturalComplex
+type Number = Infinity | NDet | Real | Natural | Complex
+
+impl Number for Reference {
+  #[inline]
+  fun is(self: Number | ref): boolean = {
+    self is Infinity || self is NDet || self is Real || self is Natural || self is Complex
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(self: Number): ref = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Number {
+  fun ==(lhs: ref, rhs: ref): boolean = lhs == rhs
+
+  fun !=(lhs: ref, rhs: ref): boolean = lhs != rhs
+
+  fun store(lhs: ref, rhs: Number, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Number = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+impl Infinity {
+  fun as(self: Infinity): Number = %wasm {
+    (local.get $self)
+  }
+
+}
+impl NDet {
+  fun as(self: NDet): Number = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Real {
+  fun as(self: Real): Number = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Natural {
+  fun as(self: Natural): Number = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Complex {
+  fun as(self: Complex): Number = %wasm {
+    (local.get $self)
+  }
+
+}
 
 fun isComplex(number: Number): boolean = match number {
     case is Real -> false

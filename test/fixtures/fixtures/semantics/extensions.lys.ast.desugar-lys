@@ -1,4 +1,32 @@
-type AA = BB | 
+type AA = BB
+
+impl AA for Reference {
+  #[inline]
+  fun is(self: AA | ref): boolean = {
+    
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(self: AA): ref = %wasm {
+    (local.get $self)
+  }
+
+}
+impl AA {
+  fun ==(lhs: ref, rhs: ref): boolean = lhs == rhs
+
+  fun !=(lhs: ref, rhs: ref): boolean = lhs != rhs
+
+  fun store(lhs: ref, rhs: AA, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): AA = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
 
 type BB = %struct {}
 

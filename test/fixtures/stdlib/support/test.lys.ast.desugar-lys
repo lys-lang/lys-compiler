@@ -65,6 +65,46 @@ fun identity(x: f32): f32 = x
 
 type ErrorMessage = EmptyMessage | Message
 
+impl ErrorMessage for Reference {
+  #[inline]
+  fun is(self: ErrorMessage | ref): boolean = {
+    self is EmptyMessage || self is Message
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(self: ErrorMessage): ref = %wasm {
+    (local.get $self)
+  }
+
+}
+impl ErrorMessage {
+  fun ==(lhs: ref, rhs: ref): boolean = lhs == rhs
+
+  fun !=(lhs: ref, rhs: ref): boolean = lhs != rhs
+
+  fun store(lhs: ref, rhs: ErrorMessage, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): ErrorMessage = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+impl EmptyMessage {
+  fun as(self: EmptyMessage): ErrorMessage = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Message {
+  fun as(self: Message): ErrorMessage = %wasm {
+    (local.get $self)
+  }
+
+}
+
 type EmptyMessage = %struct {}
 
 

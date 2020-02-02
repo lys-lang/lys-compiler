@@ -1,4 +1,50 @@
-type Enum = AB | C
+type Enum = A | B | C
+
+impl Enum for Reference {
+  #[inline]
+  fun is(self: Enum | ref): boolean = {
+    self is A || self is B || self is C
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(self: Enum): ref = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Enum {
+  fun ==(lhs: ref, rhs: ref): boolean = lhs == rhs
+
+  fun !=(lhs: ref, rhs: ref): boolean = lhs != rhs
+
+  fun store(lhs: ref, rhs: Enum, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Enum = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+impl A {
+  fun as(self: A): Enum = %wasm {
+    (local.get $self)
+  }
+
+}
+impl B {
+  fun as(self: B): Enum = %wasm {
+    (local.get $self)
+  }
+
+}
+impl C {
+  fun as(self: C): Enum = %wasm {
+    (local.get $self)
+  }
+
+}
 
 type A = %struct {}
 

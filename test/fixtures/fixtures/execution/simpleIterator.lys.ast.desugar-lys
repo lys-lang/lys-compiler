@@ -85,6 +85,46 @@ impl Iterator {
 
 type Maybe = None | Some
 
+impl Maybe for Reference {
+  #[inline]
+  fun is(self: Maybe | ref): boolean = {
+    self is None || self is Some
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(self: Maybe): ref = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Maybe {
+  fun ==(lhs: ref, rhs: ref): boolean = lhs == rhs
+
+  fun !=(lhs: ref, rhs: ref): boolean = lhs != rhs
+
+  fun store(lhs: ref, rhs: Maybe, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Maybe = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+impl None {
+  fun as(self: None): Maybe = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Some {
+  fun as(self: Some): Maybe = %wasm {
+    (local.get $self)
+  }
+
+}
+
 type None = %struct {}
 
 

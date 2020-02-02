@@ -1,6 +1,52 @@
 import support::test
 
-type Enum = AB | C
+type Enum = A | B | C
+
+impl Enum for Reference {
+  #[inline]
+  fun is(self: Enum | ref): boolean = {
+    self is A || self is B || self is C
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(self: Enum): ref = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Enum {
+  fun ==(lhs: ref, rhs: ref): boolean = lhs == rhs
+
+  fun !=(lhs: ref, rhs: ref): boolean = lhs != rhs
+
+  fun store(lhs: ref, rhs: Enum, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Enum = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+impl A {
+  fun as(self: A): Enum = %wasm {
+    (local.get $self)
+  }
+
+}
+impl B {
+  fun as(self: B): Enum = %wasm {
+    (local.get $self)
+  }
+
+}
+impl C {
+  fun as(self: C): Enum = %wasm {
+    (local.get $self)
+  }
+
+}
 
 type A = %struct {}
 
@@ -170,7 +216,59 @@ impl C {
 
 }
 
-type Color = RedGreenBlue | Custom
+type Color = Red | Green | Blue | Custom
+
+impl Color for Reference {
+  #[inline]
+  fun is(self: Color | ref): boolean = {
+    self is Red || self is Green || self is Blue || self is Custom
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(self: Color): ref = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Color {
+  fun ==(lhs: ref, rhs: ref): boolean = lhs == rhs
+
+  fun !=(lhs: ref, rhs: ref): boolean = lhs != rhs
+
+  fun store(lhs: ref, rhs: Color, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Color = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+impl Red {
+  fun as(self: Red): Color = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Green {
+  fun as(self: Green): Color = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Blue {
+  fun as(self: Blue): Color = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Custom {
+  fun as(self: Custom): Color = %wasm {
+    (local.get $self)
+  }
+
+}
 
 type Red = %struct {}
 

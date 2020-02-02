@@ -1,4 +1,50 @@
-type Color = RedGreen | Blue
+type Color = Red | Green | Blue
+
+impl Color for Reference {
+  #[inline]
+  fun is(self: Color | ref): boolean = {
+    self is Red || self is Green || self is Blue
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(self: Color): ref = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Color {
+  fun ==(lhs: ref, rhs: ref): boolean = lhs == rhs
+
+  fun !=(lhs: ref, rhs: ref): boolean = lhs != rhs
+
+  fun store(lhs: ref, rhs: Color, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Color = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+impl Red {
+  fun as(self: Red): Color = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Green {
+  fun as(self: Green): Color = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Blue {
+  fun as(self: Blue): Color = %wasm {
+    (local.get $self)
+  }
+
+}
 
 type Red = %struct {}
 
@@ -174,5 +220,51 @@ type Green
 
 type Blue
 
-type Color = Red | GreenBlue
+type Color = Red | Green | Blue
+
+impl Color for Reference {
+  #[inline]
+  fun is(self: Color | ref): boolean = {
+    self is Red || self is Green || self is Blue
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(self: Color): ref = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Color {
+  fun ==(lhs: ref, rhs: ref): boolean = lhs == rhs
+
+  fun !=(lhs: ref, rhs: ref): boolean = lhs != rhs
+
+  fun store(lhs: ref, rhs: Color, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Color = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+impl Red {
+  fun as(self: Red): Color = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Green {
+  fun as(self: Green): Color = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Blue {
+  fun as(self: Blue): Color = %wasm {
+    (local.get $self)
+  }
+
+}
 

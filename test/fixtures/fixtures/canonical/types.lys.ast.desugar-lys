@@ -1,7 +1,53 @@
 type bool = %stack {lowLevelType="i32"}
 
 
-type Color = RedGreen | Blue
+type Color = Red | Green | Blue
+
+impl Color for Reference {
+  #[inline]
+  fun is(self: Color | ref): boolean = {
+    self is Red || self is Green || self is Blue
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(self: Color): ref = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Color {
+  fun ==(lhs: ref, rhs: ref): boolean = lhs == rhs
+
+  fun !=(lhs: ref, rhs: ref): boolean = lhs != rhs
+
+  fun store(lhs: ref, rhs: Color, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Color = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+impl Red {
+  fun as(self: Red): Color = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Green {
+  fun as(self: Green): Color = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Blue {
+  fun as(self: Blue): Color = %wasm {
+    (local.get $self)
+  }
+
+}
 
 type Red = %struct {}
 
@@ -171,7 +217,53 @@ impl Blue {
 
 }
 
-type theFn1 = A | BC
+type theFn1 = A | B | C
+
+impl theFn1 for Reference {
+  #[inline]
+  fun is(self: theFn1 | ref): boolean = {
+    self is A || self is B || self is C
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(self: theFn1): ref = %wasm {
+    (local.get $self)
+  }
+
+}
+impl theFn1 {
+  fun ==(lhs: ref, rhs: ref): boolean = lhs == rhs
+
+  fun !=(lhs: ref, rhs: ref): boolean = lhs != rhs
+
+  fun store(lhs: ref, rhs: theFn1, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): theFn1 = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+impl A {
+  fun as(self: A): theFn1 = %wasm {
+    (local.get $self)
+  }
+
+}
+impl B {
+  fun as(self: B): theFn1 = %wasm {
+    (local.get $self)
+  }
+
+}
+impl C {
+  fun as(self: C): theFn1 = %wasm {
+    (local.get $self)
+  }
+
+}
 
 private fun compare(a: Color, b: Color): bool = {
   a == b
@@ -179,11 +271,69 @@ private fun compare(a: Color, b: Color): bool = {
 
 fun main(): i32 = compare(Red, Green)
 
-var test: a | b & cd & b = 1
+var test: a | b & c | d & b = 1
 var test: _ | _ = 1
-var test: a | b & cd & b = 1
-var test: a | b & cd & b = 1
-type Number = InfinityNDetRealNatural | Complex
+var test: a | b & c | d & b = 1
+var test: a | b & c | d & b = 1
+type Number = Infinity | NDet | Real | Natural | Complex
+
+impl Number for Reference {
+  #[inline]
+  fun is(self: Number | ref): boolean = {
+    self is Infinity || self is NDet || self is Real || self is Natural || self is Complex
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(self: Number): ref = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Number {
+  fun ==(lhs: ref, rhs: ref): boolean = lhs == rhs
+
+  fun !=(lhs: ref, rhs: ref): boolean = lhs != rhs
+
+  fun store(lhs: ref, rhs: Number, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Number = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+impl Infinity {
+  fun as(self: Infinity): Number = %wasm {
+    (local.get $self)
+  }
+
+}
+impl NDet {
+  fun as(self: NDet): Number = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Real {
+  fun as(self: Real): Number = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Natural {
+  fun as(self: Natural): Number = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Complex {
+  fun as(self: Complex): Number = %wasm {
+    (local.get $self)
+  }
+
+}
 
 type Infinity = %struct {}
 

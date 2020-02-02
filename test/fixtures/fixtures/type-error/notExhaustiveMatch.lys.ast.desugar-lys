@@ -1,4 +1,50 @@
-type color = RedGreen | Blue
+type color = Red | Green | Blue
+
+impl color for Reference {
+  #[inline]
+  fun is(self: color | ref): boolean = {
+    self is Red || self is Green || self is Blue
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(self: color): ref = %wasm {
+    (local.get $self)
+  }
+
+}
+impl color {
+  fun ==(lhs: ref, rhs: ref): boolean = lhs == rhs
+
+  fun !=(lhs: ref, rhs: ref): boolean = lhs != rhs
+
+  fun store(lhs: ref, rhs: color, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): color = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+impl Red {
+  fun as(self: Red): color = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Green {
+  fun as(self: Green): color = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Blue {
+  fun as(self: Blue): color = %wasm {
+    (local.get $self)
+  }
+
+}
 
 type Red = %struct {}
 

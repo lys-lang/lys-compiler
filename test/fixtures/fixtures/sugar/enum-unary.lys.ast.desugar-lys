@@ -1,5 +1,45 @@
 type Option = Some | None
 
+impl Option for Reference {
+  #[inline]
+  fun is(self: Option | ref): boolean = {
+    self is Some || self is None
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(self: Option): ref = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Option {
+  fun ==(lhs: ref, rhs: ref): boolean = lhs == rhs
+
+  fun !=(lhs: ref, rhs: ref): boolean = lhs != rhs
+
+  fun store(lhs: ref, rhs: Option, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Option = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+impl Some {
+  fun as(self: Some): Option = %wasm {
+    (local.get $self)
+  }
+
+}
+impl None {
+  fun as(self: None): Option = %wasm {
+    (local.get $self)
+  }
+
+}
+
 type Some = %struct {value: ref}
 
 
@@ -130,6 +170,46 @@ type None
 type Some
 
 type Option = Some | None
+
+impl Option for Reference {
+  #[inline]
+  fun is(self: Option | ref): boolean = {
+    self is Some || self is None
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(self: Option): ref = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Option {
+  fun ==(lhs: ref, rhs: ref): boolean = lhs == rhs
+
+  fun !=(lhs: ref, rhs: ref): boolean = lhs != rhs
+
+  fun store(lhs: ref, rhs: Option, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Option = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+impl Some {
+  fun as(self: Some): Option = %wasm {
+    (local.get $self)
+  }
+
+}
+impl None {
+  fun as(self: None): Option = %wasm {
+    (local.get $self)
+  }
+
+}
 
 impl Option {
   fun is(x: ref) = {

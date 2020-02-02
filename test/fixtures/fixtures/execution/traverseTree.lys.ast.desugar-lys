@@ -1,5 +1,45 @@
 type Tree = Node | Empty
 
+impl Tree for Reference {
+  #[inline]
+  fun is(self: Tree | ref): boolean = {
+    self is Node || self is Empty
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(self: Tree): ref = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Tree {
+  fun ==(lhs: ref, rhs: ref): boolean = lhs == rhs
+
+  fun !=(lhs: ref, rhs: ref): boolean = lhs != rhs
+
+  fun store(lhs: ref, rhs: Tree, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Tree = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+impl Node {
+  fun as(self: Node): Tree = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Empty {
+  fun as(self: Empty): Tree = %wasm {
+    (local.get $self)
+  }
+
+}
+
 type Node = %struct {value: i32, left: Tree, right: Tree}
 
 

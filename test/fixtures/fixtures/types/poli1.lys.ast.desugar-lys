@@ -114,6 +114,46 @@ impl False {
 
 type Boolean = True | False
 
+impl Boolean for Reference {
+  #[inline]
+  fun is(self: Boolean | ref): boolean = {
+    self is True || self is False
+  }
+
+  #[explicit]
+  #[inline]
+  fun as(self: Boolean): ref = %wasm {
+    (local.get $self)
+  }
+
+}
+impl Boolean {
+  fun ==(lhs: ref, rhs: ref): boolean = lhs == rhs
+
+  fun !=(lhs: ref, rhs: ref): boolean = lhs != rhs
+
+  fun store(lhs: ref, rhs: Boolean, offset: u32): void = %wasm {
+    (i64.store (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))) (local.get $rhs))
+  }
+
+  fun load(lhs: ref, offset: u32): Boolean = %wasm {
+    (i64.load (i32.add (local.get $offset) (call $addressFromRef (local.get $lhs))))
+  }
+
+}
+impl True {
+  fun as(self: True): Boolean = %wasm {
+    (local.get $self)
+  }
+
+}
+impl False {
+  fun as(self: False): Boolean = %wasm {
+    (local.get $self)
+  }
+
+}
+
 fun gt0(x: i32): Boolean = if (x > 0) True() else False()
 
 fun isTrue(a: Boolean): boolean = match a {
