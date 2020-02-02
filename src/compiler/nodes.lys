@@ -66,8 +66,8 @@ enum CodeNode {
 
   IfNode(astNode: AstNode, condition: CodeNode, truePart: CodeNode, falsePart: CodeNode)
 
-  UnionTypeNode(astNode: AstNode, lhs: CodeNode, rhs: CodeNode)
-  IntersectionTypeNode(astNode: AstNode, lhs: CodeNode, rhs: CodeNode)
+  UnionTypeNode(astNode: AstNode, headType: CodeNode)
+  IntersectionTypeNode(astNode: AstNode, headType: CodeNode)
 
   StructDeclarationNode(astNode: AstNode, name: NameIdentifierNode | ErrorNode, headParameter: CodeNode)
   EffectDeclarationNode(astNode: AstNode, name: NameIdentifierNode)
@@ -458,16 +458,12 @@ impl CodeNode {
         }
       }
 
-      case is UnionTypeNode(astNode, lhs, rhs) -> {
-        printNode(lhs, sb, indentation)
-        sb.append(" | ")
-        printNode(rhs, sb, indentation)
+      case is UnionTypeNode(astNode, headType) -> {
+        printWithSeparator(headType, sb, indentation + 1, " | ")
       }
 
-      case is IntersectionTypeNode(astNode, lhs, rhs) -> {
-        printNode(lhs, sb, indentation)
-        sb.append(" & ")
-        printNode(rhs, sb, indentation)
+      case is IntersectionTypeNode(astNode, headType) -> {
+        printWithSeparator(headType, sb, indentation + 1, " & ")
       }
 
       case is StructDeclarationNode(astNode, name, headParameter) -> {
@@ -726,13 +722,11 @@ impl CodeNode {
             printAst(truePart, sb, indentation + 1)
             printAst(falsePart, sb, indentation + 1)
           }
-          case is UnionTypeNode(astNode, lhs, rhs) -> {
-            printAst(lhs, sb, indentation + 1)
-            printAst(rhs, sb, indentation + 1)
+          case is UnionTypeNode(astNode, headType) -> {
+            printAst(headType, sb, indentation + 1)
           }
-          case is IntersectionTypeNode(astNode, lhs, rhs) -> {
-            printAst(lhs, sb, indentation + 1)
-            printAst(rhs, sb, indentation + 1)
+          case is IntersectionTypeNode(astNode, headType) -> {
+            printAst(headType, sb, indentation + 1)
           }
           case is StructDeclarationNode(astNode, name, headParameter) -> {
             printAst(name, sb, indentation + 1)

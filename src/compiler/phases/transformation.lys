@@ -4,7 +4,11 @@ import src::compiler::nodes
 import src::compiler::context
 import src::stringbuilder
 
-fun desugar(currentPath: string, currentModule: string, astNode: AstNode, ctx: CompilerContext): AstNode = match astNode {
+fun runPhase(currentPath: string, currentModule: string, astNode: AstNode, ctx: CompilerContext): AstNode = {
+  desugar(currentPath, currentModule, astNode, ctx)
+}
+
+private fun desugar(currentPath: string, currentModule: string, astNode: AstNode, ctx: CompilerContext): AstNode = match astNode {
   case x is Rule0 -> x
   case x is UnexpectedToken -> x
   case x is SyntaxError -> x
@@ -19,16 +23,42 @@ fun desugar(currentPath: string, currentModule: string, astNode: AstNode, ctx: C
       AstCons(nhead, ntail)
   }
   case node is Node(name, child, start, end) -> match name {
-    case "EnumDirective" -> processEnum(currentPath, currentModule, child, ctx)
-    case "StructDeclaration" -> processStruct(currentPath, currentModule, child, ctx)
+    case "EnumDirective" -> {
+      val newNode = processEnum(currentPath, currentModule, child, ctx)
+      desugar(currentPath, currentModule, newNode, ctx)
+    }
+    case "StructDeclaration" -> {
+      val newNode = processStruct(currentPath, currentModule, child, ctx)
+      desugar(currentPath, currentModule, newNode, ctx)
+    }
     case "StructDirective" -> desugar(currentPath, currentModule, child, ctx)
-    else -> {
-      val nchild = desugar(currentPath, currentModule, child, ctx)
+    case "TypeDirective" -> {
+      val modifier = first(child)
+      val resto = rest(child)
+      val nameNode = first(resto)
+      val typeValue = rest(resto)
 
-      if (nchild == child)
+      match typeValue {
+        case is Node(name, child) -> {
+          if (name == "UnionType") {
+            AstCons(
+              node,
+              processUnionType(currentPath, currentModule, nameNode, child, ctx)
+            )
+          } else {
+            node
+          }
+        }
+        else -> node
+      }
+    }
+    else -> {
+      val newChild = desugar(currentPath, currentModule, child, ctx)
+
+      if (newChild == child)
         node
       else
-        Node(name, desugar(currentPath, currentModule, child, ctx), start, end)
+        Node(name, newChild, start, end)
     }
   }
 }
@@ -66,7 +96,7 @@ fun processEnum(currentPath: string, currentModule: string, child: AstNode, ctx:
 
   val structTypeNode = Node("UnionType", extractStructNames(enumMembers), 0x0, 0x0)
 
-  val typeDirective = Node("TypeDirective", 
+  val typeDirective = Node("TypeDirective",
     AstCons(
       modifier,
       AstCons(nameNode, structTypeNode)
@@ -287,4 +317,100 @@ fun processStruct(currentPath: string, currentModule: string, child: AstNode, ct
   )
 
   AstCons(typeDirective, getChild(mod.ast))
+}
+
+// Prints all the references of a union type like:
+// union.references.map('self is $').join(' || ')
+fun appendIs(sb: StringBuilder, node: AstNode, count: i32): i32 = match node {
+  case is AstCons(head, tail) -> {
+    val newCount = appendIs(sb, head, count)
+    appendIs(sb, tail, newCount)
+  }
+  case is Node(name, child) -> {
+    if (name == "Reference") {
+      if (count > 0) {
+        sb.append(" || ")
+      }
+
+      sb.append(" self is ")
+      sb.append(textOf(child))
+
+      count + 1
+    } else {
+      count
+    }
+  }
+  else -> count
+}
+
+fun appendUnionImpls(sb: StringBuilder, unionName: string, node: AstNode): void = {
+  match node {
+    case is AstCons(head, tail) -> {
+      appendUnionImpls(sb, unionName, head)
+      appendUnionImpls(sb, unionName, tail)
+    }
+    case is Node(name, child) -> {
+      if (name == "Reference") {
+        val referenceName = textOf(child)
+
+        sb
+          .append("impl ").append(referenceName).appendln("{")
+          .append("  fun as(self: ").append(referenceName).append("): ").append(unionName).appendln(" = %wasm { (local.get $self) }")
+          .appendln("}")
+      }
+    }
+    else -> {/*this must be here because of a bug in the pattern matching*/}
+  }
+}
+
+fun processUnionType(currentPath: string, currentModule: string, nameNode: AstNode, unionType: AstNode, ctx: CompilerContext): AstNode = {
+  val typeName = textOf(nameNode)
+
+  val sb = StringBuilder()
+
+  sb.appendln("impl Reference for " ++ typeName ++ " {")
+  sb.appendln("  #[inline]")
+  sb.appendln("  fun is(self: " ++ typeName ++ " | ref): boolean = {")
+
+  appendIs(sb, getChild(unionType), 0)
+
+  sb.appendln("  }")
+
+  sb.appendln("  #[explicit]")
+  sb.appendln("  #[inline]")
+  sb.appendln("  fun as(self: " ++ typeName ++ "): ref  = %wasm { (local.get $self) }")
+  sb.appendln("}")
+
+  sb.appendln("impl " ++ typeName ++ " {")
+  sb.appendln("  fun ==(lhs: ref, rhs: ref): boolean = lhs == rhs")
+  sb.appendln("  fun !=(lhs: ref, rhs: ref): boolean = lhs != rhs")
+  sb.appendln("  fun store(lhs: ref, rhs: " ++ typeName ++ ", offset: u32): void = %wasm {")
+  sb.appendln("    (i64.store")
+  sb.appendln("      (i32.add")
+  sb.appendln("        (local.get $offset)")
+  sb.appendln("        (call $addressFromRef (local.get $lhs))")
+  sb.appendln("      )")
+  sb.appendln("      (local.get $rhs)")
+  sb.appendln("    )")
+  sb.appendln("  }")
+
+  sb.appendln("  fun load(lhs: ref, offset: u32): " ++ typeName ++ " = %wasm {")
+  sb.appendln("    (i64.load")
+  sb.appendln("      (i32.add")
+  sb.appendln("        (local.get $offset)")
+  sb.appendln("        (call $addressFromRef (local.get $lhs))")
+  sb.appendln("      )")
+  sb.appendln("    )")
+  sb.appendln("  }")
+  sb.appendln("}")
+
+  appendUnionImpls(sb, typeName, getChild(unionType))
+
+  val mod = ctx.getModuleByContent(
+    currentPath ++ "#" ++ typeName,
+    currentModule ++ "#" ++ typeName,
+    sb.toString()
+  )
+
+  getChild(mod.ast)
 }

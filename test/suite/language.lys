@@ -22,44 +22,47 @@ fun test(): void = {
   END()
 }
 
-fun parseLys(text: string, grammar: Grammar): void = {
-  START(text)
+fun testParseEmit(text: string, grammar: Grammar): AstNode | Nil = {
+  START("Test parse and emit: " ++ text)
   val result = verifyParsing(text, "Document", grammar)
 
   match result {
-    case is Nil -> mustEqual(true, false, "Result must not be nil")
+    case is Nil -> verify(false, "Result must not be nil")
     case r is AstNode -> {
       val cannonical = src::compiler::phases::cannonical::processNode(r)
       val sb = StringBuilder()
 
       src::compiler::nodes::CodeNode.printNode(cannonical, sb, 0)
       val emitedSource = sb.toString()
+      src::compiler::nodes::CodeNode.printAst(cannonical, sb, 0)
       val newResult = verifyParsing(emitedSource, "Document", grammar)
 
       match result {
-        case is Nil -> mustEqual(true, false, "Result of the generated code parsing must not be nil")
+        case is Nil -> verify(false, "Result of the generated code parsing must not be nil")
         case r2 is AstNode -> {
           val cannonical2 = src::compiler::phases::cannonical::processNode(r2)
           val sb2 = StringBuilder()
           src::compiler::nodes::CodeNode.printNode(cannonical2, sb2, 0)
-          mustEqual(sb2.toString(), emitedSource, "Both emited sources must match")
+          src::compiler::nodes::CodeNode.printAst(cannonical2, sb2, 0)
+          mustEqual(sb2.toString(), sb.toString(), "Both emited sources must match")
         }
       }
-
     }
   }
 
   END()
+
+  result
 }
 
 
 fun testEquivalence(text: string, text2: string, grammar: Grammar): void = {
-  START(text)
+  START("Test parsing equivalence: " ++ text)
 
   var ast1 = "<Nil>"
   var ast2 = "<Nil>"
 
-  val r1 = match verifyParsing(text, "Document", grammar) {
+  val r1 = match testParseEmit(text, grammar) {
     case is Nil -> {
       mustEqual(true, false, "Result must not be nil")
       ""
@@ -75,7 +78,7 @@ fun testEquivalence(text: string, text2: string, grammar: Grammar): void = {
     }
   }
 
-  val r2 = match verifyParsing(text2, "Document", grammar) {
+  val r2 = match testParseEmit(text2, grammar) {
     case is Nil -> {
       mustEqual(true, false, "Result must not be nil")
       ""
@@ -83,11 +86,11 @@ fun testEquivalence(text: string, text2: string, grammar: Grammar): void = {
     case r is AstNode -> {
       ast2 = printAst(r)
       val cannonical = src::compiler::phases::cannonical::processNode(r)
-      val sb = StringBuilder()
+      val sb2 = StringBuilder()
 
-      src::compiler::nodes::CodeNode.printNode(cannonical, sb, 0)
-      src::compiler::nodes::CodeNode.printAst(cannonical, sb, 0)
-      sb.toString()
+      src::compiler::nodes::CodeNode.printNode(cannonical, sb2, 0)
+      src::compiler::nodes::CodeNode.printAst(cannonical, sb2, 0)
+      sb2.toString()
     }
   }
 
@@ -104,21 +107,20 @@ fun testEquivalence(text: string, text2: string, grammar: Grammar): void = {
   END()
 }
 
-
-
-
 fun parseAndEmit(grammar: Grammar): void = {
   START("Parse and emit")
-  parseLys("enum X { Some(value: ref) None }", grammar)
-  parseLys("type None type Some type Option = Some | None", grammar)
-  parseLys("type Celcius", grammar)
-  parseLys("type Celcius = %struct {}", grammar)
-  parseLys("impl Option {}", grammar)
-  parseLys("var c = a is b", grammar)
-  parseLys("var c = a.b", grammar)
-  parseLys("var c = a.b.c", grammar)
-  parseLys("var c = a[0]", grammar)
-  parseLys("var c = a[  0  ]", grammar)
+  testParseEmit("enum X { Some(value: ref) None }", grammar)
+  testParseEmit("type None type Some type Option = Some | None", grammar)
+  testParseEmit("type Celcius", grammar)
+  testParseEmit("type Celcius = %struct {}", grammar)
+  testParseEmit("impl Option {}", grammar)
+  testParseEmit("var c = a is b", grammar)
+  testParseEmit("var c = a.b", grammar)
+  testParseEmit("var c = a.b.c", grammar)
+  testParseEmit("var c = a.b().c()[0]", grammar)
+  testParseEmit("var c = a[0]", grammar)
+  testParseEmit("var c = a[  0  ]", grammar)
+  testParseEmit("type Enum = A | B | C", grammar)
   END()
 }
 
@@ -167,6 +169,7 @@ fun precedence(grammar: Grammar): void = {
   testEquivalence("var x = ~test - 3", "var x = (~test) - 3", grammar)
   testEquivalence("var x = 1 - -test - 3", "var x = (1 - (-test)) - 3", grammar)
   testEquivalence("var x = a.b.c.d.e + 1 * 3", "var x = (a.b.c.d.e + (1 * 3))", grammar)
+
   testEquivalence(
     "var x =    color.r  * (2^16)  |   color.g  * (2^8)  |  color.b",
     "var x = (((color.r) * (2^16)) | ((color.g) * (2^8)) | (color.b))",

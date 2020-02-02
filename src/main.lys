@@ -25,7 +25,7 @@ fun parseAstDesugar(strAddress: UnsafeCPointer): UnsafeCPointer = {
   match parse(UCS2.fromPtr(strAddress), "Document", getGrammar()) {
     case ast is AstNode -> {
       val sb = StringBuilder()
-      printAst(src::compiler::phases::transformation::desugar("mod", "mod", ast, ctx), 0, sb)
+      printAst(src::compiler::phases::transformation::runPhase("mod", "mod", ast, ctx), 0, sb)
       sb.toString() as UnsafeCPointer
     }
     else -> "" as UnsafeCPointer

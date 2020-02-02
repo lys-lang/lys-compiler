@@ -119,8 +119,8 @@ fun processNode(astNode: AstNode): CodeNode = match astNode {
     case "NoModifier" -> NoModifierNode(astNode)
     case "ImportDirective" -> ImportDirectiveNode(astNode, fqnOrEmpty(first(child)), nameOrEmpty(second(child)))
     case "QName" -> QNameNode(astNode, processNode(child))
-    case "UnionType" -> UnionTypeNode(astNode, processNode(first(child)), processNode(rest(child)))
-    case "IntersectionType" -> IntersectionTypeNode(astNode, processNode(first(child)), processNode(rest(child)))
+    case "UnionType" -> UnionTypeNode(astNode, processNode(child))
+    case "IntersectionType" -> IntersectionTypeNode(astNode, processNode(child))
     case "Reference" -> ReferenceNode(astNode, fqnOrEmpty(child))
     case "MatchExpression" -> PatternMatcherNode(astNode, processNode(first(child)), processNode(rest(child)))
     case "TraitDirective" -> {
