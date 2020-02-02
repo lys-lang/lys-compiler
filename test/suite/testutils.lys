@@ -1,0 +1,71 @@
+import support::env
+import support::test
+import src::helpers
+import src::lexer::lexer
+import src::lexer::tokens
+import src::parser::grammar
+import src::parser::parser
+import src::stringbuilder
+
+fun countErrors(node: AstNode | Nil): i32 = match node {
+  case is SyntaxError(token, message) -> 1
+  case is UnexpectedToken(token, value) -> 1
+  case is Node(name, child) -> countErrors(child)
+  case is AstCons(head, tail) -> countErrors(head) + countErrors(tail)
+  else -> 0
+}
+
+
+fun verifyParsing(source: string, rule: string, grammar: Grammar): AstNode | Nil = {
+  START("Test parsing " ++ rule ++ " on " ++ source)
+
+  val lexer = Lexer(source)
+  val parser = Parser(lexer, grammar)
+  val result = parse(rule, parser, 0)
+  val errorCount = countErrors(result)
+  verify(result is AstNode, "Must parse into a valid result")
+  verify(lexer.hasNext() == false, "Lexer should have finished scanning")
+  verify(errorCount == 0, "AstNode must have no errors")
+  if (errorCount != 0) {
+    support::env::printf(printAst(result))
+  }
+
+  END()
+
+  result
+}
+
+fun verifyParsing(source: string, rule: string, grammar: Grammar, against: string): AstNode | Nil = {
+  val lexer = Lexer(source)
+  val parser = Parser(lexer, grammar)
+  val result = parse(rule, parser, 0)
+  val errorCount = countErrors(result)
+  verify(result is AstNode, "Must parse into a valid result")
+  verify(lexer.hasNext() == false, "Lexer should have finished scanning")
+  verify(errorCount == 0, "AstNode must have no errors")
+  val r = printAst(result)
+  if (errorCount != 0) {
+    support::env::printf(r)
+  }
+  mustEqual(r, against, "Emited sources must match")
+
+  result
+}
+
+
+fun verifyParsingWithErrors(source: string, rule: string, grammar: Grammar): void = {
+  START("Test parsing with errors " ++ rule ++ " on " ++ source)
+
+  val lexer = Lexer(source)
+  val parser = Parser(lexer, grammar)
+  val result = parse(rule, parser, 0)
+  verify(result is AstNode, "Must parse into a valid result")
+  val errorCount = countErrors(result)
+  verify(errorCount > 0, "AstNode must have errors")
+  if (errorCount == 0) {
+    support::env::printf(printAst(result))
+  }
+  verify(lexer.hasNext() == false, "Lexer should have finished scanning")
+
+  END()
+}

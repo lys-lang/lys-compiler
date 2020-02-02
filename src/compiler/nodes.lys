@@ -390,10 +390,28 @@ impl CodeNode {
 
       case is BinaryExpressionNode(astNode, lhs, operator, rhs) -> {
         printNode(lhs, sb, indentation)
-        sb.append(" ")
-        printNode(operator, sb, indentation)
-        sb.append(" ")
-        printNode(rhs, sb, indentation)
+
+        match operator {
+          case is NameIdentifierNode(_, name) -> {
+            if (name == "[]") {
+              sb.append("[")
+              printNode(rhs, sb, indentation)
+              sb.append("]")
+            } else {
+              sb.append(" ")
+              printNode(operator, sb, indentation)
+              sb.append(" ")
+              printNode(rhs, sb, indentation)
+            }
+          }
+          else -> {
+            sb.append(" ")
+            printNode(operator, sb, indentation)
+            sb.append(" ")
+            printNode(rhs, sb, indentation)
+          }
+        }
+        
       }
       case is AsExpressionNode(astNode, lhs, rhs) -> {
         printNode(lhs, sb, indentation)

@@ -1,0 +1,187 @@
+import support::env
+import support::test
+import src::helpers
+import src::lexer::lexer
+import src::lexer::tokens
+import src::parser::grammar
+import src::parser::parser
+import src::parser::lysgrammar
+import src::stringbuilder
+import test::suite::testutils
+
+fun test(): void = {
+  START("lysGrammar")
+
+  val grammar = getGrammar()
+
+  support::env::printf(grammar.toString())
+
+  parseAndEmit(grammar)
+  precedence(grammar)
+
+  END()
+}
+
+fun parseLys(text: string, grammar: Grammar): void = {
+  START(text)
+  val result = verifyParsing(text, "Document", grammar)
+
+  match result {
+    case is Nil -> mustEqual(true, false, "Result must not be nil")
+    case r is AstNode -> {
+      val cannonical = src::compiler::phases::cannonical::processNode(r)
+      val sb = StringBuilder()
+
+      src::compiler::nodes::CodeNode.printNode(cannonical, sb, 0)
+      val emitedSource = sb.toString()
+      val newResult = verifyParsing(emitedSource, "Document", grammar)
+
+      match result {
+        case is Nil -> mustEqual(true, false, "Result of the generated code parsing must not be nil")
+        case r2 is AstNode -> {
+          val cannonical2 = src::compiler::phases::cannonical::processNode(r2)
+          val sb2 = StringBuilder()
+          src::compiler::nodes::CodeNode.printNode(cannonical2, sb2, 0)
+          mustEqual(sb2.toString(), emitedSource, "Both emited sources must match")
+        }
+      }
+
+    }
+  }
+
+  END()
+}
+
+
+fun testEquivalence(text: string, text2: string, grammar: Grammar): void = {
+  START(text)
+
+  var ast1 = "<Nil>"
+  var ast2 = "<Nil>"
+
+  val r1 = match verifyParsing(text, "Document", grammar) {
+    case is Nil -> {
+      mustEqual(true, false, "Result must not be nil")
+      ""
+    }
+    case r is AstNode -> {
+      ast1 = printAst(r)
+      val cannonical = src::compiler::phases::cannonical::processNode(r)
+      val sb = StringBuilder()
+
+      src::compiler::nodes::CodeNode.printNode(cannonical, sb, 0)
+      src::compiler::nodes::CodeNode.printAst(cannonical, sb, 0)
+      sb.toString()
+    }
+  }
+
+  val r2 = match verifyParsing(text2, "Document", grammar) {
+    case is Nil -> {
+      mustEqual(true, false, "Result must not be nil")
+      ""
+    }
+    case r is AstNode -> {
+      ast2 = printAst(r)
+      val cannonical = src::compiler::phases::cannonical::processNode(r)
+      val sb = StringBuilder()
+
+      src::compiler::nodes::CodeNode.printNode(cannonical, sb, 0)
+      src::compiler::nodes::CodeNode.printAst(cannonical, sb, 0)
+      sb.toString()
+    }
+  }
+
+  val areEq = r1 == r2
+  verify(areEq, "Both emited codes must match")
+
+  if (!areEq) {
+    support::env::printf(r1)
+    support::env::printf(ast1)
+    support::env::printf(r2)
+    support::env::printf(ast2)
+  }
+
+  END()
+}
+
+
+
+
+fun parseAndEmit(grammar: Grammar): void = {
+  START("Parse and emit")
+  parseLys("enum X { Some(value: ref) None }", grammar)
+  parseLys("type None type Some type Option = Some | None", grammar)
+  parseLys("type Celcius", grammar)
+  parseLys("type Celcius = %struct {}", grammar)
+  parseLys("impl Option {}", grammar)
+  parseLys("var c = a is b", grammar)
+  parseLys("var c = a.b", grammar)
+  parseLys("var c = a.b.c", grammar)
+  parseLys("var c = a[0]", grammar)
+  parseLys("var c = a[  0  ]", grammar)
+  END()
+}
+
+fun precedence(grammar: Grammar): void = {
+  START("Operator precedence")
+
+  testEquivalence("val z = (HEAP_BASE + AL_MASK) & ~AL_MASK", "val z = (HEAP_BASE + AL_MASK) & (~AL_MASK)", grammar)
+  testEquivalence("val z = newPtr > pagesBefore << 16", "val z = newPtr > (pagesBefore << 16)", grammar)
+  testEquivalence(
+    "var x = if (a) 1 else match b { else -> 1 }",
+    "var x = (   if(a) (1) else (match (b) { else -> 1 })   )",
+    grammar
+  )
+  testEquivalence(
+    "var x = a | b ^ c & d | e || f && g || h && y && j & 5",
+    "var x = (a | (b ^ (c & d)) | e) || (f && g) || (h && y && (j & 5))",
+    grammar
+  )
+  testEquivalence("var x = a[-1]", "var x = (a)[-1]", grammar)
+  testEquivalence("var x = a.b.c.d[-1]", "var x = (a.b.c.d)[-1]", grammar)
+  testEquivalence("var x = a.b.c.d()[-1]", "var x = (a.b.c.d())[-1]", grammar)
+  testEquivalence("var x = a.b.c().d()[-1]", "var x = ((((a).b).c()).d())[-1]", grammar)
+  testEquivalence("var x = {a[1] = -1}", "var x = {((a)[1]) = (-1)}", grammar)
+
+  testEquivalence("var x = a ~= b !== c == b === c", "var x = ((((a ~= b) !== c) == b) === c)", grammar)
+  testEquivalence("var x = a as int", "var x = (a) as int", grammar)
+  testEquivalence("var x = a - -1", "var x = (a) - (-(1))", grammar)
+
+  testEquivalence("var x = a is int", "var x = (a) is int", grammar)
+  testEquivalence("var x = -1 as int", "var x = (-1) as int", grammar)
+  testEquivalence("var x = -1 is int", "var x = (-(1)) is int", grammar)
+  testEquivalence("var x = -a as int", "var x = (-a) as int", grammar)
+  testEquivalence("var x = -a as int", "var x = (-(a)) as int", grammar)
+  testEquivalence("var x = ~a as int", "var x = (~a) as int", grammar)
+  testEquivalence("var x = ~a is int", "var x = (~(a)) is int", grammar)
+  testEquivalence("var x = 123 + a as int", "var x = 123 + (a as int)", grammar)
+  testEquivalence("var x = 123 + a is int", "var x = 123 + (a is int)", grammar)
+  testEquivalence("var x = 1 + 2", "var x = (1 + 2)", grammar)
+  testEquivalence("var x = 1 + 2 * 3", "var x = (1 + (2 * 3))", grammar)
+  testEquivalence("var x = 1 + 2 * 3 - 4", "var x = (1 + (2 * 3)) - 4", grammar)
+  testEquivalence("var x = 1 + 2 * 3 - 4 / 5", "var x = (1 + (2 * 3)) - (4 / 5)", grammar)
+  testEquivalence("var x = 1 + 2 * 3 - 4 / 5", "var x = (1 + (2 * 3)) - (4 / 5)", grammar)
+  testEquivalence("var x = -test.a().b()", "var x = -((test.a()).b())", grammar)
+  testEquivalence("var x = -test.a() - 3", "var x = (-(test.a())) - 3", grammar)
+  testEquivalence("var x = ~test.a() - 3", "var x = (~(test.a())) - 3", grammar)
+  testEquivalence("var x = ~test - 3", "var x = (~test) - 3", grammar)
+  testEquivalence("var x = 1 - -test - 3", "var x = (1 - (-test)) - 3", grammar)
+  testEquivalence("var x = a.b.c.d.e + 1 * 3", "var x = (a.b.c.d.e + (1 * 3))", grammar)
+  testEquivalence(
+    "var x =    color.r  * (2^16)  |   color.g  * (2^8)  |  color.b",
+    "var x = (((color.r) * (2^16)) | ((color.g) * (2^8)) | (color.b))",
+    grammar
+  )
+  testEquivalence(
+    "var x =   r * (2^16)  |  g * (2^8)  | b",
+    "var x = ((r * (2^16)) | (g * (2^8)) | b)",
+    grammar
+  )
+  testEquivalence(
+    "fun main(color: Color): i32 = color.r * 0x10000 | color.g * 0x100 | color.b",
+    "fun main(color: Color): i32 = (color.r * 0x10000) | (color.g * 0x100) | (color.b)",
+    grammar
+  )
+
+  END()
+}

@@ -1,0 +1,417 @@
+import support::env
+import support::test
+import src::helpers
+import src::lexer::lexer
+import src::lexer::tokens
+import src::parser::grammar
+import src::parser::parser
+import test::suite::testutils
+
+fun test(): void = {
+  START("Grammar tests")
+  parser1()
+  jsonParser()
+  cutSemantics()
+  failSemantics()
+  discardSemantics()
+  errorRecovery()
+  END()
+}
+
+fun parser1(): void = {
+  START("Smoke parser tests")
+
+  val grammar =
+    Nominal("Number", Terminal(NumberLiteral)) ++
+    Nominal("Operator", Terminal(Operator)) ++
+    Nominal("ParenExpression",
+      Cons(
+        Terminal(ParenthesesOpen),
+        Cons(
+          NonTerminal("Equation"),
+          Terminal(ParenthesesClose)
+        )
+      )
+    ) ++
+    Nominal("Equation",
+      Or(NonTerminal("BinaryOperation"), NonTerminal("Term"))
+    ) ++
+    Nominal("BinaryOperation",
+      Cons(
+        NonTerminal("Term"),
+        Cons(
+          NonTerminal("Operator"),
+          NonTerminal("Term")
+        )
+      )
+    ) ++
+    Nominal("Term",
+      Or(
+        NonTerminal("ParenExpression"),
+        NonTerminal("Number")
+      )
+    )
+
+  support::env::printf(grammar.toString())
+
+  verify(grammar.findRule("UnexistentRule123") is Nil, "Unexistent rule must yield nil")
+  verify(grammar.findRule("Term") is ParserRule, "Test find rule Term")
+  verify(grammar.findRule("Equation") is ParserRule, "Test find rule Equation")
+  verify(grammar.findRule("ParenExpression") is ParserRule, "Test find rule ParenExpression")
+  verify(grammar.findRule("Operator") is ParserRule, "Test find rule Operator")
+  verify(grammar.findRule("Number") is ParserRule, "Test find rule Number")
+
+
+  START("Straight forward case for parsing")
+  verifyParsing("1", "Equation", grammar)
+  verifyParsing("1", "Number", grammar)
+  verifyParsing("1+2", "Equation", grammar)
+  END()
+
+  START("Backtracking and pick second path")
+  verifyParsing("(2+(2*123))*5332", "Equation", grammar)
+  END()
+
+  END()
+}
+
+// WS? rule WS?
+fun spacedRule(rule: ParserRule): ParserRule = Cons(Optional(NonTerminal("WS")), Cons(rule, Optional(NonTerminal("WS"))))
+
+fun jsonParser(): void = {
+  START("JSON parser")
+
+  val grammar =
+    Nominal("WS", OneOrMore(Or(Terminal(Whitespace), Terminal(NewLine)))) ++
+    Nominal("value",
+      Or(NonTerminal("true"),
+      Or(NonTerminal("false"),
+      Or(NonTerminal("null"),
+      Or(NonTerminal("string"),
+      Or(NonTerminal("number"),
+      Or(NonTerminal("object"), NonTerminal("array")))))))
+    ) ++
+    Nominal("false", StrictTerminal(Keyword, "false")) ++
+    Nominal("true", StrictTerminal(Keyword, "true")) ++
+    Nominal("null", StrictTerminal(Identifier, "null")) ++
+    Nominal("string", Terminal(StringLiteral)) ++
+    Nominal("number", Terminal(NumberLiteral)) ++
+    Nominal("member",
+      Cons(
+        NonTerminal("string"),
+        Cons(
+          Discard(NonTerminal("COLON")),
+          NonTerminal("value")
+        )
+      )
+    ) ++
+    Nominal("object",
+      Cons(
+        Discard(NonTerminal("OBJ_O")),
+        Cons(
+          Optional(
+            Cons(
+              NonTerminal("member"),
+              ZeroOrMore(Cons(Discard(NonTerminal("COMMA")), NonTerminal("member")))
+            )
+          ),
+          Discard(NonTerminal("OBJ_C"))
+        )
+      )
+    ) ++
+    Nominal("array",
+      Cons(
+        Discard(NonTerminal("ARR_O")),
+        Cons(
+          Optional(
+            Cons(
+              NonTerminal("value"),
+              ZeroOrMore(Cons(Discard(NonTerminal("COMMA")), NonTerminal("value")))
+            )
+          ),
+          Discard(NonTerminal("ARR_C"))
+        )
+      )
+    ) ++
+    Nominal("OBJ_O", spacedRule(Terminal(CurlyBracesOpen))) ++
+    Nominal("OBJ_C", spacedRule(Terminal(CurlyBracesClose))) ++
+    Nominal("ARR_O", spacedRule(Terminal(VectorOpen))) ++
+    Nominal("ARR_C", spacedRule(Terminal(VectorClose))) ++
+    Nominal("COLON", spacedRule(StrictTerminal(Operator, ":"))) ++
+    Nominal("COMMA", spacedRule(Terminal(Comma)))
+
+  support::env::printf(grammar.toString())
+
+  START("Straight forward case for parsing")
+  {
+    verifyParsing("null", "value", grammar)
+    verifyParsing("true", "value", grammar)
+    verifyParsing("false", "value", grammar)
+    verifyParsing("{}", "value", grammar)
+    verifyParsing("[]", "value", grammar)
+    verifyParsing("\"asd\"", "value", grammar)
+    verifyParsing("\"\"", "value", grammar)
+    verifyParsing("123.4", "value", grammar)
+    verifyParsing("[1]", "value", grammar)
+    verifyParsing("[1,2]", "value", grammar)
+    verifyParsing("{\"a\": 1}", "value", grammar)
+    verifyParsing("{\"a\": 1, \"b\": 1}", "value", grammar)
+    verifyParsing("{\"a\":false,\"b\":\"asd\\n      asd \",\"list\":[1,2,3,true]}", "value", grammar)
+  }
+  END()
+
+  END()
+}
+
+
+fun cutSemantics(): void = {
+  START("cut semantics")
+
+  val grammarWithoutCut =
+    Nominal("A_B_C",
+      Cons(
+        StrictTerminal(Identifier, "A"),
+        Cons(
+          Terminal(Whitespace),
+          Cons(
+            StrictTerminal(Identifier, "B"),
+            Cons(
+              Terminal(Whitespace),
+              StrictTerminal(Identifier, "C")
+            )
+          )
+        )
+      )
+    ) ++
+    Nominal("A_X_X",
+      Cons(
+        StrictTerminal(Identifier, "A"),
+        Cons(
+          Terminal(Whitespace),
+          Cons(
+            StrictTerminal(Identifier, "X"),
+            Cons(
+              Terminal(Whitespace),
+              StrictTerminal(Identifier, "X")
+            )
+          )
+        )
+      )
+    ) ++
+    Nominal("value", Or(NonTerminal("A_B_C"), NonTerminal("A_X_X")))
+
+
+  val grammarWithCut =
+    Nominal("A_B_C",
+      Cons(
+        StrictTerminal(Identifier, "A"),
+        Cut(
+          Terminal(Whitespace),
+          Cons(
+            StrictTerminal(Identifier, "B"),
+            Cons(
+              Terminal(Whitespace),
+              StrictTerminal(Identifier, "C")
+            )
+          )
+        )
+      )
+    ) ++
+    Nominal("A_X_X",
+      Cons(
+        StrictTerminal(Identifier, "A"),
+        Cons(
+          Terminal(Whitespace),
+          Cons(
+            StrictTerminal(Identifier, "X"),
+            Cons(
+              Terminal(Whitespace),
+              StrictTerminal(Identifier, "X")
+            )
+          )
+        )
+      )
+    ) ++
+    Nominal("value", Or(NonTerminal("A_B_C"), NonTerminal("A_X_X")))
+
+
+  START("Test without cut")
+  {
+    verifyParsing("A B C", "value", grammarWithoutCut)
+    verifyParsing("A X X", "value", grammarWithoutCut)
+  }
+  END()
+
+  START("Test with cut")
+  {
+    verifyParsing("A B C", "value", grammarWithCut)
+    verifyParsingWithErrors("A X X", "value", grammarWithCut)
+  }
+  END()
+
+  support::env::printf(grammarWithoutCut.toString())
+  support::env::printf(grammarWithCut.toString())
+
+
+  END()
+}
+
+
+fun failSemantics(): void = {
+  START("fails semantics")
+
+  val grammar =
+    Nominal("A_B_C",
+      Cons(
+        StrictTerminal(Identifier, "A"),
+        Cut(
+          Terminal(Whitespace),
+          Cons(
+            StrictTerminal(Identifier, "B"),
+            Cons(
+              Terminal(Whitespace),
+              StrictTerminal(Identifier, "C")
+            )
+          )
+        )
+      )
+    ) ++
+    Nominal("A_X_X",
+      Cons(
+        StrictTerminal(Identifier, "A"),
+        Cons(
+          Terminal(Whitespace),
+          Cons(
+            StrictTerminal(Identifier, "X"),
+            Cons(
+              Terminal(Whitespace),
+              StrictTerminal(Identifier, "X")
+            )
+          )
+        )
+      )
+    ) ++
+    Nominal("value", Or(NonTerminal("A_B_C"), NonTerminal("A_X_X")))
+
+  verifyParsing("A B C", "value", grammar)
+  verifyParsingWithErrors("A X X", "value", grammar)
+
+  support::env::printf(grammar.toString())
+
+  END()
+}
+
+fun discardSemantics(): void = {
+  START("discard semantics")
+
+  val grammar: Grammar =
+    Nominal("value",
+      Push("valuex", Cons(
+        StrictTerminal(Identifier, "A"),
+        Cut(
+          Discard(Terminal(Whitespace)),
+          Cons(
+            StrictTerminal(Identifier, "B"),
+            Discard(
+              Cons(
+                Terminal(Whitespace),
+                StrictTerminal(Identifier, "C")
+              )
+            )
+          )
+        )
+      ))
+    )
+
+  mustEqual(
+    printAst(verifyParsing("A B C", "value", grammar)),
+    "|-valuex(0,5)\n" ++
+    "  |-(AstCons)\n" ++
+    "    |-Identifier=A\n" ++
+    "    |-Identifier=B",
+    "Validate tree"
+  )
+
+  END()
+}
+
+
+fun errorRecovery(): void = {
+  START("errorRecovery semantics")
+
+  val grammar =
+    Nominal("WS", OneOrMore(Or(Terminal(Whitespace), Terminal(NewLine)))) ++
+    Nominal("value",
+      Or(NonTerminal("true"), NonTerminal("false"), NonTerminal("null"), NonTerminal("string"), NonTerminal("number"), NonTerminal("object"), NonTerminal("array"))
+    ) ++
+    Nominal("false", StrictTerminal(Keyword, "false")) ++
+    Nominal("true", StrictTerminal(Keyword, "true")) ++
+    Nominal("null", StrictTerminal(Identifier, "null")) ++
+    Nominal("string", Terminal(StringLiteral)) ++
+    Nominal("number", Terminal(NumberLiteral)) ++
+    Nominal("member",
+      Cut(
+        NonTerminal("string"),
+        Discard(NonTerminal("COLON")),
+        NonTerminal("value")
+      )
+    ) ++
+    Nominal("object",
+      Cut(
+        Discard(NonTerminal("OBJ_O")),
+        Optional(
+          Cut(
+            NonTerminal("member"),
+            ZeroOrMore(Cut(Discard(NonTerminal("COMMA")), NonTerminal("member")))
+          )
+        ),
+        Discard(NonTerminal("OBJ_C"))
+      )
+    ) ++
+    Nominal("array",
+      Cut(
+        Cut(
+          Discard(NonTerminal("ARR_O")),
+          Optional(
+            Cut(
+              NonTerminal("value"),
+              ZeroOrMore(Cut(Discard(NonTerminal("COMMA")), NonTerminal("value")))
+            )
+          )
+        ),
+        Discard(NonTerminal("ARR_C"))
+      )
+    ) ++
+    Nominal("OBJ_O", spacedRule(Terminal(CurlyBracesOpen))) ++
+    Nominal("OBJ_C", spacedRule(Terminal(CurlyBracesClose))) ++
+    Nominal("ARR_O", spacedRule(Terminal(VectorOpen))) ++
+    Nominal("ARR_C", spacedRule(Terminal(VectorClose))) ++
+    Nominal("COLON", spacedRule(StrictTerminal(Operator, ":"))) ++
+    Nominal("COMMA", spacedRule(Terminal(Comma)))
+
+  START("Sanity tests")
+  {
+    verifyParsing("null", "value", grammar)
+    verifyParsing("true", "value", grammar)
+    verifyParsing("false", "value", grammar)
+    verifyParsing("{}", "value", grammar)
+    verifyParsing("[]", "value", grammar)
+    verifyParsing("\"asd\"", "value", grammar)
+    verifyParsing("\"\"", "value", grammar)
+    verifyParsing("123.4", "value", grammar)
+    verifyParsing("[1]", "value", grammar)
+    verifyParsing("[1,2]", "value", grammar)
+    verifyParsing("{\"a\": 1}", "value", grammar)
+    verifyParsing("{\"a\": 1, \"b\": 1}", "value", grammar)
+    verifyParsing("{\"a\":false,\"b\":\"asd\\n      asd \",\"list\":[1,2,3,true]}", "value", grammar)
+  }
+  END()
+
+  verifyParsingWithErrors("[XXX]", "value", grammar)
+  verifyParsingWithErrors("[[false, XXX asd 1, 3], 4]", "value", grammar)
+
+  support::env::printf(grammar.toString())
+
+  END()
+}
+

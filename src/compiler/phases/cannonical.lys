@@ -74,6 +74,38 @@ fun processBinaryExpression(lhs: CodeNode, astNode: AstNode): CodeNode = {
   }
 }
 
+fun processAtomicExpressionChild(lhs: CodeNode, astNode: AstNode): CodeNode = {
+  match astNode {
+    case is AstCons(head, tail) -> {
+      processAtomicExpressionChild(
+        processAtomicExpressionChild(lhs, head),
+        tail
+      )
+    }
+    case is Node(name, child) -> {
+      match name {
+        case "CallArguments" -> {
+          FunctionCallNode(child, lhs, processNode(child), EmptyNode)
+        }
+        case "MemberExpression" -> {
+          MemberNode(child, lhs, textOf(first(child)), processNode(rest(child)))
+        }
+        case "IndexExpression" -> {
+          BinaryExpressionNode(astNode, lhs, NameIdentifierNode(child, "[]"), processNode(child))
+        }
+        else -> {
+          // This should never happen, but you know.. we must make the type checker happy
+          ErrorNode(astNode, "No handler for " ++ name)
+        }
+      }
+    }
+    else -> {
+      // This should never happen, but you know.. we must make the type checker happy
+      ErrorNode(astNode, "No handler for not Node nor AstCons")
+    }
+  }
+}
+
 fun processNode(astNode: AstNode): CodeNode = match astNode {
   case is Rule0 -> EmptyNode
   case is UnexpectedToken -> EmptyNode
@@ -132,28 +164,10 @@ fun processNode(astNode: AstNode): CodeNode = match astNode {
         val head = first(resto)
         resto = rest(resto)
 
-        match head {
-          case is Node(name, child) -> {
-            match name {
-              case "CallArguments" -> {
-                ret = FunctionCallNode(child, ret, processNode(child), EmptyNode)
-              }
-              case "MemberExpression" -> {
-                ret = MemberNode(child, ret, textOf(first(child)), processNode(rest(child)))
-              }
-              case "IndexExpression" -> {
-                ret = BinaryExpressionNode(astNode, ret, NameIdentifierNode(child, "[]"), processNode(child))
-              }
-              else -> {
-                /* noop */
-                support::env::printf("No handler for " ++ name)
-              }
-            }
-            continue
-          }
-          else -> {
-            /* noop */
-          }
+        ret = processAtomicExpressionChild(ret, head)
+
+        if (!(resto is Rule0)) {
+          continue
         }
       }
 
