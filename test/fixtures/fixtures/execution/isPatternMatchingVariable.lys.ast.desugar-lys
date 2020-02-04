@@ -570,9 +570,9 @@ var value3: A = A
 fun transform(col: ref): Color = match col {
     case x is Red -> x
     case x is Enum -> match x {
-        case $ is A -> Red
-        else -> Green
-      }
+      case $ is A -> Red
+      else -> Green
+    }
     else -> Red
   }
 

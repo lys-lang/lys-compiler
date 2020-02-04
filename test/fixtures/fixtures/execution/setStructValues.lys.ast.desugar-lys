@@ -483,11 +483,11 @@ fun main(): void = {
     verify(a.f is Color, "a.f is Color")
     verify(a.g is Color, "a.g is Color")
     match a.f {
-      case x is Custom(hex) -> {
-          var hex = x.hex
-          verify(x.hex == 0xAABBCCDD, "x.hex == 0xAABBCCDD")
-          verify(hex == 0xAABBCCDD, "hex == 0xAABBCCDD")
-        }
+      case x is Custom -> {
+        var hex = x.hex
+        verify(x.hex == 0xAABBCCDD, "x.hex == 0xAABBCCDD")
+        verify(hex == 0xAABBCCDD, "hex == 0xAABBCCDD")
+      }
       else -> verify(false, "a.f is not Custom in pattern matching")
     }
     END()

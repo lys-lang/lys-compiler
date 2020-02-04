@@ -293,10 +293,28 @@ impl Custom {
 fun isRed(x: Color): boolean = {
   match x {
     case $ is Red -> false
-    case $ is Custom(a) -> {
-        var a = $.a
-        a == 0xFF0000
+    case $ is Custom -> {
+      var a = $.a
+      a == 0xFF0000
+    }
+    else -> false
+  }
+}
+
+#[export]
+fun isRedish(x: Color): boolean = {
+  match x {
+    case $ is Red -> false
+    case x is Custom -> {
+      var a = x.a
+      match x {
+        case $ is Custom -> {
+          var t = $.t
+          t == 0xFF0000
+        }
+        else -> false
       }
+    }
     else -> false
   }
 }

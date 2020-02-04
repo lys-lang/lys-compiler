@@ -12,3 +12,15 @@ enum Color {
     else -> false
   }
 }
+
+
+#[export] fun isRedish(x: Color): boolean = {
+  match x {
+    case is Red -> true
+    case x is Custom(a) -> match x {
+      case is Custom(t) -> t == 0xFF0000
+      else -> false
+    }
+    else -> false
+  }
+}

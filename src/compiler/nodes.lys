@@ -501,13 +501,13 @@ impl CodeNode {
         }
         sb.append(" is ")
         printNode(typeReference, sb, indentation)
-        if (!(headDeconstruct is EmptyNode)) {
-          sb.append("(")
-          printWithSeparator(headDeconstruct, sb, indentation, ", ")
-          sb.append(")")
-        }
+        // if (!(headDeconstruct is EmptyNode)) {
+        //   sb.append(" /* (")
+        //   printWithSeparator(headDeconstruct, sb, indentation, ", ")
+        //   sb.append(") */")
+        // }
         sb.append(" -> ")
-        printNode(body, sb, indentation + 1)
+        printNode(body, sb, indentation)
       }
       case is MatchLiteralNode(astNode, literal, body) -> {
         sb.append("case")

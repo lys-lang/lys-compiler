@@ -194,12 +194,12 @@ impl Empty {
 fun sum(arg: Tree): i32 = {
   match arg {
     case $ is Empty -> 0
-    case $ is Node(value, left, right) -> {
-        var value = $.value
-        var left = $.left
-        var right = $.right
-        value + sum(left) + sum(right)
-      }
+    case $ is Node -> {
+      var value = $.value
+      var left = $.left
+      var right = $.right
+      value + sum(left) + sum(right)
+    }
   }
 }
 

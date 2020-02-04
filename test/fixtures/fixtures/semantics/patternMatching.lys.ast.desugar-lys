@@ -399,14 +399,14 @@ fun isComplex(number: Number): boolean = match number {
     case x is Real -> false
     case x is Infinity -> false
     case $ is Infinity -> false
-    case aNaturalNumber is Natural(x) -> {
-        var x = aNaturalNumber.x
-        x == 0
-      }
-    case $ is Complex(_, imaginary) -> {
-        var imaginary = $.imaginary
-        imaginary != 0.0
-      }
+    case aNaturalNumber is Natural -> {
+      var x = aNaturalNumber.x
+      x == 0
+    }
+    case $ is Complex -> {
+      var imaginary = $.imaginary
+      imaginary != 0.0
+    }
     else -> false
   }
 

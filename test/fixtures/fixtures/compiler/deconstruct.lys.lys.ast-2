@@ -1762,3 +1762,76 @@
           |-MatchDefaultNode
             |-EmptyNode
             |-BooleanLiteralNode value=false
+  |-FunDirectiveNode
+    |-DecoratorNode
+      |-NameIdentifierNode name=export
+      |-EmptyNode
+    |-NoModifierNode
+    |-FunctionNode
+      |-NameIdentifierNode name=isRedish
+      |-ParameterNode
+        |-NameIdentifierNode name=x
+        |-ReferenceNode
+          |-QNameNode
+            |-NameIdentifierNode name=Color
+      |-ReferenceNode
+        |-QNameNode
+          |-NameIdentifierNode name=boolean
+      |-BlockNode
+        |-PatternMatcherNode
+          |-ReferenceNode
+            |-QNameNode
+              |-NameIdentifierNode name=x
+          |-MatchCaseIsNode
+            |-NameIdentifierNode name=$
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Red
+            |-EmptyNode
+            |-BooleanLiteralNode value=false
+          |-MatchCaseIsNode
+            |-NameIdentifierNode name=x
+            |-ReferenceNode
+              |-QNameNode
+                |-NameIdentifierNode name=Custom
+            |-NameIdentifierNode name=a
+            |-BlockNode
+              |-VarDeclarationNode
+                |-NameIdentifierNode name=a
+                |-EmptyNode
+                |-MemberNode operator=.
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=x
+                  |-NameIdentifierNode name=a
+              |-PatternMatcherNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=x
+                |-MatchCaseIsNode
+                  |-NameIdentifierNode name=$
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=Custom
+                  |-NameIdentifierNode name=t
+                  |-BlockNode
+                    |-VarDeclarationNode
+                      |-NameIdentifierNode name=t
+                      |-EmptyNode
+                      |-MemberNode operator=.
+                        |-ReferenceNode
+                          |-QNameNode
+                            |-NameIdentifierNode name=$
+                        |-NameIdentifierNode name=t
+                    |-BinaryExpressionNode
+                      |-ReferenceNode
+                        |-QNameNode
+                          |-NameIdentifierNode name=t
+                      |-NameIdentifierNode name===
+                      |-FloatLiteralNode value=0xFF0000
+                |-MatchDefaultNode
+                  |-EmptyNode
+                  |-BooleanLiteralNode value=false
+          |-MatchDefaultNode
+            |-EmptyNode
+            |-BooleanLiteralNode value=false

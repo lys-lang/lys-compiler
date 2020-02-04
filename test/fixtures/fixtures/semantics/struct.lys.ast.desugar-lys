@@ -391,12 +391,12 @@ impl Complex {
 }
 
 fun isComplex(number: Number): boolean = match number {
-    case $ is Real(_) -> false
-    case $ is Natural(_) -> false
-    case $ is Complex(_, imaginary) -> {
-        var imaginary = $.imaginary
-        imaginary != 0.0
-      }
+    case $ is Real -> false
+    case $ is Natural -> false
+    case $ is Complex -> {
+      var imaginary = $.imaginary
+      imaginary != 0.0
+    }
     else -> false
   }
 

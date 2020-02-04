@@ -267,11 +267,11 @@ fun test(from: i32, to: i32): i32 = {
   var $iter$ = Iterator(from, to)
   loop {
     match Iterator.next($iter$) {
-      case $ is Some(value) -> {
-          var value = $.value
-          ret = ret + value
-          continue
-        }
+      case $ is Some -> {
+        var value = $.value
+        ret = ret + value
+        continue
+      }
       case $ is None -> continue
     }
   }
