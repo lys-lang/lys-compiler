@@ -1,4 +1,4 @@
-|-Document(0,714)
+|-Document(0,719)
   |-(AstCons)
     |-(AstCons)
       |-(AstCons)
@@ -4733,14 +4733,14 @@
                                                                       |-NameIdentifier(2575,2579)
                                                                         |-Identifier=$lhs
                   |-EndOfFile=
-        |-FunctionDirective(92,252)
+        |-FunctionDirective(92,257)
           |-(AstCons)
             |-Decorators(92,92)
               <Rule0>
             |-(AstCons)
               |-NoModifier(92,92)
                 <Rule0>
-              |-FunDeclaration(92,252)
+              |-FunDeclaration(92,257)
                 |-(AstCons)
                   |-NameIdentifier(96,101)
                     |-Identifier=isRed
@@ -4764,21 +4764,22 @@
                             |-QName(117,124)
                               |-NameIdentifier(117,124)
                                 |-Identifier=boolean
-                        |-FunctionBody(125,252)
-                          |-CodeBlock(127,252)
-                            |-MatchExpression(131,250)
+                        |-FunctionBody(125,257)
+                          |-CodeBlock(127,257)
+                            |-MatchExpression(131,255)
                               |-(AstCons)
                                 |-Reference(137,142)
                                   |-QName(137,142)
                                     |-NameIdentifier(137,142)
                                       |-Identifier=color
-                                |-MatchBody(143,250)
+                                |-MatchBody(143,255)
                                   |-(AstCons)
                                     |-(AstCons)
                                       |-CaseIs(149,168)
                                         |-(AstCons)
                                           |-DeclaredName(154,154)
-                                            <Rule0>
+                                            |-NameIdentifier(154,154)
+                                              |-Identifier=$
                                           |-(AstCons)
                                             |-ReferencedType(154,160)
                                               |-Reference(157,160)
@@ -4790,114 +4791,166 @@
                                                 <Rule0>
                                               |-BooleanLiteral(164,168)
                                                 <Rule0>
-                                      |-CaseIs(173,228)
+                                      |-CaseIs(173,233)
                                         |-(AstCons)
-                                          |-DeclaredName(178,178)
-                                            <Rule0>
+                                          |-DeclaredName(178,183)
+                                            |-NameIdentifier(178,182)
+                                              |-Identifier=test
                                           |-(AstCons)
-                                            |-ReferencedType(178,187)
-                                              |-Reference(181,187)
-                                                |-QName(181,187)
-                                                  |-NameIdentifier(181,187)
+                                            |-ReferencedType(183,192)
+                                              |-Reference(186,192)
+                                                |-QName(186,192)
+                                                  |-NameIdentifier(186,192)
                                                     |-Identifier=Custom
                                             |-(AstCons)
-                                              |-Destructure(187,197)
-                                                |-DestructureStruct(187,197)
-                                                  |-(AstCons)
-                                                    |-NameIdentifier(188,189)
-                                                      |-Identifier=r
-                                                    |-(AstCons)
-                                                      |-NameIdentifier(191,192)
-                                                        |-Identifier=g
-                                                      |-NameIdentifier(194,195)
-                                                        |-Identifier=b
-                                              |-BinaryOpExpression(200,228)
+                                              |-Destructure(192,202)
                                                 |-(AstCons)
-                                                  |-BinaryOpExpression(200,208)
-                                                    |-(AstCons)
-                                                      |-Reference(200,201)
-                                                        |-QName(200,201)
-                                                          |-NameIdentifier(200,201)
-                                                            |-Identifier=r
-                                                      |-Op(201,208)
-                                                        |-(AstCons)
-                                                          |-Operator===
-                                                          |-NumberLiteral=255
+                                                  |-NameIdentifier(193,194)
+                                                    |-Identifier=r
                                                   |-(AstCons)
-                                                    |-Op(208,218)
+                                                    |-NameIdentifier(196,197)
+                                                      |-Identifier=g
+                                                    |-NameIdentifier(199,200)
+                                                      |-Identifier=b
+                                              |-CodeBlock(0,0)
+                                                |-(AstCons)
+                                                  |-ValDeclaration(0,0)
+                                                    |-(AstCons)
+                                                      |-NameIdentifier(193,194)
+                                                        |-Identifier=r
+                                                      |-AtomicExpression(0,0)
+                                                        |-(AstCons)
+                                                          |-Reference(0,0)
+                                                            |-QName(0,0)
+                                                              |-NameIdentifier(178,182)
+                                                                |-Identifier=test
+                                                          |-MemberExpression(0,0)
+                                                            |-(AstCons)
+                                                              |-Operator(0,0)
+                                                                |-Operator=.
+                                                              |-NameIdentifier(193,194)
+                                                                |-Identifier=r
+                                                  |-(AstCons)
+                                                    |-ValDeclaration(0,0)
                                                       |-(AstCons)
-                                                        |-Operator=&&
-                                                        |-BinaryOpExpression(212,218)
+                                                        |-NameIdentifier(196,197)
+                                                          |-Identifier=g
+                                                        |-AtomicExpression(0,0)
                                                           |-(AstCons)
-                                                            |-Reference(212,213)
-                                                              |-QName(212,213)
-                                                                |-NameIdentifier(212,213)
+                                                            |-Reference(0,0)
+                                                              |-QName(0,0)
+                                                                |-NameIdentifier(178,182)
+                                                                  |-Identifier=test
+                                                            |-MemberExpression(0,0)
+                                                              |-(AstCons)
+                                                                |-Operator(0,0)
+                                                                  |-Operator=.
+                                                                |-NameIdentifier(196,197)
                                                                   |-Identifier=g
-                                                            |-Op(213,218)
-                                                              |-(AstCons)
-                                                                |-Operator===
-                                                                |-NumberLiteral=0
-                                                    |-Op(218,228)
-                                                      |-(AstCons)
-                                                        |-Operator=&&
-                                                        |-BinaryOpExpression(222,228)
+                                                    |-(AstCons)
+                                                      |-ValDeclaration(0,0)
+                                                        |-(AstCons)
+                                                          |-NameIdentifier(199,200)
+                                                            |-Identifier=b
+                                                          |-AtomicExpression(0,0)
+                                                            |-(AstCons)
+                                                              |-Reference(0,0)
+                                                                |-QName(0,0)
+                                                                  |-NameIdentifier(178,182)
+                                                                    |-Identifier=test
+                                                              |-MemberExpression(0,0)
+                                                                |-(AstCons)
+                                                                  |-Operator(0,0)
+                                                                    |-Operator=.
+                                                                  |-NameIdentifier(199,200)
+                                                                    |-Identifier=b
+                                                      |-BinaryOpExpression(205,233)
+                                                        |-(AstCons)
+                                                          |-BinaryOpExpression(205,213)
+                                                            |-(AstCons)
+                                                              |-Reference(205,206)
+                                                                |-QName(205,206)
+                                                                  |-NameIdentifier(205,206)
+                                                                    |-Identifier=r
+                                                              |-Op(206,213)
+                                                                |-(AstCons)
+                                                                  |-Operator===
+                                                                  |-NumberLiteral=255
                                                           |-(AstCons)
-                                                            |-Reference(222,223)
-                                                              |-QName(222,223)
-                                                                |-NameIdentifier(222,223)
-                                                                  |-Identifier=b
-                                                            |-Op(223,228)
+                                                            |-Op(213,223)
                                                               |-(AstCons)
-                                                                |-Operator===
-                                                                |-NumberLiteral=0
-                                    |-CaseElse(233,246)
+                                                                |-Operator=&&
+                                                                |-BinaryOpExpression(217,223)
+                                                                  |-(AstCons)
+                                                                    |-Reference(217,218)
+                                                                      |-QName(217,218)
+                                                                        |-NameIdentifier(217,218)
+                                                                          |-Identifier=g
+                                                                    |-Op(218,223)
+                                                                      |-(AstCons)
+                                                                        |-Operator===
+                                                                        |-NumberLiteral=0
+                                                            |-Op(223,233)
+                                                              |-(AstCons)
+                                                                |-Operator=&&
+                                                                |-BinaryOpExpression(227,233)
+                                                                  |-(AstCons)
+                                                                    |-Reference(227,228)
+                                                                      |-QName(227,228)
+                                                                        |-NameIdentifier(227,228)
+                                                                          |-Identifier=b
+                                                                    |-Op(228,233)
+                                                                      |-(AstCons)
+                                                                        |-Operator===
+                                                                        |-NumberLiteral=0
+                                    |-CaseElse(238,251)
                                       |-(AstCons)
-                                        |-DeclaredName(238,238)
+                                        |-DeclaredName(243,243)
                                           <Rule0>
-                                        |-BooleanLiteral(241,246)
+                                        |-BooleanLiteral(246,251)
                                           <Rule0>
-      |-FunctionDirective(254,714)
+      |-FunctionDirective(259,719)
         |-(AstCons)
-          |-Decorators(254,264)
-            |-Decorator(254,264)
-              |-NameIdentifier(256,262)
+          |-Decorators(259,269)
+            |-Decorator(259,269)
+              |-NameIdentifier(261,267)
                 |-Identifier=export
           |-(AstCons)
-            |-NoModifier(264,264)
+            |-NoModifier(269,269)
               <Rule0>
-            |-FunDeclaration(264,714)
+            |-FunDeclaration(269,719)
               |-(AstCons)
-                |-NameIdentifier(268,272)
+                |-NameIdentifier(273,277)
                   |-Identifier=main
                 |-(AstCons)
-                  |-TypeParameters(272,272)
+                  |-TypeParameters(277,277)
                     <Rule0>
                   |-(AstCons)
-                    |-FunctionParamsList(272,274)
-                      |-(List)(273,273)
+                    |-FunctionParamsList(277,279)
+                      |-(List)(278,278)
                         <Rule0>
                     |-(AstCons)
-                      |-ReturnType(274,281)
-                        |-Reference(276,280)
-                          |-QName(276,280)
-                            |-NameIdentifier(276,280)
+                      |-ReturnType(279,286)
+                        |-Reference(281,285)
+                          |-QName(281,285)
+                            |-NameIdentifier(281,285)
                               |-Identifier=void
-                      |-FunctionBody(281,714)
-                        |-CodeBlock(283,714)
+                      |-FunctionBody(286,719)
+                        |-CodeBlock(288,719)
                           |-(AstCons)
-                            |-AtomicExpression(287,344)
+                            |-AtomicExpression(292,349)
                               |-(AstCons)
-                                |-Reference(287,307)
-                                  |-QName(287,307)
+                                |-Reference(292,312)
+                                  |-QName(292,312)
                                     |-(AstCons)
-                                      |-NameIdentifier(287,294)
+                                      |-NameIdentifier(292,299)
                                         |-Identifier=support
                                       |-(AstCons)
-                                        |-NameIdentifier(296,300)
+                                        |-NameIdentifier(301,305)
                                           |-Identifier=test
-                                        |-NameIdentifier(302,307)
+                                        |-NameIdentifier(307,312)
                                           |-Identifier=START
-                                |-CallArguments(307,344)
+                                |-CallArguments(312,349)
                                   |-StringLiteral="pattern matching with deconstruct"
                             |-(AstCons)
                               |-(AstCons)
@@ -4905,180 +4958,180 @@
                                   |-(AstCons)
                                     |-(AstCons)
                                       |-(AstCons)
-                                        |-AtomicExpression(348,389)
+                                        |-AtomicExpression(353,394)
                                           |-(AstCons)
-                                            |-Reference(348,357)
-                                              |-QName(348,357)
-                                                |-NameIdentifier(348,357)
+                                            |-Reference(353,362)
+                                              |-QName(353,362)
+                                                |-NameIdentifier(353,362)
                                                   |-Identifier=mustEqual
-                                            |-CallArguments(357,389)
+                                            |-CallArguments(362,394)
                                               |-(AstCons)
-                                                |-AtomicExpression(358,368)
+                                                |-AtomicExpression(363,373)
                                                   |-(AstCons)
-                                                    |-Reference(358,363)
-                                                      |-QName(358,363)
-                                                        |-NameIdentifier(358,363)
+                                                    |-Reference(363,368)
+                                                      |-QName(363,368)
+                                                        |-NameIdentifier(363,368)
                                                           |-Identifier=isRed
-                                                    |-CallArguments(363,368)
-                                                      |-Reference(364,367)
-                                                        |-QName(364,367)
-                                                          |-NameIdentifier(364,367)
+                                                    |-CallArguments(368,373)
+                                                      |-Reference(369,372)
+                                                        |-QName(369,372)
+                                                          |-NameIdentifier(369,372)
                                                             |-Identifier=Red
                                                 |-(AstCons)
-                                                  |-BooleanLiteral(370,374)
+                                                  |-BooleanLiteral(375,379)
                                                     <Rule0>
                                                   |-StringLiteral="isRed(Red)"
-                                        |-AtomicExpression(392,438)
+                                        |-AtomicExpression(397,443)
                                           |-(AstCons)
-                                            |-Reference(392,401)
-                                              |-QName(392,401)
-                                                |-NameIdentifier(392,401)
+                                            |-Reference(397,406)
+                                              |-QName(397,406)
+                                                |-NameIdentifier(397,406)
                                                   |-Identifier=mustEqual
-                                            |-CallArguments(401,438)
+                                            |-CallArguments(406,443)
                                               |-(AstCons)
-                                                |-AtomicExpression(402,414)
+                                                |-AtomicExpression(407,419)
                                                   |-(AstCons)
-                                                    |-Reference(402,407)
-                                                      |-QName(402,407)
-                                                        |-NameIdentifier(402,407)
+                                                    |-Reference(407,412)
+                                                      |-QName(407,412)
+                                                        |-NameIdentifier(407,412)
                                                           |-Identifier=isRed
-                                                    |-CallArguments(407,414)
-                                                      |-Reference(408,413)
-                                                        |-QName(408,413)
-                                                          |-NameIdentifier(408,413)
+                                                    |-CallArguments(412,419)
+                                                      |-Reference(413,418)
+                                                        |-QName(413,418)
+                                                          |-NameIdentifier(413,418)
                                                             |-Identifier=Green
                                                 |-(AstCons)
-                                                  |-BooleanLiteral(416,421)
+                                                  |-BooleanLiteral(421,426)
                                                     <Rule0>
                                                   |-StringLiteral="isRed(Green)"
-                                      |-AtomicExpression(441,485)
+                                      |-AtomicExpression(446,490)
                                         |-(AstCons)
-                                          |-Reference(441,450)
-                                            |-QName(441,450)
-                                              |-NameIdentifier(441,450)
+                                          |-Reference(446,455)
+                                            |-QName(446,455)
+                                              |-NameIdentifier(446,455)
                                                 |-Identifier=mustEqual
-                                          |-CallArguments(450,485)
+                                          |-CallArguments(455,490)
                                             |-(AstCons)
-                                              |-AtomicExpression(451,462)
+                                              |-AtomicExpression(456,467)
                                                 |-(AstCons)
-                                                  |-Reference(451,456)
-                                                    |-QName(451,456)
-                                                      |-NameIdentifier(451,456)
+                                                  |-Reference(456,461)
+                                                    |-QName(456,461)
+                                                      |-NameIdentifier(456,461)
                                                         |-Identifier=isRed
-                                                  |-CallArguments(456,462)
-                                                    |-Reference(457,461)
-                                                      |-QName(457,461)
-                                                        |-NameIdentifier(457,461)
+                                                  |-CallArguments(461,467)
+                                                    |-Reference(462,466)
+                                                      |-QName(462,466)
+                                                        |-NameIdentifier(462,466)
                                                           |-Identifier=Blue
                                               |-(AstCons)
-                                                |-BooleanLiteral(464,469)
+                                                |-BooleanLiteral(469,474)
                                                   <Rule0>
                                                 |-StringLiteral="isRed(Blue)"
-                                    |-AtomicExpression(489,554)
+                                    |-AtomicExpression(494,559)
                                       |-(AstCons)
-                                        |-Reference(489,498)
-                                          |-QName(489,498)
-                                            |-NameIdentifier(489,498)
+                                        |-Reference(494,503)
+                                          |-QName(494,503)
+                                            |-NameIdentifier(494,503)
                                               |-Identifier=mustEqual
-                                        |-CallArguments(498,554)
+                                        |-CallArguments(503,559)
                                           |-(AstCons)
-                                            |-AtomicExpression(499,521)
+                                            |-AtomicExpression(504,526)
                                               |-(AstCons)
-                                                |-Reference(499,504)
-                                                  |-QName(499,504)
-                                                    |-NameIdentifier(499,504)
+                                                |-Reference(504,509)
+                                                  |-QName(504,509)
+                                                    |-NameIdentifier(504,509)
                                                       |-Identifier=isRed
-                                                |-CallArguments(504,521)
-                                                  |-AtomicExpression(505,520)
+                                                |-CallArguments(509,526)
+                                                  |-AtomicExpression(510,525)
                                                     |-(AstCons)
-                                                      |-Reference(505,511)
-                                                        |-QName(505,511)
-                                                          |-NameIdentifier(505,511)
+                                                      |-Reference(510,516)
+                                                        |-QName(510,516)
+                                                          |-NameIdentifier(510,516)
                                                             |-Identifier=Custom
-                                                      |-CallArguments(511,520)
+                                                      |-CallArguments(516,525)
                                                         |-(AstCons)
                                                           |-NumberLiteral=255
                                                           |-(AstCons)
                                                             |-NumberLiteral=0
                                                             |-NumberLiteral=0
                                             |-(AstCons)
-                                              |-BooleanLiteral(523,527)
+                                              |-BooleanLiteral(528,532)
                                                 <Rule0>
                                               |-StringLiteral="isRed(Custom(255,0,0))"
-                                  |-AtomicExpression(557,619)
+                                  |-AtomicExpression(562,624)
                                     |-(AstCons)
-                                      |-Reference(557,566)
-                                        |-QName(557,566)
-                                          |-NameIdentifier(557,566)
+                                      |-Reference(562,571)
+                                        |-QName(562,571)
+                                          |-NameIdentifier(562,571)
                                             |-Identifier=mustEqual
-                                      |-CallArguments(566,619)
+                                      |-CallArguments(571,624)
                                         |-(AstCons)
-                                          |-AtomicExpression(567,587)
+                                          |-AtomicExpression(572,592)
                                             |-(AstCons)
-                                              |-Reference(567,572)
-                                                |-QName(567,572)
-                                                  |-NameIdentifier(567,572)
+                                              |-Reference(572,577)
+                                                |-QName(572,577)
+                                                  |-NameIdentifier(572,577)
                                                     |-Identifier=isRed
-                                              |-CallArguments(572,587)
-                                                |-AtomicExpression(573,586)
+                                              |-CallArguments(577,592)
+                                                |-AtomicExpression(578,591)
                                                   |-(AstCons)
-                                                    |-Reference(573,579)
-                                                      |-QName(573,579)
-                                                        |-NameIdentifier(573,579)
+                                                    |-Reference(578,584)
+                                                      |-QName(578,584)
+                                                        |-NameIdentifier(578,584)
                                                           |-Identifier=Custom
-                                                    |-CallArguments(579,586)
+                                                    |-CallArguments(584,591)
                                                       |-(AstCons)
                                                         |-NumberLiteral=0
                                                         |-(AstCons)
                                                           |-NumberLiteral=1
                                                           |-NumberLiteral=3
                                           |-(AstCons)
-                                            |-BooleanLiteral(589,594)
+                                            |-BooleanLiteral(594,599)
                                               <Rule0>
                                             |-StringLiteral="isRed(Custom(0,1,3))"
-                                |-AtomicExpression(622,688)
+                                |-AtomicExpression(627,693)
                                   |-(AstCons)
-                                    |-Reference(622,631)
-                                      |-QName(622,631)
-                                        |-NameIdentifier(622,631)
+                                    |-Reference(627,636)
+                                      |-QName(627,636)
+                                        |-NameIdentifier(627,636)
                                           |-Identifier=mustEqual
-                                    |-CallArguments(631,688)
+                                    |-CallArguments(636,693)
                                       |-(AstCons)
-                                        |-AtomicExpression(632,654)
+                                        |-AtomicExpression(637,659)
                                           |-(AstCons)
-                                            |-Reference(632,637)
-                                              |-QName(632,637)
-                                                |-NameIdentifier(632,637)
+                                            |-Reference(637,642)
+                                              |-QName(637,642)
+                                                |-NameIdentifier(637,642)
                                                   |-Identifier=isRed
-                                            |-CallArguments(637,654)
-                                              |-AtomicExpression(638,653)
+                                            |-CallArguments(642,659)
+                                              |-AtomicExpression(643,658)
                                                 |-(AstCons)
-                                                  |-Reference(638,644)
-                                                    |-QName(638,644)
-                                                      |-NameIdentifier(638,644)
+                                                  |-Reference(643,649)
+                                                    |-QName(643,649)
+                                                      |-NameIdentifier(643,649)
                                                         |-Identifier=Custom
-                                                  |-CallArguments(644,653)
+                                                  |-CallArguments(649,658)
                                                     |-(AstCons)
                                                       |-NumberLiteral=255
                                                       |-(AstCons)
                                                         |-NumberLiteral=1
                                                         |-NumberLiteral=3
                                         |-(AstCons)
-                                          |-BooleanLiteral(656,661)
+                                          |-BooleanLiteral(661,666)
                                             <Rule0>
                                           |-StringLiteral="isRed(Custom(255,1,3))"
-                              |-AtomicExpression(692,712)
+                              |-AtomicExpression(697,717)
                                 |-(AstCons)
-                                  |-Reference(692,710)
-                                    |-QName(692,710)
+                                  |-Reference(697,715)
+                                    |-QName(697,715)
                                       |-(AstCons)
-                                        |-NameIdentifier(692,699)
+                                        |-NameIdentifier(697,704)
                                           |-Identifier=support
                                         |-(AstCons)
-                                          |-NameIdentifier(701,705)
+                                          |-NameIdentifier(706,710)
                                             |-Identifier=test
-                                          |-NameIdentifier(707,710)
+                                          |-NameIdentifier(712,715)
                                             |-Identifier=END
-                                  |-CallArguments(710,712)
+                                  |-CallArguments(715,717)
                                     <Rule0>
     |-EndOfFile=

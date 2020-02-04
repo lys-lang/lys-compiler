@@ -2489,32 +2489,41 @@
           |-QNameNode
             |-NameIdentifierNode name=number
         |-MatchCaseIsNode
-          |-EmptyNode
+          |-NameIdentifierNode name=$
           |-ReferenceNode
             |-QNameNode
               |-NameIdentifierNode name=Real
           |-NameIdentifierNode name=_
           |-BooleanLiteralNode value=false
         |-MatchCaseIsNode
-          |-EmptyNode
+          |-NameIdentifierNode name=$
           |-ReferenceNode
             |-QNameNode
               |-NameIdentifierNode name=Natural
           |-NameIdentifierNode name=_
           |-BooleanLiteralNode value=false
         |-MatchCaseIsNode
-          |-EmptyNode
+          |-NameIdentifierNode name=$
           |-ReferenceNode
             |-QNameNode
               |-NameIdentifierNode name=Complex
           |-NameIdentifierNode name=_
           |-NameIdentifierNode name=imaginary
-          |-BinaryExpressionNode
-            |-ReferenceNode
-              |-QNameNode
+          |-BlockNode
+            |-VarDeclarationNode
+              |-NameIdentifierNode name=imaginary
+              |-EmptyNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=$
                 |-NameIdentifierNode name=imaginary
-            |-NameIdentifierNode name=!=
-            |-FloatLiteralNode value=0.0
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=imaginary
+              |-NameIdentifierNode name=!=
+              |-FloatLiteralNode value=0.0
         |-MatchDefaultNode
           |-EmptyNode
           |-BooleanLiteralNode value=false

@@ -318,7 +318,7 @@ impl Custom {
 #[export]
 fun isRed(color: Color): boolean = {
   match color {
-    case is Red -> false
+    case $ is Red -> false
     else -> false
   }
 }

@@ -1306,25 +1306,58 @@
             |-QNameNode
               |-NameIdentifierNode name=arg
           |-MatchCaseIsNode
-            |-EmptyNode
+            |-NameIdentifierNode name=$
             |-ReferenceNode
               |-QNameNode
                 |-NameIdentifierNode name=Empty
             |-EmptyNode
             |-FloatLiteralNode value=0
           |-MatchCaseIsNode
-            |-EmptyNode
+            |-NameIdentifierNode name=$
             |-ReferenceNode
               |-QNameNode
                 |-NameIdentifierNode name=Node
             |-NameIdentifierNode name=value
             |-NameIdentifierNode name=left
             |-NameIdentifierNode name=right
-            |-BinaryExpressionNode
+            |-BlockNode
+              |-VarDeclarationNode
+                |-NameIdentifierNode name=value
+                |-EmptyNode
+                |-MemberNode operator=.
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=$
+                  |-NameIdentifierNode name=value
+              |-VarDeclarationNode
+                |-NameIdentifierNode name=left
+                |-EmptyNode
+                |-MemberNode operator=.
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=$
+                  |-NameIdentifierNode name=left
+              |-VarDeclarationNode
+                |-NameIdentifierNode name=right
+                |-EmptyNode
+                |-MemberNode operator=.
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=$
+                  |-NameIdentifierNode name=right
               |-BinaryExpressionNode
-                |-ReferenceNode
-                  |-QNameNode
-                    |-NameIdentifierNode name=value
+                |-BinaryExpressionNode
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=value
+                  |-NameIdentifierNode name=+
+                  |-FunctionCallNode
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=sum
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=left
                 |-NameIdentifierNode name=+
                 |-FunctionCallNode
                   |-ReferenceNode
@@ -1332,15 +1365,7 @@
                       |-NameIdentifierNode name=sum
                   |-ReferenceNode
                     |-QNameNode
-                      |-NameIdentifierNode name=left
-              |-NameIdentifierNode name=+
-              |-FunctionCallNode
-                |-ReferenceNode
-                  |-QNameNode
-                    |-NameIdentifierNode name=sum
-                |-ReferenceNode
-                  |-QNameNode
-                    |-NameIdentifierNode name=right
+                      |-NameIdentifierNode name=right
   |-FunDirectiveNode
     |-DecoratorNode
       |-NameIdentifierNode name=export

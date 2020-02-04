@@ -1732,24 +1732,33 @@
             |-QNameNode
               |-NameIdentifierNode name=x
           |-MatchCaseIsNode
-            |-EmptyNode
+            |-NameIdentifierNode name=$
             |-ReferenceNode
               |-QNameNode
                 |-NameIdentifierNode name=Red
             |-EmptyNode
             |-BooleanLiteralNode value=false
           |-MatchCaseIsNode
-            |-EmptyNode
+            |-NameIdentifierNode name=$
             |-ReferenceNode
               |-QNameNode
                 |-NameIdentifierNode name=Custom
             |-NameIdentifierNode name=a
-            |-BinaryExpressionNode
-              |-ReferenceNode
-                |-QNameNode
+            |-BlockNode
+              |-VarDeclarationNode
+                |-NameIdentifierNode name=a
+                |-EmptyNode
+                |-MemberNode operator=.
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=$
                   |-NameIdentifierNode name=a
-              |-NameIdentifierNode name===
-              |-FloatLiteralNode value=0xFF0000
+              |-BinaryExpressionNode
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=a
+                |-NameIdentifierNode name===
+                |-FloatLiteralNode value=0xFF0000
           |-MatchDefaultNode
             |-EmptyNode
             |-BooleanLiteralNode value=false

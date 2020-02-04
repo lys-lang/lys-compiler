@@ -6697,7 +6697,7 @@
           |-QNameNode
             |-NameIdentifierNode name=a
         |-MatchCaseIsNode
-          |-EmptyNode
+          |-NameIdentifierNode name=$
           |-ReferenceNode
             |-QNameNode
               |-NameIdentifierNode name=True
@@ -8475,12 +8475,20 @@
                   |-QNameNode
                     |-NameIdentifierNode name=$iter$
               |-MatchCaseIsNode
-                |-EmptyNode
+                |-NameIdentifierNode name=$
                 |-ReferenceNode
                   |-QNameNode
                     |-NameIdentifierNode name=Some
                 |-NameIdentifierNode name=value
                 |-BlockNode
+                  |-VarDeclarationNode
+                    |-NameIdentifierNode name=value
+                    |-EmptyNode
+                    |-MemberNode operator=.
+                      |-ReferenceNode
+                        |-QNameNode
+                          |-NameIdentifierNode name=$
+                      |-NameIdentifierNode name=value
                   |-BinaryExpressionNode
                     |-ReferenceNode
                       |-QNameNode
@@ -8496,7 +8504,7 @@
                           |-NameIdentifierNode name=value
                   |-ContinueNode
               |-MatchCaseIsNode
-                |-EmptyNode
+                |-NameIdentifierNode name=$
                 |-ReferenceNode
                   |-QNameNode
                     |-NameIdentifierNode name=None

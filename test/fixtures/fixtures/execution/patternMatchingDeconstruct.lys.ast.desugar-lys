@@ -319,8 +319,13 @@ impl Custom {
 
 fun isRed(color: Color): boolean = {
   match color {
-    case is Red -> false
-    case is Custom(r, g, b) -> r == 255 && g == 0 && b == 0
+    case $ is Red -> false
+    case test is Custom(r, g, b) -> {
+        var r = test.r
+        var g = test.g
+        var b = test.b
+        r == 255 && g == 0 && b == 0
+      }
     else -> false
   }
 }

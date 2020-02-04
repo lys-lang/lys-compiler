@@ -403,7 +403,7 @@ fun getGrammar(): Grammar = {
         // Pattern matching
         Nominal("MatchBody", Push("MatchBody", Wrap(CurlyBracesOpen, Cons(WS, ZeroOrMore(n("MatchElements"))), CurlyBracesClose))) ++
 
-        Nominal("DestructureStruct", Push("DestructureStruct", Cons(Wrap(ParenthesesOpen, Optional(OneOrMoreComma(n("NameIdentifier"))), ParenthesesClose), WS))) ++
+        Nominal("DestructureStruct", Cons(Wrap(ParenthesesOpen, Optional(OneOrMoreComma(n("NameIdentifier"))), ParenthesesClose), WS)) ++
 
         // Function call
         Nominal("CallArguments", Push("CallArguments",  Wrap(ParenthesesOpen, Optional(OneOrMoreComma(n("Expression"))), ParenthesesClose))) ++

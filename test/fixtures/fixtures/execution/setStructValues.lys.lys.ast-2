@@ -3413,6 +3413,14 @@
                   |-NameIdentifierNode name=Custom
               |-NameIdentifierNode name=hex
               |-BlockNode
+                |-VarDeclarationNode
+                  |-NameIdentifierNode name=hex
+                  |-EmptyNode
+                  |-MemberNode operator=.
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=x
+                    |-NameIdentifierNode name=hex
                 |-FunctionCallNode
                   |-ReferenceNode
                     |-QNameNode

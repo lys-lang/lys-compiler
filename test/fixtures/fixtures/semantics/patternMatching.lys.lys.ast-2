@@ -2526,7 +2526,7 @@
           |-EmptyNode
           |-BooleanLiteralNode value=false
         |-MatchCaseIsNode
-          |-EmptyNode
+          |-NameIdentifierNode name=$
           |-ReferenceNode
             |-QNameNode
               |-NameIdentifierNode name=Infinity
@@ -2539,6 +2539,14 @@
               |-NameIdentifierNode name=Natural
           |-NameIdentifierNode name=x
           |-BlockNode
+            |-VarDeclarationNode
+              |-NameIdentifierNode name=x
+              |-EmptyNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=aNaturalNumber
+                |-NameIdentifierNode name=x
             |-BinaryExpressionNode
               |-ReferenceNode
                 |-QNameNode
@@ -2546,18 +2554,27 @@
               |-NameIdentifierNode name===
               |-FloatLiteralNode value=0
         |-MatchCaseIsNode
-          |-EmptyNode
+          |-NameIdentifierNode name=$
           |-ReferenceNode
             |-QNameNode
               |-NameIdentifierNode name=Complex
           |-NameIdentifierNode name=_
           |-NameIdentifierNode name=imaginary
-          |-BinaryExpressionNode
-            |-ReferenceNode
-              |-QNameNode
+          |-BlockNode
+            |-VarDeclarationNode
+              |-NameIdentifierNode name=imaginary
+              |-EmptyNode
+              |-MemberNode operator=.
+                |-ReferenceNode
+                  |-QNameNode
+                    |-NameIdentifierNode name=$
                 |-NameIdentifierNode name=imaginary
-            |-NameIdentifierNode name=!=
-            |-FloatLiteralNode value=0.0
+            |-BinaryExpressionNode
+              |-ReferenceNode
+                |-QNameNode
+                  |-NameIdentifierNode name=imaginary
+              |-NameIdentifierNode name=!=
+              |-FloatLiteralNode value=0.0
         |-MatchDefaultNode
           |-EmptyNode
           |-BooleanLiteralNode value=false

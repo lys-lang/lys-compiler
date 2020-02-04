@@ -4033,7 +4033,8 @@
                                               |-CaseIs(609,685)
                                                 |-(AstCons)
                                                   |-DeclaredName(614,614)
-                                                    <Rule0>
+                                                    |-NameIdentifier(614,614)
+                                                      |-Identifier=$
                                                   |-(AstCons)
                                                     |-ReferencedType(614,621)
                                                       |-Reference(617,621)
@@ -4042,39 +4043,56 @@
                                                             |-Identifier=Some
                                                     |-(AstCons)
                                                       |-Destructure(621,629)
-                                                        |-DestructureStruct(621,629)
-                                                          |-NameIdentifier(622,627)
-                                                            |-Identifier=value
+                                                        |-NameIdentifier(622,627)
+                                                          |-Identifier=value
                                                       |-CodeBlock(632,685)
                                                         |-(AstCons)
-                                                          |-BinaryOpExpression(642,659)
+                                                          |-ValDeclaration(0,0)
                                                             |-(AstCons)
-                                                              |-Reference(642,645)
-                                                                |-QName(642,645)
-                                                                  |-NameIdentifier(642,645)
-                                                                    |-Identifier=ret
-                                                              |-Op(645,659)
+                                                              |-NameIdentifier(622,627)
+                                                                |-Identifier=value
+                                                              |-AtomicExpression(0,0)
                                                                 |-(AstCons)
-                                                                  |-Operator==
-                                                                  |-BinaryOpExpression(648,659)
+                                                                  |-Reference(0,0)
+                                                                    |-QName(0,0)
+                                                                      |-NameIdentifier(614,614)
+                                                                        |-Identifier=$
+                                                                  |-MemberExpression(0,0)
                                                                     |-(AstCons)
-                                                                      |-Reference(648,651)
-                                                                        |-QName(648,651)
-                                                                          |-NameIdentifier(648,651)
-                                                                            |-Identifier=ret
-                                                                      |-Op(651,659)
-                                                                        |-(AstCons)
-                                                                          |-Operator=+
-                                                                          |-Reference(654,659)
-                                                                            |-QName(654,659)
-                                                                              |-NameIdentifier(654,659)
-                                                                                |-Identifier=value
-                                                          |-ContinueStatement(669,677)
-                                                            <Rule0>
+                                                                      |-Operator(0,0)
+                                                                        |-Operator=.
+                                                                      |-NameIdentifier(622,627)
+                                                                        |-Identifier=value
+                                                          |-(AstCons)
+                                                            |-BinaryOpExpression(642,659)
+                                                              |-(AstCons)
+                                                                |-Reference(642,645)
+                                                                  |-QName(642,645)
+                                                                    |-NameIdentifier(642,645)
+                                                                      |-Identifier=ret
+                                                                |-Op(645,659)
+                                                                  |-(AstCons)
+                                                                    |-Operator==
+                                                                    |-BinaryOpExpression(648,659)
+                                                                      |-(AstCons)
+                                                                        |-Reference(648,651)
+                                                                          |-QName(648,651)
+                                                                            |-NameIdentifier(648,651)
+                                                                              |-Identifier=ret
+                                                                        |-Op(651,659)
+                                                                          |-(AstCons)
+                                                                            |-Operator=+
+                                                                            |-Reference(654,659)
+                                                                              |-QName(654,659)
+                                                                                |-NameIdentifier(654,659)
+                                                                                  |-Identifier=value
+                                                            |-ContinueStatement(669,677)
+                                                              <Rule0>
                                               |-CaseIs(692,713)
                                                 |-(AstCons)
                                                   |-DeclaredName(697,697)
-                                                    <Rule0>
+                                                    |-NameIdentifier(697,697)
+                                                      |-Identifier=$
                                                   |-(AstCons)
                                                     |-ReferencedType(697,704)
                                                       |-Reference(700,704)

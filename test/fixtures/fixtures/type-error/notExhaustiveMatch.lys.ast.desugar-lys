@@ -215,18 +215,18 @@ impl Blue {
 }
 
 fun test(x: color): color = match x {
-    case is Red -> Red
-    case is Green -> Green
+    case $ is Red -> Red
+    case $ is Green -> Green
   }
 
 fun test1(x: color): color = match x {
-    case is Red -> Red
-    case is Green -> Green
-    case is Blue -> Blue
+    case $ is Red -> Red
+    case $ is Green -> Green
+    case $ is Blue -> Blue
   }
 
 fun test3(x: color): color = match x {
-    case is Red -> Red
+    case $ is Red -> Red
     else -> Blue
   }
 

@@ -32,6 +32,19 @@ private fun desugar(currentPath: string, currentModule: string, astNode: AstNode
       desugar(currentPath, currentModule, newNode, ctx)
     }
     case "StructDirective" -> desugar(currentPath, currentModule, child, ctx)
+    case "CaseIs" -> {
+      var newChild = desugar(
+        currentPath,
+        currentModule,
+        processDestructure(currentPath, currentModule, child, ctx),
+        ctx
+      )
+
+      if (newChild == child)
+        node
+      else
+        Node(name, newChild, start, end)
+    }
     case "TypeDirective" -> {
       val modifier = first(child)
       val resto = rest(child)
@@ -360,6 +373,108 @@ fun appendUnionImpls(sb: StringBuilder, unionName: string, node: AstNode): void 
       }
     }
     else -> {/*this must be here because of a bug in the pattern matching*/}
+  }
+}
+
+
+fun appendDestructureDeclaration(varNameIdentifier: AstNode, headReference: AstNode, wrappedNode: AstNode): AstNode = {
+  match headReference {
+    case is AstCons(head, tail) -> {
+      appendDestructureDeclaration(varNameIdentifier, head, appendDestructureDeclaration(varNameIdentifier, tail, wrappedNode))
+    }
+    case is Node(name, child) -> {
+      if (name == "NameIdentifier") {
+        val referenceName = textOf(child)
+        if (referenceName != "_") {
+          val reference = Node("Reference", Node("QName", varNameIdentifier, 0x0, 0x0), 0x0, 0x0)
+
+          val decl = Node("ValDeclaration", 
+            AstCons(
+              headReference,
+              Node("AtomicExpression", AstCons(
+                reference,
+                Node("MemberExpression", AstCons(
+                  Node("Operator", Leaf(Token(Operator, 0x0, 0x0), "."), 0x0, 0x0),
+                  headReference
+                ), 0x0, 0x0)
+              ), 0x0, 0x0)
+          ), 0x0, 0x0)
+
+          match wrappedNode {
+            case is Node(name, start, end) -> {
+              if (name == "CodeBlock") {
+                Node("CodeBlock", AstCons(decl, getChild(wrappedNode)), start, end)
+              } else {
+                Node("CodeBlock", AstCons(decl, wrappedNode), 0x0, 0x0)
+              }
+            }
+            else -> Node("CodeBlock", AstCons(decl, wrappedNode), 0x0, 0x0)
+          }
+          
+        } else {
+          wrappedNode
+        }
+      } else {
+        wrappedNode
+      }
+    }
+    else -> wrappedNode
+  }
+}
+
+fun processDestructure(currentPath: string, currentModule: string, patternMatcher: AstNode, ctx: CompilerContext): AstNode = {
+
+  // Pattern matching destructuring is purely sugar syntax.
+
+  // Sugar:
+  //   case x is Node(a,b) -> (body)
+  // Desugar:
+  //   case x is Node -> {
+  //     val a = x.a
+  //     val b = x.b
+  //     (body)
+  //   }
+
+  var resto = patternMatcher
+  var declaredName = first(resto)
+  var nameNode = getChild(declaredName)
+  resto = rest(resto)
+  val typeReferenceNode = first(resto)
+  resto = rest(resto)
+  val destructureNode = first(resto)
+  val headDestructure = getChild(destructureNode)
+  resto = rest(resto)
+  val bodyNode = resto
+
+  if (headDestructure is Rule0 && !(nameNode is Rule0)) {
+    patternMatcher
+  } else {
+    // if the pattern matching has no declared name we must invent one.
+    // since the name will be available in the body scope, we will use always
+    // the $ identifier.
+    if (nameNode is Rule0) {
+      val start = match declaredName {
+        case is Node(start) -> start
+        else -> 0x0
+      }
+      val end = match declaredName {
+        case is Node(end) -> end
+        else -> 0x0
+      }
+      nameNode = Node("NameIdentifier",
+        Leaf(
+          Token(Identifier, start, end),
+          "$"
+        ), start, end
+      )
+      declaredName = Node("DeclaredName", nameNode, start, end)
+    }
+
+    val newBody = appendDestructureDeclaration(nameNode, headDestructure, bodyNode)
+
+    AstCons(declaredName,
+      AstCons(typeReferenceNode,
+      AstCons(destructureNode, newBody)))
   }
 }
 

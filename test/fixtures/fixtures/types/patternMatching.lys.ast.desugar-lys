@@ -184,12 +184,12 @@ fun test2(a: i32): i32 = match a {
   }
 
 fun test3(a: Maybe): boolean = match a {
-    case is Some -> false
-    case is None -> false
+    case $ is Some -> false
+    case $ is None -> false
   }
 
 fun test4(a: Maybe): Some = match a {
     case x is Some -> x
-    case is None -> Some(0)
+    case $ is None -> Some(0)
   }
 

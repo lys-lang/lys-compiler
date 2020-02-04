@@ -3045,7 +3045,8 @@
                                     |-CaseIs(153,171)
                                       |-(AstCons)
                                         |-DeclaredName(158,158)
-                                          <Rule0>
+                                          |-NameIdentifier(158,158)
+                                            |-Identifier=$
                                         |-(AstCons)
                                           |-ReferencedType(158,166)
                                             |-Reference(161,166)
@@ -3059,7 +3060,8 @@
                                     |-CaseIs(176,242)
                                       |-(AstCons)
                                         |-DeclaredName(181,181)
-                                          <Rule0>
+                                          |-NameIdentifier(181,181)
+                                            |-Identifier=$
                                         |-(AstCons)
                                           |-ReferencedType(181,188)
                                             |-Reference(184,188)
@@ -3068,50 +3070,101 @@
                                                   |-Identifier=Node
                                           |-(AstCons)
                                             |-Destructure(188,209)
-                                              |-DestructureStruct(188,209)
-                                                |-(AstCons)
-                                                  |-NameIdentifier(189,194)
-                                                    |-Identifier=value
-                                                  |-(AstCons)
-                                                    |-NameIdentifier(196,200)
-                                                      |-Identifier=left
-                                                    |-NameIdentifier(202,207)
-                                                      |-Identifier=right
-                                            |-BinaryOpExpression(212,242)
                                               |-(AstCons)
-                                                |-Reference(212,217)
-                                                  |-QName(212,217)
-                                                    |-NameIdentifier(212,217)
-                                                      |-Identifier=value
+                                                |-NameIdentifier(189,194)
+                                                  |-Identifier=value
                                                 |-(AstCons)
-                                                  |-Op(217,229)
+                                                  |-NameIdentifier(196,200)
+                                                    |-Identifier=left
+                                                  |-NameIdentifier(202,207)
+                                                    |-Identifier=right
+                                            |-CodeBlock(0,0)
+                                              |-(AstCons)
+                                                |-ValDeclaration(0,0)
+                                                  |-(AstCons)
+                                                    |-NameIdentifier(189,194)
+                                                      |-Identifier=value
+                                                    |-AtomicExpression(0,0)
+                                                      |-(AstCons)
+                                                        |-Reference(0,0)
+                                                          |-QName(0,0)
+                                                            |-NameIdentifier(181,181)
+                                                              |-Identifier=$
+                                                        |-MemberExpression(0,0)
+                                                          |-(AstCons)
+                                                            |-Operator(0,0)
+                                                              |-Operator=.
+                                                            |-NameIdentifier(189,194)
+                                                              |-Identifier=value
+                                                |-(AstCons)
+                                                  |-ValDeclaration(0,0)
                                                     |-(AstCons)
-                                                      |-Operator=+
-                                                      |-AtomicExpression(220,229)
+                                                      |-NameIdentifier(196,200)
+                                                        |-Identifier=left
+                                                      |-AtomicExpression(0,0)
                                                         |-(AstCons)
-                                                          |-Reference(220,223)
-                                                            |-QName(220,223)
-                                                              |-NameIdentifier(220,223)
-                                                                |-Identifier=sum
-                                                          |-CallArguments(223,229)
-                                                            |-Reference(224,228)
-                                                              |-QName(224,228)
-                                                                |-NameIdentifier(224,228)
-                                                                  |-Identifier=left
-                                                  |-Op(229,242)
-                                                    |-(AstCons)
-                                                      |-Operator=+
-                                                      |-AtomicExpression(232,242)
-                                                        |-(AstCons)
-                                                          |-Reference(232,235)
-                                                            |-QName(232,235)
-                                                              |-NameIdentifier(232,235)
-                                                                |-Identifier=sum
-                                                          |-CallArguments(235,242)
-                                                            |-Reference(236,241)
-                                                              |-QName(236,241)
-                                                                |-NameIdentifier(236,241)
+                                                          |-Reference(0,0)
+                                                            |-QName(0,0)
+                                                              |-NameIdentifier(181,181)
+                                                                |-Identifier=$
+                                                          |-MemberExpression(0,0)
+                                                            |-(AstCons)
+                                                              |-Operator(0,0)
+                                                                |-Operator=.
+                                                              |-NameIdentifier(196,200)
+                                                                |-Identifier=left
+                                                  |-(AstCons)
+                                                    |-ValDeclaration(0,0)
+                                                      |-(AstCons)
+                                                        |-NameIdentifier(202,207)
+                                                          |-Identifier=right
+                                                        |-AtomicExpression(0,0)
+                                                          |-(AstCons)
+                                                            |-Reference(0,0)
+                                                              |-QName(0,0)
+                                                                |-NameIdentifier(181,181)
+                                                                  |-Identifier=$
+                                                            |-MemberExpression(0,0)
+                                                              |-(AstCons)
+                                                                |-Operator(0,0)
+                                                                  |-Operator=.
+                                                                |-NameIdentifier(202,207)
                                                                   |-Identifier=right
+                                                    |-BinaryOpExpression(212,242)
+                                                      |-(AstCons)
+                                                        |-Reference(212,217)
+                                                          |-QName(212,217)
+                                                            |-NameIdentifier(212,217)
+                                                              |-Identifier=value
+                                                        |-(AstCons)
+                                                          |-Op(217,229)
+                                                            |-(AstCons)
+                                                              |-Operator=+
+                                                              |-AtomicExpression(220,229)
+                                                                |-(AstCons)
+                                                                  |-Reference(220,223)
+                                                                    |-QName(220,223)
+                                                                      |-NameIdentifier(220,223)
+                                                                        |-Identifier=sum
+                                                                  |-CallArguments(223,229)
+                                                                    |-Reference(224,228)
+                                                                      |-QName(224,228)
+                                                                        |-NameIdentifier(224,228)
+                                                                          |-Identifier=left
+                                                          |-Op(229,242)
+                                                            |-(AstCons)
+                                                              |-Operator=+
+                                                              |-AtomicExpression(232,242)
+                                                                |-(AstCons)
+                                                                  |-Reference(232,235)
+                                                                    |-QName(232,235)
+                                                                      |-NameIdentifier(232,235)
+                                                                        |-Identifier=sum
+                                                                  |-CallArguments(235,242)
+                                                                    |-Reference(236,241)
+                                                                      |-QName(236,241)
+                                                                        |-NameIdentifier(236,241)
+                                                                          |-Identifier=right
       |-FunctionDirective(250,466)
         |-(AstCons)
           |-Decorators(250,260)

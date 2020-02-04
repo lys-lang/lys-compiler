@@ -2011,42 +2011,67 @@
             |-QNameNode
               |-NameIdentifierNode name=color
           |-MatchCaseIsNode
-            |-EmptyNode
+            |-NameIdentifierNode name=$
             |-ReferenceNode
               |-QNameNode
                 |-NameIdentifierNode name=Red
             |-EmptyNode
             |-BooleanLiteralNode value=false
           |-MatchCaseIsNode
-            |-EmptyNode
+            |-NameIdentifierNode name=test
             |-ReferenceNode
               |-QNameNode
                 |-NameIdentifierNode name=Custom
             |-NameIdentifierNode name=r
             |-NameIdentifierNode name=g
             |-NameIdentifierNode name=b
-            |-BinaryExpressionNode
-              |-BinaryExpressionNode
-                |-BinaryExpressionNode
+            |-BlockNode
+              |-VarDeclarationNode
+                |-NameIdentifierNode name=r
+                |-EmptyNode
+                |-MemberNode operator=.
                   |-ReferenceNode
                     |-QNameNode
-                      |-NameIdentifierNode name=r
-                  |-NameIdentifierNode name===
-                  |-FloatLiteralNode value=255
+                      |-NameIdentifierNode name=test
+                  |-NameIdentifierNode name=r
+              |-VarDeclarationNode
+                |-NameIdentifierNode name=g
+                |-EmptyNode
+                |-MemberNode operator=.
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=test
+                  |-NameIdentifierNode name=g
+              |-VarDeclarationNode
+                |-NameIdentifierNode name=b
+                |-EmptyNode
+                |-MemberNode operator=.
+                  |-ReferenceNode
+                    |-QNameNode
+                      |-NameIdentifierNode name=test
+                  |-NameIdentifierNode name=b
+              |-BinaryExpressionNode
+                |-BinaryExpressionNode
+                  |-BinaryExpressionNode
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=r
+                    |-NameIdentifierNode name===
+                    |-FloatLiteralNode value=255
+                  |-NameIdentifierNode name=&&
+                  |-BinaryExpressionNode
+                    |-ReferenceNode
+                      |-QNameNode
+                        |-NameIdentifierNode name=g
+                    |-NameIdentifierNode name===
+                    |-FloatLiteralNode value=0
                 |-NameIdentifierNode name=&&
                 |-BinaryExpressionNode
                   |-ReferenceNode
                     |-QNameNode
-                      |-NameIdentifierNode name=g
+                      |-NameIdentifierNode name=b
                   |-NameIdentifierNode name===
                   |-FloatLiteralNode value=0
-              |-NameIdentifierNode name=&&
-              |-BinaryExpressionNode
-                |-ReferenceNode
-                  |-QNameNode
-                    |-NameIdentifierNode name=b
-                |-NameIdentifierNode name===
-                |-FloatLiteralNode value=0
           |-MatchDefaultNode
             |-EmptyNode
             |-BooleanLiteralNode value=false

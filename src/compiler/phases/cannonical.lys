@@ -147,7 +147,6 @@ fun processNode(astNode: AstNode): CodeNode = match astNode {
     case "Destructure" -> processNode(child)
     case "ReferencedType" -> processNode(child)
     case "DeclaredName" -> processNode(child)
-    case "DestructureStruct" -> processNode(child)
     case "Literal" -> processNode(child)
     case "MatchBody" -> processNode(child)
     case "ContinueStatement" -> ContinueNode(astNode)

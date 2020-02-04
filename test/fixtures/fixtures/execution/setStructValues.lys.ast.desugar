@@ -7768,56 +7768,72 @@
                                                                 |-Identifier=Custom
                                                         |-(AstCons)
                                                           |-Destructure(2907,2913)
-                                                            |-DestructureStruct(2907,2913)
-                                                              |-NameIdentifier(2908,2911)
-                                                                |-Identifier=hex
+                                                            |-NameIdentifier(2908,2911)
+                                                              |-Identifier=hex
                                                           |-CodeBlock(2916,3043)
                                                             |-(AstCons)
-                                                              |-AtomicExpression(2926,2978)
+                                                              |-ValDeclaration(0,0)
                                                                 |-(AstCons)
-                                                                  |-Reference(2926,2932)
-                                                                    |-QName(2926,2932)
-                                                                      |-NameIdentifier(2926,2932)
-                                                                        |-Identifier=verify
-                                                                  |-CallArguments(2932,2978)
+                                                                  |-NameIdentifier(2908,2911)
+                                                                    |-Identifier=hex
+                                                                  |-AtomicExpression(0,0)
                                                                     |-(AstCons)
-                                                                      |-BinaryOpExpression(2934,2953)
+                                                                      |-Reference(0,0)
+                                                                        |-QName(0,0)
+                                                                          |-NameIdentifier(2896,2897)
+                                                                            |-Identifier=x
+                                                                      |-MemberExpression(0,0)
                                                                         |-(AstCons)
-                                                                          |-AtomicExpression(2934,2939)
-                                                                            |-(AstCons)
-                                                                              |-Reference(2934,2935)
-                                                                                |-QName(2934,2935)
-                                                                                  |-NameIdentifier(2934,2935)
-                                                                                    |-Identifier=x
-                                                                              |-MemberExpression(2935,2939)
-                                                                                |-(AstCons)
-                                                                                  |-Operator=.
-                                                                                  |-NameIdentifier(2936,2939)
-                                                                                    |-Identifier=hex
-                                                                          |-Op(2939,2953)
-                                                                            |-(AstCons)
-                                                                              |-Operator===
-                                                                              |-NumberLiteral=0xAABBCCDD
-                                                                      |-StringLiteral="x.hex == 0xAABBCCDD"
-                                                              |-AtomicExpression(2987,3035)
-                                                                |-(AstCons)
-                                                                  |-Reference(2987,2993)
-                                                                    |-QName(2987,2993)
-                                                                      |-NameIdentifier(2987,2993)
-                                                                        |-Identifier=verify
-                                                                  |-CallArguments(2993,3035)
-                                                                    |-(AstCons)
-                                                                      |-BinaryOpExpression(2995,3012)
-                                                                        |-(AstCons)
-                                                                          |-Reference(2995,2998)
-                                                                            |-QName(2995,2998)
-                                                                              |-NameIdentifier(2995,2998)
-                                                                                |-Identifier=hex
-                                                                          |-Op(2998,3012)
-                                                                            |-(AstCons)
-                                                                              |-Operator===
-                                                                              |-NumberLiteral=0xAABBCCDD
-                                                                      |-StringLiteral="hex == 0xAABBCCDD"
+                                                                          |-Operator(0,0)
+                                                                            |-Operator=.
+                                                                          |-NameIdentifier(2908,2911)
+                                                                            |-Identifier=hex
+                                                              |-(AstCons)
+                                                                |-AtomicExpression(2926,2978)
+                                                                  |-(AstCons)
+                                                                    |-Reference(2926,2932)
+                                                                      |-QName(2926,2932)
+                                                                        |-NameIdentifier(2926,2932)
+                                                                          |-Identifier=verify
+                                                                    |-CallArguments(2932,2978)
+                                                                      |-(AstCons)
+                                                                        |-BinaryOpExpression(2934,2953)
+                                                                          |-(AstCons)
+                                                                            |-AtomicExpression(2934,2939)
+                                                                              |-(AstCons)
+                                                                                |-Reference(2934,2935)
+                                                                                  |-QName(2934,2935)
+                                                                                    |-NameIdentifier(2934,2935)
+                                                                                      |-Identifier=x
+                                                                                |-MemberExpression(2935,2939)
+                                                                                  |-(AstCons)
+                                                                                    |-Operator=.
+                                                                                    |-NameIdentifier(2936,2939)
+                                                                                      |-Identifier=hex
+                                                                            |-Op(2939,2953)
+                                                                              |-(AstCons)
+                                                                                |-Operator===
+                                                                                |-NumberLiteral=0xAABBCCDD
+                                                                        |-StringLiteral="x.hex == 0xAABBCCDD"
+                                                                |-AtomicExpression(2987,3035)
+                                                                  |-(AstCons)
+                                                                    |-Reference(2987,2993)
+                                                                      |-QName(2987,2993)
+                                                                        |-NameIdentifier(2987,2993)
+                                                                          |-Identifier=verify
+                                                                    |-CallArguments(2993,3035)
+                                                                      |-(AstCons)
+                                                                        |-BinaryOpExpression(2995,3012)
+                                                                          |-(AstCons)
+                                                                            |-Reference(2995,2998)
+                                                                              |-QName(2995,2998)
+                                                                                |-NameIdentifier(2995,2998)
+                                                                                  |-Identifier=hex
+                                                                            |-Op(2998,3012)
+                                                                              |-(AstCons)
+                                                                                |-Operator===
+                                                                                |-NumberLiteral=0xAABBCCDD
+                                                                        |-StringLiteral="hex == 0xAABBCCDD"
                                                   |-CaseElse(3050,3114)
                                                     |-(AstCons)
                                                       |-DeclaredName(3055,3055)

@@ -1099,14 +1099,14 @@
           |-QNameNode
             |-NameIdentifierNode name=a
         |-MatchCaseIsNode
-          |-EmptyNode
+          |-NameIdentifierNode name=$
           |-ReferenceNode
             |-QNameNode
               |-NameIdentifierNode name=Some
           |-EmptyNode
           |-BooleanLiteralNode value=false
         |-MatchCaseIsNode
-          |-EmptyNode
+          |-NameIdentifierNode name=$
           |-ReferenceNode
             |-QNameNode
               |-NameIdentifierNode name=None
@@ -1139,7 +1139,7 @@
             |-QNameNode
               |-NameIdentifierNode name=x
         |-MatchCaseIsNode
-          |-EmptyNode
+          |-NameIdentifierNode name=$
           |-ReferenceNode
             |-QNameNode
               |-NameIdentifierNode name=None

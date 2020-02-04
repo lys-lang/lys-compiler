@@ -112,15 +112,14 @@
                                                   |-Identifier=Node
                                           |-(AstCons)
                                             |-Destructure(188,209)
-                                              |-DestructureStruct(188,209)
+                                              |-(AstCons)
+                                                |-NameIdentifier(189,194)
+                                                  |-Identifier=value
                                                 |-(AstCons)
-                                                  |-NameIdentifier(189,194)
-                                                    |-Identifier=value
-                                                  |-(AstCons)
-                                                    |-NameIdentifier(196,200)
-                                                      |-Identifier=left
-                                                    |-NameIdentifier(202,207)
-                                                      |-Identifier=right
+                                                  |-NameIdentifier(196,200)
+                                                    |-Identifier=left
+                                                  |-NameIdentifier(202,207)
+                                                    |-Identifier=right
                                             |-BinaryOpExpression(212,242)
                                               |-(AstCons)
                                                 |-Reference(212,217)

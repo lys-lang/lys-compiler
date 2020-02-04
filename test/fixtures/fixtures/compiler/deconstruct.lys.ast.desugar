@@ -4205,7 +4205,8 @@
                                     |-CaseIs(113,132)
                                       |-(AstCons)
                                         |-DeclaredName(118,118)
-                                          <Rule0>
+                                          |-NameIdentifier(118,118)
+                                            |-Identifier=$
                                         |-(AstCons)
                                           |-ReferencedType(118,124)
                                             |-Reference(121,124)
@@ -4220,7 +4221,8 @@
                                     |-CaseIs(137,171)
                                       |-(AstCons)
                                         |-DeclaredName(142,142)
-                                          <Rule0>
+                                          |-NameIdentifier(142,142)
+                                            |-Identifier=$
                                         |-(AstCons)
                                           |-ReferencedType(142,151)
                                             |-Reference(145,151)
@@ -4229,19 +4231,36 @@
                                                   |-Identifier=Custom
                                           |-(AstCons)
                                             |-Destructure(151,155)
-                                              |-DestructureStruct(151,155)
-                                                |-NameIdentifier(152,153)
-                                                  |-Identifier=a
-                                            |-BinaryOpExpression(158,171)
+                                              |-NameIdentifier(152,153)
+                                                |-Identifier=a
+                                            |-CodeBlock(0,0)
                                               |-(AstCons)
-                                                |-Reference(158,159)
-                                                  |-QName(158,159)
-                                                    |-NameIdentifier(158,159)
-                                                      |-Identifier=a
-                                                |-Op(159,171)
+                                                |-ValDeclaration(0,0)
                                                   |-(AstCons)
-                                                    |-Operator===
-                                                    |-NumberLiteral=0xFF0000
+                                                    |-NameIdentifier(152,153)
+                                                      |-Identifier=a
+                                                    |-AtomicExpression(0,0)
+                                                      |-(AstCons)
+                                                        |-Reference(0,0)
+                                                          |-QName(0,0)
+                                                            |-NameIdentifier(142,142)
+                                                              |-Identifier=$
+                                                        |-MemberExpression(0,0)
+                                                          |-(AstCons)
+                                                            |-Operator(0,0)
+                                                              |-Operator=.
+                                                            |-NameIdentifier(152,153)
+                                                              |-Identifier=a
+                                                |-BinaryOpExpression(158,171)
+                                                  |-(AstCons)
+                                                    |-Reference(158,159)
+                                                      |-QName(158,159)
+                                                        |-NameIdentifier(158,159)
+                                                          |-Identifier=a
+                                                    |-Op(159,171)
+                                                      |-(AstCons)
+                                                        |-Operator===
+                                                        |-NumberLiteral=0xFF0000
                                   |-CaseElse(176,189)
                                     |-(AstCons)
                                       |-DeclaredName(181,181)

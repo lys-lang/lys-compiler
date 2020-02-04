@@ -157,7 +157,7 @@ impl False {
 fun gt0(x: i32): Boolean = if (x > 0) True() else False()
 
 fun isTrue(a: Boolean): boolean = match a {
-    case is True -> false
+    case $ is True -> false
     else -> false
   }
 

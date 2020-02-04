@@ -512,42 +512,42 @@ var value2: A | B = A
 var value3: A = A
 fun isA(x: ref): boolean = {
   match x {
-    case is A -> false
+    case $ is A -> false
     else -> false
   }
 }
 
 fun isB(x: ref): boolean = {
   match x {
-    case is B -> false
+    case $ is B -> false
     else -> false
   }
 }
 
 fun isEnum(x: ref): boolean = {
   match x {
-    case is Enum -> false
+    case $ is Enum -> false
     else -> false
   }
 }
 
 fun isRed(x: ref): boolean = {
   match x {
-    case is Red -> false
+    case $ is Red -> false
     else -> false
   }
 }
 
 fun isColor(x: ref): boolean = {
   match x {
-    case is Color -> false
+    case $ is Color -> false
     else -> false
   }
 }
 
 fun isCustom(x: ref): boolean = {
   match x {
-    case is Custom -> false
+    case $ is Custom -> false
     else -> false
   }
 }

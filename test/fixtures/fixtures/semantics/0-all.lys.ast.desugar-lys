@@ -1042,7 +1042,7 @@ impl False {
 fun gt0(x: i32): Boolean = if (x > 0) True() else False()
 
 fun isTrue(a: Boolean): boolean = match a {
-    case is True -> false
+    case $ is True -> false
     else -> false
   }
 
@@ -1324,11 +1324,12 @@ fun testFn3(from: i32, to: i32): i32 = {
   var $iter$ = Iterator(from, to)
   loop {
     match Iterator.next($iter$) {
-      case is Some(value) -> {
+      case $ is Some(value) -> {
+          var value = $.value
           ret = ret + value
           continue
         }
-      case is None -> continue
+      case $ is None -> continue
     }
   }
   ret

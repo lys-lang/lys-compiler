@@ -2267,7 +2267,8 @@
                                 |-CaseIs(179,201)
                                   |-(AstCons)
                                     |-DeclaredName(184,184)
-                                      <Rule0>
+                                      |-NameIdentifier(184,184)
+                                        |-Identifier=$
                                     |-(AstCons)
                                       |-ReferencedType(184,191)
                                         |-Reference(187,191)
@@ -2276,8 +2277,7 @@
                                               |-Identifier=True
                                       |-(AstCons)
                                         |-Destructure(191,194)
-                                          |-DestructureStruct(191,194)
-                                            <Rule0>
+                                          <Rule0>
                                         |-BooleanLiteral(197,201)
                                           <Rule0>
                                 |-CaseElse(206,219)
