@@ -404,7 +404,7 @@
           |-QNameNode
             |-NameIdentifierNode name=A
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -720,7 +720,7 @@
           |-QNameNode
             |-NameIdentifierNode name=B
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -1036,7 +1036,7 @@
           |-QNameNode
             |-NameIdentifierNode name=C
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -1227,7 +1227,7 @@
                     |-NameIdentifierNode name=$lhs
   |-VarDirectiveNode
     |-NoModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=value1
       |-ReferenceNode
         |-QNameNode
@@ -1237,7 +1237,7 @@
           |-NameIdentifierNode name=A
   |-VarDirectiveNode
     |-NoModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=value2
       |-UnionTypeNode
         |-ReferenceNode
@@ -1251,7 +1251,7 @@
           |-NameIdentifierNode name=A
   |-VarDirectiveNode
     |-NoModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=value3
       |-ReferenceNode
         |-QNameNode
@@ -1289,7 +1289,7 @@
         |-QNameNode
           |-NameIdentifierNode name=void
       |-BlockNode
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=x1
           |-EmptyNode
           |-IsExpressionNode
@@ -1299,7 +1299,7 @@
             |-ReferenceNode
               |-QNameNode
                 |-NameIdentifierNode name=A
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=y1
           |-EmptyNode
           |-IsExpressionNode
@@ -1309,7 +1309,7 @@
             |-ReferenceNode
               |-QNameNode
                 |-NameIdentifierNode name=Enum
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=z1
           |-EmptyNode
           |-IsExpressionNode
@@ -1319,7 +1319,7 @@
             |-ReferenceNode
               |-QNameNode
                 |-NameIdentifierNode name=B
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=x2
           |-EmptyNode
           |-IsExpressionNode
@@ -1329,7 +1329,7 @@
             |-ReferenceNode
               |-QNameNode
                 |-NameIdentifierNode name=A
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=y2
           |-EmptyNode
           |-IsExpressionNode
@@ -1339,7 +1339,7 @@
             |-ReferenceNode
               |-QNameNode
                 |-NameIdentifierNode name=Enum
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=z2
           |-EmptyNode
           |-IsExpressionNode
@@ -1349,7 +1349,7 @@
             |-ReferenceNode
               |-QNameNode
                 |-NameIdentifierNode name=B
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=x3
           |-EmptyNode
           |-IsExpressionNode
@@ -1359,7 +1359,7 @@
             |-ReferenceNode
               |-QNameNode
                 |-NameIdentifierNode name=A
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=y3
           |-EmptyNode
           |-IsExpressionNode
@@ -1369,7 +1369,7 @@
             |-ReferenceNode
               |-QNameNode
                 |-NameIdentifierNode name=Enum
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=z3
           |-EmptyNode
           |-IsExpressionNode

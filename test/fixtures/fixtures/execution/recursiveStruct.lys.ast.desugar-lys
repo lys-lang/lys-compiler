@@ -48,7 +48,7 @@ type Empty = %struct {}
 impl Empty for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -62,7 +62,7 @@ impl Empty for Reference {
 impl Empty {
   #[inline]
   private fun Empty$discriminant(): u64 = {
-    var discriminant: u32 = Empty.^discriminant
+    val discriminant: u32 = Empty.^discriminant
     discriminant as u64 << 32
   }
 
@@ -104,7 +104,7 @@ type Node = %struct {a: Tree | Forest}
 impl Node for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -118,7 +118,7 @@ impl Node for Reference {
 impl Node {
   #[inline]
   private fun Node$discriminant(): u64 = {
-    var discriminant: u32 = Node.^discriminant
+    val discriminant: u32 = Node.^discriminant
     discriminant as u64 << 32
   }
 
@@ -225,7 +225,7 @@ type Nil = %struct {}
 impl Nil for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -239,7 +239,7 @@ impl Nil for Reference {
 impl Nil {
   #[inline]
   private fun Nil$discriminant(): u64 = {
-    var discriminant: u32 = Nil.^discriminant
+    val discriminant: u32 = Nil.^discriminant
     discriminant as u64 << 32
   }
 
@@ -281,7 +281,7 @@ type Cons = %struct {tree: Tree | Forest}
 impl Cons for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -295,7 +295,7 @@ impl Cons for Reference {
 impl Cons {
   #[inline]
   private fun Cons$discriminant(): u64 = {
-    var discriminant: u32 = Cons.^discriminant
+    val discriminant: u32 = Cons.^discriminant
     discriminant as u64 << 32
   }
 

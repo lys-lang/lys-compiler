@@ -52,7 +52,7 @@ type A = %struct {}
 impl A for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -66,7 +66,7 @@ impl A for Reference {
 impl A {
   #[inline]
   private fun A$discriminant(): u64 = {
-    var discriminant: u32 = A.^discriminant
+    val discriminant: u32 = A.^discriminant
     discriminant as u64 << 32
   }
 
@@ -108,7 +108,7 @@ type B = %struct {}
 impl B for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -122,7 +122,7 @@ impl B for Reference {
 impl B {
   #[inline]
   private fun B$discriminant(): u64 = {
-    var discriminant: u32 = B.^discriminant
+    val discriminant: u32 = B.^discriminant
     discriminant as u64 << 32
   }
 
@@ -164,7 +164,7 @@ type C = %struct {}
 impl C for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -178,7 +178,7 @@ impl C for Reference {
 impl C {
   #[inline]
   private fun C$discriminant(): u64 = {
-    var discriminant: u32 = C.^discriminant
+    val discriminant: u32 = C.^discriminant
     discriminant as u64 << 32
   }
 

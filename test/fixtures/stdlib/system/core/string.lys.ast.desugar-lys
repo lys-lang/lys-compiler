@@ -61,7 +61,7 @@ impl string {
 
   #[inline]
   private fun getDiscriminant(): u64 = {
-    var discriminant: u32 = string.^discriminant
+    val discriminant: u32 = string.^discriminant
     discriminant as u64 << 32
   }
 
@@ -71,18 +71,18 @@ impl string {
 
   #[method]
   fun substring(self: string, start: i32, end: i32): string = {
-    var len = self.length as i32
-    var finalStart = min(max(start, 0), len)
-    var finalEnd = min(max(end, 0), len)
-    var fromPos = min(finalStart, finalEnd) << 1
-    var toPos = max(finalStart, finalEnd) << 1
-    var size = toPos - fromPos
+    val len = self.length as i32
+    val finalStart = min(max(start, 0), len)
+    val finalEnd = min(max(end, 0), len)
+    val fromPos = min(finalStart, finalEnd) << 1
+    val toPos = max(finalStart, finalEnd) << 1
+    val size = toPos - fromPos
     if (size <= 0) {
       ""
     } else if (fromPos == 0 && toPos >= len << 1) {
       self
     } else {
-      var out = bytes(size as u32)
+      val out = bytes(size as u32)
       system::core::memory::memcpy(out.ptr, self.ptr + fromPos as u32, size as u32)
       string.fromBytes(out)
     }
@@ -96,9 +96,9 @@ impl string {
 }
 impl string {
   fun concat(lhs: string, rhs: string): string = {
-    var lhsLen = lhs.length * 2 as u32
-    var rhsLen = rhs.length * 2 as u32
-    var $ret = bytes(lhsLen + rhsLen)
+    val lhsLen = lhs.length * 2 as u32
+    val rhsLen = rhs.length * 2 as u32
+    val $ret = bytes(lhsLen + rhsLen)
     system::core::memory::memcpy(system::core::memory::memcpy($ret.ptr, lhs.ptr, lhsLen), rhs.ptr, rhsLen)
     string.fromBytes($ret)
   }
@@ -151,7 +151,7 @@ impl string {
       1 as u32
     } else {
       var len = 0
-      var i64_10 = 10 as i64
+      val i64_10 = 10 as i64
       var current = value
       if (value < 0 as i64) {
         len = len + 1
@@ -175,7 +175,7 @@ impl string {
       1 as u32
     } else {
       var len = 0
-      var u64_10 = 10 as u64
+      val u64_10 = 10 as u64
       var current = value
       loop {
         current = current / u64_10
@@ -191,13 +191,13 @@ impl string {
   }
 
   fun printToBytes(dst: bytes, value: u64, endChar: u32): void = {
-    var ZERO_CHAR = 48 as u16
+    val ZERO_CHAR = 48 as u16
     var num = value
     var offset = endChar as i32
-    var u64_10 = 10 as u64
+    val u64_10 = 10 as u64
     loop {
-      var t = num / u64_10
-      var r = num % u64_10 as u16
+      val t = num / u64_10
+      val r = num % u64_10 as u16
       num = t
       offset = offset - 1
       bytes.set(dst, offset << 1 as u32, ZERO_CHAR + r)
@@ -242,7 +242,7 @@ impl string {
       "0"
     } else {
       var len = charLength(value)
-      var ret = bytes(len << 1)
+      val ret = bytes(len << 1)
       if (value > 0) printToBytes(ret, value as u64, len) else printToBytes(ret, -value as u64, len)
       if (value < 0) {
         u16.store(ret.ptr as ref, 45 as u16, 0 as u32)
@@ -256,7 +256,7 @@ impl string {
       "0"
     } else {
       var len = charLength(value)
-      var ret = bytes(len << 1)
+      val ret = bytes(len << 1)
       printToBytes(ret, value, len)
       string.fromBytes(ret)
     }

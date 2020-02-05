@@ -216,8 +216,8 @@ private fun keccak_finish(context_offset: i32, output_offset: i32): void = %wasm
 }
 
 fun keccak(input: bytes): bytes = {
-  var context = system::core::memory::calloc(616 as u32, 1 as u32)
-  var ret = bytes(32 as u32)
+  val context = system::core::memory::calloc(616 as u32, 1 as u32)
+  val ret = bytes(32 as u32)
   keccak_init(context)
   keccak_update(context, input.ptr, input.length)
   keccak_finish(context, ret.ptr)

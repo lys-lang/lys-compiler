@@ -5,7 +5,7 @@ type Color = %struct {r: u32, g: u32, b: u32}
 impl Color for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -19,7 +19,7 @@ impl Color for Reference {
 impl Color {
   #[inline]
   private fun Color$discriminant(): u64 = {
-    var discriminant: u32 = Color.^discriminant
+    val discriminant: u32 = Color.^discriminant
     discriminant as u64 << 32
   }
 

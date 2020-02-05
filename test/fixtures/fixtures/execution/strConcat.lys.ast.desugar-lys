@@ -4,14 +4,14 @@ import support::test
 fun main(): void = {
   START("Test byte concatenation")
   {
-    var a = "abc"
-    var b = "1234"
-    var c = string.concat(a, b)
+    val a = "abc"
+    val b = "1234"
+    val c = string.concat(a, b)
     mustEqual(a.length, 3 as u32, "a.length == 3")
     mustEqual(b.length, 4 as u32, "b.length == 4")
     mustEqual(c.length, 7 as u32, "c.length == 7")
     mustEqual(c, "abc1234", "c == 'abc1234' (1)")
-    var D = string.concat(c, c)
+    val D = string.concat(c, c)
     mustEqual(c, "abc1234", "c == 'abc1234' (2)")
     mustEqual(D.length, 14 as u32, "d.length == 28")
     mustEqual(D, "abc1234abc1234", D)
@@ -19,7 +19,7 @@ fun main(): void = {
   END()
   START("Test string operations")
   {
-    var str = "asd❮𝐑"
+    val str = "asd❮𝐑"
     mustEqual(str.length, 6 as u32, "str.length == 6")
     mustEqual(str[0 as u32], 97 as u16, "char at 0")
     mustEqual(str[1 as u32], 115 as u16, "char at 1")
@@ -31,13 +31,13 @@ fun main(): void = {
   END()
   START("String concatenation")
   {
-    var x = "ds" ++ "sa"
+    val x = "ds" ++ "sa"
     mustEqual(x.length, 4 as u32, "String.length must be 4")
   }
   END()
   START("String concatenation UTF16")
   {
-    var x = "ab" ++ "µ⚜︎"
+    val x = "ab" ++ "µ⚜︎"
     mustEqual(x.length, 5 as u32, "String.length must be 5")
     mustEqual(x[0 as u32], 0x0061, "a assertion failed")
     mustEqual(x[1 as u32], 0x0062, "b assertion failed")

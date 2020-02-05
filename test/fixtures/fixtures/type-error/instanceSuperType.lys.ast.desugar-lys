@@ -46,7 +46,7 @@ type Nila = %struct {}
 impl Nila for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -60,7 +60,7 @@ impl Nila for Reference {
 impl Nila {
   #[inline]
   private fun Nila$discriminant(): u64 = {
-    var discriminant: u32 = Nila.^discriminant
+    val discriminant: u32 = Nila.^discriminant
     discriminant as u64 << 32
   }
 
@@ -102,7 +102,7 @@ type Custom = %struct {r: i32}
 impl Custom for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -116,7 +116,7 @@ impl Custom for Reference {
 impl Custom {
   #[inline]
   private fun Custom$discriminant(): u64 = {
-    var discriminant: u32 = Custom.^discriminant
+    val discriminant: u32 = Custom.^discriminant
     discriminant as u64 << 32
   }
 

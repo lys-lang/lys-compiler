@@ -5,7 +5,7 @@ type TestStruct = %struct {}
 impl TestStruct for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -19,7 +19,7 @@ impl TestStruct for Reference {
 impl TestStruct {
   #[inline]
   private fun TestStruct$discriminant(): u64 = {
-    var discriminant: u32 = TestStruct.^discriminant
+    val discriminant: u32 = TestStruct.^discriminant
     discriminant as u64 << 32
   }
 
@@ -111,7 +111,7 @@ type EmptyMessage = %struct {}
 impl EmptyMessage for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -125,7 +125,7 @@ impl EmptyMessage for Reference {
 impl EmptyMessage {
   #[inline]
   private fun EmptyMessage$discriminant(): u64 = {
-    var discriminant: u32 = EmptyMessage.^discriminant
+    val discriminant: u32 = EmptyMessage.^discriminant
     discriminant as u64 << 32
   }
 
@@ -167,7 +167,7 @@ type Message = %struct {message: string}
 impl Message for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -181,7 +181,7 @@ impl Message for Reference {
 impl Message {
   #[inline]
   private fun Message$discriminant(): u64 = {
-    var discriminant: u32 = Message.^discriminant
+    val discriminant: u32 = Message.^discriminant
     discriminant as u64 << 32
   }
 

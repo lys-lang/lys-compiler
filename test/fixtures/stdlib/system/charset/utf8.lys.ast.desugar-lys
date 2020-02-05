@@ -10,7 +10,7 @@ private fun utf8Len(str: string): u32 = {
     if (i >= str.length) {
       continue
     }
-    var c = str[i] as u32
+    val c = str[i] as u32
     if (c >= 0xd800 && c <= 0xdbff && i + 0x1 < str.length) {
       var cn = str[i + 0x1] as u32
       if (cn >= 0xdc00 && cn <= 0xdfff) {
@@ -40,7 +40,7 @@ fun toUtf8(str: string): bytes = {
     if (i >= str.length) {
       continue
     }
-    var c = str[i] as u32
+    val c = str[i] as u32
     if (c >= 0xd800 && c <= 0xdbff && i + 0x1 < str.length) {
       var cn = str[i + 0x1] as u32
       if (cn >= 0xdc00 && cn <= 0xdfff) {

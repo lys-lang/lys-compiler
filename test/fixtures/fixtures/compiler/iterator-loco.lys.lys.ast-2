@@ -145,7 +145,7 @@
           |-QNameNode
             |-NameIdentifierNode name=Iterator
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -961,7 +961,7 @@
           |-QNameNode
             |-NameIdentifierNode name=None
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -1285,7 +1285,7 @@
           |-QNameNode
             |-NameIdentifierNode name=Some
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -1635,7 +1635,7 @@
                     |-NameIdentifierNode name=iter
                 |-NameIdentifierNode name=target
             |-BlockNode
-              |-VarDeclarationNode
+              |-VarDeclarationNode MutableDeclaration
                 |-NameIdentifierNode name=r
                 |-EmptyNode
                 |-FunctionCallNode
@@ -1690,7 +1690,7 @@
         |-QNameNode
           |-NameIdentifierNode name=i32
       |-BlockNode
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=ret
           |-EmptyNode
           |-FloatLiteralNode value=0

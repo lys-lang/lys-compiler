@@ -8,7 +8,7 @@ fun getNumber(): i32 = panic()
 #[export]
 fun test(): void = {
   START("Testing custom lib")
-  var num = getNumber()
+  val num = getNumber()
   printf("    myLib.getNumber() = %d", num)
   mustEqual(num, 1337, "1337 assertion name")
   END()

@@ -45,7 +45,7 @@
             |-QNameNode
               |-NameIdentifierNode name=START
           |-StringLiteralNode value="Implicit number casting"
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=aByte
           |-EmptyNode
           |-AsExpressionNode
@@ -53,7 +53,7 @@
             |-ReferenceNode
               |-QNameNode
                 |-NameIdentifierNode name=u8
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=a
           |-ReferenceNode
             |-QNameNode
@@ -70,7 +70,7 @@
               |-NameIdentifierNode name=a
           |-FloatLiteralNode value=10
           |-StringLiteralNode value="eq(10_u16, 10_i32)"
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=x
           |-EmptyNode
           |-AsExpressionNode
@@ -93,7 +93,7 @@
             |-NameIdentifierNode name===
             |-BooleanLiteralNode value=false
           |-StringLiteralNode value="match 0"
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=y
           |-EmptyNode
           |-AsExpressionNode

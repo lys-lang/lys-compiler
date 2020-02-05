@@ -414,7 +414,7 @@
           |-QNameNode
             |-NameIdentifierNode name=None
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -730,7 +730,7 @@
           |-QNameNode
             |-NameIdentifierNode name=Red
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -1054,7 +1054,7 @@
           |-QNameNode
             |-NameIdentifierNode name=Custom
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -1521,7 +1521,7 @@
           |-QNameNode
             |-NameIdentifierNode name=CatBag
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -2180,7 +2180,7 @@
           |-QNameNode
             |-NameIdentifierNode name=Custom2
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -3100,7 +3100,7 @@
             |-QNameNode
               |-NameIdentifierNode name=START
           |-StringLiteralNode value="set values in struct"
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=a
           |-EmptyNode
           |-FunctionCallNode
@@ -3258,7 +3258,7 @@
                 |-QNameNode
                   |-NameIdentifierNode name=y
             |-StringLiteralNode value="y == y"
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=tmp
             |-EmptyNode
             |-MemberNode operator=.

@@ -5,7 +5,7 @@ type TestingContext = %struct {}
 impl TestingContext for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -19,7 +19,7 @@ impl TestingContext for Reference {
 impl TestingContext {
   #[inline]
   private fun TestingContext$discriminant(): u64 = {
-    var discriminant: u32 = TestingContext.^discriminant
+    val discriminant: u32 = TestingContext.^discriminant
     discriminant as u64 << 32
   }
 

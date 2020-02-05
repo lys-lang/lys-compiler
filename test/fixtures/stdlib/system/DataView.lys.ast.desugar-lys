@@ -5,7 +5,7 @@ type DataView = %struct {buffer: bytes}
 impl DataView for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -19,7 +19,7 @@ impl DataView for Reference {
 impl DataView {
   #[inline]
   private fun DataView$discriminant(): u64 = {
-    var discriminant: u32 = DataView.^discriminant
+    val discriminant: u32 = DataView.^discriminant
     discriminant as u64 << 32
   }
 

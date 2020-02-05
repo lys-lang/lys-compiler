@@ -1,8 +1,8 @@
-var AL_BITS: i32 = 3
-var AL_SIZE: i32 = 1 << AL_BITS
-var AL_MASK: i32 = AL_SIZE - 1
-var MAX_SIZE_32: i32 = 1 << 30
-var HEAP_BASE = 0
+val AL_BITS: i32 = 3
+val AL_SIZE: i32 = 1 << AL_BITS
+val AL_MASK: i32 = AL_SIZE - 1
+val MAX_SIZE_32: i32 = 1 << 30
+val HEAP_BASE = 0
 private var startOffset: i32 = HEAP_BASE + AL_MASK & ~AL_MASK
 private var offset: i32 = startOffset
 private var lastPtr: i32 = 0
@@ -24,8 +24,8 @@ fun allocBytes(size: i32): bytes = %wasm {
 }
 
 fun calloc(itemCount: i32, itemSize: i32): i32 = {
-  var size = itemCount * itemSize
-  var $ret = malloc(size)
+  val size = itemCount * itemSize
+  val $ret = malloc(size)
   memset($ret, size, 0)
   $ret
 }
@@ -35,12 +35,12 @@ fun malloc(size: i32): i32 = {
     if (size > MAX_SIZE_32) {
       panic()
     }
-    var ptr = offset
-    var newPtr = ptr + size + AL_MASK & ~AL_MASK
-    var pagesBefore = currentMemory()
+    val ptr = offset
+    val newPtr = ptr + size + AL_MASK & ~AL_MASK
+    val pagesBefore = currentMemory()
     if (newPtr > pagesBefore << 16) {
-      var pagesNeeded = newPtr - ptr + 0xffff & ~0xffff >>> 16
-      var pagesWanted = max(pagesBefore, pagesNeeded)
+      val pagesNeeded = newPtr - ptr + 0xffff & ~0xffff >>> 16
+      val pagesWanted = max(pagesBefore, pagesNeeded)
       if (growMemory(pagesWanted) < 0) {
         if (growMemory(pagesNeeded) < 0) {
           panic()

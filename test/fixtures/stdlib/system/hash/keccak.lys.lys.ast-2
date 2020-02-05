@@ -145,7 +145,7 @@
           |-QNameNode
             |-NameIdentifierNode name=Keccak
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -2160,7 +2160,7 @@
           |-QNameNode
             |-NameIdentifierNode name=void
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=i
             |-EmptyNode
             |-AsExpressionNode
@@ -2964,7 +2964,7 @@
           |-QNameNode
             |-NameIdentifierNode name=void
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=i
             |-EmptyNode
             |-AsExpressionNode
@@ -3484,7 +3484,7 @@
               |-ReferenceNode
                 |-QNameNode
                   |-NameIdentifierNode name=ref
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=round
             |-EmptyNode
             |-FloatLiteralNode value=0
@@ -5335,7 +5335,7 @@
                 |-ReferenceNode
                   |-QNameNode
                     |-NameIdentifierNode name=u32
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=residueIndex
             |-EmptyNode
             |-FunctionCallNode
@@ -5347,13 +5347,13 @@
               |-ReferenceNode
                 |-QNameNode
                   |-NameIdentifierNode name=residueOffsetRef
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=mutInputLength
             |-EmptyNode
             |-ReferenceNode
               |-QNameNode
                 |-NameIdentifierNode name=inputLength
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=mutInputOffset
             |-EmptyNode
             |-ReferenceNode
@@ -5371,7 +5371,7 @@
                   |-QNameNode
                     |-NameIdentifierNode name=u32
             |-BlockNode
-              |-VarDeclarationNode
+              |-VarDeclarationNode MutableDeclaration
                 |-NameIdentifierNode name=tmp
                 |-EmptyNode
                 |-BinaryExpressionNode
@@ -5623,7 +5623,7 @@
           |-QNameNode
             |-NameIdentifierNode name=void
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=residueBuffer
             |-EmptyNode
             |-BinaryExpressionNode
@@ -5646,7 +5646,7 @@
               |-ReferenceNode
                 |-QNameNode
                   |-NameIdentifierNode name=ref
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=residueIndex
             |-EmptyNode
             |-FunctionCallNode
@@ -5781,7 +5781,7 @@
             |-ReferenceNode
               |-QNameNode
                 |-NameIdentifierNode name=contextOffset
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=outputRef
             |-EmptyNode
             |-AsExpressionNode
@@ -5791,7 +5791,7 @@
               |-ReferenceNode
                 |-QNameNode
                   |-NameIdentifierNode name=ref
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=contextRef
             |-EmptyNode
             |-AsExpressionNode

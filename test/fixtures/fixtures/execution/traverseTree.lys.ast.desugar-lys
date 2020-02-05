@@ -46,7 +46,7 @@ type Node = %struct {value: i32, left: Tree, right: Tree}
 impl Node for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -60,7 +60,7 @@ impl Node for Reference {
 impl Node {
   #[inline]
   private fun Node$discriminant(): u64 = {
-    var discriminant: u32 = Node.^discriminant
+    val discriminant: u32 = Node.^discriminant
     discriminant as u64 << 32
   }
 
@@ -141,7 +141,7 @@ type Empty = %struct {}
 impl Empty for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -155,7 +155,7 @@ impl Empty for Reference {
 impl Empty {
   #[inline]
   private fun Empty$discriminant(): u64 = {
-    var discriminant: u32 = Empty.^discriminant
+    val discriminant: u32 = Empty.^discriminant
     discriminant as u64 << 32
   }
 
@@ -195,9 +195,9 @@ fun sum(arg: Tree): i32 = {
   match arg {
     case $ is Empty -> 0
     case $ is Node -> {
-      var value = $.value
-      var left = $.left
-      var right = $.right
+      val value = $.value
+      val left = $.left
+      val right = $.right
       value + sum(left) + sum(right)
     }
   }
@@ -206,7 +206,7 @@ fun sum(arg: Tree): i32 = {
 #[export]
 fun main(): void = {
   support::test::START("Traverse tree")
-  var tree = Node(42, Node(3, Empty, Empty), Empty)
+  val tree = Node(42, Node(3, Empty, Empty), Empty)
   support::test::mustEqual(sum(tree), 45, "sum(tree) returns 45")
   support::test::END()
 }

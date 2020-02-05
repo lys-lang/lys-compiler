@@ -5,7 +5,7 @@ type Simple = %struct {}
 impl Simple for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -19,7 +19,7 @@ impl Simple for Reference {
 impl Simple {
   #[inline]
   private fun Simple$discriminant(): u64 = {
-    var discriminant: u32 = Simple.^discriminant
+    val discriminant: u32 = Simple.^discriminant
     discriminant as u64 << 32
   }
 
@@ -62,7 +62,7 @@ type WithInt = %struct {a: i32}
 impl WithInt for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -76,7 +76,7 @@ impl WithInt for Reference {
 impl WithInt {
   #[inline]
   private fun WithInt$discriminant(): u64 = {
-    var discriminant: u32 = WithInt.^discriminant
+    val discriminant: u32 = WithInt.^discriminant
     discriminant as u64 << 32
   }
 

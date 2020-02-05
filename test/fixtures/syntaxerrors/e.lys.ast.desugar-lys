@@ -5,7 +5,7 @@ type Entity = %struct {}
 impl Entity for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -19,7 +19,7 @@ impl Entity for Reference {
 impl Entity {
   #[inline]
   private fun Entity$discriminant(): u64 = {
-    var discriminant: u32 = Entity.^discriminant
+    val discriminant: u32 = Entity.^discriminant
     discriminant as u64 << 32
   }
 

@@ -1,0 +1,93 @@
+import src::helpers
+import src::compiler::nodes
+
+enum NodeAnnotation {
+  NoAnnotation
+  AnnotationCons(list: NodeAnnotation, element: NodeAnnotation)
+
+  IsTailRec
+  Injected
+  IsOverloaded
+  Inline
+  Getter
+  Setter
+  Method
+  MethodCall
+  SignatureDeclaration
+  Explicit
+  ByPassFunction
+  Extern(module: string, fn: string)
+  Export(exportedName: string)
+  MutableDeclaration
+  LabelId(label: string)
+  LocalIdentifier(local: Local | Global)
+  IsTailRecCall
+  CurrentLoop(theLoop: LoopNode)
+  ImplicitCall(implicitCall: FunctionCallNode)
+  IsUnreachable
+  IsValueNode
+  IsAssignationLHS
+  IsTypeNode
+  NoStd
+  IsReturnExpression(targetLocal: Local | Nil)
+}
+
+impl NodeAnnotation {
+  #[getter]
+  fun name(self: NodeAnnotation): string = match self {
+    case is NoAnnotation -> "NoAnnotation"
+    case is AnnotationCons -> "AnnotationCons"
+    case is IsTailRec -> "IsTailRec"
+    case is Injected -> "Injected"
+    case is IsOverloaded -> "IsOverloaded"
+    case is Inline -> "Inline"
+    case is Getter -> "Getter"
+    case is Setter -> "Setter"
+    case is Method -> "Method"
+    case is MethodCall -> "MethodCall"
+    case is SignatureDeclaration -> "SignatureDeclaration"
+    case is Explicit -> "Explicit"
+    case is ByPassFunction -> "ByPassFunction"
+    case is Extern -> "Extern"
+    case is Export -> "Export"
+    case is MutableDeclaration -> "MutableDeclaration"
+    case is LabelId -> "LabelId"
+    case is LocalIdentifier -> "LocalIdentifier"
+    case is IsTailRecCall -> "IsTailRecCall"
+    case is CurrentLoop -> "CurrentLoop"
+    case is ImplicitCall -> "ImplicitCall"
+    case is IsUnreachable -> "IsUnreachable"
+    case is IsValueNode -> "IsValueNode"
+    case is IsAssignationLHS -> "IsAssignationLHS"
+    case is IsTypeNode -> "IsTypeNode"
+    case is NoStd -> "NoStd"
+    case is IsReturnExpression -> "IsReturnExpression"
+  }
+
+  #[method]
+  fun toString(self: NodeAnnotation): string = match self {
+    case is NoAnnotation -> ""
+    case is AnnotationCons(list, element) -> list.toString() ++ "," ++ element.toString()
+    else -> self.name
+  }
+
+  #[method]
+  fun get(self: NodeAnnotation, findDiscriminant: u32): NodeAnnotation = {
+    if (ref.getDiscriminant(self as ref) == findDiscriminant) {
+      self
+    } else match self {
+      case is AnnotationCons(list, element) -> {
+        val result = element.get(findDiscriminant)
+        if (result is NoAnnotation) {
+          list.get(findDiscriminant)
+        } else {
+          result
+        }
+      }
+      else -> NoAnnotation
+    }
+  }
+
+  #[method]
+  fun has(self: NodeAnnotation, findDiscriminant: u32): boolean = !(self.get(findDiscriminant) is NoAnnotation)
+}

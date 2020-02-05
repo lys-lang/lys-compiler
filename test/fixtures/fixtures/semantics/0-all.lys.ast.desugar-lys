@@ -1,8 +1,8 @@
-var AL_BITS: i32 = 3
-var AL_SIZE: i32 = 1 << AL_BITS
-var AL_MASK: i32 = AL_SIZE - 1
-var MAX_SIZE_32: i32 = 1 << 30
-var HEAP_BASE = 0
+val AL_BITS: i32 = 3
+val AL_SIZE: i32 = 1 << AL_BITS
+val AL_MASK: i32 = AL_SIZE - 1
+val MAX_SIZE_32: i32 = 1 << 30
+val HEAP_BASE = 0
 
 type asd = %struct {}
 
@@ -10,7 +10,7 @@ type asd = %struct {}
 impl asd for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -24,7 +24,7 @@ impl asd for Reference {
 impl asd {
   #[inline]
   private fun asd$discriminant(): u64 = {
-    var discriminant: u32 = asd.^discriminant
+    val discriminant: u32 = asd.^discriminant
     discriminant as u64 << 32
   }
 
@@ -85,8 +85,8 @@ fun allocBytes(size: i32): bytes = %wasm {
 #[export "calloc"]
 #[explicit]
 fun calloc(itemCount: i32, itemSize: i32): i32 = {
-  var size = itemCount * itemSize
-  var $ret = malloc(size)
+  val size = itemCount * itemSize
+  val $ret = malloc(size)
   memset($ret, size, 0)
   $ret
 }
@@ -96,12 +96,12 @@ fun malloc(size: i32): i32 = {
     if (size > MAX_SIZE_32) {
       panic()
     }
-    var ptr = offset
-    var newPtr = ptr + size + AL_MASK & ~AL_MASK
-    var pagesBefore = currentMemory()
+    val ptr = offset
+    val newPtr = ptr + size + AL_MASK & ~AL_MASK
+    val pagesBefore = currentMemory()
     if (newPtr > pagesBefore << 16) {
-      var pagesNeeded = newPtr - ptr + 0xffff & ~0xffff >>> 16
-      var pagesWanted = max(pagesBefore, pagesNeeded)
+      val pagesNeeded = newPtr - ptr + 0xffff & ~0xffff >>> 16
+      val pagesWanted = max(pagesBefore, pagesNeeded)
       if (growMemory(pagesWanted) < 0) {
         if (growMemory(pagesNeeded) < 0) {
           panic()
@@ -142,7 +142,7 @@ type String = %struct {data: bytes}
 impl String for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -156,7 +156,7 @@ impl String for Reference {
 impl String {
   #[inline]
   private fun String$discriminant(): u64 = {
-    var discriminant: u32 = String.^discriminant
+    val discriminant: u32 = String.^discriminant
     discriminant as u64 << 32
   }
 
@@ -213,10 +213,10 @@ impl String {
   fun length(str: String, a: i32): i32 = str.data.length / 2
 
   fun +(lhs: String, rhs: String): String = {
-    var lhsData = lhs.data
-    var rhsData = rhs.data
-    var lhsLen = lhsData.length
-    var rhsLen = rhsData.length
+    val lhsData = lhs.data
+    val rhsData = rhs.data
+    val lhsLen = lhsData.length
+    val rhsLen = rhsData.length
     var newData = bytes(lhsLen + rhsLen)
     system::core::memory::memcpy(newData.ptr, lhsData.ptr, lhsLen)
     system::core::memory::memcpy(newData.ptr + lhsLen, rhs.data.ptr, rhsLen)
@@ -267,7 +267,7 @@ type BB = %struct {}
 impl BB for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -281,7 +281,7 @@ impl BB for Reference {
 impl BB {
   #[inline]
   private fun BB$discriminant(): u64 = {
-    var discriminant: u32 = BB.^discriminant
+    val discriminant: u32 = BB.^discriminant
     discriminant as u64 << 32
   }
 
@@ -324,7 +324,7 @@ type TT = %struct {}
 impl TT for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -338,7 +338,7 @@ impl TT for Reference {
 impl TT {
   #[inline]
   private fun TT$discriminant(): u64 = {
-    var discriminant: u32 = TT.^discriminant
+    val discriminant: u32 = TT.^discriminant
     discriminant as u64 << 32
   }
 
@@ -449,7 +449,7 @@ type Empty = %struct {}
 impl Empty for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -463,7 +463,7 @@ impl Empty for Reference {
 impl Empty {
   #[inline]
   private fun Empty$discriminant(): u64 = {
-    var discriminant: u32 = Empty.^discriminant
+    val discriminant: u32 = Empty.^discriminant
     discriminant as u64 << 32
   }
 
@@ -505,7 +505,7 @@ type Node = %struct {a: Tree | Forest}
 impl Node for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -519,7 +519,7 @@ impl Node for Reference {
 impl Node {
   #[inline]
   private fun Node$discriminant(): u64 = {
-    var discriminant: u32 = Node.^discriminant
+    val discriminant: u32 = Node.^discriminant
     discriminant as u64 << 32
   }
 
@@ -626,7 +626,7 @@ type Nil = %struct {}
 impl Nil for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -640,7 +640,7 @@ impl Nil for Reference {
 impl Nil {
   #[inline]
   private fun Nil$discriminant(): u64 = {
-    var discriminant: u32 = Nil.^discriminant
+    val discriminant: u32 = Nil.^discriminant
     discriminant as u64 << 32
   }
 
@@ -682,7 +682,7 @@ type Cons = %struct {tree: Tree | Forest}
 impl Cons for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -696,7 +696,7 @@ impl Cons for Reference {
 impl Cons {
   #[inline]
   private fun Cons$discriminant(): u64 = {
-    var discriminant: u32 = Cons.^discriminant
+    val discriminant: u32 = Cons.^discriminant
     discriminant as u64 << 32
   }
 
@@ -792,7 +792,7 @@ type Color = %struct {r: i32, g: i32, b: i32}
 impl Color for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -806,7 +806,7 @@ impl Color for Reference {
 impl Color {
   #[inline]
   private fun Color$discriminant(): u64 = {
-    var discriminant: u32 = Color.^discriminant
+    val discriminant: u32 = Color.^discriminant
     discriminant as u64 << 32
   }
 
@@ -890,7 +890,7 @@ type True = %struct {}
 impl True for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -904,7 +904,7 @@ impl True for Reference {
 impl True {
   #[inline]
   private fun True$discriminant(): u64 = {
-    var discriminant: u32 = True.^discriminant
+    val discriminant: u32 = True.^discriminant
     discriminant as u64 << 32
   }
 
@@ -947,7 +947,7 @@ type False = %struct {}
 impl False for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -961,7 +961,7 @@ impl False for Reference {
 impl False {
   #[inline]
   private fun False$discriminant(): u64 = {
-    var discriminant: u32 = False.^discriminant
+    val discriminant: u32 = False.^discriminant
     discriminant as u64 << 32
   }
 
@@ -1064,7 +1064,7 @@ type Iterator = %struct {current: i32, target: i32}
 impl Iterator for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -1078,7 +1078,7 @@ impl Iterator for Reference {
 impl Iterator {
   #[inline]
   private fun Iterator$discriminant(): u64 = {
-    var discriminant: u32 = Iterator.^discriminant
+    val discriminant: u32 = Iterator.^discriminant
     discriminant as u64 << 32
   }
 
@@ -1188,7 +1188,7 @@ type None = %struct {}
 impl None for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -1202,7 +1202,7 @@ impl None for Reference {
 impl None {
   #[inline]
   private fun None$discriminant(): u64 = {
-    var discriminant: u32 = None.^discriminant
+    val discriminant: u32 = None.^discriminant
     discriminant as u64 << 32
   }
 
@@ -1244,7 +1244,7 @@ type Some = %struct {value: i32}
 impl Some for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -1258,7 +1258,7 @@ impl Some for Reference {
 impl Some {
   #[inline]
   private fun Some$discriminant(): u64 = {
-    var discriminant: u32 = Some.^discriminant
+    val discriminant: u32 = Some.^discriminant
     discriminant as u64 << 32
   }
 
@@ -1321,11 +1321,11 @@ impl Iterator {
 }
 fun testFn3(from: i32, to: i32): i32 = {
   var ret = 0
-  var $iter$ = Iterator(from, to)
+  val $iter$ = Iterator(from, to)
   loop {
     match Iterator.next($iter$) {
       case $ is Some -> {
-        var value = $.value
+        val value = $.value
         ret = ret + value
         continue
       }

@@ -1,6 +1,6 @@
 import system::hash::keccak
 
-var k = Keccak()
+val k = Keccak()
 #[export "keccak"]
 fun keccak(input: bytes): bytes = {
   Keccak.reset(k)

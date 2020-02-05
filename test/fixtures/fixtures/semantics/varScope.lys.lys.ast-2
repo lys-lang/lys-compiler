@@ -1,13 +1,13 @@
 |-Document
   |-VarDirectiveNode
     |-NoModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=a
       |-EmptyNode
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
     |-NoModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=b
       |-EmptyNode
       |-ReferenceNode
@@ -15,13 +15,13 @@
           |-NameIdentifierNode name=a
   |-VarDirectiveNode
     |-NoModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=c
       |-EmptyNode
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
     |-NoModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=d
       |-EmptyNode
       |-ReferenceNode
@@ -59,7 +59,7 @@
         |-QNameNode
           |-NameIdentifierNode name=i32
       |-BlockNode
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=n
           |-EmptyNode
           |-FloatLiteralNode value=1

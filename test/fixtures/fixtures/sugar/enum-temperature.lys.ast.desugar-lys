@@ -46,7 +46,7 @@ type Celcius = %struct {temperature: f32}
 impl Celcius for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -60,7 +60,7 @@ impl Celcius for Reference {
 impl Celcius {
   #[inline]
   private fun Celcius$discriminant(): u64 = {
-    var discriminant: u32 = Celcius.^discriminant
+    val discriminant: u32 = Celcius.^discriminant
     discriminant as u64 << 32
   }
 
@@ -115,7 +115,7 @@ type Kelvin = %struct {temperature: f32}
 impl Kelvin for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -129,7 +129,7 @@ impl Kelvin for Reference {
 impl Kelvin {
   #[inline]
   private fun Kelvin$discriminant(): u64 = {
-    var discriminant: u32 = Kelvin.^discriminant
+    val discriminant: u32 = Kelvin.^discriminant
     discriminant as u64 << 32
   }
 
@@ -233,45 +233,45 @@ impl Temp {
 
 }
 impl Celcius {
-  var determinant = 1
-  var memorySize = ref.memorySize + f32.memorySize
+  val determinant = 1
+  val memorySize = ref.memorySize + f32.memorySize
   fun is(x: ref) = x.determinant == determinant
 
   fun apply(temperature: f32): Celcius = {
-    var ptr: Celcius = determinant << 32 | core::memory::malloc(memorySize)
+    val ptr: Celcius = determinant << 32 | core::memory::malloc(memorySize)
     set_temperature(ptr, temperature)
     ref as Celcius
   }
 
   fun get_temperature(ptr: Celcius): f32 = {
-    var base = ref.base(ptr)
+    val base = ref.base(ptr)
     f32.read(base + 0)
   }
 
   fun set_temperature(ptr: Celcius, newValue: f32): void = {
-    var base = ref.base(ptr)
+    val base = ref.base(ptr)
     f32.store(base + 0, newValue)
   }
 
 }
 impl Kelvin {
-  var determinant = 2
-  var memorySize = ref.memorySize + f32.memorySize
+  val determinant = 2
+  val memorySize = ref.memorySize + f32.memorySize
   fun is(x: ref) = x.determinant == determinant
 
   fun apply(n: f32): Kelvin = {
-    var ptr: Kelvin = determinant << 32 | core::memory::malloc(memorySize)
+    val ptr: Kelvin = determinant << 32 | core::memory::malloc(memorySize)
     set_temperature(ptr, n)
     ref as Kelvin
   }
 
   fun get_temperature(ptr: Kelvin): f32 = {
-    var base = ref.base(ptr)
+    val base = ref.base(ptr)
     f32.read(base + 0)
   }
 
   private fun set_temperature(ptr: Kelvin, newValue: f32): void = {
-    var base = ref.base(ptr)
+    val base = ref.base(ptr)
     f32.store(base + 0, newValue)
   }
 

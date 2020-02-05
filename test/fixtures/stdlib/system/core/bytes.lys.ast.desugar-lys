@@ -27,7 +27,7 @@ type bytes = %stack {lowLevelType="i64" byteSize=8}
 
 impl bytes {
   private fun bytesDiscriminant(): u64 = {
-    var discriminant: u32 = bytes.^discriminant
+    val discriminant: u32 = bytes.^discriminant
     discriminant as u64 << 32
   }
 

@@ -1,13 +1,13 @@
 |-Document
   |-VarDirectiveNode
     |-PrivateModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=a
       |-EmptyNode
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
     |-PrivateModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=b
       |-ReferenceNode
         |-QNameNode
@@ -15,7 +15,7 @@
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
     |-PrivateModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=c
       |-ReferenceNode
         |-QNameNode
@@ -23,7 +23,7 @@
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
     |-PrivateModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=d
       |-EmptyNode
       |-FloatLiteralNode value=1.0
@@ -58,13 +58,13 @@
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
     |-NoModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=a
       |-EmptyNode
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
     |-NoModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=b
       |-ReferenceNode
         |-QNameNode
@@ -72,7 +72,7 @@
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
     |-NoModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=c
       |-ReferenceNode
         |-QNameNode
@@ -80,7 +80,7 @@
       |-FloatLiteralNode value=1
   |-VarDirectiveNode
     |-NoModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=d
       |-EmptyNode
       |-FloatLiteralNode value=1.0

@@ -1,7 +1,7 @@
 |-Document
   |-VarDirectiveNode
     |-NoModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=z
       |-EmptyNode
       |-FloatLiteralNode value=3
@@ -19,11 +19,11 @@
         |-QNameNode
           |-NameIdentifierNode name=i32
       |-BlockNode
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=x
           |-EmptyNode
           |-FloatLiteralNode value=1
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=y
           |-EmptyNode
           |-FloatLiteralNode value=2

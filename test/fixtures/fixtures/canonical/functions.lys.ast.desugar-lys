@@ -2,7 +2,7 @@ fun x(): void = {
   fun repeat(number: i32, fn): void = {
     if (numner > 0) fn() else repeat(number - 1, fn)
   }
-  var x = 1
+  val x = 1
   repeat()
   var y = 2
   repeat()

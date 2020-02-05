@@ -55,7 +55,7 @@ type Red = %struct {}
 impl Red for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -69,7 +69,7 @@ impl Red for Reference {
 impl Red {
   #[inline]
   private fun Red$discriminant(): u64 = {
-    var discriminant: u32 = Red.^discriminant
+    val discriminant: u32 = Red.^discriminant
     discriminant as u64 << 32
   }
 
@@ -111,7 +111,7 @@ type Green = %struct {}
 impl Green for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -125,7 +125,7 @@ impl Green for Reference {
 impl Green {
   #[inline]
   private fun Green$discriminant(): u64 = {
-    var discriminant: u32 = Green.^discriminant
+    val discriminant: u32 = Green.^discriminant
     discriminant as u64 << 32
   }
 
@@ -167,7 +167,7 @@ type Blue = %struct {}
 impl Blue for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -181,7 +181,7 @@ impl Blue for Reference {
 impl Blue {
   #[inline]
   private fun Blue$discriminant(): u64 = {
-    var discriminant: u32 = Blue.^discriminant
+    val discriminant: u32 = Blue.^discriminant
     discriminant as u64 << 32
   }
 
@@ -341,7 +341,7 @@ type Infinity = %struct {}
 impl Infinity for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -355,7 +355,7 @@ impl Infinity for Reference {
 impl Infinity {
   #[inline]
   private fun Infinity$discriminant(): u64 = {
-    var discriminant: u32 = Infinity.^discriminant
+    val discriminant: u32 = Infinity.^discriminant
     discriminant as u64 << 32
   }
 
@@ -397,7 +397,7 @@ type NDet = %struct {}
 impl NDet for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -411,7 +411,7 @@ impl NDet for Reference {
 impl NDet {
   #[inline]
   private fun NDet$discriminant(): u64 = {
-    var discriminant: u32 = NDet.^discriminant
+    val discriminant: u32 = NDet.^discriminant
     discriminant as u64 << 32
   }
 
@@ -453,7 +453,7 @@ type Real = %struct {number: f32}
 impl Real for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -467,7 +467,7 @@ impl Real for Reference {
 impl Real {
   #[inline]
   private fun Real$discriminant(): u64 = {
-    var discriminant: u32 = Real.^discriminant
+    val discriminant: u32 = Real.^discriminant
     discriminant as u64 << 32
   }
 
@@ -522,7 +522,7 @@ type Natural = %struct {number: i32}
 impl Natural for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -536,7 +536,7 @@ impl Natural for Reference {
 impl Natural {
   #[inline]
   private fun Natural$discriminant(): u64 = {
-    var discriminant: u32 = Natural.^discriminant
+    val discriminant: u32 = Natural.^discriminant
     discriminant as u64 << 32
   }
 
@@ -591,7 +591,7 @@ type Complex = %struct {real: f32, imaginary: f32}
 impl Complex for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -605,7 +605,7 @@ impl Complex for Reference {
 impl Complex {
   #[inline]
   private fun Complex$discriminant(): u64 = {
-    var discriminant: u32 = Complex.^discriminant
+    val discriminant: u32 = Complex.^discriminant
     discriminant as u64 << 32
   }
 

@@ -9,8 +9,8 @@ fun assertNumber(numberToSerialize: i32, expected: string): void = assertNumber(
 fun assertNumber(numberToSerialize: u32, expected: string): void = assertNumber(numberToSerialize as u64, expected)
 
 fun assertNumberLength(numberToSerialize: i64, expected: i32): void = {
-  var size = string.charLength(numberToSerialize)
-  var result = size as i32 == expected
+  val size = string.charLength(numberToSerialize)
+  val result = size as i32 == expected
   if (!result) {
     support::env::printf("    number: %d", numberToSerialize as i32)
     support::env::printf("     given: %d", size as i32)
@@ -20,8 +20,8 @@ fun assertNumberLength(numberToSerialize: i64, expected: i32): void = {
 }
 
 fun assertEquals(given: string, expected: string): void = {
-  var msg = "Given: '" ++ given ++ "' Expected: '" ++ expected ++ "'"
-  var result = given == expected
+  val msg = "Given: '" ++ given ++ "' Expected: '" ++ expected ++ "'"
+  val result = given == expected
   if (!result) {
     support::env::printf("given:")
     support::env::printf(given)

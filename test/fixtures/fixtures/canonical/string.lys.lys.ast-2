@@ -135,7 +135,7 @@
           |-QNameNode
             |-NameIdentifierNode name=String
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -533,7 +533,7 @@
                 |-QNameNode
                   |-NameIdentifierNode name=rhsData
               |-NameIdentifierNode name=length
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=newData
             |-EmptyNode
             |-FunctionCallNode

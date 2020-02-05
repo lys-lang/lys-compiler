@@ -375,7 +375,7 @@
           |-QNameNode
             |-NameIdentifierNode name=Empty
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -703,7 +703,7 @@
           |-QNameNode
             |-NameIdentifierNode name=Node
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -1459,7 +1459,7 @@
           |-QNameNode
             |-NameIdentifierNode name=Nil
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -1787,7 +1787,7 @@
           |-QNameNode
             |-NameIdentifierNode name=Cons
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -2189,13 +2189,13 @@
             |-QNameNode
               |-NameIdentifierNode name=START
           |-StringLiteralNode value="Forest & Tree tests"
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=a
           |-EmptyNode
           |-ReferenceNode
             |-QNameNode
               |-NameIdentifierNode name=Nil
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=b
           |-EmptyNode
           |-FunctionCallNode
@@ -2205,7 +2205,7 @@
             |-ReferenceNode
               |-QNameNode
                 |-NameIdentifierNode name=Empty
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=c
           |-EmptyNode
           |-FunctionCallNode
@@ -2215,7 +2215,7 @@
             |-ReferenceNode
               |-QNameNode
                 |-NameIdentifierNode name=Nil
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=d
           |-EmptyNode
           |-FunctionCallNode
@@ -2229,7 +2229,7 @@
               |-ReferenceNode
                 |-QNameNode
                   |-NameIdentifierNode name=Empty
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=e
           |-EmptyNode
           |-FunctionCallNode

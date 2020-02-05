@@ -5,7 +5,7 @@ type Keccak = %struct {data: bytes, result: bytes}
 impl Keccak for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -19,7 +19,7 @@ impl Keccak for Reference {
 impl Keccak {
   #[inline]
   private fun Keccak$discriminant(): u64 = {
-    var discriminant: u32 = Keccak.^discriminant
+    val discriminant: u32 = Keccak.^discriminant
     discriminant as u64 << 32
   }
 
@@ -83,8 +83,8 @@ impl Keccak {
 
 impl Keccak {
   fun apply(): Keccak = {
-    var context = bytes(616 as u32)
-    var result = bytes(32 as u32)
+    val context = bytes(616 as u32)
+    val result = bytes(32 as u32)
     keccakInit(context.ptr)
     Keccak(context, result)
   }
@@ -107,16 +107,16 @@ impl Keccak {
   }
 
   private fun keccakTheta(context: ref): void = {
-    var C0 = i64.load(context, 0 as u32) ^ i64.load(context, 40 as u32) ^ i64.load(context, 80 as u32) ^ i64.load(context, 120 as u32) ^ i64.load(context, 160 as u32)
-    var C1 = i64.load(context, 8 as u32) ^ i64.load(context, 48 as u32) ^ i64.load(context, 88 as u32) ^ i64.load(context, 128 as u32) ^ i64.load(context, 168 as u32)
-    var C2 = i64.load(context, 16 as u32) ^ i64.load(context, 56 as u32) ^ i64.load(context, 96 as u32) ^ i64.load(context, 136 as u32) ^ i64.load(context, 176 as u32)
-    var C3 = i64.load(context, 24 as u32) ^ i64.load(context, 64 as u32) ^ i64.load(context, 104 as u32) ^ i64.load(context, 144 as u32) ^ i64.load(context, 184 as u32)
-    var C4 = i64.load(context, 32 as u32) ^ i64.load(context, 72 as u32) ^ i64.load(context, 112 as u32) ^ i64.load(context, 152 as u32) ^ i64.load(context, 192 as u32)
-    var D0 = C4 ^ i64.rotl(C1, 1 as i64)
-    var D1 = C0 ^ i64.rotl(C2, 1 as i64)
-    var D2 = C1 ^ i64.rotl(C3, 1 as i64)
-    var D3 = C2 ^ i64.rotl(C4, 1 as i64)
-    var D4 = C3 ^ i64.rotl(C0, 1 as i64)
+    val C0 = i64.load(context, 0 as u32) ^ i64.load(context, 40 as u32) ^ i64.load(context, 80 as u32) ^ i64.load(context, 120 as u32) ^ i64.load(context, 160 as u32)
+    val C1 = i64.load(context, 8 as u32) ^ i64.load(context, 48 as u32) ^ i64.load(context, 88 as u32) ^ i64.load(context, 128 as u32) ^ i64.load(context, 168 as u32)
+    val C2 = i64.load(context, 16 as u32) ^ i64.load(context, 56 as u32) ^ i64.load(context, 96 as u32) ^ i64.load(context, 136 as u32) ^ i64.load(context, 176 as u32)
+    val C3 = i64.load(context, 24 as u32) ^ i64.load(context, 64 as u32) ^ i64.load(context, 104 as u32) ^ i64.load(context, 144 as u32) ^ i64.load(context, 184 as u32)
+    val C4 = i64.load(context, 32 as u32) ^ i64.load(context, 72 as u32) ^ i64.load(context, 112 as u32) ^ i64.load(context, 152 as u32) ^ i64.load(context, 192 as u32)
+    val D0 = C4 ^ i64.rotl(C1, 1 as i64)
+    val D1 = C0 ^ i64.rotl(C2, 1 as i64)
+    val D2 = C1 ^ i64.rotl(C3, 1 as i64)
+    val D3 = C2 ^ i64.rotl(C4, 1 as i64)
+    val D4 = C3 ^ i64.rotl(C0, 1 as i64)
     i64.store(context, i64.load(context, 0 as u32) ^ D0, 0 as u32)
     i64.store(context, i64.load(context, 40 as u32) ^ D0, 40 as u32)
     i64.store(context, i64.load(context, 80 as u32) ^ D0, 80 as u32)
@@ -150,7 +150,7 @@ impl Keccak {
       if (i >= 24 as u32) {
         continue
       } else {
-        var offset = 1 as u32 + i << 3
+        val offset = 1 as u32 + i << 3
         i64.store(contextRef, i64.rotl(i64.load(contextRef, offset), i64.load8_u(rotationConsts, i)), offset)
         i = i + 1 as u32
         continue
@@ -159,7 +159,7 @@ impl Keccak {
   }
 
   private fun keccakPi(context: ref): void = {
-    var A1 = i64.load(context, 8 as u32)
+    val A1 = i64.load(context, 8 as u32)
     i64.store(context, i64.load(context, 48 as u32), 8 as u32)
     i64.store(context, i64.load(context, 72 as u32), 48 as u32)
     i64.store(context, i64.load(context, 176 as u32), 72 as u32)
@@ -190,8 +190,8 @@ impl Keccak {
     var i = 0 as u32
     loop {
       if (i >= 25 as u32) continue
-      var A0 = i64.load(context, i << 3)
-      var A1 = i64.load(context, i + 1 as u32 << 3)
+      val A0 = i64.load(context, i << 3)
+      val A1 = i64.load(context, i + 1 as u32 << 3)
       i64.store(context, i64.load(context, i << 3) ^ ~A1 & i64.load(context, i + 2 as u32 << 3), i << 3)
       i64.store(context, i64.load(context, i + 1 as u32 << 3) ^ ~i64.load(context, i + 2 as u32 << 3) & i64.load(context, i + 3 as u32 << 3), i + 1 as u32 << 3)
       i64.store(context, i64.load(context, i + 2 as u32 << 3) ^ ~i64.load(context, i + 3 as u32 << 3) & i64.load(context, i + 4 as u32 << 3), i + 2 as u32 << 3)
@@ -203,9 +203,9 @@ impl Keccak {
   }
 
   private fun keccakPermute(contextOffset: u32): void = {
-    var roundConsts = contextOffset + 400 as u32 as ref
-    var rotationConsts = contextOffset + 592 as u32 as ref
-    var contextRef = contextOffset as ref
+    val roundConsts = contextOffset + 400 as u32 as ref
+    val rotationConsts = contextOffset + 592 as u32 as ref
+    val contextRef = contextOffset as ref
     var round = 0
     loop {
       if (round >= 24) {
@@ -223,8 +223,8 @@ impl Keccak {
   }
 
   private fun keccakBlock(inputOffset: u32, contextOffset: u32): void = {
-    var input = inputOffset as ref
-    var context = contextOffset as ref
+    val input = inputOffset as ref
+    val context = contextOffset as ref
     i64.store(context, i64.load(context, 0 as u32) ^ i64.load(input, 0 as u32), 0 as u32)
     i64.store(context, i64.load(context, 8 as u32) ^ i64.load(input, 8 as u32), 8 as u32)
     i64.store(context, i64.load(context, 16 as u32) ^ i64.load(input, 16 as u32), 16 as u32)
@@ -247,7 +247,7 @@ impl Keccak {
 
   private fun keccakInit(contextOffset: u32): void = {
     keccakReset(contextOffset)
-    var roundConsts = contextOffset + 400 as u32 as ref
+    val roundConsts = contextOffset + 400 as u32 as ref
     u64.store(roundConsts, 0x0000000000000001, 0 as u32)
     u64.store(roundConsts, 0x0000000000008082, 8 as u32)
     u64.store(roundConsts, 0x800000000000808A, 16 as u32)
@@ -272,7 +272,7 @@ impl Keccak {
     u64.store(roundConsts, 0x8000000000008080, 168 as u32)
     u64.store(roundConsts, 0x0000000080000001, 176 as u32)
     u64.store(roundConsts, 0x8000000080008008, 184 as u32)
-    var rotationConsts = contextOffset + 592 as u32 as ref
+    val rotationConsts = contextOffset + 592 as u32 as ref
     u8.store(rotationConsts, 1 as u8, 0 as u32)
     u8.store(rotationConsts, 62 as u8, 1 as u32)
     u8.store(rotationConsts, 28 as u8, 2 as u32)
@@ -304,8 +304,8 @@ impl Keccak {
   }
 
   private fun keccakUpdate(contextOffset: u32, inputOffset: u32, inputLength: u32): void = {
-    var residueOffsetRef = contextOffset + 200 as u32 as ref
-    var residueBuffer = contextOffset + 208 as u32
+    val residueOffsetRef = contextOffset + 200 as u32 as ref
+    val residueBuffer = contextOffset + 208 as u32
     var residueIndex = u32.load(residueOffsetRef)
     var mutInputLength = inputLength
     var mutInputOffset = inputOffset
@@ -340,7 +340,7 @@ impl Keccak {
 
   private fun keccakFinish(contextOffset: u32, outputOffset: u32): void = {
     var residueBuffer = contextOffset + 208 as u32
-    var residueRef = residueBuffer as ref
+    val residueRef = residueBuffer as ref
     var residueIndex = u32.load(contextOffset + 200 as u32 as ref)
     system::core::memory::memset(residueBuffer + residueIndex, 0 as u8, 136 as u32 - residueIndex)
     u8.store(residueRef, u8.load(residueRef, residueIndex) | 0x01 as u8, residueIndex)

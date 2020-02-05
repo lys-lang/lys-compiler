@@ -404,7 +404,7 @@
           |-QNameNode
             |-NameIdentifierNode name=A
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -720,7 +720,7 @@
           |-QNameNode
             |-NameIdentifierNode name=B
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -1036,7 +1036,7 @@
           |-QNameNode
             |-NameIdentifierNode name=C
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -1664,7 +1664,7 @@
           |-QNameNode
             |-NameIdentifierNode name=Red
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -1980,7 +1980,7 @@
           |-QNameNode
             |-NameIdentifierNode name=Green
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -2296,7 +2296,7 @@
           |-QNameNode
             |-NameIdentifierNode name=Blue
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -2620,7 +2620,7 @@
           |-QNameNode
             |-NameIdentifierNode name=Custom
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -2939,7 +2939,7 @@
                     |-NameIdentifierNode name=$lhs
   |-VarDirectiveNode
     |-NoModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=value1
       |-ReferenceNode
         |-QNameNode
@@ -2949,7 +2949,7 @@
           |-NameIdentifierNode name=A
   |-VarDirectiveNode
     |-NoModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=value2
       |-UnionTypeNode
         |-ReferenceNode
@@ -2963,7 +2963,7 @@
           |-NameIdentifierNode name=A
   |-VarDirectiveNode
     |-NoModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=value3
       |-ReferenceNode
         |-QNameNode

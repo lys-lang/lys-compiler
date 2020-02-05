@@ -115,7 +115,7 @@
         |-FloatLiteralNode value=0x400
   |-VarDirectiveNode
     |-PrivateModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=startOffset
       |-ReferenceNode
         |-QNameNode
@@ -137,7 +137,7 @@
               |-NameIdentifierNode name=AL_MASK
   |-VarDirectiveNode
     |-PrivateModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=offset
       |-ReferenceNode
         |-QNameNode
@@ -506,7 +506,7 @@
         |-QNameNode
           |-NameIdentifierNode name=u32
       |-BlockNode
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=i
           |-ReferenceNode
             |-QNameNode

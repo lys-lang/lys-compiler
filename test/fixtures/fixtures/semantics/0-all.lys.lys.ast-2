@@ -178,7 +178,7 @@
           |-QNameNode
             |-NameIdentifierNode name=asd
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -369,7 +369,7 @@
                     |-NameIdentifierNode name=$lhs
   |-VarDirectiveNode
     |-PrivateModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=startOffset
       |-ReferenceNode
         |-QNameNode
@@ -391,7 +391,7 @@
               |-NameIdentifierNode name=AL_MASK
   |-VarDirectiveNode
     |-PrivateModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=offset
       |-ReferenceNode
         |-QNameNode
@@ -401,7 +401,7 @@
           |-NameIdentifierNode name=startOffset
   |-VarDirectiveNode
     |-PrivateModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=lastPtr
       |-ReferenceNode
         |-QNameNode
@@ -1078,7 +1078,7 @@
           |-QNameNode
             |-NameIdentifierNode name=String
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -1506,7 +1506,7 @@
                 |-QNameNode
                   |-NameIdentifierNode name=rhsData
               |-NameIdentifierNode name=length
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=newData
             |-EmptyNode
             |-FunctionCallNode
@@ -1944,7 +1944,7 @@
           |-QNameNode
             |-NameIdentifierNode name=BB
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -2261,7 +2261,7 @@
           |-QNameNode
             |-NameIdentifierNode name=TT
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -2982,7 +2982,7 @@
           |-QNameNode
             |-NameIdentifierNode name=Empty
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -3310,7 +3310,7 @@
           |-QNameNode
             |-NameIdentifierNode name=Node
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -4066,7 +4066,7 @@
           |-QNameNode
             |-NameIdentifierNode name=Nil
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -4394,7 +4394,7 @@
           |-QNameNode
             |-NameIdentifierNode name=Cons
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -4789,13 +4789,13 @@
         |-QNameNode
           |-NameIdentifierNode name=void
       |-BlockNode
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=a
           |-EmptyNode
           |-ReferenceNode
             |-QNameNode
               |-NameIdentifierNode name=Nil
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=b
           |-EmptyNode
           |-FunctionCallNode
@@ -4805,7 +4805,7 @@
             |-ReferenceNode
               |-QNameNode
                 |-NameIdentifierNode name=Empty
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=c
           |-EmptyNode
           |-FunctionCallNode
@@ -4815,7 +4815,7 @@
             |-ReferenceNode
               |-QNameNode
                 |-NameIdentifierNode name=Nil
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=d
           |-EmptyNode
           |-FunctionCallNode
@@ -4829,7 +4829,7 @@
               |-ReferenceNode
                 |-QNameNode
                   |-NameIdentifierNode name=Empty
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=e
           |-EmptyNode
           |-FunctionCallNode
@@ -4945,7 +4945,7 @@
         |-QNameNode
           |-NameIdentifierNode name=void
       |-BlockNode
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=x
           |-EmptyNode
           |-FloatLiteralNode value=1
@@ -4981,7 +4981,7 @@
         |-QNameNode
           |-NameIdentifierNode name=void
       |-BlockNode
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=x
           |-EmptyNode
           |-FloatLiteralNode value=1
@@ -5155,7 +5155,7 @@
           |-QNameNode
             |-NameIdentifierNode name=Color
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -5899,7 +5899,7 @@
           |-QNameNode
             |-NameIdentifierNode name=True
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -6216,7 +6216,7 @@
           |-QNameNode
             |-NameIdentifierNode name=False
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -6738,7 +6738,7 @@
         |-QNameNode
           |-NameIdentifierNode name=i32
       |-BlockNode
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=n
           |-EmptyNode
           |-FloatLiteralNode value=1
@@ -6902,7 +6902,7 @@
           |-QNameNode
             |-NameIdentifierNode name=Iterator
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -7718,7 +7718,7 @@
           |-QNameNode
             |-NameIdentifierNode name=None
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -8042,7 +8042,7 @@
           |-QNameNode
             |-NameIdentifierNode name=Some
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -8392,7 +8392,7 @@
                     |-NameIdentifierNode name=iter
                 |-NameIdentifierNode name=target
             |-BlockNode
-              |-VarDeclarationNode
+              |-VarDeclarationNode MutableDeclaration
                 |-NameIdentifierNode name=r
                 |-EmptyNode
                 |-FunctionCallNode
@@ -8445,7 +8445,7 @@
         |-QNameNode
           |-NameIdentifierNode name=i32
       |-BlockNode
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=ret
           |-EmptyNode
           |-FloatLiteralNode value=0

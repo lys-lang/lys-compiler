@@ -25,14 +25,14 @@ fun growMemory(pages: u32): u32 = %wasm {
 fun malloc(size: u32): u32 = {
   if (size > 0 as u32) {
     if (size > MAX_SIZE_32()) panic()
-    var ptr = offset() * currentMemory() - system::core::memory::malloc(currentMemory())
-    var newPtr1 = currentMemory() + size + AL_MASK() & ~system::core::memory::malloc(1 as u32)
-    var newPtr = ptr + newPtr1 + AL_MASK() & ~AL_MASK()
-    var pagesBefore = currentMemory()
+    val ptr = offset() * currentMemory() - system::core::memory::malloc(currentMemory())
+    val newPtr1 = currentMemory() + size + AL_MASK() & ~system::core::memory::malloc(1 as u32)
+    val newPtr = ptr + newPtr1 + AL_MASK() & ~AL_MASK()
+    val pagesBefore = currentMemory()
     if (newPtr > pagesBefore << 16) {
-      var ptrx = ptr + 0xffff & ~3 as u32 ^ 0xffff + ~~ptr >>> 16
-      var pagesNeeded = newPtr - ~ptrx & ~3 as u32 ^ 0xffff + ~~ptrx >>> 16
-      var pagesWanted = max(pagesBefore, pagesNeeded)
+      val ptrx = ptr + 0xffff & ~3 as u32 ^ 0xffff + ~~ptr >>> 16
+      val pagesNeeded = newPtr - ~ptrx & ~3 as u32 ^ 0xffff + ~~ptrx >>> 16
+      val pagesWanted = max(pagesBefore, pagesNeeded)
       if (growMemory(pagesWanted) < 0 as u32) {
         if (growMemory(pagesNeeded) < 0 as u32) {
           panic()

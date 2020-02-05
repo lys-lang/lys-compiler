@@ -5,7 +5,7 @@ type String = %struct {data: bytes}
 impl String for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -19,7 +19,7 @@ impl String for Reference {
 impl String {
   #[inline]
   private fun String$discriminant(): u64 = {
-    var discriminant: u32 = String.^discriminant
+    val discriminant: u32 = String.^discriminant
     discriminant as u64 << 32
   }
 
@@ -73,10 +73,10 @@ impl String {
   fun length(str: String): i32 = str.data.length / 2
 
   fun +(lhs: String, rhs: String): String = {
-    var lhsData = lhs.data
-    var rhsData = rhs.data
-    var lhsLen = lhsData.length
-    var rhsLen = rhsData.length
+    val lhsData = lhs.data
+    val rhsData = rhs.data
+    val lhsLen = lhsData.length
+    val rhsLen = rhsData.length
     var newData = bytes(lhsLen + rhsLen)
     system::core::memory::memcpy(newData.ptr, lhsData.ptr, lhsLen)
     system::core::memory::memcpy(newData.ptr + lhsLen, rhs.data.ptr, rhsLen)

@@ -1,5 +1,5 @@
 private fun stringDiscriminant(): u64 = {
-  var discriminant: u32 = string.^discriminant
+  val discriminant: u32 = string.^discriminant
   discriminant as u64 << 32
 }
 

@@ -46,7 +46,7 @@ type Some = %struct {value: ref}
 impl Some for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -60,7 +60,7 @@ impl Some for Reference {
 impl Some {
   #[inline]
   private fun Some$discriminant(): u64 = {
-    var discriminant: u32 = Some.^discriminant
+    val discriminant: u32 = Some.^discriminant
     discriminant as u64 << 32
   }
 
@@ -115,7 +115,7 @@ type None = %struct {}
 impl None for Reference {
   #[inline]
   fun is(a: Self | ref): boolean = {
-    var discriminant: u32 = Self.^discriminant
+    val discriminant: u32 = Self.^discriminant
     ref.getDiscriminant(a) == discriminant
   }
 
@@ -129,7 +129,7 @@ impl None for Reference {
 impl None {
   #[inline]
   private fun None$discriminant(): u64 = {
-    var discriminant: u32 = None.^discriminant
+    val discriminant: u32 = None.^discriminant
     discriminant as u64 << 32
   }
 
@@ -218,23 +218,23 @@ impl Option {
 
 }
 impl Some {
-  var determinant: u32 = 1
-  var memorySize = ref.memorySize + ref.memorySize
+  val determinant: u32 = 1
+  val memorySize = ref.memorySize + ref.memorySize
   fun is(x: ref) = x.determinant == determinant
 
   fun apply(value: ref): Some = {
-    var ptr: Some = determinant << 32 | core::memory::malloc(memorySize) as Some
+    val ptr: Some = determinant << 32 | core::memory::malloc(memorySize) as Some
     set_value(ptr, value)
     ref as Celcius
   }
 
   fun get_value(ptr: Some): f32 = {
-    var base = ref.base(ptr)
+    val base = ref.base(ptr)
     ref.read(base + 0)
   }
 
   private fun set_value(ptr: Some, newValue: ref): void = {
-    var base = ref.base(ptr)
+    val base = ref.base(ptr)
     ref.store(base + 0, newValue)
   }
 
@@ -248,8 +248,8 @@ impl Some {
 
 }
 impl None {
-  var determinant: u32 = 2
-  var staticInstance: ref = determinant
+  val determinant: u32 = 2
+  val staticInstance: ref = determinant
   fun is(x: ref) = x == staticInstance
 
   fun apply(): None = staticInstance

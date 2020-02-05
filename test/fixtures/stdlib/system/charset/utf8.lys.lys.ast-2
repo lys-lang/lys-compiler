@@ -60,11 +60,11 @@
         |-QNameNode
           |-NameIdentifierNode name=u32
       |-BlockNode
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=len
           |-EmptyNode
           |-FloatLiteralNode value=0x0
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=i
           |-EmptyNode
           |-FloatLiteralNode value=0x0
@@ -130,7 +130,7 @@
                         |-NameIdentifierNode name=str
                     |-NameIdentifierNode name=length
               |-BlockNode
-                |-VarDeclarationNode
+                |-VarDeclarationNode MutableDeclaration
                   |-NameIdentifierNode name=cn
                   |-EmptyNode
                   |-AsExpressionNode
@@ -268,7 +268,7 @@
         |-QNameNode
           |-NameIdentifierNode name=bytes
       |-BlockNode
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=out
           |-EmptyNode
           |-FunctionCallNode
@@ -285,11 +285,11 @@
                     |-NameIdentifierNode name=str
               |-NameIdentifierNode name=+
               |-FloatLiteralNode value=0x1
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=i
           |-EmptyNode
           |-FloatLiteralNode value=0x0
-        |-VarDeclarationNode
+        |-VarDeclarationNode MutableDeclaration
           |-NameIdentifierNode name=j
           |-EmptyNode
           |-FloatLiteralNode value=0x0
@@ -355,7 +355,7 @@
                         |-NameIdentifierNode name=str
                     |-NameIdentifierNode name=length
               |-BlockNode
-                |-VarDeclarationNode
+                |-VarDeclarationNode MutableDeclaration
                   |-NameIdentifierNode name=cn
                   |-EmptyNode
                   |-AsExpressionNode
@@ -389,7 +389,7 @@
                       |-NameIdentifierNode name=<=
                       |-FloatLiteralNode value=0xdfff
                   |-BlockNode
-                    |-VarDeclarationNode
+                    |-VarDeclarationNode MutableDeclaration
                       |-NameIdentifierNode name=pt
                       |-EmptyNode
                       |-BinaryExpressionNode

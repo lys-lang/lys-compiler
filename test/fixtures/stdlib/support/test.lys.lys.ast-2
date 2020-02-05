@@ -127,7 +127,7 @@
           |-QNameNode
             |-NameIdentifierNode name=TestStruct
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -751,7 +751,7 @@
           |-QNameNode
             |-NameIdentifierNode name=EmptyMessage
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -1075,7 +1075,7 @@
           |-QNameNode
             |-NameIdentifierNode name=Message
         |-BlockNode
-          |-VarDeclarationNode
+          |-VarDeclarationNode MutableDeclaration
             |-NameIdentifierNode name=$ref
             |-EmptyNode
             |-FunctionCallNode
@@ -1394,7 +1394,7 @@
                     |-NameIdentifierNode name=$lhs
   |-VarDirectiveNode
     |-NoModifierNode
-    |-VarDeclarationNode
+    |-VarDeclarationNode MutableDeclaration
       |-NameIdentifierNode name=lastErrorMessage
       |-ReferenceNode
         |-QNameNode
