@@ -1,8 +1,10 @@
-# lys-tokenizer
+# lys-compiler
 
 ## Objective of this repository
 
-Start [bootstraping the compiler](https://en.wikipedia.org/wiki/Bootstrapping_(compilers)).
+Start [bootstraping the compiler](https://en.wikipedia.org/wiki/Bootstrapping_(compilers)).  
+
+[Blog post](https://menduz.com/posts/2019.12.26)
 
 ## To build locally
 

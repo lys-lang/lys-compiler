@@ -423,7 +423,6 @@ fun appendDestructureDeclaration(varNameIdentifier: AstNode, headReference: AstN
 }
 
 fun processDestructure(currentPath: string, currentModule: string, patternMatcher: AstNode, ctx: CompilerContext): AstNode = {
-
   // Pattern matching destructuring is purely sugar syntax.
 
   // Sugar:
