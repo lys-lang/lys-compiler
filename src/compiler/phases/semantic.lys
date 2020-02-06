@@ -1,0 +1,13 @@
+import src::lexer::tokens
+import src::parser::parser
+import src::compiler::nodes
+import src::compiler::context
+import src::stringbuilder
+
+
+
+
+
+fun runPhase(currentPath: string, currentModule: string, node: CodeNode, ctx: CompilerContext): void = {
+  
+}

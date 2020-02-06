@@ -1,0 +1,93 @@
+import src::lexer::tokens
+import src::parser::parser
+import src::compiler::nodes
+import src::compiler::context
+
+
+fun walk(
+  enter: fun(CodeNode, Module, Context) -> CodeNode,
+  leave: fun(CodeNode, Module, Context) -> CodeNode,
+  node
+): void = {
+  enter(node)
+  match {
+    case is CodeNodeCons(head, tail) -> {
+      walk(enter, leave, head)
+      walk(enter, leave, tail)
+    }
+    case is Document(headDirective) -> walk(enter, leave, headDirective)
+    case is QNameNode(names) -> walk(enter, leave, names)
+    case is FunctionTypeNode(parameters, returnType, effect) -> {
+      walk(enter, leave, parameters)
+      walk(enter, leave, returnType)
+      walk(enter, leave, effect)
+    }
+    case is ReferenceNode(variable) -> walk(enter, leave, variable)
+    case is BlockNode(headStatement) -> walk(enter, leave, headStatement)
+    case is MemberNode(lhs, rhs) -> {
+      walk(enter, leave, lhs)
+      walk(enter, leave, rhs)
+    }
+    case is DecoratorNode(decoratorName, headArgument) -> {
+      walk(enter, leave, decoratorName)
+      walk(enter, leave, headArgument)
+    }
+    case is ParameterNode(parameterName, parameterType) -> {
+      walk(enter, leave, parameterName)
+      walk(enter, leave, parameterType)
+    }
+    case is FunctionNode(functionName, headParameter, returnType, body) -> {
+      walk(enter, leave, functionName)
+      walk(enter, leave, headParameter)
+      walk(enter, leave, returnType)
+      walk(enter, leave, body)
+    }
+    case is VarDeclarationNode(name, typeDecl, value) -> {
+      walk(enter, leave, name)
+      walk(enter, leave, typeDecl)
+      walk(enter, leave, value)
+    }
+    case is AssignmentNode(lhs, rhs) -> {
+      walk(enter, leave, lhs)
+      walk(enter, leave, rhs)
+    }
+    case is ParenExpressionNode(expression)
+    case is ImplDirectiveNode(baseImpl, targetImpl, headDirective)
+    case is ImportDirectiveNode(module, alias)
+    case is FunDirectiveNode(headDecorator, modifier, function)
+    case is EffectDirectiveNode(effectDecl)
+    case is OverloadedFunDirectiveNode(functionName, headFun)
+    case is VarDirectiveNode(modifier, decl)
+    case is TypeDirectiveNode(modifier, name, declType)
+    case is TraitDirectiveNode(modifier, name, headDirective)
+    case is EnumDirectiveNode(modifier, name, headDeclaration)
+    case is StructDirectiveNode(modifier, decl)
+    case is StackLiteralNode(headNames)
+    case is NameLiteralPairNode(name, value)
+    case is StackTypeNode(headMeta)
+    case is StructTypeNode(headParameter)
+    case is AbstractFunctionCallNode(headArgument, resolvedFunction)
+    case is InjectedFunctionCallNode(headArgument, resolvedFunction)
+    case is FunctionCallNode(functionNode, headArgument, resolvedFunction)
+    case is BinaryExpressionNode(lhs, operator, rhs)
+    case is AsExpressionNode(lhs, rhs)
+    case is IsExpressionNode(lhs, rhs)
+    case is UnaryExpressionNode(operator, rhs)
+    case is WasmAtomNode(symbol: string, headArgument)
+    case is WasmExpressionNode(headAtom)
+    case is IfNode(condition, truePart, falsePart)
+    case is UnionTypeNode(headType)
+    case is IntersectionTypeNode(headType)
+    case is StructDeclarationNode(name, headParameter)
+    case is EffectDeclarationNode(name)
+    case is PatternMatcherNode(lhs, headMatcher)
+    case is MatchConditionNode(declaredName, condition, body)
+    case is MatchCaseIsNode(declaredName, typeReference, headDeconstruct, body)
+    case is MatchLiteralNode(literal, body)
+    case is MatchDefaultNode(declaredName, body)
+    case is LoopNode(expression)
+  }
+  leave(node)
+}
+
+fun identity(node, module: Module, ctx: Context): void = {/**/}
