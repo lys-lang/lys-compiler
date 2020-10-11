@@ -1,0 +1,60 @@
+import src::compiler::nodes
+import src::compiler::annotations
+import src::compiler::nodewalker
+import src::compiler::context
+import src::compiler::scope
+
+fun runPhase(currentPath: string, currentModule: string, node: CodeNode, ctx: CompilerContext): CodeNode = {
+  walk(node, ctx, EmptyNode, enter, noop)
+
+  if (node is Document) {
+    node.scope = Scope("", currentModule)
+  }
+
+  node
+}
+
+fun enter(node: CodeNode, context: CompilerContext, parent: CodeNode): void = {
+  val parentScope = parent.scope
+
+  if (node.scope == NoScope) {
+    node.scope = parentScope
+  }
+
+  match node.scope {
+    case scope is Scope -> {
+      match node {
+        case is MatchConditionNode(body) -> {
+          body.scope = scope.newChildScope("MatcherRHS")
+        }
+        case is MatchCaseIsNode(body) -> {
+          body.scope = scope.newChildScope("MatcherRHS")
+        }
+        case is MatchLiteralNode(body) -> {
+          body.scope = scope.newChildScope("MatcherRHS")
+        }
+        case is MatchDefaultNode(body) -> {
+          body.scope = scope.newChildScope("MatcherRHS")
+        }
+        case is FunctionNode(body) -> {
+          body.scope = scope.newChildScope("Body")
+        }
+        case is VarDeclarationNode(value) -> {
+          val varName = "VarName"
+          value.scope = scope.newChildScope(varName ++ ".")
+        }
+        case is TraitDirectiveNode -> {
+          val traitName = "TraitName"
+          node.scope = scope.newChildScope(traitName ++ ".")
+        }
+        case is ImplDirectiveNode -> {
+          val implName = "ImplName"
+          node.scope = scope.newChildScope(implName ++ ".")
+        }
+        case is BlockNode -> {
+          node.scope = scope.newChildScope("Block")
+        }
+      }
+    }
+  }
+}

@@ -388,7 +388,7 @@ fun appendDestructureDeclaration(varNameIdentifier: AstNode, headReference: AstN
         if (referenceName != "_") {
           val reference = Node("Reference", Node("QName", varNameIdentifier, 0x0, 0x0), 0x0, 0x0)
 
-          val decl = Node("ValDeclaration", 
+          val decl = Node("ValDeclaration",
             AstCons(
               headReference,
               Node("AtomicExpression", AstCons(
@@ -410,7 +410,6 @@ fun appendDestructureDeclaration(varNameIdentifier: AstNode, headReference: AstN
             }
             else -> Node("CodeBlock", AstCons(decl, wrappedNode), 0x0, 0x0)
           }
-          
         } else {
           wrappedNode
         }
