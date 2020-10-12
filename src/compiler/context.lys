@@ -79,8 +79,9 @@ impl CompilerContext {
       case ast is AstNode -> {
         val errors = collectErrors(ast, self.messageCollector, path)
         val newAst = src::compiler::phases::transformation::runPhase(path, moduleName, ast, self)
-        val code = src::compiler::phases::cannonical::processNode(newAst)
-        src::compiler::phases::semantic::runPhase(path, moduleName, code, self)
+        var code = src::compiler::phases::cannonical::processNode(newAst)
+        code = src::compiler::phases::scopecreation::runPhase(path, moduleName, code, self)
+        code = src::compiler::phases::semantic::runPhase(path, moduleName, code, self)
         Module(moduleName, path, source, newAst, code, 0, errors, LineMapper(source))
       }
     }

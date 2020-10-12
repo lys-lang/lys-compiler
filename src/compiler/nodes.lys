@@ -2,11 +2,12 @@ import src::helpers
 import src::parser::parser
 import src::compiler::annotations
 import src::stringbuilder
+import src::compiler::scope
 
-struct NodeMeta(astNode: AstNode, annotations: NodeAnnotation)
+struct NodeMeta(astNode: AstNode, annotations: NodeAnnotation, scope: NodeScope)
 
 impl NodeMeta {
-  fun apply(astNode: AstNode): NodeMeta = NodeMeta(astNode, NoAnnotation)
+  fun apply(astNode: AstNode): NodeMeta = NodeMeta(astNode, NoAnnotation, NoScope)
 
   #[method]
   fun annotate(self: NodeMeta, annotation: NodeAnnotation): NodeMeta = {
@@ -257,6 +258,22 @@ impl CodeNode {
       Nil
     }
   }
+
+  #[getter]
+  fun scope(self: CodeNode): NodeScope =
+    match self.meta {
+      case is NodeMeta(scope) -> scope
+      else -> NoScope
+    }
+
+  #[setter]
+  fun scope(self: CodeNode, scope: NodeScope): void =
+    match self.meta {
+      case meta is NodeMeta -> {
+        meta.scope = scope
+      }
+      else -> { /* void */ }
+    }
 
   fun printWithSeparator(self: CodeNode, sb: StringBuilder, indentation: i32, separator: string): i32 = {
     printWithSeparator(self, sb, indentation, separator, 0)

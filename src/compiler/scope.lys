@@ -1,0 +1,52 @@
+
+
+enum NodeScope {
+  NoScope
+  ScopeCons(lhs: NodeScope, rhs: Scope)
+  Scope(
+    name: string,
+    moduleName: string,
+    parent: NodeScope,
+    childrenScopes: NodeScope
+  )
+}
+
+impl Scope {
+  fun apply(name: string, moduleName: string): Scope = {
+    Scope(name, moduleName, NoScope)
+  }
+
+  fun apply(name: string, moduleName: string, parent: NodeScope): Scope = {
+    Scope(name, moduleName, parent, NoScope)
+  }
+
+  #[method]
+  fun isDescendantOf(self: Scope, parentScope: Scope): boolean = {
+    val p = self.parent
+    match p {
+      case x is Scope -> {
+        if (parentScope == x) {
+          true
+        } else {
+          x.isDescendantOf(parentScope)
+        }
+      }
+      else -> {false}
+    }
+  }
+
+  #[method]
+  fun newChildScope(self: Scope, nameHint: string): Scope = {
+    val newScope = Scope(nameHint, self.moduleName, self, NoScope)
+    val ch = self.childrenScopes
+
+    val newChildScope = match ch {
+      case is NoScope -> {newScope}
+      else -> {ScopeCons(self.childrenScopes, newScope)}
+    }
+
+    self.childrenScopes = newChildScope
+
+    newScope
+  }
+}

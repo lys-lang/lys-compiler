@@ -1,0 +1,201 @@
+import src::compiler::nodes
+import src::compiler::context
+
+fun noop(node: CodeNode, context: CompilerContext, parent: CodeNode): void = {
+  // noop
+}
+
+fun walk(node: CodeNode, context: CompilerContext, parent: CodeNode, onEnter: fun(node: CodeNode, context: CompilerContext, parent: CodeNode) -> void, onLeave: fun(node: CodeNode, context: CompilerContext, parent: CodeNode) -> void): void = {
+  onEnter(node, context, parent)
+
+  match node {
+    case is CodeNodeCons(head, tail) -> {
+      walk(head, context, node, onEnter, onLeave)
+      walk(tail, context, node, onEnter, onLeave)
+    }
+    case is Document(headDirective) -> {
+      walk(headDirective, context, node, onEnter, onLeave)
+    }
+    case is FunctionTypeNode(parameters, returnType, effect) -> {
+      walk(parameters, context, node, onEnter, onLeave)
+      walk(returnType, context, node, onEnter, onLeave)
+      walk(effect, context, node, onEnter, onLeave)
+    }
+    case is QNameNode(names) -> {
+      walk(names, context, node, onEnter, onLeave)
+    }
+    case is ReferenceNode(variable) -> {
+      walk(variable, context, node, onEnter, onLeave)
+    }
+    case is BlockNode(headStatement) -> {
+      walk(headStatement, context, node, onEnter, onLeave)
+    }
+    case is MemberNode(lhs, operator, rhs) -> {
+      walk(lhs, context, node, onEnter, onLeave)
+      walk(rhs, context, node, onEnter, onLeave)
+    }
+    case is DecoratorNode(decoratorName, headArgument) -> {
+      walk(decoratorName, context, node, onEnter, onLeave)
+      walk(headArgument, context, node, onEnter, onLeave)
+    }
+    case is ParameterNode(parameterName, parameterType) -> {
+      walk(parameterName, context, node, onEnter, onLeave)
+      walk(parameterType, context, node, onEnter, onLeave)
+    }
+    case is FunctionNode(functionName, headParameter, returnType, body) -> {
+      walk(functionName, context, node, onEnter, onLeave)
+      walk(headParameter, context, node, onEnter, onLeave)
+      walk(returnType, context, node, onEnter, onLeave)
+      walk(body, context, node, onEnter, onLeave)
+    }
+    case is NameLiteralPairNode(name, value) -> {
+      walk(name, context, node, onEnter, onLeave)
+      walk(value, context, node, onEnter, onLeave)
+    }
+    case is StackLiteralNode(headNames) -> {
+      walk(headNames, context, node, onEnter, onLeave)
+    }
+    case is VarDeclarationNode(name, typeDecl, value) -> {
+      walk(name, context, node, onEnter, onLeave)
+      walk(typeDecl, context, node, onEnter, onLeave)
+      walk(value, context, node, onEnter, onLeave)
+    }
+    case is AssignmentNode(lhs, rhs) -> {
+      walk(lhs, context, node, onEnter, onLeave)
+      walk(rhs, context, node, onEnter, onLeave)
+    }
+    case is ImplDirectiveNode(baseImpl, targetImpl, headDirective) -> {
+      walk(baseImpl, context, node, onEnter, onLeave)
+      walk(targetImpl, context, node, onEnter, onLeave)
+      walk(headDirective, context, node, onEnter, onLeave)
+    }
+    case is ImportDirectiveNode(module, alias) -> {
+      walk(module, context, node, onEnter, onLeave)
+      walk(alias, context, node, onEnter, onLeave)
+    }
+    case is StructDirectiveNode(modifier, decl) -> {
+      walk(modifier, context, node, onEnter, onLeave)
+      walk(decl, context, node, onEnter, onLeave)
+    }
+    case is FunDirectiveNode(headDecorator, modifier, function) -> {
+      walk(headDecorator, context, node, onEnter, onLeave)
+      walk(modifier, context, node, onEnter, onLeave)
+      walk(function, context, node, onEnter, onLeave)
+    }
+    case is EffectDirectiveNode(effectDecl) -> {
+      walk(effectDecl, context, node, onEnter, onLeave)
+    }
+    case is OverloadedFunDirectiveNode(functionName, headFun) -> {
+      walk(functionName, context, node, onEnter, onLeave)
+      walk(headFun, context, node, onEnter, onLeave)
+    }
+    case is VarDirectiveNode(modifier, decl) -> {
+      walk(modifier, context, node, onEnter, onLeave)
+      walk(decl, context, node, onEnter, onLeave)
+    }
+    case is TypeDirectiveNode(modifier, name, declType) -> {
+      walk(modifier, context, node, onEnter, onLeave)
+      walk(name, context, node, onEnter, onLeave)
+      walk(declType, context, node, onEnter, onLeave)
+    }
+    case is TraitDirectiveNode(modifier, name, headDirective) -> {
+      walk(modifier, context, node, onEnter, onLeave)
+      walk(name, context, node, onEnter, onLeave)
+      walk(headDirective, context, node, onEnter, onLeave)
+    }
+    case is EnumDirectiveNode(modifier, name, headDeclaration) -> {
+      walk(modifier, context, node, onEnter, onLeave)
+      walk(name, context, node, onEnter, onLeave)
+      walk(headDeclaration, context, node, onEnter, onLeave)
+    }
+
+    case is StructTypeNode(headParameter) -> {
+      walk(headParameter, context, node, onEnter, onLeave)
+    }
+
+    case is AbstractFunctionCallNode(headArgument, resolvedFunction) -> {
+      walk(headArgument, context, node, onEnter, onLeave)
+    }
+    case is InjectedFunctionCallNode(headArgument, resolvedFunction) -> {
+      walk(headArgument, context, node, onEnter, onLeave)
+    }
+    case is FunctionCallNode(functionNode, headArgument, resolvedFunction) -> {
+      walk(functionNode, context, node, onEnter, onLeave)
+      walk(headArgument, context, node, onEnter, onLeave)
+    }
+    case is ParenExpressionNode(expression) -> {
+      walk(expression, context, node, onEnter, onLeave)
+    }
+    case is BinaryExpressionNode(lhs, operator, rhs) -> {
+      walk(lhs, context, node, onEnter, onLeave)
+      walk(operator, context, node, onEnter, onLeave)
+      walk(rhs, context, node, onEnter, onLeave)
+    }
+    case is AsExpressionNode(lhs, rhs) -> {
+      walk(lhs, context, node, onEnter, onLeave)
+      walk(rhs, context, node, onEnter, onLeave)
+    }
+    case is IsExpressionNode(lhs, rhs) -> {
+      walk(lhs, context, node, onEnter, onLeave)
+      walk(rhs, context, node, onEnter, onLeave)
+    }
+    case is UnaryExpressionNode(operator, rhs) -> {
+      walk(operator, context, node, onEnter, onLeave)
+      walk(rhs, context, node, onEnter, onLeave)
+    }
+    case is WasmAtomNode(symbol, headArgument) -> {
+      walk(headArgument, context, node, onEnter, onLeave)
+    }
+    case is WasmExpressionNode(headAtom) -> {
+      walk(headAtom, context, node, onEnter, onLeave)
+    }
+    case is IfNode(condition, truePart, falsePart) -> {
+      walk(condition, context, node, onEnter, onLeave)
+      walk(truePart, context, node, onEnter, onLeave)
+      walk(falsePart, context, node, onEnter, onLeave)
+    }
+    case is UnionTypeNode(headType) -> {
+      walk(headType, context, node, onEnter, onLeave)
+    }
+    case is IntersectionTypeNode(headType) -> {
+      walk(headType, context, node, onEnter, onLeave)
+    }
+    case is StructDeclarationNode(name, headParameter) -> {
+      walk(name, context, node, onEnter, onLeave)
+      walk(headParameter, context, node, onEnter, onLeave)
+    }
+    case is EffectDeclarationNode(name) -> {
+      walk(name, context, node, onEnter, onLeave)
+    }
+    case is PatternMatcherNode(lhs, headMatcher) -> {
+      walk(lhs, context, node, onEnter, onLeave)
+      walk(headMatcher, context, node, onEnter, onLeave)
+    }
+    case is MatchConditionNode(declaredName, condition, body) -> {
+      walk(declaredName, context, node, onEnter, onLeave)
+      walk(condition, context, node, onEnter, onLeave)
+      walk(body, context, node, onEnter, onLeave)
+    }
+    case is MatchCaseIsNode(declaredName, typeReference, headDeconstruct, body) -> {
+      walk(declaredName, context, node, onEnter, onLeave)
+      walk(typeReference, context, node, onEnter, onLeave)
+      walk(headDeconstruct, context, node, onEnter, onLeave)
+      walk(body, context, node, onEnter, onLeave)
+    }
+    case is MatchLiteralNode(literal, body) -> {
+      walk(literal, context, node, onEnter, onLeave)
+      walk(body, context, node, onEnter, onLeave)
+    }
+    case is MatchDefaultNode(declaredName, body) -> {
+      walk(declaredName, context, node, onEnter, onLeave)
+      walk(body, context, node, onEnter, onLeave)
+    }
+    case is LoopNode(expression) -> {
+      walk(expression, context, node, onEnter, onLeave)
+    }
+
+    else -> { /* no op */ }
+  }
+
+  onLeave(node, context, parent)
+}
