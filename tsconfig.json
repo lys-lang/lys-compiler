@@ -1,8 +1,12 @@
 {
-  "compilerOptions": {
-    "target": "es2015",
-    "moduleResolution": "node",
-    "declaration": true
-  },
-  "exclude": ["test"]
+	"compilerOptions": {
+		"target": "es2022",
+		"moduleResolution": "node",
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"declaration": true
+	},
+	"exclude": [
+		"test"
+	]
 }
